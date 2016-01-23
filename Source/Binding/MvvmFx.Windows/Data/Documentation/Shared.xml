@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Items>
+	<Item Name="BindingStringFormat">
+		<para>
+			The syntax for specifying a property is similar to that of C#. For example, a target path of "PropertyName" will attempt to
+			resolve a property called "PropertyName" on the target object. A target path of "Parent.Child" will attempt first to resolve
+			a property called "Parent" on the target object, and then a property called "Child" on the value of the "Parent" property.
+		</para>
+	</Item>
+</Items>

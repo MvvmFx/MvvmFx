@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{779C9916-2DCB-436C-AA30-236C5EBBE398}</ProjectGuid>
+    <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebGUI.TestBoundTreeView</RootNamespace>
+    <AssemblyName>WebGUI.TestBoundTreeView</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Csla.Web, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-ASP.NET.4.5.701\lib\net45\Csla.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WebGUI.TestBoundTreeView\MainForm.cs">
+      <Link>MainForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\MainForm.Designer.cs">
+      <Link>MainForm.Designer.cs</Link>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\SyncedLists.cs">
+      <Link>SyncedLists.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\SyncedLists.Designer.cs">
+      <Link>SyncedLists.Designer.cs</Link>
+      <DependentUpon>SyncedLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\TreeListView.cs">
+      <Link>TreeListView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\TreeListView.Designer.cs">
+      <Link>TreeListView.Designer.cs</Link>
+      <DependentUpon>TreeListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\TreeView.cs">
+      <Link>TreeView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WebGUI.TestBoundTreeView\TreeView.Designer.cs">
+      <Link>TreeView.Designer.cs</Link>
+      <DependentUpon>TreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\WebGUI.TestBoundTreeView\Configuration warning.txt">
+      <Link>Configuration warning.txt</Link>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Generated\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\WebGUI.TestBoundTreeView\MainForm.resx">
+      <Link>MainForm.resx</Link>
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\WebGUI.TestBoundTreeView\SyncedLists.resx">
+      <Link>SyncedLists.resx</Link>
+      <DependentUpon>SyncedLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\WebGUI.TestBoundTreeView\TreeListView.resx">
+      <Link>TreeListView.resx</Link>
+      <DependentUpon>TreeListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\WebGUI.TestBoundTreeView\TreeView.resx">
+      <Link>TreeView.resx</Link>
+      <DependentUpon>TreeView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.451\MvvmFx.WebGUI.Forms.451.csproj">
+      <Project>{1a9b3172-7014-475e-b073-be5870290287}</Project>
+      <Name>MvvmFx.WebGUI.Forms.451</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+      <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
+      <Name>MvvmFx.Logging.451</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.NLogLogger.451\MvvmFx.NLogLogger.451.csproj">
+      <Project>{d404afa8-83c5-4b73-8a85-d3748804cac4}</Project>
+      <Name>MvvmFx.NLogLogger.451</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BoundControls.Business.451\BoundControls.Business.451.csproj">
+      <Project>{235b8e10-25e0-4fc5-9d17-a7547a1220de}</Project>
+      <Name>BoundControls.Business.451</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
+      <HintPath>C:\VS Projects\MvvmFx\trunk\Samples\BoundControls\WebGUI.TestBoundTreeView.45\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v12.0\Gizmox.VWGApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2385</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

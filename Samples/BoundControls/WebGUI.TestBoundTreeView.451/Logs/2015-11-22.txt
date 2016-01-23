@@ -1,0 +1,6 @@
+2015-11-22 18:57:02.3951|WARN|Action|Node "Selfie" - "21": Parent of node cannot be the node itself.
+2015-11-22 18:57:02.4181|WARN|Action|Node "Inexistant parent" - "16": Parent of node does not exist.
+2015-11-22 18:57:02.4181|ERROR|Action|Node "DUPLICATE" duplicates identifier "2"
+2015-11-22 18:57:09.9593|WARN|Action|Node "Selfie" - "21": Parent of node cannot be the node itself.
+2015-11-22 18:57:09.9593|WARN|Action|Node "Inexistant parent" - "16": Parent of node does not exist.
+2015-11-22 18:57:09.9593|ERROR|Action|Node "DUPLICATE" duplicates identifier "2"

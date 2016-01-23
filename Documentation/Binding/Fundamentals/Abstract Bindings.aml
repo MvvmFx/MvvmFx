@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="4ac64f60-a8d4-4fcb-9333-1021943582e0" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					This topic discusses the various abstract binding base classes provided with MvvmFx. It covers their purpose and the
+					functionality they introduce into the hierarchy. The class diagram below illustrates the relationship between the classes
+					covered in this topic.
+					<mediaLink>
+						<caption placement="after" lead="Figure 1">Class diagram of abstract bindings</caption>
+						<image xlink:href="9B4EA629-AC8E-4b36-BF11-0BA17D7D95CD" placement="center"/>
+					</mediaLink>
+				</para>
+			</content>
+		</section>
+		<section address="BindingBase">
+			<title>BindingBase</title>
+			<content>
+				<para>
+					All MvvmFx bindings inherit directly or indirectly from the <token>BindingBase</token> class. The <token>BindingBase</token>
+					class introduces the concepts of a target object, and a mode. A <token>BindingBase</token> is inactive until it is
+					activated within a <token>IBindingContainer</token>, which is usually an instance of <token>BindingManager</token>. Once
+					active, properties on the <token>BindingBase</token> cannot be modified.
+				</para>
+				<para>
+					Every MvvmFx binding has a single target object that is exposed via the <codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingBase.TargetObject</codeEntityReference>
+					property. The target object is the object that will be updated when changes in the source(s) are detected. Importantly,
+					the means by which the property on the target object is resolved is left unspecified by the <token>BindingBase</token>
+					class. Subclasses of <token>BindingBase</token> can provide any mechanism they want to specify and resolve the
+					target property.
+				</para>
+				<para>
+					When MvvmFx detects a change in a target or source property, it does not necessarily propagate that change to the opposite
+					side of the binding. It makes the decision whether to propagate changes based on the
+					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingBase.Mode</codeEntityReference> property of
+					<token>BindingBase</token>, which is of type <token>BindingMode</token>.
+				</para>
+				<para>
+					By default, the <codeInline>Mode</codeInline> is set to <codeInline>TwoWay</codeInline>. This means that changes to the
+					target are propagated to the source(s), and changes to the source(s) are propagated to the target. Setting the
+					<codeInline>Mode</codeInline> to <codeInline>OneWayToTarget</codeInline> ensures that changes to the target do not
+					propagate to the source(s). Similarly, setting the <codeInline>Mode</codeInline> to <codeInline>OneWayToSource</codeInline>
+					ensures that changes to the source(s) do not propagate to the target.
+				</para>
+			</content>
+		</section>
+		<section address="SingleSourceBinding">
+			<title>SingleSourceBinding</title>
+			<content>
+				<para>
+					As discussed in the <link xlink:href="#BindingBase">previous section</link>, all MvvmFx bindings have a single target
+					object. The <token>SingleSourceBinding</token> class is a base class for all bindings that also have a single source
+					object, which is exposed via the
+					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.SingleSourceBinding.SourceObject</codeEntityReference> property.
+				</para>
+				<para>
+					Conceptually, the <token>SingleSourceBinding</token> looks as follows:
+					<mediaLink>
+						<caption placement="after" lead="Figure 2">Single source bindings</caption>
+						<image xlink:href="4997E3DE-E876-4f11-8658-51404B0333CC" placement="center"/>
+					</mediaLink>
+				</para>
+				<para>
+					As changes are detected in the target, they are pushed to the source if the <token>BindingMode</token> is either
+					<codeInline>TwoWay</codeInline> or <codeInline>OneWayToSource</codeInline>. As changes are detected in the source, they
+					are pushed to the target if the <token>BindingMode</token> is either <codeInline>TwoWay</codeInline> or
+					<codeInline>OneWayToTarget</codeInline>.
+				</para>
+				<para>
+					Optionally, changes can be marshalled via an instance of <token>IValueConverter</token>. If an instance of this interface
+					is set on the <codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.SingleSourceBinding.Converter</codeEntityReference>
+					property, the appropriate method will be called as changes are marshalled in either direction. For more information
+					on conversions, see <link xlink:href="209aa290-8616-41aa-96f1-b47eb3cb7205" />.
+				</para>
+				<para>
+					Since the <token>SingleSourceBinding</token> class is <codeInline>abstract</codeInline>, it does not impose on how the
+					target or source properties are resolved. That decision is left to concrete subclasses of
+					<token>SingleSourceBinding</token>, of which there are two provided with MvvmFx.
+				</para>
+			</content>
+		</section>
+		<section address="MultiSourceBinding">
+			<title>MultiSourceBinding</title>
+			<content>
+				<para>
+					The <token>MultiSourceBinding</token> class is a base class for all bindings that also have multiple sources, which are
+					exposed via the <codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.MultiSourceBinding.Sources</codeEntityReference>
+					collection.
+				</para>
+				<para>
+					Conceptually, the <token>MultiSourceBinding</token> looks as follows:
+					<mediaLink>
+						<caption placement="after" lead="Figure 3">Multi-source bindings</caption>
+						<image xlink:href="A05AEB0B-D761-4d5e-966C-285BAB49A1F8" placement="center"/>
+					</mediaLink>
+				</para>
+				<para>
+					The sources of a <token>MultiSourceBinding</token> are themselves instances of <token>BindingBase</token>. As the
+					sources of those bindings change, those changes are propagated back to the target object of the
+					<token>MultiSourceBinding</token>. If the target object of the <token>MultiSourceBinding</token> changes, the sources
+					are updated accordingly.
+				</para>
+				<para>
+					Given that there is no reasonable, default way to convert a single object into multiple objects, all
+					<token>MultiSourceBinding</token>s require a converter. This converter is an instance of
+					<token>IMultiSourceConverter</token> and must be assigned to the
+					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.MultiSourceBinding.Converter</codeEntityReference> property prior
+					to activating the <token>MultiSourceBinding</token>. The two methods on this interface will be invoked at the appropriate
+					times when marshalling changes between the target and sources.
+				</para>
+				<para>
+					The <token>BindingMode</token> of the <token>IMultiSourceConverter</token> determines the directions in which changes
+					propagate. If the <codeInline>Mode</codeInline> is <codeInline>TwoWay</codeInline> or <codeInline>OneWayToSource</codeInline>,
+					changes in the target are propagated to the sources. If the <codeInline>Mode</codeInline> is either <codeInline>TwoWay</codeInline>
+					or <codeInline>OneWayToTarget</codeInline>, changes in any source are propagated back to the target.
+				</para>
+				<para>
+					Since the <token>MultiSourceBinding</token> class is <codeInline>abstract</codeInline>, it does not impose on how the
+					target property is resolved. That decision is left to concrete subclasses of <token>MultiSourceBinding</token>, of which
+					there are two provided with MvvmFx.
+				</para>
+			</content>
+		</section>
+		<relatedTopics>
+			<link xlink:href="a3575f47-1a24-4058-999c-ab7ea3927ee0" />
+			<link xlink:href="d64f7dcd-4103-4e55-bb48-2c08c349e932" />
+			<link xlink:href="15528a8b-3e26-4559-99fc-960dbe8346a1" />
+			<token>BindingBase</token>
+			<token>SingleSourceBinding</token>
+			<token>MultiSourceBinding</token>
+			<token>BindingMode</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

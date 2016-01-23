@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{875651eb-17e7-40c8-87bf-1ca148cec0f5}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.3.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>..\</OutputPath>
+    <HtmlHelpName>MVVM Base Framework</HtmlHelpName>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\bin\Release\Client\MvvmFx.Windows.dll" />
+      <DocumentationSource sourceFile="..\bin\Release\Client\MvvmFx.Windows.xml" />
+    </DocumentationSources>
+    <FrameworkVersion>.NET 4.0.30319</FrameworkVersion>
+    <HelpTitle>MVVM Base Framework</HelpTitle>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <RootNamespaceTitle>API Documentation</RootNamespaceTitle>
+    <MissingTags>Summary, Parameter, Returns, Namespace, TypeParameter</MissingTags>
+    <NamespaceSummaries>
+      <NamespaceSummaryItem name="(global)" isDocumented="False" />
+<NamespaceSummaryItem name="MvvmFx.Windows" isDocumented="True">Base library for building Windows Forms and Visual WebGUI applications using the MVVM design pattern.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="MvvmFx.Windows.Input" isDocumented="True">Contains types in the MvvmFx command and comand binding module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="MvvmFx.Windows.Data" isDocumented="True">Contains types in the MvvmFx data binding module.</NamespaceSummaryItem></NamespaceSummaries>
+    <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
+    <Preliminary>False</Preliminary>
+    <HelpFileVersion>2.0.0.0</HelpFileVersion>
+    <WorkingPath>..\Temp\Documentation\</WorkingPath>
+    <VendorName>MvvmFx project</VendorName>
+    <CopyrightText>Copyright &amp;#169%3b Kent Boogaart %28parts%29, Tiago Freitas Leal.</CopyrightText>
+  </PropertyGroup>
+  <!-- There are no properties for these two groups but they need to appear in
+       order for Visual Studio to perform the build. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <ContentLayout Include="Content Layout.content" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Fundamentals\Supported Notification Mechanisms.aml" />
+    <None Include="Fundamentals\Fluent Interface.aml" />
+    <None Include="Fundamentals\Binding Strength.aml" />
+    <None Include="Fundamentals\Binding Managers.aml" />
+    <None Include="Fundamentals\Abstract Bindings.aml" />
+    <None Include="Quick Start Tutorials\How to - Create a BindingManager.aml" />
+    <None Include="Quick Start Tutorials\How to - Enable logging.aml" />
+    <None Include="Quick Start Tutorials\How to - Ensure property changes are marshalled to the correct thread.aml" />
+    <None Include="Quick Start Tutorials\How to - Bind a property to multiple properties.aml" />
+    <None Include="Quick Start Tutorials\How to - Bind a property to another property.aml" />
+    <None Include="Fundamentals\Multi-source Bindings.aml" />
+    <None Include="Fundamentals\Single Source Bindings.aml" />
+    <None Include="License.aml" />
+    <None Include="Fundamentals\Conversions.aml" />
+    <None Include="Overview.aml" />
+    <None Include="Fundamentals\Binding Modes.aml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Quick Start Tutorials\" />
+    <Folder Include="Fundamentals\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fundamentals\Abstract Binding.Class Diagram.png">
+      <ImageId>9B4EA629-AC8E-4b36-BF11-0BA17D7D95CD</ImageId>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Tokens Include="Tokens.tokens" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fundamentals\Abstract Bindings.Single Source Bindings.png">
+      <ImageId>4997E3DE-E876-4f11-8658-51404B0333CC</ImageId>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fundamentals\Abstract Bindings.Multi-source Bindings.png">
+      <ImageId>A05AEB0B-D761-4d5e-966C-285BAB49A1F8</ImageId>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Fundamentals\Binding Modes.OneWayToTarget.png">
+      <ImageId>195475D7-F4F3-4216-BDD8-D927F9F6947A</ImageId>
+    </Image>
+    <Image Include="Fundamentals\Binding Modes.OneWayToSource.png">
+      <ImageId>9D4597BC-C46F-451b-B706-58EA1D313764</ImageId>
+    </Image>
+    <Image Include="Fundamentals\Binding Modes.TwoWay.png">
+      <ImageId>30422FB6-64BC-4812-97C0-E8833DC9F24B</ImageId>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

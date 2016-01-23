@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\VWG_Apps\SimpleParameters" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="FileSystem" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/Gizmox.WebGUI.Server.dll" publishTime="04/29/2015 09:09:16" />
+    <file relUrl="bin/Gizmox.WebGUI.Common.dll" publishTime="04/29/2015 09:09:08" />
+    <file relUrl="bin/Gizmox.WebGUI.Forms.xml" publishTime="04/29/2015 09:02:44" />
+    <file relUrl="bin/ja-JP/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/de-DE/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/MvvmFx.Logging.pdb" publishTime="08/31/2015 00:13:24" />
+    <file relUrl="bin/is-IS/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/MvvmFx.CaliburnMicro.WebGUI.dll" publishTime="08/31/2015 00:13:25" />
+    <file relUrl="bin/tr-TR/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/es-GT/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/de-AT/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/Gizmox.WebGUI.Common.xml" publishTime="04/29/2015 09:02:06" />
+    <file relUrl="bin/MvvmFx.CaliburnMicro.WebGUI.pdb" publishTime="08/31/2015 00:13:25" />
+    <file relUrl="bin/zh-CHS/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/nl-NL/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/pt-BR/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="Default.aspx" publishTime="08/23/2015 18:27:10" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="02/10/2015 16:48:32" />
+    <file relUrl="bin/MvvmFx.DataBinding.WebGUI.dll" publishTime="08/31/2015 00:13:24" />
+    <file relUrl="bin/fa-IR/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/Gizmox.WebGUI.Forms.dll" publishTime="04/29/2015 09:02:44" />
+    <file relUrl="bin/MvvmFx.DataBinding.WebGUI.pdb" publishTime="08/31/2015 00:13:24" />
+    <file relUrl="bin/SimpleParameters.UI.WebGUI.dll" publishTime="08/31/2015 00:13:26" />
+    <file relUrl="bin/sv-SE/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/he-IL/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/MvvmFx.Logging.dll" publishTime="08/31/2015 00:13:24" />
+    <file relUrl="bin/Gizmox.WebGUI.Forms.Themes.dll" publishTime="04/29/2015 09:03:20" />
+    <file relUrl="bin/pl-PL/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/SimpleParameters.UI.WebGUI.pdb" publishTime="08/31/2015 00:13:26" />
+    <file relUrl="bin/pt-PT/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+    <file relUrl="bin/fr-CA/Gizmox.WebGUI.Forms.resources.dll" publishTime="04/29/2015 09:02:46" />
+  </publishProfile>
+</publishData>

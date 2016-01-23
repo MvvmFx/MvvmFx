@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33535861-72AD-448D-96C8-549FA64AED93}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
+    <AssemblyName>MvvmFx.CaliburnMicro.DialogExtensions.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net45\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\WinForms\net45\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CaliburnMicro.WinForms\DialogConductorViewModel.cs">
+      <Link>DialogConductorViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IDialogManager.cs">
+      <Link>IDialogManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IMessageBox.cs">
+      <Link>IMessageBox.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxOptions.cs">
+      <Link>MessageBoxOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxViewModel.cs">
+      <Link>MessageBoxViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
+      <Name>MvvmFx.Logging.45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\CaliburnMicro.WinForms.45\CaliburnMicro.WinForms.45.csproj">
+      <Project>{8a70916c-7d79-4539-a4e4-178fbb66c703}</Project>
+      <Name>CaliburnMicro.WinForms.45</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

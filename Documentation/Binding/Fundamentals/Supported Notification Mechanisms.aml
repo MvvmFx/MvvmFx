@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="86406a49-a772-4664-991e-cd77be51acda" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					This topic discusses the the property change notification mechanisms that MvvmFx supports. That is, the functionality your objects need
+					to implement in order to be used successfully with MvvmFx.
+				</para>
+				<para>
+					In theory, <legacyItalic>any</legacyItalic> object can be used with MvvmFx. However, in order to propagate changes in that object to
+					another object, some sort of change notification mechanism must be provided by that object. An object without change notification is
+					only useful in one-way bindings where it is at the receiving end of the binding.
+				</para>
+			</content>
+		</section>
+		<section address="INotifyPropertyChanged">
+			<title>INotifyPropertyChanged</title>
+			<content>
+				<para>
+					If an object implements the <token>INotifyPropertyChanged</token> interface, MvvmFx will attach to its
+					<codeInline>PropertyChanged</codeInline> event to receive property change notifications. For example, the following class implements
+					this interface:
+				</para>				
+<code language="cs"><![CDATA[public class Customer : INotifyPropertyChanged
+{
+	private string _name;
+	private DateTime _dob;
+	
+	public event EventHandler<PropertyChangedEventArgs> PropertyChanged;
+	
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (_name != value)
+			{
+				_name = value;
+				OnPropertyChanged("Name");
+			}
+		}
+	}
+	
+	public DateTime Dob
+	{
+		get { return _dob; }
+		set
+		{
+			if (_dob != value)
+			{
+				_dob = value;
+				OnPropertyChanged("Dob");
+			}
+		}
+	}
+	
+	protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+	{
+		var handler = PropertyChanged;
+		
+		if (handler != null)
+		{
+			handler(this, e);
+		}
+	}
+	
+	protected void OnPropertyChanged(string propertyName)
+	{
+		OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
+	}
+}]]></code>
+			</content>
+		</section>
+		<section address="INotifyPropertyChanged">
+			<title>PropertyNameChanged Events</title>
+			<content>
+				<para>
+					An object can implement the
+					<externalLink>
+						<linkText>PropertyNameChanged pattern</linkText>
+						<linkUri>http://msdn.microsoft.com/en-us/library/ms229615.aspx</linkUri>
+						<linkTarget>_blank</linkTarget>
+					</externalLink>
+					to provide change notification. This pattern requires that each property that can change has a corresponding event whose name is the
+					same as the property's, but with "Changed" appended to the end. For example, a property called "Name" should have a corresponding
+					"NameChanged" event. MvvmFx supports <codeInline>PropertyNameChanged</codeInline> events with delegate types of either
+					<codeInline>EventHandler</codeInline> or <codeInline>EventHandler&lt;EventArgs&gt;</codeInline>.
+				</para>
+				<para>
+					The following class implements the <legacyItalic>PropertyNameChanged</legacyItalic> pattern to support change notification:
+				</para>
+<code language="cs"><![CDATA[public class Customer
+{
+	private string _name;
+	private DateTime _dob;
+	
+	//MvvmFx supports both generic delegate
+	public event EventHandler<EventArgs> NameChanged;
+	
+	//and non-generic
+	public event EventHandler DobChanged;
+	
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (_name != value)
+			{
+				_name = value;
+				OnNameChanged();
+			}
+		}
+	}
+	
+	public DateTime Dob
+	{
+		get { return _dob; }
+		set
+		{
+			if (_dob != value)
+			{
+				_dob = value;
+				OnDobChanged();
+			}
+		}
+	}
+	
+	protected virtual void OnNameChanged()
+	{
+		var handler = NameChanged;
+		
+		if (handler != null)
+		{
+			handler(this, EventArgs.Empty);
+		}
+	}
+	
+	protected virtual void OnNameChanged()
+	{
+		var handler = DobChanged;
+		
+		if (handler != null)
+		{
+			handler(this, EventArgs.Empty);
+		}
+	}
+}]]></code>
+			</content>
+		</section>
+		<section address="DependencyObjects">
+			<title>DependencyObjects</title>
+			<content>
+				<para>
+					If a bound object is a <token>DependencyObject</token> and exposes an appropriate <token>DependencyProperty</token> for a bound
+					property, MvvmFx will attach to change notifications for that <token>DependencyProperty</token>. The example below demonstrates such a
+					<token>DependencyObject</token>:
+				</para>				
+<code language="cs"><![CDATA[public class Customer : DependencyObject
+{
+	public static readonly DependencyProperty NameProperty = DependencyProperty.Register("Name",
+		typeof(string),
+		typeof(Customer));
+
+	public static readonly DependencyProperty DobProperty = DependencyProperty.Register("Dob",
+		typeof(DateTime),
+		typeof(Customer));
+	
+	public string Name
+	{
+		get { return GetValue(NameProperty) as string; }
+		set { SetValue(NameProperty, value); }
+	}
+	
+	public DateTime Dob
+	{
+		get { return (DateTime)GetValue(DobProperty); }
+		set { SetValue(DobProperty, value); }
+	}
+}]]></code>
+			</content>
+		</section>
+		<section address="DependencyObjects">
+			<title>ICustomTypeDescriptor</title>
+			<content>
+				<para>
+					A bound object can implement <token>ICustomTypeDescriptor</token> to provide type information dynamically. MvvmFx will successfully find
+					dynamically exposed members on objects that implement this interface. However, an object that implements this interface can provide change
+					notification via any of the aforementioned mechanisms. That is, it could implement the <legacyItalic>PropertyNameChanged</legacyItalic>
+					pattern, or it might implement the <token>INotifyPropertyChanged</token> interface.
+				</para>				
+			</content>
+		</section>
+		<relatedTopics>
+			<token>INotifyPropertyChanged</token>
+			<externalLink>
+				<linkText>PropertyNameChanged pattern</linkText>
+				<linkUri>http://msdn.microsoft.com/en-us/library/ms229615.aspx</linkUri>
+				<linkTarget>_blank</linkTarget>
+			</externalLink>
+			<token>DependencyObject</token>
+			<token>DependencyProperty</token>
+			<token>ICustomTypeDescriptor</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

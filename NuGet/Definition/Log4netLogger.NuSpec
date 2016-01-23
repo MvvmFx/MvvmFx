@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-Log4netLogger</id>
+    <title>MVVM FX - Log4netLogger</title>
+    <tags>MVVMFX MVVM Windows-Forms WinForms Model-View-ViewModel ViewModel</tags>
+    <version>3.0.0</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://mvvmfx.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+Log4net adapter for MvvmFx.Logging.ILog.
+    </description>
+    <summary>
+Log4net adapter for MvvmFx.Logging.ILog.
+    </summary>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="MvvmFx-Logging" version="[3.0.0]" />
+      <dependency id="log4net" version="[2.0.1]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- .NET 4.0 -->
+    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.Log4netLogger.dll*" target="lib\net40" />
+    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.Log4netLogger.pdb*" target="lib\net40" />
+    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net40" />
+    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net40" />
+    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.Log4netLogger.xml*" target="lib\net40" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.xml*" target="lib\net45" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.Log4netLogger.dll*" target="lib\net451" />
+    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.Log4netLogger.pdb*" target="lib\net451" />
+    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net451" />
+    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net451" />
+    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.Log4netLogger.xml*" target="lib\net451" />
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Src\**\MvvmFx.Log4netLogger\**\*.cs" target="src" />
+    <file src="..\..\Src\**\MvvmFx.Log4netLogger.45\**\*.cs" target="src" />
+    <file src="..\..\Src\**\MvvmFx.Log4netLogger.451\**\*.cs" target="src" />
+  </files>
+</package>

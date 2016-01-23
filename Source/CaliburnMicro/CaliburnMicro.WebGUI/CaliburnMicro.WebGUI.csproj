@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}</ProjectGuid>
+    <ProjectTypeGuids>{80d85812-7475-4db8-9a61-dd0ef1ebd354};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
+    <AssemblyName>MvvmFx.CaliburnMicro.WebGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\WebGUI\net40\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WEBGUI;NET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\WebGUI\net40\</OutputPath>
+    <DefineConstants>TRACE;WEBGUI;NET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\bin\Release\WebGUI\net40\MvvmFx.CaliburnMicro.WebGUI.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common.Design, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=ea5dfe57c8eb7edd">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CaliburnMicro.WinForms\Action.cs">
+      <Link>Action.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ActionExecutionContext.cs">
+      <Link>ActionExecutionContext.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ActionMessage.cs">
+      <Link>ActionMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ApplicationContext.cs">
+      <Link>ApplicationContext.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\AssemblySource.cs">
+      <Link>AssemblySource.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\BindableList.cs">
+      <Link>BindableList.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\BindingScope.cs">
+      <Link>BindingScope.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Bootstrapper.cs">
+      <Link>Bootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Conductor.cs">
+      <Link>Conductor.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ConductorBase.cs">
+      <Link>ConductorBase.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ConductorBaseWithActiveItem.cs">
+      <Link>ConductorBaseWithActiveItem.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ConductorWithCollectionAllActive.cs">
+      <Link>ConductorWithCollectionAllActive.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ConductorWithCollectionOneActive.cs">
+      <Link>ConductorWithCollectionOneActive.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ContentContainer.cs">
+      <Link>ContentContainer.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ConventionManager.cs">
+      <Link>ConventionManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Coroutine.cs">
+      <Link>Coroutine.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\DefaultCloseStrategy.cs">
+      <Link>DefaultCloseStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\DependencyObject.cs">
+      <Link>DependencyObject.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\DependencyProperty.cs">
+      <Link>DependencyProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ElementConvention.cs">
+      <Link>ElementConvention.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\EventAggregator.cs">
+      <Link>EventAggregator.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ExecuteEventArgs.cs">
+      <Link>ExecuteEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ExtensionMethods.cs">
+      <Link>ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\GlobalSuppressions.cs">
+      <Link>GlobalSuppressions.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IChild.cs">
+      <Link>IChild.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ICloseStrategy.cs">
+      <Link>ICloseStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IConductor.cs">
+      <Link>IConductor.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IHaveDataContext.cs">
+      <Link>IHaveDataContext.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IHaveModel.cs">
+      <Link>IHaveModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IHaveParameters.cs">
+      <Link>IHaveParameters.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IHaveViewNamedElements.cs">
+      <Link>IHaveViewNamedElements.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\INPC.cs">
+      <Link>INPC.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IoC.cs">
+      <Link>IoC.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IResult.cs">
+      <Link>IResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IScreen.cs">
+      <Link>IScreen.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\IViewAware.cs">
+      <Link>IViewAware.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Logging.cs">
+      <Link>Logging.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Message.cs">
+      <Link>Message.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\MessageBinder.cs">
+      <Link>MessageBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\MessageDetail.cs">
+      <Link>MessageDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\NameTransformer.cs">
+      <Link>NameTransformer.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Parameter.cs">
+      <Link>Parameter.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Parser.cs">
+      <Link>Parser.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\RegExHelper.cs">
+      <Link>RegExHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ResultCompletionEventArgs.cs">
+      <Link>ResultCompletionEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\Screen.cs">
+      <Link>Screen.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ScreenExtensions.cs">
+      <Link>ScreenExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\SequentialResult.cs">
+      <Link>SequentialResult.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\SimpleContainer.cs">
+      <Link>SimpleContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\SimpleContainerExtensions.cs">
+      <Link>SimpleContainerExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\StartupEventArgs.cs">
+      <Link>StartupEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ToolStripItemProxy.cs">
+      <Link>ToolStripItemProxy.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\TypeMappingConfiguration.cs">
+      <Link>TypeMappingConfiguration.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\View.cs">
+      <Link>View.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ViewAware.cs">
+      <Link>ViewAware.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ViewLocator.cs">
+      <Link>ViewLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ViewModelBinder.cs">
+      <Link>ViewModelBinder.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\ViewModelLocator.cs">
+      <Link>ViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\WindowManager.cs">
+      <Link>WindowManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms\WinFormExtensionMethods.cs">
+      <Link>WinFormExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+      <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
+      <Name>MvvmFx.Logging</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj">
+      <Project>{9d62264b-077a-4a1f-9605-5ede74406798}</Project>
+      <Name>MvvmFx.DataBinding.WebGUI</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v10.0\Gizmox.VWGLibrary.targets" />
+</Project>

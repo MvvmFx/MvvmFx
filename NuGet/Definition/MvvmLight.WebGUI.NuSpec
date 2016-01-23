@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-MVVM-Light-WebGUI</id>
+    <title>MVVM FX - MVVM Light for Visual WebGUI</title>
+    <tags>MVVMFX MVVM WebGUI Gizmox Model-View-ViewModel Presentation UI ViewModel MVVM-Light MVVMLight</tags>
+    <version>2.0.2</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>http://mvvmlight.codeplex.com/license</licenseUrl>
+    <projectUrl>http://mvvmfx.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern. It includes Data binding, Command binding and DependencyObject/DependencyProperty for Visual WebGUI.
+
+The MVVM Light Toolkit is a set of components helping people to get started in the Model-View-ViewModel pattern in Silverlight. It is a light and pragmatic framework that contains only the essential components needed.
+The MVVM Light Toolkit was partially ported to run under Visual WebGUI using MVVM FX.
+
+NOTE - This package will fail to install unless Visual WebGUI for Framework .NET 4.0 is installed.
+    </description>
+    <summary>
+Supports the creation of MVVM Visual WebGUI applications using a (partial) port of the MVVM Light Toolkit.
+    </summary>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="CommonServiceLocator" version="[1.0.0]" />
+      <dependency id="MvvmFx-WebGUI" version="[2.0.2]" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Gizmox.WebGUI.Common" targetFramework="net40-full" />
+      <frameworkAssembly assemblyName="Gizmox.WebGUI.Forms" targetFramework="net40-full" />
+      <frameworkAssembly assemblyName="Gizmox.WebGUI.Common" targetFramework="net45" />
+      <frameworkAssembly assemblyName="Gizmox.WebGUI.Forms" targetFramework="net45" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <!-- .NET 4.0 -->
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.WebGUI.dll*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.WebGUI.pdb*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.WebGUI.resources.dll*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.WebGUI.resources.pdb*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.WebGUI.xml*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.Extras.WebGUI.dll*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.Extras.WebGUI.pdb*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.Extras.WebGUI.resources.dll*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.Extras.WebGUI.resources.pdb*" target="lib\net40-full" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net40\**\MvvmLight.Extras.WebGUI.xml*" target="lib\net40-full" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.WebGUI.dll*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.WebGUI.pdb*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.WebGUI.resources.dll*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.WebGUI.resources.pdb*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.WebGUI.xml*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.Extras.WebGUI.dll*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.Extras.WebGUI.pdb*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.Extras.WebGUI.resources.dll*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.Extras.WebGUI.resources.pdb*" target="lib\net45" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\bin\Release\WebGUI\net45\**\MvvmLight.Extras.WebGUI.xml*" target="lib\net45" />
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\**\MvvmLight.WinForms\**\*.cs" target="src" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\**\MvvmLight.Extras.WinForms\**\*.cs" target="src" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\**\MvvmLight.WebGUI.45\**\*.cs" target="src" />
+    <file src="..\..\Src\OtherFrameworks\MvvmLight\**\MvvmLight.Extras.WebGUI.45**\*.cs" target="src" />
+  </files>
+</package>

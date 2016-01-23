@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{474001FC-B479-4C82-9969-3AB5A4937DFF}</ProjectGuid>
+    <ProjectTypeGuids>{80d85812-7475-4db8-9a61-dd0ef1ebd354};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvvmFx.MvvmLight</RootNamespace>
+    <AssemblyName>MvvmLight.WebGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\WebGUI\net40\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\WebGUI\net40\</OutputPath>
+    <DefineConstants>TRACE;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Release\WebGUI\net40\MvvmLight.WebGUI.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.0.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MvvmLight.WinForms\Command\RelayCommand.cs">
+      <Link>Command\RelayCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Command\RelayCommandGeneric.cs">
+      <Link>Command\RelayCommandGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Helpers\IExecuteWithObject.cs">
+      <Link>Helpers\IExecuteWithObject.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Helpers\IExecuteWithObjectAndResult.cs">
+      <Link>Helpers\IExecuteWithObjectAndResult.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakAction.cs">
+      <Link>Helpers\WeakAction.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakActionGeneric.cs">
+      <Link>Helpers\WeakActionGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakFunc.cs">
+      <Link>Helpers\WeakFunc.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakFuncGeneric.cs">
+      <Link>Helpers\WeakFuncGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\ICleanup.cs">
+      <Link>ICleanup.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\DialogMessage.cs">
+      <Link>Messaging\DialogMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\GenericMessage.cs">
+      <Link>Messaging\GenericMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\IMessenger.cs">
+      <Link>Messaging\IMessenger.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\MessageBase.cs">
+      <Link>Messaging\MessageBase.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\Messenger.cs">
+      <Link>Messaging\Messenger.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessage.cs">
+      <Link>Messaging\NotificationMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageAction.cs">
+      <Link>Messaging\NotificationMessageAction.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageActionGeneric.cs">
+      <Link>Messaging\NotificationMessageActionGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageGeneric.cs">
+      <Link>Messaging\NotificationMessageGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageWithCallback.cs">
+      <Link>Messaging\NotificationMessageWithCallback.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\PropertyChangedMessage.cs">
+      <Link>Messaging\PropertyChangedMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\Messaging\PropertyChangedMessageBase.cs">
+      <Link>Messaging\PropertyChangedMessageBase.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\ObservableObject.cs">
+      <Link>ObservableObject.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmLight.WinForms\ViewModelBase.cs">
+      <Link>ViewModelBase.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj">
+      <Project>{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}</Project>
+      <Name>MvvmFx.Windows.WebGUI</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

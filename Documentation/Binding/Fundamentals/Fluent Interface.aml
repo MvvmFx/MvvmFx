@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="01279ac9-c61e-40a3-9dc9-51f3e045e6a3" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					MvvmFx provides a fluent interface to improve the readability and maintainability of binding code. The fluent interface does not
+					provide all the functionality of the standard MvvmFx API. Rather, it addresses the most common use cases. More esoteric use cases may
+					require that you fall back on the standard, more verbose, API.
+				</para>
+			</content>
+		</section>
+		<section address="Using the Fluent Interface">
+			<title>Using the Fluent Interface</title>
+			<content>
+				<para>
+					To use the MvvmFx fluent interface, import the <codeInline>MvvmFx.Windows.WindowsBase.Data</codeInline> namespace:
+<code language="cs">
+using MvvmFx.Windows.WindowsBase.Data;
+</code>
+				</para>
+				<para>
+					Importing the above namespace this will add extension methods to the <token>BindingManager</token> class that provide the entry
+					points for the fluent interface. All uses of the fluent API should start with a call to one of these extension methods and end
+					with a call to <codeInline>Activate()</codeInline>.
+				</para>
+				<para>
+					For example, the following code shows a simple use of the fluent interface to bind one customer's name to another:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Fluent Binding"/>
+				</para>
+				<para>
+					Here is another example that multi-binds an output sink to many properties on a <codeInline>Customer</codeInline> object:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Fluent TypedMultiBinding"/>
+				</para>
+			</content>
+		</section>
+		<section address="Fluent Interface Limitations">
+			<title>Fluent Interface Limitations</title>
+			<content>
+				<para>
+					The fluent interface is not a feature-for-feature replacement for the standard MvvmFx interface. It excludes some functionality
+					in order to remain usable and easy to read. Specifically, it does not support an interface for adding one
+					<codeInline>MultiSourceBinding</codeInline> to another. If you need to do so, you will need to default to the standard MvvmFx
+					API.
+				</para>
+			</content>
+		</section>
+  </developerConceptualDocument>
+</topic>

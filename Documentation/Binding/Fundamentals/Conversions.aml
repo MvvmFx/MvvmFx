@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="209aa290-8616-41aa-96f1-b47eb3cb7205" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					This topic discusses the ways in which conversions between target and source objects can occur within MvvmFx.
+				</para>
+			</content>
+		</section>
+		<section address="Implicit Conversions">
+			<title>Implicit Conversions</title>
+			<content>
+				<para>
+					When MvvmFx needs to set the value of a property and the value it has does not match the expected type of the property
+					in question, it will attempt to automatically convert the value. It does this via a call to
+					<codeEntityReference autoUpgrade="true">M:System.Convert.ChangeType</codeEntityReference>. If the conversion fails, then
+					the propagation of the property change will fail.
+				</para>
+				<para>
+					As conversions are required and attempted, MvvmFx logs the results. See
+					<link xlink:href="53fc54f0-b3c7-47cd-9513-810ce331f44a"/> for information on how to enable and view this log output.
+				</para>
+				<alert class="note">
+					<para>
+				  		Implicit conversions occur after any explicit conversions. It is therefore possible for both types of conversions to occur
+				  		every time a property changes. To minimize the performance impact, it is recommended that you return the correct type from
+				  		your explicit conversion logic.
+					</para>
+				</alert>
+			</content>
+		</section>
+		<section address="Explicit Conversions">
+			<title>Explicit Conversions</title>
+			<content>
+				<para>
+					All bindings provided by MvvmFx allow the developer to provide explicit conversion logic that will be executed when values
+					are propagated between the target and source objects. The exact means of providing this logic depends on whether the
+					binding has a single source, or multiple sources. For <token>SingleSourceBinding</token>s, an implementation of
+					<token>IValueConverter</token> is required. For <token>MultiSourceBinding</token>s, an implementation of
+					<token>IMultiValueConverter</token> is required.
+				</para>
+				<para>
+					When an explicit converter is provided, MvvmFx will invoke the appropriate method as values are propagated between the
+					target and source objects. This gives the developer a chance to inspect, amend, or completely alter the value being
+					propagated.
+				</para>
+				<alert class="note">
+					<para>
+					Converters are optional for <token>SingleSourceBinding</token>s, but mandatory for <token>MultiSourceBinding</token>s.
+					Without a converter, there is no reasonable way to convert multiple sources into a single target, and vice-versa.
+					</para>
+				</alert>
+			</content>
+		</section>
+		<relatedTopics>
+			<link xlink:href="53fc54f0-b3c7-47cd-9513-810ce331f44a" />
+			<token>IValueConverter</token>
+			<token>IMultiValueConverter</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

@@ -1,0 +1,2 @@
+The initial port to Windows Forms was made by Dan Durland.
+http://caliburnmicro.codeplex.com/SourceControl/network/forks/ddurland/CaliburnMicroWinForms

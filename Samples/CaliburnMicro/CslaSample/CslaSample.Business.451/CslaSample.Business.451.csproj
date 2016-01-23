@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A0C7D9D-B40C-4B95-B93C-EC8B3CB26A74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CslaSample.Business</RootNamespace>
+    <AssemblyName>CslaSample.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CslaSample.Business\BusinessRules\CollapseWhiteSpace.cs">
+      <Link>BusinessRules\CollapseWhiteSpace.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\BusinessRules\DateNotInFutureAttr.cs">
+      <Link>BusinessRules\DateNotInFutureAttr.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DatabaseCslaSample.cs">
+      <Link>DatabaseCslaSample.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DataPortalHookArgs.cs">
+      <Link>DataPortalHookArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentEdit.cs">
+      <Link>DocumentEdit.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentEdit.Designer.cs">
+      <Link>DocumentEdit.Designer.cs</Link>
+      <DependentUpon>DocumentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentEditGetter.cs">
+      <Link>DocumentEditGetter.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentEditGetter.Designer.cs">
+      <Link>DocumentEditGetter.Designer.cs</Link>
+      <DependentUpon>DocumentEditGetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentInfo.cs">
+      <Link>DocumentInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentInfo.Designer.cs">
+      <Link>DocumentInfo.Designer.cs</Link>
+      <DependentUpon>DocumentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentList.cs">
+      <Link>DocumentList.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\DocumentList.Designer.cs">
+      <Link>DocumentList.Designer.cs</Link>
+      <DependentUpon>DocumentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderEdit.cs">
+      <Link>FolderEdit.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderEdit.Designer.cs">
+      <Link>FolderEdit.Designer.cs</Link>
+      <DependentUpon>FolderEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderEditCollection.cs">
+      <Link>FolderEditCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderEditCollection.Designer.cs">
+      <Link>FolderEditCollection.Designer.cs</Link>
+      <DependentUpon>FolderEditCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderInfo.cs">
+      <Link>FolderInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderInfo.Designer.cs">
+      <Link>FolderInfo.Designer.cs</Link>
+      <DependentUpon>FolderInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderList.cs">
+      <Link>FolderList.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderList.Designer.cs">
+      <Link>FolderList.Designer.cs</Link>
+      <DependentUpon>FolderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderNVL.cs">
+      <Link>FolderNVL.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.Business\FolderNVL.Designer.cs">
+      <Link>FolderNVL.Designer.cs</Link>
+      <DependentUpon>FolderNVL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<content xml:space="preserve" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <item id="Binding"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.Binding</ddue:codeEntityReference></item>
+  <item id="BindingBase"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.BindingBase</ddue:codeEntityReference></item>
+  <item id="BindingManager"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.BindingManager</ddue:codeEntityReference></item>
+  <item id="BindingMode"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.BindingMode</ddue:codeEntityReference></item>
+  <item id="IBindingContainer"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.IBindingContainer</ddue:codeEntityReference></item>
+  <item id="IMultiValueConverter"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.IMultiValueConverter</ddue:codeEntityReference></item>
+  <item id="IValueConverter"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.IValueConverter</ddue:codeEntityReference></item>
+  <item id="MultiBinding"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.MultiBinding</ddue:codeEntityReference></item>
+  <item id="MultiSourceBinding"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.MultiSourceBinding</ddue:codeEntityReference></item>
+  <item id="SingleSourceBinding"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.SingleSourceBinding</ddue:codeEntityReference></item>
+  <item id="TypedBinding"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.TypedBinding`2</ddue:codeEntityReference></item>
+  <item id="TypedMultiBinding"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:MvvmFx.Windows.WindowsBase.Data.TypedMultiBinding`1</ddue:codeEntityReference></item>
+  <item id="INotifyPropertyChanged"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:System.ComponentModel.INotifyPropertyChanged</ddue:codeEntityReference></item>
+  <item id="ICustomTypeDescriptor"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:System.ComponentModel.ICustomTypeDescriptor</ddue:codeEntityReference></item>
+  <item id="DependencyObject"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:System.Windows.DependencyObject</ddue:codeEntityReference></item>
+  <item id="DependencyProperty"><ddue:codeEntityReference xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5">T:System.Windows.DependencyProperty</ddue:codeEntityReference></item>
+</content>

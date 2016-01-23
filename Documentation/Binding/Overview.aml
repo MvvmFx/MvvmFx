@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="ff366ecc-59bd-4d33-a18e-86818741fbe5" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <section address="Overview">
+      <title>Overview</title>
+      <content>
+        <para>
+        	<newTerm>MvvmFx</newTerm> is a binding library that works with Plain Old CLR Objects (<newTerm>POCOs</newTerm>). Unlike other binding
+        	infrastructure included with the .NET framework, all participants in a MvvmFx binding can be POCOs. This makes it possible to address
+        	certain development scenarios that have not been optimal in the past.
+        </para>
+        <para>
+        	Features of MvvmFx include:        	
+			<list class="bullet">
+			  <listItem>Support for single source and multi-source bindings</listItem>
+			  <listItem>String and lambda-based bindings. The latter ensures bindings are checked for correctness at compile-time</listItem>
+			  <listItem>Bindings are weak, and will not prevent garbage collection of the target or source objects</listItem>
+			  <listItem>Support for multiple forms of property change notification: the <codeInline>INotifyPropertyChanged</codeInline> interface, the <legacyItalic>PropertyNameChanged</legacyItalic> pattern, and <codeInline>DependencyProperty</codeInline></listItem>
+			  <listItem>Support for types that implement <codeInline>ICustomTypeDescriptor</codeInline></listItem>
+			  <listItem>Implicit and explicit conversion of data during binding operations</listItem>
+			  <listItem>Support for <codeInline>SynchronizationContext</codeInline> so that changes in properties can be automatically marshaled to the correct thread</listItem>
+			  <listItem>A fluent interface to improve the readability and maintainability of binding code</listItem>
+			</list>
+        </para>
+      </content>
+    </section>
+  </developerConceptualDocument>
+</topic>

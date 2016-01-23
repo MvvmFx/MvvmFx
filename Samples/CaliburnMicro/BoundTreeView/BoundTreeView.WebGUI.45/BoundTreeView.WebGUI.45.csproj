@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FBA5E570-1B82-4847-BAAE-0C0FD2918F17}</ProjectGuid>
+    <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BoundTreeView</RootNamespace>
+    <AssemblyName>BoundTreeView.WebGUI</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\BoundTreeView.WebGUI\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <DependentUpon>Resources.Resx</DependentUpon>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\Properties\Settings.Designer.cs">
+      <Link>Properties\Settings.Designer.cs</Link>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\Views\FamilyMemberEditView.cs">
+      <Link>Views\FamilyMemberEditView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\Views\FamilyMemberEditView.Designer.cs">
+      <Link>Views\FamilyMemberEditView.Designer.cs</Link>
+      <DependentUpon>FamilyMemberEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\Views\FamilyMemberTreeView.cs">
+      <Link>Views\FamilyMemberTreeView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\Views\FamilyMemberTreeView.Designer.cs">
+      <Link>Views\FamilyMemberTreeView.Designer.cs</Link>
+      <DependentUpon>FamilyMemberTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\AppBootstrapper.cs">
+      <Link>AppBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\Framework\BooleanYesNoConverter.cs">
+      <Link>Framework\BooleanYesNoConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\Framework\DeleteModeDescriptionConverter.cs">
+      <Link>Framework\DeleteModeDescriptionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\Framework\GenderConverter.cs">
+      <Link>Framework\GenderConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\Framework\IntegerToStringConverter.cs">
+      <Link>Framework\IntegerToStringConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\Framework\InverseBooleanConverter.cs">
+      <Link>Framework\InverseBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\MainForm.cs">
+      <Link>MainForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WebGUI\MainForm.Designer.cs">
+      <Link>MainForm.Designer.cs</Link>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\MainFormViewModel.cs">
+      <Link>MainFormViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\ViewModels\FamilyMemberEditViewModel.cs">
+      <Link>ViewModels\FamilyMemberEditViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\BoundTreeView.WinForms\ViewModels\FamilyMemberTreeViewModel.cs">
+      <Link>ViewModels\FamilyMemberTreeViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\BoundTreeView.WebGUI\Properties\Settings.settings">
+      <Link>Properties\Settings.settings</Link>
+    </None>
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Generated\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\BoundTreeView.WebGUI\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\BoundTreeView.WebGUI\Views\FamilyMemberEditView.resx">
+      <Link>Views\FamilyMemberEditView.resx</Link>
+      <DependentUpon>FamilyMemberEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\BoundTreeView.WebGUI\Views\FamilyMemberTreeView.resx">
+      <Link>Views\FamilyMemberTreeView.resx</Link>
+      <DependentUpon>FamilyMemberTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\BoundTreeView.WebGUI\MainForm.resx">
+      <Link>MainForm.resx</Link>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj">
+      <Project>{a9147a21-0d79-47be-9b23-57fe7df9375a}</Project>
+      <Name>MvvmFx.WebGUI.Forms.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj">
+      <Project>{a40bfa3d-4236-4842-8874-31dfd5e0540a}</Project>
+      <Name>CaliburnMicro.WebGUI.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
+      <Name>MvvmFx.Logging.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Src\Binding\MvvmFx.DataBinding.WebGUI.45\MvvmFx.DataBinding.WebGUI.45.csproj">
+      <Project>{3282ce22-6cd9-4ddc-b219-3aed1f4728ad}</Project>
+      <Name>MvvmFx.DataBinding.WebGUI.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FamilyBusiness.45\FamilyBusiness.45.csproj">
+      <Project>{5509c522-939f-435b-9022-3bba28ba236b}</Project>
+      <Name>FamilyBusiness.45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
+      <HintPath>C:\VS Projects\MvvmFx\trunk\Samples\CaliburnMicro\BoundTreeView\BoundTreeView.WebGUI.45\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\BoundTreeView.WebGUI\Configuration warning.txt">
+      <Link>Configuration warning.txt</Link>
+    </Content>
+    <Content Include="Default.aspx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v12.0\Gizmox.VWGApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7239</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7239/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

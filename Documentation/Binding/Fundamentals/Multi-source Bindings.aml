@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="d64f7dcd-4103-4e55-bb48-2c08c349e932" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					This topic discusses the concrete, multi-source bindings provided with MvvmFx. Each of these bindings inherits from
+					<token>MultiSourceBinding</token> but provides a different way of resolving the bound property on the target object.
+				</para>
+			</content>
+		</section>
+		<section address="MultiBinding">
+			<title>MultiBinding</title>
+			<content>
+				<para>
+					The <token>MultiBinding</token> class is a multi-source binding that uses a simple property path expression to resolve
+					the bound property on the target object. The advantage of this class is that it does not require the property to be
+					known at compile-time. The disadvantage is that there is no compile-time checking of the property expression. If the
+					target property you are binding to is known at compile-time, it is recommended you use a
+					<link xlink:href="#TypedMultiBinding">TypedMultiBinding</link> instead.
+				</para>
+				<para>
+					A simple example of the <token>MultiBinding</token> class is shown below, where a group of properties on a
+					<codeInline>Customer</codeInline> instance are bound to an <codeInline>Output</codeInline> property:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple MultiBinding"/>
+				</para>
+				<para>
+					The same example can be rewritten using the fluent interface as follows:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Fluent MultiBinding"/>
+				</para>
+				<para>
+					The details of the allowed property path expressions can be found in the API documentation for the
+					<token>MultiBinding</token> class.
+				</para>
+			</content>
+		</section>
+		<section address="TypedMultiBinding">
+			<title>TypedMultiBinding</title>
+			<content>
+				<para>
+					The <token>TypedMultiBinding</token> class is a mulit-source binding that uses a lambda expression to resolve the bound
+					property on the target object. It is a generic class with one type parameter, <codeInline>TTarget</codeInline>, which is
+					the type of the target object. The advantage of this class is that the expression is compile-time checked, and is
+					therefore guaranteed to exist. The disadvantage is that the property path needs to be known at compile-time, as well as
+					the target type. If these details are not known until runtime, you can instead use a
+					<link xlink:href="#MultiBinding">MultiBinding</link> instead.
+				</para>
+				<para>
+					A simple example of the <token>TypedMultiBinding</token> class is shown below, where a group of properties on a
+					<codeInline>Customer</codeInline> instance are bound to an <codeInline>Output</codeInline> property on an
+					<codeInline>OutputSink</codeInline> instance:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple TypedMultiBinding"/>
+				</para>
+				<para>
+					The same example can be rewritten using the fluent interface as follows:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Fluent TypedMultiBinding"/>
+				</para>
+			</content>
+		</section>
+		<relatedTopics>
+			<link xlink:href="4ac64f60-a8d4-4fcb-9333-1021943582e0" />
+			<link xlink:href="a3575f47-1a24-4058-999c-ab7ea3927ee0" />
+			<token>MultiBinding</token>
+			<token>TypedMultiBinding</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

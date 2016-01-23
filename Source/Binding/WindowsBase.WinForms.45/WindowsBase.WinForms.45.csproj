@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33290B49-5D4B-47F3-8C03-D203595C9F12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvvmFx</RootNamespace>
+    <AssemblyName>WindowsBase.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net45\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\Release\WinForms\net45\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Collections.Specialized\CollectionChangedEventManager.cs">
+      <Link>Collections.Specialized\CollectionChangedEventManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangedEventManager.cs">
+      <Link>ComponentModel\CurrentChangedEventManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangingEventArgs.cs">
+      <Link>ComponentModel\CurrentChangingEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangingEventHandler.cs">
+      <Link>ComponentModel\CurrentChangingEventHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangingEventManager.cs">
+      <Link>ComponentModel\CurrentChangingEventManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\DependencyPropertyDescriptor.cs">
+      <Link>ComponentModel\DependencyPropertyDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\GroupDescription.cs">
+      <Link>ComponentModel\GroupDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ICollectionView.cs">
+      <Link>ComponentModel\ICollectionView.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ICollectionViewFactory.cs">
+      <Link>ComponentModel\ICollectionViewFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\IEditableCollectionView.cs">
+      <Link>ComponentModel\IEditableCollectionView.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\IItemProperties.cs">
+      <Link>ComponentModel\IItemProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ItemPropertyInfo.cs">
+      <Link>ComponentModel\ItemPropertyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\NewItemPlaceholderPosition.cs">
+      <Link>ComponentModel\NewItemPlaceholderPosition.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\PropertyChangedEventManager.cs">
+      <Link>ComponentModel\PropertyChangedEventManager.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\PropertyFilterAttribute.cs">
+      <Link>ComponentModel\PropertyFilterAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\PropertyFilterOptions.cs">
+      <Link>ComponentModel\PropertyFilterOptions.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ReferenceEqualityComparer.cs">
+      <Link>ComponentModel\ReferenceEqualityComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\SortDescription.cs">
+      <Link>ComponentModel\SortDescription.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\ComponentModel\SortDescriptionCollection.cs">
+      <Link>ComponentModel\SortDescriptionCollection.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\AttachedPropertyBrowsableAttribute.cs">
+      <Link>Windows\AttachedPropertyBrowsableAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\AttachedPropertyBrowsableForTypeAttribute.cs">
+      <Link>Windows\AttachedPropertyBrowsableForTypeAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\AttachedPropertyBrowsableWhenAttributePresentAttribute.cs">
+      <Link>Windows\AttachedPropertyBrowsableWhenAttributePresentAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\CoerceValueCallback.cs">
+      <Link>Windows\CoerceValueCallback.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyObject.cs">
+      <Link>Windows\DependencyObject.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyObjectType.cs">
+      <Link>Windows\DependencyObjectType.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyProperty.cs">
+      <Link>Windows\DependencyProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyPropertyChangedEventArgs.cs">
+      <Link>Windows\DependencyPropertyChangedEventArgs.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyPropertyChangedEventHandler.cs">
+      <Link>Windows\DependencyPropertyChangedEventHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyPropertyKey.cs">
+      <Link>Windows\DependencyPropertyKey.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\Expression.cs">
+      <Link>Windows\Expression.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\ExpressionConverter.cs">
+      <Link>Windows\ExpressionConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\Forms\Form.cs">
+      <Link>Windows\Forms\Form.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\Forms\UserControl.cs">
+      <Link>Windows\Forms\UserControl.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\Freezable.cs">
+      <Link>Windows\Freezable.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\IDependencyObject.cs">
+      <Link>Windows\IDependencyObject.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\IWeakEventListener.cs">
+      <Link>Windows\IWeakEventListener.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\LocalValueEntry.cs">
+      <Link>Windows\LocalValueEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\LocalValueEnumerator.cs">
+      <Link>Windows\LocalValueEnumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\PropertyChangedCallback.cs">
+      <Link>Windows\PropertyChangedCallback.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\PropertyMetadata.cs">
+      <Link>Windows\PropertyMetadata.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\ValidateValueCallback.cs">
+      <Link>Windows\ValidateValueCallback.cs</Link>
+    </Compile>
+    <Compile Include="..\WindowsBase.WinForms\Windows\WeakEventManager.cs">
+      <Link>Windows\WeakEventManager.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\WindowsBase.WinForms\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\WindowsBase.WinForms\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
