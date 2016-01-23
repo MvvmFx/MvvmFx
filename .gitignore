@@ -13,6 +13,7 @@ TestResults
 #*.user
 *.sln.docstates
 *.sln.DotSettings
+*.sln.DotSettings.user
 
 # Build results
 [Dd]ebug/
