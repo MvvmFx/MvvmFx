@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F472D66F-0D50-4F2D-8672-AE7EBC65DBA4}</ProjectGuid>
+    <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleParameters.UI</RootNamespace>
+    <AssemblyName>SimpleParameters.UI.WebGUI</AssemblyName>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartPageUrl>Form1.wgx</StartPageUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;WEBGUI</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SimpleParameters.WebGUI\AppBootstrapper.cs">
+      <Link>AppBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\ShellView.cs">
+      <Link>ShellView.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\ShellView.Designer.cs">
+      <Link>ShellView.Designer.cs</Link>
+      <DependentUpon>ShellView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\ButtonParameterView.cs">
+      <Link>Views\ButtonParameterView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\ButtonParameterView.Designer.cs">
+      <Link>Views\ButtonParameterView.Designer.cs</Link>
+      <DependentUpon>ButtonParameterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\ButtonView.cs">
+      <Link>Views\ButtonView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\ButtonView.Designer.cs">
+      <Link>Views\ButtonView.Designer.cs</Link>
+      <DependentUpon>ButtonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\MenuStripView.cs">
+      <Link>Views\MenuStripView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\MenuStripView.Designer.cs">
+      <Link>Views\MenuStripView.Designer.cs</Link>
+      <DependentUpon>MenuStripView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\ToolStripView.cs">
+      <Link>Views\ToolStripView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WebGUI\Views\ToolStripView.Designer.cs">
+      <Link>Views\ToolStripView.Designer.cs</Link>
+      <DependentUpon>ToolStripView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WinForms\ShellViewModel.cs">
+      <Link>ShellViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WinForms\ViewModels\ButtonParameterViewModel.cs">
+      <Link>ViewModels\ButtonParameterViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WinForms\ViewModels\ButtonViewModel.cs">
+      <Link>ViewModels\ButtonViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WinForms\ViewModels\MenuStripViewModel.cs">
+      <Link>ViewModels\MenuStripViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\SimpleParameters.WinForms\ViewModels\ToolStripViewModel.cs">
+      <Link>ViewModels\ToolStripViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Generated\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\SimpleParameters.WebGUI\ShellView.resx">
+      <Link>ShellView.resx</Link>
+      <DependentUpon>ShellView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\SimpleParameters.WebGUI\Views\ButtonParameterView.resx">
+      <Link>Views\ButtonParameterView.resx</Link>
+      <DependentUpon>ButtonParameterView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\SimpleParameters.WebGUI\Views\ButtonView.resx">
+      <Link>Views\ButtonView.resx</Link>
+      <DependentUpon>ButtonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\SimpleParameters.WebGUI\Views\MenuStripView.resx">
+      <Link>Views\MenuStripView.resx</Link>
+      <DependentUpon>MenuStripView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\SimpleParameters.WebGUI\Views\ToolStripView.resx">
+      <Link>Views\ToolStripView.resx</Link>
+      <DependentUpon>ToolStripView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj">
+      <Project>{a40bfa3d-4236-4842-8874-31dfd5e0540a}</Project>
+      <Name>CaliburnMicro.WebGUI.45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
+      <Name>MvvmFx.Logging.45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
+      <HintPath>C:\VS Projects\MvvmFx\trunk\Samples\CaliburnMicro\SimpleParameters.WebGUI.45\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <Visible>false</Visible>
+    </CustomReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v12.0\Gizmox.VWGApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1490</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1490/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

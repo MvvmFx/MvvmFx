@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{627DB2D5-88FE-4654-8517-FE660344C6D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinForms.TestBoundTreeView</RootNamespace>
+    <AssemblyName>WinForms.TestBoundTreeView</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WINFORMS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WINFORMS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WinForms.TestBoundTreeView\MainForm.cs">
+      <Link>MainForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\MainForm.Designer.cs">
+      <Link>MainForm.Designer.cs</Link>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\SyncedLists.cs">
+      <Link>SyncedLists.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\SyncedLists.Designer.cs">
+      <Link>SyncedLists.Designer.cs</Link>
+      <DependentUpon>SyncedLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\TreeListView.cs">
+      <Link>TreeListView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\TreeListView.Designer.cs">
+      <Link>TreeListView.Designer.cs</Link>
+      <DependentUpon>TreeListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\TreeView.cs">
+      <Link>TreeView.cs</Link>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="..\WinForms.TestBoundTreeView\TreeView.Designer.cs">
+      <Link>TreeView.Designer.cs</Link>
+      <DependentUpon>TreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="..\WinForms.TestBoundTreeView\MainForm.resx">
+      <Link>MainForm.resx</Link>
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\WinForms.TestBoundTreeView\SyncedLists.resx">
+      <Link>SyncedLists.resx</Link>
+      <DependentUpon>SyncedLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\WinForms.TestBoundTreeView\TreeListView.resx">
+      <Link>TreeListView.resx</Link>
+      <DependentUpon>TreeListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\WinForms.TestBoundTreeView\TreeView.resx">
+      <Link>TreeView.resx</Link>
+      <DependentUpon>TreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Src\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj">
+      <Project>{ed342c71-5d03-42e2-a7c2-efe6ab375627}</Project>
+      <Name>MvvmFx.Windows.Forms.451</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+      <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
+      <Name>MvvmFx.Logging.451</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.NLogLogger.451\MvvmFx.NLogLogger.451.csproj">
+      <Project>{d404afa8-83c5-4b73-8a85-d3748804cac4}</Project>
+      <Name>MvvmFx.NLogLogger.451</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BoundControls.Business.451\BoundControls.Business.451.csproj">
+      <Project>{235b8e10-25e0-4fc5-9d17-a7547a1220de}</Project>
+      <Name>BoundControls.Business.451</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C24FAFF7-7BCC-4B98-9376-D6B9CD0649B0}"
+	ProjectSection(SolutionItems) = preProject
+		License.txt = License.txt
+		..\..\mvvmfx.snk = ..\..\mvvmfx.snk
+		..\..\nuget.config = ..\..\nuget.config
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WebGUI", "MvvmLight.WebGUI\MvvmLight.WebGUI.csproj", "{474001FC-B479-4C82-9969-3AB5A4937DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WebGUI", "MvvmLight.Extras.WebGUI\MvvmLight.Extras.WebGUI.csproj", "{03242525-CBAB-4BCC-B6F1-B4280DD56032}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI", "..\..\Binding\WindowsBase.WebGUI\WindowsBase.WebGUI.csproj", "{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI", "..\..\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj", "{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{474001FC-B479-4C82-9969-3AB5A4937DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474001FC-B479-4C82-9969-3AB5A4937DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474001FC-B479-4C82-9969-3AB5A4937DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474001FC-B479-4C82-9969-3AB5A4937DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03242525-CBAB-4BCC-B6F1-B4280DD56032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03242525-CBAB-4BCC-B6F1-B4280DD56032}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03242525-CBAB-4BCC-B6F1-B4280DD56032}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03242525-CBAB-4BCC-B6F1-B4280DD56032}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

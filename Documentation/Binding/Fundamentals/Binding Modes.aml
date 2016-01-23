@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="15528a8b-3e26-4559-99fc-960dbe8346a1" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					MvvmFx bindings can operate in one of three modes, which can be set via the
+					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingBase.Mode</codeEntityReference> property. Changing this
+					property affects the direction in which changes propagate between the target and source objects of the binding. This
+					topic discusses each of the different <token>BindingMode</token>s in detail.
+				</para>
+			</content>
+		</section>
+		<section address="TwoWay">
+			<title>TwoWay</title>
+			<content>
+				<para>
+					<codeInline>TwoWay</codeInline> is the default mode in which bindings operate. When a <token>BindingMode</token> of
+					<codeInline>TwoWay</codeInline> is specified, changes in the target are propagated to the source(s), and changes to the
+					source(s) are propagated to the target. If the binding has a converter assigned to it, either method on that converter
+					could be called since values are propagating in both directions.
+				</para>
+				<para>
+					This is depicted in the figure below.
+					<mediaLink>
+						<caption placement="after" lead="Figure 1"><codeInline>TwoWay</codeInline> bindings</caption>
+						<image xlink:href="30422FB6-64BC-4812-97C0-E8833DC9F24B" placement="center"/>
+					</mediaLink>
+				</para>
+			</content>
+		</section>
+		<section address="OneWayToSource">
+			<title>OneWayToSource</title>
+			<content>
+				<para>
+					When a <token>BindingMode</token> of <codeInline>OneWayToSource</codeInline> is specified, changes in the target are
+					propagated to the source(s), but changes to the source(s) are <legacyItalic>not</legacyItalic> propagated to the target.
+					If the binding has a converter assigned to it, only the method responsible for converting the target to the source(s)
+					will be invoked. The method for converting the source9s to the target is not need because data never travels in that
+					direction.
+				</para>
+				<para>
+					This is depicted in the figure below.
+					<mediaLink>
+						<caption placement="after" lead="Figure 2"><codeInline>OneWayToSource</codeInline> bindings</caption>
+						<image xlink:href="9D4597BC-C46F-451b-B706-58EA1D313764" placement="center"/>
+					</mediaLink>
+				</para>
+			</content>
+		</section>
+		<section address="OneWayToTarget">
+			<title>OneWayToTarget</title>
+			<content>
+				<para>
+					When a <token>BindingMode</token> of <codeInline>OneWayToTarget</codeInline> is specified, changes in the source(s) are
+					propagated to the target, but changes to the target are <legacyItalic>not</legacyItalic> propagated to the source(s).
+					If the binding has a converter assigned to it, only the method responsible for converting the source(s) to the target
+					will be invoked. The method for converting the target to the source(s) is not need because data never travels in that
+					direction.
+				</para>
+				<para>
+					This is depicted in the figure below.
+					<mediaLink>
+						<caption placement="after" lead="Figure 3"><codeInline>OneWayToTarget</codeInline> bindings</caption>
+						<image xlink:href="195475D7-F4F3-4216-BDD8-D927F9F6947A" placement="center"/>
+					</mediaLink>
+				</para>
+			</content>
+		</section>
+		<relatedTopics>
+			<token>BindingMode</token>
+			<token>BindingBase</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

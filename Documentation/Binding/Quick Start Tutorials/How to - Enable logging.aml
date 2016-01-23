@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="53fc54f0-b3c7-47cd-9513-810ce331f44a" revisionNumber="1">
+	<developerHowToDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>
+				MvvmFx logs various pieces of information at key times during its operation. For example, a failed binding will result in error information being logged. Follow these steps to capture
+				this output in a log file.
+			</para>
+		</introduction>
+		<procedure>
+			<title>Enable Logging</title>
+			<steps class="ordered">
+				<step>
+					<content>
+						<para>
+							Add a configuration file (<legacyItalic>App.config</legacyItalic>) to your project.
+						</para>
+					</content>
+				</step>
+				<step>
+					<content>
+						<para>
+							Copy and paste the following content into your <legacyItalic>App.config</legacyItalic> file:							
+<code language="xml"><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+
+<configuration>
+	<system.diagnostics>
+		<trace autoflush="true"/>
+		<sources>
+			<source name="MvvmFx.Windows.WindowsBase" switchName="tracing">
+				<listeners>
+					<add name="textlistener" />
+				</listeners>
+			</source>
+		</sources>
+		<sharedListeners>
+			<add name="textlistener" initializeData="log.txt" type="System.Diagnostics.TextWriterTraceListener"/>
+		</sharedListeners>
+		<switches>
+			<add name="tracing" value="Verbose"/>
+		</switches>
+	</system.diagnostics>
+</configuration>
+]]></code>
+						</para>
+					</content>
+				</step>
+			</steps>
+		</procedure>
+	</developerHowToDocument>
+</topic>

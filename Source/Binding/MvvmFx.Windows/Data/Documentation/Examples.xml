@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--
+IMPORTANT: If this document is formatted by VS, the code alignment on the first line of each sample is broken, since VS moves the
+CDATA openers onto the line after the <code> elements.
+-->
+
+<Examples>
+	<Example Name="BindingManager.Creation">
+		<example>
+			The following example demonstrates how a <c>BindingManager</c> can be constructed and populated with some bindings:
+			<code><![CDATA[var bindingManager = new BindingManager();
+//bind the Name properties of the customers
+bindingManager.Bindings.Add(new TypedBinding<Customer, Customer>(targetCustomer, x => x.Name, sourceCustomer, x => x.Name));
+bind the Age properties of the customers
+bindingManager.Bindings.Add(new Binding(targetCustomer, "Age", sourceCustomer, "Age"));]]></code>
+		</example>
+	</Example>
+
+	<Example Name="BindingManager.Creation.Fluent">
+		<example>
+			The following example demonstrates how a <c>BindingManager</c> can be constructed and populated with some bindings using the fluent interface:
+			<code>
+				<![CDATA[var bindingManager = new BindingManager();
+bindingManager.Bind(targetCustomer, x => x.Name)
+	.To(sourceCustomer, x => x.Name)
+	.Activate();
+bindingManager.Bind(targetCustomer, x => x.Age)
+	.To(sourceCustomer, x => x.Age)
+	.Activate();]]>
+			</code>
+		</example>
+	</Example>
+
+	<Example Name="BindingManager.Component">
+		<example>
+			The following example demonstrates how a component uses a <c>BindingManager</c> for its lifetime to link its <c>Id</c> property
+			with the <c>Name</c> property of a <c>Customer</c> instance:
+			<code><![CDATA[public class SomeComponent : Component, INotifyPropertyChanged
+{
+	private readonly BindingManager _bindingManager;
+	private string _id;
+
+	public SomeComponent(Customer customer)
+	{
+		_bindingManager = new BindingManager();
+		_bindingManager.Bindings.Add(new TypedBinding<SomeComponent, Customer>(this, x => x.Id, customer, x => x.Name));
+	}
+
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	public string Id
+	{
+		get { return _id; }
+		set
+		{
+			if (_id != value)
+			{
+				_id = value;
+				OnPropertyChanged("Id");
+			}
+		}
+	}
+
+	protected override void Dispose(bool disposing)
+	{
+		base.Dispose(disposing);
+
+		if (disposing)
+		{
+			_bindingManager.Dispose();
+		}
+	}
+
+	protected void OnPropertyChanged(string propertyName)
+	{
+		var handler = PropertyChanged;
+
+		if (handler != null)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}]]></code>
+		</example>
+	</Example>
+
+	<Example Name="Binding.Simple">
+		<example>
+			The following example demonstrates how a <c>Binding</c> can be used to connect the <c>Name</c> property of two <c>Customer</c>
+			instances:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new Binding(targetCustomer, "Name", sourceCustomer, "Name");
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+	</Example>
+
+	<Example Name="Binding.Simple.Fluent">
+		<example>
+			The following example demonstrates how a <c>Binding</c> can be used to connect the <c>Name</c> property of two <c>Customer</c>
+			instances using the fluent interface:
+			<code><![CDATA[var bindingManager = new BindingManager();
+bindingManager.Bind(targetCustomer, "Name")
+	.To(sourceCustomer, "Name")
+	.Activate();]]></code>
+		</example>
+	</Example>
+
+	<Example Name="Binding.Complex">
+		<example>
+			The following example demonstrates how a <c>Binding</c> can be used to connect a <c>PostCode</c> property on a <c>Customer</c>
+			instance with a <c>Region</c> property on a <c>CustomerInfo</c> instance. The post code is a <c>string</c> so needs to be
+			converted to a member of the <c>Region</c> enumeration during bindings. Since a region is not enough information to convert
+			to a post code, the binding is one-way.
+			<code><![CDATA[public enum Region
+{
+	Unknown,
+	North,
+	South,
+	East,
+	West
+}
+
+public abstract class Entity : INotifyPropertyChanged
+{
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	protected void OnPropertyChanged(string propertyName)
+	{
+		var handler = PropertyChanged;
+
+		if (handler != null)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+public class Customer : Entity
+{
+	private string _name;
+	private readonly Address _address;
+
+	public Customer()
+	{
+		_address = new Address();
+	}
+
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (_name != value)
+			{
+				_name = value;
+				OnPropertyChanged("Name");
+			}
+		}
+	}
+
+	public Address Address
+	{
+		get { return _address; }
+	}
+}
+
+public class Address : Entity
+{
+	private string _postCode;
+
+	public string PostCode
+	{
+		get { return _postCode; }
+		set
+		{
+			if (_postCode != value)
+			{
+				_postCode = value;
+				OnPropertyChanged("PostCode");
+			}
+		}
+	}
+}
+
+public class SomeClass : Entity
+{
+	private readonly BindingManager _bindingManager;
+	private Region _region;
+
+	public SomeClass(Customer customer)
+	{
+		_bindingManager = new BindingManager();
+		var binding = new Binding(this, "Region", customer, "Address.PostCode");
+		binding.Converter = new PostCodeToRegionConverter();
+		binding.Mode = BindingMode.OneWayToTarget;
+		_bindingManager.Bindings.Add(binding);
+	}
+
+	public Region Region
+	{
+		get { return _region; }
+		set
+		{
+			if (_region != value)
+			{
+				_region = value;
+				OnPropertyChanged("Region");
+			}
+		}
+	}
+}
+
+public class PostCodeToRegionConverter : IValueConverter
+{
+	public object Convert(object value, System.Type type, object parameter)
+	{
+		var postCode = value as string;
+
+		if (string.IsNullOrEmpty(postCode))
+		{
+			return Region.Unknown;
+		}
+
+		switch (postCode[0])
+		{
+			case 'N':
+				return Region.North;
+			case 'S':
+				return Region.South;
+			case 'E':
+				return Region.East;
+			case 'W':
+				return Region.West;
+			default:
+				return Region.Unknown;
+		}
+	}
+
+	public object ConvertBack(object value, System.Type type, object parameter)
+	{
+		throw new NotSupportedException();
+	}
+}]]></code>
+		</example>
+	</Example>
+
+	<Example Name="TypedBinding.Simple">
+		<example>
+			The following example demonstrates how a <c>TypedBinding</c> can be used to connect the <c>Name</c> property of two
+			<c>Customer</c> instances:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new TypedBinding<Customer, Customer>(targetCustomer, x => x.Name, sourceCustomer, x => x.Name);
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+	</Example>
+
+	<Example Name="TypedBinding.Simple.Fluent">
+		<example>
+			The following example demonstrates how a <c>TypedBinding</c> can be used to connect the <c>Name</c> property of two
+			<c>Customer</c> instances using the fluent interface:
+			<code><![CDATA[var bindingManager = new BindingManager();
+bindingManager.Bind(targetCustomer, x => x.Name)
+	.To(sourceCustomer, x => x.Name)
+	.Activate();]]></code>
+		</example>
+	</Example>
+
+	<Example Name="TypedBinding.Complex">
+		<example>
+			The following example demonstrates how a <c>TypedBinding</c> can be used to connect a <c>PostCode</c> property on a
+			<c>Customer</c> instance with a <c>Region</c> property on a <c>CustomerInfo</c> instance. The post code is a <c>string</c> so
+			needs to be converted to a member of the <c>Region</c> enumeration during bindings. Since a region is not enough information
+			to convert to a post code, the binding is one-way.
+			<code><![CDATA[public enum Region
+{
+	Unknown,
+	North,
+	South,
+	East,
+	West
+}
+
+public abstract class Entity : INotifyPropertyChanged
+{
+	public event PropertyChangedEventHandler PropertyChanged;
+
+	protected void OnPropertyChanged(string propertyName)
+	{
+		var handler = PropertyChanged;
+
+		if (handler != null)
+		{
+			handler(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+public class Customer : Entity
+{
+	private string _name;
+	private readonly Address _address;
+
+	public Customer()
+	{
+		_address = new Address();
+	}
+
+	public string Name
+	{
+		get { return _name; }
+		set
+		{
+			if (_name != value)
+			{
+				_name = value;
+				OnPropertyChanged("Name");
+			}
+		}
+	}
+
+	public Address Address
+	{
+		get { return _address; }
+	}
+}
+
+public class Address : Entity
+{
+	private string _postCode;
+
+	public string PostCode
+	{
+		get { return _postCode; }
+		set
+		{
+			if (_postCode != value)
+			{
+				_postCode = value;
+				OnPropertyChanged("PostCode");
+			}
+		}
+	}
+}
+
+public class SomeClass : Entity
+{
+	private readonly BindingManager _bindingManager;
+	private Region _region;
+
+	public SomeClass(Customer customer)
+	{
+		_bindingManager = new BindingManager();
+		var binding = new TypedBinding<SomeClass, Customer>(this, x=> x.Region, customer, x => x.Address.PostCode);
+		binding.Converter = new PostCodeToRegionConverter();
+		binding.Mode = BindingMode.OneWayToTarget;
+		_bindingManager.Bindings.Add(binding);
+	}
+
+	public Region Region
+	{
+		get { return _region; }
+		set
+		{
+			if (_region != value)
+			{
+				_region = value;
+				OnPropertyChanged("Region");
+			}
+		}
+	}
+}
+
+public class PostCodeToRegionConverter : IValueConverter
+{
+	public object Convert(object value, System.Type type, object parameter)
+	{
+		var postCode = value as string;
+
+		if (string.IsNullOrEmpty(postCode))
+		{
+			return Region.Unknown;
+		}
+
+		switch (postCode[0])
+		{
+			case 'N':
+				return Region.North;
+			case 'S':
+				return Region.South;
+			case 'E':
+				return Region.East;
+			case 'W':
+				return Region.West;
+			default:
+				return Region.Unknown;
+		}
+	}
+
+	public object ConvertBack(object value, System.Type type, object parameter)
+	{
+		throw new NotSupportedException();
+	}
+}]]></code>
+		</example>
+	</Example>
+
+	<Example Name="MultiBinding.Simple">
+		<example>
+			The following example demonstrates how a <c>MultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property of a
+			<c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new MultiBinding(mail, "DeliveryAddress");
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line1 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line2 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line3 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.PostCode });
+binding.Converter = new AddressConverter();
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+	</Example>
+
+	<Example Name="MultiBinding.Simple.Fluent">
+		<example>
+			The following example demonstrates how a <c>MultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property of a
+			<c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance using the fluent interface:
+			<code>
+				<![CDATA[var bindingManager = new BindingManager();
+bindingManager.MultiBind(mail, "DeliveryAddress)
+	.WithConverter(new AddressConverter())
+	.To(customer, x => x.Address.Line1)
+	.AndTo(customer, x => x.Address.Line2)
+	.AndTo(customer, x => x.Address.Line3)
+	.AndTo(customer, x => x.Address.PostCode)
+	.Activate();]]>
+			</code>
+		</example>
+	</Example>
+
+	<Example Name="TypedMultiBinding.Simple">
+		<example>
+			The following example demonstrates how a <c>TypedMultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property
+			of a <c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance:
+			<code><![CDATA[var bindingManager = new BindingManager();
+var binding = new TypedMultiBinding<Mail>(mail, x => x.DeliveryAddress);
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line1 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line2 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.Line3 });
+binding.Sources.Add(new TypedBinding<object, Customer>() { SourceObject = customer, SourceExpression = x => x.Address.PostCode });
+binding.Converter = new AddressConverter();
+bindingManager.Bindings.Add(binding);]]></code>
+		</example>
+	</Example>
+
+	<Example Name="TypedMultiBinding.Simple.Fluent">
+		<example>
+			The following example demonstrates how a <c>TypedMultiBinding</c> can be used to connect the <c>DeliveryAddress</c> property
+			of a <c>Mail</c> instance to multiple address-related properties in a <c>Customer</c> instance using the fluent interface:
+			<code>
+				<![CDATA[var bindingManager = new BindingManager();
+bindingManager.MultiBind(mail, x => x.DeliveryAddress)
+	.WithConverter(new AddressConverter())
+	.To(customer, x => x.Address.Line1)
+	.AndTo(customer, x => x.Address.Line2)
+	.AndTo(customer, x => x.Address.Line3)
+	.AndTo(customer, x => x.Address.PostCode)
+	.Activate();]]>
+			</code>
+		</example>
+	</Example>
+
+	<Example Name="IValueConverter.Simple">
+		<example>
+			The following example shows a simple <c>IValueConverter</c> that converts an <c>Int32</c> into a culturally-sensitive
+			currency-formatted <c>string</c>. In this case, changes are only being pushed from the source to the target, so the
+			<c>ConvertBack</c> method is left without an implementation:
+			<code><![CDATA[public class NumberConverter : IValueConverter
+{
+	public object Convert(object value, Type type, object parameter)
+	{
+		var i = (int)value;
+		return i.ToString("C", CultureInfo.CurrentUICulture);
+	}
+
+	public object ConvertBack(object value, Type type, object parameter)
+	{
+		throw new NotImplementedException();
+	}
+}]]></code>
+		</example>
+	</Example>
+
+	<Example Name="IValueConverter.Complex">
+		<example>
+			The following examples shows an <c>IValueConverter</c> implementation that converters between a custom <c>Gender</c> class
+			and a <c>string</c>:
+			<code><![CDATA[public class Gender
+{
+	private readonly string _display;
+
+	public static readonly Gender Male = new Gender("Male");
+	public static readonly Gender Female = new Gender("Female");
+
+	private Gender(string display)
+	{
+		_display = display;
+	}
+
+	public string Display
+	{
+		get { return _display; }
+	}
+}
+
+public class GenderConverter : IValueConverter
+{
+	public object Convert(object value, Type type, object parameter)
+	{
+		var gender = value as Gender;
+		return gender == null ? null : gender.Display;
+	}
+
+	public object ConvertBack(object value, Type type, object parameter)
+	{
+		switch (value as string)
+		{
+			case "Male":
+				return Gender.Male;
+			case "Female":
+				return Gender.Female;
+			default:
+				throw new InvalidOperationException();
+		}
+	}
+}]]></code>
+		</example>
+	</Example>
+
+	<Example Name="IMultiValueConverter.Simple">
+		<example>
+			The following example shows an implementation of <c>IMultiValueConverter</c> that sums a set of integers. Since there is no
+			way to convert a summed integer back into its constituent parts, the <c>ConvertBacks</c> method is left without an
+			implementation:
+			<code><![CDATA[public class SumConverter : IMultiValueConverter
+{
+	public object ConvertSourcesToTarget(object[] values, Type type, object parameter)
+	{
+		return values.Cast<int>().Aggregate((working, next) => working + next);
+	}
+
+	public object[] ConvertBacks(object value, Type[] types, object parameter)
+	{
+		throw new NotImplementedException();
+	}
+}]]></code>
+		</example>
+	</Example>
+	
+	<Example Name="IMultiValueConverter.Complex">
+		<example>
+			The following example shows an implementation of <c>IMultiValueConverter</c> that converts a set of values into a single
+			delimitered <c>string</c>:
+			<code><![CDATA[public class SeparatorConverter : IMultiValueConverter
+{
+	private readonly string _separator;
+
+	public SeparatorConverter(string separator)
+	{
+		_separator = separator;
+	}
+
+	public object ConvertSourcesToTarget(object[] values, Type type, object parameter)
+	{
+		return string.Join(_separator, values.Select(x => x == null ? "" : x.ToString()).ToArray());
+	}
+
+	public object[] ConvertBacks(object value, Type[] types, object parameter)
+	{
+		var valueStr = value as string;
+
+		if (valueStr == null)
+		{
+			return new object[types.Length];
+		}
+
+		return valueStr.Split(new string[] { _separator }, StringSplitOptions.None);
+	}
+}
+]]></code>
+		</example>
+	</Example>
+</Examples>

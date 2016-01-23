@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solution Items", "{4EC01620-6A20-4745-9AD1-A7541ACA8C5C}"
+	ProjectSection(SolutionItems) = preProject
+		Author.txt = Author.txt
+		License-MvvmFx.CaliburnMicro.txt = License-MvvmFx.CaliburnMicro.txt
+		..\Binding\License-MvvmFx.Windows.txt = ..\Binding\License-MvvmFx.Windows.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro", "CaliburnMicro", "{84165F3F-40A5-4872-B6F5-3BC29A18C60F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI", "CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj", "{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms", "CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj", "{47CFADF9-5596-4D48-8813-E89283E5AD35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro.DialogExtensions", "CaliburnMicro.DialogExtensions", "{9815BF85-4212-4299-B937-D7591C2D804B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WebGUI", "CaliburnMicro.DialogExtensions.WebGUI\CaliburnMicro.DialogExtensions.WebGUI.csproj", "{9B854069-1B5E-453D-A49F-E91B79D1233E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms", "CaliburnMicro.DialogExtensions.WinForms\CaliburnMicro.DialogExtensions.WinForms.csproj", "{88B2E890-6B9C-43B4-8399-93DB850B32E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{E885CCBB-6EB3-45AE-A38C-CEC2726BF17F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple DataBinding", "Simple DataBinding", "{904CD99E-E719-4D81-A204-D79EBEABAE05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI", "..\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj", "{9D62264B-077A-4A1F-9605-5EDE74406798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms", "..\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj", "{43328D6B-4ACB-46DE-8791-A32B45F9AD04}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47CFADF9-5596-4D48-8813-E89283E5AD35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47CFADF9-5596-4D48-8813-E89283E5AD35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47CFADF9-5596-4D48-8813-E89283E5AD35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47CFADF9-5596-4D48-8813-E89283E5AD35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B854069-1B5E-453D-A49F-E91B79D1233E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B854069-1B5E-453D-A49F-E91B79D1233E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B854069-1B5E-453D-A49F-E91B79D1233E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B854069-1B5E-453D-A49F-E91B79D1233E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B2E890-6B9C-43B4-8399-93DB850B32E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B2E890-6B9C-43B4-8399-93DB850B32E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B2E890-6B9C-43B4-8399-93DB850B32E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B2E890-6B9C-43B4-8399-93DB850B32E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43328D6B-4ACB-46DE-8791-A32B45F9AD04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43328D6B-4ACB-46DE-8791-A32B45F9AD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43328D6B-4ACB-46DE-8791-A32B45F9AD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43328D6B-4ACB-46DE-8791-A32B45F9AD04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B} = {84165F3F-40A5-4872-B6F5-3BC29A18C60F}
+		{47CFADF9-5596-4D48-8813-E89283E5AD35} = {84165F3F-40A5-4872-B6F5-3BC29A18C60F}
+		{9B854069-1B5E-453D-A49F-E91B79D1233E} = {9815BF85-4212-4299-B937-D7591C2D804B}
+		{88B2E890-6B9C-43B4-8399-93DB850B32E0} = {9815BF85-4212-4299-B937-D7591C2D804B}
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8} = {E885CCBB-6EB3-45AE-A38C-CEC2726BF17F}
+		{9D62264B-077A-4A1F-9605-5EDE74406798} = {904CD99E-E719-4D81-A204-D79EBEABAE05}
+		{43328D6B-4ACB-46DE-8791-A32B45F9AD04} = {904CD99E-E719-4D81-A204-D79EBEABAE05}
+	EndGlobalSection
+EndGlobal

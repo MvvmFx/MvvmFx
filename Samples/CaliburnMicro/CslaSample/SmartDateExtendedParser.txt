@@ -1,0 +1,65 @@
+Standard SmartDate parsing (en)
+
+Yesterday
+"-"
+"y"
+"yesterday"
+
+Today
+"."
+"t"
+"today"
+
+Tomorrow
+"+"
+"tom"
+"tomorrow"
+
+
+Extended parsing (universal)
+
+Accepted separators
+" " (space)
+"-" (hyphen)
+"." (period)
+"," (comma)
+"/" (slash)
+"\" (backslash)
+NB - Different separators can be mixed. When using separators, the leading zero isn't needed for days, months or years < 10.
+
+
+Short form
+* NNsNN
+* NNsNNsNN
+where
+* s is the any of the accepted separators
+* NN refers to day number and month number according to CurrentInfo.ShortDatePattern. The leading zero isn't needed for days, months or years < 10.
+NB - The day, month, year order is parsed according to CurrentInfo.ShortDatePattern.
+
+
+Short form with no separator
+* 4 digits exactly (2 digits for day, 2 digits for month, always current year)
+* 6 digits exactly (2 digits for day, 2 digits for month, and 2 digits for year, century as defined by NET framework)
+* 8 digits exactly (2 digits for day, 2 digits for month and 4 digits for year)
+NB - The day, month, year order is parsed according to CurrentInfo.ShortDatePattern.
+
+
+Relative dates
+
+Days
+"+nnn..." - nnn... days from now
+"-nnn..." - nnn... day ago
+"nn" - nearest day nn (if we are the 25th, 5 is the 5th of next month)
+
+Months (calendar month, i.e. 28, 29, 30 or 31 days)
+"<" - one month ago
+"<nnn..." - nnn... month ago
+">" - one month from now
+">nnn..." - nnn... month from now
+
+Years (calendar year, i.e. 365 or 366 days)
+"<<" - one year ago
+"<<nnn..." - nnn... year ago
+">>" - one year from now
+">>nnn..." - nnn... year from now
+

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="bcf2b857-1acd-4ef2-ae8d-ec7b26d4a036" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					The <token>BindingManager</token> class is used to hold a set of bindings and control their scope and life-cycle. It is
+					designed to be lightweight so that as many instances of it as needed can be created throughout your application. This
+					has the additional benefit of allowing components that use a <token>BindingManager</token> to dispose of it once they
+					are themselves disposed.
+				</para>
+				<alert class="note">
+					<para>
+						Although <token>BindingManager</token> implements the <token>IBindingContainer</token> interface, it is always a
+						root-level container. As such, its implementation of
+						<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.IBindingContainer.Container</codeEntityReference> will always
+						yield <literal>null</literal>.
+					</para>
+				</alert>
+			</content>
+		</section>
+		<section address="Bindings and Activation">
+			<title>Bindings and Activation</title>
+			<content>
+				<para>
+					The set of bindings being managed by a <token>BindingManager</token> are exposed through its
+					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingManager.Bindings</codeEntityReference> property. This collection can
+					be added to and removed from at any time. When an instance of <token>BindingBase</token> is added to this collection, it
+					is immediately activated. Once activated, that binding cannot be modified. When an instance is removed, it is deactivated,
+					whereafter it can be modified and perhaps added back into a <token>BindingManager</token>.
+				</para>
+				<alert class="caution">
+					Since the collection of bindings exposed by a <token>BindingManager</token> is modifiable, it is recommended that you
+					limit the accessibility of your <token>BindingManager</token> instances, and do not pass around a reference to the
+					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingManager.Bindings</codeEntityReference> collection.
+				</alert>
+			</content>
+		</section>
+		<section address="SynchronizationContext Support">
+			<title>SynchronizationContext Support</title>
+			<content>
+				<para>
+					When a <token>BindingManager</token> is constructed, an optional
+					<codeEntityReference>T:System.Threading.SynchronizationContext</codeEntityReference> can be supplied. If an instance is
+					supplied, it is used by the <token>BindingManager</token> and all its constituent bindings to marshal property changes
+					to the correct context. This feature is particularly useful in user interface scenarios, since property changes often need
+					to be performed on the UI thread.
+				</para>
+				<para>
+					If the default <token>BindingManager</token> constructor is used, then
+					<codeEntityReference>P:System.Threading.SynchronizationContext.Current</codeEntityReference> is passed in as the context.
+					If you explicitly require no <codeEntityReference>T:System.Threading.SynchronizationContext</codeEntityReference>, pass in
+					<codeInline>null</codeInline> to the overloaded <token>BindingManager</token> constructor.
+				</para>
+			</content>
+		</section>
+		<section address="Disposal">
+			<title>Disposal</title>
+			<content>
+				<para>
+					The <token>BindingManager</token> class implements <codeEntityReference>T:System.IDisposable</codeEntityReference>. When
+					disposed, it deactivates all bindings contained within it. This makes it very simple to clean up all related bindings by
+					storing those bindings in their own instance of <token>BindingManager</token>.
+				</para>
+				<alert class="note">
+					Once disposed, a <token>BindingManager</token> is no longer usable.
+				</alert>
+			</content>
+		</section>
+		<relatedTopics>
+			<link xlink:href="7510aeed-35ae-43d1-bcf0-f6c963836184" />
+			<link xlink:href="d9ad8628-6a86-46fc-a8bf-756988648a57" />
+			<token>BindingManager</token>
+			<token>BindingBase</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-Logging</id>
+    <title>MVVM FX - Logging</title>
+    <tags>MVVMFX Logging</tags>
+    <version>3.0.0</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://mvvmfx.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+MvvmFx.Logging.ILog interface definition
+    </description>
+    <summary>
+MvvmFx.Logging.ILog interface definition
+    </summary>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <!-- .NET 4.0 -->
+    <file src="..\..\bin\Release\Common\**\net40\MvvmFx.Logging.dll*" target="lib\net40" />
+    <file src="..\..\bin\Release\Common\**\net40\MvvmFx.Logging.pdb*" target="lib\net40" />
+    <file src="..\..\bin\Release\Common\**\net40\MvvmFx.Logging.xml*" target="lib\net40" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\Common\**\net45\MvvmFx.Logging.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\Common\**\net45\MvvmFx.Logging.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\Common\**\net45\MvvmFx.Logging.xml*" target="lib\net45" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\Common\**\net451\MvvmFx.Logging.dll*" target="lib\net451" />
+    <file src="..\..\bin\Release\Common\**\net451\MvvmFx.Logging.pdb*" target="lib\net451" />
+    <file src="..\..\bin\Release\Common\**\net451\MvvmFx.Logging.xml*" target="lib\net451" />
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Src\**\MvvmFx.Logging\**\*.cs" target="src" />
+    <file src="..\..\Src\**\MvvmFx.Logging.45\**\*.cs" target="src" />
+    <file src="..\..\Src\**\MvvmFx.Logging.451\**\*.cs" target="src" />
+  </files>
+</package>

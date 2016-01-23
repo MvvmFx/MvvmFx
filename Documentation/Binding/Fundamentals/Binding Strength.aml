@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="3d4d6540-546c-4961-8c23-a4af0d46fc40" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<section address="Binding Strength">
+			<title>Binding Strength</title>
+			<content>
+				<para>
+					All bindings within MvvmFx are weak. This means that they will not keep your target or source objects alive and safe from
+					the garbage collector. In the event that a target or source object is referenced only by a MvvmFx binding, it will be
+					elligible for garbage collection.
+				</para>
+			</content>
+		</section>
+	</developerConceptualDocument>
+</topic>

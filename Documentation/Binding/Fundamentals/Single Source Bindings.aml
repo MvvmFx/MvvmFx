@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<topic id="a3575f47-1a24-4058-999c-ab7ea3927ee0" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<autoOutline />
+		</introduction>
+		<section address="Overview">
+			<title>Overview</title>
+			<content>
+				<para>
+					This topic discusses the concrete, single source bindings provided with MvvmFx. Each of these bindings inherits from
+					<token>SingleSourceBinding</token> but provides a different way of resolving the bound properties on the target and
+					source objects.
+				</para>
+			</content>
+		</section>
+		<section address="Binding">
+			<title>Binding</title>
+			<content>
+				<para>
+					The <token>Binding</token> class is a single source binding that uses simple property path expressions to resolve the
+					bound properties on both the target and source objects. The advantage of this class is that it does not require the
+					properties be known at compile-time. The disadvantage is that there is no compile-time checking of property expressions.
+					If the properties you are binding to are known at compile-time, it is recommended you use a
+					<link xlink:href="#TypedBinding">TypedBinding</link> instead.
+				</para>
+				<para>
+					A very simple example of the <token>Binding</token> class is shown below, where a common property on two
+					<codeInline>Customer</codeInline> objects is bound together:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Binding"/>
+				</para>
+				<para>
+					Or, using the fluent interface:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Fluent Binding"/>
+				</para>
+				<para>
+					A more complicated <token>Binding</token> that specifies both a <token>BindingMode</token> and
+					<token>IValueConverter</token> is shown below:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Complex Binding"/>
+				</para>
+				<para>
+					Again, using the fluent interface:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Complex Fluent Binding"/>
+				</para>
+				<para>
+					The details of the allowed property path expressions can be found in the API documentation for the <token>Binding</token>
+					class.
+				</para>
+			</content>
+		</section>
+		<section address="TypedBinding">
+			<title>TypedBinding</title>
+			<content>
+				<para>
+					The <token>TypedBinding</token> class is a single source binding that uses lambda expressions to resolve the bound
+					properties on both the target and source objects. It is a generic class with two type parameters. The first is the
+					type of the target object, and the second is the type of the source object.The advantage of this class is that the
+					expressions are compile-time checked, and are thus guaranteed to exist. The disadvantage is that the property path
+					needs to be known at compile-time, as well as the target and source types. If these details are not known until
+					runtime, you can instead use a <link xlink:href="#Binding">Binding</link> with dynamically generated property paths.
+				</para>
+				<para>
+					A very simple example of the <token>TypedBinding</token> class is shown below, where a common property on two
+					<codeInline>Customer</codeInline> objects is bound together:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple TypedBinding"/>
+				</para>
+				<para>
+					Or, using the fluent interface:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Simple Fluent TypedBinding"/>
+				</para>
+				<para>
+					A more complicated <token>TypedBinding</token> that specifies both a <token>BindingMode</token> and
+					<token>IValueConverter</token> is shown below:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Complex TypedBinding"/>
+				</para>
+				<para>
+					Again, using the fluent interface:
+					<code source="..\Src\Samples\SimpleBindings\Program.cs" region="Complex Fluent TypedBinding"/>
+				</para>
+			</content>
+		</section>
+		<relatedTopics>
+			<link xlink:href="4ac64f60-a8d4-4fcb-9333-1021943582e0" />
+			<link xlink:href="d64f7dcd-4103-4e55-bb48-2c08c349e932" />
+			<token>Binding</token>
+			<token>TypedBinding</token>
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

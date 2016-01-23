@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-CaliburnMicro.DialogExtensions-WinForms</id>
+    <title>MVVM FX - CaliburnMicro WinForms</title>
+    <tags>CaliburnMicro Caliburn.Micro MVVM MVVMFX WinForms Windows-Forms Model-View-ViewModel Presentation UI ViewModel</tags>
+    <version>3.0.0</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>http://caliburnmicro.codeplex.com/license</licenseUrl>
+    <projectUrl>http://mvvmfx.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern.
+    </description>
+    <summary>
+Supports the creation of applications using the MVVM pattern for Windows Forms.
+    </summary>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="MvvmFx-CaliburnMicro-WinForms" version="[3.0.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- .NET 4.0 -->
+    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net40" />
+    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net40" />
+    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net40" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net45" />
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net451" />
+    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net451" />
+    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net451" />
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Src\**\CaliburnMicro.DialogExtensions.WinForms\**\*.cs" target="src" />
+    <file src="..\..\Src\**\CaliburnMicro.DialogExtensions.WinForms.45\**\*.cs" target="src" />
+    <file src="..\..\Src\**\CaliburnMicro.DialogExtensions.WinForms.451\**\*.cs" target="src" />
+  </files>
+</package>
