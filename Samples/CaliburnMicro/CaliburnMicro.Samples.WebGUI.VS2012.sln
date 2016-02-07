@@ -1,39 +1,35 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample BoundTreeView", "Sample BoundTreeView", "{88419FF3-6BF0-47C2-A759-8783C217FF63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample MasterDetailWithModel", "Sample MasterDetailWithModel", "{7D48DED2-FC7A-4916-AE90-9879F4C8BFF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{79B11CEA-55D2-4A21-A65C-5C949911EDDC}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WebGUI", "AcyncUpdate.WebGUI\AcyncUpdate.WebGUI.csproj", "{C675A9FD-2121-48CA-8FAA-6D1EA9BB8AA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParameters.WebGUI", "SimpleParameters.WebGUI\SimpleParameters.WebGUI.csproj", "{866A70B5-4D5B-42FF-B0E8-8A9C2DE4ED4E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample BoundTreeView", "Sample BoundTreeView", "{88419FF3-6BF0-47C2-A759-8783C217FF63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBusiness", "BoundTreeView\FamilyBusiness\FamilyBusiness.csproj", "{B553D526-BDEC-4DDC-A4CE-8F487BD03A22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundTreeView.WebGUI", "BoundTreeView\BoundTreeView.WebGUI\BoundTreeView.WebGUI.csproj", "{294BE941-DC19-43C4-B933-A593F53AD494}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample MasterDetailWithModel", "Sample MasterDetailWithModel", "{7D48DED2-FC7A-4916-AE90-9879F4C8BFF6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsBusiness", "MasterDetailWithModel\StudentsBusiness\StudentsBusiness.csproj", "{842CE3F4-840B-4D01-AE7C-60F784C959F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WebGUI", "MasterDetailWithModel\MasterDetailWithModel.WebGUI\MasterDetailWithModel.WebGUI.csproj", "{385F646C-E886-452B-A57E-7393BCE5970A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{79B11CEA-55D2-4A21-A65C-5C949911EDDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI", "..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj", "{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI", "..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj", "{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI", "..\..\Source\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj", "{9D62264B-077A-4A1F-9605-5EDE74406798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI", "..\..\Src\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj", "{9D62264B-077A-4A1F-9605-5EDE74406798}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\..\Src\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms", "..\..\Src\BoundControls\MvvmFx.WebGUI.Forms\MvvmFx.WebGUI.Forms.csproj", "{17BAAB70-3047-4B50-9374-F01664A5AB59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms", "..\..\Source\BoundControls\MvvmFx.WebGUI.Forms\MvvmFx.WebGUI.Forms.csproj", "{17BAAB70-3047-4B50-9374-F01664A5AB59}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundTreeView.SeleniumTests", "BoundTreeView\BoundTreeView.SeleniumTests\BoundTreeView.SeleniumTests.csproj", "{457E73ED-74F3-44A7-84DF-031027C3DCC8}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.WinForms", "CslaSample.WinForms\CslaSample.WinForms.csproj", "{783A74EC-15EF-4B58-9206-B54DDE74C182}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.Business", "CslaSample.Business\CslaSample.Business.csproj", "{C8E78E6E-506D-495E-AD16-1BA31DC58DBC}"
@@ -8,10 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDateExtendedParser", "SmartDateExtendedParser\SmartDateExtendedParser.csproj", "{8E14CC07-2607-4893-8C77-AC84BACFE8D0}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
