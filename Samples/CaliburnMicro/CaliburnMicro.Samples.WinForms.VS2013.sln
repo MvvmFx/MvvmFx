@@ -29,31 +29,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WinFo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{096CB38E-0BAE-415C-9225-96F68025BC32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.45", "..\..\Src\CaliburnMicro\CaliburnMicro.WinForms.45\CaliburnMicro.WinForms.45.csproj", "{8A70916C-7D79-4539-A4E4-178FBB66C703}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.45", "..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.45\CaliburnMicro.WinForms.45.csproj", "{8A70916C-7D79-4539-A4E4-178FBB66C703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.451", "..\..\Src\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.451", "..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.45", "..\..\Src\Binding\MvvmFx.DataBinding.WinForms.45\MvvmFx.DataBinding.WinForms.45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.45", "..\..\Source\Binding\MvvmFx.DataBinding.WinForms.45\MvvmFx.DataBinding.WinForms.45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.451", "..\..\Src\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.451", "..\..\Source\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.45", "..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.45", "..\..\Source\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.45", "..\..\Src\BoundControls\MvvmFx.Windows.Forms.45\MvvmFx.Windows.Forms.45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.45", "..\..\Source\BoundControls\MvvmFx.Windows.Forms.45\MvvmFx.Windows.Forms.45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.451", "..\..\Src\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.451", "..\..\Source\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WinForms.451", "AcyncUpdate.WinForms.451\AcyncUpdate.WinForms.451.csproj", "{6C6664D2-0BD5-41EC-A267-35DD3E346DD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParameters.WinForms.451", "SimpleParameters.WinForms.451\SimpleParameters.WinForms.451.csproj", "{A09CF247-6900-436F-A2BF-51E4741779A6}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

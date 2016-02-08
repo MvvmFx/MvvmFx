@@ -15,10 +15,6 @@
     <StartPageUrl>Form1.wgx</StartPageUrl>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -118,18 +114,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj">
       <Project>{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}</Project>
       <Name>CaliburnMicro.WebGUI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
       <Name>MvvmFx.Logging</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
-      <HintPath>C:\VS Projects\mvvmfx.svn.codeplex.com\SVN\trunk\Src\Frameworks\CaliburnMicro\AcyncUpdate.WebGUI\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <HintPath>C:\Visual Studio Projects\GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>

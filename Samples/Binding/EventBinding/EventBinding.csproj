@@ -13,10 +13,6 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -62,7 +58,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj">
       <Project>{6E93B791-34AC-402D-BB64-DEAAA388D171}</Project>
       <Name>MvvmFx.Windows.WinForms</Name>
     </ProjectReference>

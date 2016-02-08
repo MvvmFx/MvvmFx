@@ -14,10 +14,6 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -117,15 +113,15 @@
     <None Include="Resources\Save16.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Src\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
       <Name>MvvmFx.Logging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj">
       <Project>{43328D6B-4ACB-46DE-8791-A32B45F9AD04}</Project>
       <Name>MvvmFx.DataBinding.WinForms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\CaliburnMicro\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj">
       <Project>{47CFADF9-5596-4D48-8813-E89283E5AD35}</Project>
       <Name>CaliburnMicro.WinForms</Name>
     </ProjectReference>

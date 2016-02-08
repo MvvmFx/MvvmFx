@@ -12,10 +12,6 @@
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -132,15 +128,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Src\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
       <Name>CaliburnMicro.WinForms.451</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
       <Name>MvvmFx.Logging.451</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj">
       <Project>{1501bf1f-0406-411f-a47b-446b9989cd91}</Project>
       <Name>MvvmFx.DataBinding.WinForms.451</Name>
     </ProjectReference>

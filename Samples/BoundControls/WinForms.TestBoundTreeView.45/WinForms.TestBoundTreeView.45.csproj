@@ -11,10 +11,6 @@
     <AssemblyName>WinForms.TestBoundTreeView</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,7 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.1\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -138,15 +134,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\BoundControls\MvvmFx.Windows.Forms.45\MvvmFx.Windows.Forms.45.csproj">
+    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.Windows.Forms.45\MvvmFx.Windows.Forms.45.csproj">
       <Project>{440ede1a-73c2-4a82-b2ce-9ddca8d99c36}</Project>
       <Name>MvvmFx.Windows.Forms.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
       <Name>MvvmFx.Logging.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.NLogLogger.45\MvvmFx.NLogLogger.45.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.NLogLogger.45\MvvmFx.NLogLogger.45.csproj">
       <Project>{882d7d0b-5057-450d-9f23-fea7773cbae8}</Project>
       <Name>MvvmFx.NLogLogger.45</Name>
     </ProjectReference>

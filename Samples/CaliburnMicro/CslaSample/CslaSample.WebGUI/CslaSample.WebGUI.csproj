@@ -15,10 +15,6 @@
     <StartPageUrl>Form1.wgx</StartPageUrl>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -236,7 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
-      <HintPath>C:\VS Projects\MvvmFx\trunk\Src\Frameworks\CaliburnMicro\Samples\CslaSample\WebGUI\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <HintPath>C:\Visual Studio Projects\GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>
