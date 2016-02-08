@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFormScrollBar", "TestFormScrollBar.csproj", "{E39E82B0-B33C-46D3-A577-97AF5AF35962}"
 EndProject
 Global
