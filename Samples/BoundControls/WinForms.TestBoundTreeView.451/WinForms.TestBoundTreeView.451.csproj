@@ -12,10 +12,6 @@
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,7 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.1\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -139,15 +135,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj">
+    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj">
       <Project>{ed342c71-5d03-42e2-a7c2-efe6ab375627}</Project>
       <Name>MvvmFx.Windows.Forms.451</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
       <Name>MvvmFx.Logging.451</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.NLogLogger.451\MvvmFx.NLogLogger.451.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.NLogLogger.451\MvvmFx.NLogLogger.451.csproj">
       <Project>{d404afa8-83c5-4b73-8a85-d3748804cac4}</Project>
       <Name>MvvmFx.NLogLogger.451</Name>
     </ProjectReference>

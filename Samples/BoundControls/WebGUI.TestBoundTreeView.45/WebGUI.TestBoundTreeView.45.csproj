@@ -21,10 +21,6 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,7 +66,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.1\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\packages\NLog.4.2.3\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -129,10 +125,10 @@
       <Link>Configuration warning.txt</Link>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -170,15 +166,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj">
+    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj">
       <Project>{a9147a21-0d79-47be-9b23-57fe7df9375a}</Project>
       <Name>MvvmFx.WebGUI.Forms.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
       <Name>MvvmFx.Logging.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.NLogLogger.45\MvvmFx.NLogLogger.45.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.NLogLogger.45\MvvmFx.NLogLogger.45.csproj">
       <Project>{882d7d0b-5057-450d-9f23-fea7773cbae8}</Project>
       <Name>MvvmFx.NLogLogger.45</Name>
     </ProjectReference>
@@ -189,7 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
-      <HintPath>C:\VS Projects\MvvmFx\trunk\Samples\BoundControls\WebGUI.TestBoundTreeView.45\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <HintPath>C:\Visual Studio Projects\GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>

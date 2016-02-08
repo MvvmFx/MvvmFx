@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlainTreeView", "TestPlainTreeView.csproj", "{53094B7E-D4B1-4B89-A62A-97B20593D99C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundControls.Business", "..\BoundControls.Business\BoundControls.Business.csproj", "{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}"

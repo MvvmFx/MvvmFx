@@ -13,10 +13,6 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -54,7 +50,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\Binding\MvvmFx.Windows\MvvmFx.Windows.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows\MvvmFx.Windows.csproj">
       <Project>{D316BAF2-3CC2-4E41-9B68-BF49AB9A0B6D}</Project>
       <Name>MvvmFx.Windows</Name>
     </ProjectReference>

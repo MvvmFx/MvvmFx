@@ -15,10 +15,6 @@
     <StartPageUrl>Form1.wgx</StartPageUrl>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -122,7 +118,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj">
       <Project>{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}</Project>
       <Name>MvvmFx.Windows.WebGUI</Name>
     </ProjectReference>
@@ -139,7 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
-      <HintPath>C:\VS Projects\MvvmFx\trunk\Src\Samples\InvoicesUI.WebGUI\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <HintPath>C:\Visual Studio Projects\GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>

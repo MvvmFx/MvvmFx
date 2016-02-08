@@ -21,10 +21,6 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -171,19 +167,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj">
+    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj">
       <Project>{a9147a21-0d79-47be-9b23-57fe7df9375a}</Project>
       <Name>MvvmFx.WebGUI.Forms.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj">
       <Project>{a40bfa3d-4236-4842-8874-31dfd5e0540a}</Project>
       <Name>CaliburnMicro.WebGUI.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
       <Name>MvvmFx.Logging.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Src\Binding\MvvmFx.DataBinding.WebGUI.45\MvvmFx.DataBinding.WebGUI.45.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI.45\MvvmFx.DataBinding.WebGUI.45.csproj">
       <Project>{3282ce22-6cd9-4ddc-b219-3aed1f4728ad}</Project>
       <Name>MvvmFx.DataBinding.WebGUI.45</Name>
     </ProjectReference>
@@ -194,7 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
-      <HintPath>C:\VS Projects\MvvmFx\trunk\Samples\CaliburnMicro\BoundTreeView\BoundTreeView.WebGUI.45\bin\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <HintPath>C:\Visual Studio Projects\GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>

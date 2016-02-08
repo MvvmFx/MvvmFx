@@ -11,10 +11,6 @@
     <AssemblyName>SimpleParameters.WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -148,11 +144,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Src\CaliburnMicro\CaliburnMicro.WinForms.45\CaliburnMicro.WinForms.45.csproj">
+    <ProjectReference Include="..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.45\CaliburnMicro.WinForms.45.csproj">
       <Project>{8a70916c-7d79-4539-a4e4-178fbb66c703}</Project>
       <Name>CaliburnMicro.WinForms.45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
       <Name>MvvmFx.Logging.45</Name>
     </ProjectReference>

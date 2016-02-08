@@ -29,31 +29,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WebGU
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{79B11CEA-55D2-4A21-A65C-5C949911EDDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI.45", "..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj", "{A40BFA3D-4236-4842-8874-31DFD5E0540A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI.45", "..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj", "{A40BFA3D-4236-4842-8874-31DFD5E0540A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI.451", "..\..\Src\CaliburnMicro\CaliburnMicro.WebGUI.451\CaliburnMicro.WebGUI.451.csproj", "{78B74C5B-A4EE-4A33-B25E-2D89D615BB11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI.451", "..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI.451\CaliburnMicro.WebGUI.451.csproj", "{78B74C5B-A4EE-4A33-B25E-2D89D615BB11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI.45", "..\..\Src\Binding\MvvmFx.DataBinding.WebGUI.45\MvvmFx.DataBinding.WebGUI.45.csproj", "{3282CE22-6CD9-4DDC-B219-3AED1F4728AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI.45", "..\..\Source\Binding\MvvmFx.DataBinding.WebGUI.45\MvvmFx.DataBinding.WebGUI.45.csproj", "{3282CE22-6CD9-4DDC-B219-3AED1F4728AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI.451", "..\..\Src\Binding\MvvmFx.DataBinding.WebGUI.451\MvvmFx.DataBinding.WebGUI.451.csproj", "{1E1A099B-3742-472E-A1E7-FA8E0F1B56D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI.451", "..\..\Source\Binding\MvvmFx.DataBinding.WebGUI.451\MvvmFx.DataBinding.WebGUI.451.csproj", "{1E1A099B-3742-472E-A1E7-FA8E0F1B56D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.45", "..\..\Src\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.45", "..\..\Source\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.45", "..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj", "{A9147A21-0D79-47BE-9B23-57FE7DF9375A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.45", "..\..\Source\BoundControls\MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj", "{A9147A21-0D79-47BE-9B23-57FE7DF9375A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.451", "..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.451\MvvmFx.WebGUI.Forms.451.csproj", "{1A9B3172-7014-475E-B073-BE5870290287}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.451", "..\..\Source\BoundControls\MvvmFx.WebGUI.Forms.451\MvvmFx.WebGUI.Forms.451.csproj", "{1A9B3172-7014-475E-B073-BE5870290287}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WebGUI.451", "AcyncUpdate.WebGUI.451\AcyncUpdate.WebGUI.451.csproj", "{54519FA7-E77F-42C8-BD02-0E53BA45B6D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParameters.WebGUI.451", "SimpleParameters.WebGUI.451\SimpleParameters.WebGUI.451.csproj", "{735A8B94-B4CE-4C3B-ACF0-05DE0A6A398B}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms

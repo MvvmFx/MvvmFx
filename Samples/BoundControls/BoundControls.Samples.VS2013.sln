@@ -10,21 +10,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundControls.Business.451"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{F96C7953-0328-4EEC-8AE5-61A01BE62D40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.451", "..\..\Src\Logging\MvvmFx.Log4netLogger.451\MvvmFx.Log4netLogger.451.csproj", "{66C0CCE3-ED7A-4DD9-9E8F-5C26A5C5DC75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.451", "..\..\Source\Logging\MvvmFx.Log4netLogger.451\MvvmFx.Log4netLogger.451.csproj", "{66C0CCE3-ED7A-4DD9-9E8F-5C26A5C5DC75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\Src\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.451", "..\..\Src\Logging\MvvmFx.NLogLogger.451\MvvmFx.NLogLogger.451.csproj", "{D404AFA8-83C5-4B73-8A85-D3748804CAC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.451", "..\..\Source\Logging\MvvmFx.NLogLogger.451\MvvmFx.NLogLogger.451.csproj", "{D404AFA8-83C5-4B73-8A85-D3748804CAC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.451", "..\..\Src\BoundControls\MvvmFx.WebGUI.Forms.451\MvvmFx.WebGUI.Forms.451.csproj", "{1A9B3172-7014-475E-B073-BE5870290287}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.451", "..\..\Source\BoundControls\MvvmFx.WebGUI.Forms.451\MvvmFx.WebGUI.Forms.451.csproj", "{1A9B3172-7014-475E-B073-BE5870290287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.451", "..\..\Src\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.451", "..\..\Source\BoundControls\MvvmFx.Windows.Forms.451\MvvmFx.Windows.Forms.451.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
 EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
