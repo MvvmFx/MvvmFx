@@ -1,6 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{DC11271A-37A0-40AE-A3C3-4EAE39A6D32A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI", "..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj", "{9D62264B-077A-4A1F-9605-5EDE74406798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WebGUI", "..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj", "{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WebGUI", "..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WebGUI\CaliburnMicro.Csla.WebGUI.csproj", "{C5F571B3-0F84-40DA-A6C8-D8846FB4147E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.WebGUI", "CslaSample.WebGUI\CslaSample.WebGUI.csproj", "{F2E7CA29-8640-4F3E-979D-D57484FE5C58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.Business", "CslaSample.Business\CslaSample.Business.csproj", "{C8E78E6E-506D-495E-AD16-1BA31DC58DBC}"
@@ -13,6 +23,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D62264B-077A-4A1F-9605-5EDE74406798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F571B3-0F84-40DA-A6C8-D8846FB4147E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F571B3-0F84-40DA-A6C8-D8846FB4147E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F571B3-0F84-40DA-A6C8-D8846FB4147E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F571B3-0F84-40DA-A6C8-D8846FB4147E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F2E7CA29-8640-4F3E-979D-D57484FE5C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F2E7CA29-8640-4F3E-979D-D57484FE5C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2E7CA29-8640-4F3E-979D-D57484FE5C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -28,5 +54,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D62264B-077A-4A1F-9605-5EDE74406798} = {DC11271A-37A0-40AE-A3C3-4EAE39A6D32A}
+		{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8} = {DC11271A-37A0-40AE-A3C3-4EAE39A6D32A}
+		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B} = {DC11271A-37A0-40AE-A3C3-4EAE39A6D32A}
+		{C5F571B3-0F84-40DA-A6C8-D8846FB4147E} = {DC11271A-37A0-40AE-A3C3-4EAE39A6D32A}
 	EndGlobalSection
 EndGlobal

@@ -48,18 +48,6 @@
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\..\..\..\Dependencies\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.Csla.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.CaliburnMicro.Csla.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.CaliburnMicro.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.DataBinding.WinForms, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.DataBinding.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.Logging.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO, Version=2.6.10.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -184,6 +172,22 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj">
+      <Project>{43328d6b-4acb-46de-8791-a32b45f9ad04}</Project>
+      <Name>MvvmFx.DataBinding.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms\CaliburnMicro.Csla.WinForms.csproj">
+      <Project>{0c72f82b-de06-4bc8-b775-11f5b0614a44}</Project>
+      <Name>CaliburnMicro.Csla.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj">
+      <Project>{47cfadf9-5596-4d48-8813-e89283e5ad35}</Project>
+      <Name>CaliburnMicro.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+      <Project>{37c4f6a3-f9f7-48f6-837f-f5bcd1dfe4b8}</Project>
+      <Name>MvvmFx.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CslaSample.Business\CslaSample.Business.csproj">
       <Project>{C8E78E6E-506D-495E-AD16-1BA31DC58DBC}</Project>
       <Name>CslaSample.Business</Name>

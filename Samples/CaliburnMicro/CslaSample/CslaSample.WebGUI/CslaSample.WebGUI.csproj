@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -51,18 +52,6 @@
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
       <HintPath>..\..\..\..\Dependencies\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.Csla.WebGUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.CaliburnMicro.Csla.WebGUI.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.CaliburnMicro.WebGUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.CaliburnMicro.WebGUI.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.DataBinding.WebGUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.DataBinding.WebGUI.dll</HintPath>
-    </Reference>
-    <Reference Include="MvvmFx.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=8891034390f17223, processorArchitecture=MSIL">
-      <HintPath>..\Dependencies\MvvmFx.Logging.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -217,6 +206,22 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj">
+      <Project>{9d62264b-077a-4a1f-9605-5ede74406798}</Project>
+      <Name>MvvmFx.DataBinding.WebGUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WebGUI\CaliburnMicro.Csla.WebGUI.csproj">
+      <Project>{c5f571b3-0f84-40da-a6c8-d8846fb4147e}</Project>
+      <Name>CaliburnMicro.Csla.WebGUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj">
+      <Project>{8fc1bbf4-5292-4049-9715-8dd6dd712c0b}</Project>
+      <Name>CaliburnMicro.WebGUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+      <Project>{37c4f6a3-f9f7-48f6-837f-f5bcd1dfe4b8}</Project>
+      <Name>MvvmFx.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CslaSample.Business\CslaSample.Business.csproj">
       <Project>{C8E78E6E-506D-495E-AD16-1BA31DC58DBC}</Project>
       <Name>CslaSample.Business</Name>
@@ -236,8 +241,13 @@
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v10.0\Gizmox.VWGApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

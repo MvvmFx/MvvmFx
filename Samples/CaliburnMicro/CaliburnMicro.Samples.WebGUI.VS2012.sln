@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\..\Sou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms", "..\..\Source\BoundControls\MvvmFx.WebGUI.Forms\MvvmFx.WebGUI.Forms.csproj", "{17BAAB70-3047-4B50-9374-F01664A5AB59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundTreeView.SeleniumTests", "BoundTreeView\BoundTreeView.SeleniumTests\BoundTreeView.SeleniumTests.csproj", "{457E73ED-74F3-44A7-84DF-031027C3DCC8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,16 +137,6 @@ Global
 		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|x86.ActiveCfg = Release|Any CPU
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Debug|x86.ActiveCfg = Debug|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Debug|x86.Build.0 = Debug|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Release|Any CPU.ActiveCfg = Release|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Release|Mixed Platforms.Build.0 = Release|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Release|x86.ActiveCfg = Release|x86
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,7 +144,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B553D526-BDEC-4DDC-A4CE-8F487BD03A22} = {88419FF3-6BF0-47C2-A759-8783C217FF63}
 		{294BE941-DC19-43C4-B933-A593F53AD494} = {88419FF3-6BF0-47C2-A759-8783C217FF63}
-		{457E73ED-74F3-44A7-84DF-031027C3DCC8} = {88419FF3-6BF0-47C2-A759-8783C217FF63}
 		{842CE3F4-840B-4D01-AE7C-60F784C959F2} = {7D48DED2-FC7A-4916-AE90-9879F4C8BFF6}
 		{385F646C-E886-452B-A57E-7393BCE5970A} = {7D48DED2-FC7A-4916-AE90-9879F4C8BFF6}
 		{8FC1BBF4-5292-4049-9715-8DD6DD712C0B} = {79B11CEA-55D2-4A21-A65C-5C949911EDDC}
