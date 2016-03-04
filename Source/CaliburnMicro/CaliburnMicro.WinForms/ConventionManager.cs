@@ -20,6 +20,7 @@
 #endif
         static ConventionManager()
         {
+            AddElementConvention<ComboBox>("SelectedIndex", null, "SelectedIndexChanged");
             AddElementConvention<TextBoxBase>("Text", null, "TextChanged");
             AddElementConvention<IActivate>(string.Empty, null, "Activated");
             AddElementConvention<Label>("Text", null, "TextChanged");
