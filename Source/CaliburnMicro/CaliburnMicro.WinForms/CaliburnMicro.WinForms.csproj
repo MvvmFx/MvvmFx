@@ -25,7 +25,7 @@
     <DefineConstants>TRACE;DEBUG;WINFORMS;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\..\bin\Release\WinForms\net40\MvvmFx.CaliburnMicro.WinForms.xml</DocumentationFile>
-    <CodeAnalysisRuleSet>..\..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
