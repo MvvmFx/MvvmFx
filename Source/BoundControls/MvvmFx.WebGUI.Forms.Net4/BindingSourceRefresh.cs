@@ -186,7 +186,7 @@ namespace MvvmFx.WebGUI.Forms
             else
             {
                 currencyManager.Bindings.CollectionChanged -= Bindings_CollectionChanged;
-                currencyManager.Bindings.CollectionChanging += Bindings_CollectionChanging;
+                currencyManager.Bindings.CollectionChanging -= Bindings_CollectionChanging;
             }
             // Reigster the binding complete events for the currencymanagers bindings.
             RegisterBindingEvents(currencyManager.Bindings, register);
