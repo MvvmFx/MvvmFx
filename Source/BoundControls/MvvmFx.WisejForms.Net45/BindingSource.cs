@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MvvmFx.WebGUI.Forms
+namespace MvvmFx.WisejForms
 {
     /// <summary>
     /// Encapsulates the data source for a form.
@@ -9,7 +9,7 @@ namespace MvvmFx.WebGUI.Forms
     /// <remarks>
     /// http://stackoverflow.com/questions/21535431/how-to-solve-data-member-not-found-design-time-error-with-an-inherited-binding
     /// </remarks>
-    public class BindingSource : Gizmox.WebGUI.Forms.BindingSource
+    public class BindingSource : System.Windows.Forms.BindingSource
     {
         /// <summary>
         /// Retrieves an array of <see cref="T:System.ComponentModel.PropertyDescriptor"/> objects representing the bindable properties of the data source list type.

@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Drawing.Design;
 #if WISEJ
 using Wisej.Web;
-using MvvmFx.Wisej.Forms.Properties;
+using MvvmFx.WisejForms.Properties;
 #elif WEBGUI
 using Gizmox.WebGUI;
 using Gizmox.WebGUI.Forms;
@@ -18,7 +18,7 @@ using MvvmFx.Windows.Forms.Properties;
 // code from Sascha Knopf
 // http://www.codeproject.com/Articles/15396/Implementing-complex-data-binding-in-custom-contro
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WisejForms
 {
     /// <summary>
     /// Data binding enabled list view control.
@@ -53,7 +53,7 @@ namespace MvvmFx.Windows.Forms
         /// </returns>>
 #elif WISEJ
         /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.Wisej.Forms.BoundListView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.WisejForms.BoundListView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or 
@@ -112,11 +112,11 @@ namespace MvvmFx.Windows.Forms
 #elif WISEJ
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which 
-        /// the <see cref="MvvmFx.Wisej.Forms.BoundListView"/> is displaying data.
+        /// the <see cref="MvvmFx.WisejForms.BoundListView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.Wisej.Forms.BoundListView.DataSource"/> for which the 
-        /// <see cref="MvvmFx.Wisej.Forms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.WisejForms.BoundListView.DataSource"/> for which the 
+        /// <see cref="MvvmFx.WisejForms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
         /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/> 
@@ -238,13 +238,13 @@ namespace MvvmFx.Windows.Forms
         private void TryDataBinding()
         {
             if (DataSource == null ||
-                base.BindingContext == null)
+                BindingContext == null)
                 return;
 
             CurrencyManager currencyManager;
             try
             {
-                currencyManager = (CurrencyManager) base.BindingContext[_dataSource, _dataMember];
+                currencyManager = (System.Windows.Forms.CurrencyManager) BindingContext[_dataSource, _dataMember];
             }
             catch (ArgumentException)
             {
@@ -294,7 +294,7 @@ namespace MvvmFx.Windows.Forms
                 AddItem(index);
             }
 
-            if (_listManager.Position > -1)
+            /*if (_listManager.Position > -1)
             {
 #if !WEBGUI
                 Items[_listManager.Position].Selected = true;
@@ -302,7 +302,7 @@ namespace MvvmFx.Windows.Forms
                 SelectedIndex = _listManager.Position;
 #endif
                 EnsureVisible(_listManager.Position);
-            }
+            }*/
         }
 
         /// <summary>
@@ -353,8 +353,9 @@ namespace MvvmFx.Windows.Forms
                         items.Add(string.Empty);
                 }
             }
-            var item = new ListViewItem((string[]) items.ToArray(typeof (string)));
-            item.Tag = row;
+            var item = new ListViewItem();
+            //var item = new ListViewItem((string[]) items.ToArray(typeof (string)));
+            //item.Tag = row;
             return item;
         }
 
@@ -392,7 +393,7 @@ namespace MvvmFx.Windows.Forms
         #region BindingContext Events
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.BindingContextChanged"/> event.
+        /// Raises the <see cref="E:Wisej.Web.Control.BindingContextChanged"/> event.
         /// </summary>
         /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data. </param>
         protected override void OnBindingContextChanged(EventArgs e)
@@ -409,8 +410,10 @@ namespace MvvmFx.Windows.Forms
         {
             if (Items.Count > _listManager.Position)
             {
-#if !WEBGUI
+#if WINFORMS
                 Items[_listManager.Position].Selected = true;
+#elif WISEJ
+                // place holder
 #else
                 SelectedIndex = _listManager.Position;
 #endif
@@ -531,7 +534,7 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.LabelEditEventArgs"></see> that contains the event data.</param>
 #endif
-        protected override void OnAfterLabelEdit(LabelEditEventArgs e)
+        /*protected override void OnAfterLabelEdit(LabelEditEventArgs e)
         {
             if (e.Label == null)
             {
@@ -561,7 +564,7 @@ namespace MvvmFx.Windows.Forms
                     e.CancelEdit = true;
                 }
             }
-        }
+        }*/
 
         #endregion
 

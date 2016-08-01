@@ -3,7 +3,7 @@
 //     Copyright (c) Marimer LLC. All rights reserved.
 //     Website: http://www.lhotka.net/cslanet/
 // </copyright>
-// <summary>BindingSourceRefresh contains functionality for refreshing the data bound to controls on Host as well as a mechinism for catching data</summary>
+// <summary>BindingSourceRefresh contains functionality for refreshing the data bound to controls on Host as well as a mechiaism for catching data</summary>
 //-----------------------------------------------------------------------
 
 using System;
@@ -18,7 +18,7 @@ using Gizmox.WebGUI.Forms;
 namespace MvvmFx.WebGUI.Forms
 {
     /// <summary>
-    /// BindingSourceRefresh contains functionality for refreshing the data bound to controls on Host as well as a mechinism for catching data
+    /// BindingSourceRefresh contains functionality for refreshing the data bound to controls on Host as well as a mechiaism for catching data
     /// binding errors that occur in Host.
     /// </summary>
     /// <remarks>WebGUI extender control that resolves the
@@ -39,7 +39,7 @@ namespace MvvmFx.WebGUI.Forms
         /// <summary>
         /// BindingError event is raised when a data binding error occurs due to a exception.
         /// </summary>
-        public event BindingErrorEventHandler BindingError = null;
+        public event BindingErrorEventHandler BindingError;
 
         #endregion
 
@@ -70,7 +70,7 @@ namespace MvvmFx.WebGUI.Forms
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -186,7 +186,7 @@ namespace MvvmFx.WebGUI.Forms
             else
             {
                 currencyManager.Bindings.CollectionChanged -= Bindings_CollectionChanged;
-                currencyManager.Bindings.CollectionChanging -= Bindings_CollectionChanging;
+                currencyManager.Bindings.CollectionChanging += Bindings_CollectionChanging;
             }
             // Reigster the binding complete events for the currencymanagers bindings.
             RegisterBindingEvents(currencyManager.Bindings, register);
@@ -316,7 +316,7 @@ namespace MvvmFx.WebGUI.Forms
 
         #region ISupportInitialize Interface
 
-        private bool _isInitialising = false;
+        private bool _isInitialising;
 
         /// <summary>
         /// BeginInit() is called when the component is starting to be initialised. BeginInit() simply sets the initialisation flag to true.
@@ -363,8 +363,8 @@ namespace MvvmFx.WebGUI.Forms
     {
         #region Property Fields
 
-        private Exception _exception = null;
-        private Binding _binding = null;
+        private Exception _exception;
+        private Binding _binding;
 
         #endregion
 

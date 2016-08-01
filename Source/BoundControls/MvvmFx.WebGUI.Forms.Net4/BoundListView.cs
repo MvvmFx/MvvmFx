@@ -3,13 +3,16 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-#if !WEBGUI
-using System.Windows.Forms;
-using MvvmFx.Windows.Forms.Properties;
-#else
+#if WISEJ
+using Wisej.Web;
+using MvvmFx.Wisej.Forms.Properties;
+#elif WEBGUI
 using Gizmox.WebGUI;
 using Gizmox.WebGUI.Forms;
 using MvvmFx.WebGUI.Forms.Properties;
+#else
+using System.Windows.Forms;
+using MvvmFx.Windows.Forms.Properties;
 #endif
 
 // code from Sascha Knopf
@@ -39,9 +42,18 @@ namespace MvvmFx.WebGUI.Forms
 
         #region Properties
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the data source for this <see cref="MvvmFx.Windows.Forms.BoundListView"/>.
+        /// </summary>
+        /// <returns>
+        /// An object that implements the <see cref="System.Collections.IList"/> or 
+        /// <see cref="System.ComponentModel.IListSource"/> interfaces, 
+        /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
+        /// </returns>>
+#elif WISEJ
+        /// <summary>
+        /// Gets or sets the data source for this <see cref="MvvmFx.Wisej.Forms.BoundListView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or 
@@ -83,7 +95,7 @@ namespace MvvmFx.WebGUI.Forms
             }
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which 
         /// the <see cref="MvvmFx.Windows.Forms.BoundListView"/> is displaying data.
@@ -91,6 +103,20 @@ namespace MvvmFx.WebGUI.Forms
         /// <returns>
         /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundListView.DataSource"/> for which the 
         /// <see cref="MvvmFx.Windows.Forms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// </returns>
+        /// <exception cref="System.Exception">
+        /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/> 
+        /// event or the handler has set the <see cref="System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException"/> property to true. 
+        /// The exception object can typically be cast to type <see cref="System.FormatException"/>.
+        /// </exception>
+#elif WISEJ
+        /// <summary>
+        /// Gets or sets the name of the list or table in the data source for which 
+        /// the <see cref="MvvmFx.Wisej.Forms.BoundListView"/> is displaying data.
+        /// </summary>
+        /// <returns>
+        /// The name of the table or list in the <see cref="MvvmFx.Wisej.Forms.BoundListView.DataSource"/> for which the 
+        /// <see cref="MvvmFx.Wisej.Forms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
         /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/> 
@@ -107,8 +133,8 @@ namespace MvvmFx.WebGUI.Forms
         /// <see cref="MvvmFx.WebGUI.Forms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
-        /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/> 
-        /// event or the handler has set the <see cref="System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException"/> property to true. 
+        /// An error occurred in the data source and either there is no handler for the <see cref="Gizmox.WebGUI.Forms.DataGridView.DataError"/> 
+        /// event or the handler has set the <see cref="Gizmox.WebGUI.Forms.DataGridViewDataErrorEventArgs.ThrowException"/> property to true. 
         /// The exception object can typically be cast to type <see cref="System.FormatException"/>.
         /// </exception>
 #endif
@@ -366,7 +392,7 @@ namespace MvvmFx.WebGUI.Forms
         #region BindingContext Events
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.BindingContextChanged"/> event.
+        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.Control.BindingContextChanged"/> event.
         /// </summary>
         /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data. </param>
         protected override void OnBindingContextChanged(EventArgs e)

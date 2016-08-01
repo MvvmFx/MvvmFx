@@ -44,7 +44,7 @@ using Gizmox.WebGUI.Forms;
 using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WisejForms
 {
     /// <summary>
     /// Tree node with additional data related information.

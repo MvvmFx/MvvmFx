@@ -36,10 +36,12 @@ Improvements by Tiago Freitas Leal (MvvmFx project).
 */
 
 using System;
-#if !WEBGUI
-using System.Windows.Forms;
-#else
+#if WISEJ
+using Wisej.Web;
+#elif WEBGUI
 using Gizmox.WebGUI.Forms;
+#else
+using System.Windows.Forms;
 #endif
 
 namespace MvvmFx.WebGUI.Forms
@@ -77,7 +79,7 @@ namespace MvvmFx.WebGUI.Forms
         /// <value>
         /// The node identifier.
         /// </value>
-        internal object NodeID
+        internal object NodeId
         {
             get { return Tag; }
             set { Tag = value; }
@@ -89,7 +91,7 @@ namespace MvvmFx.WebGUI.Forms
         /// <value>
         /// The parent node identifier.
         /// </value>
-        internal object ParentNodeID { get; set; }
+        internal object ParentNodeId { get; set; }
 
         /// <summary>
         /// Gets or sets the node position in the current currency manager.

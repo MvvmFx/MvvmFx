@@ -8,7 +8,7 @@ using Gizmox.WebGUI.Forms;
 using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.WebGUI.Forms
+namespace MvvmFx.WisejForms
 {
     internal class TreeNodeSorter : IComparer
     {

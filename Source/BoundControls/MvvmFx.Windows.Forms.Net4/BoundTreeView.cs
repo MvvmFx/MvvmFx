@@ -42,16 +42,22 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
 using MvvmFx.Logging;
-#if !WEBGUI
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using MvvmFx.Windows.Forms.Design;
-using MvvmFx.Windows.Forms.Properties;
-#else
+#if WISEJ
+using Wisej.Web;
+using MvvmFx.WisejForms.Design;
+using MvvmFx.WisejForms.Properties;
+using TreeViewImageIndexConverter = System.Windows.Forms.TreeViewImageIndexConverter;
+using TreeViewImageKeyConverter = System.Windows.Forms.TreeViewImageKeyConverter;
+#elif WEBGUI
 using Gizmox.WebGUI;
 using Gizmox.WebGUI.Forms;
 using MvvmFx.WebGUI.Forms.Design;
 using MvvmFx.WebGUI.Forms.Properties;
+#else
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using MvvmFx.Windows.Forms.Design;
+using MvvmFx.Windows.Forms.Properties;
 #endif
 
 namespace MvvmFx.Windows.Forms
@@ -62,7 +68,7 @@ namespace MvvmFx.Windows.Forms
     [Description("Data binding enabled hierarchical tree view control.")]
     [ComplexBindingProperties("DataSource", "DataMember")]
     [ToolboxItem(true)]
-    [ToolboxBitmap(typeof (BoundTreeView), "BoundTreeView.bmp")]
+    [ToolboxBitmap(typeof(BoundTreeView), "BoundTreeView.bmp")]
     public class BoundTreeView : TreeView
     {
         #region Fields
@@ -72,7 +78,9 @@ namespace MvvmFx.Windows.Forms
         private TreeNode _collapseOrExpandNode;
         private TreeNode _activeNode;
 #else
+#if WINFORMS
         private const int SbHorz = 0;
+#endif
         private bool _isDraggingOver;
         private bool _isDroppingOnRoot;
 #endif
@@ -117,7 +125,7 @@ namespace MvvmFx.Windows.Forms
         /// <summary>
         /// The logger
         /// </summary>
-        private static readonly ILog Logger = LogManager.GetLog(typeof (Action));
+        private static readonly ILog Logger = LogManager.GetLog(typeof(Action));
 
         /// <summary>
         /// Gets or sets the duplicated caption for the MessageBox.
@@ -168,9 +176,18 @@ namespace MvvmFx.Windows.Forms
 
         #region Properties
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the data source for this <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
+        /// </summary>
+        /// <returns>
+        /// An object that implements the <see cref="System.Collections.IList"/> or
+        /// <see cref="System.ComponentModel.IListSource"/> interfaces,
+        /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
+        /// </returns>
+#elif WISEJ
+        /// <summary>
+        /// Gets or sets the data source for this <see cref="MvvmFx.WisejForms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -188,9 +205,9 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [AttributeProvider(typeof (IListSource))]
-        [DefaultValue((string) null)]
-        [Editor("System.Windows.Forms.Design.DataSourceListEditor, System.Design", typeof (UITypeEditor))]
+        [AttributeProvider(typeof(IListSource))]
+        [DefaultValue(null)]
+        [Editor("System.Windows.Forms.Design.DataSourceListEditor, System.Design", typeof(UITypeEditor))]
         [TypeConverter("System.Windows.Forms.Design.DataSourceConverter, System.Design")]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
@@ -208,7 +225,7 @@ namespace MvvmFx.Windows.Forms
             }
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
         /// the <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data.
@@ -216,6 +233,15 @@ namespace MvvmFx.Windows.Forms
         /// <returns>
         /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundTreeView.DataSource"/> for which the
         /// <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// </returns>
+#elif WISEJ
+        /// <summary>
+        /// Gets or sets the name of the list or table in the data source for which
+        /// the <see cref="MvvmFx.WisejForms.BoundTreeView"/> is displaying data.
+        /// </summary>
+        /// <returns>
+        /// The name of the table or list in the <see cref="MvvmFx.WisejForms.BoundTreeView.DataSource"/> for which the
+        /// <see cref="MvvmFx.WisejForms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
 #else
         /// <summary>
@@ -228,8 +254,8 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue((string) null)]
-        [Editor("System.Windows.Forms.Design.DataMemberListEditor, System.Design", typeof (UITypeEditor))]
+        [DefaultValue(null)]
+        [Editor("System.Windows.Forms.Design.DataMemberListEditor, System.Design", typeof(UITypeEditor))]
         [TypeConverter("System.Windows.Forms.Design.DataMemberConverter, System.Design")]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
@@ -247,9 +273,18 @@ namespace MvvmFx.Windows.Forms
             }
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the property to display for this <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
+        /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
+        /// </returns>
+        /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
+#elif WISEJ
+        /// <summary>
+        /// Gets or sets the property to display for this <see cref="MvvmFx.WisejForms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
@@ -262,13 +297,13 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
-        /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
+        /// by the <see cref="Gizmox.WebGUI.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
         /// </returns>
         /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
         [DefaultValue("")]
-        [Editor(typeof (FieldTypeEditor), typeof (UITypeEditor))]
+        [Editor(typeof(FieldTypeEditor), typeof(UITypeEditor))]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
         [Description("Indicates the property to display for the items of this control.")]
@@ -286,9 +321,17 @@ namespace MvvmFx.Windows.Forms
             }
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
+        /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
+        /// </returns>
+#elif WISEJ
+        /// <summary>
+        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.WisejForms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
@@ -300,12 +343,12 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
-        /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
+        /// by the <see cref="Gizmox.WebGUI.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue((string) null)]
-        [Editor(typeof (FieldTypeEditor), typeof (UITypeEditor))]
+        [DefaultValue(null)]
+        [Editor(typeof(FieldTypeEditor), typeof(UITypeEditor))]
         [Category("Data")]
         [Description("Indicates the property to use as the actual value for the items of the control.")]
         public string ValueMember
@@ -331,7 +374,7 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
         [DefaultValue("")]
-        [Editor(typeof (FieldTypeEditor), typeof (UITypeEditor))]
+        [Editor(typeof(FieldTypeEditor), typeof(UITypeEditor))]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
         [Description("Indicates the property to use as the unique identifier for the items of the control.")]
@@ -361,7 +404,7 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
         [DefaultValue("")]
-        [Editor(typeof (FieldTypeEditor), typeof (UITypeEditor))]
+        [Editor(typeof(FieldTypeEditor), typeof(UITypeEditor))]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
         [Description("Indicates the property to use as the parent identifier for the items of the control.")]
@@ -386,8 +429,8 @@ namespace MvvmFx.Windows.Forms
         /// The ToolTipText member.
         /// </returns>
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue((string) null)]
-        [Editor(typeof (FieldTypeEditor), typeof (UITypeEditor))]
+        [DefaultValue(null)]
+        [Editor(typeof(FieldTypeEditor), typeof(UITypeEditor))]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
         [Description("Indicates the property to use as the ToolTipText member for the items of the control.")]
@@ -412,8 +455,8 @@ namespace MvvmFx.Windows.Forms
         /// The ReadOnly member.
         /// </returns>
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue((string) null)]
-        [Editor(typeof (FieldTypeEditor), typeof (UITypeEditor))]
+        [DefaultValue(null)]
+        [Editor(typeof(FieldTypeEditor), typeof(UITypeEditor))]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Data")]
         [Description("Indicates the property to use as the ReadOnly member for the items of the control.")]
@@ -431,7 +474,7 @@ namespace MvvmFx.Windows.Forms
             }
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets the value of the member property specified by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </summary>
@@ -439,12 +482,21 @@ namespace MvvmFx.Windows.Forms
         /// An object containing the value of the member of the data source specified
         /// by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </returns>
+#elif WISEJ
+        /// <summary>
+        /// Gets the value of the member property specified by the <see cref="MvvmFx.WisejForms.BoundTreeView.ValueMember"/> property.
+        /// </summary>
+        /// <returns>
+        /// An object containing the value of the member of the data source specified
+        /// by the <see cref="MvvmFx.WisejForms.BoundTreeView.ValueMember"/> property.
+        /// </returns>
 #else
         /// <summary>
         /// Gets the value of the member property specified by the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView.ValueMember"/> property.
         /// </summary>
         /// <returns>
-        /// An object containing the value of the member of the data source specified by the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView.ValueMember"/> property.
+        /// An object containing the value of the member of the data source specified
+        /// by the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView.ValueMember"/> property.
         /// </returns>
 #endif
         [Browsable(false)]
@@ -589,13 +641,13 @@ namespace MvvmFx.Windows.Forms
         /// for the ReadOnly tree node. The default is -1.</returns>
         /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
         [DefaultValue(-1)]
-        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof (UITypeEditor))]
-        /*[TypeConverter(typeof(ImageKeyConverter))]*/
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageIndexConverter))]
         [Localizable(true)]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Behavior")]
         [Description("Indicates the index of the image that is displayed for the ReadOnly tree node.")]
-        [RelatedImageList("ImageList")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public int ReadOnlyImageIndex
         {
             get
@@ -619,7 +671,7 @@ namespace MvvmFx.Windows.Forms
                 }
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("ReadOnlyImageIndex", "InvalidLowBoundArgument");
+                    throw new ArgumentOutOfRangeException(@"value", @"ReadOnlyImageIndex - InvalidLowBoundArgument");
                 }
 
                 _readOnlyImageIndex = value;
@@ -635,13 +687,13 @@ namespace MvvmFx.Windows.Forms
         /// <summary>Gets or sets the key for the image that is displayed for the ReadOnly tree node.</summary>
         /// <returns>The key for the image that is displayed for the ReadOnly tree node..</returns>
         [DefaultValue("")]
-        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof (UITypeEditor))]
-        [TypeConverter(typeof (ImageKeyConverter))]
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageKeyConverter))]
         [Localizable(true)]
         [RefreshProperties(RefreshProperties.Repaint)]
-        [RelatedImageList("ImageList")]
         [Category("Behavior")]
         [Description("Indicates the key for the image that is displayed for the ReadOnly tree node.")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public string ReadOnlyImageKey
         {
             get { return _readOnlyImageKey; }
@@ -662,13 +714,13 @@ namespace MvvmFx.Windows.Forms
         /// when a ReadOnly tree node is selected. The default is -1.</returns>
         /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
         [DefaultValue(-1)]
-        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof (UITypeEditor))]
-        /*[TypeConverter(typeof(ImageKeyConverter))]*/
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageIndexConverter))]
         [Localizable(true)]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Behavior")]
         [Description("Indicates the index of the image that is displayed when a ReadOnly tree node is selected.")]
-        [RelatedImageList("ImageList")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public int ReadOnlySelectedImageIndex
         {
             get
@@ -692,7 +744,8 @@ namespace MvvmFx.Windows.Forms
                 }
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("ReadOnlySelectedImageIndex", "InvalidLowBoundArgument");
+                    throw new ArgumentOutOfRangeException(@"value",
+                        @"ReadOnlySelectedImageIndex - InvalidLowBoundArgument");
                 }
 
                 _readOnlySelectedImageIndex = value;
@@ -708,13 +761,13 @@ namespace MvvmFx.Windows.Forms
         /// <summary>Gets or sets the key for the image that is displayed when a ReadOnly tree node is selected.</summary>
         /// <returns>The key for the image that is displayed when a ReadOnly tree node is selected.</returns>
         [DefaultValue("")]
-        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof (UITypeEditor))]
-        [TypeConverter(typeof (ImageKeyConverter))]
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageKeyConverter))]
         [Localizable(true)]
         [RefreshProperties(RefreshProperties.Repaint)]
-        [RelatedImageList("ImageList")]
         [Category("Behavior")]
         [Description("Indicates the key for the image that is displayed when a ReadOnly tree node is selected.")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public string ReadOnlySelectedImageKey
         {
             get { return _readOnlySelectedImageKey; }
@@ -735,14 +788,14 @@ namespace MvvmFx.Windows.Forms
         /// <summary>Gets or sets the index of the image that is displayed for the ReadOnly tree node.</summary>
         /// <returns>The zero-based index of the image in the <see cref="T:Gizmox.WebGUI.Forms.ImageList"></see> that is displayed for the item. The default is -1.</returns>
         /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
-        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof (UITypeEditor))]
+        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.NoneExcludedImageIndexConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue(-1)]
         [Localizable(true)]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Behavior")]
         [Description("Indicates the index of the image that is displayed for the ReadOnly tree node.")]
-        [RelatedImageList("ImageList")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public int ReadOnlyImageIndex
         {
             get
@@ -766,7 +819,7 @@ namespace MvvmFx.Windows.Forms
                 }
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("ReadOnlyImageIndex", "InvalidLowBoundArgument");
+                    throw new ArgumentOutOfRangeException(@"value", @"ReadOnlyImageIndex - InvalidLowBoundArgument");
                 }
 
                 _readOnlyImageIndex = value;
@@ -781,14 +834,14 @@ namespace MvvmFx.Windows.Forms
 
         /// <summary>Gets or sets the key for the image that is displayed for the ReadOnly tree node.</summary>
         /// <returns>The key for the image that is displayed for the <see cref="T:Gizmox.WebGUI.Forms.ListViewItem"></see>.</returns>
-        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof (UITypeEditor))]
+        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.ImageKeyConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue("")]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Localizable(true)]
         [Category("Behavior")]
         [Description("Indicates the key for the image that is displayed for the ReadOnly tree node.")]
-        [RelatedImageList("ImageList")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public string ReadOnlyImageKey
         {
             get { return _readOnlyImageKey; }
@@ -807,14 +860,14 @@ namespace MvvmFx.Windows.Forms
         /// <summary>Gets or sets the index of the image that is displayed when a ReadOnly tree node is selected.</summary>
         /// <returns>The zero-based index of the image in the <see cref="T:Gizmox.WebGUI.Forms.ImageList"></see> that is displayed for the item. The default is -1.</returns>
         /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
-        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof (UITypeEditor))]
+        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.NoneExcludedImageIndexConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue(-1)]
         [Localizable(true)]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Category("Behavior")]
         [Description("Indicates the index of the image that is displayed when a ReadOnly tree node is selected.")]
-        [RelatedImageList("ImageList")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public int ReadOnlySelectedImageIndex
         {
             get
@@ -838,7 +891,7 @@ namespace MvvmFx.Windows.Forms
                 }
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("ReadOnlySelectedImageIndex", "InvalidLowBoundArgument");
+                    throw new ArgumentOutOfRangeException(@"value", @"ReadOnlySelectedImageIndex - InvalidLowBoundArgument");
                 }
 
                 _readOnlySelectedImageIndex = value;
@@ -853,14 +906,14 @@ namespace MvvmFx.Windows.Forms
 
         /// <summary>Gets or sets the key for the image that is displayed when a ReadOnly tree node is selected.</summary>
         /// <returns>The key for the image that is displayed for the <see cref="T:Gizmox.WebGUI.Forms.ListViewItem"></see>.</returns>
-        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof (UITypeEditor))]
+        [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.ImageKeyConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue("")]
         [RefreshProperties(RefreshProperties.Repaint)]
         [Localizable(true)]
         [Category("Behavior")]
         [Description("Indicates the key for the image that is displayed when a ReadOnly tree node is selected.")]
-        [RelatedImageList("ImageList")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
         public string ReadOnlySelectedImageKey
         {
             get { return _readOnlySelectedImageKey; }
@@ -970,9 +1023,10 @@ namespace MvvmFx.Windows.Forms
             _parentIdentifierMember = string.Empty;
             _itemsPositions = new SortedList();
             _itemsIdentifiers = new SortedList();
-
+#if !WISEJ
             HideSelection = false;
-#if !WEBGUI
+#endif
+#if !WEBGUI && !WISEJ
             HotTracking = true;
 #endif
         }
@@ -995,7 +1049,7 @@ namespace MvvmFx.Windows.Forms
                 GeneralNodeError = Resources.GeneralNodeError;
         }
 
-#if !WEBGUI
+#if !WEBGUI && !WISEJ
         /// <summary>
         /// Called after the control has been added to another container.
         /// </summary>
@@ -1023,7 +1077,7 @@ namespace MvvmFx.Windows.Forms
 
         #region Win32
 
-#if !WEBGUI
+#if !WEBGUI && !WISEJ
         [DllImport("User32.dll")]
         private static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
 #endif
@@ -1044,7 +1098,11 @@ namespace MvvmFx.Windows.Forms
             CurrencyManager currencyManager;
             try
             {
+#if WISEJ
+                currencyManager = (System.Windows.Forms.CurrencyManager) BindingContext[_dataSource, _dataMember];
+#else
                 currencyManager = (CurrencyManager) BindingContext[_dataSource, _dataMember];
+#endif
             }
             catch (ArgumentException)
             {
@@ -1081,7 +1139,8 @@ namespace MvvmFx.Windows.Forms
 
         private bool PrepareDescriptors()
         {
-            if (_listManager.GetItemProperties().Count > 0 && _identifierMember.Length != 0 && _displayMember.Length != 0 && _parentIdentifierMember.Length != 0)
+            if (_listManager.GetItemProperties().Count > 0 && _identifierMember.Length != 0 &&
+                _displayMember.Length != 0 && _parentIdentifierMember.Length != 0)
             {
                 if (_identifierProperty == null)
                     _identifierProperty = _listManager.GetItemProperties()[_identifierMember];
@@ -1128,7 +1187,7 @@ namespace MvvmFx.Windows.Forms
                 _valueConverter = TypeDescriptor.GetConverter(_displayProperty.PropertyType);
             }
 
-            return (_valueConverter != null && _valueConverter.CanConvertFrom(typeof (string)));
+            return (_valueConverter != null && _valueConverter.CanConvertFrom(typeof(string)));
         }
 
         #endregion
@@ -1250,16 +1309,16 @@ namespace MvvmFx.Windows.Forms
 
         private bool TryAddNode(BoundTreeNode node)
         {
-            if (!_itemsIdentifiers.ContainsKey(node.NodeID))
+            if (!_itemsIdentifiers.ContainsKey(node.NodeId))
             {
-                if (IsIdNull(node.ParentNodeID))
+                if (IsIdNull(node.ParentNodeId))
                 {
                     AddNode(Nodes, node);
                     return true;
                 }
-                if (_itemsIdentifiers.ContainsKey(node.ParentNodeID))
+                if (_itemsIdentifiers.ContainsKey(node.ParentNodeId))
                 {
-                    var parentNode = _itemsIdentifiers[node.ParentNodeID] as TreeNode;
+                    var parentNode = _itemsIdentifiers[node.ParentNodeId] as TreeNode;
                     if (parentNode != null)
                     {
                         AddNode(parentNode.Nodes, node);
@@ -1274,24 +1333,24 @@ namespace MvvmFx.Windows.Forms
         {
             string message;
 
-            if (_itemsIdentifiers.ContainsKey(node.NodeID))
+            if (_itemsIdentifiers.ContainsKey(node.NodeId))
             {
                 node.NodeError = true;
                 // log and ignore node
-                message = string.Format(DuplicatedMessage, node.Text, node.NodeID);
+                message = string.Format(DuplicatedMessage, node.Text, node.NodeId);
                 Logger.Error(message);
                 MessageBox.Show(message, DuplicatedCaption, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (node.NodeID.Equals(node.ParentNodeID))
+                if (node.NodeId.Equals(node.ParentNodeId))
                     message = SelfParent;
-                else if (!_itemsIdentifiers.ContainsKey(node.ParentNodeID))
+                else if (!_itemsIdentifiers.ContainsKey(node.ParentNodeId))
                     message = InexistentParent;
                 else
                     message = GeneralNodeError;
 
-                Logger.Warn(string.Format("Node \"{0}\" - \"{1}\": {2}", node.Text, node.NodeID, message));
+                Logger.Warn(string.Format("Node \"{0}\" - \"{1}\": {2}", node.Text, node.NodeId, message));
                 node.NodeError = true;
                 node.ForeColor = Color.Red;
                 node.ToolTipText = message + Environment.NewLine + node.ToolTipText;
@@ -1302,7 +1361,7 @@ namespace MvvmFx.Windows.Forms
         private void AddNode(TreeNodeCollection nodes, BoundTreeNode node)
         {
             _itemsPositions.Add(node.Position, node);
-            _itemsIdentifiers.Add(node.NodeID, node);
+            _itemsIdentifiers.Add(node.NodeId, node);
             nodes.Add(node);
             CheckAccess(node);
         }
@@ -1311,8 +1370,8 @@ namespace MvvmFx.Windows.Forms
         {
             var message = string.Empty;
 
-            var dataParentID = _parentIdentifierProperty.GetValue(_listManager.List[node.Position]);
-            if (dataParentID == null)
+            var dataParentId = _parentIdentifierProperty.GetValue(_listManager.List[node.Position]);
+            if (dataParentId == null)
             {
                 node.Remove();
                 Nodes.Add(node);
@@ -1320,15 +1379,15 @@ namespace MvvmFx.Windows.Forms
                 return true;
             }
 
-            if (node.ParentNodeID == null || node.ParentNodeID.GetHashCode() != dataParentID.GetHashCode())
+            if (node.ParentNodeId == null || node.ParentNodeId.GetHashCode() != dataParentId.GetHashCode())
             {
-                if (node.NodeID.GetHashCode() == dataParentID.GetHashCode())
+                if (node.NodeId.GetHashCode() == dataParentId.GetHashCode())
                 {
                     message = "Node cannot be its own parent.";
                 }
                 else
                 {
-                    var newParentNode = _itemsIdentifiers[dataParentID] as BoundTreeNode;
+                    var newParentNode = _itemsIdentifiers[dataParentId] as BoundTreeNode;
                     if (newParentNode == null)
                     {
                         message = "Item not found or wrong type.";
@@ -1415,10 +1474,10 @@ namespace MvvmFx.Windows.Forms
 
         private void ChangeParentNoAncestor(BoundTreeNode childnode, BoundTreeNode parentNode)
         {
-            var parentID = _identifierProperty.GetValue(_listManager.List[parentNode.Position]);
-            if (parentID != null)
+            var parentId = _identifierProperty.GetValue(_listManager.List[parentNode.Position]);
+            if (parentId != null)
             {
-                _parentIdentifierProperty.SetValue(_listManager.List[childnode.Position], parentID);
+                _parentIdentifierProperty.SetValue(_listManager.List[childnode.Position], parentId);
                 _listManager.EndCurrentEdit();
             }
         }
@@ -1426,15 +1485,14 @@ namespace MvvmFx.Windows.Forms
         private void ChangeParentUpTheSameBranch(BoundTreeNode childnode, BoundTreeNode parentNode,
             BoundTreeNode replacementeParent, BoundTreeNode placeHolder)
         {
-            var replacementeParentID = _identifierProperty.GetValue(_listManager.List[replacementeParent.Position]);
-            if (replacementeParentID != null)
-                _parentIdentifierProperty.SetValue(_listManager.List[placeHolder.Position], replacementeParentID);
+            var replacementeParentId = _identifierProperty.GetValue(_listManager.List[replacementeParent.Position]);
+            if (replacementeParentId != null)
+                _parentIdentifierProperty.SetValue(_listManager.List[placeHolder.Position], replacementeParentId);
 
-
-            var parentID = _identifierProperty.GetValue(_listManager.List[parentNode.Position]);
-            if (parentID != null)
+            var parentId = _identifierProperty.GetValue(_listManager.List[parentNode.Position]);
+            if (parentId != null)
             {
-                _parentIdentifierProperty.SetValue(_listManager.List[childnode.Position], parentID);
+                _parentIdentifierProperty.SetValue(_listManager.List[childnode.Position], parentId);
                 _listManager.EndCurrentEdit();
             }
         }
@@ -1442,9 +1500,14 @@ namespace MvvmFx.Windows.Forms
         private void RefreshData(BoundTreeNode node)
         {
             var position = node.Position;
-            node.NodeID = _identifierProperty.GetValue(_listManager.List[position]);
-            node.Text = (string) _displayProperty.GetValue(_listManager.List[position]);
-            node.ParentNodeID = _parentIdentifierProperty.GetValue(_listManager.List[position]);
+            node.NodeId = _identifierProperty.GetValue(_listManager.List[position]);
+            if (_displayProperty != null && _listManager.List.Count > position)
+            {
+                var text = _displayProperty.GetValue(_listManager.List[position]) as string;
+                if (text != null)
+                    node.Text = text;
+            }
+            node.ParentNodeId = _parentIdentifierProperty.GetValue(_listManager.List[position]);
             if (_readOnlyProperty != null)
                 node.ReadOnly = Convert.ToBoolean(_readOnlyProperty.GetValue(_listManager.List[position]));
             if (_toolTipTextProperty != null)
@@ -1485,14 +1548,19 @@ namespace MvvmFx.Windows.Forms
 
         #region BindingContext Events
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Raises the <see cref="E:System.Windows.Forms.Control.BindingContextChanged"/> event.
         /// </summary>
         /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data. </param>
+#elif WISEJ
+        /// <summary>
+        /// Raises the <see cref="E:Wisej.Base.ControlBase.BindingContextChanged"/> event.
+        /// </summary>
+        /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data. </param>
 #else
         /// <summary>
-        /// Raises the <see cref="E:BindingContextChanged" /> event.
+        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.BindingContextChanged" /> event.
         /// </summary>
         /// <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
 #endif
@@ -1576,7 +1644,7 @@ namespace MvvmFx.Windows.Forms
                     if (deletedNode != null)
                     {
                         _itemsPositions.Remove(e.NewIndex);
-                        _itemsIdentifiers.Remove(deletedNode.NodeID);
+                        _itemsIdentifiers.Remove(deletedNode.NodeId);
                         RefreshTree();
                     }
                     else
@@ -1600,9 +1668,9 @@ namespace MvvmFx.Windows.Forms
 
             //save all expanded nodes
             var expandedNodes = _itemsIdentifiers.Cast<object>()
-                    .Select(itemsIdentifier => ((DictionaryEntry) itemsIdentifier).Value as BoundTreeNode)
-                    .Where(node => node.IsExpanded)
-                    .ToList();
+                .Select(itemsIdentifier => ((DictionaryEntry) itemsIdentifier).Value as BoundTreeNode)
+                .Where(node => node.IsExpanded)
+                .ToList();
 
             UpdateAllData();
 
@@ -1612,7 +1680,7 @@ namespace MvvmFx.Windows.Forms
                 foreach (var itemsIdentifier in _itemsIdentifiers)
                 {
                     var node = ((DictionaryEntry) itemsIdentifier).Value as BoundTreeNode;
-                    if (node != null && node.NodeID.GetHashCode() == expandedNode.NodeID.GetHashCode())
+                    if (node != null && node.NodeId.GetHashCode() == expandedNode.NodeId.GetHashCode())
                     {
                         node.Expand();
                         break;
@@ -1627,7 +1695,7 @@ namespace MvvmFx.Windows.Forms
 
         #region Drag & Drop
 
-#if !WEBGUI
+#if WINFORMS
 
         /// <summary>
         /// Raises the <see cref="E:ItemDrag"/> event.
@@ -1662,12 +1730,13 @@ namespace MvvmFx.Windows.Forms
         /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
         protected override void OnDragDrop(DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(typeof (BoundTreeNode))) //Continue only if the item being dragged is a BoundTreeNode object
+            if (e.Data.GetDataPresent(typeof(BoundTreeNode)))
+                //Continue only if the item being dragged is a BoundTreeNode object
             {
                 var tv = (TreeView) this;
                 var position = tv.PointToClient(new Point(e.X, e.Y)); //Get the mouse co-ordinates
                 var dropNode = (BoundTreeNode) tv.GetNodeAt(position);
-                var dragNode = (BoundTreeNode) e.Data.GetData(typeof (BoundTreeNode));
+                var dragNode = (BoundTreeNode) e.Data.GetData(typeof(BoundTreeNode));
 
                 if (dragNode != null && (ReadOnlyAllowDrag || !dragNode.ReadOnly))
                 {
@@ -1685,7 +1754,80 @@ namespace MvvmFx.Windows.Forms
                                 dropNode.Expand();
                         }
                     }
-                    else if (e.Data.GetData(typeof (BoundTreeNode)) != null)
+                    else if (e.Data.GetData(typeof(BoundTreeNode)) != null)
+                    {
+                        // dropNode is the TreeView's root
+                        if (ValidateTarget(dragNode))
+                        {
+                            _isDroppingOnRoot = true;
+                            SelectedNode = dragNode;
+                            _isDroppingOnRoot = false;
+                            SelectedNode.EnsureVisible();
+
+                            if (ModelChangeParent(dragNode, null))
+                                ExpandAll();
+                        }
+                    }
+                }
+            }
+            base.OnDragDrop(e);
+        }
+
+#elif WISEJ
+
+        /// <summary>
+        /// Raises the <see cref="E:ItemDrag"/> event.
+        /// </summary>
+        /// <param name="e">The <see cref="T:Gizmox.WebGUI.Forms.ItemDragEventArgs"/> instance containing the event data.</param>
+        protected override void OnItemDrag(ItemDragEventArgs e)
+        {
+            DoDragDrop(e.Item, DragDropEffects.Copy | DragDropEffects.Move); //Begin the drag-drop operation
+            base.OnItemDrag(e);
+        }
+
+        /// <summary>
+        /// Raises the <see cref="E:System.Windows.Forms.Control.DragOver" /> event.
+        /// </summary>
+        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
+        protected override void OnDragOver(DragEventArgs e)
+        {
+            var destinationNode = e.DropTarget as TreeNode;
+            _isDraggingOver = true;
+            SelectedNode = destinationNode; //Highlight the node in relations to the mouse position
+            _isDraggingOver = false;
+            e.Effect = DragDropEffects.Move;
+            base.OnDragOver(e);
+        }
+
+        /// <summary>
+        /// Raises the <see cref="E:System.Windows.Forms.Control.DragDrop" /> event.
+        /// </summary>
+        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
+        protected override void OnDragDrop(DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(typeof(BoundTreeNode)))
+                //Continue only if the item being dragged is a BoundTreeNode object
+            {
+                var dropNode = (BoundTreeNode) e.DropTarget;
+                var dragNode = (BoundTreeNode) e.Data.GetData(typeof(BoundTreeNode));
+
+                if (dragNode != null && (ReadOnlyAllowDrag || !dragNode.ReadOnly))
+                {
+                    // now you can drag
+
+                    // dropNode is a BoundTreeNode
+                    if (dropNode != null && (ReadOnlyAllowDrop || !dropNode.ReadOnly))
+                    {
+                        if (ValidateTarget(dragNode, dropNode))
+                        {
+                            SelectedNode = dropNode;
+                            dropNode.EnsureVisible();
+
+                            if (ModelChangeParent(dragNode, dropNode))
+                                dropNode.Expand();
+                        }
+                    }
+                    else if (e.Data.GetData(typeof(BoundTreeNode)) != null)
                     {
                         // dropNode is the TreeView's root
                         if (ValidateTarget(dragNode))
@@ -1707,9 +1849,9 @@ namespace MvvmFx.Windows.Forms
 #else
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.DragDrop"/> event.
+        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.Control.DragDrop"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs"/> that contains the event data. </param>
+        /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.DragEventArgs"/> that contains the event data. </param>
         protected override void OnDragDrop(DragEventArgs e)
         {
             var dragDropEventArgs = e as DragDropEventArgs;
@@ -1718,14 +1860,14 @@ namespace MvvmFx.Windows.Forms
             {
                 if (dragDropEventArgs.Source != null)
                 {
-                    if (ReferenceEquals(dragDropEventArgs.Source.GetType(), typeof (BoundTreeNode)))
+                    if (ReferenceEquals(dragDropEventArgs.Source.GetType(), typeof(BoundTreeNode)))
                     {
                         var dragNode = (BoundTreeNode) dragDropEventArgs.Source;
 
                         if (dragNode != null && (ReadOnlyAllowDrag || !dragNode.ReadOnly) && dragDropEventArgs.ExplicitTarget != null)
                         {
                             // now you can drag
-                            if (ReferenceEquals(dragDropEventArgs.ExplicitTarget.GetType(), typeof (BoundTreeNode)))
+                            if (ReferenceEquals(dragDropEventArgs.ExplicitTarget.GetType(), typeof(BoundTreeNode)))
                             {
                                 // dropNode is a BoundTreeNode
                                 var dropNode = (BoundTreeNode) dragDropEventArgs.ExplicitTarget;
@@ -1742,7 +1884,7 @@ namespace MvvmFx.Windows.Forms
                                     }
                                 }
                             }
-                            else if (ReferenceEquals(dragDropEventArgs.ExplicitTarget.GetType(), typeof (BoundTreeView)))
+                            else if (ReferenceEquals(dragDropEventArgs.ExplicitTarget.GetType(), typeof(BoundTreeView)))
                             {
                                 // dropNode is the TreeView's root
                                 if (ValidateTarget(dragNode))
@@ -1981,7 +2123,8 @@ namespace MvvmFx.Windows.Forms
             {
                 try
                 {
-                    _displayProperty.SetValue(_listManager.List[node.Position], _valueConverter.ConvertFromString(e.Label));
+                    _displayProperty.SetValue(_listManager.List[node.Position],
+                        _valueConverter.ConvertFromString(e.Label));
                     _listManager.EndCurrentEdit();
                     base.OnAfterLabelEdit(e);
                 }
@@ -1989,7 +2132,8 @@ namespace MvvmFx.Windows.Forms
                 {
                     // If you try to enter strings in number-columns, too long strings or something
                     // else wich is not allowed by the DataSource.
-                    MessageBox.Show(Resources.EditFailed + ": " + ex.Message, Resources.EditFailed, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(Resources.EditFailed + @": " + ex.Message, Resources.EditFailed,
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     _listManager.CancelCurrentEdit();
                     e.CancelEdit = true;
                 }

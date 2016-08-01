@@ -76,11 +76,47 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="LogManager.cs" />
+    <Compile Include="MenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolBarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripDropDownButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripSplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripStatusLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripTextBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TreeNodeSorter.cs" />
     <Compile Include="BoundUserControl.cs">
@@ -96,9 +132,9 @@
     <Content Include="BoundTreeView.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
-      <Name>MvvmFx.Logging</Name>
+      <Name>MvvmFx.Logging.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
