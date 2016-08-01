@@ -55,9 +55,7 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="BindingSourceRefresh.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="BindingSourceRefresh.cs" />
     <Compile Include="BoundForm.cs">
       <SubType>Form</SubType>
     </Compile>

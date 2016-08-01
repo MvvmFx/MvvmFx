@@ -46,7 +46,6 @@
     </Compile>
     <Compile Include="..\MvvmFx.Windows.Forms.Net4\BindingSourceRefresh.cs">
       <Link>BindingSourceRefresh.cs</Link>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\MvvmFx.Windows.Forms.Net4\BoundForm.cs">
       <Link>BoundForm.cs</Link>
