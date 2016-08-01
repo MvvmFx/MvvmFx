@@ -8,25 +8,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{3B6480E0-C575-4B7B-A16C-6746EC1F4324}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger", "..\Logging\MvvmFx.Log4netLogger\MvvmFx.Log4netLogger.csproj", "{51402EC3-FB13-4741-82A2-458C260C1AAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.Net4", "..\Logging\MvvmFx.Log4netLogger.Net4\MvvmFx.Log4netLogger.Net4.csproj", "{51402EC3-FB13-4741-82A2-458C260C1AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.45", "..\Logging\MvvmFx.Log4netLogger.45\MvvmFx.Log4netLogger.45.csproj", "{627C1829-0234-4C87-9683-8495B95F610B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.Net45", "..\Logging\MvvmFx.Log4netLogger.Net45\MvvmFx.Log4netLogger.Net45.csproj", "{627C1829-0234-4C87-9683-8495B95F610B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net4", "..\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.45", "..\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net45", "..\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger", "..\Logging\MvvmFx.NLogLogger\MvvmFx.NLogLogger.csproj", "{C9B37AF6-4A01-41A6-B890-5714CBF9128B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net4", "..\Logging\MvvmFx.NLogLogger.Net4\MvvmFx.NLogLogger.Net4.csproj", "{C9B37AF6-4A01-41A6-B890-5714CBF9128B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.45", "..\Logging\MvvmFx.NLogLogger.45\MvvmFx.NLogLogger.45.csproj", "{882D7D0B-5057-450D-9F23-FEA7773CBAE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net45", "..\Logging\MvvmFx.NLogLogger.Net45\MvvmFx.NLogLogger.Net45.csproj", "{882D7D0B-5057-450D-9F23-FEA7773CBAE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms", "MvvmFx.WebGUI.Forms\MvvmFx.WebGUI.Forms.csproj", "{17BAAB70-3047-4B50-9374-F01664A5AB59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net4", "MvvmFx.WebGUI.Forms.Net4\MvvmFx.WebGUI.Forms.Net4.csproj", "{17BAAB70-3047-4B50-9374-F01664A5AB59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.45", "MvvmFx.WebGUI.Forms.45\MvvmFx.WebGUI.Forms.45.csproj", "{A9147A21-0D79-47BE-9B23-57FE7DF9375A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net45", "MvvmFx.WebGUI.Forms.Net45\MvvmFx.WebGUI.Forms.Net45.csproj", "{A9147A21-0D79-47BE-9B23-57FE7DF9375A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms", "MvvmFx.Windows.Forms\MvvmFx.Windows.Forms.csproj", "{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net4", "MvvmFx.Windows.Forms.Net4\MvvmFx.Windows.Forms.Net4.csproj", "{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.45", "MvvmFx.Windows.Forms.45\MvvmFx.Windows.Forms.45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45", "MvvmFx.Windows.Forms.Net45\MvvmFx.Windows.Forms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
