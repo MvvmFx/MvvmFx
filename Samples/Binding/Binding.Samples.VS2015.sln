@@ -25,19 +25,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceTests", "Perform
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBindings", "SimpleBindings\SimpleBindings.csproj", "{F9348B50-86E7-442F-A01C-18912A8B29CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows", "..\..\Source\Binding\MvvmFx.Windows\MvvmFx.Windows.csproj", "{D316BAF2-3CC2-4E41-9B68-BF49AB9A0B6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Net4", "..\..\Source\Binding\MvvmFx.Windows.Net4\MvvmFx.Windows.Net4.csproj", "{D316BAF2-3CC2-4E41-9B68-BF49AB9A0B6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Specifications", "..\..\Source\Binding\MvvmFx.Windows.Specifications\MvvmFx.Windows.Specifications.csproj", "{753953CB-859D-4094-8B3B-FDC1A46A57E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Specifications.Net4", "..\..\Source\Binding\MvvmFx.Windows.Specifications.Net4\MvvmFx.Windows.Specifications.Net4.csproj", "{753953CB-859D-4094-8B3B-FDC1A46A57E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI", "..\..\Source\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj", "{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI.Net4", "..\..\Source\Binding\MvvmFx.Windows.WebGUI.Net4\MvvmFx.Windows.WebGUI.Net4.csproj", "{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms", "..\..\Source\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj", "{6E93B791-34AC-402D-BB64-DEAAA388D171}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.Net4", "..\..\Source\Binding\MvvmFx.Windows.WinForms.Net4\MvvmFx.Windows.WinForms.Net4.csproj", "{6E93B791-34AC-402D-BB64-DEAAA388D171}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WPF", "..\..\Source\Binding\MvvmFx.Windows.WPF\MvvmFx.Windows.WPF.csproj", "{CFCBA8D1-CFC2-46A3-8774-37223B7499CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WPF.Net4", "..\..\Source\Binding\MvvmFx.Windows.WPF.Net4\MvvmFx.Windows.WPF.Net4.csproj", "{CFCBA8D1-CFC2-46A3-8774-37223B7499CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI", "..\..\Source\Binding\WindowsBase.WebGUI\WindowsBase.WebGUI.csproj", "{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI.Net4", "..\..\Source\Binding\WindowsBase.WebGUI.Net4\WindowsBase.WebGUI.Net4.csproj", "{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms", "..\..\Source\Binding\WindowsBase.WinForms\WindowsBase.WinForms.csproj", "{501BBDBB-AC95-41DE-B87C-0AC946B08047}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net4", "..\..\Source\Binding\WindowsBase.WinForms.Net4\WindowsBase.WinForms.Net4.csproj", "{501BBDBB-AC95-41DE-B87C-0AC946B08047}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bindings", "Bindings", "{8625114F-1475-4F83-A88C-F3BD1211DECB}"
 EndProject

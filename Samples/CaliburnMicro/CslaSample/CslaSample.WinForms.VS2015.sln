@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.WinForms.451", "CslaSample.WinForms.451\CslaSample.WinForms.451.csproj", "{0F46A11E-EBA2-4BEA-9BA4-8D0EAD6B1C3F}"
 EndProject
@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.Business.451", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{5FD961CE-BFF3-4FB6-9892-ADECC71178F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.451", "..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.451\CaliburnMicro.Csla.WinForms.451.csproj", "{228097E8-A63C-4932-98E5-7B245E4765D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net46", "..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.Net46\CaliburnMicro.Csla.WinForms.Net46.csproj", "{228097E8-A63C-4932-98E5-7B245E4765D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.451", "..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net46", "..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.451", "..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net46", "..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net46\MvvmFx.DataBinding.WinForms.Net46.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.451", "..\..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net46", "..\..\..\Source\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDateExtendedParser.451", "SmartDateExtendedParser.451\SmartDateExtendedParser.451.csproj", "{5EB2AFB7-7225-45A6-9ECB-83F98ABC01B8}"
 EndProject
