@@ -40,7 +40,9 @@ namespace MvvmFx.Windows.Forms
     /// Represents a Form that participates in the dependency property system.
     /// </summary>
     /// <remarks>This implementation of this class isn't completed.</remarks>
-#if WEBGUI
+#if WISEJ
+    public class Form : Wisej.Web.Form, IDependencyObject
+#elif WEBGUI
     public class Form : Gizmox.WebGUI.Forms.Form, IDependencyObject
 #else
     public class Form : System.Windows.Forms.Form, IDependencyObject

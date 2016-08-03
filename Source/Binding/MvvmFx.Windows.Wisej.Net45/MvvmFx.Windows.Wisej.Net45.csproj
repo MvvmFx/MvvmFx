@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}</ProjectGuid>
+    <ProjectGuid>{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.Windows</RootNamespace>
-    <AssemblyName>MvvmFx.Windows.WinForms</AssemblyName>
+    <AssemblyName>MvvmFx.Windows.Wisej</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -18,8 +18,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net45\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;MVVMFX</DefineConstants>
+    <OutputPath>..\..\..\bin\Debug\Wisej\net45\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MVVMFX;WISEJ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
@@ -28,11 +28,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net45\</OutputPath>
-    <DefineConstants>TRACE;MVVMFX</DefineConstants>
+    <OutputPath>..\..\..\bin\Release\Wisej\net45\</OutputPath>
+    <DefineConstants>TRACE;MVVMFX;WISEJ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net45\MvvmFx.Windows.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\Wisej\net45\MvvmFx.Windows.Wisej.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -187,9 +189,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsBase.WinForms.Net45\WindowsBase.WinForms.Net45.csproj">
-      <Project>{33290B49-5D4B-47F3-8C03-D203595C9F12}</Project>
-      <Name>WindowsBase.WinForms.Net45</Name>
+    <ProjectReference Include="..\WindowsBase.Wisej.Net45\WindowsBase.Wisej.Net45.csproj">
+      <Project>{afd62700-9250-48f1-85c0-f80249fed399}</Project>
+      <Name>WindowsBase.Wisej.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
