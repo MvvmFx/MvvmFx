@@ -74,9 +74,9 @@
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj">
+    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WinForms.Net4\MvvmFx.Windows.WinForms.Net4.csproj">
       <Project>{6E93B791-34AC-402D-BB64-DEAAA388D171}</Project>
-      <Name>MvvmFx.Windows.WinForms</Name>
+      <Name>MvvmFx.Windows.WinForms.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

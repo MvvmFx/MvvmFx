@@ -50,82 +50,82 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MvvmLight.WinForms\Command\RelayCommand.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Command\RelayCommand.cs">
       <Link>Command\RelayCommand.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Command\RelayCommandGeneric.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Command\RelayCommandGeneric.cs">
       <Link>Command\RelayCommandGeneric.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Helpers\IExecuteWithObject.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Helpers\IExecuteWithObject.cs">
       <Link>Helpers\IExecuteWithObject.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Helpers\IExecuteWithObjectAndResult.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Helpers\IExecuteWithObjectAndResult.cs">
       <Link>Helpers\IExecuteWithObjectAndResult.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakAction.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Helpers\WeakAction.cs">
       <Link>Helpers\WeakAction.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakActionGeneric.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Helpers\WeakActionGeneric.cs">
       <Link>Helpers\WeakActionGeneric.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakFunc.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Helpers\WeakFunc.cs">
       <Link>Helpers\WeakFunc.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Helpers\WeakFuncGeneric.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Helpers\WeakFuncGeneric.cs">
       <Link>Helpers\WeakFuncGeneric.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\ICleanup.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\ICleanup.cs">
       <Link>ICleanup.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\DialogMessage.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\DialogMessage.cs">
       <Link>Messaging\DialogMessage.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\GenericMessage.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\GenericMessage.cs">
       <Link>Messaging\GenericMessage.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\IMessenger.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\IMessenger.cs">
       <Link>Messaging\IMessenger.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\MessageBase.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\MessageBase.cs">
       <Link>Messaging\MessageBase.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\Messenger.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\Messenger.cs">
       <Link>Messaging\Messenger.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessage.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\NotificationMessage.cs">
       <Link>Messaging\NotificationMessage.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageAction.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\NotificationMessageAction.cs">
       <Link>Messaging\NotificationMessageAction.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageActionGeneric.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\NotificationMessageActionGeneric.cs">
       <Link>Messaging\NotificationMessageActionGeneric.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageGeneric.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\NotificationMessageGeneric.cs">
       <Link>Messaging\NotificationMessageGeneric.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\NotificationMessageWithCallback.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\NotificationMessageWithCallback.cs">
       <Link>Messaging\NotificationMessageWithCallback.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\PropertyChangedMessage.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\PropertyChangedMessage.cs">
       <Link>Messaging\PropertyChangedMessage.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\Messaging\PropertyChangedMessageBase.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\Messaging\PropertyChangedMessageBase.cs">
       <Link>Messaging\PropertyChangedMessageBase.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\ObservableObject.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\ObservableObject.cs">
       <Link>ObservableObject.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.WinForms\ViewModelBase.cs">
+    <Compile Include="..\MvvmLight.WinForms.Net4\ViewModelBase.cs">
       <Link>ViewModelBase.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WebGUI.45\MvvmFx.Windows.WebGUI.45.csproj">
+    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WebGUI.Net45\MvvmFx.Windows.WebGUI.Net45.csproj">
       <Project>{D4E9A01D-0B99-41F0-9FF5-848CD8209F51}</Project>
-      <Name>MvvmFx.Windows.WebGUI.45</Name>
+      <Name>MvvmFx.Windows.WebGUI.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

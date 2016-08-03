@@ -47,19 +47,19 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MvvmLight.Extras.WinForms\Ioc\ISimpleIoc.cs">
+    <Compile Include="..\MvvmLight.Extras.WinForms.Net4\Ioc\ISimpleIoc.cs">
       <Link>Ioc\ISimpleIoc.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.Extras.WinForms\Ioc\PreferredConstructor.cs">
+    <Compile Include="..\MvvmLight.Extras.WinForms.Net4\Ioc\PreferredConstructor.cs">
       <Link>Ioc\PreferredConstructor.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.Extras.WinForms\Ioc\SimpleIoc.cs">
+    <Compile Include="..\MvvmLight.Extras.WinForms.Net4\Ioc\SimpleIoc.cs">
       <Link>Ioc\SimpleIoc.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.Extras.WinForms\GlobalSuppressions.cs">
+    <Compile Include="..\MvvmLight.Extras.WinForms.Net4\GlobalSuppressions.cs">
       <Link>GlobalSuppressions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmLight.Extras.WinForms\Properties\Resources.Designer.cs">
+    <Compile Include="..\MvvmLight.Extras.WinForms.Net4\Properties\Resources.Designer.cs">
       <Link>Properties\Resources.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,21 +69,21 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\MvvmLight.Extras.WinForms\Properties\Resources.resx">
+    <EmbeddedResource Include="..\MvvmLight.Extras.WinForms.Net4\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WebGUI.Net4\MvvmFx.Windows.WebGUI.Net4.csproj">
       <Project>{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}</Project>
-      <Name>MvvmFx.Windows.WebGUI</Name>
+      <Name>MvvmFx.Windows.WebGUI.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\WindowsBase.WebGUI\WindowsBase.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Binding\WindowsBase.WebGUI.Net4\WindowsBase.WebGUI.Net4.csproj">
       <Project>{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}</Project>
-      <Name>WindowsBase.WebGUI</Name>
+      <Name>WindowsBase.WebGUI.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

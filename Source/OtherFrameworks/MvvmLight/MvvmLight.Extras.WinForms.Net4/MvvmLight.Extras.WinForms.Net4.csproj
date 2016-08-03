@@ -65,14 +65,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj">
+    <ProjectReference Include="..\..\..\Binding\MvvmFx.Windows.WinForms.Net4\MvvmFx.Windows.WinForms.Net4.csproj">
       <Project>{6E93B791-34AC-402D-BB64-DEAAA388D171}</Project>
-      <Name>MvvmFx.Windows.WinForms</Name>
+      <Name>MvvmFx.Windows.WinForms.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Binding\WindowsBase.WinForms\WindowsBase.WinForms.csproj">
+    <ProjectReference Include="..\..\..\Binding\WindowsBase.WinForms.Net4\WindowsBase.WinForms.Net4.csproj">
       <Project>{501BBDBB-AC95-41DE-B87C-0AC946B08047}</Project>
-      <Name>WindowsBase.WinForms</Name>
+      <Name>WindowsBase.WinForms.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

@@ -1,47 +1,45 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4C6E294-7F62-4004-8352-88275DBE5AFA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solution Items", "{A4C6E294-7F62-4004-8352-88275DBE5AFA}"
 	ProjectSection(SolutionItems) = preProject
 		License.txt = License.txt
 		..\..\Migrated rules for MvvmFx.Windows.ruleset = ..\..\Migrated rules for MvvmFx.Windows.ruleset
-		..\..\mvvmfx.snk = ..\..\mvvmfx.snk
-		..\..\..\nuget.config = ..\..\..\nuget.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WebGUI", "MvvmLight.Extras.WebGUI\MvvmLight.Extras.WebGUI.csproj", "{03242525-CBAB-4BCC-B6F1-B4280DD56032}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WebGUI.Net4", "MvvmLight.Extras.WebGUI.Net4\MvvmLight.Extras.WebGUI.Net4.csproj", "{03242525-CBAB-4BCC-B6F1-B4280DD56032}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WebGUI.45", "MvvmLight.Extras.WebGUI.45\MvvmLight.Extras.WebGUI.45.csproj", "{326A56A3-1797-4689-B99B-B2D8E591AA8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WebGUI.Net45", "MvvmLight.Extras.WebGUI.Net45\MvvmLight.Extras.WebGUI.Net45.csproj", "{326A56A3-1797-4689-B99B-B2D8E591AA8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WinForms", "MvvmLight.Extras.WinForms\MvvmLight.Extras.WinForms.csproj", "{8C675E4D-C047-497B-964D-5FC4508BF084}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WinForms.Net4", "MvvmLight.Extras.WinForms.Net4\MvvmLight.Extras.WinForms.Net4.csproj", "{8C675E4D-C047-497B-964D-5FC4508BF084}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WinForms.45", "MvvmLight.Extras.WinForms.45\MvvmLight.Extras.WinForms.45.csproj", "{18604BE5-C2B2-496B-89B2-29A8CEE78915}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.Extras.WinForms.Net45", "MvvmLight.Extras.WinForms.Net45\MvvmLight.Extras.WinForms.Net45.csproj", "{18604BE5-C2B2-496B-89B2-29A8CEE78915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WebGUI", "MvvmLight.WebGUI\MvvmLight.WebGUI.csproj", "{474001FC-B479-4C82-9969-3AB5A4937DFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WebGUI.Net4", "MvvmLight.WebGUI.Net4\MvvmLight.WebGUI.Net4.csproj", "{474001FC-B479-4C82-9969-3AB5A4937DFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WebGUI.45", "MvvmLight.WebGUI.45\MvvmLight.WebGUI.45.csproj", "{5329FA09-BE0D-4300-9023-7D6C3C3BEEFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WebGUI.Net45", "MvvmLight.WebGUI.Net45\MvvmLight.WebGUI.Net45.csproj", "{5329FA09-BE0D-4300-9023-7D6C3C3BEEFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WinForms", "MvvmLight.WinForms\MvvmLight.WinForms.csproj", "{0908B87E-F74F-4292-B31F-4A0A2FECDF0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WinForms.Net4", "MvvmLight.WinForms.Net4\MvvmLight.WinForms.Net4.csproj", "{0908B87E-F74F-4292-B31F-4A0A2FECDF0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WinForms.45", "MvvmLight.WinForms.45\MvvmLight.WinForms.45.csproj", "{DC25E884-E7D0-4BB4-A13B-D7ECB1E0A82C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLight.WinForms.Net45", "MvvmLight.WinForms.Net45\MvvmLight.WinForms.Net45.csproj", "{DC25E884-E7D0-4BB4-A13B-D7ECB1E0A82C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI", "..\..\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj", "{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI.Net4", "..\..\Binding\MvvmFx.Windows.WebGUI.Net4\MvvmFx.Windows.WebGUI.Net4.csproj", "{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI.45", "..\..\Binding\MvvmFx.Windows.WebGUI.45\MvvmFx.Windows.WebGUI.45.csproj", "{D4E9A01D-0B99-41F0-9FF5-848CD8209F51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WebGUI.Net45", "..\..\Binding\MvvmFx.Windows.WebGUI.Net45\MvvmFx.Windows.WebGUI.Net45.csproj", "{D4E9A01D-0B99-41F0-9FF5-848CD8209F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms", "..\..\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj", "{6E93B791-34AC-402D-BB64-DEAAA388D171}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.Net4", "..\..\Binding\MvvmFx.Windows.WinForms.Net4\MvvmFx.Windows.WinForms.Net4.csproj", "{6E93B791-34AC-402D-BB64-DEAAA388D171}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.45", "..\..\Binding\MvvmFx.Windows.WinForms.45\MvvmFx.Windows.WinForms.45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.Net45", "..\..\Binding\MvvmFx.Windows.WinForms.Net45\MvvmFx.Windows.WinForms.Net45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI", "..\..\Binding\WindowsBase.WebGUI\WindowsBase.WebGUI.csproj", "{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI.Net4", "..\..\Binding\WindowsBase.WebGUI.Net4\WindowsBase.WebGUI.Net4.csproj", "{12DDEA2B-5B10-41D2-8232-A43B7ADEC521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI.45", "..\..\Binding\WindowsBase.WebGUI.45\WindowsBase.WebGUI.45.csproj", "{893F27A5-3710-4F6D-BC9A-8911B549519B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WebGUI.Net45", "..\..\Binding\WindowsBase.WebGUI.Net45\WindowsBase.WebGUI.Net45.csproj", "{893F27A5-3710-4F6D-BC9A-8911B549519B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms", "..\..\Binding\WindowsBase.WinForms\WindowsBase.WinForms.csproj", "{501BBDBB-AC95-41DE-B87C-0AC946B08047}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net4", "..\..\Binding\WindowsBase.WinForms.Net4\WindowsBase.WinForms.Net4.csproj", "{501BBDBB-AC95-41DE-B87C-0AC946B08047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.45", "..\..\Binding\WindowsBase.WinForms.45\WindowsBase.WinForms.45.csproj", "{33290B49-5D4B-47F3-8C03-D203595C9F12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net45", "..\..\Binding\WindowsBase.WinForms.Net45\WindowsBase.WinForms.Net45.csproj", "{33290B49-5D4B-47F3-8C03-D203595C9F12}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binding", "Binding", "{F8712468-5CAE-4156-A8F8-4AF9F09C46C3}"
 EndProject
