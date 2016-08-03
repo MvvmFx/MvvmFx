@@ -40,13 +40,13 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Logging\DebugLogger.cs">
+    <Compile Include="..\MvvmFx.Logging.Net4\DebugLogger.cs">
       <Link>DebugLogger.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Logging\ILog.cs">
+    <Compile Include="..\MvvmFx.Logging.Net4\ILog.cs">
       <Link>ILog.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Logging\NullLogger.cs">
+    <Compile Include="..\MvvmFx.Logging.Net4\NullLogger.cs">
       <Link>NullLogger.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
