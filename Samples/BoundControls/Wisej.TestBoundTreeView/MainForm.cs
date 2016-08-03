@@ -1,18 +1,18 @@
 ﻿using System;
 #if WINFORMS
-using System.Windows.Forms;
-using LogManager = MvvmFx.Windows.Forms.LogManager;
+using Wisej.Web;
+using LogManager = MvvmFx.WisejForms.LogManager;
 #elif WISEJ
 using Wisej.Web;
-using LogManager = MvvmFx.Windows.Forms.LogManager;
+using LogManager = MvvmFx.WisejForms.LogManager;
 #else
 using Gizmox.WebGUI.Forms;
 using LogManager = MvvmFx.WebGUI.Forms.LogManager;
 #endif
 
-namespace WinForms.TestBoundTreeView
+namespace WisejTestBoundTreeView
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Page
     {
         public MainForm()
         {

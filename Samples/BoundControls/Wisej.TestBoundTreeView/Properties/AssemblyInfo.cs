@@ -1,15 +1,21 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Wisej.Core;
+
+// Add the WisejResources attribute to
+// merge js and css embedded resources with the wisej package.
+// [assembly: WisejResources(ExcludeList: "")]
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WebGUI.TestBoundTreeView")]
+[assembly: AssemblyTitle("WisejTestBoundTreeView")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("WebGUI.TestBoundTreeView")]
-[assembly: AssemblyCopyright("Copyright © MvvmFx 2015.")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("WisejTestBoundTreeView")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -18,13 +24,16 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("ba22ee1e-c853-40b1-a5c1-ed2b10300ac8")]
+
 // Version information for an assembly consists of the following four values:
-//
+// 
 //      Major Version
 //      Minor Version
 //      Build Number
 //      Revision
-//
+// 
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]

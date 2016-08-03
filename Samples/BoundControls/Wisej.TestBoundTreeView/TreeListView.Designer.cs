@@ -1,4 +1,4 @@
-﻿namespace WinForms.TestBoundTreeView
+﻿namespace WisejTestBoundTreeView
 {
     partial class TreeListView
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.boundListView1 = new MvvmFx.Windows.Forms.BoundListView();
+            this.boundListView1 = new MvvmFx.WisejForms.BoundListView();
             this.SuspendLayout();
             // 
             // boundListView1
@@ -43,13 +43,12 @@
             this.boundListView1.Name = "boundListView1";
             this.boundListView1.Size = new System.Drawing.Size(500, 418);
             this.boundListView1.TabIndex = 0;
-            this.boundListView1.UseCompatibleStateImageBehavior = false;
-            this.boundListView1.View = System.Windows.Forms.View.Details;
+            this.boundListView1.View = Wisej.Web.View.Details;
             // 
             // TreeListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.boundListView1);
             this.MaximumSize = new System.Drawing.Size(931, 425);
             this.MinimumSize = new System.Drawing.Size(931, 425);
@@ -61,6 +60,6 @@
 
         #endregion
 
-        private MvvmFx.Windows.Forms.BoundListView boundListView1;
+        private MvvmFx.WisejForms.BoundListView boundListView1;
     }
 }

@@ -1,8 +1,12 @@
 ﻿using System;
 using BoundControls.Business;
-#if !WEBGUI
+#if WINFORMS
 using System.Windows.Forms;
 using MvvmFx.Windows.Forms;
+#elif WISEJ
+using Wisej.Web;
+using MvvmFx.WisejForms;
+using BoundUserControl = Wisej.Web.UserControl;
 #else
 using Gizmox.WebGUI.Forms;
 using MvvmFx.WebGUI.Forms;
@@ -46,10 +50,11 @@ namespace WinForms.TestBoundTreeView
 
         void _docTypes_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
         {
-            MessageBox.Show("Business object ListChanged event.", "Event triggered", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Business object ListChanged event.", "Event triggered", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
-        #endregion        
+        #endregion
 
         #region Data binding helpers
 
@@ -184,7 +189,7 @@ namespace WinForms.TestBoundTreeView
 
             foreach (ListViewItem item in boundListView1.Items)
             {
-                var parentID = ((DocTypeEdit)item.Tag).DocTypeParentID;
+                var parentID = ((DocTypeEdit) item.Tag).DocTypeParentID;
                 if (parentID == null)
                 {
                     item.Group = boundListView1.Groups[0];
@@ -226,7 +231,7 @@ namespace WinForms.TestBoundTreeView
             if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxModel.Text))
                 return;
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int)dataGridView1.CurrentRow.Cells[0].Value);
+            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) dataGridView1.CurrentRow.Cells[0].Value);
             docTypeEdit.DocTypeName = dgvTextboxModel.Text;
             RedrawForm();
 
@@ -241,7 +246,7 @@ namespace WinForms.TestBoundTreeView
             dataGridView1.CurrentRow.Cells[1].Value = dgvTextboxView.Text;
             RedrawForm();
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int)dataGridView1.CurrentRow.Cells[0].Value);
+            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) dataGridView1.CurrentRow.Cells[0].Value);
             docTypeName.Text = docTypeEdit.DocTypeName;
         }
 
@@ -254,10 +259,10 @@ namespace WinForms.TestBoundTreeView
             if (string.IsNullOrEmpty(lbTextboxModel.Text))
                 return;
 
-            ((DocTypeEdit)listBox1.Items[listBox1.SelectedIndex]).DocTypeName = lbTextboxModel.Text;
+            ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName = lbTextboxModel.Text;
             RedrawForm();
 
-            docTypeName.Text = ((DocTypeEdit)listBox1.Items[listBox1.SelectedIndex]).DocTypeName;
+            docTypeName.Text = ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName;
         }
 
         private void lbButtonView_Click(object sender, EventArgs e)
@@ -267,10 +272,10 @@ namespace WinForms.TestBoundTreeView
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            ((DocTypeEdit)listBox1.Items[listBox1.SelectedIndex]).DocTypeName = lbTextboxView.Text;
+            ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName = lbTextboxView.Text;
             RedrawForm();
 
-            docTypeName.Text = ((DocTypeEdit)listBox1.Items[listBox1.SelectedIndex]).DocTypeName;
+            docTypeName.Text = ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName;
         }
 
         #endregion
@@ -282,7 +287,7 @@ namespace WinForms.TestBoundTreeView
             if (string.IsNullOrEmpty(lvTextboxModel.Text))
                 return;
 
-            var docTypeEdit = (DocTypeEdit)boundListView1.SelectedItems[0].Tag;
+            var docTypeEdit = (DocTypeEdit) boundListView1.SelectedItems[0].Tag;
             docTypeEdit.DocTypeName = lvTextboxModel.Text;
             RedrawForm();
 
@@ -296,7 +301,7 @@ namespace WinForms.TestBoundTreeView
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            var docTypeEdit = (DocTypeEdit)boundListView1.SelectedItems[0].Tag;
+            var docTypeEdit = (DocTypeEdit) boundListView1.SelectedItems[0].Tag;
             docTypeEdit.DocTypeName = lvTextboxView.Text;
             RedrawForm();
 
@@ -314,7 +319,7 @@ namespace WinForms.TestBoundTreeView
             if (string.IsNullOrEmpty(tvTextboxModel.Text))
                 return;
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int)boundTreeView1.SelectedNode.Tag);
+            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
             docTypeEdit.DocTypeName = tvTextboxModel.Text;
             RedrawForm();
 
@@ -328,7 +333,7 @@ namespace WinForms.TestBoundTreeView
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int)boundTreeView1.SelectedNode.Tag);
+            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
             docTypeEdit.DocTypeName = tvTextboxView.Text;
             RedrawForm();
 
@@ -344,9 +349,9 @@ namespace WinForms.TestBoundTreeView
                 MessageBox.Show("Select one node");
             else
             {
-                docTypeName.Text = ((DocTypeEdit)boundListView1.SelectedItems[0].Tag).DocTypeName;
-                docTypeID.Text = ((DocTypeEdit)boundListView1.SelectedItems[0].Tag).DocTypeID.ToString();
-                docTypeParentID.Text = ((DocTypeEdit)boundListView1.SelectedItems[0].Tag).DocTypeParentID.ToString();
+                docTypeName.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeName;
+                docTypeID.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeID.ToString();
+                docTypeParentID.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeParentID.ToString();
             }
         }
 
@@ -362,20 +367,20 @@ namespace WinForms.TestBoundTreeView
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int)dataGridView1.CurrentRow.Cells[0].Value);
+            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) dataGridView1.CurrentRow.Cells[0].Value);
             docTypeName.Text = docTypeEdit.DocTypeName;
             RedrawForm();
         }
 
         private void boundListView1_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
-            docTypeName.Text = ((DocTypeEdit)boundListView1.SelectedItems[0].Tag).DocTypeName;
+            docTypeName.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeName;
             RedrawForm();
         }
 
         private void boundTreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int)e.Node.Tag);
+            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) e.Node.Tag);
             docTypeName.Text = docTypeEdit.DocTypeName;
             RedrawForm();
         }
@@ -387,12 +392,10 @@ namespace WinForms.TestBoundTreeView
 
         private void boundListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void boundTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
         }
     }
 }

@@ -1,8 +1,12 @@
 ﻿using System;
 using BoundControls.Business;
-#if !WEBGUI
+#if WINFORMS
 using System.Windows.Forms;
 using MvvmFx.Windows.Forms;
+#elif WISEJ
+using Wisej.Web;
+using MvvmFx.WisejForms;
+using BoundUserControl = Wisej.Web.UserControl;
 #else
 using Gizmox.WebGUI.Forms;
 using MvvmFx.WebGUI.Forms;

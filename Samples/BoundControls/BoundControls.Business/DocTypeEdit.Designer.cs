@@ -149,7 +149,7 @@ namespace BoundControls.Business
         /// Initializes a new instance of the <see cref="DocTypeEdit"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private DocTypeEdit()
+        public DocTypeEdit()
         {
             // Prevent direct creation
 
