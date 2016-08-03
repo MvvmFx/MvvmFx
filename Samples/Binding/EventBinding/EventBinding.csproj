@@ -58,9 +58,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WinForms\MvvmFx.Windows.WinForms.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WinForms.Net4\MvvmFx.Windows.WinForms.Net4.csproj">
       <Project>{6E93B791-34AC-402D-BB64-DEAAA388D171}</Project>
-      <Name>MvvmFx.Windows.WinForms</Name>
+      <Name>MvvmFx.Windows.WinForms.Net4</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
