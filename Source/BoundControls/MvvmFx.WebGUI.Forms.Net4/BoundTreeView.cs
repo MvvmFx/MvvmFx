@@ -1731,8 +1731,9 @@ namespace MvvmFx.WebGUI.Forms
         protected override void OnDragDrop(DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(BoundTreeNode)))
-                //Continue only if the item being dragged is a BoundTreeNode object
             {
+                // Continue only if the item being dragged is a BoundTreeNode object
+
                 var tv = (TreeView) this;
                 var position = tv.PointToClient(new Point(e.X, e.Y)); //Get the mouse co-ordinates
                 var dropNode = (BoundTreeNode) tv.GetNodeAt(position);
@@ -1806,8 +1807,9 @@ namespace MvvmFx.WebGUI.Forms
         protected override void OnDragDrop(DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(BoundTreeNode)))
-                //Continue only if the item being dragged is a BoundTreeNode object
             {
+                // Continue only if the item being dragged is a BoundTreeNode object
+
                 var dropNode = (BoundTreeNode) e.DropTarget;
                 var dragNode = (BoundTreeNode) e.Data.GetData(typeof(BoundTreeNode));
 
