@@ -1,4 +1,4 @@
-﻿namespace WinForms.TestBoundTreeView
+﻿namespace WisejTestBoundTreeView
 {
     partial class TreeView
     {
@@ -30,37 +30,39 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TreeView));
-            this.docTypeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonView = new System.Windows.Forms.Button();
-            this.textboxView = new System.Windows.Forms.TextBox();
-            this.textboxModel = new System.Windows.Forms.TextBox();
-            this.buttonModel = new System.Windows.Forms.Button();
-            this.boundTreeView1 = new MvvmFx.Windows.Forms.BoundTreeView();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.docTypeName = new System.Windows.Forms.Label();
-            this.dragDropStatusLabel = new System.Windows.Forms.Label();
-            this.docTypeID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.docTypeParentID = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.refreshButton = new System.Windows.Forms.Button();
-            this.sortButton = new System.Windows.Forms.Button();
-            this.expandButton = new System.Windows.Forms.Button();
-            this.readOnlyAllowSelectCheckBox = new System.Windows.Forms.CheckBox();
-            this.readOnlyAllowDragCheckBox = new System.Windows.Forms.CheckBox();
-            this.readOnlyAllowDropCheckBox = new System.Windows.Forms.CheckBox();
-            this.collapseButton = new System.Windows.Forms.Button();
-            this.allowDropOnDescendentsCheckBox = new System.Windows.Forms.CheckBox();
-            this.allowDropOnRootCheckBox = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).BeginInit();
+            Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images"))), "Node.png");
+            Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images1"))), "NodeSelected.png");
+            Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images2"))), "ReadOnlyNode.png");
+            Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images3"))), "ReadOnlyNodeSelected.png");
+            this.docTypeListBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.buttonView = new Wisej.Web.Button();
+            this.textboxView = new Wisej.Web.TextBox();
+            this.textboxModel = new Wisej.Web.TextBox();
+            this.buttonModel = new Wisej.Web.Button();
+            this.boundTreeView1 = new MvvmFx.WisejForms.BoundTreeView();
+            this.imageList = new Wisej.Web.ImageList(this.components);
+            this.label1 = new Wisej.Web.Label();
+            this.docTypeName = new Wisej.Web.Label();
+            this.dragDropStatusLabel = new Wisej.Web.Label();
+            this.docTypeID = new Wisej.Web.Label();
+            this.label3 = new Wisej.Web.Label();
+            this.docTypeParentID = new Wisej.Web.Label();
+            this.label5 = new Wisej.Web.Label();
+            this.refreshButton = new Wisej.Web.Button();
+            this.sortButton = new Wisej.Web.Button();
+            this.expandButton = new Wisej.Web.Button();
+            this.readOnlyAllowSelectCheckBox = new Wisej.Web.CheckBox();
+            this.readOnlyAllowDragCheckBox = new Wisej.Web.CheckBox();
+            this.readOnlyAllowDropCheckBox = new Wisej.Web.CheckBox();
+            this.collapseButton = new Wisej.Web.Button();
+            this.allowDropOnDescendentsCheckBox = new Wisej.Web.CheckBox();
+            this.allowDropOnRootCheckBox = new Wisej.Web.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // docTypeListBindingSource
             // 
             this.docTypeListBindingSource.DataSource = typeof(BoundControls.Business.DocTypeEditColl);
-            this.bindingSourceRefresh.SetReadValuesOnChange(this.docTypeListBindingSource, true);
             // 
             // buttonView
             // 
@@ -69,7 +71,6 @@
             this.buttonView.Size = new System.Drawing.Size(84, 23);
             this.buttonView.TabIndex = 19;
             this.buttonView.Text = "Set View";
-            this.buttonView.UseVisualStyleBackColor = true;
             this.buttonView.Click += new System.EventHandler(this.tvButtonView_Click);
             // 
             // textboxView
@@ -93,19 +94,17 @@
             this.buttonModel.Size = new System.Drawing.Size(84, 23);
             this.buttonModel.TabIndex = 16;
             this.buttonModel.Text = "Set Model";
-            this.buttonModel.UseVisualStyleBackColor = true;
             this.buttonModel.Click += new System.EventHandler(this.tvButtonModel_Click);
             // 
             // boundTreeView1
             // 
+            this.boundTreeView1.AllowDrag = true;
             this.boundTreeView1.AllowDrop = true;
             this.boundTreeView1.DataSource = this.docTypeListBindingSource;
             this.boundTreeView1.DisplayMember = "DocTypeName";
             this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
             this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";
             this.boundTreeView1.GeneralNodeError = "Error at node.";
-            this.boundTreeView1.HideSelection = false;
-            this.boundTreeView1.HotTracking = true;
             this.boundTreeView1.IdentifierMember = "DocTypeID";
             this.boundTreeView1.ImageIndex = 0;
             this.boundTreeView1.ImageList = this.imageList;
@@ -113,6 +112,7 @@
             this.boundTreeView1.LabelEdit = true;
             this.boundTreeView1.Location = new System.Drawing.Point(16, 13);
             this.boundTreeView1.Name = "boundTreeView1";
+            this.boundTreeView1.OpenedImageIndex = 1;
             this.boundTreeView1.ParentIdentifierMember = "DocTypeParentID";
             this.boundTreeView1.ReadOnlyImageIndex = 2;
             this.boundTreeView1.ReadOnlyMember = "DocTypeIsReadOnly";
@@ -126,21 +126,20 @@
             this.boundTreeView1.ToolTipTextMember = "DocTypeDescription";
             this.boundTreeView1.ValueMember = "DocTypeID";
             this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
-            this.boundTreeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
-            this.boundTreeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.boundTreeView1_DragDrop);
+            this.boundTreeView1.AfterLabelEdit += new Wisej.Web.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
+            this.boundTreeView1.DragDrop += new Wisej.Web.DragEventHandler(this.boundTreeView1_DragDrop);
             // 
             // imageList
             // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "Node.png");
-            this.imageList.Images.SetKeyName(1, "NodeSelected.png");
-            this.imageList.Images.SetKeyName(2, "ReadOnlyNode.png");
-            this.imageList.Images.SetKeyName(3, "ReadOnlyNodeSelected.png");
+            this.imageList.Images.AddRange(new Wisej.Web.ImageListEntry[] {
+            imageListEntry1,
+            imageListEntry2,
+            imageListEntry3,
+            imageListEntry4});
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.AutoSize = false;
             this.label1.Location = new System.Drawing.Point(543, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
@@ -149,6 +148,7 @@
             // 
             // docTypeName
             // 
+            this.docTypeName.AutoSize = false;
             this.docTypeName.Location = new System.Drawing.Point(661, 66);
             this.docTypeName.Name = "docTypeName";
             this.docTypeName.Size = new System.Drawing.Size(100, 13);
@@ -157,6 +157,7 @@
             // 
             // dragDropStatusLabel
             // 
+            this.dragDropStatusLabel.AutoSize = false;
             this.dragDropStatusLabel.Location = new System.Drawing.Point(543, 216);
             this.dragDropStatusLabel.Name = "dragDropStatusLabel";
             this.dragDropStatusLabel.Size = new System.Drawing.Size(200, 13);
@@ -165,6 +166,7 @@
             // 
             // docTypeID
             // 
+            this.docTypeID.AutoSize = false;
             this.docTypeID.Location = new System.Drawing.Point(664, 104);
             this.docTypeID.Name = "docTypeID";
             this.docTypeID.Size = new System.Drawing.Size(100, 13);
@@ -173,7 +175,7 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
+            this.label3.AutoSize = false;
             this.label3.Location = new System.Drawing.Point(543, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
@@ -182,6 +184,7 @@
             // 
             // docTypeParentID
             // 
+            this.docTypeParentID.AutoSize = false;
             this.docTypeParentID.Location = new System.Drawing.Point(666, 143);
             this.docTypeParentID.Name = "docTypeParentID";
             this.docTypeParentID.Size = new System.Drawing.Size(100, 13);
@@ -190,7 +193,7 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
+            this.label5.AutoSize = false;
             this.label5.Location = new System.Drawing.Point(543, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
@@ -226,7 +229,7 @@
             // 
             // readOnlyAllowSelectCheckBox
             // 
-            this.readOnlyAllowSelectCheckBox.AutoSize = true;
+            this.readOnlyAllowSelectCheckBox.AutoSize = false;
             this.readOnlyAllowSelectCheckBox.Location = new System.Drawing.Point(249, 142);
             this.readOnlyAllowSelectCheckBox.Name = "readOnlyAllowSelectCheckBox";
             this.readOnlyAllowSelectCheckBox.Size = new System.Drawing.Size(134, 17);
@@ -236,7 +239,7 @@
             // 
             // readOnlyAllowDragCheckBox
             // 
-            this.readOnlyAllowDragCheckBox.AutoSize = true;
+            this.readOnlyAllowDragCheckBox.AutoSize = false;
             this.readOnlyAllowDragCheckBox.Location = new System.Drawing.Point(249, 159);
             this.readOnlyAllowDragCheckBox.Name = "readOnlyAllowDragCheckBox";
             this.readOnlyAllowDragCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -246,7 +249,7 @@
             // 
             // readOnlyAllowDropCheckBox
             // 
-            this.readOnlyAllowDropCheckBox.AutoSize = true;
+            this.readOnlyAllowDropCheckBox.AutoSize = false;
             this.readOnlyAllowDropCheckBox.Location = new System.Drawing.Point(249, 176);
             this.readOnlyAllowDropCheckBox.Name = "readOnlyAllowDropCheckBox";
             this.readOnlyAllowDropCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -265,7 +268,7 @@
             // 
             // allowDropOnDescendentsCheckBox
             // 
-            this.allowDropOnDescendentsCheckBox.AutoSize = true;
+            this.allowDropOnDescendentsCheckBox.AutoSize = false;
             this.allowDropOnDescendentsCheckBox.Location = new System.Drawing.Point(249, 192);
             this.allowDropOnDescendentsCheckBox.Name = "allowDropOnDescendentsCheckBox";
             this.allowDropOnDescendentsCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -275,7 +278,7 @@
             // 
             // allowDropOnRootCheckBox
             // 
-            this.allowDropOnRootCheckBox.AutoSize = true;
+            this.allowDropOnRootCheckBox.AutoSize = false;
             this.allowDropOnRootCheckBox.Location = new System.Drawing.Point(249, 208);
             this.allowDropOnRootCheckBox.Name = "allowDropOnRootCheckBox";
             this.allowDropOnRootCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -285,7 +288,6 @@
             // 
             // TreeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.allowDropOnRootCheckBox);
             this.Controls.Add(this.allowDropOnDescendentsCheckBox);
             this.Controls.Add(this.collapseButton);
@@ -312,7 +314,6 @@
             this.Name = "TreeView";
             this.Size = new System.Drawing.Size(931, 425);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -321,28 +322,28 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource docTypeListBindingSource;
-        private System.Windows.Forms.Button buttonView;
-        private System.Windows.Forms.TextBox textboxView;
-        private System.Windows.Forms.TextBox textboxModel;
-        private System.Windows.Forms.Button buttonModel;
-        private MvvmFx.Windows.Forms.BoundTreeView boundTreeView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label docTypeName;
-        private System.Windows.Forms.Label dragDropStatusLabel;
-        private System.Windows.Forms.Label docTypeID;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label docTypeParentID;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button refreshButton;
-        private System.Windows.Forms.ImageList imageList;
-        private System.Windows.Forms.Button expandButton;
-        private System.Windows.Forms.Button sortButton;
-        private System.Windows.Forms.CheckBox readOnlyAllowSelectCheckBox;
-        private System.Windows.Forms.CheckBox readOnlyAllowDragCheckBox;
-        private System.Windows.Forms.CheckBox readOnlyAllowDropCheckBox;
-        private System.Windows.Forms.Button collapseButton;
-        private System.Windows.Forms.CheckBox allowDropOnDescendentsCheckBox;
-        private System.Windows.Forms.CheckBox allowDropOnRootCheckBox;
+        private Wisej.Web.BindingSource docTypeListBindingSource;
+        private Wisej.Web.Button buttonView;
+        private Wisej.Web.TextBox textboxView;
+        private Wisej.Web.TextBox textboxModel;
+        private Wisej.Web.Button buttonModel;
+        private MvvmFx.WisejForms.BoundTreeView boundTreeView1;
+        private Wisej.Web.Label label1;
+        private Wisej.Web.Label docTypeName;
+        private Wisej.Web.Label dragDropStatusLabel;
+        private Wisej.Web.Label docTypeID;
+        private Wisej.Web.Label label3;
+        private Wisej.Web.Label docTypeParentID;
+        private Wisej.Web.Label label5;
+        private Wisej.Web.Button refreshButton;
+        private Wisej.Web.ImageList imageList;
+        private Wisej.Web.Button expandButton;
+        private Wisej.Web.Button sortButton;
+        private Wisej.Web.CheckBox readOnlyAllowSelectCheckBox;
+        private Wisej.Web.CheckBox readOnlyAllowDragCheckBox;
+        private Wisej.Web.CheckBox readOnlyAllowDropCheckBox;
+        private Wisej.Web.Button collapseButton;
+        private Wisej.Web.CheckBox allowDropOnDescendentsCheckBox;
+        private Wisej.Web.CheckBox allowDropOnRootCheckBox;
     }
 }

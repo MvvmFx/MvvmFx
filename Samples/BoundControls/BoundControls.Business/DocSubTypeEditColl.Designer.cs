@@ -97,7 +97,7 @@ namespace BoundControls.Business
         /// Initializes a new instance of the <see cref="DocSubTypeEditColl"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private DocSubTypeEditColl()
+        public DocSubTypeEditColl()
         {
             // Prevent direct creation
 

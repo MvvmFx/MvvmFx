@@ -12,7 +12,7 @@ using Gizmox.WebGUI.Forms;
 using MvvmFx.WebGUI.Forms;
 #endif
 
-namespace WebGUI.TestBoundTreeView
+namespace WisejTestBoundTreeView
 {
     public partial class TreeView : BoundUserControl
     {

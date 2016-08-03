@@ -1,6 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using Wisej.Web;
 
-namespace WinForms.TestBoundTreeView
+namespace WisejTestBoundTreeView
 {
     public partial class TreeListView : UserControl
     {
