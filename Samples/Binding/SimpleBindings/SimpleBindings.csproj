@@ -64,9 +64,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows\MvvmFx.Windows.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.Net4\MvvmFx.Windows.Net4.csproj">
       <Project>{D316BAF2-3CC2-4E41-9B68-BF49AB9A0B6D}</Project>
-      <Name>MvvmFx.Windows</Name>
+      <Name>MvvmFx.Windows.Net4</Name>
     </ProjectReference>
     <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj">
       <Project>{C9CE0678-929B-44C8-B511-32007FC6510B}</Project>

@@ -119,9 +119,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WebGUI.Net4\MvvmFx.Windows.WebGUI.Net4.csproj">
       <Project>{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}</Project>
-      <Name>MvvmFx.Windows.WebGUI</Name>
+      <Name>MvvmFx.Windows.WebGUI.Net4</Name>
     </ProjectReference>
     <ProjectReference Include="..\InvoicesBusiness\InvoicesBusiness.csproj">
       <Project>{C2869AD6-B378-4404-B662-CBA9CF67A12D}</Project>

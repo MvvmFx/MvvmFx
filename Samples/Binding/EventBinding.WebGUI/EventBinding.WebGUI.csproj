@@ -72,9 +72,9 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WebGUI\MvvmFx.Windows.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WebGUI.Net4\MvvmFx.Windows.WebGUI.Net4.csproj">
       <Project>{9F602AF8-9BC9-4E5E-BE0D-745B2A91D814}</Project>
-      <Name>MvvmFx.Windows.WebGUI</Name>
+      <Name>MvvmFx.Windows.WebGUI.Net4</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
