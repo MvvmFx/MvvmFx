@@ -130,13 +130,13 @@
     <None Include="Build.targets" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsBase.WinForms\WindowsBase.WinForms.csproj">
+    <ProjectReference Include="..\WindowsBase.WinForms.Net4\WindowsBase.WinForms.Net4.csproj">
       <Project>{501BBDBB-AC95-41DE-B87C-0AC946B08047}</Project>
-      <Name>WindowsBase.WinForms</Name>
+      <Name>WindowsBase.WinForms.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MvvmFx.Windows\MvvmFx.Windows.csproj">
+    <ProjectReference Include="..\MvvmFx.Windows.Net4\MvvmFx.Windows.Net4.csproj">
       <Project>{D316BAF2-3CC2-4E41-9B68-BF49AB9A0B6D}</Project>
-      <Name>MvvmFx.Windows</Name>
+      <Name>MvvmFx.Windows.Net4</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

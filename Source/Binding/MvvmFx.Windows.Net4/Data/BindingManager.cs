@@ -37,7 +37,7 @@ namespace MvvmFx.Windows.Data
     public class BindingManager : IBindingContainer, IDisposable
     {
         private readonly BindingBaseCollection _bindings;
-#if !WEBGUI
+#if !WEBGUI && !WISEJ
         private readonly SynchronizationContext _synchronizationContext;
 #endif
         private bool _disposed;
@@ -66,7 +66,7 @@ namespace MvvmFx.Windows.Data
         public BindingManager(SynchronizationContext synchronizationContext)
         {
             _bindings = new BindingBaseCollection(this);
-#if !WEBGUI
+#if !WEBGUI && !WISEJ
             _synchronizationContext = synchronizationContext;
 #endif
         }
@@ -95,7 +95,7 @@ namespace MvvmFx.Windows.Data
             get
             {
                 VerifyNotDisposed();
-#if !WEBGUI
+#if !WEBGUI && !WISEJ
                 return _synchronizationContext;
 #else
                 return null;

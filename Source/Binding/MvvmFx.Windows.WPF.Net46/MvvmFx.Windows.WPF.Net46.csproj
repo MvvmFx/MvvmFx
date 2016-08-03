@@ -9,16 +9,17 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.Windows</RootNamespace>
     <AssemblyName>MvvmFx.Windows.WPF</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WPF\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WPF\net46\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WPF</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,11 +29,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WPF\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WPF\net46\</OutputPath>
     <DefineConstants>TRACE;WPF</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WPF\net451\MvvmFx.Windows.WPF.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WPF\net46\MvvmFx.Windows.WPF.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
@@ -45,115 +46,115 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Assert.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Assert.cs">
       <Link>Assert.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\ActionBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\ActionBinding.cs">
       <Link>Data\ActionBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Binding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Binding.cs">
       <Link>Data\Binding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\BindingListAdapter.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\BindingListAdapter.cs">
       <Link>Data\BindingListAdapter.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\BindingManager.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\BindingManager.cs">
       <Link>Data\BindingManager.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\BindingMode.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\BindingMode.cs">
       <Link>Data\BindingMode.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\BindingManagerExtensions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\BindingManagerExtensions.cs">
       <Link>Data\Fluent\BindingManagerExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\IActivation.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IActivation.cs">
       <Link>Data\Fluent\IActivation.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\IConverterSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IConverterSelection.cs">
       <Link>Data\Fluent\IConverterSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\IHideIrrelevantMembers.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IHideIrrelevantMembers.cs">
       <Link>Data\Fluent\IHideIrrelevantMembers.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\ILambdaBasedSourceSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\ILambdaBasedSourceSelection.cs">
       <Link>Data\Fluent\ILambdaBasedSourceSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\IModeSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IModeSelection.cs">
       <Link>Data\Fluent\IModeSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\IMultiSourceBindingOptions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IMultiSourceBindingOptions.cs">
       <Link>Data\Fluent\IMultiSourceBindingOptions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\IPathBasedSourceSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IPathBasedSourceSelection.cs">
       <Link>Data\Fluent\IPathBasedSourceSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\ISingleSourceBindingOptions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\ISingleSourceBindingOptions.cs">
       <Link>Data\Fluent\ISingleSourceBindingOptions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Fluent\ISubsequentSourceBindingOptions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\ISubsequentSourceBindingOptions.cs">
       <Link>Data\Fluent\ISubsequentSourceBindingOptions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\IMultiValueConverter.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\IMultiValueConverter.cs">
       <Link>Data\IMultiValueConverter.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\IValueConverter.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\IValueConverter.cs">
       <Link>Data\IValueConverter.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\MultiBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\MultiBinding.cs">
       <Link>Data\MultiBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\BindingBase.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\BindingBase.cs">
       <Link>Data\Primitive\BindingBase.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\IBindingContainer.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\IBindingContainer.cs">
       <Link>Data\Primitive\IBindingContainer.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\LambdaPropertyExpression.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\LambdaPropertyExpression.cs">
       <Link>Data\Primitive\LambdaPropertyExpression.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\MultiSourceBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\MultiSourceBinding.cs">
       <Link>Data\Primitive\MultiSourceBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\PathPropertyExpression.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PathPropertyExpression.cs">
       <Link>Data\Primitive\PathPropertyExpression.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\PropertyExpression.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpression.cs">
       <Link>Data\Primitive\PropertyExpression.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\PropertyExpressionPart.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpressionPart.cs">
       <Link>Data\Primitive\PropertyExpressionPart.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\PropertyExpressionPartSystem.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpressionPartSystem.cs">
       <Link>Data\Primitive\PropertyExpressionPartSystem.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\Primitive\SingleSourceBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\SingleSourceBinding.cs">
       <Link>Data\Primitive\SingleSourceBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\TypedBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\TypedBinding.cs">
       <Link>Data\TypedBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Data\TypedMultiBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Data\TypedMultiBinding.cs">
       <Link>Data\TypedMultiBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Diagnostics\Log.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Diagnostics\Log.cs">
       <Link>Diagnostics\Log.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows\Properties\Resources.Designer.cs">
+    <Compile Include="..\MvvmFx.Windows.Net4\Properties\Resources.Designer.cs">
       <Link>Properties\Resources.Designer.cs</Link>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\MvvmFx.Windows\Properties\Resources.resx">
+    <EmbeddedResource Include="..\MvvmFx.Windows.Net4\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\MvvmFx.Windows\Data\Documentation\Examples.xml">
+    <Content Include="..\MvvmFx.Windows.Net4\Data\Documentation\Examples.xml">
       <Link>Data\Documentation\Examples.xml</Link>
     </Content>
-    <Content Include="..\MvvmFx.Windows\Data\Documentation\Shared.xml">
+    <Content Include="..\MvvmFx.Windows.Net4\Data\Documentation\Shared.xml">
       <Link>Data\Documentation\Shared.xml</Link>
     </Content>
   </ItemGroup>

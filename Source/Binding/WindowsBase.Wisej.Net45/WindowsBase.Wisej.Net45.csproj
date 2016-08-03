@@ -1,24 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{893F27A5-3710-4F6D-BC9A-8911B549519B}</ProjectGuid>
-    <ProjectTypeGuids>{80d85812-7475-4db8-9a61-dd0ef1ebd354};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectGuid>{AFD62700-9250-48F1-85C0-F80249FED399}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx</RootNamespace>
-    <AssemblyName>WindowsBase.WebGUI</AssemblyName>
+    <AssemblyName>WindowsBase.Wisej</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WebGUI\net45\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WEBGUI</DefineConstants>
+    <OutputPath>..\..\..\bin\Debug\Wisej\net45\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WISEJ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
@@ -28,27 +29,19 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WebGUI\net45\</OutputPath>
-    <DefineConstants>TRACE;WEBGUI</DefineConstants>
+    <OutputPath>..\..\..\bin\Release\Wisej\net45\</OutputPath>
+    <DefineConstants>TRACE;WISEJ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
-      <SpecificVersion>True</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
-      <SpecificVersion>True</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -183,7 +176,6 @@
       <Link>Windows\WeakEventManager.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
     <Compile Include="..\WindowsBase.WinForms.Net4\Properties\Resources.Designer.cs">
       <Link>Properties\Resources.Designer.cs</Link>
       <AutoGen>True</AutoGen>
@@ -197,7 +189,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v11.0\Gizmox.VWGLibrary.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

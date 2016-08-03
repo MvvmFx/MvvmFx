@@ -40,7 +40,9 @@ namespace MvvmFx.Windows.Forms
     /// Represents a UserControl that participates in the dependency property system.
     /// </summary>
     /// <remarks>This implementation of this class isn't completed.</remarks>
-#if WEBGUI
+#if WISEJ
+    public class UserControl : Wisej.Web.UserControl, IDependencyObject
+#elif WEBGUI
     public class UserControl : Gizmox.WebGUI.Forms.UserControl, IDependencyObject
 #else
     public class UserControl : System.Windows.Forms.UserControl, IDependencyObject

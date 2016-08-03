@@ -122,7 +122,7 @@ namespace MvvmFx.Windows.Data
         {
             get
             {
-#if !WEBGUI
+#if !WEBGUI && !WISEJ
                 return Container == null ? null : Container.SynchronizationContext;
 #else
                 return null;

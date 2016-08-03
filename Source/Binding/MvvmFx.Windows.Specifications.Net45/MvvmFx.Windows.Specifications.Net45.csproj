@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19C51D9F-FAFA-44CA-B36A-423E77E0EE60}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvvmFx.Windows.Specifications</RootNamespace>
+    <AssemblyName>MvvmFx.Windows.Specifications</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\..\Lib\Moq\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="xunit">
+      <HintPath>..\..\..\Lib\xUnit\xunit.dll</HintPath>
+    </Reference>
+    <Reference Include="xunit.extensions">
+      <HintPath>..\..\..\Lib\xUnit\xunit.extensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Fluent\When_binding_to_a_single_source_with_lambda_using_the_fluent_interface.cs">
+      <Link>Data\Fluent\When_binding_to_a_single_source_with_lambda_using_the_fluent_interface.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Fluent\When_binding_to_a_single_source_with_path_using_the_fluent_interface.cs">
+      <Link>Data\Fluent\When_binding_to_a_single_source_with_path_using_the_fluent_interface.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Fluent\When_binding_to_multiple_sources_with_lambda_using_the_fluent_interface.cs">
+      <Link>Data\Fluent\When_binding_to_multiple_sources_with_lambda_using_the_fluent_interface.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Fluent\When_binding_to_multiple_sources_with_path_using_the_fluent_interface.cs">
+      <Link>Data\Fluent\When_binding_to_multiple_sources_with_path_using_the_fluent_interface.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Converters\GenderConverter.cs">
+      <Link>Data\Support\Converters\GenderConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Converters\NameAndAddressMultiValueConverter.cs">
+      <Link>Data\Support\Converters\NameAndAddressMultiValueConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\EntityBase.cs">
+      <Link>Data\Support\Entities\EntityBase.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\Gender.cs">
+      <Link>Data\Support\Entities\Gender.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\IAddress.cs">
+      <Link>Data\Support\Entities\IAddress.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\INPC\Address.cs">
+      <Link>Data\Support\Entities\INPC\Address.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\INPC\Person.cs">
+      <Link>Data\Support\Entities\INPC\Person.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\IPerson.cs">
+      <Link>Data\Support\Entities\IPerson.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\MvvmFxDOs\Address.cs">
+      <Link>Data\Support\Entities\MvvmFxDOs\Address.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\MvvmFxDOs\Person.cs">
+      <Link>Data\Support\Entities\MvvmFxDOs\Person.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\SystemDOs\Address.cs">
+      <Link>Data\Support\Entities\SystemDOs\Address.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\SystemDOs\Person.cs">
+      <Link>Data\Support\Entities\SystemDOs\Person.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\XxxChanged\Address.cs">
+      <Link>Data\Support\Entities\XxxChanged\Address.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\Entities\XxxChanged\Person.cs">
+      <Link>Data\Support\Entities\XxxChanged\Person.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\Support\TheoryHelper.cs">
+      <Link>Data\Support\TheoryHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_has_a_synchronization_context.cs">
+      <Link>Data\When_a_binding_has_a_synchronization_context.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_is_active.cs">
+      <Link>Data\When_a_binding_is_active.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_is_one_way_to_source.cs">
+      <Link>Data\When_a_binding_is_one_way_to_source.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_is_one_way_to_target.cs">
+      <Link>Data\When_a_binding_is_one_way_to_target.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_is_removed_from_a_binding_manager.cs">
+      <Link>Data\When_a_binding_is_removed_from_a_binding_manager.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_is_two_way.cs">
+      <Link>Data\When_a_binding_is_two_way.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_is_used_against_a_class_that_implements_ICustomTypeDescriptor.cs">
+      <Link>Data\When_a_binding_is_used_against_a_class_that_implements_ICustomTypeDescriptor.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_manager_is_created.cs">
+      <Link>Data\When_a_binding_manager_is_created.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_binding_manager_is_disposed.cs">
+      <Link>Data\When_a_binding_manager_is_disposed.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_multi_source_binding_contains_another_multi_source_binding.cs">
+      <Link>Data\When_a_multi_source_binding_contains_another_multi_source_binding.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_multi_source_binding_is_added_to_a_binding_manager.cs">
+      <Link>Data\When_a_multi_source_binding_is_added_to_a_binding_manager.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_multi_source_binding_is_created_without_target_information.cs">
+      <Link>Data\When_a_multi_source_binding_is_created_without_target_information.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_multi_source_binding_is_created_with_target_information.cs">
+      <Link>Data\When_a_multi_source_binding_is_created_with_target_information.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_single_source_binding_has_a_converter.cs">
+      <Link>Data\When_a_single_source_binding_has_a_converter.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_single_source_binding_has_a_mismatch_between_target_and_source_types_and_an_automatic_conversion_exists.cs">
+      <Link>Data\When_a_single_source_binding_has_a_mismatch_between_target_and_source_types_and_an_automatic_conversion_exists.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_single_source_binding_has_a_mismatch_between_target_and_source_types_and_no_automatic_conversion_exists.cs">
+      <Link>Data\When_a_single_source_binding_has_a_mismatch_between_target_and_source_types_and_no_automatic_conversion_exists.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_single_source_binding_is_added_to_a_binding_manager.cs">
+      <Link>Data\When_a_single_source_binding_is_added_to_a_binding_manager.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_single_source_binding_is_created_without_source_and_target_information.cs">
+      <Link>Data\When_a_single_source_binding_is_created_without_source_and_target_information.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\Data\When_a_single_source_binding_is_created_with_source_and_target_information.cs">
+      <Link>Data\When_a_single_source_binding_is_created_with_source_and_target_information.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\HelperTrinity\ArgumentHelper.cs">
+      <Link>HelperTrinity\ArgumentHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\HelperTrinity\EventHelper.cs">
+      <Link>HelperTrinity\EventHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\HelperTrinity\ExceptionHelper.cs">
+      <Link>HelperTrinity\ExceptionHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\HelperTrinity\Extensions\ArgumentHelperExtensions.cs">
+      <Link>HelperTrinity\Extensions\ArgumentHelperExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\MvvmFx.Windows.Specifications.Net4\HelperTrinity\Extensions\EventHelperExtensions.cs">
+      <Link>HelperTrinity\Extensions\EventHelperExtensions.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvvmFx.Windows.Net45\MvvmFx.Windows.Net45.csproj">
+      <Project>{2728c8a9-7304-46f3-8a93-f0a53d91bf21}</Project>
+      <Name>MvvmFx.Windows.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsBase.WinForms.Net45\WindowsBase.WinForms.Net45.csproj">
+      <Project>{33290b49-5d4b-47f3-8c03-d203595c9f12}</Project>
+      <Name>WindowsBase.WinForms.Net45</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MvvmFx.Windows.Specifications.Net4\Build.targets">
+      <Link>Build.targets</Link>
+    </None>
+    <None Include="..\MvvmFx.Windows.Specifications.Net4\Data\Truss.url">
+      <Link>Data\Truss.url</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

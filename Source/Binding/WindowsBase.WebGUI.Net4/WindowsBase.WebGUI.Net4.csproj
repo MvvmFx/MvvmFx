@@ -54,137 +54,137 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Collections.Specialized\CollectionChangedEventManager.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Collections.Specialized\CollectionChangedEventManager.cs">
       <Link>Collections.Specialized\CollectionChangedEventManager.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangedEventManager.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\CurrentChangedEventManager.cs">
       <Link>ComponentModel\CurrentChangedEventManager.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangingEventArgs.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\CurrentChangingEventArgs.cs">
       <Link>ComponentModel\CurrentChangingEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangingEventHandler.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\CurrentChangingEventHandler.cs">
       <Link>ComponentModel\CurrentChangingEventHandler.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\CurrentChangingEventManager.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\CurrentChangingEventManager.cs">
       <Link>ComponentModel\CurrentChangingEventManager.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\DependencyPropertyDescriptor.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\DependencyPropertyDescriptor.cs">
       <Link>ComponentModel\DependencyPropertyDescriptor.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\GroupDescription.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\GroupDescription.cs">
       <Link>ComponentModel\GroupDescription.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ICollectionView.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\ICollectionView.cs">
       <Link>ComponentModel\ICollectionView.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ICollectionViewFactory.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\ICollectionViewFactory.cs">
       <Link>ComponentModel\ICollectionViewFactory.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\IEditableCollectionView.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\IEditableCollectionView.cs">
       <Link>ComponentModel\IEditableCollectionView.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\IItemProperties.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\IItemProperties.cs">
       <Link>ComponentModel\IItemProperties.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ItemPropertyInfo.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\ItemPropertyInfo.cs">
       <Link>ComponentModel\ItemPropertyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\NewItemPlaceholderPosition.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\NewItemPlaceholderPosition.cs">
       <Link>ComponentModel\NewItemPlaceholderPosition.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\PropertyChangedEventManager.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\PropertyChangedEventManager.cs">
       <Link>ComponentModel\PropertyChangedEventManager.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\PropertyFilterAttribute.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\PropertyFilterAttribute.cs">
       <Link>ComponentModel\PropertyFilterAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\PropertyFilterOptions.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\PropertyFilterOptions.cs">
       <Link>ComponentModel\PropertyFilterOptions.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\ReferenceEqualityComparer.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\ReferenceEqualityComparer.cs">
       <Link>ComponentModel\ReferenceEqualityComparer.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\SortDescription.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\SortDescription.cs">
       <Link>ComponentModel\SortDescription.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\ComponentModel\SortDescriptionCollection.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\ComponentModel\SortDescriptionCollection.cs">
       <Link>ComponentModel\SortDescriptionCollection.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\AttachedPropertyBrowsableAttribute.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\AttachedPropertyBrowsableAttribute.cs">
       <Link>Windows\AttachedPropertyBrowsableAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\AttachedPropertyBrowsableForTypeAttribute.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\AttachedPropertyBrowsableForTypeAttribute.cs">
       <Link>Windows\AttachedPropertyBrowsableForTypeAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\AttachedPropertyBrowsableWhenAttributePresentAttribute.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\AttachedPropertyBrowsableWhenAttributePresentAttribute.cs">
       <Link>Windows\AttachedPropertyBrowsableWhenAttributePresentAttribute.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\CoerceValueCallback.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\CoerceValueCallback.cs">
       <Link>Windows\CoerceValueCallback.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyObject.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\DependencyObject.cs">
       <Link>Windows\DependencyObject.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyObjectType.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\DependencyObjectType.cs">
       <Link>Windows\DependencyObjectType.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyProperty.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\DependencyProperty.cs">
       <Link>Windows\DependencyProperty.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyPropertyChangedEventArgs.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\DependencyPropertyChangedEventArgs.cs">
       <Link>Windows\DependencyPropertyChangedEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyPropertyChangedEventHandler.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\DependencyPropertyChangedEventHandler.cs">
       <Link>Windows\DependencyPropertyChangedEventHandler.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\DependencyPropertyKey.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\DependencyPropertyKey.cs">
       <Link>Windows\DependencyPropertyKey.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\Expression.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\Expression.cs">
       <Link>Windows\Expression.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\ExpressionConverter.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\ExpressionConverter.cs">
       <Link>Windows\ExpressionConverter.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\Forms\Form.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\Forms\Form.cs">
       <Link>Windows\Forms\Form.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\Forms\UserControl.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\Forms\UserControl.cs">
       <Link>Windows\Forms\UserControl.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\Freezable.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\Freezable.cs">
       <Link>Windows\Freezable.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\IDependencyObject.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\IDependencyObject.cs">
       <Link>Windows\IDependencyObject.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\IWeakEventListener.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\IWeakEventListener.cs">
       <Link>Windows\IWeakEventListener.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\LocalValueEntry.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\LocalValueEntry.cs">
       <Link>Windows\LocalValueEntry.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\LocalValueEnumerator.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\LocalValueEnumerator.cs">
       <Link>Windows\LocalValueEnumerator.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\PropertyChangedCallback.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\PropertyChangedCallback.cs">
       <Link>Windows\PropertyChangedCallback.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\PropertyMetadata.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\PropertyMetadata.cs">
       <Link>Windows\PropertyMetadata.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\ValidateValueCallback.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\ValidateValueCallback.cs">
       <Link>Windows\ValidateValueCallback.cs</Link>
     </Compile>
-    <Compile Include="..\WindowsBase.WinForms\Windows\WeakEventManager.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Windows\WeakEventManager.cs">
       <Link>Windows\WeakEventManager.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
-    <Compile Include="..\WindowsBase.WinForms\Properties\Resources.Designer.cs">
+    <Compile Include="..\WindowsBase.WinForms.Net4\Properties\Resources.Designer.cs">
       <Link>Properties\Resources.Designer.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,7 +192,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\WindowsBase.WinForms\Properties\Resources.resx">
+    <EmbeddedResource Include="..\WindowsBase.WinForms.Net4\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
     </EmbeddedResource>
   </ItemGroup>
