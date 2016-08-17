@@ -9,16 +9,17 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
     <AssemblyName>MvvmFx.CaliburnMicro.Csla.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net46\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WINFORMS;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,17 +29,17 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WinForms\net46\</OutputPath>
     <DefineConstants>TRACE;WINFORMS;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net451\MvvmFx.CaliburnMicro.Csla.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.CaliburnMicro.Csla.WinForms.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.6.401\lib\net46\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -46,25 +47,25 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModel.cs">
       <Link>ConductorWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBase.cs">
       <Link>ConductorWithModelBase.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBaseWithActiveItem.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBaseWithActiveItem.cs">
       <Link>ConductorWithModelBaseWithActiveItem.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionAllActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionAllActive.cs">
       <Link>ConductorWithModelWithCollectionAllActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionOneActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionOneActive.cs">
       <Link>ConductorWithModelWithCollectionOneActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModel.cs">
       <Link>ScreenWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModelBase.cs">
       <Link>ScreenWithModelBase.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -73,14 +74,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.451</Name>
+      <Name>CaliburnMicro.WinForms.Net46</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\Dependencies\packages\CSLA-Core.4.6.401\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

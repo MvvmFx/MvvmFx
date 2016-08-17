@@ -37,8 +37,8 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net40\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.6.401\lib\net40\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -100,25 +100,25 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModel.cs">
       <Link>ConductorWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBase.cs">
       <Link>ConductorWithModelBase.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBaseWithActiveItem.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBaseWithActiveItem.cs">
       <Link>ConductorWithModelBaseWithActiveItem.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionAllActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionAllActive.cs">
       <Link>ConductorWithModelWithCollectionAllActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionOneActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionOneActive.cs">
       <Link>ConductorWithModelWithCollectionOneActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModel.cs">
       <Link>ScreenWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModelBase.cs">
       <Link>ScreenWithModelBase.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -128,15 +128,18 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WebGUI.Net4\CaliburnMicro.WebGUI.Net4.csproj">
       <Project>{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}</Project>
-      <Name>CaliburnMicro.WebGUI</Name>
+      <Name>CaliburnMicro.WebGUI.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\Dependencies\packages\CSLA-Core.4.6.401\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -150,7 +153,7 @@
   <Import Project="..\..\..\Dependencies\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\Dependencies\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\Dependencies\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\Dependencies\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
   </Target>

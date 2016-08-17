@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
     <AssemblyName>MvvmFx.CaliburnMicro.Csla.WebGUI</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WebGUI\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WebGUI\net46\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WEBGUI;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,54 +29,54 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WebGUI\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WebGUI\net46\</OutputPath>
     <DefineConstants>TRACE;WEBGUI;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WebGUI\net451\MvvmFx.CaliburnMicro.Csla.WebGUI.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WebGUI\net46\MvvmFx.CaliburnMicro.Csla.WebGUI.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.6.401\lib\net46\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="Gizmox.WebGUI.Forms, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
+    <Reference Include="Gizmox.WebGUI.Forms, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=c508b41386c60f1d">
       <SpecificVersion>True</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Gizmox.WebGUI.Common, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
+    <Reference Include="Gizmox.WebGUI.Forms.Themes, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
       <SpecificVersion>True</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Gizmox.WebGUI.Server, Version=4.5.15701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL">
+    <Reference Include="Gizmox.WebGUI.Common, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6">
       <SpecificVersion>True</SpecificVersion>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModel.cs">
       <Link>ConductorWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBase.cs">
       <Link>ConductorWithModelBase.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBaseWithActiveItem.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBaseWithActiveItem.cs">
       <Link>ConductorWithModelBaseWithActiveItem.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionAllActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionAllActive.cs">
       <Link>ConductorWithModelWithCollectionAllActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionOneActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionOneActive.cs">
       <Link>ConductorWithModelWithCollectionOneActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModel.cs">
       <Link>ScreenWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModelBase.cs">
       <Link>ScreenWithModelBase.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -86,17 +86,20 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaliburnMicro.WebGUI.451\CaliburnMicro.WebGUI.451.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WebGUI.Net46\CaliburnMicro.WebGUI.Net46.csproj">
       <Project>{78b74c5b-a4ee-4a33-b25e-2d89d615bb11}</Project>
-      <Name>CaliburnMicro.WebGUI.451</Name>
+      <Name>CaliburnMicro.WebGUI.Net46</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\Dependencies\packages\CSLA-Core.4.6.401\analyzers\c#\Csla.Analyzers.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v12.0\Gizmox.VWGLibrary.targets" />
+  <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v14.0\Net4.6\Gizmox.VWGLibrary.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

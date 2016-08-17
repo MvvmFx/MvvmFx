@@ -38,8 +38,8 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.6.401\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -58,25 +58,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModel.cs">
       <Link>ConductorWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBase.cs">
       <Link>ConductorWithModelBase.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelBaseWithActiveItem.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBaseWithActiveItem.cs">
       <Link>ConductorWithModelBaseWithActiveItem.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionAllActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionAllActive.cs">
       <Link>ConductorWithModelWithCollectionAllActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ConductorWithModelWithCollectionOneActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionOneActive.cs">
       <Link>ConductorWithModelWithCollectionOneActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModel.cs">
       <Link>ScreenWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms\ScreenWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModelBase.cs">
       <Link>ScreenWithModelBase.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -86,14 +86,17 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WebGUI.Net45\CaliburnMicro.WebGUI.Net45.csproj">
       <Project>{a40bfa3d-4236-4842-8874-31dfd5e0540a}</Project>
-      <Name>CaliburnMicro.WebGUI.45</Name>
+      <Name>CaliburnMicro.WebGUI.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\Dependencies\packages\CSLA-Core.4.6.401\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Condition="" Project="$(MSBuildExtensionsPath)\Gizmox\v12.0\Gizmox.VWGLibrary.targets" />

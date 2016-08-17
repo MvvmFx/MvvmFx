@@ -44,186 +44,186 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.WinForms\Action.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Action.cs">
       <Link>Action.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ActionExecutionContext.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ActionExecutionContext.cs">
       <Link>ActionExecutionContext.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ActionMessage.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ActionMessage.cs">
       <Link>ActionMessage.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ApplicationContext.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ApplicationContext.cs">
       <Link>ApplicationContext.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\AssemblySource.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\AssemblySource.cs">
       <Link>AssemblySource.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\BindableList.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\BindableList.cs">
       <Link>BindableList.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\BindingScope.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\BindingScope.cs">
       <Link>BindingScope.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Bootstrapper.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Bootstrapper.cs">
       <Link>Bootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Conductor.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Conductor.cs">
       <Link>Conductor.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ConductorBase.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ConductorBase.cs">
       <Link>ConductorBase.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ConductorBaseWithActiveItem.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ConductorBaseWithActiveItem.cs">
       <Link>ConductorBaseWithActiveItem.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ConductorWithCollectionAllActive.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ConductorWithCollectionAllActive.cs">
       <Link>ConductorWithCollectionAllActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ConductorWithCollectionOneActive.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ConductorWithCollectionOneActive.cs">
       <Link>ConductorWithCollectionOneActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ContentContainer.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ContentContainer.cs">
       <Link>ContentContainer.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ConventionManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ConventionManager.cs">
       <Link>ConventionManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Coroutine.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Coroutine.cs">
       <Link>Coroutine.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\DefaultCloseStrategy.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DefaultCloseStrategy.cs">
       <Link>DefaultCloseStrategy.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\DependencyObject.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DependencyObject.cs">
       <Link>DependencyObject.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\DependencyProperty.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DependencyProperty.cs">
       <Link>DependencyProperty.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ElementConvention.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ElementConvention.cs">
       <Link>ElementConvention.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\EventAggregator.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\EventAggregator.cs">
       <Link>EventAggregator.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ExecuteEventArgs.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ExecuteEventArgs.cs">
       <Link>ExecuteEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ExtensionMethods.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ExtensionMethods.cs">
       <Link>ExtensionMethods.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\GlobalSuppressions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\GlobalSuppressions.cs">
       <Link>GlobalSuppressions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IChild.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IChild.cs">
       <Link>IChild.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ICloseStrategy.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ICloseStrategy.cs">
       <Link>ICloseStrategy.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IConductor.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IConductor.cs">
       <Link>IConductor.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IHaveDataContext.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IHaveDataContext.cs">
       <Link>IHaveDataContext.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IHaveModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IHaveModel.cs">
       <Link>IHaveModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IHaveParameters.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IHaveParameters.cs">
       <Link>IHaveParameters.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IHaveViewNamedElements.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IHaveViewNamedElements.cs">
       <Link>IHaveViewNamedElements.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\INPC.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\INPC.cs">
       <Link>INPC.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IoC.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IoC.cs">
       <Link>IoC.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IResult.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IResult.cs">
       <Link>IResult.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IScreen.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IScreen.cs">
       <Link>IScreen.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IViewAware.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IViewAware.cs">
       <Link>IViewAware.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Logging.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Logging.cs">
       <Link>Logging.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Message.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Message.cs">
       <Link>Message.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBinder.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBinder.cs">
       <Link>MessageBinder.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageDetail.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageDetail.cs">
       <Link>MessageDetail.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\NameTransformer.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\NameTransformer.cs">
       <Link>NameTransformer.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Parameter.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Parameter.cs">
       <Link>Parameter.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Parser.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Parser.cs">
       <Link>Parser.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\RegExHelper.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\RegExHelper.cs">
       <Link>RegExHelper.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ResultCompletionEventArgs.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ResultCompletionEventArgs.cs">
       <Link>ResultCompletionEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\Screen.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\Screen.cs">
       <Link>Screen.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ScreenExtensions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ScreenExtensions.cs">
       <Link>ScreenExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\SequentialResult.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\SequentialResult.cs">
       <Link>SequentialResult.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\SimpleContainer.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\SimpleContainer.cs">
       <Link>SimpleContainer.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\SimpleContainerExtensions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\SimpleContainerExtensions.cs">
       <Link>SimpleContainerExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\StartupEventArgs.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\StartupEventArgs.cs">
       <Link>StartupEventArgs.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ToolStripItemProxy.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ToolStripItemProxy.cs">
       <Link>ToolStripItemProxy.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\TypeMappingConfiguration.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\TypeMappingConfiguration.cs">
       <Link>TypeMappingConfiguration.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\View.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\View.cs">
       <Link>View.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ViewAware.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ViewAware.cs">
       <Link>ViewAware.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ViewLocator.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ViewLocator.cs">
       <Link>ViewLocator.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ViewModelBinder.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ViewModelBinder.cs">
       <Link>ViewModelBinder.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\ViewModelLocator.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\ViewModelLocator.cs">
       <Link>ViewModelLocator.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\WindowManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\WindowManager.cs">
       <Link>WindowManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\WinFormExtensionMethods.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\WinFormExtensionMethods.cs">
       <Link>WinFormExtensionMethods.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -232,14 +232,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
-      <Name>MvvmFx.Logging.45</Name>
+      <Name>MvvmFx.Logging.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\Binding\MvvmFx.DataBinding.WinForms.45\MvvmFx.DataBinding.WinForms.45.csproj">
+    <ProjectReference Include="..\..\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj">
       <Project>{adf8e550-012c-467d-99d8-e44f3f352a9d}</Project>
-      <Name>MvvmFx.DataBinding.WinForms.45</Name>
+      <Name>MvvmFx.DataBinding.WinForms.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

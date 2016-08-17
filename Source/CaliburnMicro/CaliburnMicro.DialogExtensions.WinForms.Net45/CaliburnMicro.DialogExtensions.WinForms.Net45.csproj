@@ -38,19 +38,19 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.WinForms\DialogConductorViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DialogConductorViewModel.cs">
       <Link>DialogConductorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IDialogManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IDialogManager.cs">
       <Link>IDialogManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IMessageBox.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IMessageBox.cs">
       <Link>IMessageBox.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxOptions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxOptions.cs">
       <Link>MessageBoxOptions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxViewModel.cs">
       <Link>MessageBoxViewModel.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -59,14 +59,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
-      <Name>MvvmFx.Logging.45</Name>
+      <Name>MvvmFx.Logging.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\CaliburnMicro.WinForms.45\CaliburnMicro.WinForms.45.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WinForms.Net45\CaliburnMicro.WinForms.Net45.csproj">
       <Project>{8a70916c-7d79-4539-a4e4-178fbb66c703}</Project>
-      <Name>CaliburnMicro.WinForms.45</Name>
+      <Name>CaliburnMicro.WinForms.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

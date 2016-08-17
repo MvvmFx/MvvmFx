@@ -49,19 +49,19 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.WinForms\DialogConductorViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DialogConductorViewModel.cs">
       <Link>DialogConductorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IDialogManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IDialogManager.cs">
       <Link>IDialogManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IMessageBox.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IMessageBox.cs">
       <Link>IMessageBox.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxOptions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxOptions.cs">
       <Link>MessageBoxOptions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxViewModel.cs">
       <Link>MessageBoxViewModel.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -71,14 +71,14 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.45\MvvmFx.Logging.45.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
-      <Name>MvvmFx.Logging.45</Name>
+      <Name>MvvmFx.Logging.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\CaliburnMicro.WebGUI.45\CaliburnMicro.WebGUI.45.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WebGUI.Net45\CaliburnMicro.WebGUI.Net45.csproj">
       <Project>{a40bfa3d-4236-4842-8874-31dfd5e0540a}</Project>
-      <Name>CaliburnMicro.WebGUI.45</Name>
+      <Name>CaliburnMicro.WebGUI.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

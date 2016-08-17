@@ -39,19 +39,19 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.WinForms\DialogConductorViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DialogConductorViewModel.cs">
       <Link>DialogConductorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IDialogManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IDialogManager.cs">
       <Link>IDialogManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IMessageBox.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IMessageBox.cs">
       <Link>IMessageBox.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxOptions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxOptions.cs">
       <Link>MessageBoxOptions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxViewModel.cs">
       <Link>MessageBoxViewModel.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -60,14 +60,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
-      <Name>MvvmFx.Logging</Name>
+      <Name>MvvmFx.Logging.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WinForms.Net4\CaliburnMicro.WinForms.Net4.csproj">
       <Project>{47CFADF9-5596-4D48-8813-E89283E5AD35}</Project>
-      <Name>CaliburnMicro.WinForms</Name>
+      <Name>CaliburnMicro.WinForms.Net4</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
