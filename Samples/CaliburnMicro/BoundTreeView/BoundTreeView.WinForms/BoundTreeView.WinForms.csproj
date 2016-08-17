@@ -105,21 +105,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.Windows.Forms\MvvmFx.Windows.Forms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.Windows.Forms.Net4\MvvmFx.Windows.Forms.Net4.csproj">
       <Project>{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}</Project>
-      <Name>MvvmFx.Windows.Forms</Name>
+      <Name>MvvmFx.Windows.Forms.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
-      <Name>MvvmFx.Logging</Name>
+      <Name>MvvmFx.Logging.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net4\MvvmFx.DataBinding.WinForms.Net4.csproj">
       <Project>{43328D6B-4ACB-46DE-8791-A32B45F9AD04}</Project>
-      <Name>MvvmFx.DataBinding.WinForms</Name>
+      <Name>MvvmFx.DataBinding.WinForms.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net4\CaliburnMicro.WinForms.Net4.csproj">
       <Project>{47CFADF9-5596-4D48-8813-E89283E5AD35}</Project>
-      <Name>CaliburnMicro.WinForms</Name>
+      <Name>CaliburnMicro.WinForms.Net4</Name>
     </ProjectReference>
     <ProjectReference Include="..\FamilyBusiness\FamilyBusiness.csproj">
       <Project>{B553D526-BDEC-4DDC-A4CE-8F487BD03A22}</Project>

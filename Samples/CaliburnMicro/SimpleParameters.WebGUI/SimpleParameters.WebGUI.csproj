@@ -128,13 +128,13 @@
     <Folder Include="Resources\UserData\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI.Net4\CaliburnMicro.WebGUI.Net4.csproj">
       <Project>{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}</Project>
-      <Name>CaliburnMicro.WebGUI</Name>
+      <Name>CaliburnMicro.WebGUI.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
-      <Name>MvvmFx.Logging</Name>
+      <Name>MvvmFx.Logging.Net4</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
