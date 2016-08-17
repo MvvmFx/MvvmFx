@@ -9,16 +9,17 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
     <AssemblyName>MvvmFx.CaliburnMicro.DialogExtensions.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net46\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,11 +27,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net451\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WinForms\net46\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net451\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -38,19 +39,19 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.WinForms\DialogConductorViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\DialogConductorViewModel.cs">
       <Link>DialogConductorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IDialogManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IDialogManager.cs">
       <Link>IDialogManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\IMessageBox.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\IMessageBox.cs">
       <Link>IMessageBox.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxOptions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxOptions.cs">
       <Link>MessageBoxOptions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms\MessageBoxViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxViewModel.cs">
       <Link>MessageBoxViewModel.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
@@ -59,14 +60,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
-      <Name>MvvmFx.Logging.451</Name>
+      <Name>MvvmFx.Logging.Net46</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.451</Name>
+      <Name>CaliburnMicro.WinForms.Net46</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
