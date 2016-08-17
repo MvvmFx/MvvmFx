@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WebGUI.45", "AcyncUpdate.WebGUI.45\AcyncUpdate.WebGUI.45.csproj", "{75991429-EB3C-4248-A3E7-5E40BFC8FDED}"
 EndProject
@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample BoundTreeView", "Sam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBusiness.45", "BoundTreeView\FamilyBusiness.45\FamilyBusiness.45.csproj", "{5509C522-939F-435B-9022-3BBA28BA236B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBusiness.451", "BoundTreeView\FamilyBusiness.451\FamilyBusiness.451.csproj", "{5E99A578-A2FF-4FBB-A152-213A715881DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FamilyBusiness.46", "BoundTreeView\FamilyBusiness.46\FamilyBusiness.46.csproj", "{5E99A578-A2FF-4FBB-A152-213A715881DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundTreeView.WebGUI.45", "BoundTreeView\BoundTreeView.WebGUI.45\BoundTreeView.WebGUI.45.csproj", "{FBA5E570-1B82-4847-BAAE-0C0FD2918F17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundTreeView.WebGUI.451", "BoundTreeView\BoundTreeView.WebGUI.451\BoundTreeView.WebGUI.451.csproj", "{4E92E29A-6381-4BC4-BB83-3C1433928D29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundTreeView.WebGUI.46", "BoundTreeView\BoundTreeView.WebGUI.46\BoundTreeView.WebGUI.46.csproj", "{4E92E29A-6381-4BC4-BB83-3C1433928D29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample MasterDetailWithModel", "Sample MasterDetailWithModel", "{7D48DED2-FC7A-4916-AE90-9879F4C8BFF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsBusiness.45", "MasterDetailWithModel\StudentsBusiness.45\StudentsBusiness.45.csproj", "{B229C88F-0618-44E7-9F1D-276BC4B73883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsBusiness.451", "MasterDetailWithModel\StudentsBusiness.451\StudentsBusiness.451.csproj", "{DF642F38-2B9D-4A7C-AAEE-9833906E4FA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentsBusiness.46", "MasterDetailWithModel\StudentsBusiness.46\StudentsBusiness.46.csproj", "{DF642F38-2B9D-4A7C-AAEE-9833906E4FA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WebGUI.45", "MasterDetailWithModel\MasterDetailWithModel.WebGUI.45\MasterDetailWithModel.WebGUI.45.csproj", "{2AA52208-97AA-4262-ABAE-B4E3F3C4B621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WebGUI.451", "MasterDetailWithModel\MasterDetailWithModel.WebGUI.451\MasterDetailWithModel.WebGUI.451.csproj", "{12CD1D4C-19AE-4ABB-A6B2-207F60CB0283}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WebGUI.46", "MasterDetailWithModel\MasterDetailWithModel.WebGUI.46\MasterDetailWithModel.WebGUI.46.csproj", "{12CD1D4C-19AE-4ABB-A6B2-207F60CB0283}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{79B11CEA-55D2-4A21-A65C-5C949911EDDC}"
 EndProject
@@ -45,9 +45,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net45",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net46", "..\..\Source\BoundControls\MvvmFx.WebGUI.Forms.Net46\MvvmFx.WebGUI.Forms.Net46.csproj", "{1A9B3172-7014-475E-B073-BE5870290287}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WebGUI.Net46", "AcyncUpdate.WebGUI.Net46\AcyncUpdate.WebGUI.Net46.csproj", "{54519FA7-E77F-42C8-BD02-0E53BA45B6D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WebGUI.46", "AcyncUpdate.WebGUI.46\AcyncUpdate.WebGUI.46.csproj", "{54519FA7-E77F-42C8-BD02-0E53BA45B6D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParameters.WebGUI.451", "SimpleParameters.WebGUI.451\SimpleParameters.WebGUI.451.csproj", "{735A8B94-B4CE-4C3B-ACF0-05DE0A6A398B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleParameters.WebGUI.46", "SimpleParameters.WebGUI.46\SimpleParameters.WebGUI.46.csproj", "{735A8B94-B4CE-4C3B-ACF0-05DE0A6A398B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -171,21 +171,21 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net4\MvvmFx.DataBinding.WinForms.Net4.csproj">
       <Project>{43328d6b-4acb-46de-8791-a32b45f9ad04}</Project>
-      <Name>MvvmFx.DataBinding.WinForms</Name>
+      <Name>MvvmFx.DataBinding.WinForms.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms\CaliburnMicro.Csla.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.Net4\CaliburnMicro.Csla.WinForms.Net4.csproj">
       <Project>{0c72f82b-de06-4bc8-b775-11f5b0614a44}</Project>
-      <Name>CaliburnMicro.Csla.WinForms</Name>
+      <Name>CaliburnMicro.Csla.WinForms.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net4\CaliburnMicro.WinForms.Net4.csproj">
       <Project>{47cfadf9-5596-4d48-8813-e89283e5ad35}</Project>
-      <Name>CaliburnMicro.WinForms</Name>
+      <Name>CaliburnMicro.WinForms.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
       <Project>{37c4f6a3-f9f7-48f6-837f-f5bcd1dfe4b8}</Project>
-      <Name>MvvmFx.Logging</Name>
+      <Name>MvvmFx.Logging.Net4</Name>
     </ProjectReference>
     <ProjectReference Include="..\CslaSample.Business\CslaSample.Business.csproj">
       <Project>{C8E78E6E-506D-495E-AD16-1BA31DC58DBC}</Project>

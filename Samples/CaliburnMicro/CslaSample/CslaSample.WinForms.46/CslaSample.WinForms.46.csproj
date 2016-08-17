@@ -168,29 +168,29 @@
     <Content Include="Resources\Save16.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net46\MvvmFx.DataBinding.WinForms.Net46.csproj">
       <Project>{1501bf1f-0406-411f-a47b-446b9989cd91}</Project>
-      <Name>MvvmFx.DataBinding.WinForms.451</Name>
+      <Name>MvvmFx.DataBinding.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.451\CaliburnMicro.Csla.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.Net46\CaliburnMicro.Csla.WinForms.Net46.csproj">
       <Project>{228097e8-a63c-4932-98e5-7b245e4765d4}</Project>
-      <Name>CaliburnMicro.Csla.WinForms.451</Name>
+      <Name>CaliburnMicro.Csla.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.451</Name>
+      <Name>CaliburnMicro.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
-      <Name>MvvmFx.Logging.451</Name>
+      <Name>MvvmFx.Logging.Net46</Name>
     </ProjectReference>
     <ProjectReference Include="..\CslaSample.Business.451\CslaSample.Business.451.csproj">
       <Project>{5a0c7d9d-b40c-4b95-b93c-ec8b3cb26a74}</Project>
-      <Name>CslaSample.Business.451</Name>
+      <Name>CslaSample.Business.Net46</Name>
     </ProjectReference>
     <ProjectReference Include="..\SmartDateExtendedParser.451\SmartDateExtendedParser.451.csproj">
       <Project>{5eb2afb7-7225-45a6-9ecb-83f98abc01b8}</Project>
-      <Name>SmartDateExtendedParser.451</Name>
+      <Name>SmartDateExtendedParser.Net46</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

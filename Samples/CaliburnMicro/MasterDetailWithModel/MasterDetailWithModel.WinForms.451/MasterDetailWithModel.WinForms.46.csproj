@@ -128,21 +128,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.451</Name>
+      <Name>CaliburnMicro.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
-      <Name>MvvmFx.Logging.451</Name>
+      <Name>MvvmFx.Logging.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.451\MvvmFx.DataBinding.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net46\MvvmFx.DataBinding.WinForms.Net46.csproj">
       <Project>{1501bf1f-0406-411f-a47b-446b9989cd91}</Project>
-      <Name>MvvmFx.DataBinding.WinForms.451</Name>
+      <Name>MvvmFx.DataBinding.WinForms.Net46</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentsBusiness.451\StudentsBusiness.451.csproj">
       <Project>{df642f38-2b9d-4a7c-aaee-9833906e4fa7}</Project>
-      <Name>StudentsBusiness.451</Name>
+      <Name>StudentsBusiness.Net46</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

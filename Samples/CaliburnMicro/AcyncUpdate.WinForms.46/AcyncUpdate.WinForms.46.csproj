@@ -102,13 +102,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.451\CaliburnMicro.WinForms.451.csproj">
+    <ProjectReference Include="..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.451</Name>
+      <Name>CaliburnMicro.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.451\MvvmFx.Logging.451.csproj">
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
-      <Name>MvvmFx.Logging.451</Name>
+      <Name>MvvmFx.Logging.Net46</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -143,17 +143,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
       <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
-      <Name>MvvmFx.Logging</Name>
+      <Name>MvvmFx.Logging.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI\MvvmFx.DataBinding.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI.Net4\MvvmFx.DataBinding.WebGUI.Net4.csproj">
       <Project>{9D62264B-077A-4A1F-9605-5EDE74406798}</Project>
-      <Name>MvvmFx.DataBinding.WebGUI</Name>
+      <Name>MvvmFx.DataBinding.WebGUI.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI\CaliburnMicro.WebGUI.csproj">
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI.Net4\CaliburnMicro.WebGUI.Net4.csproj">
       <Project>{8FC1BBF4-5292-4049-9715-8DD6DD712C0B}</Project>
-      <Name>CaliburnMicro.WebGUI</Name>
+      <Name>CaliburnMicro.WebGUI.Net4</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentsBusiness\StudentsBusiness.csproj">
       <Project>{842CE3F4-840B-4D01-AE7C-60F784C959F2}</Project>
