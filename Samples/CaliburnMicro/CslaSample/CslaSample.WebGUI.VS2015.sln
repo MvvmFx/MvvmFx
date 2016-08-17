@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.WebGUI.451", "CslaSample.WebGUI.451\CslaSample.WebGUI.451.csproj", "{F0A74E43-A3A9-45E4-B0F3-B8DFAF23E069}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.WebGUI.46", "CslaSample.WebGUI.46\CslaSample.WebGUI.46.csproj", "{F0A74E43-A3A9-45E4-B0F3-B8DFAF23E069}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.Business.451", "CslaSample.Business.451\CslaSample.Business.451.csproj", "{5A0C7D9D-B40C-4B95-B93C-EC8B3CB26A74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CslaSample.Business.46", "CslaSample.Business.46\CslaSample.Business.46.csproj", "{5A0C7D9D-B40C-4B95-B93C-EC8B3CB26A74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{A34B33C7-46AC-467E-8AF3-DB7FBCE6AB07}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WebGUI.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net46", "..\..\..\Source\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDateExtendedParser.451", "SmartDateExtendedParser.451\SmartDateExtendedParser.451.csproj", "{5EB2AFB7-7225-45A6-9ECB-83F98ABC01B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDateExtendedParser.46", "SmartDateExtendedParser.46\SmartDateExtendedParser.46.csproj", "{5EB2AFB7-7225-45A6-9ECB-83F98ABC01B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
