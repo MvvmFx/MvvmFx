@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF642F38-2B9D-4A7C-AAEE-9833906E4FA7}</ProjectGuid>
+    <ProjectGuid>{5E99A578-A2FF-4FBB-A152-213A715881DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StudentsBusiness</RootNamespace>
-    <AssemblyName>StudentsBusiness</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>FamilyBusiness</RootNamespace>
+    <AssemblyName>FamilyBusiness</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -34,29 +34,29 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\StudentsBusiness\Student.cs">
-      <Link>Student.cs</Link>
+    <Compile Include="..\FamilyBusiness\DeleteMode.cs">
+      <Link>DeleteMode.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\StudentEditMasterDetail.cs">
-      <Link>StudentEditMasterDetail.cs</Link>
+    <Compile Include="..\FamilyBusiness\FamilyMember.cs">
+      <Link>FamilyMember.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\StudentInfo.cs">
-      <Link>StudentInfo.cs</Link>
+    <Compile Include="..\FamilyBusiness\FamilyMemberInfo.cs">
+      <Link>FamilyMemberInfo.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\StudentInfoList.cs">
-      <Link>StudentInfoList.cs</Link>
+    <Compile Include="..\FamilyBusiness\FamilyMemberInfoList.cs">
+      <Link>FamilyMemberInfoList.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\StudentInfoListLoader.cs">
-      <Link>StudentInfoListLoader.cs</Link>
+    <Compile Include="..\FamilyBusiness\FamilyMemberInfoListLoader.cs">
+      <Link>FamilyMemberInfoListLoader.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\StudentList.cs">
-      <Link>StudentList.cs</Link>
+    <Compile Include="..\FamilyBusiness\FamilyMemberList.cs">
+      <Link>FamilyMemberList.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\StudentListLoader.cs">
-      <Link>StudentListLoader.cs</Link>
+    <Compile Include="..\FamilyBusiness\FamilyMemberListLoader.cs">
+      <Link>FamilyMemberListLoader.cs</Link>
     </Compile>
-    <Compile Include="..\StudentsBusiness\ThreadedBindingList.cs">
-      <Link>ThreadedBindingList.cs</Link>
+    <Compile Include="..\FamilyBusiness\Gender.cs">
+      <Link>Gender.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

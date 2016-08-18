@@ -70,7 +70,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderInfo"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private FolderInfo()
+        public FolderInfo()
         {
             // Prevent direct creation
         }

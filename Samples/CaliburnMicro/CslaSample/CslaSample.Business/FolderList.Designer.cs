@@ -116,7 +116,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderList"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private FolderList()
+        public FolderList()
         {
             // Prevent direct creation
 

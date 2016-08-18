@@ -75,7 +75,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentEditGetter"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Unit of Work. Use factory methods instead.</remarks>
-        private DocumentEditGetter()
+        public DocumentEditGetter()
         {
             // Prevent direct creation
         }

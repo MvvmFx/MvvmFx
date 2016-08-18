@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CslaSample</RootNamespace>
     <AssemblyName>CslaSample.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.5.701.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.5.701\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.401\lib\net46\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -184,14 +184,17 @@
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
       <Name>MvvmFx.Logging.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CslaSample.Business.451\CslaSample.Business.451.csproj">
+    <ProjectReference Include="..\CslaSample.Business.46\CslaSample.Business.46.csproj">
       <Project>{5a0c7d9d-b40c-4b95-b93c-ec8b3cb26a74}</Project>
       <Name>CslaSample.Business.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SmartDateExtendedParser.451\SmartDateExtendedParser.451.csproj">
+    <ProjectReference Include="..\SmartDateExtendedParser.46\SmartDateExtendedParser.46.csproj">
       <Project>{5eb2afb7-7225-45a6-9ecb-83f98abc01b8}</Project>
       <Name>SmartDateExtendedParser.Net46</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.6.401\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

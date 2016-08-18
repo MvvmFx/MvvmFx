@@ -84,7 +84,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentList"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private DocumentList()
+        public DocumentList()
         {
             // Prevent direct creation
             DocumentEdit.DocumentEditSaved += DocumentEditSavedHandler;

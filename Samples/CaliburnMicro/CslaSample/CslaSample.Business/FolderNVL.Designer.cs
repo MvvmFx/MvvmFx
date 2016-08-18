@@ -69,7 +69,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderNVL"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private FolderNVL()
+        public FolderNVL()
         {
             // Prevent direct creation
         }
