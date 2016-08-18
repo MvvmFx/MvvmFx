@@ -2345,8 +2345,14 @@
       <xs:extension base="Layout">
         <xs:choice minOccurs="0" maxOccurs="unbounded">
           <xs:element name="attribute" minOccurs="0" maxOccurs="unbounded" type="NLog.Layouts.JsonAttribute" />
+          <xs:element name="renderEmptyObject" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="suppressSpaces" minOccurs="0" maxOccurs="1" type="xs:boolean" />
         </xs:choice>
+        <xs:attribute name="renderEmptyObject" type="xs:boolean">
+          <xs:annotation>
+            <xs:documentation>Option to render the empty object value {}</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="suppressSpaces" type="xs:boolean">
           <xs:annotation>
             <xs:documentation>Option to suppress the extra spaces in the output json</xs:documentation>

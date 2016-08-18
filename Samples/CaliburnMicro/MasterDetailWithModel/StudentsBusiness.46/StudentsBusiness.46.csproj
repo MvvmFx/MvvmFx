@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5EB2AFB7-7225-45A6-9ECB-83F98ABC01B8}</ProjectGuid>
+    <ProjectGuid>{DF642F38-2B9D-4A7C-AAEE-9833906E4FA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CslaContrib</RootNamespace>
-    <AssemblyName>CslaContrib</AssemblyName>
+    <RootNamespace>StudentsBusiness</RootNamespace>
+    <AssemblyName>StudentsBusiness</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,32 +29,36 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\SmartDateExtendedParser\CslaContrib.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SmartDateExtendedParser\SmartDateExtendedParser.cs">
-      <Link>SmartDateExtendedParser.cs</Link>
+    <Compile Include="..\StudentsBusiness\Student.cs">
+      <Link>Student.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\StudentEditMasterDetail.cs">
+      <Link>StudentEditMasterDetail.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\StudentInfo.cs">
+      <Link>StudentInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\StudentInfoList.cs">
+      <Link>StudentInfoList.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\StudentInfoListLoader.cs">
+      <Link>StudentInfoListLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\StudentList.cs">
+      <Link>StudentList.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\StudentListLoader.cs">
+      <Link>StudentListLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\StudentsBusiness\ThreadedBindingList.cs">
+      <Link>ThreadedBindingList.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\SmartDateExtendedParser.rtf">
-      <Link>Documentation\SmartDateExtendedParser.rtf</Link>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\SmartDateExtendedParser.txt">
-      <Link>Documentation\SmartDateExtendedParser.txt</Link>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

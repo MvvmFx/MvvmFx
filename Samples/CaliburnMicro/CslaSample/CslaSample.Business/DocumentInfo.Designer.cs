@@ -122,7 +122,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentInfo"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private DocumentInfo()
+        public DocumentInfo()
         {
             // Prevent direct creation
         }

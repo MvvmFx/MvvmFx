@@ -132,7 +132,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderEdit"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private FolderEdit()
+        public FolderEdit()
         {
             // Prevent direct creation
 

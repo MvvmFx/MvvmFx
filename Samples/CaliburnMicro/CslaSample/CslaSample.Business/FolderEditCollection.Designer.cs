@@ -146,7 +146,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderEditCollection"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private FolderEditCollection()
+        public FolderEditCollection()
         {
             // Prevent direct creation
             Saved += OnFolderEditCollectionSaved;

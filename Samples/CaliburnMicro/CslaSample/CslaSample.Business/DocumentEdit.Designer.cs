@@ -261,7 +261,7 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentEdit"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
-        private DocumentEdit()
+        public DocumentEdit()
         {
             // Prevent direct creation
             Saved += OnDocumentEditSaved;

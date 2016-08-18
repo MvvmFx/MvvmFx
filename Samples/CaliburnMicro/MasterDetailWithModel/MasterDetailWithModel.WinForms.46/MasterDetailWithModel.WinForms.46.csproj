@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MasterDetailWithModel</RootNamespace>
     <AssemblyName>MasterDetailWithModel.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -140,7 +140,7 @@
       <Project>{1501bf1f-0406-411f-a47b-446b9989cd91}</Project>
       <Name>MvvmFx.DataBinding.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StudentsBusiness.451\StudentsBusiness.451.csproj">
+    <ProjectReference Include="..\StudentsBusiness.46\StudentsBusiness.46.csproj">
       <Project>{df642f38-2b9d-4a7c-aaee-9833906e4fa7}</Project>
       <Name>StudentsBusiness.Net46</Name>
     </ProjectReference>

@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F0A74E43-A3A9-45E4-B0F3-B8DFAF23E069}</ProjectGuid>
+    <ProjectGuid>{12CD1D4C-19AE-4ABB-A6B2-207F60CB0283}</ProjectGuid>
     <ProjectTypeGuids>{563295b5-8906-4a76-be2d-ff8e711c1204};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CslaSample</RootNamespace>
-    <AssemblyName>CslaSample.WebGUI</AssemblyName>
+    <RootNamespace>MasterDetailWithModel</RootNamespace>
+    <AssemblyName>MasterDetailWithModel.WebGUI</AssemblyName>
     <StartPageUrl>Form1.wgx</StartPageUrl>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,14 +42,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.401\lib\net46\Csla.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Csla.Web, Version=4.6.401.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CSLA-ASP.NET.4.6.401\lib\net46\Csla.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Gizmox.WebGUI.Common, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=263fa4ef694acff6, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
       <Private>True</Private>
@@ -66,80 +59,68 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CslaSample.WebGUI\AppBootstrapper.cs">
+    <Compile Include="..\MasterDetailWithModel.WebGUI\AppBootstrapper.cs">
       <Link>AppBootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\CslaSample.WebGUI\Documents\DocumentEditView.cs">
-      <Link>Documents\DocumentEditView.cs</Link>
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\Documents\DocumentEditView.Designer.cs">
-      <Link>Documents\DocumentEditView.Designer.cs</Link>
-      <DependentUpon>DocumentEditView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\Documents\DocumentListView.cs">
-      <Link>Documents\DocumentListView.cs</Link>
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\Documents\DocumentListView.Designer.cs">
-      <Link>Documents\DocumentListView.Designer.cs</Link>
-      <DependentUpon>DocumentListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\Documents\FolderListView.cs">
-      <Link>Documents\FolderListView.cs</Link>
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\Documents\FolderListView.Designer.cs">
-      <Link>Documents\FolderListView.Designer.cs</Link>
-      <DependentUpon>FolderListView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\FolderEdit\FolderListEditView.cs">
-      <Link>FolderEdit\FolderListEditView.cs</Link>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\FolderEdit\FolderListEditView.Designer.cs">
-      <Link>FolderEdit\FolderListEditView.Designer.cs</Link>
-      <DependentUpon>FolderListEditView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="..\CslaSample.WebGUI\MainForm.cs">
+    <Compile Include="..\MasterDetailWithModel.WebGUI\MainForm.cs">
       <Link>MainForm.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\CslaSample.WebGUI\MainForm.Designer.cs">
+    <Compile Include="..\MasterDetailWithModel.WebGUI\MainForm.Designer.cs">
       <Link>MainForm.Designer.cs</Link>
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\Documents\DocumentEditViewModel.cs">
-      <Link>Documents\DocumentEditViewModel.cs</Link>
+    <Compile Include="..\MasterDetailWithModel.WebGUI\Views\StudentEditView.cs">
+      <Link>Views\StudentEditView.cs</Link>
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\Documents\DocumentListViewModel.cs">
-      <Link>Documents\DocumentListViewModel.cs</Link>
+    <Compile Include="..\MasterDetailWithModel.WebGUI\Views\StudentEditView.Designer.cs">
+      <Link>Views\StudentEditView.Designer.cs</Link>
+      <DependentUpon>StudentEditView.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\Documents\FolderListViewModel.cs">
-      <Link>Documents\FolderListViewModel.cs</Link>
+    <Compile Include="..\MasterDetailWithModel.WebGUI\Views\StudentListView.cs">
+      <Link>Views\StudentListView.cs</Link>
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\FolderEdit\FolderListEditViewModel.cs">
-      <Link>FolderEdit\FolderListEditViewModel.cs</Link>
+    <Compile Include="..\MasterDetailWithModel.WebGUI\Views\StudentListView.Designer.cs">
+      <Link>Views\StudentListView.Designer.cs</Link>
+      <DependentUpon>StudentListView.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\Framework\ComboValidation.cs">
-      <Link>Framework\ComboValidation.cs</Link>
+    <Compile Include="..\MasterDetailWithModel.WebGUI\Views\StudentMasterDetailView.cs">
+      <Link>Views\StudentMasterDetailView.cs</Link>
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\Framework\InverseBooleanConverter.cs">
+    <Compile Include="..\MasterDetailWithModel.WebGUI\Views\StudentMasterDetailView.Designer.cs">
+      <Link>Views\StudentMasterDetailView.Designer.cs</Link>
+      <DependentUpon>StudentMasterDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\MasterDetailWithModel.WinForms\Framework\InverseBooleanConverter.cs">
       <Link>Framework\InverseBooleanConverter.cs</Link>
     </Compile>
-    <Compile Include="..\CslaSample.WinForms\MainFormViewModel.cs">
+    <Compile Include="..\MasterDetailWithModel.WinForms\MainFormViewModel.cs">
       <Link>MainFormViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\MasterDetailWithModel.WinForms\ViewModels\IStudentEdit.cs">
+      <Link>ViewModels\IStudentEdit.cs</Link>
+    </Compile>
+    <Compile Include="..\MasterDetailWithModel.WinForms\ViewModels\StudentEditViewModel.cs">
+      <Link>ViewModels\StudentEditViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\MasterDetailWithModel.WinForms\ViewModels\StudentListViewModel.cs">
+      <Link>ViewModels\StudentListViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\MasterDetailWithModel.WinForms\ViewModels\StudentMasterDetailViewModel.cs">
+      <Link>ViewModels\StudentMasterDetailViewModel.cs</Link>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -151,21 +132,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Generated\" />
-    <Folder Include="Resources\Icons\" />
-    <Folder Include="Resources\Images\" />
-    <Folder Include="Resources\UserData\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Data\CslaSample.mdf" />
-    <Content Include="App_Data\CslaSample_log.ldf">
-      <DependentUpon>CslaSample.mdf</DependentUpon>
-    </Content>
-    <Content Include="Default.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="packages.config" />
+    <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,36 +141,30 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\CslaSample.WebGUI\Documents\DocumentEditView.resx">
-      <Link>Documents\DocumentEditView.resx</Link>
-      <DependentUpon>DocumentEditView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\CslaSample.WebGUI\Documents\DocumentListView.resx">
-      <Link>Documents\DocumentListView.resx</Link>
-      <DependentUpon>DocumentListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\CslaSample.WebGUI\Documents\FolderListView.resx">
-      <Link>Documents\FolderListView.resx</Link>
-      <DependentUpon>FolderListView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\CslaSample.WebGUI\FolderEdit\FolderListEditView.resx">
-      <Link>FolderEdit\FolderListEditView.resx</Link>
-      <DependentUpon>FolderListEditView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="..\CslaSample.WebGUI\MainForm.resx">
+    <Folder Include="Resources\Generated\" />
+    <Folder Include="Resources\Icons\" />
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\UserData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\MasterDetailWithModel.WebGUI\MainForm.resx">
       <Link>MainForm.resx</Link>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="..\MasterDetailWithModel.WebGUI\Views\StudentEditView.resx">
+      <Link>Views\StudentEditView.resx</Link>
+      <DependentUpon>StudentEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\MasterDetailWithModel.WebGUI\Views\StudentListView.resx">
+      <Link>Views\StudentListView.resx</Link>
+      <DependentUpon>StudentListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\MasterDetailWithModel.WebGUI\Views\StudentMasterDetailView.resx">
+      <Link>Views\StudentMasterDetailView.resx</Link>
+      <DependentUpon>StudentMasterDetailView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI.Net46\MvvmFx.DataBinding.WebGUI.Net46.csproj">
-      <Project>{1e1a099b-3742-472e-a1e7-fa8e0f1b56d9}</Project>
-      <Name>MvvmFx.DataBinding.WebGUI.Net46</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WebGUI.Net46\CaliburnMicro.Csla.WebGUI.Net46.csproj">
-      <Project>{a45fd69b-4e8b-4ca3-8b08-269bca12b424}</Project>
-      <Name>CaliburnMicro.Csla.WebGUI.Net46</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WebGUI.Net46\CaliburnMicro.WebGUI.Net46.csproj">
       <Project>{78b74c5b-a4ee-4a33-b25e-2d89d615bb11}</Project>
       <Name>CaliburnMicro.WebGUI.Net46</Name>
@@ -212,23 +173,23 @@
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
       <Name>MvvmFx.Logging.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CslaSample.Business.46\CslaSample.Business.46.csproj">
-      <Project>{5a0c7d9d-b40c-4b95-b93c-ec8b3cb26a74}</Project>
-      <Name>CslaSample.Business.Net46</Name>
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WebGUI.Net46\MvvmFx.DataBinding.WebGUI.Net46.csproj">
+      <Project>{1e1a099b-3742-472e-a1e7-fa8e0f1b56d9}</Project>
+      <Name>MvvmFx.DataBinding.WebGUI.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SmartDateExtendedParser.46\SmartDateExtendedParser.46.csproj">
-      <Project>{5eb2afb7-7225-45a6-9ecb-83f98abc01b8}</Project>
-      <Name>SmartDateExtendedParser.Net46</Name>
+    <ProjectReference Include="..\StudentsBusiness.46\StudentsBusiness.46.csproj">
+      <Project>{df642f38-2b9d-4a7c-aaee-9833906e4fa7}</Project>
+      <Name>StudentsBusiness.Net46</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <CustomReference Include="Gizmox.WebGUI.Forms.Themes">
-      <HintPath>C:\Visual Studio Projects\GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
+      <HintPath>C:\VS GitHub\MvvmFx\Lib\VisualWebGUI\Gizmox.WebGUI.Forms.Themes.dll</HintPath>
       <Visible>false</Visible>
     </CustomReference>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.6.401\analyzers\c#\Csla.Analyzers.dll" />
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -244,9 +205,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>12878</DevelopmentServerPort>
+          <DevelopmentServerPort>2862</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:12878/</IISUrl>
+          <IISUrl>http://localhost:2862/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
