@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BoundTreeView</RootNamespace>
     <AssemblyName>BoundTreeView.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -142,7 +143,7 @@
       <Project>{1501bf1f-0406-411f-a47b-446b9989cd91}</Project>
       <Name>MvvmFx.DataBinding.WinForms.Net46</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FamilyBusiness.451\FamilyBusiness.451.csproj">
+    <ProjectReference Include="..\FamilyBusiness.46\FamilyBusiness.46.csproj">
       <Project>{5e99a578-a2ff-4fbb-a152-213a715881dc}</Project>
       <Name>FamilyBusiness.Net46</Name>
     </ProjectReference>
@@ -157,6 +158,7 @@
     <None Include="..\BoundTreeView.WinForms\Properties\Settings.settings">
       <Link>Properties\Settings.settings</Link>
     </None>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
