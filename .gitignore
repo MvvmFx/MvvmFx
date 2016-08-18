@@ -16,6 +16,7 @@ TestResults
 *.sln.DotSettings
 *.sln.DotSettings.user
 *.sln.GhostDoc.xml
+.vs
 
 # Build results
 [Dd]ebug/
