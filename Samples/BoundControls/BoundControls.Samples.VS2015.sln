@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejForms.Net45", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundControls.Business", "BoundControls.Business\BoundControls.Business.csproj", "{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGUI.TestBoundTreeView", "WebGUI.TestBoundTreeView\WebGUI.TestBoundTreeView.csproj", "{F008B380-2063-4F56-ACA0-0FE1259887B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGUI.TestBoundTreeView.45", "WebGUI.TestBoundTreeView.45\WebGUI.TestBoundTreeView.45.csproj", "{F008B380-2063-4F56-ACA0-0FE1259887B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.TestBoundTreeView", "WinForms.TestBoundTreeView\WinForms.TestBoundTreeView.csproj", "{7B46A1AC-3CDD-4B7F-80C6-59305C3B2BE4}"
 EndProject
