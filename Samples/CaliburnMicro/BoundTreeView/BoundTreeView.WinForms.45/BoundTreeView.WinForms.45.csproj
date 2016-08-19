@@ -143,7 +143,7 @@
     </ProjectReference>
     <ProjectReference Include="..\FamilyBusiness.45\FamilyBusiness.45.csproj">
       <Project>{5509c522-939f-435b-9022-3bba28ba236b}</Project>
-      <Name>FamilyBusiness.Net45</Name>
+      <Name>FamilyBusiness.45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -19,13 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetailWithModel.WinFo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{096CB38E-0BAE-415C-9225-96F68025BC32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms", "..\..\Source\CaliburnMicro\CaliburnMicro.WinForms\CaliburnMicro.WinForms.csproj", "{47CFADF9-5596-4D48-8813-E89283E5AD35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net4", "..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net4\CaliburnMicro.WinForms.Net4.csproj", "{47CFADF9-5596-4D48-8813-E89283E5AD35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms", "..\..\Source\Binding\MvvmFx.DataBinding.WinForms\MvvmFx.DataBinding.WinForms.csproj", "{43328D6B-4ACB-46DE-8791-A32B45F9AD04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net4", "..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net4\MvvmFx.DataBinding.WinForms.Net4.csproj", "{43328D6B-4ACB-46DE-8791-A32B45F9AD04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging", "..\..\Source\Logging\MvvmFx.Logging\MvvmFx.Logging.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net4", "..\..\Source\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj", "{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms", "..\..\Source\BoundControls\MvvmFx.Windows.Forms\MvvmFx.Windows.Forms.csproj", "{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net4", "..\..\Source\BoundControls\MvvmFx.Windows.Forms.Net4\MvvmFx.Windows.Forms.Net4.csproj", "{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
