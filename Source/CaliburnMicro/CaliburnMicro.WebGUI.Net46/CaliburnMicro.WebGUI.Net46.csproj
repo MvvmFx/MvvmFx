@@ -46,11 +46,11 @@
       <SpecificVersion>True</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Gizmox.WebGUI.Common.Design, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=ea5dfe57c8eb7edd, processorArchitecture=MSIL" >
+    <Reference Include="Gizmox.WebGUI.Common.Design, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=ea5dfe57c8eb7edd, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Gizmox.WebGUI.Server, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL" >
+    <Reference Include="Gizmox.WebGUI.Server, Version=4.6.5701.0, Culture=neutral, PublicKeyToken=3de6eb684226c24d, processorArchitecture=MSIL">
       <SpecificVersion>True</SpecificVersion>
       <Private>False</Private>
     </Reference>

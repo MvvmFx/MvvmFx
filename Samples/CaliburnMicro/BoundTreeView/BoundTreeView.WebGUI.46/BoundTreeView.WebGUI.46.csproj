@@ -193,7 +193,7 @@
     </ProjectReference>
     <ProjectReference Include="..\FamilyBusiness.46\FamilyBusiness.46.csproj">
       <Project>{5e99a578-a2ff-4fbb-a152-213a715881dc}</Project>
-      <Name>FamilyBusiness.Net46</Name>
+      <Name>FamilyBusiness.46</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

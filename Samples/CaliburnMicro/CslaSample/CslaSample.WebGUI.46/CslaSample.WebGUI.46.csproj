@@ -214,11 +214,11 @@
     </ProjectReference>
     <ProjectReference Include="..\CslaSample.Business.46\CslaSample.Business.46.csproj">
       <Project>{5a0c7d9d-b40c-4b95-b93c-ec8b3cb26a74}</Project>
-      <Name>CslaSample.Business.Net46</Name>
+      <Name>CslaSample.Business.46</Name>
     </ProjectReference>
     <ProjectReference Include="..\SmartDateExtendedParser.46\SmartDateExtendedParser.46.csproj">
       <Project>{5eb2afb7-7225-45a6-9ecb-83f98abc01b8}</Project>
-      <Name>SmartDateExtendedParser.Net46</Name>
+      <Name>SmartDateExtendedParser.46</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
