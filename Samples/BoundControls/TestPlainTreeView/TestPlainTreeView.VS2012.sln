@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlainTreeView", "TestPl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundControls.Business", "..\BoundControls.Business\BoundControls.Business.csproj", "{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlainTreeView.Temp", "..\TestPlainTreeView.Temp\TestPlainTreeView.Temp.csproj", "{9BFBD569-D2D5-442F-BA44-62AAB8AF100F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BFBD569-D2D5-442F-BA44-62AAB8AF100F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BFBD569-D2D5-442F-BA44-62AAB8AF100F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BFBD569-D2D5-442F-BA44-62AAB8AF100F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BFBD569-D2D5-442F-BA44-62AAB8AF100F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
