@@ -81,6 +81,7 @@ namespace MvvmFx.CaliburnMicro
             : base(mainWindow)
         {
             MainForm = mainWindow;
+            _mainWindow = mainWindow;
         }
 #endif
         private static Form _mainWindow;
