@@ -372,7 +372,7 @@
         /// </summary>
         /// <param name = "index">The index to insert at.</param>
         /// <param name = "item">The item to be inserted.</param>
-        protected override sealed void InsertItem(int index, T item)
+        protected sealed override void InsertItem(int index, T item)
         {
             Execute.OnUIThread(() => InsertItemBase(index, item));
         }
@@ -396,7 +396,7 @@
         /// </summary>
         /// <param name="oldIndex">The old position of the item.</param>
         /// <param name="newIndex">The new position of the item.</param>
-        protected override sealed void MoveItem(int oldIndex, int newIndex)
+        protected sealed override void MoveItem(int oldIndex, int newIndex)
         {
             Execute.OnUIThread(() => MoveItemBase(oldIndex, newIndex));
         }
@@ -418,7 +418,7 @@
         /// </summary>
         /// <param name = "index">The index to set the item at.</param>
         /// <param name = "item">The item to set.</param>
-        protected override sealed void SetItem(int index, T item)
+        protected sealed override void SetItem(int index, T item)
         {
             Execute.OnUIThread(() => SetItemBase(index, item));
         }
@@ -440,7 +440,7 @@
         ///   Removes the item at the specified position.
         /// </summary>
         /// <param name = "index">The position used to identify the item to remove.</param>
-        protected override sealed void RemoveItem(int index)
+        protected sealed override void RemoveItem(int index)
         {
             Execute.OnUIThread(() => RemoveItemBase(index));
         }
@@ -460,7 +460,7 @@
         /// <summary>
         ///   Clears the items contained by the collection.
         /// </summary>
-        protected override sealed void ClearItems()
+        protected sealed override void ClearItems()
         {
             Execute.OnUIThread(ClearItemsBase);
         }
