@@ -209,8 +209,10 @@ namespace MvvmFx.WisejForms
             _positionChangedHandler = ListManager_PositionChanged;
 
             View = View.Details;
+#if !WISEJ
             FullRowSelect = true;
             HideSelection = false;
+#endif
             MultiSelect = false;
             LabelEdit = true;
         }
