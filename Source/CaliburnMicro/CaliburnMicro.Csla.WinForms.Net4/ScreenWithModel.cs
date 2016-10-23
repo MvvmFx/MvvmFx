@@ -1,10 +1,12 @@
-﻿namespace MvvmFx.CaliburnMicro
+﻿using Csla.Core;
+
+namespace MvvmFx.CaliburnMicro
 {
     /// <summary>
     /// Base class used to create ScreenWithModel objects, with pre-existing verbs for use by InvokeMethod or Invoke.
     /// </summary>
     /// <typeparam name="T">Type of the Model object.</typeparam>
-    public abstract class ScreenWithModel<T> : ScreenWithModelBase<T> where T : class
+    public abstract class ScreenWithModel<T> : ScreenWithModelBase<T> where T : IBusinessObject
     {
         #region Verbs
 

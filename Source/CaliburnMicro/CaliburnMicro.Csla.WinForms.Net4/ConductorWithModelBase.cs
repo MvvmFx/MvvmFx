@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Csla.Core;
 
 namespace MvvmFx.CaliburnMicro
 {
@@ -12,7 +13,7 @@ namespace MvvmFx.CaliburnMicro
     /// <typeparam name="TM">Type of the Model object.</typeparam>
     public abstract class ConductorWithModelBase<TC, TM> : ScreenWithModel<TM>, IConductor, IParent<TC>
         where TC : class
-        where TM : class
+        where TM : IBusinessObject
     {
         private ICloseStrategy<TC> closeStrategy;
 

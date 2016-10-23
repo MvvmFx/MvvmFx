@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Csla.Core;
 
 namespace MvvmFx.CaliburnMicro
 {
@@ -11,7 +12,7 @@ namespace MvvmFx.CaliburnMicro
     /// <typeparam name="TM">Type of the Model object.</typeparam>
     public partial class ConductorWithModel<TC, TM> : ConductorWithModelBaseWithActiveItem<TC, TM>
         where TC : class
-        where TM : class
+        where TM : IBusinessObject
     {
         /// <summary>
         /// Activates the specified item.
