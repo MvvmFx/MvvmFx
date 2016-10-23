@@ -31,6 +31,11 @@ namespace MvvmFx.CaliburnMicro
             get { return _item; }
         }
 
+        private ToolStripItemProxy()
+        {
+            // force to use parametrized constructor
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStripItemProxy" /> class, for the specified <see cref="ToolStripItem" />.
         /// </summary>
