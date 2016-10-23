@@ -208,8 +208,8 @@
                 var applicationContext = new ApplicationContext(root);
                 Execute.OnUIThread(() =>
                 {
-                    applicationContext.MainForm.ShowDialog();
-                    //Application.Run(applicationContext);
+                    //applicationContext.MainForm.ShowDialog();
+                    Application.Run(applicationContext);
                 });
             }
 #endif
