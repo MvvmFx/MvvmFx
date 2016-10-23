@@ -70,11 +70,15 @@ namespace MvvmFx.CaliburnMicro
                     {
                         foreach (ToolStripItem item in ((ToolStrip) x).Items)
                         {
+                            if (item.GetType().FullName.IndexOf("MvvmFx.", StringComparison.InvariantCulture) != 0)
+                            {
 #if WINFORMS
-                            yield return new ToolStripItemProxy(item, x.Parent, true);
+                                yield return new ToolStripItemProxy(item, x.Parent, true);
 #else
-                            yield return new ToolStripItemProxy(item, x, true);
+                                yield return new ToolStripItemProxy(item, x, true);
 #endif
+                            }
+
                             foreach (var toolStripItems in RecursiveGetToolStripItems(item, x))
                                 yield return toolStripItems;
                         }
@@ -93,11 +97,14 @@ namespace MvvmFx.CaliburnMicro
             {
                 foreach (ToolStripItem t in ((ToolStripDropDownItem) item).DropDownItems)
                 {
+                    if (item.GetType().FullName.IndexOf("MvvmFx.", StringComparison.InvariantCulture) != 0)
+                    {
 #if WINFORMS
-                    yield return new ToolStripItemProxy(t, x.Parent, true);
+                        yield return new ToolStripItemProxy(t, x.Parent, true);
 #else
-                    yield return new ToolStripItemProxy(t, x, true);
+                        yield return new ToolStripItemProxy(t, x, true);
 #endif
+                    }
                     foreach (var toolStripItems in RecursiveGetToolStripItems(t, x))
                         yield return toolStripItems;
                 }
