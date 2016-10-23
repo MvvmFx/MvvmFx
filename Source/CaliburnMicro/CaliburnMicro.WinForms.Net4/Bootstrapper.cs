@@ -158,9 +158,9 @@
             Application.ApplicationExit += OnExit;
         }
 #else
-    /// <summary>
-    /// Provides an opportunity to hook into the application object.
-    /// </summary>
+        /// <summary>
+        /// Provides an opportunity to hook into the application object.
+        /// </summary>
         protected virtual void PrepareApplication()
         {
             Application.Startup += OnStartup;
@@ -252,11 +252,11 @@
         }
 
 #if WEBGUI
-    /// <summary>
-    /// Handles the ThreadException event of the Application control.
-    /// </summary>
-    /// <param name="sender">The source of the event.</param>
-    /// <param name="e">The <see cref="ThreadExceptionEventArgs"/> instance containing the event data.</param>
+        /// <summary>
+        /// Handles the ThreadException event of the Application control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="ThreadExceptionEventArgs"/> instance containing the event data.</param>
         protected virtual void Application_ThreadException(object sender, Gizmox.WebGUI.Forms.ThreadExceptionEventArgs e) { }
 #else
         /// <summary>
