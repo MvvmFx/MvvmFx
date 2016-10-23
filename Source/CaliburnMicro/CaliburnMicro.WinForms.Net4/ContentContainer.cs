@@ -43,7 +43,7 @@ namespace MvvmFx.CaliburnMicro
             get { return _content; }
             set
             {
-                if (_viewModel != value)
+                if (!ReferenceEquals(_viewModel, value))
                 {
                     _viewModel = value;
                     var viewModel = value as IViewAware;
