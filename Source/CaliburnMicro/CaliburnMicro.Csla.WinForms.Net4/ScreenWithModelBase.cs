@@ -15,7 +15,7 @@ namespace MvvmFx.CaliburnMicro
     /// Base class used to create ScreenWithModel objects that implement their own commands/verbs/actions.
     /// </summary>
     /// <typeparam name="T">Type of the Model object.</typeparam>
-    public abstract class ScreenWithModelBase<T> : Screen, IHaveModel where T : class
+    public abstract class ScreenWithModelBase<T> : Screen, IHaveModel where T : IBusinessObject
     {
         #region Constructors
 
@@ -517,7 +517,7 @@ namespace MvvmFx.CaliburnMicro
         /// </summary>
         private void SetPropertiesAtObjectLevel()
         {
-            var sourceType = typeof (T);
+            var sourceType = typeof(T);
 
             CanCreateObject = BusinessRules.HasPermission(AuthorizationActions.CreateObject, sourceType);
             CanGetObject = BusinessRules.HasPermission(AuthorizationActions.GetObject, sourceType);
@@ -616,7 +616,7 @@ namespace MvvmFx.CaliburnMicro
         /// <example>DoRefresh(() => BusinessList.GetList(id))</example>
         protected virtual void DoRefresh(Func<T> factoryMethod)
         {
-            if (typeof (T) != null)
+            if (typeof(T) != null)
             {
                 Error = null;
                 try
@@ -638,12 +638,12 @@ namespace MvvmFx.CaliburnMicro
         /// <param name="factoryParameters">Factory method parameters.</param>
         protected virtual void DoRefresh(string factoryMethod, params object[] factoryParameters)
         {
-            if (typeof (T) != null)
+            if (typeof(T) != null)
             {
                 Error = null;
                 try
                 {
-                    Model = (T) MethodCaller.CallFactoryMethod(typeof (T), factoryMethod, factoryParameters);
+                    Model = (T) MethodCaller.CallFactoryMethod(typeof(T), factoryMethod, factoryParameters);
                 }
                 catch (Exception ex)
                 {
@@ -671,13 +671,13 @@ namespace MvvmFx.CaliburnMicro
         /// <example>BeginRefresh(handler => BusinessList.BeginGetList(id, handler))</example>
         protected virtual void BeginRefresh(Action<EventHandler<DataPortalResult<T>>> factoryMethod)
         {
-            if (typeof (T) != null)
+            if (typeof(T) != null)
                 try
                 {
                     Error = null;
                     IsBusy = true;
 
-                    var handler = (EventHandler<DataPortalResult<T>>) CreateHandler(typeof (T));
+                    var handler = (EventHandler<DataPortalResult<T>>) CreateHandler(typeof(T));
                     factoryMethod(handler);
                 }
                 catch (Exception ex)
@@ -694,15 +694,15 @@ namespace MvvmFx.CaliburnMicro
         /// <param name="factoryParameters">Factory method parameters.</param>
         protected virtual void BeginRefresh(string factoryMethod, params object[] factoryParameters)
         {
-            if (typeof (T) != null)
+            if (typeof(T) != null)
                 try
                 {
                     Error = null;
                     IsBusy = true;
                     var parameters = new List<object>(factoryParameters);
-                    parameters.Add(CreateHandler(typeof (T)));
+                    parameters.Add(CreateHandler(typeof(T)));
 
-                    MethodCaller.CallFactoryMethod(typeof (T), factoryMethod, parameters.ToArray());
+                    MethodCaller.CallFactoryMethod(typeof(T), factoryMethod, parameters.ToArray());
                 }
                 catch (Exception ex)
                 {
@@ -723,8 +723,8 @@ namespace MvvmFx.CaliburnMicro
         private Delegate CreateHandler(Type objectType)
         {
             System.Reflection.MethodInfo method = MethodCaller.GetNonPublicMethod(GetType(), "QueryCompleted");
-            var innerType = typeof (DataPortalResult<>).MakeGenericType(objectType);
-            var args = typeof (EventHandler<>).MakeGenericType(innerType);
+            var innerType = typeof(DataPortalResult<>).MakeGenericType(objectType);
+            var args = typeof(EventHandler<>).MakeGenericType(innerType);
             Delegate handler = Delegate.CreateDelegate(args, this, method);
             return handler;
         }
