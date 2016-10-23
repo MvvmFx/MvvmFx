@@ -1,13 +1,18 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     using System;
+#if WEBGUI
+    using Gizmox.WebGUI.Forms;
+#else
+    using System.Windows.Forms;
+#endif
 
     /// <summary>
     ///   A base implementation of <see cref = "IScreen" />.
     /// </summary>
     public class Screen : ViewAware, IScreen, IChild
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (Screen));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(Screen));
 
         private bool isActive;
         private bool isInitialized;
@@ -148,6 +153,15 @@
 
                 if (close)
                 {
+#if WINFORMS || WEBGUI
+                    // needed because the DependencyObject implementation uses objects and should use WeakReference.
+                    foreach (var view in Views)
+                    {
+                        var control = view.Value as Control;
+                        if (control != null)
+                            control?.Dispose();
+                    }
+#endif
                     Views.Clear();
                     Log.Info("Closed {0}.", this);
                 }
