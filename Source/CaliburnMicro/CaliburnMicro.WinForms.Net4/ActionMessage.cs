@@ -25,6 +25,7 @@
         private Control associatedObject;
         private EventInfo associatedEvent;
         private EventHandler associatedEventHandler;
+        private DataGridViewCellEventHandler associatedDataGridViewCellEventHandler;
 
         internal static readonly DependencyProperty HandlerProperty = DependencyProperty.RegisterAttached(
             "Handler",
@@ -122,7 +123,12 @@
                     if (null != associatedObject)
                     {
                         if (associatedEvent != null)
-                            associatedEvent.RemoveEventHandler(associatedObject, associatedEventHandler);
+                        {
+                            if (associatedEventHandler != null)
+                                associatedEvent.RemoveEventHandler(associatedObject, associatedEventHandler);
+                            else if (associatedDataGridViewCellEventHandler != null)
+                                associatedEvent.RemoveEventHandler(associatedObject, associatedDataGridViewCellEventHandler);
+                        }
 
                         associatedObject.Disposed -= associatedObject_Disposed;
                     }
@@ -136,8 +142,11 @@
                             associatedEvent = associatedObject.GetType().GetEvent(EventName);
                             if (associatedEvent != null)
                             {
-                                associatedEventHandler = (s, e) => associatedObject_Event(s, e);
-                                associatedEvent.AddEventHandler(associatedObject, associatedEventHandler);
+                                if (associatedEvent.EventHandlerType == typeof(EventHandler))
+                                {
+                                    associatedEventHandler = (s, e) => associatedObject_Event(s, e);
+                                    associatedEvent.AddEventHandler(associatedObject, associatedEventHandler);
+                                }
                             }
                         }
 
