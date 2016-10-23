@@ -33,8 +33,8 @@
             // 
             // boundListView1
             // 
-            this.boundListView1.FullRowSelect = true;
-            this.boundListView1.HideSelection = false;
+            //this.boundListView1.FullRowSelect = true;
+            //this.boundListView1.HideSelection = false;
             this.boundListView1.LabelEdit = true;
             this.boundListView1.Location = new System.Drawing.Point(4, 4);
             this.boundListView1.MaximumSize = new System.Drawing.Size(500, 418);
