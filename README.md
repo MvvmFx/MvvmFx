@@ -1,4 +1,4 @@
-The MVVM FX project targets Windows Forms and Visual Web GUI.
+The MVVM FX project targets Windows Forms, Visual Web GUI and Wisej.
 
 The project focus on providing a development framework based on three libraries:
 - Caliburn.Micro MVVM framework
