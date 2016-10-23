@@ -194,8 +194,8 @@ namespace WisejTestBoundTreeView
             // boundListView1
             // 
             this.boundListView1.DataSource = this.docTypeListBindingSource;
-            this.boundListView1.FullRowSelect = true;
-            this.boundListView1.HideSelection = false;
+            //this.boundListView1.FullRowSelect = true;
+            //this.boundListView1.HideSelection = false;
             this.boundListView1.LabelEdit = true;
             this.boundListView1.Location = new System.Drawing.Point(473, 13);
             this.boundListView1.MultiSelect = false;
