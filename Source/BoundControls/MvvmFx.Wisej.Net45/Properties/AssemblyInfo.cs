@@ -4,7 +4,7 @@
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Bound Controls for Wisej in NET 4.5")]
-[assembly: AssemblyProduct("MvvmFx.WisejForms for NET45")]
+[assembly: AssemblyProduct("MvvmFx.Wisej for NET45")]
 [assembly: AssemblyDescription("Bound Controls for Wisej.")]
 [assembly: AssemblyCopyright("Copyright © MvvmFx 2016.")]
 [assembly: AssemblyCompany("MvvmFx Project")]

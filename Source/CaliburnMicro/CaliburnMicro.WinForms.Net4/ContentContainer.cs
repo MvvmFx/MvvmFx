@@ -5,6 +5,9 @@ using System.Drawing;
 #if WEBGUI
 using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Forms.Design;
+#elif WISEJ
+using Wisej.Web;
+using System.Windows.Forms.Design;
 #else
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -16,8 +19,10 @@ namespace MvvmFx.CaliburnMicro
     /// <summary>
     /// A content container panel.
     /// </summary>
-#if !WEBGUI
+#if WINFORMS
     [Docking(DockingBehavior.Ask)]
+#elif WISEJ
+    [System.Windows.Forms.Docking(System.Windows.Forms.DockingBehavior.Ask)]
 #endif
     [Designer(typeof (ContentControlDesigner), typeof (IDesigner))]
     [ToolboxBitmap(typeof (Panel))]
@@ -119,7 +124,7 @@ namespace MvvmFx.CaliburnMicro
                 };
             }
 
-#if !WEBGUI
+#if WINFORMS
             /// <summary>
             /// Raises the <see cref="E:PaintAdornments" /> event.
             /// </summary>

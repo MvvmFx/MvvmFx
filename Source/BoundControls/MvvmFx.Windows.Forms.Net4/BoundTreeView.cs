@@ -44,8 +44,8 @@ using System.Linq;
 using MvvmFx.Logging;
 #if WISEJ
 using Wisej.Web;
-using MvvmFx.WisejForms.Design;
-using MvvmFx.WisejForms.Properties;
+using MvvmFx.Wisej.Design;
+using MvvmFx.Wisej.Properties;
 using TreeViewImageIndexConverter = System.Windows.Forms.TreeViewImageIndexConverter;
 using TreeViewImageKeyConverter = System.Windows.Forms.TreeViewImageKeyConverter;
 #elif WEBGUI
@@ -187,7 +187,7 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
 #elif WISEJ
         /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.WisejForms.BoundTreeView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.Wisej.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -237,11 +237,11 @@ namespace MvvmFx.Windows.Forms
 #elif WISEJ
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="MvvmFx.WisejForms.BoundTreeView"/> is displaying data.
+        /// the <see cref="MvvmFx.Wisej.BoundTreeView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.WisejForms.BoundTreeView.DataSource"/> for which the
-        /// <see cref="MvvmFx.WisejForms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.Wisej.BoundTreeView.DataSource"/> for which the
+        /// <see cref="MvvmFx.Wisej.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
 #else
         /// <summary>
@@ -284,7 +284,7 @@ namespace MvvmFx.Windows.Forms
         /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
 #elif WISEJ
         /// <summary>
-        /// Gets or sets the property to display for this <see cref="MvvmFx.WisejForms.BoundTreeView"/>.
+        /// Gets or sets the property to display for this <see cref="MvvmFx.Wisej.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
@@ -331,7 +331,7 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
 #elif WISEJ
         /// <summary>
-        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.WisejForms.BoundTreeView"/>.
+        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.Wisej.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
@@ -484,11 +484,11 @@ namespace MvvmFx.Windows.Forms
         /// </returns>
 #elif WISEJ
         /// <summary>
-        /// Gets the value of the member property specified by the <see cref="MvvmFx.WisejForms.BoundTreeView.ValueMember"/> property.
+        /// Gets the value of the member property specified by the <see cref="MvvmFx.Wisej.BoundTreeView.ValueMember"/> property.
         /// </summary>
         /// <returns>
         /// An object containing the value of the member of the data source specified
-        /// by the <see cref="MvvmFx.WisejForms.BoundTreeView.ValueMember"/> property.
+        /// by the <see cref="MvvmFx.Wisej.BoundTreeView.ValueMember"/> property.
         /// </returns>
 #else
         /// <summary>

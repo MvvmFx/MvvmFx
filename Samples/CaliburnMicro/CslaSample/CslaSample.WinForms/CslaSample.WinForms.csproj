@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.6.500.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.500\lib\net40\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.6.602.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.602\lib\net40\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
@@ -170,9 +170,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.6.500\analyzers\c#\Csla.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net4\MvvmFx.DataBinding.WinForms.Net4.csproj">
       <Project>{43328d6b-4acb-46de-8791-a32b45f9ad04}</Project>
       <Name>MvvmFx.DataBinding.WinForms.Net4</Name>
@@ -211,6 +208,9 @@
     <Content Include="Resources\Delete16.png" />
     <Content Include="Resources\Refresh16.png" />
     <Content Include="Resources\Save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.6.602\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\..\Dependencies\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\..\Dependencies\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

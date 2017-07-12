@@ -6,6 +6,8 @@
     using System.Windows;
 #if WEBGUI
     using Gizmox.WebGUI.Forms;
+#elif WISEJ
+    using Wisej.Web;
 #else
     using System.Windows.Forms;
 #endif
@@ -31,11 +33,13 @@
             AddElementConvention<ListControl>("DataSource", null, null);
             AddElementConvention<TreeView>("DataSource", null, null);
             AddElementConvention<GroupBox>("Name", null, null);
+#if !WISEJ
             AddElementConvention<ToolStripItemProxy>("Name", null, "Click")
                 .CreateAction = (element, methodName, parameters) =>
                 {
                     return new ActionMessage(element, "Click", methodName, parameters);
                 };
+#endif
             AddElementConvention<TabControl>("SelectedTab", null, null)
                 .ApplyBinding = (viewModel, path, property, control, convention) => { return true; };
         }

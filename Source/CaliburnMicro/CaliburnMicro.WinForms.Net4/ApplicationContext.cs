@@ -3,6 +3,9 @@ using System.Reflection;
 using Gizmox.WebGUI.Forms;
 using Gizmox.WebGUI.Hosting;
 using Gizmox.WebGUI.Server;
+#elif WISEJ
+using System.Reflection;
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif
@@ -14,6 +17,8 @@ namespace MvvmFx.CaliburnMicro
     /// </summary>
 #if WEBGUI
     public class ApplicationContext : Context
+#elif WISEJ
+    public class ApplicationContext
 #else
     public class ApplicationContext : System.Windows.Forms.ApplicationContext
 #endif
@@ -35,7 +40,7 @@ namespace MvvmFx.CaliburnMicro
             StartupForm = form;
         }
 
-#if WEBGUI
+#if WEBGUI || WISEJ
     /// <summary>
     /// Gets or sets the entry assembly.
     /// </summary>
@@ -53,6 +58,7 @@ namespace MvvmFx.CaliburnMicro
             EntryAssembly = obj.GetType().Assembly;
         }
 
+#if !WISEJ
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationContext"/> class, using a given main windows Form.
         /// </summary>
@@ -64,6 +70,7 @@ namespace MvvmFx.CaliburnMicro
             //WebGUIActiveForm = ActiveForm as Form;
             WebGUIActiveForm = MainForm as Form;
         }
+#endif
 
         /// <summary>
         /// Gets the WebGUI active form.

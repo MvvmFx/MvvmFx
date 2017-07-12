@@ -11,11 +11,13 @@
     using System.Threading;
 #if WINFORMS
     using System.Windows.Forms;
+#elif WISEJ
+    using Wisej.Web;
 #elif !WEBGUI
     using System.Reflection;
 #endif
 
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
     using System.Windows;
     using System.Windows.Threading;
 #endif
@@ -39,7 +41,7 @@
                 {
 #if SILVERLIGHT
                     inDesignMode = DesignerProperties.IsInDesignTool;
-#elif WINFORMS || WEBGUI
+#elif WINFORMS || WEBGUI || WISEJ
                     inDesignMode =
                         (bool) Process.GetCurrentProcess().ProcessName.StartsWith("devenv", StringComparison.Ordinal);
 #else
@@ -93,9 +95,9 @@
                             "An error occurred while dispatching a call to the UI Thread", exception);
                 }
             });
-#elif WINFORMS || WEBGUI
+#elif WINFORMS || WEBGUI || WISEJ
             var context = SynchronizationContext.Current;
-#if !WEBGUI
+#if !WEBGUI  && !WISEJ
             if (!(context is WindowsFormsSynchronizationContext))
             {
                 var dlg = new Form();

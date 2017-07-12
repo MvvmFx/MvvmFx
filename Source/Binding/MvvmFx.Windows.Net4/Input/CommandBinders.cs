@@ -114,9 +114,12 @@ namespace MvvmFx.Windows.Input
 #if !WEBGUI
                 else if (triggerEvent.EventType == typeof(PreviewKeyDownEventHandler))
                     triggerEvent.AddEventHandler(control, (PreviewKeyDownEventHandler)((s, e) => command.Execute(null)));
+#if !WISEJ
                 else if (triggerEvent.EventType == typeof(UICuesEventHandler))
                     triggerEvent.AddEventHandler(control, (UICuesEventHandler)((s, e) => command.Execute(null)));
 #endif
+#endif
+#if !WISEJ
                 else if (triggerEvent.EventType == typeof(HelpEventHandler))
                     triggerEvent.AddEventHandler(control, (HelpEventHandler)((s, e) => command.Execute(null)));
 #if !WEBGUI
@@ -124,6 +127,7 @@ namespace MvvmFx.Windows.Input
                     triggerEvent.AddEventHandler(control, (QueryAccessibilityHelpEventHandler)((s, e) => command.Execute(null)));
                 else if (triggerEvent.EventType == typeof(GiveFeedbackEventHandler))
                     triggerEvent.AddEventHandler(control, (GiveFeedbackEventHandler)((s, e) => command.Execute(null)));
+#endif
 #endif
                 else attached = false;
             }
@@ -171,9 +175,12 @@ namespace MvvmFx.Windows.Input
 #if !WEBGUI
                 else if (triggerEvent.EventType == typeof(PreviewKeyDownEventHandler))
                     triggerEvent.RemoveEventHandler(control, (PreviewKeyDownEventHandler)((s, e) => command.Execute(null)));
+#if !WISEJ
                 else if (triggerEvent.EventType == typeof(UICuesEventHandler))
                     triggerEvent.RemoveEventHandler(control, (UICuesEventHandler)((s, e) => command.Execute(null)));
 #endif
+#endif
+#if !WISEJ
                 else if (triggerEvent.EventType == typeof(HelpEventHandler))
                     triggerEvent.RemoveEventHandler(control, (HelpEventHandler)((s, e) => command.Execute(null)));
 #if !WEBGUI
@@ -181,6 +188,7 @@ namespace MvvmFx.Windows.Input
                     triggerEvent.RemoveEventHandler(control, (QueryAccessibilityHelpEventHandler)((s, e) => command.Execute(null)));
                 else if (triggerEvent.EventType == typeof(GiveFeedbackEventHandler))
                     triggerEvent.RemoveEventHandler(control, (GiveFeedbackEventHandler)((s, e) => command.Execute(null)));
+#endif
 #endif
                 else detached = false;
             }
@@ -192,6 +200,7 @@ namespace MvvmFx.Windows.Input
         }
     }
 
+#if !WISEJ
     /// <summary>
     /// Binder for <see cref="ToolStripItem"/> objects.
     /// </summary>
@@ -298,6 +307,7 @@ namespace MvvmFx.Windows.Input
             command.CanExecuteChanged -= (s, e) => toolStripItem.Enabled = command.CanExecute(null);
         }
     }
+#endif
 
     /// <summary>
     /// Binder for <see cref="MenuItem"/> objects.
@@ -372,5 +382,5 @@ namespace MvvmFx.Windows.Input
         }
     }
 
-    #endregion
+#endregion
 }

@@ -31,7 +31,9 @@ namespace MvvmFx.Windows.Input
         private static readonly ICollection<ICommandBinder> Binders = new List<ICommandBinder>
         {
             new ControlBinder(),
+#if !WISEJ
             new ToolStripItemBinder(),
+#endif
             new MenuItemBinder()
         };
 

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C33059D8-0DA0-4B21-81A4-62994D1DF0AB}</ProjectGuid>
+    <ProjectGuid>{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
-    <AssemblyName>MvvmFx.CaliburnMicro.Csla.WinForms</AssemblyName>
+    <AssemblyName>MvvmFx.CaliburnMicro.Csla.Wisej</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -18,8 +18,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net45\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WINFORMS;NET</DefineConstants>
+    <OutputPath>..\..\..\bin\Debug\Wisej\net45\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WISEJ;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
@@ -28,11 +28,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net45\</OutputPath>
-    <DefineConstants>TRACE;WINFORMS;NET</DefineConstants>
+    <OutputPath>..\..\..\bin\Release\Wisej\net45\</OutputPath>
+    <DefineConstants>TRACE;WISEJ;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net45\MvvmFx.CaliburnMicro.Csla.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\Wisej\net45\MvvmFx.CaliburnMicro.Csla.Wisej.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
@@ -43,7 +43,11 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL" />
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModel.cs">
@@ -73,9 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaliburnMicro.WinForms.Net45\CaliburnMicro.WinForms.Net45.csproj">
-      <Project>{8a70916c-7d79-4539-a4e4-178fbb66c703}</Project>
-      <Name>CaliburnMicro.WinForms.Net45</Name>
+    <ProjectReference Include="..\CaliburnMicro.Wisej.Net45\CaliburnMicro.Wisej.Net45.csproj">
+      <Project>{1ca317b0-d30d-494b-83a4-20fbbbe71e22}</Project>
+      <Name>CaliburnMicro.Wisej.Net45</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

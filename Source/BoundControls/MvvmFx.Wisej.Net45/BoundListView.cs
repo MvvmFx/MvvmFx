@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Drawing.Design;
 #if WISEJ
 using Wisej.Web;
-using MvvmFx.WisejForms.Properties;
+using MvvmFx.Wisej.Properties;
 #elif WEBGUI
 using Gizmox.WebGUI;
 using Gizmox.WebGUI.Forms;
@@ -18,7 +18,7 @@ using MvvmFx.Windows.Forms.Properties;
 // code from Sascha Knopf
 // http://www.codeproject.com/Articles/15396/Implementing-complex-data-binding-in-custom-contro
 
-namespace MvvmFx.WisejForms
+namespace MvvmFx.Wisej
 {
     /// <summary>
     /// Data binding enabled list view control.
@@ -53,7 +53,7 @@ namespace MvvmFx.WisejForms
         /// </returns>>
 #elif WISEJ
         /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.WisejForms.BoundListView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.Wisej.BoundListView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or 
@@ -112,11 +112,11 @@ namespace MvvmFx.WisejForms
 #elif WISEJ
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which 
-        /// the <see cref="MvvmFx.WisejForms.BoundListView"/> is displaying data.
+        /// the <see cref="MvvmFx.Wisej.BoundListView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.WisejForms.BoundListView.DataSource"/> for which the 
-        /// <see cref="MvvmFx.WisejForms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.Wisej.BoundListView.DataSource"/> for which the 
+        /// <see cref="MvvmFx.Wisej.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
         /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/> 

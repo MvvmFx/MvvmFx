@@ -1,6 +1,8 @@
 ﻿using System;
 #if WEBGUI
 using Gizmox.WebGUI.Forms;
+#elif WISEJ
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif

@@ -8,6 +8,8 @@
     using System.Reflection;
 #if WEBGUI
     using UIElement = Gizmox.WebGUI.Forms.Control;
+#elif WISEJ
+    using UIElement = Wisej.Web.Control;
 #else
     using UIElement = System.Windows.Forms.Control;
 #endif

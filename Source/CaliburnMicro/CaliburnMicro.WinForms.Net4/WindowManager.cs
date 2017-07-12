@@ -10,6 +10,11 @@
     using Window = Gizmox.WebGUI.Forms.Form;
     using NavigationWindow = Gizmox.WebGUI.Forms.Form;
     using Popup = Gizmox.WebGUI.Forms.Panel;
+#elif WISEJ
+    using Wisej.Web;
+    using Window = Wisej.Web.Form;
+    using NavigationWindow = Wisej.Web.Form;
+    using Popup = Wisej.Web.Panel;
 #else
     using System.Windows.Forms;
     using Window = System.Windows.Forms.Form;
@@ -196,6 +201,7 @@
         public virtual void ShowMainWindow(object rootModel, object context = null,
             IDictionary<string, object> settings = null)
         {
+#if !WISEJ
             if (ApplicationContext.StartupForm != null)
             {
                 Window root = CreateWindow(rootModel, true, context, settings, ApplicationContext.StartupForm);
@@ -212,6 +218,7 @@
                     Application.Run(applicationContext);
                 });
             }
+#endif
 #endif
         }
 

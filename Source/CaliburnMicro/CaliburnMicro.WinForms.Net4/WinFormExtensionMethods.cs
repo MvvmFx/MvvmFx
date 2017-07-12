@@ -5,6 +5,8 @@ using System.Reflection;
 using MvvmFx.Windows.Data;
 #if WEBGUI
 using Gizmox.WebGUI.Forms;
+#elif WISEJ
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif
@@ -66,6 +68,7 @@ namespace MvvmFx.CaliburnMicro
             {
                 foreach (var x in control.Controls.Cast<Control>())
                 {
+#if !WISEJ
                     if (x is ToolStrip)
                     {
                         foreach (ToolStripItem item in ((ToolStrip) x).Items)
@@ -83,7 +86,7 @@ namespace MvvmFx.CaliburnMicro
                                 yield return toolStripItems;
                         }
                     }
-
+#endif
                     yield return x;
                     foreach (var child in GetNamedElements(x))
                         yield return child;
@@ -91,6 +94,7 @@ namespace MvvmFx.CaliburnMicro
             }
         }
 
+#if !WISEJ
         private static IEnumerable<Control> RecursiveGetToolStripItems(ToolStripItem item, Control x)
         {
             if (item is ToolStripDropDownItem)
@@ -109,50 +113,6 @@ namespace MvvmFx.CaliburnMicro
                         yield return toolStripItems;
                 }
             }
-        }
-
-        /// <summary>
-        /// Gets a property by name, ignoring case and searching all interfaces.
-        /// </summary>
-        /// <param name="type">The type to inspect.</param>
-        /// <param name="propertyName">The property to search for.</param>
-        /// <returns>The property or null if not found.</returns>
-        public static PropertyInfo GetPropertyCaseInsensitive(this object type, string propertyName)
-        {
-            return GetPropertyCaseInsensitive(type.GetType(), propertyName);
-        }
-
-        /// <summary>
-        /// Gets a property by name, ignoring case and searching all interfaces.
-        /// </summary>
-        /// <param name="type">The type to inspect.</param>
-        /// <param name="propertyName">The property to search for.</param>
-        /// <returns>The property or null if not found.</returns>
-        public static PropertyInfo GetPropertyCaseInsensitive(this Type type, string propertyName)
-        {
-            return type.GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-        }
-
-        /// <summary>
-        /// Gets a method by name, ignoring case and searching all interfaces.
-        /// </summary>
-        /// <param name="type">The type to inspect.</param>
-        /// <param name="methodName">The method to search for.</param>
-        /// <returns>The method or null if not found.</returns>
-        public static MethodInfo GetMethodCaseSensitive(this object type, string methodName)
-        {
-            return GetMethodCaseSensitive(type.GetType(), methodName);
-        }
-
-        /// <summary>
-        /// Gets a method by name, ignoring case and searching all interfaces.
-        /// </summary>
-        /// <param name="type">The type to inspect.</param>
-        /// <param name="methodName">The method to search for.</param>
-        /// <returns>The method or null if not found.</returns>
-        public static MethodInfo GetMethodCaseSensitive(this Type type, string methodName)
-        {
-            return type.GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
         }
 
         /// <summary>
@@ -198,6 +158,51 @@ namespace MvvmFx.CaliburnMicro
             {
                 Mode = BindingMode.OneWayToTarget
             });
+        }
+#endif
+
+        /// <summary>
+        /// Gets a property by name, ignoring case and searching all interfaces.
+        /// </summary>
+        /// <param name="type">The type to inspect.</param>
+        /// <param name="propertyName">The property to search for.</param>
+        /// <returns>The property or null if not found.</returns>
+        public static PropertyInfo GetPropertyCaseInsensitive(this object type, string propertyName)
+        {
+            return GetPropertyCaseInsensitive(type.GetType(), propertyName);
+        }
+
+        /// <summary>
+        /// Gets a property by name, ignoring case and searching all interfaces.
+        /// </summary>
+        /// <param name="type">The type to inspect.</param>
+        /// <param name="propertyName">The property to search for.</param>
+        /// <returns>The property or null if not found.</returns>
+        public static PropertyInfo GetPropertyCaseInsensitive(this Type type, string propertyName)
+        {
+            return type.GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        /// <summary>
+        /// Gets a method by name, ignoring case and searching all interfaces.
+        /// </summary>
+        /// <param name="type">The type to inspect.</param>
+        /// <param name="methodName">The method to search for.</param>
+        /// <returns>The method or null if not found.</returns>
+        public static MethodInfo GetMethodCaseSensitive(this object type, string methodName)
+        {
+            return GetMethodCaseSensitive(type.GetType(), methodName);
+        }
+
+        /// <summary>
+        /// Gets a method by name, ignoring case and searching all interfaces.
+        /// </summary>
+        /// <param name="type">The type to inspect.</param>
+        /// <param name="methodName">The method to search for.</param>
+        /// <returns>The method or null if not found.</returns>
+        public static MethodInfo GetMethodCaseSensitive(this Type type, string methodName)
+        {
+            return type.GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
         }
     }
 }

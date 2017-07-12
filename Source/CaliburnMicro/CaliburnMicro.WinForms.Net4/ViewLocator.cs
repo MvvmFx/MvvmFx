@@ -5,7 +5,7 @@
     using System.Text.RegularExpressions;
     using System.Collections.Generic;
     using System.Windows;
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
     using System.Reflection;
     using System.Windows.Controls;
 #if !SILVERLIGHT && !WinRT
@@ -16,6 +16,10 @@
     using Window = Gizmox.WebGUI.Forms.Form;
     using UIElement = Gizmox.WebGUI.Forms.Control;
     using TextBlock = Gizmox.WebGUI.Forms.Label;
+#elif WISEJ
+    using Window = Wisej.Web.Form;
+    using UIElement = Wisej.Web.Control;
+    using TextBlock = Wisej.Web.Label;
 #else
     using Window = System.Windows.Forms.Form;
     using UIElement = System.Windows.Forms.Control;
@@ -289,7 +293,7 @@
 
             if (view != null)
             {
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
                 InitializeComponent(view);
 #endif
                 return view;
@@ -307,7 +311,7 @@
 #endif
 
             view = (UIElement) Activator.CreateInstance(viewType);
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
             InitializeComponent(view);
 #endif
             return view;
@@ -439,7 +443,7 @@
                     var view = viewAware.GetView(context) as UIElement;
                     if (view != null)
                     {
-#if !SILVERLIGHT && !WinRT && !WINFORMS && !WEBGUI
+#if !SILVERLIGHT && !WinRT && !WINFORMS && !WEBGUI && !WISEJ
                         var windowCheck = view as Window;
                         if (windowCheck == null ||
                             (!windowCheck.IsLoaded && !(new WindowInteropHelper(windowCheck).Handle == IntPtr.Zero)))
@@ -448,7 +452,7 @@
                             return view;
                         }
 #else
-                    Log.Info("Using cached view for {0}.", model);
+                        Log.Info("Using cached view for {0}.", model);
                     return view;
 #endif
                     }
@@ -457,7 +461,7 @@
                 return LocateForModelType(model.GetType(), displayLocation, context);
             };
 
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
         /// <summary>
         /// Transforms a view type into a pack uri.
         /// </summary>

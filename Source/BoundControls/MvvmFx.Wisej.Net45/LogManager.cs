@@ -1,7 +1,7 @@
 ﻿using System;
 using MvvmFx.Logging;
 
-namespace MvvmFx.WisejForms
+namespace MvvmFx.Wisej
 {
     /// <summary>
     /// Used to manage logging.
