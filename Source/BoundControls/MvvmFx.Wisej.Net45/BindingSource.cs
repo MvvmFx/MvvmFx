@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MvvmFx.WisejForms
+namespace MvvmFx.Wisej
 {
     /// <summary>
     /// Encapsulates the data source for a form.

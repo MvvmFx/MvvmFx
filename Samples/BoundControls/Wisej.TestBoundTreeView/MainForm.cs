@@ -1,10 +1,10 @@
 ﻿using System;
 #if WINFORMS
 using Wisej.Web;
-using LogManager = MvvmFx.WisejForms.LogManager;
+using LogManager = MvvmFx.Wisej.LogManager;
 #elif WISEJ
 using Wisej.Web;
-using LogManager = MvvmFx.WisejForms.LogManager;
+using LogManager = MvvmFx.Wisej.LogManager;
 #else
 using Gizmox.WebGUI.Forms;
 using LogManager = MvvmFx.WebGUI.Forms.LogManager;

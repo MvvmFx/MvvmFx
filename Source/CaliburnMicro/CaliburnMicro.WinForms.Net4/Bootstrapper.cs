@@ -6,6 +6,9 @@
     using System.Windows;
 #if WEBGUI
     using Gizmox.WebGUI.Forms;
+#elif WISEJ
+    using Wisej.Web;
+    using System.Threading;
 #elif WINFORMS
     using System.Windows.Forms;
     using System.Threading;
@@ -21,7 +24,7 @@
         private readonly bool useApplication;
         private bool isInitialized;
 
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
     /// <summary>
     /// The application.
     /// </summary>
@@ -71,7 +74,7 @@
             }
         }
 
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
         /// <summary>
         /// Runs this instance.
         /// </summary>
@@ -100,7 +103,7 @@
         /// </summary>
         protected virtual void StartRuntime()
         {
-#if WEBGUI
+#if WEBGUI || WISEJ
             Execute.ResetWithoutDispatcher();
 #else
             Execute.InitializeWithDispatcher();
@@ -133,7 +136,7 @@
 
             if (useApplication)
             {
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
                 //Application = System.Windows.Forms.Application;
 #else
                 Application = Application.Current;
@@ -147,7 +150,7 @@
             IoC.BuildUp = BuildUp;
         }
 
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
         /// <summary>
         /// Provides an opportunity to hook into the application object.
         /// </summary>
@@ -241,7 +244,7 @@
         {
         }
 
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
         /// <summary>
         /// Handles the UnhandledException event of the AppDomain control.
         /// </summary>
@@ -279,7 +282,7 @@
         protected virtual void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
         }
-#elif !WINFORMS && !WEBGUI
+#elif !WINFORMS && !WEBGUI && !WISEJ
     /// <summary>
     /// Override this to add custom behavior for unhandled exceptions.
     /// </summary>
@@ -327,7 +330,7 @@
         protected void DisplayRootViewFor(Type viewModelType, IDictionary<string, object> settings = null)
         {
             var windowManager = IoC.Get<IWindowManager>();
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
             windowManager.ShowMainWindow(IoC.GetInstance(viewModelType, null), null, settings);
 #else
             windowManager.ShowWindow(IoC.GetInstance(viewModelType, null), null, settings);

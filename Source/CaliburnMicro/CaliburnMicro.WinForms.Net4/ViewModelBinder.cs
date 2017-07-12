@@ -8,6 +8,9 @@
 #if WEBGUI
     using Gizmox.WebGUI.Forms;
     using FrameworkElement = Gizmox.WebGUI.Forms.Control;
+#elif WISEJ
+    using Wisej.Web;
+    using FrameworkElement = Wisej.Web.Control;
 #else
     using System.Windows.Forms;
     using FrameworkElement = System.Windows.Forms.Control;

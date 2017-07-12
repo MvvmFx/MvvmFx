@@ -3,6 +3,8 @@
     using System;
 #if WEBGUI
     using Gizmox.WebGUI.Forms;
+#elif WISEJ
+    using Wisej.Web;
 #else
     using System.Windows.Forms;
 #endif
@@ -153,7 +155,7 @@
 
                 if (close)
                 {
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
                     // needed because the DependencyObject implementation uses objects and should use WeakReference.
                     foreach (var view in Views)
                     {

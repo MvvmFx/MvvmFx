@@ -35,7 +35,7 @@ using System.Drawing.Design;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace MvvmFx.WisejForms.Design
+namespace MvvmFx.Wisej.Design
 {
     /// <summary>
     /// Base class for simple drop down type editors.

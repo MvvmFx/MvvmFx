@@ -3,6 +3,8 @@
     using System.Windows;
 #if WEBGUI
     using FrameworkElement = Gizmox.WebGUI.Forms.Control;
+#elif WISEJ
+    using FrameworkElement = Wisej.Web.Control;
 #else
     using FrameworkElement = System.Windows.Forms.Control;
 #endif
@@ -91,7 +93,7 @@
             return d.GetValue(TargetWithoutContextProperty);
         }
 
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
         /// <summary>
         /// Checks if the <see cref="ActionMessage"/> Target was set.
         /// </summary>
@@ -137,7 +139,7 @@
         {
             if (GetTarget(element) != null || GetTargetWithoutContext(element) != null)
                 return true;
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
             var frameworkElement = element.Object as FrameworkElement;
 #else
             var frameworkElement = element as FrameworkElement;
@@ -165,7 +167,7 @@
             {
                 Target = target,
                 Method = target.GetType().GetMethod(methodName),
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
                 Message = new ActionMessage(source, null, methodName),
 #else
                 Message = new ActionMessage {
@@ -209,7 +211,7 @@
             {
                 target = IoC.GetInstance(null, containerKey);
             }
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
             if (setContext && d.Object is IHaveDataContext)
             {
                 Log.Info("Setting DC of {0} to {1}.", d, target);

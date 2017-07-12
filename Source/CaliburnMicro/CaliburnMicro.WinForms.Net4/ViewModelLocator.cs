@@ -4,7 +4,7 @@
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Collections.Generic;
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
     using FrameworkElement = MvvmFx.CaliburnMicro.IHaveDataContext;
 #else
     using System.Windows;

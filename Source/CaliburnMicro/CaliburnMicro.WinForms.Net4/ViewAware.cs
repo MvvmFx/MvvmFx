@@ -5,6 +5,8 @@
     using System.Windows;
 #if WEBGUI
     using FrameworkElement = Gizmox.WebGUI.Forms.Control;
+#elif WISEJ
+    using FrameworkElement = Wisej.Web.Control;
 #else
     using FrameworkElement = System.Windows.Forms.Control;
 #endif
@@ -79,7 +81,7 @@
             var nonGeneratedView = View.GetFirstNonGeneratedView(view);
 
             var element = nonGeneratedView as FrameworkElement;
-#if !WINFORMS && !WEBGUI
+#if !WINFORMS && !WEBGUI && !WISEJ
             if (element != null && !(bool) element.GetValue(PreviouslyAttachedProperty))
             {
                 element.SetValue(PreviouslyAttachedProperty, true);
@@ -124,7 +126,7 @@
             return view;
         }
 
-#if WINFORMS || WEBGUI
+#if WINFORMS || WEBGUI || WISEJ
         /// <summary>
         /// Gets the view.
         /// </summary>

@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using MvvmFx.Windows.Forms;
 #elif WISEJ
 using Wisej.Web;
-using MvvmFx.WisejForms;
+using MvvmFx.Wisej;
 using BoundUserControl = Wisej.Web.UserControl;
 #else
 using Gizmox.WebGUI.Forms;
