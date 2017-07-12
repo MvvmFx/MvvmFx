@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solution Items", "{2E8ED30A-7037-415B-A40A-EE6D61C15C28}"
 	ProjectSection(SolutionItems) = preProject
@@ -26,12 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net45", "..\Logging\MvvmFx.NLogLogger.Net45\MvvmFx.NLogLogger.Net45.csproj", "{882D7D0B-5057-450D-9F23-FEA7773CBAE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net46", "..\Logging\MvvmFx.NLogLogger.Net46\MvvmFx.NLogLogger.Net46.csproj", "{D404AFA8-83C5-4B73-8A85-D3748804CAC4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net4", "MvvmFx.WebGUI.Forms.Net4\MvvmFx.WebGUI.Forms.Net4.csproj", "{17BAAB70-3047-4B50-9374-F01664A5AB59}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net45", "MvvmFx.WebGUI.Forms.Net45\MvvmFx.WebGUI.Forms.Net45.csproj", "{A9147A21-0D79-47BE-9B23-57FE7DF9375A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WebGUI.Forms.Net46", "MvvmFx.WebGUI.Forms.Net46\MvvmFx.WebGUI.Forms.Net46.csproj", "{1A9B3172-7014-475E-B073-BE5870290287}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net4", "MvvmFx.Windows.Forms.Net4\MvvmFx.Windows.Forms.Net4.csproj", "{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}"
 EndProject
@@ -141,36 +135,6 @@ Global
 		{D404AFA8-83C5-4B73-8A85-D3748804CAC4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{D404AFA8-83C5-4B73-8A85-D3748804CAC4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D404AFA8-83C5-4B73-8A85-D3748804CAC4}.Release|x86.ActiveCfg = Release|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{17BAAB70-3047-4B50-9374-F01664A5AB59}.Release|x86.ActiveCfg = Release|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A9147A21-0D79-47BE-9B23-57FE7DF9375A}.Release|x86.ActiveCfg = Release|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{1A9B3172-7014-475E-B073-BE5870290287}.Release|x86.ActiveCfg = Release|Any CPU
 		{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
