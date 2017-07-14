@@ -1,3 +1,0 @@
-N.B. - Effects like double-click tree expansion or collapsing depend the presence of the following Web.Config setting:
-
-<WinFormsCompatible Mode="TreeNodeClickEventsOnToggle" />
