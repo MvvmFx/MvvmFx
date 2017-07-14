@@ -38,19 +38,19 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.WinForms.Net4\DialogConductorViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\DialogConductorViewModel.cs">
       <Link>DialogConductorViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net4\IDialogManager.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\IDialogManager.cs">
       <Link>IDialogManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net4\IMessageBox.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\IMessageBox.cs">
       <Link>IMessageBox.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxOptions.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\MessageBoxOptions.cs">
       <Link>MessageBoxOptions.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net4\MessageBoxViewModel.cs">
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\MessageBoxViewModel.cs">
       <Link>MessageBoxViewModel.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">

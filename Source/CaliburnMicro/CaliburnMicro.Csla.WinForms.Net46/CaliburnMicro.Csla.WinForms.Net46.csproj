@@ -47,25 +47,25 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ConductorWithModel.cs">
       <Link>ConductorWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ConductorWithModelBase.cs">
       <Link>ConductorWithModelBase.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelBaseWithActiveItem.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ConductorWithModelBaseWithActiveItem.cs">
       <Link>ConductorWithModelBaseWithActiveItem.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionAllActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ConductorWithModelWithCollectionAllActive.cs">
       <Link>ConductorWithModelWithCollectionAllActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ConductorWithModelWithCollectionOneActive.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ConductorWithModelWithCollectionOneActive.cs">
       <Link>ConductorWithModelWithCollectionOneActive.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModel.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ScreenWithModel.cs">
       <Link>ScreenWithModel.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net4\ScreenWithModelBase.cs">
+    <Compile Include="..\CaliburnMicro.Csla.WinForms.Net45\ScreenWithModelBase.cs">
       <Link>ScreenWithModelBase.cs</Link>
     </Compile>
     <Compile Include="..\..\GlobalAssemblyInfo.cs">

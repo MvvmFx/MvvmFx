@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -44,145 +44,145 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\MvvmFx.Windows.Net4\Assert.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Assert.cs">
       <Link>Assert.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\ActionBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\ActionBinding.cs">
       <Link>Data\ActionBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Binding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Binding.cs">
       <Link>Data\Binding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\BindingListAdapter.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\BindingListAdapter.cs">
       <Link>Data\BindingListAdapter.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\BindingManager.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\BindingManager.cs">
       <Link>Data\BindingManager.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\BindingMode.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\BindingMode.cs">
       <Link>Data\BindingMode.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\BindingManagerExtensions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\BindingManagerExtensions.cs">
       <Link>Data\Fluent\BindingManagerExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IActivation.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\IActivation.cs">
       <Link>Data\Fluent\IActivation.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IConverterSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\IConverterSelection.cs">
       <Link>Data\Fluent\IConverterSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IHideIrrelevantMembers.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\IHideIrrelevantMembers.cs">
       <Link>Data\Fluent\IHideIrrelevantMembers.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\ILambdaBasedSourceSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\ILambdaBasedSourceSelection.cs">
       <Link>Data\Fluent\ILambdaBasedSourceSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IModeSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\IModeSelection.cs">
       <Link>Data\Fluent\IModeSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IMultiSourceBindingOptions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\IMultiSourceBindingOptions.cs">
       <Link>Data\Fluent\IMultiSourceBindingOptions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\IPathBasedSourceSelection.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\IPathBasedSourceSelection.cs">
       <Link>Data\Fluent\IPathBasedSourceSelection.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\ISingleSourceBindingOptions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\ISingleSourceBindingOptions.cs">
       <Link>Data\Fluent\ISingleSourceBindingOptions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Fluent\ISubsequentSourceBindingOptions.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Fluent\ISubsequentSourceBindingOptions.cs">
       <Link>Data\Fluent\ISubsequentSourceBindingOptions.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\IMultiValueConverter.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\IMultiValueConverter.cs">
       <Link>Data\IMultiValueConverter.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\IValueConverter.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\IValueConverter.cs">
       <Link>Data\IValueConverter.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\MultiBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\MultiBinding.cs">
       <Link>Data\MultiBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\BindingBase.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\BindingBase.cs">
       <Link>Data\Primitive\BindingBase.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\IBindingContainer.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\IBindingContainer.cs">
       <Link>Data\Primitive\IBindingContainer.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\LambdaPropertyExpression.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\LambdaPropertyExpression.cs">
       <Link>Data\Primitive\LambdaPropertyExpression.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\MultiSourceBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\MultiSourceBinding.cs">
       <Link>Data\Primitive\MultiSourceBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PathPropertyExpression.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\PathPropertyExpression.cs">
       <Link>Data\Primitive\PathPropertyExpression.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpression.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\PropertyExpression.cs">
       <Link>Data\Primitive\PropertyExpression.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpressionPart.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\PropertyExpressionPart.cs">
       <Link>Data\Primitive\PropertyExpressionPart.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpressionPartMvvmFx.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\PropertyExpressionPartMvvmFx.cs">
       <Link>Data\Primitive\PropertyExpressionPartMvvmFx.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\PropertyExpressionPartSystem.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\PropertyExpressionPartSystem.cs">
       <Link>Data\Primitive\PropertyExpressionPartSystem.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\Primitive\SingleSourceBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\Primitive\SingleSourceBinding.cs">
       <Link>Data\Primitive\SingleSourceBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\TypedBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\TypedBinding.cs">
       <Link>Data\TypedBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Data\TypedMultiBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Data\TypedMultiBinding.cs">
       <Link>Data\TypedMultiBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Diagnostics\Log.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Diagnostics\Log.cs">
       <Link>Diagnostics\Log.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\BoundCommand.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\BoundCommand.cs">
       <Link>Input\BoundCommand.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\CommandBase.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\CommandBase.cs">
       <Link>Input\CommandBase.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\CommandBinders.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\CommandBinders.cs">
       <Link>Input\CommandBinders.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\CommandBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\CommandBinding.cs">
       <Link>Input\CommandBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\CommandBindingManager.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\CommandBindingManager.cs">
       <Link>Input\CommandBindingManager.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\ControlEvent.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\ControlEvent.cs">
       <Link>Input\ControlEvent.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\IBoundCommand.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\IBoundCommand.cs">
       <Link>Input\IBoundCommand.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\ICommand.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\ICommand.cs">
       <Link>Input\ICommand.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\ICommandBinding.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\ICommandBinding.cs">
       <Link>Input\ICommandBinding.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\ICommandBindingContainer.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\ICommandBindingContainer.cs">
       <Link>Input\ICommandBindingContainer.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\InvalidEventException.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\InvalidEventException.cs">
       <Link>Input\InvalidEventException.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\MenuItemEvent.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\MenuItemEvent.cs">
       <Link>Input\MenuItemEvent.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\NoBinderForComponentException.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\NoBinderForComponentException.cs">
       <Link>Input\NoBinderForComponentException.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Input\ToolStripItemEvent.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Input\ToolStripItemEvent.cs">
       <Link>Input\ToolStripItemEvent.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.Windows.Net4\Properties\Resources.Designer.cs">
+    <Compile Include="..\MvvmFx.Windows.Net45\Properties\Resources.Designer.cs">
       <Link>Properties\Resources.Designer.cs</Link>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
@@ -199,15 +199,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\MvvmFx.Windows.Net4\Properties\Resources.resx">
+    <EmbeddedResource Include="..\MvvmFx.Windows.Net45\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\MvvmFx.Windows.Net4\Data\Documentation\Examples.xml">
+    <Content Include="..\MvvmFx.Windows.Net45\Data\Documentation\Examples.xml">
       <Link>Data\Documentation\Examples.xml</Link>
     </Content>
-    <Content Include="..\MvvmFx.Windows.Net4\Data\Documentation\Shared.xml">
+    <Content Include="..\MvvmFx.Windows.Net45\Data\Documentation\Shared.xml">
       <Link>Data\Documentation\Shared.xml</Link>
     </Content>
   </ItemGroup>
