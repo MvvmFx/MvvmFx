@@ -1,21 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6A26FBD4-4E9B-40EC-879E-CAC4D84F4726}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADD228BA-2CDB-4387-8437-F69871113E2B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BoundTreeView</RootNamespace>
     <AssemblyName>BoundTreeView.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,14 +22,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;WINFORMS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BoundTreeView.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -104,24 +105,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.Windows.Forms.Net4\MvvmFx.Windows.Forms.Net4.csproj">
-      <Project>{B1F3B2F4-6A03-4622-8871-1CD2C64B579A}</Project>
-      <Name>MvvmFx.Windows.Forms.Net4</Name>
+    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.Windows.Forms.Net45\MvvmFx.Windows.Forms.Net45.csproj">
+      <Project>{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}</Project>
+      <Name>MvvmFx.Windows.Forms.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net4\MvvmFx.Logging.Net4.csproj">
-      <Project>{37C4F6A3-F9F7-48F6-837F-F5BCD1DFE4B8}</Project>
-      <Name>MvvmFx.Logging.Net4</Name>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net45\CaliburnMicro.WinForms.Net45.csproj">
+      <Project>{8a70916c-7d79-4539-a4e4-178fbb66c703}</Project>
+      <Name>CaliburnMicro.WinForms.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net4\MvvmFx.DataBinding.WinForms.Net4.csproj">
-      <Project>{43328D6B-4ACB-46DE-8791-A32B45F9AD04}</Project>
-      <Name>MvvmFx.DataBinding.WinForms.Net4</Name>
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
+      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
+      <Name>MvvmFx.Logging.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net4\CaliburnMicro.WinForms.Net4.csproj">
-      <Project>{47CFADF9-5596-4D48-8813-E89283E5AD35}</Project>
-      <Name>CaliburnMicro.WinForms.Net4</Name>
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj">
+      <Project>{adf8e550-012c-467d-99d8-e44f3f352a9d}</Project>
+      <Name>MvvmFx.DataBinding.WinForms.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\FamilyBusiness\FamilyBusiness.csproj">
-      <Project>{B553D526-BDEC-4DDC-A4CE-8F487BD03A22}</Project>
+      <Project>{04f4836f-e406-4f0b-8a92-ff65f352dd01}</Project>
       <Name>FamilyBusiness</Name>
     </ProjectReference>
   </ItemGroup>
