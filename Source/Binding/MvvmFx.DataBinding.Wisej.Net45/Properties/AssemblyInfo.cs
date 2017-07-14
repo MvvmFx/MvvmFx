@@ -2,7 +2,7 @@
 using System.Reflection;
 //using System.Security;
 
-[assembly: AssemblyTitle("MvvmFx simples DataBinding in NET 4.5")]
+[assembly: AssemblyTitle("MvvmFx simple databinding in NET 4.5")]
 [assembly: AssemblyProduct("MvvmFx.DataBinding.NET45")]
 [assembly: AssemblyDescription("A POCO (Plain Old CLR Object) data binding library.")]
 [assembly: AssemblyCopyright("Copyright © Kent Boogaart (parts), Tiago Freitas Leal.")]
