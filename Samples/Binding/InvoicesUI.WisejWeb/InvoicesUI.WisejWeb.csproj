@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{170A52DD-E952-4FF5-8041-A258915ADA98}</ProjectGuid>
+    <ProjectGuid>{E7F49976-76A5-4767-80D6-2B8B9F309541}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WisejTestBoundTreeView</RootNamespace>
-    <AssemblyName>WisejTestBoundTreeView</AssemblyName>
+    <RootNamespace>InvoicesUI.WisejWeb</RootNamespace>
+    <AssemblyName>InvoicesUI.WisejWeb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -29,7 +29,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WISEJ</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -37,7 +37,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DefineConstants>TRACE;WISEJ</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -45,17 +45,11 @@
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
-    <Content Include="Themes\Classic-2.theme">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
-    <Content Include="packages.config" />
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Themes\Classic-2.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -67,6 +61,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTimeToDateConverter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,53 +75,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SyncedLists.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SyncedLists.Designer.cs">
-      <DependentUpon>SyncedLists.cs</DependentUpon>
+    <Compile Include="TestFormLambdaINPC.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TreeListView.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="TestFormLambdaINPC.Designer.cs">
+      <DependentUpon>TestFormLambdaINPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="TreeListView.Designer.cs">
-      <DependentUpon>TreeListView.cs</DependentUpon>
+    <Compile Include="TestFormLambdaValidation.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TreeView.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="TestFormLambdaValidation.Designer.cs">
+      <DependentUpon>TestFormLambdaValidation.cs</DependentUpon>
     </Compile>
-    <Compile Include="TreeView.Designer.cs">
-      <DependentUpon>TreeView.cs</DependentUpon>
+    <Compile Include="TestFormStringINPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestFormStringINPC.Designer.cs">
+      <DependentUpon>TestFormStringINPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestFormStringValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestFormStringValidation.Designer.cs">
+      <DependentUpon>TestFormStringValidation.cs</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.Wisej.Net45\MvvmFx.Wisej.Net45.csproj">
-      <Project>{f9a6952e-c1bc-4185-8407-d1f59d62255d}</Project>
-      <Name>MvvmFx.Wisej.Net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
-      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
-      <Name>MvvmFx.Logging.Net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.NLogLogger.Net45\MvvmFx.NLogLogger.Net45.csproj">
-      <Project>{882d7d0b-5057-450d-9f23-fea7773cbae8}</Project>
-      <Name>MvvmFx.NLogLogger.Net45</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BoundControls.Business\BoundControls.Business.csproj">
-      <Project>{fae0df92-8751-4072-8ab7-6d8e824f1f03}</Project>
-      <Name>BoundControls.Business</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Csla, Version=4.6.602.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\CSLA-Core.4.6.602\lib\net45\Csla.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Drawing" />
@@ -143,19 +124,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SyncedLists.resx">
-      <DependentUpon>SyncedLists.cs</DependentUpon>
+    <EmbeddedResource Include="TestFormLambdaINPC.resx">
+      <DependentUpon>TestFormLambdaINPC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TreeListView.resx">
-      <DependentUpon>TreeListView.cs</DependentUpon>
+    <EmbeddedResource Include="TestFormLambdaValidation.resx">
+      <DependentUpon>TestFormLambdaValidation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TreeView.resx">
-      <DependentUpon>TreeView.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="TestFormStringINPC.resx">
+      <DependentUpon>TestFormStringINPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestFormStringValidation.resx">
+      <DependentUpon>TestFormStringValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\Dependencies\packages\CSLA-Core.4.6.602\analyzers\c#\Csla.Analyzers.dll" />
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.Wisej.Net45\MvvmFx.Windows.Wisej.Net45.csproj">
+      <Project>{0f9b7c37-4fea-4c6b-9caa-abca77ccf60f}</Project>
+      <Name>MvvmFx.Windows.Wisej.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InvoicesBusiness\InvoicesBusiness.csproj">
+      <Project>{c2869ad6-b378-4404-b662-cba9cf67a12d}</Project>
+      <Name>InvoicesBusiness</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -172,7 +162,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:12852/</IISUrl>
+          <IISUrl>http://localhost:4473/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

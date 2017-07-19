@@ -1,4 +1,4 @@
-﻿namespace EventBinding
+﻿namespace EventBinding.WisejWeb
 {
     partial class MainForm
     {
@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Wisej Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.FullNameLabel = new System.Windows.Forms.Label();
-            this.FullName = new System.Windows.Forms.TextBox();
-            this.Save = new System.Windows.Forms.Button();
-            this.CloseForm = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.Tool = new System.Windows.Forms.ToolStripButton();
+            this.FullNameLabel = new Wisej.Web.Label();
+            this.FullName = new Wisej.Web.TextBox();
+            this.Save = new Wisej.Web.Button();
+            this.CloseForm = new Wisej.Web.Button();
+            this.toolStrip1 = new Wisej.Web.MenuBar();
+            this.Tool = new Wisej.Web.MenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             //
@@ -60,21 +60,19 @@
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.TabIndex = 2;
             this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = true;
             //
             // CloseForm
             //
-            this.CloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseForm.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Bottom | Wisej.Web.AnchorStyles.Right)));
             this.CloseForm.Location = new System.Drawing.Point(204, 111);
             this.CloseForm.Name = "CloseForm";
             this.CloseForm.Size = new System.Drawing.Size(75, 23);
             this.CloseForm.TabIndex = 3;
             this.CloseForm.Text = "Close";
-            this.CloseForm.UseVisualStyleBackColor = true;
             //
             // toolStrip1
             //
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.Tool});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -84,15 +82,15 @@
             //
             // Tool
             //
-            this.Tool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            //this.Tool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.Tool.Name = "Tool";
-            this.Tool.Size = new System.Drawing.Size(31, 22);
+            //this.Tool.Size = new System.Drawing.Size(31, 22);
             this.Tool.Text = "Tool";
             //
             // MainForm
             //
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
+            this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 146);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.CloseForm);
@@ -110,12 +108,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label FullNameLabel;
-        private System.Windows.Forms.TextBox FullName;
-        private System.Windows.Forms.Button Save;
-        private System.Windows.Forms.Button CloseForm;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton Tool;
+        private Wisej.Web.Label FullNameLabel;
+        private Wisej.Web.TextBox FullName;
+        private Wisej.Web.Button Save;
+        private Wisej.Web.Button CloseForm;
+        private Wisej.Web.MenuBar toolStrip1;
+        private Wisej.Web.MenuItem Tool;
 
     }
 }
