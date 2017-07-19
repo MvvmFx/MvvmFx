@@ -39,7 +39,7 @@
             this.textboxView = new Wisej.Web.TextBox();
             this.textboxModel = new Wisej.Web.TextBox();
             this.buttonModel = new Wisej.Web.Button();
-            this.boundTreeView1 = new MvvmFx.Wisej.BoundTreeView();
+            this.boundTreeView1 = new MvvmFx.WisejWeb.BoundTreeView();
             this.imageList = new Wisej.Web.ImageList(this.components);
             this.label1 = new Wisej.Web.Label();
             this.docTypeName = new Wisej.Web.Label();
@@ -327,7 +327,7 @@
         private Wisej.Web.TextBox textboxView;
         private Wisej.Web.TextBox textboxModel;
         private Wisej.Web.Button buttonModel;
-        private MvvmFx.Wisej.BoundTreeView boundTreeView1;
+        private MvvmFx.WisejWeb.BoundTreeView boundTreeView1;
         private Wisej.Web.Label label1;
         private Wisej.Web.Label docTypeName;
         private Wisej.Web.Label dragDropStatusLabel;

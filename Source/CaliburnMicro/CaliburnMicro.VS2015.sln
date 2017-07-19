@@ -40,13 +40,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net46", "..\Binding\MvvmFx.DataBinding.WinForms.Net46\MvvmFx.DataBinding.WinForms.Net46.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.Wisej.Net45", "CaliburnMicro.Csla.Wisej.Net45\CaliburnMicro.Csla.Wisej.Net45.csproj", "{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WisejWeb.Net45", "CaliburnMicro.Csla.WisejWeb.Net45\CaliburnMicro.Csla.WisejWeb.Net45.csproj", "{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Wisej.Net45", "CaliburnMicro.Wisej.Net45\CaliburnMicro.Wisej.Net45.csproj", "{1CA317B0-D30D-494B-83A4-20FBBBE71E22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.Net45", "CaliburnMicro.WisejWeb.Net45\CaliburnMicro.WisejWeb.Net45.csproj", "{1CA317B0-D30D-494B-83A4-20FBBBE71E22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.Wisej.Net45", "CaliburnMicro.DialogExtensions.Wisej.Net45\CaliburnMicro.DialogExtensions.Wisej.Net45.csproj", "{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WisejWeb.Net45", "CaliburnMicro.DialogExtensions.WisejWeb.Net45\CaliburnMicro.DialogExtensions.WisejWeb.Net45.csproj", "{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.Wisej.Net45", "..\Binding\MvvmFx.DataBinding.Wisej.Net45\MvvmFx.DataBinding.Wisej.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WisejWeb.Net45", "..\Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

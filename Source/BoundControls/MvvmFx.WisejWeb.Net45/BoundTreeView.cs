@@ -60,7 +60,7 @@ using MvvmFx.Windows.Forms.Design;
 using MvvmFx.Windows.Forms.Properties;
 #endif
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WisejWeb
 {
     /// <summary>
     /// Data binding enabled hierarchical tree view control.
