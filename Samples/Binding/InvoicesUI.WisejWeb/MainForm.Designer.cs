@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Wisej Designer generated code
+        #region WisejWeb Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify

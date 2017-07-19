@@ -79,9 +79,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CslaSample", "CslaSample", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterDetailWithModel", "MasterDetailWithModel", "{2D29EE0E-AB18-4E3A-869C-0463AAA86041}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wisej", "Wisej", "{AA40D84D-AA52-4886-9C94-4F83169D53C0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WisejWeb", "WisejWeb", "{AA40D84D-AA52-4886-9C94-4F83169D53C0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wisej", "Wisej", "{9FD68FD4-B6D1-41AE-8CBD-8DA7134E815B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WisejWeb", "WisejWeb", "{9FD68FD4-B6D1-41AE-8CBD-8DA7134E815B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net45", "..\Source\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
 EndProject
@@ -95,7 +95,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net45"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45", "..\Source\BoundControls\MvvmFx.Windows.Forms.Net45\MvvmFx.Windows.Forms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Wisej.Net45", "..\Source\BoundControls\MvvmFx.Wisej.Net45\MvvmFx.Wisej.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net45", "..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.Net45\CaliburnMicro.Csla.WinForms.Net45.csproj", "{C33059D8-0DA0-4B21-81A4-62994D1DF0AB}"
 EndProject
@@ -109,19 +109,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net45", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net45", "..\Source\Logging\MvvmFx.NLogLogger.Net45\MvvmFx.NLogLogger.Net45.csproj", "{882D7D0B-5057-450D-9F23-FEA7773CBAE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.Wisej.Net45", "..\Source\Binding\WindowsBase.Wisej.Net45\WindowsBase.Wisej.Net45.csproj", "{AFD62700-9250-48F1-85C0-F80249FED399}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WisejWeb.Net45", "..\Source\Binding\WindowsBase.WisejWeb.Net45\WindowsBase.WisejWeb.Net45.csproj", "{AFD62700-9250-48F1-85C0-F80249FED399}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.Wisej.Net45", "..\Source\Binding\MvvmFx.DataBinding.Wisej.Net45\MvvmFx.DataBinding.Wisej.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WisejWeb.Net45", "..\Source\Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Wisej.Net45", "..\Source\Binding\MvvmFx.Windows.Wisej.Net45\MvvmFx.Windows.Wisej.Net45.csproj", "{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WisejWeb.Net45", "..\Source\Binding\MvvmFx.Windows.WisejWeb.Net45\MvvmFx.Windows.WisejWeb.Net45.csproj", "{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Wisej.Net45", "..\Source\CaliburnMicro\CaliburnMicro.Wisej.Net45\CaliburnMicro.Wisej.Net45.csproj", "{1CA317B0-D30D-494B-83A4-20FBBBE71E22}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.Net45", "..\Source\CaliburnMicro\CaliburnMicro.WisejWeb.Net45\CaliburnMicro.WisejWeb.Net45.csproj", "{1CA317B0-D30D-494B-83A4-20FBBBE71E22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.Wisej.Net45", "..\Source\CaliburnMicro\CaliburnMicro.Csla.Wisej.Net45\CaliburnMicro.Csla.Wisej.Net45.csproj", "{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WisejWeb.Net45", "..\Source\CaliburnMicro\CaliburnMicro.Csla.WisejWeb.Net45\CaliburnMicro.Csla.WisejWeb.Net45.csproj", "{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.Wisej.Net45", "..\Source\CaliburnMicro\CaliburnMicro.DialogExtensions.Wisej.Net45\CaliburnMicro.DialogExtensions.Wisej.Net45.csproj", "{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WisejWeb.Net45", "..\Source\CaliburnMicro\CaliburnMicro.DialogExtensions.WisejWeb.Net45\CaliburnMicro.DialogExtensions.WisejWeb.Net45.csproj", "{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisej.TestBoundTreeView", "BoundControls\Wisej.TestBoundTreeView\Wisej.TestBoundTreeView.csproj", "{170A52DD-E952-4FF5-8041-A258915ADA98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisej.TestBoundTreeView", "BoundControls\Wisej.TestBoundTreeView\Wisej.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -475,14 +475,14 @@ Global
 		{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}.Release|x86.ActiveCfg = Release|Any CPU
 		{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}.Release|x86.Build.0 = Release|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Debug|x86.Build.0 = Debug|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Release|x86.ActiveCfg = Release|Any CPU
-		{170A52DD-E952-4FF5-8041-A258915ADA98}.Release|x86.Build.0 = Release|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Debug|x86.Build.0 = Debug|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Release|x86.ActiveCfg = Release|Any CPU
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -545,6 +545,6 @@ Global
 		{1CA317B0-D30D-494B-83A4-20FBBBE71E22} = {9FD68FD4-B6D1-41AE-8CBD-8DA7134E815B}
 		{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330} = {9FD68FD4-B6D1-41AE-8CBD-8DA7134E815B}
 		{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05} = {9FD68FD4-B6D1-41AE-8CBD-8DA7134E815B}
-		{170A52DD-E952-4FF5-8041-A258915ADA98} = {486E31B1-5508-40AA-8785-FBF06824CC24}
+		{FBF22675-C762-48ED-AC55-82E5BDAABC76} = {C9917253-3478-4BF5-8442-71CA41787CE0}
 	EndGlobalSection
 EndGlobal

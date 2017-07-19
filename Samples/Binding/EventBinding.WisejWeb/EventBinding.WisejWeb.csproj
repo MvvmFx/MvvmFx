@@ -68,9 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.Wisej.Net45\MvvmFx.Windows.Wisej.Net45.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WisejWeb.Net45\MvvmFx.Windows.WisejWeb.Net45.csproj">
       <Project>{0f9b7c37-4fea-4c6b-9caa-abca77ccf60f}</Project>
-      <Name>MvvmFx.Windows.Wisej.Net45</Name>
+      <Name>MvvmFx.Windows.WisejWeb.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

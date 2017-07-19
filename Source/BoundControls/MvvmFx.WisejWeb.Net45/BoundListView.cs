@@ -14,7 +14,7 @@ using MvvmFx.Windows.Forms.Properties;
 // code from Sascha Knopf
 // http://www.codeproject.com/Articles/15396/Implementing-complex-data-binding-in-custom-contro
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WisejWeb
 {
     /// <summary>
     /// Data binding enabled list view control.
