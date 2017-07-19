@@ -1,4 +1,4 @@
-﻿namespace DataGridViewBinding
+﻿namespace DataGridViewBinding.WisejWeb
 {
     partial class MainForm
     {
@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Wisej Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.employeeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView = new Wisej.Web.DataGridView();
+            this.employeeListBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.employeeIDDataGridViewTextBoxColumn = new Wisej.Web.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new Wisej.Web.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToAddRows = true;
+            this.dataGridView.AllowUserToDeleteRows = true;
             this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView.ColumnHeadersHeightSizeMode = Wisej.Web.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
             this.employeeIDDataGridViewTextBoxColumn,
             this.employeeNameDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.employeeListBindingSource;
@@ -69,8 +71,8 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 389);
             this.Controls.Add(this.dataGridView);
             this.Name = "MainForm";
@@ -83,10 +85,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource employeeListBindingSource;
+        private Wisej.Web.DataGridView dataGridView;
+        private Wisej.Web.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
+        private Wisej.Web.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
+        private Wisej.Web.BindingSource employeeListBindingSource;
     }
 }
 
