@@ -48,11 +48,6 @@ using MvvmFx.WisejWeb.Design;
 using MvvmFx.WisejWeb.Properties;
 using TreeViewImageIndexConverter = System.Windows.Forms.TreeViewImageIndexConverter;
 using TreeViewImageKeyConverter = System.Windows.Forms.TreeViewImageKeyConverter;
-#elif WEBGUI
-using Gizmox.WebGUI;
-using Gizmox.WebGUI.Forms;
-using MvvmFx.WebGUI.Forms.Design;
-using MvvmFx.WebGUI.Forms.Properties;
 #else
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -73,17 +68,12 @@ namespace MvvmFx.WisejWeb
     {
         #region Fields
 
-#if WEBGUI
-        private bool _collapseOrExpand;
-        private TreeNode _collapseOrExpandNode;
-        private TreeNode _activeNode;
-#else
 #if WINFORMS
         private const int SbHorz = 0;
 #endif
         private bool _isDraggingOver;
         private bool _isDroppingOnRoot;
-#endif
+
         private readonly Container _components = null;
         private readonly ListChangedEventHandler _listChangedHandler;
         private readonly EventHandler _positionChangedHandler;
@@ -185,18 +175,9 @@ namespace MvvmFx.WisejWeb
         /// <see cref="System.ComponentModel.IListSource"/> interfaces,
         /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
         /// </returns>
-#elif WISEJ
-        /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
-        /// </summary>
-        /// <returns>
-        /// An object that implements the <see cref="System.Collections.IList"/> or
-        /// <see cref="System.ComponentModel.IListSource"/> interfaces,
-        /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
-        /// </returns>
 #else
         /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.WebGUI.Forms.BoundTreeView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -234,7 +215,7 @@ namespace MvvmFx.WisejWeb
         /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundTreeView.DataSource"/> for which the
         /// <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
-#elif WISEJ
+#else
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
         /// the <see cref="MvvmFx.WisejWeb.BoundTreeView"/> is displaying data.
@@ -242,15 +223,6 @@ namespace MvvmFx.WisejWeb
         /// <returns>
         /// The name of the table or list in the <see cref="MvvmFx.WisejWeb.BoundTreeView.DataSource"/> for which the
         /// <see cref="MvvmFx.WisejWeb.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
-        /// </returns>
-#else
-        /// <summary>
-        /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView"/> is displaying data.
-        /// </summary>
-        /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView.DataSource"/> for which the
-        /// <see cref="MvvmFx.WebGUI.Forms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
@@ -282,22 +254,13 @@ namespace MvvmFx.WisejWeb
         /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
         /// </returns>
         /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
-#elif WISEJ
+#else
         /// <summary>
         /// Gets or sets the property to display for this <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
-        /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
-        /// </returns>
-        /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
-#else
-        /// <summary>
-        /// Gets or sets the property to display for this <see cref="MvvmFx.WebGUI.Forms.BoundTreeView"/>.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
-        /// by the <see cref="Gizmox.WebGUI.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
+        /// by the <see cref="Wisej.Web.ListControl.DataSource"/> property. The default is an empty string ("").
         /// </returns>
         /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
 #endif
@@ -329,21 +292,13 @@ namespace MvvmFx.WisejWeb
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
         /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
         /// </returns>
-#elif WISEJ
+#else
         /// <summary>
         /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
-        /// by the <see cref="System.Windows.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
-        /// </returns>
-#else
-        /// <summary>
-        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView"/>.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
-        /// by the <see cref="Gizmox.WebGUI.Forms.ListControl.DataSource"/> property. The default is an empty string ("").
+        /// by the <see cref="Wisej.Web.ListControl.DataSource"/> property. The default is an empty string ("").
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
@@ -482,21 +437,13 @@ namespace MvvmFx.WisejWeb
         /// An object containing the value of the member of the data source specified
         /// by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </returns>
-#elif WISEJ
+#else
         /// <summary>
         /// Gets the value of the member property specified by the <see cref="MvvmFx.WisejWeb.BoundTreeView.ValueMember"/> property.
         /// </summary>
         /// <returns>
         /// An object containing the value of the member of the data source specified
         /// by the <see cref="MvvmFx.WisejWeb.BoundTreeView.ValueMember"/> property.
-        /// </returns>
-#else
-        /// <summary>
-        /// Gets the value of the member property specified by the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView.ValueMember"/> property.
-        /// </summary>
-        /// <returns>
-        /// An object containing the value of the member of the data source specified
-        /// by the <see cref="MvvmFx.WebGUI.Forms.BoundTreeView.ValueMember"/> property.
         /// </returns>
 #endif
         [Browsable(false)]
@@ -545,7 +492,7 @@ namespace MvvmFx.WisejWeb
             }
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
         /// Gets or sets the tree node that is currently selected in the bound tree view control.
         /// </summary>
@@ -560,7 +507,7 @@ namespace MvvmFx.WisejWeb
         /// <summary>
         /// Gets or sets the tree node that is currently selected in the bound tree view control.
         /// </summary>
-        /// <value>The <see cref="Gizmox.WebGUI.Forms.TreeNode"/> that is currently selected in the tree view control.</value>
+        /// <value>The <see cref="Wisej.Web.TreeNode"/> that is currently selected in the tree view control.</value>
         /// <PermissionSet>
         ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
         ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
@@ -580,13 +527,10 @@ namespace MvvmFx.WisejWeb
                 {
                     _selectingNode = true;
                     base.SelectedNode = value;
-#if !WEBGUI
+
                     if (base.SelectedNode == value && !_isDraggingOver)
                         OnSelectedValueChanged();
-#else
-                    if (base.SelectedNode == value)
-                        OnSelectedValueChanged();
-#endif
+
                     _selectingNode = false;
                 }
             }
@@ -633,13 +577,17 @@ namespace MvvmFx.WisejWeb
                 }
             }
         }
-
-#if !WEBGUI
-
+#if WINFORMS
         /// <summary>Gets or sets the index of the image that is displayed for the ReadOnly tree node.</summary>
-        /// <returns>The zero-based index of the image in the <see cref="T:System.Windows.Forms.ImageList"></see> that is displayed
+        /// <returns>The zero-based index of the image in the <see cref="System.Windows.Forms.ImageList"></see> that is displayed
         /// for the ReadOnly tree node. The default is -1.</returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+#else
+        /// <summary>Gets or sets the index of the image that is displayed for the ReadOnly tree node.</summary>
+        /// <returns>The zero-based index of the image in the <see cref="Wisej.Web.ImageList"></see> that is displayed
+        /// for the ReadOnly tree node. The default is -1.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+#endif
         [DefaultValue(-1)]
         [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
         [TypeConverter(typeof(TreeViewImageIndexConverter))]
@@ -709,10 +657,17 @@ namespace MvvmFx.WisejWeb
             }
         }
 
+#if WINFORMS
         /// <summary>Gets or sets the index of the image that is displayed when a ReadOnly tree node is selected.</summary>
-        /// <returns>The zero-based index of the image in the <see cref="T:System.Windows.Forms.ImageList"></see> that is displayed
+        /// <returns>The zero-based index of the image in the <see cref="System.Windows.Forms.ImageList"></see> that is displayed
         /// when a ReadOnly tree node is selected. The default is -1.</returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+#else
+        /// <summary>Gets or sets the index of the image that is displayed when a ReadOnly tree node is selected.</summary>
+        /// <returns>The zero-based index of the image in the <see cref="Wisej.Web.ImageList"></see> that is displayed
+        /// when a ReadOnly tree node is selected. The default is -1.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+#endif
         [DefaultValue(-1)]
         [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
         [TypeConverter(typeof(TreeViewImageIndexConverter))]
@@ -783,11 +738,11 @@ namespace MvvmFx.WisejWeb
             }
         }
 
-#else
-
+#if WEBGUI
+/*
         /// <summary>Gets or sets the index of the image that is displayed for the ReadOnly tree node.</summary>
-        /// <returns>The zero-based index of the image in the <see cref="T:Gizmox.WebGUI.Forms.ImageList"></see> that is displayed for the item. The default is -1.</returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+        /// <returns>The zero-based index of the image in the <see cref="Gizmox.WebGUI.Forms.ImageList"></see> that is displayed for the item. The default is -1.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
         [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.NoneExcludedImageIndexConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue(-1)]
@@ -833,7 +788,7 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>Gets or sets the key for the image that is displayed for the ReadOnly tree node.</summary>
-        /// <returns>The key for the image that is displayed for the <see cref="T:Gizmox.WebGUI.Forms.ListViewItem"></see>.</returns>
+        /// <returns>The key for the image that is displayed for the <see cref="Gizmox.WebGUI.Forms.ListViewItem"></see>.</returns>
         [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.ImageKeyConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue("")]
@@ -858,8 +813,8 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>Gets or sets the index of the image that is displayed when a ReadOnly tree node is selected.</summary>
-        /// <returns>The zero-based index of the image in the <see cref="T:Gizmox.WebGUI.Forms.ImageList"></see> that is displayed for the item. The default is -1.</returns>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+        /// <returns>The zero-based index of the image in the <see cref="Gizmox.WebGUI.Forms.ImageList"></see> that is displayed for the item. The default is -1.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
         [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.NoneExcludedImageIndexConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue(-1)]
@@ -905,7 +860,7 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>Gets or sets the key for the image that is displayed when a ReadOnly tree node is selected.</summary>
-        /// <returns>The key for the image that is displayed for the <see cref="T:Gizmox.WebGUI.Forms.ListViewItem"></see>.</returns>
+        /// <returns>The key for the image that is displayed for the <see cref="Gizmox.WebGUI.Forms.ListViewItem"></see>.</returns>
         [Editor("Gizmox.WebGUI.Forms.Design.ImageIndexEditor, Gizmox.WebGUI.Forms.Design", typeof(UITypeEditor))]
         [TypeConverter("Gizmox.WebGUI.Forms.Design.ImageKeyConverter, Gizmox.WebGUI.Forms.Design")]
         [DefaultValue("")]
@@ -928,7 +883,7 @@ namespace MvvmFx.WisejWeb
                 Update();
             }
         }
-
+*/
 #endif
 
         /// <summary>
@@ -1023,10 +978,8 @@ namespace MvvmFx.WisejWeb
             _parentIdentifierMember = string.Empty;
             _itemsPositions = new SortedList();
             _itemsIdentifiers = new SortedList();
-#if !WISEJ
+#if WINFORMS
             HideSelection = false;
-#endif
-#if !WEBGUI && !WISEJ
             HotTracking = true;
 #endif
         }
@@ -1049,7 +1002,7 @@ namespace MvvmFx.WisejWeb
                 GeneralNodeError = Resources.GeneralNodeError;
         }
 
-#if !WEBGUI && !WISEJ
+#if WINFORMS
         /// <summary>
         /// Called after the control has been added to another container.
         /// </summary>
@@ -1077,7 +1030,7 @@ namespace MvvmFx.WisejWeb
 
         #region Win32
 
-#if !WEBGUI && !WISEJ
+#if WINFORMS
         [DllImport("User32.dll")]
         private static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
 #endif
@@ -1098,11 +1051,7 @@ namespace MvvmFx.WisejWeb
             CurrencyManager currencyManager;
             try
             {
-#if WISEJ
-                currencyManager = (System.Windows.Forms.CurrencyManager) BindingContext[_dataSource, _dataMember];
-#else
                 currencyManager = (CurrencyManager) BindingContext[_dataSource, _dataMember];
-#endif
             }
             catch (ArgumentException)
             {
@@ -1157,10 +1106,9 @@ namespace MvvmFx.WisejWeb
                 if (_toolTipTextMember != null && _toolTipTextProperty == null)
                 {
                     _toolTipTextProperty = _listManager.GetItemProperties()[_toolTipTextMember];
-#if !WEBGUI
+
                     if (_toolTipTextProperty != null)
                         ShowNodeToolTips = true;
-#endif
                 }
             }
 
@@ -1202,9 +1150,9 @@ namespace MvvmFx.WisejWeb
             Nodes.Clear();
         }
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
-        /// Sorts the items in <see cref="T:System.Windows.Forms.TreeView" /> control.
+        /// Sorts the items in <see cref="System.Windows.Forms.TreeView" /> control.
         /// </summary>
         /// <PermissionSet>
         ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
@@ -1214,7 +1162,7 @@ namespace MvvmFx.WisejWeb
         /// </PermissionSet>
 #else
         /// <summary>
-        /// Sorts the items if the value of the <see cref="P:Gizmox.WebGUI.Forms.TreeView.TreeViewNodeSorter"></see> property is not null.
+        /// Sorts the items if the value of the <see cref="Wisej.Web.TreeView.TreeViewNodeSorter"></see> property is not null.
         /// </summary>
         /// <PermissionSet>
         ///   <IPermission class="System.Security.Permissions.EnvironmentPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
@@ -1550,19 +1498,14 @@ namespace MvvmFx.WisejWeb
 
 #if WINFORMS
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.BindingContextChanged"/> event.
+        /// Raises the <see cref="System.Windows.Forms.Control.BindingContextChanged"/> event.
         /// </summary>
-        /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data. </param>
-#elif WISEJ
-        /// <summary>
-        /// Raises the <see cref="E:Wisej.Base.ControlBase.BindingContextChanged"/> event.
-        /// </summary>
-        /// <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data. </param>
+        /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data. </param>
 #else
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.BindingContextChanged" /> event.
+        /// Raises the <see cref="Wisej.Base.ControlBase.BindingContextChanged"/> event.
         /// </summary>
-        /// <param name="e">The <see cref="T:System.EventArgs" /> instance containing the event data.</param>
+        /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data. </param>
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
@@ -1696,11 +1639,10 @@ namespace MvvmFx.WisejWeb
         #region Drag & Drop
 
 #if WINFORMS
-
         /// <summary>
-        /// Raises the <see cref="E:ItemDrag"/> event.
+        /// Raises the <see cref="System.Windows.Forms.TreeView.ItemDrag"/> event.
         /// </summary>
-        /// <param name="e">The <see cref="T:Gizmox.WebGUI.Forms.ItemDragEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="System.Windows.Forms.ItemDragEventArgs"/> instance containing the event data.</param>
         protected override void OnItemDrag(ItemDragEventArgs e)
         {
             DoDragDrop(e.Item, DragDropEffects.Copy | DragDropEffects.Move); //Begin the drag-drop operation
@@ -1708,9 +1650,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.DragOver" /> event.
+        /// Raises the <see cref="System.Windows.Forms.Control.DragOver" /> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
+        /// <param name="e">A <see cref="System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
         protected override void OnDragOver(DragEventArgs e)
         {
             var tv = (TreeView) this;
@@ -1725,9 +1667,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.DragDrop" /> event.
+        /// Raises the <see cref="System.Windows.Forms.Control.DragDrop" /> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
+        /// <param name="e">A <see cref="System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
         protected override void OnDragDrop(DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(BoundTreeNode)))
@@ -1774,12 +1716,12 @@ namespace MvvmFx.WisejWeb
             base.OnDragDrop(e);
         }
 
-#elif WISEJ
+#else
 
         /// <summary>
-        /// Raises the <see cref="E:ItemDrag"/> event.
+        /// Raises the <see cref="Wisej.Web.TreeView.ItemDrag"/> event.
         /// </summary>
-        /// <param name="e">The <see cref="T:Gizmox.WebGUI.Forms.ItemDragEventArgs"/> instance containing the event data.</param>
+        /// <param name="e">The <see cref="Wisej.Web.ItemDragEventArgs"/> instance containing the event data.</param>
         protected override void OnItemDrag(ItemDragEventArgs e)
         {
             DoDragDrop(e.Item, DragDropEffects.Copy | DragDropEffects.Move); //Begin the drag-drop operation
@@ -1787,9 +1729,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.DragOver" /> event.
+        /// Raises the <see cref="Wisej.Web.Control.DragOver" /> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
+        /// <param name="e">A <see cref="Wisej.Web.DragEventArgs" /> that contains the event data.</param>
         protected override void OnDragOver(DragEventArgs e)
         {
             var destinationNode = e.DropTarget as TreeNode;
@@ -1801,9 +1743,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.Control.DragDrop" /> event.
+        /// Raises the <see cref="Wisej.Web.Control.DragDrop" /> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.DragEventArgs" /> that contains the event data.</param>
+        /// <param name="e">A <see cref="Wisej.Web.DragEventArgs" /> that contains the event data.</param>
         protected override void OnDragDrop(DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(BoundTreeNode)))
@@ -1848,12 +1790,14 @@ namespace MvvmFx.WisejWeb
             base.OnDragDrop(e);
         }
 
-#else
+#endif
 
+#if WEBGUI
+/*
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.Control.DragDrop"/> event.
+        /// Raises the <see cref="Gizmox.WebGUI.Forms.Control.DragDrop"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.DragEventArgs"/> that contains the event data. </param>
+        /// <param name="e">A <see cref="Gizmox.WebGUI.Forms.DragEventArgs"/> that contains the event data. </param>
         protected override void OnDragDrop(DragEventArgs e)
         {
             var dragDropEventArgs = e as DragDropEventArgs;
@@ -1905,7 +1849,7 @@ namespace MvvmFx.WisejWeb
 
             base.OnDragDrop(e);
         }
-
+*/
 #endif
 
         private bool ValidateTarget(TreeNode source, TreeNode dropNode)
@@ -1977,10 +1921,11 @@ namespace MvvmFx.WisejWeb
         #region Position Changed from TreeView
 
 #if WEBGUI
+/*
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.TreeView.BeforeExpand"></see> event.
+        /// Raises the <see cref="Gizmox.WebGUI.Forms.TreeView.BeforeExpand"></see> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.TreeViewCancelEventArgs"></see> that contains the event data.</param>
+        /// <param name="e">A <see cref="Gizmox.WebGUI.Forms.TreeViewCancelEventArgs"></see> that contains the event data.</param>
         protected override void OnBeforeExpand(TreeViewCancelEventArgs e)
         {
             Logger.Trace("Enter OnBeforeExpand");
@@ -1992,9 +1937,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.TreeView.BeforeCollapse"></see> event.
+        /// Raises the <see cref="Gizmox.WebGUI.Forms.TreeView.BeforeCollapse"></see> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.TreeViewCancelEventArgs"></see> that contains the event data.</param>
+        /// <param name="e">A <see cref="Gizmox.WebGUI.Forms.TreeViewCancelEventArgs"></see> that contains the event data.</param>
         protected override void OnBeforeCollapse(TreeViewCancelEventArgs e)
         {
             Logger.Trace("Enter OnBeforeCollapse");
@@ -2006,9 +1951,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.Control.DoubleClick"></see> event.
+        /// Raises the <see cref="Gizmox.WebGUI.Forms.Control.DoubleClick"></see> event.
         /// </summary>
-        /// <param name="e">An <see cref="T:System.EventArgs"></see> that contains the event data.</param>
+        /// <param name="e">An <see cref="System.EventArgs"></see> that contains the event data.</param>
         protected override void OnDoubleClick(EventArgs e)
         {
             Logger.Trace("Enter OnDoubleClick: _collapseOrExpand = " + _collapseOrExpand);
@@ -2032,9 +1977,9 @@ namespace MvvmFx.WisejWeb
         }
 
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.TreeView.BeforeSelect"></see> event.
+        /// Raises the <see cref="Gizmox.WebGUI.Forms.TreeView.BeforeSelect"></see> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.TreeViewCancelEventArgs"></see> that contains the event data.</param>
+        /// <param name="e">A <see cref="Gizmox.WebGUI.Forms.TreeViewCancelEventArgs"></see> that contains the event data.</param>
         protected override void OnBeforeSelect(TreeViewCancelEventArgs e)
         {
             Logger.Trace("Enter OnBeforeSelect: _collapseOrExpand = " + _collapseOrExpand);
@@ -2053,11 +1998,20 @@ namespace MvvmFx.WisejWeb
                 base.OnBeforeSelect(e);
             Logger.Trace("Exit OnBeforeSelect");
         }
+*/
+#endif
+
+#if WINFORMS
+        /// <summary>
+        /// Raises the <see cref="System.Windows.Forms.TreeView.BeforeSelect" /> event.
+        /// </summary>
+        /// <param name="e">A <see cref="System.Windows.Forms.TreeViewCancelEventArgs" /> that contains the event data.</param>
 #else
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.TreeView.BeforeSelect" /> event.
+        /// Raises the <see cref="Wisej.Web.TreeView.BeforeSelect" /> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.TreeViewCancelEventArgs" /> that contains the event data.</param>
+        /// <param name="e">A <see cref="Wisej.Web.TreeViewCancelEventArgs" /> that contains the event data.</param>
+#endif
         protected override void OnBeforeSelect(TreeViewCancelEventArgs e)
         {
             var disallowSelect = _readOnlyMember != null && !ReadOnlyAllowSelect && ((BoundTreeNode) e.Node).ReadOnly;
@@ -2068,18 +2022,17 @@ namespace MvvmFx.WisejWeb
             else
                 base.OnBeforeSelect(e);
         }
-#endif
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.TreeView.AfterSelect" /> event.
+        /// Raises the <see cref="System.Windows.Forms.TreeView.AfterSelect" /> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.TreeViewEventArgs" /> that contains the event data.</param>
+        /// <param name="e">A <see cref="System.Windows.Forms.TreeViewEventArgs" /> that contains the event data.</param>
 #else
         /// <summary>
-        /// Raises the <see cref="E:AfterSelect" /> event.
+        /// Raises the <see cref="Wisej.Web.TreeView.AfterSelect" /> event.
         /// </summary>
-        /// <param name="e">The <see cref="T:Gizmox.WebGUI.Forms.TreeViewEventArgs" /> instance containing the event data.</param>
+        /// <param name="e">A <see cref="Wisej.Web.TreeViewEventArgs" /> that contains the event data.</param>
 #endif
         protected override void OnAfterSelect(TreeViewEventArgs e)
         {
@@ -2100,16 +2053,16 @@ namespace MvvmFx.WisejWeb
 
         #region Item changed from TreeView
 
-#if !WEBGUI
+#if WINFORMS
         /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.TreeView.AfterLabelEdit"/> event.
+        /// Raises the <see cref="System.Windows.Forms.TreeView.AfterLabelEdit"/> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.NodeLabelEditEventArgs"/> that contains the event data. </param>
+        /// <param name="e">A <see cref="System.Windows.Forms.NodeLabelEditEventArgs"/> that contains the event data. </param>
 #else
         /// <summary>
-        /// Raises the <see cref="E:Gizmox.WebGUI.Forms.TreeView.AfterLabelEdit"></see> event.
+        /// Raises the <see cref="Wisej.Web.TreeView.AfterLabelEdit"></see> event.
         /// </summary>
-        /// <param name="e">A <see cref="T:Gizmox.WebGUI.Forms.NodeLabelEditEventArgs"></see> that contains the event data.</param>
+        /// <param name="e">A <see cref="Wisej.Web.NodeLabelEditEventArgs"></see> that contains the event data.</param>
 #endif
         protected override void OnAfterLabelEdit(NodeLabelEditEventArgs e)
         {
