@@ -38,8 +38,6 @@ Improvements by Tiago Freitas Leal (MvvmFx project).
 using System;
 #if WISEJ
 using Wisej.Web;
-#elif WEBGUI
-using Gizmox.WebGUI.Forms;
 #else
 using System.Windows.Forms;
 #endif

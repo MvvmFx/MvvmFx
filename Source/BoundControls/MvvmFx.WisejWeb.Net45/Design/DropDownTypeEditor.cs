@@ -3,7 +3,7 @@
     created:	27:3:2005   7:05
     filename: 	DropDownTypeEditor.cs	
     author:		Mike Chaliy
-    
+
     purpose:	Base class for simple drop down type editors.
 
 The MIT License (MIT)
@@ -80,8 +80,8 @@ namespace MvvmFx.WisejWeb.Design
         /// <summary>
         /// Edits the specified object's value using the editor style indicated by the <see cref="M:System.Drawing.Design.UITypeEditor.GetEditStyle" /> method.
         /// </summary>
-        /// <param name="context">An <see cref="T:System.ComponentModel.ITypeDescriptorContext" /> that can be used to gain additional context information.</param>
-        /// <param name="provider">An <see cref="T:System.IServiceProvider" /> that this editor can use to obtain services.</param>
+        /// <param name="context">An <see cref="System.ComponentModel.ITypeDescriptorContext" /> that can be used to gain additional context information.</param>
+        /// <param name="provider">An <see cref="System.IServiceProvider" /> that this editor can use to obtain services.</param>
         /// <param name="value">The object to edit.</param>
         /// <returns>
         /// The new value of the object. If the value of the object has not changed, this should return the same object it was passed.

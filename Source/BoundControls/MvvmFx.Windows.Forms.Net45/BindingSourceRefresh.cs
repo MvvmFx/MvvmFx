@@ -254,7 +254,7 @@ namespace MvvmFx.Windows.Forms
 
         /// <summary>
         /// Handles the CollectionChanged event of the Bindings control.
-        ///    
+        ///
         /// Add event hooks for element or entire list depending on CollectionChangeAction.
         /// </summary>
         /// <param name="sender">The source of the event.</param>

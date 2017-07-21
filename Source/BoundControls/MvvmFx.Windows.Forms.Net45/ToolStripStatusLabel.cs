@@ -19,8 +19,8 @@ namespace MvvmFx.Windows.Forms
         private BindingContext _bindingContext;
         private ControlBindingsCollection _dataBindings;
 
-        /// <summary>Gets or sets the collection of currency managers for the <see cref="T:System.Windows.Forms.IBindableComponent" />. </summary>
-        /// <returns>The collection of <see cref="T:System.Windows.Forms.BindingManagerBase" /> objects for this <see cref="T:System.Windows.Forms.IBindableComponent" />.</returns>
+        /// <summary>Gets or sets the collection of currency managers for the <see cref="System.Windows.Forms.IBindableComponent" />. </summary>
+        /// <returns>The collection of <see cref="System.Windows.Forms.BindingManagerBase" /> objects for this <see cref="System.Windows.Forms.IBindableComponent" />.</returns>
         /// <filterpriority>1</filterpriority>
         [Browsable(false)]
         public BindingContext BindingContext
@@ -36,8 +36,8 @@ namespace MvvmFx.Windows.Forms
             set { _bindingContext = value; }
         }
 
-        /// <summary>Gets the collection of data-binding objects for this <see cref="T:System.Windows.Forms.IBindableComponent" />.</summary>
-        /// <returns>The <see cref="T:System.Windows.Forms.ControlBindingsCollection" /> for this <see cref="T:System.Windows.Forms.IBindableComponent" />. </returns>
+        /// <summary>Gets the collection of data-binding objects for this <see cref="System.Windows.Forms.IBindableComponent" />.</summary>
+        /// <returns>The <see cref="System.Windows.Forms.ControlBindingsCollection" /> for this <see cref="System.Windows.Forms.IBindableComponent" />. </returns>
         /// <filterpriority>1</filterpriority>
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public ControlBindingsCollection DataBindings

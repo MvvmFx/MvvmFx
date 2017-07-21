@@ -10,8 +10,8 @@
 
 namespace MvvmFx.Windows.Forms.Properties {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace MvvmFx.Windows.Forms.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Duplicated Identifier Error.
         /// </summary>
@@ -68,7 +68,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 return ResourceManager.GetString("DuplicatedCaption", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Node &quot;{0}&quot; duplicates identifier &quot;{1}&quot;.
         /// </summary>
@@ -77,7 +77,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 return ResourceManager.GetString("DuplicatedMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Edit failed.
         /// </summary>
@@ -86,7 +86,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 return ResourceManager.GetString("EditFailed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error at node..
         /// </summary>
@@ -95,7 +95,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 return ResourceManager.GetString("GeneralNodeError", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Parent of node does not exist..
         /// </summary>
@@ -104,7 +104,7 @@ namespace MvvmFx.Windows.Forms.Properties {
                 return ResourceManager.GetString("InexistentParent", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Parent of node cannot be the node itself..
         /// </summary>

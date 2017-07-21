@@ -43,8 +43,8 @@ namespace MvvmFx.Windows.Forms
         /// Gets or sets the data source for this <see cref="MvvmFx.Windows.Forms.BoundListView"/>.
         /// </summary>
         /// <returns>
-        /// An object that implements the <see cref="System.Collections.IList"/> or 
-        /// <see cref="System.ComponentModel.IListSource"/> interfaces, 
+        /// An object that implements the <see cref="System.Collections.IList"/> or
+        /// <see cref="System.ComponentModel.IListSource"/> interfaces,
         /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
         /// </returns>>
 #else
@@ -52,8 +52,8 @@ namespace MvvmFx.Windows.Forms
         /// Gets or sets the data source for this <see cref="MvvmFx.WisejWeb.BoundListView"/>.
         /// </summary>
         /// <returns>
-        /// An object that implements the <see cref="System.Collections.IList"/> or 
-        /// <see cref="System.ComponentModel.IListSource"/> interfaces, 
+        /// An object that implements the <see cref="System.Collections.IList"/> or
+        /// <see cref="System.ComponentModel.IListSource"/> interfaces,
         /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
         /// </returns>>
 #endif
@@ -80,30 +80,30 @@ namespace MvvmFx.Windows.Forms
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the name of the list or table in the data source for which 
+        /// Gets or sets the name of the list or table in the data source for which
         /// the <see cref="MvvmFx.Windows.Forms.BoundListView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundListView.DataSource"/> for which the 
+        /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundListView.DataSource"/> for which the
         /// <see cref="MvvmFx.Windows.Forms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
-        /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/> 
-        /// event or the handler has set the <see cref="System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException"/> property to true. 
+        /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/>
+        /// event or the handler has set the <see cref="System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException"/> property to true.
         /// The exception object can typically be cast to type <see cref="System.FormatException"/>.
         /// </exception>
 #else
         /// <summary>
-        /// Gets or sets the name of the list or table in the data source for which 
+        /// Gets or sets the name of the list or table in the data source for which
         /// the <see cref="MvvmFx.WisejWeb.BoundListView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.WisejWeb.BoundListView.DataSource"/> for which the 
+        /// The name of the table or list in the <see cref="MvvmFx.WisejWeb.BoundListView.DataSource"/> for which the
         /// <see cref="MvvmFx.WisejWeb.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
-        /// An error occurred in the data source and either there is no handler for the <see cref="Wisej.Web.DataGridView.DataError"/> 
-        /// event or the handler has set the <see cref="Wisej.Web.DataGridViewDataErrorEventArgs.ThrowException"/> property to true. 
+        /// An error occurred in the data source and either there is no handler for the <see cref="Wisej.Web.DataGridView.DataError"/>
+        /// event or the handler has set the <see cref="Wisej.Web.DataGridViewDataErrorEventArgs.ThrowException"/> property to true.
         /// The exception object can typically be cast to type <see cref="System.FormatException"/>.
         /// </exception>
 #endif
