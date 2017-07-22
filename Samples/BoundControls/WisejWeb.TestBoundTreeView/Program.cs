@@ -2,7 +2,7 @@
 using Wisej.Base;
 using Wisej.Web;
 
-namespace WisejTestBoundTreeView
+namespace WisejWeb.TestBoundTreeView
 {
     static class Program
     {

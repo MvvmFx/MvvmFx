@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "..\..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisej.TestBoundTreeView", "Wisej.TestBoundTreeView\Wisej.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisejWeb.TestBoundTreeView", "WisejWeb.TestBoundTreeView\WisejWeb.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

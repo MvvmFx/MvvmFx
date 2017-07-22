@@ -1,4 +1,4 @@
-﻿namespace WisejTestBoundTreeView
+﻿namespace WisejWeb.TestBoundTreeView
 {
     partial class TreeListView
     {

@@ -1,6 +1,6 @@
 ﻿using Wisej.Web;
 
-namespace WisejTestBoundTreeView
+namespace WisejWeb.TestBoundTreeView
 {
     public partial class TreeListView : UserControl
     {

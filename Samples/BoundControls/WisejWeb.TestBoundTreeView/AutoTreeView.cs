@@ -3,18 +3,15 @@ using BoundControls.Business;
 #if WINFORMS
 using System.Windows.Forms;
 using MvvmFx.Windows.Forms;
-#elif WISEJ
+#else
 using Wisej.Web;
 using MvvmFx.WisejWeb;
 using BoundUserControl = Wisej.Web.UserControl;
-#else
-using Gizmox.WebGUI.Forms;
-using MvvmFx.WebGUI.Forms;
 #endif
 
-namespace WinForms.TestBoundTreeView
+namespace WisejWeb.TestBoundTreeView
 {
-    public partial class TreeView : BoundUserControl
+    public partial class AutoTreeView : BoundUserControl
     {
         #region Members
 
@@ -29,7 +26,7 @@ namespace WinForms.TestBoundTreeView
 
         #region Initializers
 
-        public TreeView()
+        public AutoTreeView()
         {
             InitializeComponent();
         }

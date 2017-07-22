@@ -1,6 +1,6 @@
-﻿namespace WisejTestBoundTreeView
+﻿namespace WisejWeb.TestBoundTreeView
 {
-    partial class TreeView
+    partial class AutoTreeView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TreeView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTreeView));
             Wisej.Web.ImageListEntry imageListEntry1 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images"))), "Node.png");
             Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images1"))), "NodeSelected.png");
             Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images2"))), "ReadOnlyNode.png");
@@ -286,7 +286,7 @@
             this.allowDropOnRootCheckBox.Text = "Allow Drop On Root";
             this.allowDropOnRootCheckBox.CheckedChanged += new System.EventHandler(this.allowDropOnRootCheckBox_CheckedChanged);
             // 
-            // TreeView
+            // AutoTreeView
             // 
             this.Controls.Add(this.allowDropOnRootCheckBox);
             this.Controls.Add(this.allowDropOnDescendentsCheckBox);
@@ -311,7 +311,7 @@
             this.Controls.Add(this.boundTreeView1);
             this.MaximumSize = new System.Drawing.Size(931, 425);
             this.MinimumSize = new System.Drawing.Size(931, 425);
-            this.Name = "TreeView";
+            this.Name = "AutoTreeView";
             this.Size = new System.Drawing.Size(931, 425);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).EndInit();
