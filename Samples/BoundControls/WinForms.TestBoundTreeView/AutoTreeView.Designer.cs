@@ -1,6 +1,6 @@
 ﻿namespace WinForms.TestBoundTreeView
 {
-    partial class TreeView
+    partial class AutoTreeView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TreeView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTreeView));
             this.docTypeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonView = new System.Windows.Forms.Button();
             this.textboxView = new System.Windows.Forms.TextBox();

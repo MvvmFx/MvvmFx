@@ -2,12 +2,9 @@
 #if WINFORMS
 using System.Windows.Forms;
 using LogManager = MvvmFx.Windows.Forms.LogManager;
-#elif WISEJ
-using Wisej.Web;
-using LogManager = MvvmFx.Windows.Forms.LogManager;
 #else
-using Gizmox.WebGUI.Forms;
-using LogManager = MvvmFx.WebGUI.Forms.LogManager;
+using Wisej.Web;
+using LogManager = MvvmFx.WisejWeb.LogManager;
 #endif
 
 namespace WinForms.TestBoundTreeView
@@ -54,14 +51,27 @@ namespace WinForms.TestBoundTreeView
             workPanel.Controls.Add(docBrowser);
         }
 
-        private void treeViewButton_Click(object sender, EventArgs e)
+        private void autoTreeViewButton_Click(object sender, EventArgs e)
         {
             foreach (IDisposable control in workPanel.Controls)
                 control.Dispose();
 
             workPanel.Controls.Clear();
 
-            var docBrowser = new TreeView();
+            var docBrowser = new AutoTreeView();
+            docBrowser.TabIndex = 0;
+            docBrowser.Dock = DockStyle.Fill;
+            workPanel.Controls.Add(docBrowser);
+        }
+
+        private void manualTreeViewButton_Click(object sender, EventArgs e)
+        {
+            foreach (IDisposable control in workPanel.Controls)
+                control.Dispose();
+
+            workPanel.Controls.Clear();
+
+            var docBrowser = new ManualTreeView();
             docBrowser.TabIndex = 0;
             docBrowser.Dock = DockStyle.Fill;
             workPanel.Controls.Add(docBrowser);

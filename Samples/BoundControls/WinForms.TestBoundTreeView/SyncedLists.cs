@@ -3,13 +3,10 @@ using BoundControls.Business;
 #if WINFORMS
 using System.Windows.Forms;
 using MvvmFx.Windows.Forms;
-#elif WISEJ
+#else
 using Wisej.Web;
 using MvvmFx.WisejWeb;
 using BoundUserControl = Wisej.Web.UserControl;
-#else
-using Gizmox.WebGUI.Forms;
-using MvvmFx.WebGUI.Forms;
 #endif
 
 namespace WinForms.TestBoundTreeView

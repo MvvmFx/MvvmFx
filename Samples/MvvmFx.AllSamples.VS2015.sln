@@ -121,7 +121,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WisejWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WisejWeb.Net45", "..\Source\CaliburnMicro\CaliburnMicro.DialogExtensions.WisejWeb.Net45\CaliburnMicro.DialogExtensions.WisejWeb.Net45.csproj", "{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wisej.TestBoundTreeView", "BoundControls\Wisej.TestBoundTreeView\Wisej.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisejWeb.TestBoundTreeView", "BoundControls\WisejWeb.TestBoundTreeView\WisejWeb.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
