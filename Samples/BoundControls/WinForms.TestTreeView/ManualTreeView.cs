@@ -37,7 +37,7 @@ namespace WinForms.TestTreeView
 
         #endregion
 
-        #region Data binding helpers
+        #region Populate helpers
 
         private void Populate()
         {
@@ -46,6 +46,7 @@ namespace WinForms.TestTreeView
                 if (leaf.LeafParentId == null)
                     treeView1.Nodes.Add(CreateNodeForDocType(leaf));
             }
+            treeView1.ExpandAll();
         }
 
         private TreeNode CreateNodeForDocType(Leaf leaf)
