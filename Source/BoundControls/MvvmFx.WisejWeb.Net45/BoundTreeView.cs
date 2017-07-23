@@ -1705,7 +1705,7 @@ namespace MvvmFx.WisejWeb
                             _isDroppingOnRoot = true;
                             SelectedNode = dragNode;
                             _isDroppingOnRoot = false;
-                            SelectedNode.EnsureVisible();
+                            dragNode.EnsureVisible();
 
                             if (ModelChangeParent(dragNode, null))
                                 ExpandAll();
@@ -1728,7 +1728,7 @@ namespace MvvmFx.WisejWeb
             base.OnItemDrag(e);
         }
 
-        /// <summary>
+        /*/// <summary>
         /// Raises the <see cref="Wisej.Web.Control.DragOver" /> event.
         /// </summary>
         /// <param name="e">A <see cref="Wisej.Web.DragEventArgs" /> that contains the event data.</param>
@@ -1740,7 +1740,7 @@ namespace MvvmFx.WisejWeb
             _isDraggingOver = false;
             e.Effect = DragDropEffects.Move;
             base.OnDragOver(e);
-        }
+        }*/
 
         /// <summary>
         /// Raises the <see cref="Wisej.Web.Control.DragDrop" /> event.
@@ -1779,7 +1779,7 @@ namespace MvvmFx.WisejWeb
                             _isDroppingOnRoot = true;
                             SelectedNode = dragNode;
                             _isDroppingOnRoot = false;
-                            SelectedNode.EnsureVisible();
+                            dragNode.EnsureVisible();
 
                             if (ModelChangeParent(dragNode, null))
                                 ExpandAll();
