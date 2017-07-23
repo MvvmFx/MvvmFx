@@ -31,7 +31,6 @@
             this.syncedListsButton = new Wisej.Web.Button();
             this.treeListViewButton = new Wisej.Web.Button();
             this.autoTreeViewButton = new Wisej.Web.Button();
-            this.manualTreeViewButton = new Wisej.Web.Button();
             this.workPanel = new Wisej.Web.Panel();
             this.menuBar1 = new Wisej.Web.MenuBar();
             this.SuspendLayout();
@@ -60,17 +59,8 @@
             this.autoTreeViewButton.Name = "autoTreeViewButton";
             this.autoTreeViewButton.Size = new System.Drawing.Size(100, 23);
             this.autoTreeViewButton.TabIndex = 2;
-            this.autoTreeViewButton.Text = "Auto TreeView";
+            this.autoTreeViewButton.Text = "TreeView";
             this.autoTreeViewButton.Click += new System.EventHandler(this.autoTreeViewButton_Click);
-            // 
-            // manualTreeViewButton
-            // 
-            this.manualTreeViewButton.Location = new System.Drawing.Point(388, 13);
-            this.manualTreeViewButton.Name = "manualTreeViewButton";
-            this.manualTreeViewButton.Size = new System.Drawing.Size(100, 23);
-            this.manualTreeViewButton.TabIndex = 2;
-            this.manualTreeViewButton.Text = "Manual TreeView";
-            this.manualTreeViewButton.Click += new System.EventHandler(this.manualTreeViewButton_Click);
             // 
             // workPanel
             // 
@@ -93,7 +83,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.Controls.Add(this.manualTreeViewButton);
             this.Controls.Add(this.autoTreeViewButton);
             this.Controls.Add(this.treeListViewButton);
             this.Controls.Add(this.syncedListsButton);
@@ -112,7 +101,6 @@
         private Wisej.Web.Button syncedListsButton;
         private Wisej.Web.Button treeListViewButton;
         private Wisej.Web.Button autoTreeViewButton;
-        private Wisej.Web.Button manualTreeViewButton;
         private Wisej.Web.Panel workPanel;
         private Wisej.Web.MenuBar menuBar1;
     }

@@ -63,18 +63,5 @@ namespace WisejWeb.TestBoundTreeView
             docBrowser.Dock = DockStyle.Fill;
             workPanel.Controls.Add(docBrowser);
         }
-
-        private void manualTreeViewButton_Click(object sender, EventArgs e)
-        {
-            foreach (IDisposable control in workPanel.Controls)
-                control.Dispose();
-
-            workPanel.Controls.Clear();
-
-            var docBrowser = new ManualTreeView();
-            docBrowser.TabIndex = 0;
-            docBrowser.Dock = DockStyle.Fill;
-            workPanel.Controls.Add(docBrowser);
-        }
     }
 }

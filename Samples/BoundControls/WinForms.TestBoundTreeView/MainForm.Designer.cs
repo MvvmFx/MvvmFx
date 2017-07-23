@@ -31,7 +31,6 @@
             this.syncedListsButton = new System.Windows.Forms.Button();
             this.treeListViewButton = new System.Windows.Forms.Button();
             this.autoTreeViewButton = new System.Windows.Forms.Button();
-            this.manualTreeViewButton = new System.Windows.Forms.Button();
             this.workPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
@@ -62,19 +61,9 @@
             this.autoTreeViewButton.Name = "autoTreeViewButton";
             this.autoTreeViewButton.Size = new System.Drawing.Size(100, 23);
             this.autoTreeViewButton.TabIndex = 2;
-            this.autoTreeViewButton.Text = "Auto TreeView";
+            this.autoTreeViewButton.Text = "TreeView";
             this.autoTreeViewButton.UseVisualStyleBackColor = true;
             this.autoTreeViewButton.Click += new System.EventHandler(this.autoTreeViewButton_Click);
-            // 
-            // manualTreeViewButton
-            // 
-            this.manualTreeViewButton.Location = new System.Drawing.Point(388, 13);
-            this.manualTreeViewButton.Name = "manualTreeViewButton";
-            this.manualTreeViewButton.Size = new System.Drawing.Size(100, 23);
-            this.manualTreeViewButton.TabIndex = 2;
-            this.manualTreeViewButton.Text = "Manual TreeView";
-            this.manualTreeViewButton.UseVisualStyleBackColor = true;
-            this.manualTreeViewButton.Click += new System.EventHandler(this.manualTreeViewButton_Click);
             // 
             // workPanel
             // 
@@ -99,7 +88,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1003, 487);
-            this.Controls.Add(this.manualTreeViewButton);
             this.Controls.Add(this.autoTreeViewButton);
             this.Controls.Add(this.treeListViewButton);
             this.Controls.Add(this.syncedListsButton);
@@ -117,7 +105,6 @@
         private System.Windows.Forms.Button syncedListsButton;
         private System.Windows.Forms.Button treeListViewButton;
         private System.Windows.Forms.Button autoTreeViewButton;
-        private System.Windows.Forms.Button manualTreeViewButton;
         private System.Windows.Forms.Panel workPanel;
         private System.Windows.Forms.MenuStrip menuStrip1;
     }
