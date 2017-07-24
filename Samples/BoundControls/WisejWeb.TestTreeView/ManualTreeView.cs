@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 #if WINFORMS
 using System.Windows.Forms;
 #else
@@ -9,16 +7,11 @@ using Wisej.Web;
 
 namespace WisejWeb.TestTreeView
 {
-    public partial class ManualTreeView : Wisej.Web.UserControl
+    public partial class ManualTreeView : UserControl
     {
         #region Members
 
-        private List<Leaf> _leafList;
-
-        public List<Leaf> LeafList
-        {
-            get { return _leafList; }
-        }
+        public LeafList LeafList { get; private set; }
 
         #endregion
 
@@ -31,7 +24,7 @@ namespace WisejWeb.TestTreeView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _leafList = Leaf.GetLeafList();
+            LeafList = LeafList.GetLeafList();
             Populate();
         }
 
@@ -41,15 +34,13 @@ namespace WisejWeb.TestTreeView
 
         private void Populate()
         {
-            foreach (var leaf in _leafList)
-            {
+            foreach (var leaf in LeafList)
                 if (leaf.LeafParentId == null)
-                    treeView1.Nodes.Add(CreateNodeForDocType(leaf));
-            }
+                    treeView1.Nodes.Add(CreateNodeForLeaf(leaf));
             treeView1.ExpandAll();
         }
 
-        private TreeNode CreateNodeForDocType(Leaf leaf)
+        private TreeNode CreateNodeForLeaf(Leaf leaf)
         {
             var node = new TreeNode();
             node.Name = leaf.LeafName;
@@ -64,7 +55,6 @@ namespace WisejWeb.TestTreeView
 
         private void SetNodeImages(TreeNode node, bool isReadOnly)
         {
-
             if (isReadOnly)
             {
                 node.ImageIndex = 2;
@@ -80,20 +70,9 @@ namespace WisejWeb.TestTreeView
 
         private void PopulateTreeNode(TreeNode node, int leafId)
         {
-            foreach (var leaf in _leafList)
-            {
+            foreach (var leaf in LeafList)
                 if (leaf.LeafParentId == leafId)
-                    node.Nodes.Add(CreateNodeForDocType(leaf));
-            }
-        }
-
-        #endregion
-
-        #region Manage form state
-
-        private void SortTreeView()
-        {
-            treeView1.Sort();
+                    node.Nodes.Add(CreateNodeForLeaf(leaf));
         }
 
         #endregion
@@ -102,7 +81,7 @@ namespace WisejWeb.TestTreeView
 
         private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            var tv = (TreeView)sender;
+            var tv = (TreeView) sender;
             tv.DoDragDrop(e.Item, DragDropEffects.Copy | DragDropEffects.Move);
         }
 
@@ -120,14 +99,11 @@ namespace WisejWeb.TestTreeView
             {
                 // Continue only if the item being dragged is a TreeNode object
 
-                var tv = (TreeView)sender;
+                var tv = (TreeView) sender;
                 var dropNode = e.DropTarget as TreeNode;
-                var dragNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
+                var dragNode = (TreeNode) e.Data.GetData(typeof(TreeNode));
 
                 if (dragNode != null)
-                {
-                    // now you can drag
-
                     if (dropNode != null)
                     {
                         // dropNode is a TreeNode
@@ -146,7 +122,6 @@ namespace WisejWeb.TestTreeView
                         ChangeParentToRoot(tv, dragNode);
                         tv.ExpandAll();
                     }
-                }
             }
         }
 

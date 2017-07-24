@@ -45,7 +45,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AutoTreeView.Designer.cs">
+      <DependentUpon>AutoTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BindingSourceRefresh.cs" />
+    <Compile Include="BoundTreeNode.cs" />
+    <Compile Include="BoundTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BoundUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoundUserControl.Designer.cs">
+      <DependentUpon>BoundUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\DropDownTypeEditor.cs" />
+    <Compile Include="Design\FieldTypeEditor.cs" />
     <Compile Include="Leaf.cs" />
+    <Compile Include="LogManager.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +80,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeNodeSorter.cs" />
+    <EmbeddedResource Include="AutoTreeView.resx">
+      <DependentUpon>AutoTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoundUserControl.resx">
+      <DependentUpon>BoundUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +102,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\LeafList.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +115,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
+      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
+      <Name>MvvmFx.Logging.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

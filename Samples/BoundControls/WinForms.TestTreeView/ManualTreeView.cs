@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 #if WINFORMS
+using System.Drawing;
 using System.Windows.Forms;
 #else
 using Wisej.Web;
@@ -13,12 +12,7 @@ namespace WinForms.TestTreeView
     {
         #region Members
 
-        private List<Leaf> _leafList;
-
-        public List<Leaf> LeafList
-        {
-            get { return _leafList; }
-        }
+        public LeafList LeafList { get; private set; }
 
         #endregion
 
@@ -31,7 +25,7 @@ namespace WinForms.TestTreeView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _leafList = Leaf.GetLeafList();
+            LeafList = LeafList.GetLeafList();
             Populate();
         }
 
@@ -41,15 +35,13 @@ namespace WinForms.TestTreeView
 
         private void Populate()
         {
-            foreach (var leaf in _leafList)
-            {
+            foreach (var leaf in LeafList)
                 if (leaf.LeafParentId == null)
-                    treeView1.Nodes.Add(CreateNodeForDocType(leaf));
-            }
+                    treeView1.Nodes.Add(CreateNodeForLeaf(leaf));
             treeView1.ExpandAll();
         }
 
-        private TreeNode CreateNodeForDocType(Leaf leaf)
+        private TreeNode CreateNodeForLeaf(Leaf leaf)
         {
             var node = new TreeNode();
             node.Name = leaf.LeafName;
@@ -64,36 +56,24 @@ namespace WinForms.TestTreeView
 
         private void SetNodeImages(TreeNode node, bool isReadOnly)
         {
-
             if (isReadOnly)
             {
                 node.ImageIndex = 2;
-                node.ImageIndex = 3;
+                node.SelectedImageIndex = 3;
             }
             else
             {
                 node.ImageIndex = 0;
-                node.ImageIndex = 1;
+                node.SelectedImageIndex = 1;
             }
             node.SelectedImageIndex = node.ImageIndex;
         }
 
         private void PopulateTreeNode(TreeNode node, int leafId)
         {
-            foreach (var leaf in _leafList)
-            {
+            foreach (var leaf in LeafList)
                 if (leaf.LeafParentId == leafId)
-                    node.Nodes.Add(CreateNodeForDocType(leaf));
-            }
-        }
-
-        #endregion
-
-        #region Manage form state
-
-        private void SortTreeView()
-        {
-            treeView1.Sort();
+                    node.Nodes.Add(CreateNodeForLeaf(leaf));
         }
 
         #endregion
