@@ -76,6 +76,7 @@
         }
 
         #endregion
+
         private Wisej.Web.TreeView treeView1;
         private Wisej.Web.ImageList imageList;
     }

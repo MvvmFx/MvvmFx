@@ -72,6 +72,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ImageList imageList;
     }
