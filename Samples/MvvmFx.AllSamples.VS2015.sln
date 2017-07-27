@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundControls.Business", "B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlSpy", "BoundControls\ControlSpy\ControlSpy.csproj", "{DFF58722-48E9-48E8-9CAD-50F65B31FF2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.TestBoundTreeView", "BoundControls\WinForms.TestBoundTreeView\WinForms.TestBoundTreeView.csproj", "{7B46A1AC-3CDD-4B7F-80C6-59305C3B2BE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.TestBoundControls", "BoundControls\WinForms.TestBoundControls\WinForms.TestBoundControls.csproj", "{7B46A1AC-3CDD-4B7F-80C6-59305C3B2BE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartDateExtendedParser", "CaliburnMicro\CslaSample\SmartDateExtendedParser\SmartDateExtendedParser.csproj", "{8E14CC07-2607-4893-8C77-AC84BACFE8D0}"
 EndProject
@@ -121,7 +121,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WisejWeb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WisejWeb.Net45", "..\Source\CaliburnMicro\CaliburnMicro.DialogExtensions.WisejWeb.Net45\CaliburnMicro.DialogExtensions.WisejWeb.Net45.csproj", "{EB6C4B1F-FDA8-4BF9-96F2-62359E225D05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisejWeb.TestBoundTreeView", "BoundControls\WisejWeb.TestBoundTreeView\WisejWeb.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisejWeb.TestBoundControls", "BoundControls\WisejWeb.TestBoundControls\WisejWeb.TestBoundControls.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.TestTreeView", "BoundControls\WinForms.TestTreeView\WinForms.TestTreeView.csproj", "{53A0A463-191B-4854-BA56-165A3B47933E}"
 EndProject

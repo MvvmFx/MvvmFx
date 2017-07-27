@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.TestBoundTreeView", "WinForms.TestBoundTreeView\WinForms.TestBoundTreeView.csproj", "{7B46A1AC-3CDD-4B7F-80C6-59305C3B2BE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForms.TestBoundControls", "WinForms.TestBoundControls\WinForms.TestBoundControls.csproj", "{7B46A1AC-3CDD-4B7F-80C6-59305C3B2BE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoundControls.Business", "BoundControls.Business\BoundControls.Business.csproj", "{FAE0DF92-8751-4072-8AB7-6D8E824F1F03}"
 EndProject
@@ -18,7 +18,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "..\..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisejWeb.TestBoundTreeView", "WisejWeb.TestBoundTreeView\WisejWeb.TestBoundTreeView.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WisejWeb.TestBoundControls", "WisejWeb.TestBoundControls\WisejWeb.TestBoundControls.csproj", "{FBF22675-C762-48ED-AC55-82E5BDAABC76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
