@@ -201,6 +201,7 @@ namespace WinForms.TestTreeView
                 if (_dataSource != value)
                 {
                     _dataSource = value;
+                    Logger.Trace("DataSource");
                     TryDataBinding();
                 }
             }
@@ -240,6 +241,7 @@ namespace WinForms.TestTreeView
                 if (_dataMember != value)
                 {
                     _dataMember = value;
+                    Logger.Trace("DataMember");
                     TryDataBinding();
                 }
             }
@@ -279,6 +281,7 @@ namespace WinForms.TestTreeView
                 {
                     _displayMember = value;
                     _displayProperty = null;
+                    Logger.Trace("DisplayMember");
                     TryDataBinding();
                 }
             }
@@ -316,6 +319,7 @@ namespace WinForms.TestTreeView
                     _valueMember = value;
                     _valueProperty = null;
                     _valueConverter = null;
+                    Logger.Trace("ValueMember");
                     TryDataBinding();
                 }
             }
@@ -346,6 +350,7 @@ namespace WinForms.TestTreeView
                     if (string.IsNullOrEmpty(_valueMember))
                         ValueMember = _identifierMember;
 
+                    Logger.Trace("IdentifierMember");
                     TryDataBinding();
                 }
             }
@@ -372,6 +377,7 @@ namespace WinForms.TestTreeView
                 {
                     _parentIdentifierMember = value;
                     _parentIdentifierProperty = null;
+                    Logger.Trace("ParentIdentifierMember");
                     TryDataBinding();
                 }
             }
@@ -398,6 +404,7 @@ namespace WinForms.TestTreeView
                 {
                     _toolTipTextMember = value;
                     _toolTipTextProperty = null;
+                    Logger.Trace("ToolTipTextMember");
                     TryDataBinding();
                 }
             }
@@ -424,6 +431,7 @@ namespace WinForms.TestTreeView
                 {
                     _readOnlyMember = value;
                     _readOnlyProperty = null;
+                    Logger.Trace("ReadOnlyMember");
                     TryDataBinding();
                 }
             }
@@ -573,6 +581,7 @@ namespace WinForms.TestTreeView
                 if (base.Sorted != value)
                 {
                     base.Sorted = value;
+                    Logger.Trace("Sorted");
                     TryDataBinding();
                 }
             }
@@ -968,6 +977,8 @@ namespace WinForms.TestTreeView
         /// </summary>
         public BoundTreeView()
         {
+            Logger.Trace("Constructor");
+
             SetDefaultMessages();
 
             _listChangedHandler = ListManager_ListChanged;
@@ -1018,6 +1029,8 @@ namespace WinForms.TestTreeView
         /// </summary>
         protected override void Dispose(bool disposing)
         {
+            Logger.Trace("Dispose");
+
             if (disposing)
             {
                 if (_components != null)
@@ -1059,6 +1072,7 @@ namespace WinForms.TestTreeView
                 return;
             }
 
+            Logger.Trace("TryDataBinding - BeginUpdate");
             BeginUpdate();
 
             // Unwire the old CurrencyManager
@@ -1070,6 +1084,7 @@ namespace WinForms.TestTreeView
             _listManager = currencyManager;
 
             // Update metadata and data
+            Logger.Trace("TryDataBinding - UpdateAllData");
             UpdateAllData();
 
             // Wire the new CurrencyManager
@@ -1079,6 +1094,7 @@ namespace WinForms.TestTreeView
                 _listManager.PositionChanged += _positionChangedHandler;
             }
 
+            Logger.Trace("TryDataBinding - EndUpdate");
             EndUpdate();
         }
 
@@ -1496,6 +1512,8 @@ namespace WinForms.TestTreeView
 
         #region BindingContext Events
 
+        private bool _isHandlingBindingContextChanged = false;
+
 #if WINFORMS
         /// <summary>
         /// Raises the <see cref="System.Windows.Forms.Control.BindingContextChanged"/> event.
@@ -1509,8 +1527,15 @@ namespace WinForms.TestTreeView
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
+            if (_isHandlingBindingContextChanged)
+                return;
+
+            Logger.Trace("OnBindingContextChanged");
+            _isHandlingBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
+
+            _isHandlingBindingContextChanged = false;
         }
 
         #endregion
@@ -1560,6 +1585,7 @@ namespace WinForms.TestTreeView
                         }
                         else
                         {
+                            Logger.Trace("ListManager_ListChanged - ListChangedType.ItemChanged - RefreshTree");
                             RefreshTree();
                         }
                     }
@@ -1588,6 +1614,7 @@ namespace WinForms.TestTreeView
                     {
                         _itemsPositions.Remove(e.NewIndex);
                         _itemsIdentifiers.Remove(deletedNode.NodeId);
+                        Logger.Trace("ListManager_ListChanged - ListChangedType.ItemDeleted - RefreshTree");
                         RefreshTree();
                     }
                     else
@@ -1597,7 +1624,7 @@ namespace WinForms.TestTreeView
                     break;
 
                 case ListChangedType.Reset:
-                    RefreshTree();
+                    Logger.Trace("ListManager_ListChanged - ListChangedType.Reset - RefreshTree"); RefreshTree();
                     break;
             }
 
@@ -1607,6 +1634,7 @@ namespace WinForms.TestTreeView
 
         private void RefreshTree()
         {
+            Logger.Trace("RefreshTree - BeginUpdate");
             BeginUpdate();
 
             //save all expanded nodes
@@ -1615,6 +1643,7 @@ namespace WinForms.TestTreeView
                 .Where(node => node.IsExpanded)
                 .ToList();
 
+            Logger.Trace("RefreshTree - UpdateAllData");
             UpdateAllData();
 
             //restore all expanded nodes
@@ -1631,6 +1660,7 @@ namespace WinForms.TestTreeView
                 }
             }
 
+            Logger.Trace("RefreshTree - EndUpdate");
             EndUpdate();
         }
 

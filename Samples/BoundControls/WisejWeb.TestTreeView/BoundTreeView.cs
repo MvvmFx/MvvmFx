@@ -73,6 +73,7 @@ namespace WisejWeb.TestTreeView
 #endif
         private bool _isDraggingOver;
         private bool _isDroppingOnRoot;
+        private bool _ignoreBindingContextChanged;
 
         private readonly Container _components = null;
         private readonly ListChangedEventHandler _listChangedHandler;
@@ -201,6 +202,8 @@ namespace WisejWeb.TestTreeView
                 if (_dataSource != value)
                 {
                     _dataSource = value;
+                    Logger.Trace("DataSource");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -240,6 +243,8 @@ namespace WisejWeb.TestTreeView
                 if (_dataMember != value)
                 {
                     _dataMember = value;
+                    Logger.Trace("DataMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -279,6 +284,8 @@ namespace WisejWeb.TestTreeView
                 {
                     _displayMember = value;
                     _displayProperty = null;
+                    Logger.Trace("DisplayMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -316,6 +323,8 @@ namespace WisejWeb.TestTreeView
                     _valueMember = value;
                     _valueProperty = null;
                     _valueConverter = null;
+                    Logger.Trace("ValueMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -346,6 +355,8 @@ namespace WisejWeb.TestTreeView
                     if (string.IsNullOrEmpty(_valueMember))
                         ValueMember = _identifierMember;
 
+                    Logger.Trace("IdentifierMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -372,6 +383,8 @@ namespace WisejWeb.TestTreeView
                 {
                     _parentIdentifierMember = value;
                     _parentIdentifierProperty = null;
+                    Logger.Trace("ParentIdentifierMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -398,6 +411,8 @@ namespace WisejWeb.TestTreeView
                 {
                     _toolTipTextMember = value;
                     _toolTipTextProperty = null;
+                    Logger.Trace("ToolTipTextMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -424,6 +439,8 @@ namespace WisejWeb.TestTreeView
                 {
                     _readOnlyMember = value;
                     _readOnlyProperty = null;
+                    Logger.Trace("ReadOnlyMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -573,6 +590,8 @@ namespace WisejWeb.TestTreeView
                 if (base.Sorted != value)
                 {
                     base.Sorted = value;
+                    Logger.Trace("Sorted");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -968,6 +987,8 @@ namespace WisejWeb.TestTreeView
         /// </summary>
         public BoundTreeView()
         {
+            Logger.Trace("Constructor");
+
             SetDefaultMessages();
 
             _listChangedHandler = ListManager_ListChanged;
@@ -1018,6 +1039,8 @@ namespace WisejWeb.TestTreeView
         /// </summary>
         protected override void Dispose(bool disposing)
         {
+            Logger.Trace("Dispose");
+
             if (disposing)
             {
                 if (_components != null)
@@ -1059,6 +1082,7 @@ namespace WisejWeb.TestTreeView
                 return;
             }
 
+            Logger.Trace("TryDataBinding - BeginUpdate");
             BeginUpdate();
 
             // Unwire the old CurrencyManager
@@ -1070,6 +1094,7 @@ namespace WisejWeb.TestTreeView
             _listManager = currencyManager;
 
             // Update metadata and data
+            Logger.Trace("TryDataBinding - UpdateAllData");
             UpdateAllData();
 
             // Wire the new CurrencyManager
@@ -1079,6 +1104,7 @@ namespace WisejWeb.TestTreeView
                 _listManager.PositionChanged += _positionChangedHandler;
             }
 
+            Logger.Trace("TryDataBinding - EndUpdate");
             EndUpdate();
         }
 
@@ -1174,7 +1200,6 @@ namespace WisejWeb.TestTreeView
         public new void Sort()
         {
             Sorted = true;
-            //TryDataBinding();
         }
 
         private ArrayList Clone(ArrayList master)
@@ -1509,8 +1534,17 @@ namespace WisejWeb.TestTreeView
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
+            if (_ignoreBindingContextChanged)
+                return;
+
+            Logger.Trace("OnBindingContextChanged");
+            _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
+
+#if WINFORMS
+            _ignoreBindingContextChanged = false;
+#endif
         }
 
         #endregion
@@ -1532,12 +1566,13 @@ namespace WisejWeb.TestTreeView
             }
         }
 
-        #endregion
+#endregion
 
-        #region Item(s) changed from DataSource
+#region Item(s) changed from DataSource
 
         private void ListManager_ListChanged(object sender, ListChangedEventArgs e)
         {
+            Logger.Trace("ListManager_ListChanged - ListChangedType."+ e.ListChangedType+" - START");
             var message = string.Empty;
 
             switch (e.ListChangedType)
@@ -1560,6 +1595,7 @@ namespace WisejWeb.TestTreeView
                         }
                         else
                         {
+                            Logger.Trace("ListManager_ListChanged - ListChangedType.ItemChanged - RefreshTree");
                             RefreshTree();
                         }
                     }
@@ -1588,6 +1624,7 @@ namespace WisejWeb.TestTreeView
                     {
                         _itemsPositions.Remove(e.NewIndex);
                         _itemsIdentifiers.Remove(deletedNode.NodeId);
+                        Logger.Trace("ListManager_ListChanged - ListChangedType.ItemDeleted - RefreshTree");
                         RefreshTree();
                     }
                     else
@@ -1597,6 +1634,7 @@ namespace WisejWeb.TestTreeView
                     break;
 
                 case ListChangedType.Reset:
+                    Logger.Trace("ListManager_ListChanged - ListChangedType.Reset - RefreshTree");
                     RefreshTree();
                     break;
             }
@@ -1607,6 +1645,7 @@ namespace WisejWeb.TestTreeView
 
         private void RefreshTree()
         {
+            Logger.Trace("RefreshTree - BeginUpdate");
             BeginUpdate();
 
             //save all expanded nodes
@@ -1615,6 +1654,7 @@ namespace WisejWeb.TestTreeView
                 .Where(node => node.IsExpanded)
                 .ToList();
 
+            Logger.Trace("RefreshTree - UpdateAllData");
             UpdateAllData();
 
             //restore all expanded nodes
@@ -1631,12 +1671,13 @@ namespace WisejWeb.TestTreeView
                 }
             }
 
+            Logger.Trace("RefreshTree - EndUpdate");
             EndUpdate();
         }
 
-        #endregion
+#endregion
 
-        #region Drag & Drop
+#region Drag & Drop
 
 #if WINFORMS
         /// <summary>
@@ -1916,9 +1957,9 @@ namespace WisejWeb.TestTreeView
             return TargetIsSourceAncestor(source, dropNode.Parent, ref replacementeParent, ref placeHolder);
         }
 
-        #endregion
+#endregion
 
-        #region Position Changed from TreeView
+#region Position Changed from TreeView
 
 #if WEBGUI
 /*
@@ -2049,9 +2090,9 @@ namespace WisejWeb.TestTreeView
             base.OnAfterSelect(e);
         }
 
-        #endregion
+#endregion
 
-        #region Item changed from TreeView
+#region Item changed from TreeView
 
 #if WINFORMS
         /// <summary>
@@ -2095,9 +2136,9 @@ namespace WisejWeb.TestTreeView
             }
         }
 
-        #endregion
+#endregion
 
-        #region VWG Critical Events
+#region VWG Critical Events
 
 #if WEBGUI
 
@@ -2123,9 +2164,9 @@ namespace WisejWeb.TestTreeView
 
 #endif
 
-        #endregion
+#endregion
 
-        #region SelectedValueChanged event
+#region SelectedValueChanged event
 
         /// <summary>
         /// Occurs when after the selected value changeds.
@@ -2142,6 +2183,6 @@ namespace WisejWeb.TestTreeView
                 handler(this, new EventArgs());
         }
 
-        #endregion
+#endregion
     }
 }
