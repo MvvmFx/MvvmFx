@@ -98,6 +98,12 @@
     <Compile Include="AutoTreeView.Designer.cs">
       <DependentUpon>AutoTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="StripWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StripWindow.Designer.cs">
+      <DependentUpon>StripWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj">
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="AutoTreeView.resx">
       <DependentUpon>AutoTreeView.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StripWindow.resx">
+      <DependentUpon>StripWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -34,7 +34,7 @@
             Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images1"))), "NodeSelected.png");
             Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images2"))), "ReadOnlyNode.png");
             Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images3"))), "ReadOnlyNodeSelected.png");
-            this.docTypeListBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.leafListBindingSource = new Wisej.Web.BindingSource(this.components);
             this.buttonView = new Wisej.Web.Button();
             this.textboxView = new Wisej.Web.TextBox();
             this.textboxModel = new Wisej.Web.TextBox();
@@ -42,11 +42,11 @@
             this.boundTreeView1 = new MvvmFx.WisejWeb.BoundTreeView();
             this.imageList = new Wisej.Web.ImageList(this.components);
             this.label1 = new Wisej.Web.Label();
-            this.docTypeName = new Wisej.Web.Label();
+            this.leafName = new Wisej.Web.Label();
             this.dragDropStatusLabel = new Wisej.Web.Label();
-            this.docTypeID = new Wisej.Web.Label();
+            this.leafId = new Wisej.Web.Label();
             this.label3 = new Wisej.Web.Label();
-            this.docTypeParentID = new Wisej.Web.Label();
+            this.leafParentId = new Wisej.Web.Label();
             this.label5 = new Wisej.Web.Label();
             this.refreshButton = new Wisej.Web.Button();
             this.sortButton = new Wisej.Web.Button();
@@ -57,12 +57,13 @@
             this.collapseButton = new Wisej.Web.Button();
             this.allowDropOnDescendentsCheckBox = new Wisej.Web.CheckBox();
             this.allowDropOnRootCheckBox = new Wisej.Web.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // docTypeListBindingSource
+            // leafListBindingSource
             // 
-            this.docTypeListBindingSource.DataSource = typeof(BoundControls.Business.DocTypeEditColl);
+            this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
+            this.leafListBindingSource.RefreshValueOnChange = true;
             // 
             // buttonView
             // 
@@ -100,12 +101,12 @@
             // 
             this.boundTreeView1.AllowDrag = true;
             this.boundTreeView1.AllowDrop = true;
-            this.boundTreeView1.DataSource = this.docTypeListBindingSource;
-            this.boundTreeView1.DisplayMember = "DocTypeName";
+            this.boundTreeView1.DataSource = this.leafListBindingSource;
+            this.boundTreeView1.DisplayMember = "LeafName";
             this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
             this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";
             this.boundTreeView1.GeneralNodeError = "Error at node.";
-            this.boundTreeView1.IdentifierMember = "DocTypeID";
+            this.boundTreeView1.IdentifierMember = "DocTypeId";
             this.boundTreeView1.ImageIndex = 0;
             this.boundTreeView1.ImageList = this.imageList;
             this.boundTreeView1.InexistentParent = "Parent of node does not exist.";
@@ -113,7 +114,7 @@
             this.boundTreeView1.Location = new System.Drawing.Point(16, 13);
             this.boundTreeView1.Name = "boundTreeView1";
             this.boundTreeView1.OpenedImageIndex = 1;
-            this.boundTreeView1.ParentIdentifierMember = "DocTypeParentID";
+            this.boundTreeView1.ParentIdentifierMember = "DocTypeParentId";
             this.boundTreeView1.ReadOnlyImageIndex = 2;
             this.boundTreeView1.ReadOnlyMember = "DocTypeIsReadOnly";
             this.boundTreeView1.ReadOnlySelectedImageIndex = 3;
@@ -124,7 +125,7 @@
             this.boundTreeView1.Sorted = false;
             this.boundTreeView1.TabIndex = 15;
             this.boundTreeView1.ToolTipTextMember = "DocTypeDescription";
-            this.boundTreeView1.ValueMember = "DocTypeID";
+            this.boundTreeView1.ValueMember = "DocTypeId";
             this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             this.boundTreeView1.AfterLabelEdit += new Wisej.Web.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
             this.boundTreeView1.DragDrop += new Wisej.Web.DragEventHandler(this.boundTreeView1_DragDrop);
@@ -144,16 +145,16 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 20;
-            this.label1.Text = "DocTypeName:";
+            this.label1.Text = "LeafName:";
             // 
-            // docTypeName
+            // leafName
             // 
-            this.docTypeName.AutoSize = false;
-            this.docTypeName.Location = new System.Drawing.Point(661, 66);
-            this.docTypeName.Name = "docTypeName";
-            this.docTypeName.Size = new System.Drawing.Size(100, 13);
-            this.docTypeName.TabIndex = 21;
-            this.docTypeName.Text = "DocTypeName";
+            this.leafName.AutoSize = false;
+            this.leafName.Location = new System.Drawing.Point(661, 66);
+            this.leafName.Name = "leafName";
+            this.leafName.Size = new System.Drawing.Size(100, 13);
+            this.leafName.TabIndex = 21;
+            this.leafName.Text = "LeafName";
             // 
             // dragDropStatusLabel
             // 
@@ -164,14 +165,14 @@
             this.dragDropStatusLabel.TabIndex = 28;
             this.dragDropStatusLabel.Text = "Current Drag&&Drop Status";
             // 
-            // docTypeID
+            // leafId
             // 
-            this.docTypeID.AutoSize = false;
-            this.docTypeID.Location = new System.Drawing.Point(664, 104);
-            this.docTypeID.Name = "docTypeID";
-            this.docTypeID.Size = new System.Drawing.Size(100, 13);
-            this.docTypeID.TabIndex = 30;
-            this.docTypeID.Text = "DocTypeID";
+            this.leafId.AutoSize = false;
+            this.leafId.Location = new System.Drawing.Point(664, 104);
+            this.leafId.Name = "leafId";
+            this.leafId.Size = new System.Drawing.Size(100, 13);
+            this.leafId.TabIndex = 30;
+            this.leafId.Text = "DocTypeId";
             // 
             // label3
             // 
@@ -180,16 +181,16 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "DocTypeID:";
+            this.label3.Text = "DocTypeId:";
             // 
-            // docTypeParentID
+            // leafParentId
             // 
-            this.docTypeParentID.AutoSize = false;
-            this.docTypeParentID.Location = new System.Drawing.Point(666, 143);
-            this.docTypeParentID.Name = "docTypeParentID";
-            this.docTypeParentID.Size = new System.Drawing.Size(100, 13);
-            this.docTypeParentID.TabIndex = 32;
-            this.docTypeParentID.Text = "DocTypeParentID";
+            this.leafParentId.AutoSize = false;
+            this.leafParentId.Location = new System.Drawing.Point(666, 143);
+            this.leafParentId.Name = "leafParentId";
+            this.leafParentId.Size = new System.Drawing.Size(100, 13);
+            this.leafParentId.TabIndex = 32;
+            this.leafParentId.Text = "DocTypeParentId";
             // 
             // label5
             // 
@@ -198,7 +199,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 31;
-            this.label5.Text = "DocTypeParentID:";
+            this.label5.Text = "DocTypeParentId:";
             // 
             // refreshButton
             // 
@@ -297,12 +298,12 @@
             this.Controls.Add(this.sortButton);
             this.Controls.Add(this.expandButton);
             this.Controls.Add(this.refreshButton);
-            this.Controls.Add(this.docTypeParentID);
+            this.Controls.Add(this.leafParentId);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.docTypeID);
+            this.Controls.Add(this.leafId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dragDropStatusLabel);
-            this.Controls.Add(this.docTypeName);
+            this.Controls.Add(this.leafName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonView);
             this.Controls.Add(this.textboxView);
@@ -314,7 +315,7 @@
             this.Name = "AutoTreeView";
             this.Size = new System.Drawing.Size(931, 425);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,18 +323,18 @@
 
         #endregion
 
-        private Wisej.Web.BindingSource docTypeListBindingSource;
+        private Wisej.Web.BindingSource leafListBindingSource;
         private Wisej.Web.Button buttonView;
         private Wisej.Web.TextBox textboxView;
         private Wisej.Web.TextBox textboxModel;
         private Wisej.Web.Button buttonModel;
         private MvvmFx.WisejWeb.BoundTreeView boundTreeView1;
         private Wisej.Web.Label label1;
-        private Wisej.Web.Label docTypeName;
+        private Wisej.Web.Label leafName;
         private Wisej.Web.Label dragDropStatusLabel;
-        private Wisej.Web.Label docTypeID;
+        private Wisej.Web.Label leafId;
         private Wisej.Web.Label label3;
-        private Wisej.Web.Label docTypeParentID;
+        private Wisej.Web.Label leafParentId;
         private Wisej.Web.Label label5;
         private Wisej.Web.Button refreshButton;
         private Wisej.Web.ImageList imageList;
