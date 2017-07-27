@@ -1,4 +1,5 @@
 ﻿using System;
+using MvvmFx.Logging;
 #if WINFORMS
 using System.Windows.Forms;
 #else
@@ -10,7 +11,13 @@ namespace WinForms.TestTreeView
 {
     public partial class AutoTreeView : BoundUserControl
     {
-        #region Members
+        #region Private Members
+
+        private static readonly ILog Logger = LogManager.GetLog(typeof(Action));
+
+        #endregion
+
+        #region Public Members
 
         public LeafList LeafList { get; set; }
 
@@ -21,6 +28,8 @@ namespace WinForms.TestTreeView
         private void BindUI()
         {
             LeafList = LeafList.GetLeafListWithErrors();
+
+            Logger.Trace("AutoTreeView.BindUI");
             leafListBindingSource.DataSource = LeafList;
         }
 
@@ -48,7 +57,13 @@ namespace WinForms.TestTreeView
 
         public AutoTreeView()
         {
+            Logger.Trace("AutoTreeView.Constructor - start");
             InitializeComponent();
+            Logger.Trace("AutoTreeView.Constructor - set DataSource");
+            this.boundTreeView1.DataSource = this.leafListBindingSource;
+            Logger.Trace("AutoTreeView.Constructor - adding to Controls");
+            this.Controls.Add(this.boundTreeView1);
+            Logger.Trace("AutoTreeView.Constructor - added to Controls");
         }
 
         private void Form1_Load(object sender, EventArgs e)

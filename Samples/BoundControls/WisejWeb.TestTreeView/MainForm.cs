@@ -1,5 +1,6 @@
 ﻿using System;
 using MvvmFx.Logging;
+using MvvmFx.NLogLogger;
 #if WINFORMS
 using System.Windows.Forms;
 #else
@@ -17,7 +18,11 @@ namespace WisejWeb.TestTreeView
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+#if !DEBUG
             LogManager.GetLog = type => new DebugLogger(type);
+#else
+            LogManager.GetLog = type => new NLogLogger(type);
+#endif
 
             autoTreeViewButton_Click(this, EventArgs.Empty);
         }
