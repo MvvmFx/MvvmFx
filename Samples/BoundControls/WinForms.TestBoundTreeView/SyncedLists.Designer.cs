@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.docTypeListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.leafListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvButtonModel = new System.Windows.Forms.Button();
             this.dgvTextboxModel = new System.Windows.Forms.TextBox();
             this.dgvTextboxView = new System.Windows.Forms.TextBox();
@@ -51,18 +51,18 @@
             this.tvButtonModel = new System.Windows.Forms.Button();
             this.boundTreeView1 = new MvvmFx.Windows.Forms.BoundTreeView();
             this.label1 = new System.Windows.Forms.Label();
-            this.docTypeName = new System.Windows.Forms.Label();
+            this.leafName = new System.Windows.Forms.Label();
             this.queryObjectButton = new System.Windows.Forms.Button();
             this.dragDropStatusLabel = new System.Windows.Forms.Label();
-            this.docTypeID = new System.Windows.Forms.Label();
+            this.leafId = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.docTypeParentID = new System.Windows.Forms.Label();
+            this.leafParentId = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.docTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sortButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,20 +71,21 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.docTypeIDDataGridViewTextBoxColumn,
+            this.docTypeIdDataGridViewTextBoxColumn,
             this.docTypeNameDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.docTypeListBindingSource;
+            this.dataGridView1.DataSource = this.leafListBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(208, 204);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.BindingContextChanged += new System.EventHandler(this.dataGridView1_BindingContextChanged);
             // 
-            // docTypeListBindingSource
+            // leafListBindingSource
             // 
-            this.docTypeListBindingSource.DataSource = typeof(BoundControls.Business.DocTypeEditColl);
-            this.bindingSourceRefresh.SetReadValuesOnChange(this.docTypeListBindingSource, true);
+            this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
+            this.bindingSourceRefresh.SetReadValuesOnChange(this.leafListBindingSource, true);
             // 
             // dgvButtonModel
             // 
@@ -122,14 +123,15 @@
             // 
             // listBox1
             // 
-            this.listBox1.DataSource = this.docTypeListBindingSource;
-            this.listBox1.DisplayMember = "DocTypeName";
+            this.listBox1.DataSource = this.leafListBindingSource;
+            this.listBox1.DisplayMember = "LeafName";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(241, 13);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(212, 199);
             this.listBox1.TabIndex = 5;
-            this.listBox1.ValueMember = "DocTypeID";
+            this.listBox1.ValueMember = "DocTypeId";
+            this.listBox1.BindingContextChanged += new System.EventHandler(this.listBox1_BindingContextChanged);
             // 
             // lbButtonView
             // 
@@ -201,7 +203,7 @@
             // 
             // boundListView1
             // 
-            this.boundListView1.DataSource = this.docTypeListBindingSource;
+            this.boundListView1.DataSource = this.leafListBindingSource;
             this.boundListView1.FullRowSelect = true;
             this.boundListView1.HideSelection = false;
             this.boundListView1.LabelEdit = true;
@@ -213,6 +215,7 @@
             this.boundListView1.UseCompatibleStateImageBehavior = false;
             this.boundListView1.View = System.Windows.Forms.View.Details;
             this.boundListView1.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.boundListView1_AfterLabelEdit);
+            this.boundListView1.BindingContextChanged += new System.EventHandler(this.boundListView1_BindingContextChanged);
             // 
             // tvButtonView
             // 
@@ -251,22 +254,23 @@
             // boundTreeView1
             // 
             this.boundTreeView1.AllowDrop = true;
-            this.boundTreeView1.DataSource = this.docTypeListBindingSource;
-            this.boundTreeView1.DisplayMember = "DocTypeName";
+            this.boundTreeView1.DataSource = this.leafListBindingSource;
+            this.boundTreeView1.DisplayMember = "LeafName";
             this.boundTreeView1.FullRowSelect = false;
             this.boundTreeView1.HideSelection = false;
             this.boundTreeView1.HotTracking = false;
-            this.boundTreeView1.IdentifierMember = "DocTypeID";
+            this.boundTreeView1.IdentifierMember = "DocTypeId";
             this.boundTreeView1.LabelEdit = true;
             this.boundTreeView1.Location = new System.Drawing.Point(705, 13);
             this.boundTreeView1.Name = "boundTreeView1";
-            this.boundTreeView1.ParentIdentifierMember = "DocTypeParentID";
+            this.boundTreeView1.ParentIdentifierMember = "DocTypeParentId";
             this.boundTreeView1.Size = new System.Drawing.Size(212, 199);
             this.boundTreeView1.Sorted = false;
             this.boundTreeView1.TabIndex = 15;
-            this.boundTreeView1.ValueMember = "DocTypeID";
+            this.boundTreeView1.ValueMember = "DocTypeId";
             this.boundTreeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
             this.boundTreeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.boundTreeView1_DragDrop);
+            this.boundTreeView1.BindingContextChanged += new System.EventHandler(this.boundTreeView1_BindingContextChanged);
             // 
             // label1
             // 
@@ -275,15 +279,15 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 20;
-            this.label1.Text = "DocTypeName:";
+            this.label1.Text = "LeafName:";
             // 
-            // docTypeName
+            // leafName
             // 
-            this.docTypeName.Location = new System.Drawing.Point(131, 291);
-            this.docTypeName.Name = "docTypeName";
-            this.docTypeName.Size = new System.Drawing.Size(100, 13);
-            this.docTypeName.TabIndex = 21;
-            this.docTypeName.Text = "DocTypeName";
+            this.leafName.Location = new System.Drawing.Point(131, 291);
+            this.leafName.Name = "leafName";
+            this.leafName.Size = new System.Drawing.Size(100, 13);
+            this.leafName.TabIndex = 21;
+            this.leafName.Text = "LeafName";
             // 
             // queryObjectButton
             // 
@@ -303,13 +307,13 @@
             this.dragDropStatusLabel.TabIndex = 28;
             this.dragDropStatusLabel.Text = "Current Drag&&Drop Status";
             // 
-            // docTypeID
+            // leafId
             // 
-            this.docTypeID.Location = new System.Drawing.Point(361, 291);
-            this.docTypeID.Name = "docTypeID";
-            this.docTypeID.Size = new System.Drawing.Size(100, 13);
-            this.docTypeID.TabIndex = 30;
-            this.docTypeID.Text = "DocTypeID";
+            this.leafId.Location = new System.Drawing.Point(361, 291);
+            this.leafId.Name = "leafId";
+            this.leafId.Size = new System.Drawing.Size(100, 13);
+            this.leafId.TabIndex = 30;
+            this.leafId.Text = "DocTypeId";
             // 
             // label3
             // 
@@ -318,15 +322,15 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "DocTypeID:";
+            this.label3.Text = "DocTypeId:";
             // 
-            // docTypeParentID
+            // leafParentId
             // 
-            this.docTypeParentID.Location = new System.Drawing.Point(593, 291);
-            this.docTypeParentID.Name = "docTypeParentID";
-            this.docTypeParentID.Size = new System.Drawing.Size(100, 13);
-            this.docTypeParentID.TabIndex = 32;
-            this.docTypeParentID.Text = "DocTypeParentID";
+            this.leafParentId.Location = new System.Drawing.Point(593, 291);
+            this.leafParentId.Name = "leafParentId";
+            this.leafParentId.Size = new System.Drawing.Size(100, 13);
+            this.leafParentId.TabIndex = 32;
+            this.leafParentId.Text = "DocTypeParentId";
             // 
             // label5
             // 
@@ -335,23 +339,23 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 31;
-            this.label5.Text = "DocTypeParentID:";
+            this.label5.Text = "DocTypeParentId:";
             // 
-            // docTypeIDDataGridViewTextBoxColumn
+            // docTypeIdDataGridViewTextBoxColumn
             // 
-            this.docTypeIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.docTypeIDDataGridViewTextBoxColumn.DataPropertyName = "DocTypeID";
-            this.docTypeIDDataGridViewTextBoxColumn.HeaderText = "DocTypeID";
-            this.docTypeIDDataGridViewTextBoxColumn.MinimumWidth = 30;
-            this.docTypeIDDataGridViewTextBoxColumn.Name = "docTypeIDDataGridViewTextBoxColumn";
-            this.docTypeIDDataGridViewTextBoxColumn.Width = 87;
-            this.docTypeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.docTypeIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.docTypeIdDataGridViewTextBoxColumn.DataPropertyName = "DocTypeId";
+            this.docTypeIdDataGridViewTextBoxColumn.HeaderText = "DocTypeId";
+            this.docTypeIdDataGridViewTextBoxColumn.MinimumWidth = 30;
+            this.docTypeIdDataGridViewTextBoxColumn.Name = "docTypeIdDataGridViewTextBoxColumn";
+            this.docTypeIdDataGridViewTextBoxColumn.Width = 87;
+            this.docTypeIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // docTypeNameDataGridViewTextBoxColumn
             // 
             this.docTypeNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.docTypeNameDataGridViewTextBoxColumn.DataPropertyName = "DocTypeName";
-            this.docTypeNameDataGridViewTextBoxColumn.HeaderText = "DocTypeName";
+            this.docTypeNameDataGridViewTextBoxColumn.DataPropertyName = "LeafName";
+            this.docTypeNameDataGridViewTextBoxColumn.HeaderText = "LeafName";
             this.docTypeNameDataGridViewTextBoxColumn.Name = "docTypeNameDataGridViewTextBoxColumn";
             // 
             // sortButton
@@ -369,13 +373,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.sortButton);
-            this.Controls.Add(this.docTypeParentID);
+            this.Controls.Add(this.leafParentId);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.docTypeID);
+            this.Controls.Add(this.leafId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dragDropStatusLabel);
             this.Controls.Add(this.queryObjectButton);
-            this.Controls.Add(this.docTypeName);
+            this.Controls.Add(this.leafName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tvButtonView);
             this.Controls.Add(this.tvTextboxView);
@@ -403,7 +407,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.docTypeListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -422,7 +426,7 @@
         private System.Windows.Forms.TextBox lbTextboxView;
         private System.Windows.Forms.TextBox lbTextboxModel;
         private System.Windows.Forms.Button lbButtonModel;
-        private System.Windows.Forms.BindingSource docTypeListBindingSource;
+        private System.Windows.Forms.BindingSource leafListBindingSource;
         private System.Windows.Forms.Button lvButtonView;
         private System.Windows.Forms.TextBox lvTextboxView;
         private System.Windows.Forms.TextBox lvTextboxModel;
@@ -434,14 +438,14 @@
         private System.Windows.Forms.Button tvButtonModel;
         private MvvmFx.Windows.Forms.BoundTreeView boundTreeView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label docTypeName;
+        private System.Windows.Forms.Label leafName;
         private System.Windows.Forms.Button queryObjectButton;
         private System.Windows.Forms.Label dragDropStatusLabel;
-        private System.Windows.Forms.Label docTypeID;
+        private System.Windows.Forms.Label leafId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label docTypeParentID;
+        private System.Windows.Forms.Label leafParentId;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn docTypeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docTypeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn docTypeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button sortButton;
     }

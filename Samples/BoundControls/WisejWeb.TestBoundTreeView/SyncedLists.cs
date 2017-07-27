@@ -13,14 +13,9 @@ namespace WisejWeb.TestBoundTreeView
 {
     public partial class SyncedLists : BoundUserControl
     {
-        #region Members
+        #region Public Members
 
-        private DocTypeEditColl _docTypes;
-
-        public DocTypeEditColl DocTypes
-        {
-            get { return _docTypes; }
-        }
+        public LeafList LeafList { get; set; }
 
         #endregion
 
@@ -36,14 +31,12 @@ namespace WisejWeb.TestBoundTreeView
             ColumnsDataGridView();
             ColumnsListView();
 
-            _docTypes = DocTypeEditColl.GetDocTypeEditColl();
             BindUI();
-            boundTreeView1.ExpandAll();
 
             GroupsListView();
             SortListView();
 
-            _docTypes.ListChanged += _docTypes_ListChanged;
+            LeafList.ListChanged += _docTypes_ListChanged;
         }
 
         void _docTypes_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
@@ -58,26 +51,26 @@ namespace WisejWeb.TestBoundTreeView
 
         private void BindUI()
         {
-            _docTypes.BeginEdit();
-            docTypeListBindingSource.DataSource = _docTypes;
+            LeafList = LeafList.GetLeafListWithErrors();
+            leafListBindingSource.DataSource = LeafList;
         }
 
         /*private void RebindUI(bool saveObject, bool rebind)
         {
             // disable events
-            docTypeListBindingSource.RaiseListChangedEvents = false;
+            leafListBindingSource.RaiseListChangedEvents = false;
             try
             {
                 // unbind the UI
-                UnbindBindingSource(docTypeListBindingSource, saveObject, true);
+                UnbindBindingSource(leafListBindingSource, saveObject, true);
 
                 // save or cancel changes
                 if (saveObject)
                 {
-                    _docTypes.ApplyEdit();
+                    LeafList.ApplyEdit();
                     try
                     {
-                        _docTypes = _docTypes.Save();
+                        LeafList = LeafList.Save();
                     }
                     catch (Csla.DataPortalException ex)
                     {
@@ -90,7 +83,7 @@ namespace WisejWeb.TestBoundTreeView
                     }
                 }
                 else
-                    _docTypes.CancelEdit();
+                    LeafList.CancelEdit();
             }
             finally
             {
@@ -99,12 +92,12 @@ namespace WisejWeb.TestBoundTreeView
                     BindUI();
 
                 // restore events
-                docTypeListBindingSource.RaiseListChangedEvents = true;
+                leafListBindingSource.RaiseListChangedEvents = true;
 
                 if (rebind)
                 {
                     // refresh the UI if rebinding
-                    docTypeListBindingSource.ResetBindings(false);
+                    leafListBindingSource.ResetBindings(false);
                 }
             }
         }*/
@@ -153,7 +146,7 @@ namespace WisejWeb.TestBoundTreeView
 
         private void RedrawForm()
         {
-            /*_docTypes.ResetBindings();// force update all data bound objects
+            /*LeafList.ResetBindings();// force update all data bound objects
             GroupsListView();
             SortListView();
             boundTreeView1.ExpandAll();*/
@@ -161,8 +154,8 @@ namespace WisejWeb.TestBoundTreeView
 
         private void ColumnsDataGridView()
         {
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "DocType Name";
+            dataGridView1.Columns[0].HeaderText = "Id";
+            dataGridView1.Columns[1].HeaderText = "Leaf Name";
             dataGridView1.Columns[1].Width = 120;
         }
 
@@ -170,9 +163,9 @@ namespace WisejWeb.TestBoundTreeView
         {
             boundListView1.Columns.RemoveAt(3);
             boundListView1.Columns.RemoveAt(1);
-            boundListView1.Columns[0].Text = "ID";
+            boundListView1.Columns[0].Text = "Id";
             boundListView1.Columns[0].Width = 50;
-            boundListView1.Columns[1].Text = "DocType Name";
+            boundListView1.Columns[1].Text = "Leaf Name";
             boundListView1.Columns[1].Width = 120;
         }
 
@@ -187,14 +180,14 @@ namespace WisejWeb.TestBoundTreeView
 
             foreach (ListViewItem item in boundListView1.Items)
             {
-                var parentID = ((DocTypeEdit) item.Tag).DocTypeParentID;
-                if (parentID == null)
+                var parentId = ((Leaf) item.Tag).LeafParentId;
+                if (parentId == null)
                 {
                     item.Group = boundListView1.Groups[0];
                 }
-                else if (parentID == 1)
+                else if (parentId == 1)
                     boundListView1.Groups[1].Items.Add(item);
-                else if (parentID == 2)
+                else if (parentId == 2)
                     boundListView1.Groups[2].Items.Add(item);
                 else
                     boundListView1.Groups[3].Items.Add(item);
@@ -226,26 +219,26 @@ namespace WisejWeb.TestBoundTreeView
 
         private void dgvButtonModel_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxModel.Text))
+            /*if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxModel.Text))
                 return;
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) dataGridView1.CurrentRow.Cells[0].Value);
-            docTypeEdit.DocTypeName = dgvTextboxModel.Text;
+            var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
+            leaf.LeafName = dgvTextboxModel.Text;
             RedrawForm();
 
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            leafName.Text = leaf.LeafName;*/
         }
 
         private void dgvButtonView_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxView.Text))
+            /*if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxView.Text))
                 return;
 
             dataGridView1.CurrentRow.Cells[1].Value = dgvTextboxView.Text;
             RedrawForm();
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) dataGridView1.CurrentRow.Cells[0].Value);
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
+            leafName.Text = leaf.LeafName;*/
         }
 
         #endregion
@@ -257,10 +250,10 @@ namespace WisejWeb.TestBoundTreeView
             if (string.IsNullOrEmpty(lbTextboxModel.Text))
                 return;
 
-            ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName = lbTextboxModel.Text;
+            ((Leaf) listBox1.Items[listBox1.SelectedIndex]).LeafName = lbTextboxModel.Text;
             RedrawForm();
 
-            docTypeName.Text = ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName;
+            leafName.Text = ((Leaf) listBox1.Items[listBox1.SelectedIndex]).LeafName;
         }
 
         private void lbButtonView_Click(object sender, EventArgs e)
@@ -270,10 +263,10 @@ namespace WisejWeb.TestBoundTreeView
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName = lbTextboxView.Text;
+            ((Leaf) listBox1.Items[listBox1.SelectedIndex]).LeafName = lbTextboxView.Text;
             RedrawForm();
 
-            docTypeName.Text = ((DocTypeEdit) listBox1.Items[listBox1.SelectedIndex]).DocTypeName;
+            leafName.Text = ((Leaf) listBox1.Items[listBox1.SelectedIndex]).LeafName;
         }
 
         #endregion
@@ -282,28 +275,28 @@ namespace WisejWeb.TestBoundTreeView
 
         private void lvButtonModel_Click(object sender, EventArgs e)
         {
-            /*if (string.IsNullOrEmpty(lvTextboxModel.Text))
+            if (string.IsNullOrEmpty(lvTextboxModel.Text))
                 return;
 
-            var docTypeEdit = (DocTypeEdit) boundListView1.SelectedItems[0].Tag;
-            docTypeEdit.DocTypeName = lvTextboxModel.Text;
+            var leaf = (Leaf) boundListView1.SelectedItems[0].Tag;
+            leaf.LeafName = lvTextboxModel.Text;
             RedrawForm();
 
-            docTypeName.Text = docTypeEdit.DocTypeName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         private void lvButtonView_Click(object sender, EventArgs e)
         {
-            /*if (string.IsNullOrEmpty(lvTextboxView.Text))
+            if (string.IsNullOrEmpty(lvTextboxView.Text))
                 return;
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            var docTypeEdit = (DocTypeEdit) boundListView1.SelectedItems[0].Tag;
-            docTypeEdit.DocTypeName = lvTextboxView.Text;
+            var leaf = (Leaf) boundListView1.SelectedItems[0].Tag;
+            leaf.LeafName = lvTextboxView.Text;
             RedrawForm();
 
-            docTypeName.Text = docTypeEdit.DocTypeName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         #endregion
@@ -312,45 +305,45 @@ namespace WisejWeb.TestBoundTreeView
 
         private void tvButtonModel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Object ID: " + boundTreeView1.SelectedNode.Tag);
+            /*MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
 
             if (string.IsNullOrEmpty(tvTextboxModel.Text))
                 return;
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
-            docTypeEdit.DocTypeName = tvTextboxModel.Text;
+            var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+            leaf.LeafName = tvTextboxModel.Text;
             RedrawForm();
 
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            leafName.Text = leaf.LeafName;*/
         }
 
         private void tvButtonView_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tvTextboxView.Text))
+            /*if (string.IsNullOrEmpty(tvTextboxView.Text))
                 return;
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
-            docTypeEdit.DocTypeName = tvTextboxView.Text;
+            var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+            leaf.LeafName = tvTextboxView.Text;
             RedrawForm();
 
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            leafName.Text = leaf.LeafName;*/
         }
 
         #endregion
 
         private void queryObjectButton_Click(object sender, EventArgs e)
         {
-            boundTreeView1.Select();
+            /*boundTreeView1.Select();
             if (boundTreeView1.SelectedNode == null)
                 MessageBox.Show("Select one node");
             else
             {
-                /*docTypeName.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeName;
-                docTypeID.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeID.ToString();
-                docTypeParentID.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeParentID.ToString();*/
-            }
+                leafName.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafName;
+                leafId.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafId.ToString();
+                leafParentId.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafParentId.ToString();
+            }*/
         }
 
         #region BoundTreeView Drag&Drop events
@@ -365,22 +358,22 @@ namespace WisejWeb.TestBoundTreeView
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) dataGridView1.CurrentRow.Cells[0].Value);
-            docTypeName.Text = docTypeEdit.DocTypeName;
-            RedrawForm();
+            /*var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
+            leafName.Text = leaf.LeafName;
+            RedrawForm();*/
         }
 
-        /*private void boundListView1_AfterLabelEdit(object sender, LabelEditEventArgs e)
+        private void boundListView1_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
-            docTypeName.Text = ((DocTypeEdit) boundListView1.SelectedItems[0].Tag).DocTypeName;
-            RedrawForm();
-        }*/
+            /*leafName.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafName;
+            RedrawForm();*/
+        }
 
         private void boundTreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) e.Node.Tag);
-            docTypeName.Text = docTypeEdit.DocTypeName;
-            RedrawForm();
+            /*var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
+            leafName.Text = leaf.LeafName;
+            RedrawForm();*/
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -394,6 +387,38 @@ namespace WisejWeb.TestBoundTreeView
 
         private void boundTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+        }
+
+        private int _dgvBindingContextChangedCounter;
+
+        private void dataGridView1_BindingContextChanged(object sender, EventArgs e)
+        {
+            _dgvBindingContextChangedCounter++;
+            MessageBox.Show(sender.GetType().Name + " " + _dgvBindingContextChangedCounter);
+        }
+
+        private int _lbBindingContextChangedCounter;
+
+        private void listBox1_BindingContextChanged(object sender, EventArgs e)
+        {
+            _lbBindingContextChangedCounter++;
+            MessageBox.Show(sender.GetType().Name + " " + _lbBindingContextChangedCounter);
+        }
+
+        private int _lvBindingContextChangedCounter;
+
+        private void boundListView1_BindingContextChanged(object sender, EventArgs e)
+        {
+            _lvBindingContextChangedCounter++;
+            MessageBox.Show(sender.GetType().Name + " " + _lvBindingContextChangedCounter);
+        }
+
+        private int _tvBindingContextChangedCounter;
+
+        private void boundTreeView1_BindingContextChanged(object sender, EventArgs e)
+        {
+            _tvBindingContextChangedCounter++;
+            MessageBox.Show(sender.GetType().Name+" "+ _tvBindingContextChangedCounter);
         }
     }
 }

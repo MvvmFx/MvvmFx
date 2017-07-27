@@ -31,6 +31,7 @@
             this.syncedListsButton = new Wisej.Web.Button();
             this.treeListViewButton = new Wisej.Web.Button();
             this.autoTreeViewButton = new Wisej.Web.Button();
+            this.stripWindowButton = new Wisej.Web.Button();
             this.workPanel = new Wisej.Web.Panel();
             this.menuBar1 = new Wisej.Web.MenuBar();
             this.SuspendLayout();
@@ -62,6 +63,15 @@
             this.autoTreeViewButton.Text = "TreeView";
             this.autoTreeViewButton.Click += new System.EventHandler(this.autoTreeViewButton_Click);
             // 
+            // stripWindowButton
+            // 
+            this.stripWindowButton.Location = new System.Drawing.Point(391, 12);
+            this.stripWindowButton.Name = "stripWindowButton";
+            this.stripWindowButton.Size = new System.Drawing.Size(100, 23);
+            this.stripWindowButton.TabIndex = 3;
+            this.stripWindowButton.Text = "Strip Window";
+            this.stripWindowButton.Click += new System.EventHandler(this.stripWindowButton_Click);
+            // 
             // workPanel
             // 
             this.workPanel.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
@@ -69,15 +79,16 @@
             | Wisej.Web.AnchorStyles.Right)));
             this.workPanel.Location = new System.Drawing.Point(0, 50);
             this.workPanel.Name = "workPanel";
-            this.workPanel.Size = new System.Drawing.Size(1035, 547);
-            this.workPanel.TabIndex = 3;
+            this.workPanel.Size = new System.Drawing.Size(1028, 547);
+            this.workPanel.TabIndex = 4;
             // 
             // menuBar1
             // 
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.Name = "menuBar1";
             this.menuBar1.Size = new System.Drawing.Size(1003, 22);
-            this.menuBar1.TabIndex = 4;
+            this.menuBar1.TabIndex = 5;
+            this.menuBar1.TabStop = false;
             // 
             // MainForm
             // 
@@ -87,12 +98,11 @@
             this.Controls.Add(this.treeListViewButton);
             this.Controls.Add(this.syncedListsButton);
             this.Controls.Add(this.workPanel);
-            this.Controls.Add(this.menuBar1);
+            this.Controls.Add(this.stripWindowButton);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(1035, 547);
+            this.Size = new System.Drawing.Size(1028, 547);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -101,6 +111,7 @@
         private Wisej.Web.Button syncedListsButton;
         private Wisej.Web.Button treeListViewButton;
         private Wisej.Web.Button autoTreeViewButton;
+        private Wisej.Web.Button stripWindowButton;
         private Wisej.Web.Panel workPanel;
         private Wisej.Web.MenuBar menuBar1;
     }

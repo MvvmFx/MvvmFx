@@ -13,14 +13,9 @@ namespace WisejWeb.TestBoundTreeView
 {
     public partial class AutoTreeView : BoundUserControl
     {
-        #region Members
+        #region Public Members
 
-        private DocTypeEditColl _docTypes;
-
-        public DocTypeEditColl DocTypes
-        {
-            get { return _docTypes; }
-        }
+        public LeafList LeafList { get; set; }
 
         #endregion
 
@@ -33,7 +28,6 @@ namespace WisejWeb.TestBoundTreeView
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            _docTypes = DocTypeEditColl.GetDocTypeEditColl();
             BindUI();
 
             readOnlyAllowSelectCheckBox.Checked = boundTreeView1.ReadOnlyAllowSelect;
@@ -49,7 +43,8 @@ namespace WisejWeb.TestBoundTreeView
 
         private void BindUI()
         {
-            docTypeListBindingSource.DataSource = _docTypes;
+            LeafList = LeafList.GetLeafListWithErrors();
+            leafListBindingSource.DataSource = LeafList;
         }
 
         #endregion
@@ -67,28 +62,28 @@ namespace WisejWeb.TestBoundTreeView
 
         private void tvButtonModel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Object ID: " + boundTreeView1.SelectedNode.Tag);
+            /*MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
 
             if (string.IsNullOrEmpty(textboxModel.Text))
                 return;
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
-            docTypeEdit.DocTypeName = textboxModel.Text;
+            var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+            leaf.LeafName = textboxModel.Text;
 
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            leafName.Text = leaf.LeafName;*/
         }
 
         private void tvButtonView_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textboxView.Text))
+            /*if (string.IsNullOrEmpty(textboxView.Text))
                 return;
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
 
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
-            docTypeEdit.DocTypeName = textboxView.Text;
+            var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+            leaf.LeafName = textboxView.Text;
 
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            leafName.Text = leaf.LeafName;*/
         }
 
         #endregion
@@ -106,13 +101,13 @@ namespace WisejWeb.TestBoundTreeView
 
         private void boundTreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) e.Node.Tag);
-            docTypeName.Text = docTypeEdit.DocTypeName;
+            /*var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
+            leafName.Text = leaf.LeafName;*/
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-            _docTypes.ResetBindings();
+            LeafList.ResetBindings();
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -157,23 +152,23 @@ namespace WisejWeb.TestBoundTreeView
 
         private void boundTreeView1_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (boundTreeView1.SelectedNode != null)
+            /*if (boundTreeView1.SelectedNode != null)
             {
-                var docTypeEdit = _docTypes.FindDocTypeEditByDocTypeID((int) boundTreeView1.SelectedNode.Tag);
+                var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
 
-                if (docTypeEdit != null)
+                if (leaf != null)
                 {
-                    docTypeName.Text = docTypeEdit.DocTypeName;
-                    docTypeID.Text = docTypeEdit.DocTypeID.ToString();
-                    docTypeParentID.Text = docTypeEdit.DocTypeParentID.ToString();
+                    leafName.Text = leaf.LeafName;
+                    leafId.Text = leaf.LeafId.ToString();
+                    leafParentId.Text = leaf.LeafParentId.ToString();
                 }
             }
             else
             {
-                docTypeName.Text = "null";
-                docTypeID.Text = "null";
-                docTypeParentID.Text = "null";
-            }
+                leafName.Text = "null";
+                leafId.Text = "null";
+                leafParentId.Text = "null";
+            }*/
         }
 
         #endregion

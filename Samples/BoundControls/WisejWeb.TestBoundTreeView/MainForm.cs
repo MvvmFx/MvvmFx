@@ -63,5 +63,10 @@ namespace WisejWeb.TestBoundTreeView
             docBrowser.Dock = DockStyle.Fill;
             workPanel.Controls.Add(docBrowser);
         }
+
+        private void stripWindowButton_Click(object sender, EventArgs e)
+        {
+            new StripWindow().ShowDialog();
+        }
     }
 }
