@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("BoundControls.Business")]
-[assembly: AssemblyCopyright("Copyright © MvvmFx 2015.")]
+[assembly: AssemblyCopyright("Copyright © MvvmFx 2017.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
