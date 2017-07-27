@@ -57,13 +57,17 @@
     </Compile>
     <Compile Include="Design\DropDownTypeEditor.cs" />
     <Compile Include="Design\FieldTypeEditor.cs" />
+    <Compile Include="IHaveName.cs" />
     <Compile Include="LogManager.cs" />
+    <Compile Include="MenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="StatusBarPanel.cs" />
+    <Compile Include="ToolBarButton.cs" />
     <Compile Include="TreeNodeSorter.cs" />
   </ItemGroup>
   <ItemGroup>
