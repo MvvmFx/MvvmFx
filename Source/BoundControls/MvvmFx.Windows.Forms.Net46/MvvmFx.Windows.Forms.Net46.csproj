@@ -80,6 +80,9 @@
     <Compile Include="..\MvvmFx.Windows.Forms.Net45\Design\FieldTypeEditor.cs">
       <Link>Design\FieldTypeEditor.cs</Link>
     </Compile>
+    <Compile Include="..\MvvmFx.Windows.Forms.Net45\IHaveName.cs">
+      <Link>IHaveName.cs</Link>
+    </Compile>
     <Compile Include="..\MvvmFx.Windows.Forms.Net45\LogManager.cs">
       <Link>LogManager.cs</Link>
     </Compile>

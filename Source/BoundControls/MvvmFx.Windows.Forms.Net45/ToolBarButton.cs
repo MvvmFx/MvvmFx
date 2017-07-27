@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel;
 #if WISEJ
 using Wisej.Web;
-#elif WEBGUI
-using Gizmox.WebGUI.Forms;
 #else
 using System.Windows.Forms;
 #endif
@@ -12,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolBarButton.
     /// </summary>
-    public class ToolBarButton : System.Windows.Forms.ToolBarButton, IBindableComponent
+    public class ToolBarButton : System.Windows.Forms.ToolBarButton, IBindableComponent, IHaveName
     {
         #region IBindableComponent Members
 

@@ -66,6 +66,7 @@
     <Compile Include="BoundTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="IHaveName.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="MenuItem.cs">
       <SubType>Component</SubType>
