@@ -160,13 +160,24 @@ namespace WisejWeb.TestTreeView
                         SelectedImageIndex = ((BoundTreeView) TreeView).ReadOnlySelectedImageIndex;
                     else if (TreeView.SelectedImageKey != string.Empty)
                         SelectedImageKey = ((BoundTreeView) TreeView).ReadOnlySelectedImageKey;
+
+#if WISEJ
+                    if (TreeView.OpenedImageIndex != -1)
+                        OpenedImageIndex = ((BoundTreeView) TreeView).ReadOnlyOpenedImageIndex;
+                    else if (TreeView.OpenedImageKey != string.Empty)
+                        OpenedImageKey = ((BoundTreeView) TreeView).ReadOnlyOpenedImageKey;
+#endif
                 }
             }
             else
             {
                 ImageIndex = -1;
                 SelectedImageIndex = -1;
-            }
+
+#if WISEJ
+                OpenedImageIndex = -1;
+#endif
+			}
         }
 
         #endregion

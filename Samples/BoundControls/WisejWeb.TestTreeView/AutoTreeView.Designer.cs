@@ -97,6 +97,7 @@
             this.boundTreeView1.ParentIdentifierMember = "LeafParentId";
             this.boundTreeView1.ReadOnlyImageIndex = 2;
             this.boundTreeView1.ReadOnlyMember = "LeafIsReadOnly";
+            this.boundTreeView1.ReadOnlyOpenedImageIndex = 3;
             this.boundTreeView1.ReadOnlySelectedImageIndex = 3;
             this.boundTreeView1.SelectedImageIndex = 1;
             this.boundTreeView1.SelfParent = "Parent of node cannot be the node itself.";
