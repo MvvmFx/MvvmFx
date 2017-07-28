@@ -127,7 +127,7 @@ namespace WisejWeb.TestBoundControls
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(212, 199);
             this.listBox1.TabIndex = 5;
-            this.listBox1.ValueMember = "DocTypeId";
+            this.listBox1.ValueMember = "LeafId";
             this.listBox1.BindingContextChanged += new System.EventHandler(this.listBox1_BindingContextChanged);
             // 
             // lbButtonView
@@ -246,15 +246,15 @@ namespace WisejWeb.TestBoundControls
             this.boundTreeView1.AllowDrop = true;
             this.boundTreeView1.DataSource = this.leafListBindingSource;
             this.boundTreeView1.DisplayMember = "LeafName";
-            this.boundTreeView1.IdentifierMember = "DocTypeId";
+            this.boundTreeView1.IdentifierMember = "LeafId";
             this.boundTreeView1.LabelEdit = true;
             this.boundTreeView1.Location = new System.Drawing.Point(705, 13);
             this.boundTreeView1.Name = "boundTreeView1";
-            this.boundTreeView1.ParentIdentifierMember = "DocTypeParentId";
+            this.boundTreeView1.ParentIdentifierMember = "LeafParentId";
             this.boundTreeView1.Size = new System.Drawing.Size(212, 199);
             this.boundTreeView1.Sorted = false;
             this.boundTreeView1.TabIndex = 15;
-            this.boundTreeView1.ValueMember = "DocTypeId";
+            this.boundTreeView1.ValueMember = "LeafId";
             this.boundTreeView1.AfterLabelEdit += new Wisej.Web.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
             this.boundTreeView1.DragDrop += new Wisej.Web.DragEventHandler(this.boundTreeView1_DragDrop);
             this.boundTreeView1.BindingContextChanged += new System.EventHandler(this.boundTreeView1_BindingContextChanged);
@@ -299,7 +299,7 @@ namespace WisejWeb.TestBoundControls
             this.leafId.Name = "leafId";
             this.leafId.Size = new System.Drawing.Size(100, 13);
             this.leafId.TabIndex = 30;
-            this.leafId.Text = "DocTypeId";
+            this.leafId.Text = "LeafId";
             // 
             // label3
             // 
@@ -308,7 +308,7 @@ namespace WisejWeb.TestBoundControls
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "DocTypeId:";
+            this.label3.Text = "LeafId:";
             // 
             // leafParentId
             // 
@@ -316,7 +316,7 @@ namespace WisejWeb.TestBoundControls
             this.leafParentId.Name = "leafParentId";
             this.leafParentId.Size = new System.Drawing.Size(100, 13);
             this.leafParentId.TabIndex = 32;
-            this.leafParentId.Text = "DocTypeParentId";
+            this.leafParentId.Text = "LeafParentId";
             // 
             // label5
             // 
@@ -325,13 +325,13 @@ namespace WisejWeb.TestBoundControls
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 31;
-            this.label5.Text = "DocTypeParentId:";
+            this.label5.Text = "LeafParentId:";
             // 
             // docTypeIdDataGridViewTextBoxColumn
             // 
             this.docTypeIdDataGridViewTextBoxColumn.AutoSizeMode = Wisej.Web.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.docTypeIdDataGridViewTextBoxColumn.DataPropertyName = "DocTypeId";
-            this.docTypeIdDataGridViewTextBoxColumn.HeaderText = "DocTypeId";
+            this.docTypeIdDataGridViewTextBoxColumn.DataPropertyName = "LeafId";
+            this.docTypeIdDataGridViewTextBoxColumn.HeaderText = "LeafId";
             this.docTypeIdDataGridViewTextBoxColumn.MinimumWidth = 30;
             this.docTypeIdDataGridViewTextBoxColumn.Name = "docTypeIdDataGridViewTextBoxColumn";
             this.docTypeIdDataGridViewTextBoxColumn.Width = 87;
