@@ -99,7 +99,7 @@
             // boundTreeView1
             // 
             this.boundTreeView1.AllowDrop = true;
-            //this.boundTreeView1.DataSource = this.leafListBindingSource;
+            this.boundTreeView1.DataSource = this.leafListBindingSource;
             this.boundTreeView1.DisplayMember = "LeafName";
             this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
             this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";

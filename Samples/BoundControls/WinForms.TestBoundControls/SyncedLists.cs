@@ -394,7 +394,7 @@ namespace WinForms.TestBoundControls
         private void dataGridView1_BindingContextChanged(object sender, EventArgs e)
         {
             _dgvBindingContextChangedCounter++;
-            MessageBox.Show(sender.GetType().Name + " " + _dgvBindingContextChangedCounter);
+            //MessageBox.Show(sender.GetType().Name + " " + _dgvBindingContextChangedCounter);
         }
 
         private int _lbBindingContextChangedCounter;
@@ -402,7 +402,7 @@ namespace WinForms.TestBoundControls
         private void listBox1_BindingContextChanged(object sender, EventArgs e)
         {
             _lbBindingContextChangedCounter++;
-            MessageBox.Show(sender.GetType().Name + " " + _lbBindingContextChangedCounter);
+            //MessageBox.Show(sender.GetType().Name + " " + _lbBindingContextChangedCounter);
         }
 
         private int _lvBindingContextChangedCounter;
@@ -410,7 +410,7 @@ namespace WinForms.TestBoundControls
         private void boundListView1_BindingContextChanged(object sender, EventArgs e)
         {
             _lvBindingContextChangedCounter++;
-            MessageBox.Show(sender.GetType().Name + " " + _lvBindingContextChangedCounter);
+            //MessageBox.Show(sender.GetType().Name + " " + _lvBindingContextChangedCounter);
         }
 
         private int _tvBindingContextChangedCounter;
@@ -418,7 +418,7 @@ namespace WinForms.TestBoundControls
         private void boundTreeView1_BindingContextChanged(object sender, EventArgs e)
         {
             _tvBindingContextChangedCounter++;
-            MessageBox.Show(sender.GetType().Name+" "+ _tvBindingContextChangedCounter);
+            //MessageBox.Show(sender.GetType().Name+" "+ _tvBindingContextChangedCounter);
         }
     }
 }

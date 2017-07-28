@@ -106,7 +106,7 @@
             this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
             this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";
             this.boundTreeView1.GeneralNodeError = "Error at node.";
-            this.boundTreeView1.IdentifierMember = "DocTypeId";
+            this.boundTreeView1.IdentifierMember = "LeafId";
             this.boundTreeView1.ImageIndex = 0;
             this.boundTreeView1.ImageList = this.imageList;
             this.boundTreeView1.InexistentParent = "Parent of node does not exist.";
@@ -114,9 +114,9 @@
             this.boundTreeView1.Location = new System.Drawing.Point(16, 13);
             this.boundTreeView1.Name = "boundTreeView1";
             this.boundTreeView1.OpenedImageIndex = 1;
-            this.boundTreeView1.ParentIdentifierMember = "DocTypeParentId";
+            this.boundTreeView1.ParentIdentifierMember = "LeafParentId";
             this.boundTreeView1.ReadOnlyImageIndex = 2;
-            this.boundTreeView1.ReadOnlyMember = "DocTypeIsReadOnly";
+            this.boundTreeView1.ReadOnlyMember = "LeafIsReadOnly";
             this.boundTreeView1.ReadOnlySelectedImageIndex = 3;
             this.boundTreeView1.SelectedImageIndex = 1;
             this.boundTreeView1.SelfParent = "Parent of node cannot be the node itself.";
@@ -124,8 +124,8 @@
             this.boundTreeView1.Size = new System.Drawing.Size(212, 394);
             this.boundTreeView1.Sorted = false;
             this.boundTreeView1.TabIndex = 15;
-            this.boundTreeView1.ToolTipTextMember = "DocTypeDescription";
-            this.boundTreeView1.ValueMember = "DocTypeId";
+            this.boundTreeView1.ToolTipTextMember = "LeafDescription";
+            this.boundTreeView1.ValueMember = "LeafId";
             this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             this.boundTreeView1.AfterLabelEdit += new Wisej.Web.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
             this.boundTreeView1.DragDrop += new Wisej.Web.DragEventHandler(this.boundTreeView1_DragDrop);
