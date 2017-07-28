@@ -1,4 +1,4 @@
-﻿namespace WinForms.TestBoundTreeView
+﻿namespace WinForms.TestBoundControls
 {
     partial class SyncedLists
     {

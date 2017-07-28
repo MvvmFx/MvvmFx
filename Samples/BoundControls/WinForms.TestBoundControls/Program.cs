@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WinForms.TestBoundTreeView
+namespace WinForms.TestBoundControls
 {
     static class Program
     {

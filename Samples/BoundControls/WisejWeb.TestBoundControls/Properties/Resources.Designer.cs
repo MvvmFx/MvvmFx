@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WisejWeb.TestBoundTreeView.Properties {
+namespace WisejWeb.TestBoundControls.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WisejWeb.TestBoundTreeView.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WisejWeb.TestBoundTreeView.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WisejWeb.TestBoundControls.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

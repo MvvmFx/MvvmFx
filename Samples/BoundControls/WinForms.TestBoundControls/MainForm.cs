@@ -7,7 +7,7 @@ using Wisej.Web;
 using LogManager = MvvmFx.WisejWeb.LogManager;
 #endif
 
-namespace WinForms.TestBoundTreeView
+namespace WinForms.TestBoundControls
 {
     public partial class MainForm : Form
     {
