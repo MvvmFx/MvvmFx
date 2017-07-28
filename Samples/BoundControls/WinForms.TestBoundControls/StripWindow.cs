@@ -4,7 +4,7 @@ using BoundControls.Business;
 using MvvmFx.Windows.Forms;
 using ToolStripMenuItem = MvvmFx.Windows.Forms.ToolStripMenuItem;
 
-namespace WinForms.TestBoundTreeView
+namespace WinForms.TestBoundControls
 {
     public partial class StripWindow : BoundForm
     {

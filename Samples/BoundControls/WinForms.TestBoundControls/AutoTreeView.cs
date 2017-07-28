@@ -9,7 +9,7 @@ using MvvmFx.WisejWeb;
 using BoundUserControl = Wisej.Web.UserControl;
 #endif
 
-namespace WinForms.TestBoundTreeView
+namespace WinForms.TestBoundControls
 {
     public partial class AutoTreeView : BoundUserControl
     {

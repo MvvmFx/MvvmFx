@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WinForms.TestBoundTreeView.Properties {
+namespace WinForms.TestBoundControls.Properties {
    
    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

@@ -2,7 +2,7 @@
 using Wisej.Base;
 using Wisej.Web;
 
-namespace WisejWeb.TestBoundTreeView
+namespace WisejWeb.TestBoundControls
 {
     static class Program
     {

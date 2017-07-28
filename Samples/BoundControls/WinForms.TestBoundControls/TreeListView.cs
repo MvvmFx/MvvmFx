@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WinForms.TestBoundTreeView
+namespace WinForms.TestBoundControls
 {
     public partial class TreeListView : UserControl
     {

@@ -9,7 +9,7 @@ using MvvmFx.WisejWeb;
 using BoundUserControl = Wisej.Web.UserControl;
 #endif
 
-namespace WisejWeb.TestBoundTreeView
+namespace WisejWeb.TestBoundControls
 {
     public partial class SyncedLists : BoundUserControl
     {

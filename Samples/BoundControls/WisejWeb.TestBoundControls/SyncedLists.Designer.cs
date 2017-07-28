@@ -1,4 +1,4 @@
-namespace WisejWeb.TestBoundTreeView
+namespace WisejWeb.TestBoundControls
 {
     partial class SyncedLists
     {

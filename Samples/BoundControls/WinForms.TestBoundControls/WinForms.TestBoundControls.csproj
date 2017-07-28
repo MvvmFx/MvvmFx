@@ -8,8 +8,8 @@
     <ProjectGuid>{7B46A1AC-3CDD-4B7F-80C6-59305C3B2BE4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinForms.TestBoundTreeView</RootNamespace>
-    <AssemblyName>WinForms.TestBoundTreeView</AssemblyName>
+    <RootNamespace>WinForms.TestBoundControls</RootNamespace>
+    <AssemblyName>WinForms.TestBoundControls</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <FileAlignment>512</FileAlignment>

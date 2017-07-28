@@ -5,7 +5,7 @@ using Wisej.Web;
 using MenuItem = MvvmFx.WisejWeb.MenuItem;
 using ToolBarButton = MvvmFx.WisejWeb.ToolBarButton;
 
-namespace WisejWeb.TestBoundTreeView
+namespace WisejWeb.TestBoundControls
 {
     public partial class StripWindow : Form
     {
