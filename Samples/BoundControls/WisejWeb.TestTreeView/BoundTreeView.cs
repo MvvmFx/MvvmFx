@@ -105,6 +105,10 @@ namespace WisejWeb.TestTreeView
         private int _readOnlyImageIndex;
         private string _readOnlySelectedImageKey;
         private int _readOnlySelectedImageIndex;
+#if WISEJ
+        private string _readOnlyOpenedImageKey;
+        private int _readOnlyOpenedImageIndex;
+#endif
         private bool _allowDropOnRoot = true;
         private bool _allowDropOnDescendent = true;
         private bool _selectingNode;
@@ -756,6 +760,82 @@ namespace WisejWeb.TestTreeView
                 Update();
             }
         }
+
+#if WISEJ
+        /// <summary>Gets or sets the index of the image that is displayed when a ReadOnly tree node is expanded.</summary>
+        /// <returns>The zero-based index of the image in the <see cref="Wisej.Web.ImageList"></see> that is displayed
+        /// when a ReadOnly tree node is expanded. The default is -1.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+        [DefaultValue(-1)]
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageIndexConverter))]
+        [Localizable(true)]
+        [RefreshProperties(RefreshProperties.Repaint)]
+        [Category("Behavior")]
+        [Description("Indicates the index of the image that is displayed when a ReadOnly tree node is expanded.")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
+        public int ReadOnlyOpenedImageIndex
+        {
+            get
+            {
+                if (ImageList == null)
+                {
+                    return -1;
+                }
+                var imageIndex = _readOnlyOpenedImageIndex;
+                if (imageIndex >= ImageList.Images.Count)
+                {
+                    return Math.Max(0, ImageList.Images.Count - 1);
+                }
+                return imageIndex;
+            }
+            set
+            {
+                if (value == -1)
+                {
+                    value = 0;
+                }
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(@"value",
+                        @"ReadOnlyOpenedImageIndex - InvalidLowBoundArgument");
+                }
+
+                _readOnlyOpenedImageIndex = value;
+
+                // Set the ReadOnlyOpenedImageKey to the default value
+                _readOnlyOpenedImageKey = "";
+
+                // Update the control
+                Update();
+            }
+        }
+
+        /// <summary>Gets or sets the key for the image that is displayed when a ReadOnly tree node is expanded.</summary>
+        /// <returns>The key for the image that is displayed when a ReadOnly tree node is expanded.</returns>
+        [DefaultValue("")]
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageKeyConverter))]
+        [Localizable(true)]
+        [RefreshProperties(RefreshProperties.Repaint)]
+        [Category("Behavior")]
+        [Description("Indicates the key for the image that is displayed when a ReadOnly tree node is expanded.")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
+        public string ReadOnlyOpenedImageKey
+        {
+            get { return _readOnlyOpenedImageKey; }
+            set
+            {
+                _readOnlyOpenedImageKey = value;
+
+                // Set the ReadOnlyOpenedImageIndex to the default value
+                _readOnlyOpenedImageIndex = -1;
+
+                // Update the control
+                Update();
+            }
+        }
+#endif
 
 #if WEBGUI
 /*
