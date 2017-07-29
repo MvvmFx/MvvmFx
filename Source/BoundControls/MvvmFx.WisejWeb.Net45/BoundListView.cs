@@ -361,7 +361,7 @@ namespace MvvmFx.WisejWeb
         /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data. </param>
 #else
         /// <summary>
-        /// Raises the <see cref="Wisej.Web.Control.BindingContextChanged"/> event.
+        /// Raises the <see cref="Wisej.Base.ControlBase.BindingContextChanged"/> event.
         /// </summary>
         /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data. </param>
 #endif
