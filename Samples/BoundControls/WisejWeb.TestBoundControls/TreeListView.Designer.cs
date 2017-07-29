@@ -33,8 +33,6 @@
             // 
             // boundListView1
             // 
-            //this.boundListView1.FullRowSelect = true;
-            //this.boundListView1.HideSelection = false;
             this.boundListView1.LabelEdit = true;
             this.boundListView1.Location = new System.Drawing.Point(4, 4);
             this.boundListView1.MaximumSize = new System.Drawing.Size(500, 418);
@@ -50,10 +48,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.boundListView1);
-            this.MaximumSize = new System.Drawing.Size(931, 425);
-            this.MinimumSize = new System.Drawing.Size(931, 425);
+            this.MaximumSize = new System.Drawing.Size(931, 438);
+            this.MinimumSize = new System.Drawing.Size(931, 438);
             this.Name = "TreeListView";
-            this.Size = new System.Drawing.Size(931, 425);
+            this.Size = new System.Drawing.Size(931, 438);
+            this.Text = "TreeListView";
             this.ResumeLayout(false);
 
         }

@@ -51,7 +51,7 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
+    <Content Include="Properties\DataSources\BoundControls.Business.LeafList.datasource" />
     <Content Include="packages.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>

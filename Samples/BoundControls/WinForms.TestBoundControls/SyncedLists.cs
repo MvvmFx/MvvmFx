@@ -36,10 +36,10 @@ namespace WinForms.TestBoundControls
             GroupsListView();
             SortListView();
 
-            LeafList.ListChanged += _docTypes_ListChanged;
+            LeafList.ListChanged += _leafs_ListChanged;
         }
 
-        void _docTypes_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
+        void _leafs_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
         {
             MessageBox.Show("Business object ListChanged event.", "Event triggered", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);

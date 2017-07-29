@@ -116,7 +116,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\BoundControls.Business.DocTypeList.datasource" />
+    <None Include="Properties\DataSources\BoundControls.Business.LeafList.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

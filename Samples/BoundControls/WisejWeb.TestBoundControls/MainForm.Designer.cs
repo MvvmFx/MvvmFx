@@ -77,9 +77,10 @@
             this.workPanel.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
-            this.workPanel.Location = new System.Drawing.Point(0, 50);
+            //this.workPanel.Dock = Wisej.Web.DockStyle.Fill;
+            this.workPanel.Location = new System.Drawing.Point(0, 49);
             this.workPanel.Name = "workPanel";
-            this.workPanel.Size = new System.Drawing.Size(1028, 547);
+            this.workPanel.Size = new System.Drawing.Size(1003, 438);
             this.workPanel.TabIndex = 4;
             // 
             // menuBar1
@@ -94,13 +95,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1003, 522);
+            this.Controls.Add(this.stripWindowButton);
             this.Controls.Add(this.autoTreeViewButton);
             this.Controls.Add(this.treeListViewButton);
             this.Controls.Add(this.syncedListsButton);
             this.Controls.Add(this.workPanel);
-            this.Controls.Add(this.stripWindowButton);
+            this.Controls.Add(this.menuBar1);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(1028, 547);
+            this.Text = "Main Form";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
