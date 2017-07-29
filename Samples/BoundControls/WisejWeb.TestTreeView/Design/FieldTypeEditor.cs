@@ -32,7 +32,7 @@ THE SOFTWARE.
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace WisejWeb.TestTreeView.Design
+namespace MvvmFx.WisejWeb.Design
 {
     /// <summary>
     /// Data members fields editor.

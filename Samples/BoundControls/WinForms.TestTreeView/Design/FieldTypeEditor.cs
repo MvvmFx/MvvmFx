@@ -32,7 +32,7 @@ THE SOFTWARE.
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace WinForms.TestTreeView.Design
+namespace MvvmFx.Windows.Forms.Design
 {
     /// <summary>
     /// Data members fields editor.

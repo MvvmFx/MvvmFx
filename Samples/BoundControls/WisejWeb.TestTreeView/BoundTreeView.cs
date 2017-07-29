@@ -44,18 +44,20 @@ using System.Linq;
 using MvvmFx.Logging;
 #if WISEJ
 using Wisej.Web;
-using WisejWeb.TestTreeView.Design;
+using MvvmFx.WisejWeb.Design;
 using WisejWeb.TestTreeView.Properties;
+using LogManager = WisejWeb.TestTreeView.LogManager;
 using TreeViewImageIndexConverter = System.Windows.Forms.TreeViewImageIndexConverter;
 using TreeViewImageKeyConverter = System.Windows.Forms.TreeViewImageKeyConverter;
 #else
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using WinForms.TestTreeView.Design;
+using MvvmFx.Windows.Forms.Design;
 using WinForms.TestTreeView.Properties;
+using LogManager = WinForms.TestTreeView.LogManager;
 #endif
 
-namespace WisejWeb.TestTreeView
+namespace MvvmFx.WisejWeb
 {
     /// <summary>
     /// Data binding enabled hierarchical tree view control.
@@ -173,7 +175,7 @@ namespace WisejWeb.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the data source for this <see cref="WinForms.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -182,7 +184,7 @@ namespace WisejWeb.TestTreeView
         /// </returns>
 #else
         /// <summary>
-        /// Gets or sets the data source for this <see cref="WisejWeb.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -216,20 +218,20 @@ namespace WisejWeb.TestTreeView
 #if WINFORMS
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="WinForms.TestTreeView.BoundTreeView"/> is displaying data.
+        /// the <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="WinForms.TestTreeView.BoundTreeView.DataSource"/> for which the
-        /// <see cref="WinForms.TestTreeView.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundTreeView.DataSource"/> for which the
+        /// <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
 #else
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="WisejWeb.TestTreeView.BoundTreeView"/> is displaying data.
+        /// the <see cref="MvvmFx.WisejWeb.BoundTreeView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="WisejWeb.TestTreeView.BoundTreeView.DataSource"/> for which the
-        /// <see cref="WisejWeb.TestTreeView.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.WisejWeb.BoundTreeView.DataSource"/> for which the
+        /// <see cref="MvvmFx.WisejWeb.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
@@ -256,7 +258,7 @@ namespace WisejWeb.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the property to display for this <see cref="WinForms.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the property to display for this <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
@@ -265,7 +267,7 @@ namespace WisejWeb.TestTreeView
         /// <remarks>Editing of this member is available only for types that support converting from string.</remarks>
 #else
         /// <summary>
-        /// Gets or sets the property to display for this <see cref="WisejWeb.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the property to display for this <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
@@ -297,7 +299,7 @@ namespace WisejWeb.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the property to use as the actual value for the items in the <see cref="WinForms.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
@@ -305,7 +307,7 @@ namespace WisejWeb.TestTreeView
         /// </returns>
 #else
         /// <summary>
-        /// Gets or sets the property to use as the actual value for the items in the <see cref="WisejWeb.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.WisejWeb.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
@@ -452,19 +454,19 @@ namespace WisejWeb.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets the value of the member property specified by the <see cref="WinForms.TestTreeView.BoundTreeView.ValueMember"/> property.
+        /// Gets the value of the member property specified by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </summary>
         /// <returns>
         /// An object containing the value of the member of the data source specified
-        /// by the <see cref="WinForms.TestTreeView.BoundTreeView.ValueMember"/> property.
+        /// by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </returns>
 #else
         /// <summary>
-        /// Gets the value of the member property specified by the <see cref="WisejWeb.TestTreeView.BoundTreeView.ValueMember"/> property.
+        /// Gets the value of the member property specified by the <see cref="MvvmFx.WisejWeb.BoundTreeView.ValueMember"/> property.
         /// </summary>
         /// <returns>
         /// An object containing the value of the member of the data source specified
-        /// by the <see cref="WisejWeb.TestTreeView.BoundTreeView.ValueMember"/> property.
+        /// by the <see cref="MvvmFx.WisejWeb.BoundTreeView.ValueMember"/> property.
         /// </returns>
 #endif
         [Browsable(false)]
@@ -1621,10 +1623,6 @@ namespace WisejWeb.TestTreeView
             _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
-
-#if WINFORMS
-            _ignoreBindingContextChanged = false;
-#endif
         }
 
         #endregion
@@ -1646,9 +1644,9 @@ namespace WisejWeb.TestTreeView
             }
         }
 
-#endregion
+        #endregion
 
-#region Item(s) changed from DataSource
+        #region Item(s) changed from DataSource
 
         private void ListManager_ListChanged(object sender, ListChangedEventArgs e)
         {
@@ -1755,9 +1753,9 @@ namespace WisejWeb.TestTreeView
             EndUpdate();
         }
 
-#endregion
+        #endregion
 
-#region Drag & Drop
+        #region Drag & Drop
 
 #if WINFORMS
         /// <summary>
@@ -2037,9 +2035,9 @@ namespace WisejWeb.TestTreeView
             return TargetIsSourceAncestor(source, dropNode.Parent, ref replacementeParent, ref placeHolder);
         }
 
-#endregion
+        #endregion
 
-#region Position Changed from TreeView
+        #region Position Changed from TreeView
 
 #if WEBGUI
 /*
@@ -2170,9 +2168,9 @@ namespace WisejWeb.TestTreeView
             base.OnAfterSelect(e);
         }
 
-#endregion
+        #endregion
 
-#region Item changed from TreeView
+        #region Item changed from TreeView
 
 #if WINFORMS
         /// <summary>
@@ -2216,9 +2214,9 @@ namespace WisejWeb.TestTreeView
             }
         }
 
-#endregion
+        #endregion
 
-#region VWG Critical Events
+        #region VWG Critical Events
 
 #if WEBGUI
 
@@ -2244,9 +2242,9 @@ namespace WisejWeb.TestTreeView
 
 #endif
 
-#endregion
+        #endregion
 
-#region SelectedValueChanged event
+        #region SelectedValueChanged event
 
         /// <summary>
         /// Occurs when after the selected value changeds.
@@ -2263,6 +2261,6 @@ namespace WisejWeb.TestTreeView
                 handler(this, new EventArgs());
         }
 
-#endregion
+        #endregion
     }
 }

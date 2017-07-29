@@ -62,7 +62,7 @@ namespace WisejWeb.TestBoundControls
 
         private void tvButtonModel_Click(object sender, EventArgs e)
         {
-            /*MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
+            MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
 
             if (string.IsNullOrEmpty(textboxModel.Text))
                 return;
@@ -70,12 +70,12 @@ namespace WisejWeb.TestBoundControls
             var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
             leaf.LeafName = textboxModel.Text;
 
-            leafName.Text = leaf.LeafName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         private void tvButtonView_Click(object sender, EventArgs e)
         {
-            /*if (string.IsNullOrEmpty(textboxView.Text))
+            if (string.IsNullOrEmpty(textboxView.Text))
                 return;
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
@@ -83,7 +83,7 @@ namespace WisejWeb.TestBoundControls
             var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
             leaf.LeafName = textboxView.Text;
 
-            leafName.Text = leaf.LeafName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         #endregion
@@ -101,8 +101,8 @@ namespace WisejWeb.TestBoundControls
 
         private void boundTreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            /*var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
-            leafName.Text = leaf.LeafName;*/
+            var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
+            leafName.Text = leaf.LeafName;
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
@@ -152,7 +152,7 @@ namespace WisejWeb.TestBoundControls
 
         private void boundTreeView1_SelectedValueChanged(object sender, EventArgs e)
         {
-            /*if (boundTreeView1.SelectedNode != null)
+            if (boundTreeView1.SelectedNode != null)
             {
                 var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
 
@@ -168,7 +168,7 @@ namespace WisejWeb.TestBoundControls
                 leafName.Text = "null";
                 leafId.Text = "null";
                 leafParentId.Text = "null";
-            }*/
+            }
         }
 
         #endregion

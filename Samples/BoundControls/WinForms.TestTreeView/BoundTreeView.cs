@@ -45,17 +45,19 @@ using MvvmFx.Logging;
 #if WISEJ
 using Wisej.Web;
 using MvvmFx.WisejWeb.Design;
-using MvvmFx.WisejWeb.Properties;
+using WisejWeb.TestTreeView.Properties;
+using LogManager = WisejWeb.TestTreeView.LogManager;
 using TreeViewImageIndexConverter = System.Windows.Forms.TreeViewImageIndexConverter;
 using TreeViewImageKeyConverter = System.Windows.Forms.TreeViewImageKeyConverter;
 #else
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using WinForms.TestTreeView.Design;
+using MvvmFx.Windows.Forms.Design;
 using WinForms.TestTreeView.Properties;
+using LogManager = WinForms.TestTreeView.LogManager;
 #endif
 
-namespace WinForms.TestTreeView
+namespace MvvmFx.Windows.Forms
 {
     /// <summary>
     /// Data binding enabled hierarchical tree view control.
@@ -73,6 +75,7 @@ namespace WinForms.TestTreeView
 #endif
         private bool _isDraggingOver;
         private bool _isDroppingOnRoot;
+        private bool _ignoreBindingContextChanged;
 
         private readonly Container _components = null;
         private readonly ListChangedEventHandler _listChangedHandler;
@@ -104,6 +107,10 @@ namespace WinForms.TestTreeView
         private int _readOnlyImageIndex;
         private string _readOnlySelectedImageKey;
         private int _readOnlySelectedImageIndex;
+#if WISEJ
+        private string _readOnlyOpenedImageKey;
+        private int _readOnlyOpenedImageIndex;
+#endif
         private bool _allowDropOnRoot = true;
         private bool _allowDropOnDescendent = true;
         private bool _selectingNode;
@@ -168,7 +175,7 @@ namespace WinForms.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the data source for this <see cref="WinForms.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -202,6 +209,7 @@ namespace WinForms.TestTreeView
                 {
                     _dataSource = value;
                     Logger.Trace("DataSource");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -210,11 +218,11 @@ namespace WinForms.TestTreeView
 #if WINFORMS
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="WinForms.TestTreeView.BoundTreeView"/> is displaying data.
+        /// the <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="WinForms.TestTreeView.BoundTreeView.DataSource"/> for which the
-        /// <see cref="WinForms.TestTreeView.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.Windows.Forms.BoundTreeView.DataSource"/> for which the
+        /// <see cref="MvvmFx.Windows.Forms.BoundTreeView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
 #else
         /// <summary>
@@ -242,6 +250,7 @@ namespace WinForms.TestTreeView
                 {
                     _dataMember = value;
                     Logger.Trace("DataMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -249,7 +258,7 @@ namespace WinForms.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the property to display for this <see cref="WinForms.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the property to display for this <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> specifying the name of an object property that is contained in the collection specified
@@ -282,6 +291,7 @@ namespace WinForms.TestTreeView
                     _displayMember = value;
                     _displayProperty = null;
                     Logger.Trace("DisplayMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -289,7 +299,7 @@ namespace WinForms.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the property to use as the actual value for the items in the <see cref="WinForms.TestTreeView.BoundTreeView"/>.
+        /// Gets or sets the property to use as the actual value for the items in the <see cref="MvvmFx.Windows.Forms.BoundTreeView"/>.
         /// </summary>
         /// <returns>
         /// A <see cref="System.String"/> representing the name of an object property that is contained in the collection specified
@@ -320,6 +330,7 @@ namespace WinForms.TestTreeView
                     _valueProperty = null;
                     _valueConverter = null;
                     Logger.Trace("ValueMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -351,6 +362,7 @@ namespace WinForms.TestTreeView
                         ValueMember = _identifierMember;
 
                     Logger.Trace("IdentifierMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -378,6 +390,7 @@ namespace WinForms.TestTreeView
                     _parentIdentifierMember = value;
                     _parentIdentifierProperty = null;
                     Logger.Trace("ParentIdentifierMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -405,6 +418,7 @@ namespace WinForms.TestTreeView
                     _toolTipTextMember = value;
                     _toolTipTextProperty = null;
                     Logger.Trace("ToolTipTextMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -432,6 +446,7 @@ namespace WinForms.TestTreeView
                     _readOnlyMember = value;
                     _readOnlyProperty = null;
                     Logger.Trace("ReadOnlyMember");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -439,11 +454,11 @@ namespace WinForms.TestTreeView
 
 #if WINFORMS
         /// <summary>
-        /// Gets the value of the member property specified by the <see cref="WinForms.TestTreeView.BoundTreeView.ValueMember"/> property.
+        /// Gets the value of the member property specified by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </summary>
         /// <returns>
         /// An object containing the value of the member of the data source specified
-        /// by the <see cref="WinForms.TestTreeView.BoundTreeView.ValueMember"/> property.
+        /// by the <see cref="MvvmFx.Windows.Forms.BoundTreeView.ValueMember"/> property.
         /// </returns>
 #else
         /// <summary>
@@ -582,6 +597,7 @@ namespace WinForms.TestTreeView
                 {
                     base.Sorted = value;
                     Logger.Trace("Sorted");
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -746,6 +762,82 @@ namespace WinForms.TestTreeView
                 Update();
             }
         }
+
+#if WISEJ
+        /// <summary>Gets or sets the index of the image that is displayed when a ReadOnly tree node is expanded.</summary>
+        /// <returns>The zero-based index of the image in the <see cref="Wisej.Web.ImageList"></see> that is displayed
+        /// when a ReadOnly tree node is expanded. The default is -1.</returns>
+        /// <exception cref="System.ArgumentOutOfRangeException">The value specified is less than -1. </exception>
+        [DefaultValue(-1)]
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageIndexConverter))]
+        [Localizable(true)]
+        [RefreshProperties(RefreshProperties.Repaint)]
+        [Category("Behavior")]
+        [Description("Indicates the index of the image that is displayed when a ReadOnly tree node is expanded.")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
+        public int ReadOnlyOpenedImageIndex
+        {
+            get
+            {
+                if (ImageList == null)
+                {
+                    return -1;
+                }
+                var imageIndex = _readOnlyOpenedImageIndex;
+                if (imageIndex >= ImageList.Images.Count)
+                {
+                    return Math.Max(0, ImageList.Images.Count - 1);
+                }
+                return imageIndex;
+            }
+            set
+            {
+                if (value == -1)
+                {
+                    value = 0;
+                }
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException(@"value",
+                        @"ReadOnlyOpenedImageIndex - InvalidLowBoundArgument");
+                }
+
+                _readOnlyOpenedImageIndex = value;
+
+                // Set the ReadOnlyOpenedImageKey to the default value
+                _readOnlyOpenedImageKey = "";
+
+                // Update the control
+                Update();
+            }
+        }
+
+        /// <summary>Gets or sets the key for the image that is displayed when a ReadOnly tree node is expanded.</summary>
+        /// <returns>The key for the image that is displayed when a ReadOnly tree node is expanded.</returns>
+        [DefaultValue("")]
+        [Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design", typeof(UITypeEditor))]
+        [TypeConverter(typeof(TreeViewImageKeyConverter))]
+        [Localizable(true)]
+        [RefreshProperties(RefreshProperties.Repaint)]
+        [Category("Behavior")]
+        [Description("Indicates the key for the image that is displayed when a ReadOnly tree node is expanded.")]
+        [RelatedImageList(@"BoundTreeView.ImageList")]
+        public string ReadOnlyOpenedImageKey
+        {
+            get { return _readOnlyOpenedImageKey; }
+            set
+            {
+                _readOnlyOpenedImageKey = value;
+
+                // Set the ReadOnlyOpenedImageIndex to the default value
+                _readOnlyOpenedImageIndex = -1;
+
+                // Update the control
+                Update();
+            }
+        }
+#endif
 
 #if WEBGUI
 /*
@@ -1190,7 +1282,6 @@ namespace WinForms.TestTreeView
         public new void Sort()
         {
             Sorted = true;
-            //TryDataBinding();
         }
 
         private ArrayList Clone(ArrayList master)
@@ -1512,8 +1603,6 @@ namespace WinForms.TestTreeView
 
         #region BindingContext Events
 
-        private bool _isHandlingBindingContextChanged = false;
-
 #if WINFORMS
         /// <summary>
         /// Raises the <see cref="System.Windows.Forms.Control.BindingContextChanged"/> event.
@@ -1527,15 +1616,13 @@ namespace WinForms.TestTreeView
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
-            if (_isHandlingBindingContextChanged)
+            if (_ignoreBindingContextChanged)
                 return;
 
             Logger.Trace("OnBindingContextChanged");
-            _isHandlingBindingContextChanged = true;
+            _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
-
-            _isHandlingBindingContextChanged = false;
         }
 
         #endregion
@@ -1563,6 +1650,7 @@ namespace WinForms.TestTreeView
 
         private void ListManager_ListChanged(object sender, ListChangedEventArgs e)
         {
+            Logger.Trace("ListManager_ListChanged - ListChangedType."+ e.ListChangedType+" - START");
             var message = string.Empty;
 
             switch (e.ListChangedType)
@@ -1624,7 +1712,8 @@ namespace WinForms.TestTreeView
                     break;
 
                 case ListChangedType.Reset:
-                    Logger.Trace("ListManager_ListChanged - ListChangedType.Reset - RefreshTree"); RefreshTree();
+                    Logger.Trace("ListManager_ListChanged - ListChangedType.Reset - RefreshTree");
+                    RefreshTree();
                     break;
             }
 

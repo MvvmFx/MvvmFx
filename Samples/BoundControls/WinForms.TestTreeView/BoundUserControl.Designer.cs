@@ -1,4 +1,4 @@
-﻿namespace WinForms.TestTreeView
+﻿namespace MvvmFx.Windows.Forms
 {
     partial class BoundUserControl
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bindingSourceRefresh = new WinForms.TestTreeView.BindingSourceRefresh(this.components);
+            this.bindingSourceRefresh = new MvvmFx.Windows.Forms.BindingSourceRefresh(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).BeginInit();
             this.SuspendLayout();
             //

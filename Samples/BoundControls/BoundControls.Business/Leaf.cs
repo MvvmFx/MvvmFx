@@ -6,6 +6,11 @@ namespace BoundControls.Business
     {
         #region Constructor
 
+        private Leaf()
+        {
+            // use parametrized constructor
+        }
+
         public Leaf(int leafId, int? leafParentId, string leafName, string leafDescription, bool leafIsReadOnly)
         {
             LeafId = leafId;

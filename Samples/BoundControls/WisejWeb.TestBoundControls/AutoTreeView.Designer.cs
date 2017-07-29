@@ -34,7 +34,6 @@
             Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images1"))), "NodeSelected.png");
             Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images2"))), "ReadOnlyNode.png");
             Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images3"))), "ReadOnlyNodeSelected.png");
-            this.leafListBindingSource = new Wisej.Web.BindingSource(this.components);
             this.buttonView = new Wisej.Web.Button();
             this.textboxView = new Wisej.Web.TextBox();
             this.textboxModel = new Wisej.Web.TextBox();
@@ -42,6 +41,7 @@
             this.boundTreeView1 = new MvvmFx.WisejWeb.BoundTreeView();
             this.imageList = new Wisej.Web.ImageList(this.components);
             this.label1 = new Wisej.Web.Label();
+            this.leafListBindingSource = new Wisej.Web.BindingSource(this.components);
             this.leafName = new Wisej.Web.Label();
             this.dragDropStatusLabel = new Wisej.Web.Label();
             this.leafId = new Wisej.Web.Label();
@@ -127,9 +127,9 @@
             this.boundTreeView1.TabIndex = 15;
             this.boundTreeView1.ToolTipTextMember = "LeafDescription";
             this.boundTreeView1.ValueMember = "LeafId";
-            this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             this.boundTreeView1.AfterLabelEdit += new Wisej.Web.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
             this.boundTreeView1.DragDrop += new Wisej.Web.DragEventHandler(this.boundTreeView1_DragDrop);
+            this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             // 
             // imageList
             // 
@@ -321,7 +321,6 @@
 
         #endregion
 
-        private Wisej.Web.BindingSource leafListBindingSource;
         private Wisej.Web.Button buttonView;
         private Wisej.Web.TextBox textboxView;
         private Wisej.Web.TextBox textboxModel;
@@ -344,5 +343,6 @@
         private Wisej.Web.Button collapseButton;
         private Wisej.Web.CheckBox allowDropOnDescendentsCheckBox;
         private Wisej.Web.CheckBox allowDropOnRootCheckBox;
+        private Wisej.Web.BindingSource leafListBindingSource;
     }
 }

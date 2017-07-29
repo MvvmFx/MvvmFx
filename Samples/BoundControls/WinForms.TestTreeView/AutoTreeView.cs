@@ -1,5 +1,7 @@
 ﻿using System;
+using MvvmFx.Windows.Forms;
 using MvvmFx.Logging;
+using BoundControls.Business;
 #if WINFORMS
 using System.Windows.Forms;
 #else
@@ -20,6 +22,33 @@ namespace WinForms.TestTreeView
         #region Public Members
 
         public LeafList LeafList { get; set; }
+
+        #endregion
+
+        #region Initializers
+
+        public AutoTreeView()
+        {
+            Logger.Trace("AutoTreeView.Constructor - start");
+            InitializeComponent();
+            Logger.Trace("AutoTreeView.Constructor - set DataSource");
+            this.boundTreeView1.DataSource = this.leafListBindingSource;
+            Logger.Trace("AutoTreeView.Constructor - adding to Controls");
+            this.Controls.Add(this.boundTreeView1);
+            Logger.Trace("AutoTreeView.Constructor - added to Controls");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            BindUI();
+            boundTreeView1.ExpandAll();
+
+            readOnlyAllowSelectCheckBox.Checked = boundTreeView1.ReadOnlyAllowSelect;
+            readOnlyAllowDragCheckBox.Checked = boundTreeView1.ReadOnlyAllowDrag;
+            readOnlyAllowDropCheckBox.Checked = boundTreeView1.ReadOnlyAllowDrop;
+            allowDropOnDescendentsCheckBox.Checked = boundTreeView1.AllowDropOnDescendents;
+            allowDropOnRootCheckBox.Checked = boundTreeView1.AllowDropOnRoot;
+        }
 
         #endregion
 
@@ -44,6 +73,36 @@ namespace WinForms.TestTreeView
 
         #endregion
 
+        #region BoundTreeView
+
+        private void tvButtonModel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
+
+            if (string.IsNullOrEmpty(textboxModel.Text))
+                return;
+
+            var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+            leaf.LeafName = textboxModel.Text;
+
+            leafName.Text = leaf.LeafName;
+        }
+
+        private void tvButtonView_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textboxView.Text))
+                return;
+
+            MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
+
+            var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+            leaf.LeafName = textboxView.Text;
+
+            leafName.Text = leaf.LeafName;
+        }
+
+        #endregion
+
         #region BoundTreeView Drag&Drop events
 
         private void boundTreeView1_DragDrop(object sender, DragEventArgs e)
@@ -53,35 +112,13 @@ namespace WinForms.TestTreeView
 
         #endregion
 
-        #region Initializers
-
-        public AutoTreeView()
-        {
-            Logger.Trace("AutoTreeView.Constructor - start");
-            InitializeComponent();
-            Logger.Trace("AutoTreeView.Constructor - set DataSource");
-            this.boundTreeView1.DataSource = this.leafListBindingSource;
-            Logger.Trace("AutoTreeView.Constructor - adding to Controls");
-            this.Controls.Add(this.boundTreeView1);
-            Logger.Trace("AutoTreeView.Constructor - added to Controls");
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            BindUI();
-            boundTreeView1.ExpandAll();
-            MessageBox.Show("Tree expanded.");
-
-            readOnlyAllowSelectCheckBox.Checked = boundTreeView1.ReadOnlyAllowSelect;
-            readOnlyAllowDragCheckBox.Checked = boundTreeView1.ReadOnlyAllowDrag;
-            readOnlyAllowDropCheckBox.Checked = boundTreeView1.ReadOnlyAllowDrop;
-            allowDropOnDescendentsCheckBox.Checked = boundTreeView1.AllowDropOnDescendents;
-            allowDropOnRootCheckBox.Checked = boundTreeView1.AllowDropOnRoot;
-        }
-
-        #endregion
-
         #region UI Events
+
+        private void boundTreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
+        {
+            var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
+            leafName.Text = leaf.LeafName;
+        }
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
@@ -128,6 +165,39 @@ namespace WinForms.TestTreeView
             boundTreeView1.AllowDropOnRoot = allowDropOnRootCheckBox.Checked;
         }
 
+        private void boundTreeView1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (boundTreeView1.SelectedNode != null)
+            {
+                var leaf = LeafList.FindLeafByLeafId((int) boundTreeView1.SelectedNode.Tag);
+
+                if (leaf != null)
+                {
+                    leafName.Text = leaf.LeafName;
+                    leafId.Text = leaf.LeafId.ToString();
+                    leafParentId.Text = leaf.LeafParentId.ToString();
+                }
+            }
+            else
+            {
+                leafName.Text = "null";
+                leafId.Text = "null";
+                leafParentId.Text = "null";
+            }
+        }
+
         #endregion
+
+        #region BindingContext handling
+
+        public int TreeViewContextCounter { get; private set; }
+
+        private void boundTreeView1_BindingContextChanged(object sender, EventArgs e)
+        {
+            TreeViewContextCounter++;
+        }
+
+        #endregion
+
     }
 }

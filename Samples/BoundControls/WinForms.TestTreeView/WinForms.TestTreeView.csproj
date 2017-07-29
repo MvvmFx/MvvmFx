@@ -65,6 +65,7 @@
     <Compile Include="Design\DropDownTypeEditor.cs" />
     <Compile Include="Design\FieldTypeEditor.cs" />
     <Compile Include="Leaf.cs" />
+    <Compile Include="LeafList.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -109,7 +110,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\LeafList.datasource" />
+    <None Include="Properties\DataSources\BoundControls.Business.LeafList.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,9 +120,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
