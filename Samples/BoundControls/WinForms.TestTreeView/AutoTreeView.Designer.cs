@@ -30,9 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AutoTreeView));
+            this.buttonView = new System.Windows.Forms.Button();
             this.textboxView = new System.Windows.Forms.TextBox();
             this.textboxModel = new System.Windows.Forms.TextBox();
-            this.boundTreeView1 = new WinForms.TestTreeView.BoundTreeView();
+            this.buttonModel = new System.Windows.Forms.Button();
+            this.boundTreeView1 = new MvvmFx.Windows.Forms.BoundTreeView();
             this.leafListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -55,6 +57,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // buttonView
+            // 
+            this.buttonView.Location = new System.Drawing.Point(249, 101);
+            this.buttonView.Name = "buttonView";
+            this.buttonView.Size = new System.Drawing.Size(84, 23);
+            this.buttonView.TabIndex = 19;
+            this.buttonView.Text = "Set View";
+            this.buttonView.UseVisualStyleBackColor = true;
+            this.buttonView.Click += new System.EventHandler(this.tvButtonView_Click);
+            // 
             // textboxView
             // 
             this.textboxView.Location = new System.Drawing.Point(249, 78);
@@ -69,9 +81,19 @@
             this.textboxModel.Size = new System.Drawing.Size(100, 20);
             this.textboxModel.TabIndex = 17;
             // 
+            // buttonModel
+            // 
+            this.buttonModel.Location = new System.Drawing.Point(249, 36);
+            this.buttonModel.Name = "buttonModel";
+            this.buttonModel.Size = new System.Drawing.Size(84, 23);
+            this.buttonModel.TabIndex = 16;
+            this.buttonModel.Text = "Set Model";
+            this.buttonModel.UseVisualStyleBackColor = true;
+            this.buttonModel.Click += new System.EventHandler(this.tvButtonModel_Click);
+            // 
             // leafListBindingSource
             // 
-            this.leafListBindingSource.DataSource = typeof(WinForms.TestTreeView.LeafList);
+            this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
             this.bindingSourceRefresh.SetReadValuesOnChange(this.leafListBindingSource, true);
             // 
             // boundTreeView1
@@ -103,7 +125,10 @@
             this.boundTreeView1.TabIndex = 15;
             this.boundTreeView1.ToolTipTextMember = "LeafDescription";
             this.boundTreeView1.ValueMember = "LeafId";
+            this.boundTreeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
+            this.boundTreeView1.BindingContextChanged += new System.EventHandler(this.boundTreeView1_BindingContextChanged);
             this.boundTreeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.boundTreeView1_DragDrop);
+            this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             // 
             // imageList
             // 
@@ -278,13 +303,16 @@
             this.Controls.Add(this.dragDropStatusLabel);
             this.Controls.Add(this.leafName);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonView);
             this.Controls.Add(this.textboxView);
             this.Controls.Add(this.textboxModel);
+            this.Controls.Add(this.buttonModel);
             //this.Controls.Add(this.boundTreeView1);
             this.MaximumSize = new System.Drawing.Size(931, 425);
             this.MinimumSize = new System.Drawing.Size(931, 425);
             this.Name = "AutoTreeView";
             this.Size = new System.Drawing.Size(931, 425);
+            this.Text = "AutoTreeView";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).EndInit();
@@ -295,9 +323,11 @@
 
         #endregion
 
+        private System.Windows.Forms.Button buttonView;
         private System.Windows.Forms.TextBox textboxView;
         private System.Windows.Forms.TextBox textboxModel;
-        private WinForms.TestTreeView.BoundTreeView boundTreeView1;
+        private System.Windows.Forms.Button buttonModel;
+        private MvvmFx.Windows.Forms.BoundTreeView boundTreeView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label leafName;
         private System.Windows.Forms.Label dragDropStatusLabel;

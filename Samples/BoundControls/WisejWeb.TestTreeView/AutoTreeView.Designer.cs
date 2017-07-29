@@ -34,12 +34,14 @@
             Wisej.Web.ImageListEntry imageListEntry2 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images1"))), "NodeSelected.png");
             Wisej.Web.ImageListEntry imageListEntry3 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images2"))), "ReadOnlyNode.png");
             Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images3"))), "ReadOnlyNodeSelected.png");
+            this.buttonView = new Wisej.Web.Button();
             this.textboxView = new Wisej.Web.TextBox();
             this.textboxModel = new Wisej.Web.TextBox();
-            this.boundTreeView1 = new WisejWeb.TestTreeView.BoundTreeView();
-            this.leafListBindingSource = new Wisej.Web.BindingSource(this.components);
+            this.buttonModel = new Wisej.Web.Button();
+            this.boundTreeView1 = new MvvmFx.WisejWeb.BoundTreeView();
             this.imageList = new Wisej.Web.ImageList(this.components);
             this.label1 = new Wisej.Web.Label();
+            this.leafListBindingSource = new Wisej.Web.BindingSource(this.components);
             this.leafName = new Wisej.Web.Label();
             this.dragDropStatusLabel = new Wisej.Web.Label();
             this.leafId = new Wisej.Web.Label();
@@ -58,6 +60,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // buttonView
+            // 
+            this.buttonView.Location = new System.Drawing.Point(249, 101);
+            this.buttonView.Name = "buttonView";
+            this.buttonView.Size = new System.Drawing.Size(84, 23);
+            this.buttonView.TabIndex = 19;
+            this.buttonView.Text = "Set View";
+            this.buttonView.Click += new System.EventHandler(this.tvButtonView_Click);
+            // 
             // textboxView
             // 
             this.textboxView.Location = new System.Drawing.Point(249, 78);
@@ -72,16 +83,25 @@
             this.textboxModel.Size = new System.Drawing.Size(100, 20);
             this.textboxModel.TabIndex = 17;
             // 
+            // buttonModel
+            // 
+            this.buttonModel.Location = new System.Drawing.Point(249, 36);
+            this.buttonModel.Name = "buttonModel";
+            this.buttonModel.Size = new System.Drawing.Size(84, 23);
+            this.buttonModel.TabIndex = 16;
+            this.buttonModel.Text = "Set Model";
+            this.buttonModel.Click += new System.EventHandler(this.tvButtonModel_Click);
+            // 
             // leafListBindingSource
             // 
-            this.leafListBindingSource.DataSource = typeof(WisejWeb.TestTreeView.LeafList);
+            this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
             this.leafListBindingSource.RefreshValueOnChange = true;
             // 
             // boundTreeView1
             // 
             this.boundTreeView1.AllowDrag = true;
             this.boundTreeView1.AllowDrop = true;
-            this.boundTreeView1.DataSource = this.leafListBindingSource;
+            //this.boundTreeView1.DataSource = this.leafListBindingSource;
             this.boundTreeView1.DisplayMember = "LeafName";
             this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
             this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";
@@ -107,7 +127,10 @@
             this.boundTreeView1.TabIndex = 15;
             this.boundTreeView1.ToolTipTextMember = "LeafDescription";
             this.boundTreeView1.ValueMember = "LeafId";
+            this.boundTreeView1.AfterLabelEdit += new Wisej.Web.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
+            this.boundTreeView1.BindingContextChanged += new System.EventHandler(this.boundTreeView1_BindingContextChanged);
             this.boundTreeView1.DragDrop += new Wisej.Web.DragEventHandler(this.boundTreeView1_DragDrop);
+            this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             // 
             // imageList
             // 
@@ -119,6 +142,7 @@
             // 
             // label1
             // 
+            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(543, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
@@ -151,6 +175,7 @@
             // 
             // label3
             // 
+            this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(543, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
@@ -167,6 +192,7 @@
             // 
             // label5
             // 
+            this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(543, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
@@ -202,7 +228,7 @@
             // 
             // readOnlyAllowSelectCheckBox
             // 
-            this.readOnlyAllowSelectCheckBox.AutoSize = false;
+            this.readOnlyAllowSelectCheckBox.AutoSize = true;
             this.readOnlyAllowSelectCheckBox.Location = new System.Drawing.Point(249, 142);
             this.readOnlyAllowSelectCheckBox.Name = "readOnlyAllowSelectCheckBox";
             this.readOnlyAllowSelectCheckBox.Size = new System.Drawing.Size(134, 17);
@@ -212,7 +238,7 @@
             // 
             // readOnlyAllowDragCheckBox
             // 
-            this.readOnlyAllowDragCheckBox.AutoSize = false;
+            this.readOnlyAllowDragCheckBox.AutoSize = true;
             this.readOnlyAllowDragCheckBox.Location = new System.Drawing.Point(249, 159);
             this.readOnlyAllowDragCheckBox.Name = "readOnlyAllowDragCheckBox";
             this.readOnlyAllowDragCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -222,7 +248,7 @@
             // 
             // readOnlyAllowDropCheckBox
             // 
-            this.readOnlyAllowDropCheckBox.AutoSize = false;
+            this.readOnlyAllowDropCheckBox.AutoSize = true;
             this.readOnlyAllowDropCheckBox.Location = new System.Drawing.Point(249, 176);
             this.readOnlyAllowDropCheckBox.Name = "readOnlyAllowDropCheckBox";
             this.readOnlyAllowDropCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -241,7 +267,7 @@
             // 
             // allowDropOnDescendentsCheckBox
             // 
-            this.allowDropOnDescendentsCheckBox.AutoSize = false;
+            this.allowDropOnDescendentsCheckBox.AutoSize = true;
             this.allowDropOnDescendentsCheckBox.Location = new System.Drawing.Point(249, 192);
             this.allowDropOnDescendentsCheckBox.Name = "allowDropOnDescendentsCheckBox";
             this.allowDropOnDescendentsCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -251,7 +277,7 @@
             // 
             // allowDropOnRootCheckBox
             // 
-            this.allowDropOnRootCheckBox.AutoSize = false;
+            this.allowDropOnRootCheckBox.AutoSize = true;
             this.allowDropOnRootCheckBox.Location = new System.Drawing.Point(249, 208);
             this.allowDropOnRootCheckBox.Name = "allowDropOnRootCheckBox";
             this.allowDropOnRootCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -277,13 +303,16 @@
             this.Controls.Add(this.dragDropStatusLabel);
             this.Controls.Add(this.leafName);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonView);
             this.Controls.Add(this.textboxView);
             this.Controls.Add(this.textboxModel);
-            this.Controls.Add(this.boundTreeView1);
+            this.Controls.Add(this.buttonModel);
+            //this.Controls.Add(this.boundTreeView1);
             this.MaximumSize = new System.Drawing.Size(931, 425);
             this.MinimumSize = new System.Drawing.Size(931, 425);
             this.Name = "AutoTreeView";
             this.Size = new System.Drawing.Size(931, 425);
+            this.Text = "AutoTreeView";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -293,9 +322,11 @@
 
         #endregion
 
+        private Wisej.Web.Button buttonView;
         private Wisej.Web.TextBox textboxView;
         private Wisej.Web.TextBox textboxModel;
-        private WisejWeb.TestTreeView.BoundTreeView boundTreeView1;
+        private Wisej.Web.Button buttonModel;
+        private MvvmFx.WisejWeb.BoundTreeView boundTreeView1;
         private Wisej.Web.Label label1;
         private Wisej.Web.Label leafName;
         private Wisej.Web.Label dragDropStatusLabel;

@@ -36,6 +36,14 @@ namespace WisejWeb.TestBoundControls
             docBrowser.TabIndex = 0;
             docBrowser.Dock = DockStyle.Fill;
             workPanel.Controls.Add(docBrowser);
+
+            var message = "BindingContextChanged events counted\r\n\r\n";
+            message += string.Format("\tDataGridView: {0}\r\n", docBrowser.DataGridViewContextCounter);
+            message += string.Format("\tListBox: {0}\r\n", docBrowser.ListBoxContextCounter);
+            message += string.Format("\tListView: {0}\r\n", docBrowser.ListViewContextCounter);
+            message += string.Format("\tTreeView: {0}\r\n", docBrowser.TreeViewContextCounter);
+
+            MessageBox.Show(message, "Binding context changed");
         }
 
         private void treeListViewButton_Click(object sender, EventArgs e)

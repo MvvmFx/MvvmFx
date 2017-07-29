@@ -125,9 +125,9 @@
             this.boundTreeView1.TabIndex = 15;
             this.boundTreeView1.ToolTipTextMember = "LeafDescription";
             this.boundTreeView1.ValueMember = "LeafId";
-            this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             this.boundTreeView1.AfterLabelEdit += new System.Windows.Forms.NodeLabelEditEventHandler(this.boundTreeView1_AfterLabelEdit);
             this.boundTreeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.boundTreeView1_DragDrop);
+            this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
             // 
             // imageList
             // 

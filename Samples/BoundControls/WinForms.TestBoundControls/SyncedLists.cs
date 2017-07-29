@@ -55,101 +55,16 @@ namespace WinForms.TestBoundControls
             leafListBindingSource.DataSource = LeafList;
         }
 
-        /*private void RebindUI(bool saveObject, bool rebind)
-        {
-            // disable events
-            leafListBindingSource.RaiseListChangedEvents = false;
-            try
-            {
-                // unbind the UI
-                UnbindBindingSource(leafListBindingSource, saveObject, true);
-
-                // save or cancel changes
-                if (saveObject)
-                {
-                    LeafList.ApplyEdit();
-                    try
-                    {
-                        LeafList = LeafList.Save();
-                    }
-                    catch (Csla.DataPortalException ex)
-                    {
-                        MessageBox.Show(ex.BusinessException.ToString(), "Error saving", MessageBoxButtons.OK,
-                            MessageBoxIcon.Exclamation);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString(), "Error Saving", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-                else
-                    LeafList.CancelEdit();
-            }
-            finally
-            {
-                // rebind UI if requested
-                if (rebind)
-                    BindUI();
-
-                // restore events
-                leafListBindingSource.RaiseListChangedEvents = true;
-
-                if (rebind)
-                {
-                    // refresh the UI if rebinding
-                    leafListBindingSource.ResetBindings(false);
-                }
-            }
-        }*/
-
-        /*private void UnbindBindingSource(BindingSource source, bool apply, bool isRoot)
-        {
-            var current = source.Current as System.ComponentModel.IEditableObject;
-            if (isRoot)
-                source.DataSource = null;
-            if (current != null)
-                if (apply)
-                    current.EndEdit();
-                else
-                    current.CancelEdit();
-        }*/
-
-        #endregion
-
-        #region Inactive CRUD operations
-
-        /*private void OKButton_Click(object sender, EventArgs e)
-        {
-            RebindUI(true, false);
-            Close();
-        }
-
-        private void ApplyButton_Click(object sender, EventArgs e)
-        {
-            RebindUI(true, true);
-        }
-
-        private void Cancel_Button_Click(object sender, EventArgs e)
-        {
-            RebindUI(false, true);
-        }
-
-        private void CloseButton_Click(object sender, EventArgs e)
-        {
-            RebindUI(false, false);
-            Close();
-        }*/
-
         #endregion
 
         #region Manage form state
 
         private void RedrawForm()
         {
-            /*LeafList.ResetBindings();// force update all data bound objects
+            LeafList.ResetBindings(); // force update all data bound objects
             GroupsListView();
             SortListView();
-            boundTreeView1.ExpandAll();*/
+            boundTreeView1.ExpandAll();
         }
 
         private void ColumnsDataGridView()
@@ -171,7 +86,7 @@ namespace WinForms.TestBoundControls
 
         private void GroupsListView()
         {
-            boundListView1.Groups.Clear();
+            /*boundListView1.Groups.Clear();
 
             boundListView1.Groups.Add(new ListViewGroup("Root", HorizontalAlignment.Left));
             boundListView1.Groups.Add(new ListViewGroup("One", HorizontalAlignment.Left));
@@ -191,20 +106,12 @@ namespace WinForms.TestBoundControls
                     boundListView1.Groups[2].Items.Add(item);
                 else
                     boundListView1.Groups[3].Items.Add(item);
-            }
+            }*/
         }
 
         private void SortListView()
         {
-#if !WEBGUI
             boundListView1.Sorting = SortOrder.Ascending;
-#else
-            boundListView1.Columns[0].SortOrder = SortOrder.Descending;
-            boundListView1.Columns[0].SortPosition = 2; // Supports multi-column sort
-            boundListView1.Columns[1].SortOrder = SortOrder.Ascending;
-            boundListView1.Columns[1].SortPosition = 1; // Supports multi-column sort
-            /*boundListView1.ListViewItemSorter = <ICompares>;*/
-#endif
         }
 
         private void SortTreeView()
@@ -219,26 +126,26 @@ namespace WinForms.TestBoundControls
 
         private void dgvButtonModel_Click(object sender, EventArgs e)
         {
-            /*if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxModel.Text))
+            if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxModel.Text))
                 return;
 
             var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
             leaf.LeafName = dgvTextboxModel.Text;
             RedrawForm();
 
-            leafName.Text = leaf.LeafName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         private void dgvButtonView_Click(object sender, EventArgs e)
         {
-            /*if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxView.Text))
+            if (dataGridView1.CurrentRow == null || string.IsNullOrEmpty(dgvTextboxView.Text))
                 return;
 
             dataGridView1.CurrentRow.Cells[1].Value = dgvTextboxView.Text;
             RedrawForm();
 
             var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
-            leafName.Text = leaf.LeafName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         #endregion
@@ -305,7 +212,7 @@ namespace WinForms.TestBoundControls
 
         private void tvButtonModel_Click(object sender, EventArgs e)
         {
-            /*MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
+            MessageBox.Show("Object Id: " + boundTreeView1.SelectedNode.Tag);
 
             if (string.IsNullOrEmpty(tvTextboxModel.Text))
                 return;
@@ -314,12 +221,12 @@ namespace WinForms.TestBoundControls
             leaf.LeafName = tvTextboxModel.Text;
             RedrawForm();
 
-            leafName.Text = leaf.LeafName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         private void tvButtonView_Click(object sender, EventArgs e)
         {
-            /*if (string.IsNullOrEmpty(tvTextboxView.Text))
+            if (string.IsNullOrEmpty(tvTextboxView.Text))
                 return;
 
             MessageBox.Show("This control doesn't support view setting. Model setting will be used.");
@@ -328,14 +235,14 @@ namespace WinForms.TestBoundControls
             leaf.LeafName = tvTextboxView.Text;
             RedrawForm();
 
-            leafName.Text = leaf.LeafName;*/
+            leafName.Text = leaf.LeafName;
         }
 
         #endregion
 
         private void queryObjectButton_Click(object sender, EventArgs e)
         {
-            /*boundTreeView1.Select();
+            boundTreeView1.Select();
             if (boundTreeView1.SelectedNode == null)
                 MessageBox.Show("Select one node");
             else
@@ -343,7 +250,7 @@ namespace WinForms.TestBoundControls
                 leafName.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafName;
                 leafId.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafId.ToString();
                 leafParentId.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafParentId.ToString();
-            }*/
+            }
         }
 
         #region BoundTreeView Drag&Drop events
@@ -358,22 +265,22 @@ namespace WinForms.TestBoundControls
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            /*var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
+            var leaf = LeafList.FindLeafByLeafId((int) dataGridView1.CurrentRow.Cells[0].Value);
             leafName.Text = leaf.LeafName;
-            RedrawForm();*/
+            RedrawForm();
         }
 
         private void boundListView1_AfterLabelEdit(object sender, LabelEditEventArgs e)
         {
-            /*leafName.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafName;
-            RedrawForm();*/
+            leafName.Text = ((Leaf) boundListView1.SelectedItems[0].Tag).LeafName;
+            RedrawForm();
         }
 
         private void boundTreeView1_AfterLabelEdit(object sender, NodeLabelEditEventArgs e)
         {
-            /*var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
+            var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
             leafName.Text = leaf.LeafName;
-            RedrawForm();*/
+            RedrawForm();
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -381,44 +288,36 @@ namespace WinForms.TestBoundControls
             SortTreeView();
         }
 
-        private void boundListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
+        #region BindingContext handling
 
-        private void boundTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-        }
-
-        private int _dgvBindingContextChangedCounter;
+        public int DataGridViewContextCounter { get; private set; }
 
         private void dataGridView1_BindingContextChanged(object sender, EventArgs e)
         {
-            _dgvBindingContextChangedCounter++;
-            //MessageBox.Show(sender.GetType().Name + " " + _dgvBindingContextChangedCounter);
+            DataGridViewContextCounter++;
         }
 
-        private int _lbBindingContextChangedCounter;
+        public int ListBoxContextCounter { get; private set; }
 
         private void listBox1_BindingContextChanged(object sender, EventArgs e)
         {
-            _lbBindingContextChangedCounter++;
-            //MessageBox.Show(sender.GetType().Name + " " + _lbBindingContextChangedCounter);
+            ListBoxContextCounter++;
         }
 
-        private int _lvBindingContextChangedCounter;
+        public int ListViewContextCounter { get; private set; }
 
         private void boundListView1_BindingContextChanged(object sender, EventArgs e)
         {
-            _lvBindingContextChangedCounter++;
-            //MessageBox.Show(sender.GetType().Name + " " + _lvBindingContextChangedCounter);
+            ListViewContextCounter++;
         }
 
-        private int _tvBindingContextChangedCounter;
+        public int TreeViewContextCounter { get; private set; }
 
         private void boundTreeView1_BindingContextChanged(object sender, EventArgs e)
         {
-            _tvBindingContextChangedCounter++;
-            //MessageBox.Show(sender.GetType().Name+" "+ _tvBindingContextChangedCounter);
+            TreeViewContextCounter++;
         }
+
+        #endregion
     }
 }

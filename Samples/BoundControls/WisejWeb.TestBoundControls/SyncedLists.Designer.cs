@@ -225,7 +225,7 @@ namespace WisejWeb.TestBoundControls
             this.boundListView1.Size = new System.Drawing.Size(212, 199);
             this.boundListView1.TabIndex = 10;
             this.boundListView1.View = Wisej.Web.View.Details;
-            //this.boundListView1.AfterLabelEdit += new Wisej.Web.LabelEditEventHandler(this.boundListView1_AfterLabelEdit);
+            this.boundListView1.AfterLabelEdit += new Wisej.Web.LabelEditEventHandler(this.boundListView1_AfterLabelEdit);
             this.boundListView1.BindingContextChanged += new System.EventHandler(this.boundListView1_BindingContextChanged);
             // 
             // tvButtonView
@@ -265,11 +265,18 @@ namespace WisejWeb.TestBoundControls
             this.boundTreeView1.AllowDrop = true;
             this.boundTreeView1.DataSource = this.leafListBindingSource;
             this.boundTreeView1.DisplayMember = "LeafName";
+            this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
+            this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";
+            this.boundTreeView1.GeneralNodeError = "Error at node.";
             this.boundTreeView1.IdentifierMember = "LeafId";
+            this.boundTreeView1.InexistentParent = "Parent of node does not exist.";
             this.boundTreeView1.LabelEdit = true;
             this.boundTreeView1.Location = new System.Drawing.Point(705, 33);
             this.boundTreeView1.Name = "boundTreeView1";
             this.boundTreeView1.ParentIdentifierMember = "LeafParentId";
+            this.boundTreeView1.ReadOnlyImageKey = null;
+            this.boundTreeView1.ReadOnlySelectedImageKey = null;
+            this.boundTreeView1.SelfParent = "Parent of node cannot be the node itself.";
             this.boundTreeView1.Size = new System.Drawing.Size(212, 199);
             this.boundTreeView1.Sorted = false;
             this.boundTreeView1.TabIndex = 15;

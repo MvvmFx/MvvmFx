@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WinForms.TestTreeView
+namespace MvvmFx.Windows.Forms
 {
     /// <summary>
     /// A <see cref="UserControl"/> that uses <see cref="BindingSourceRefresh"/>

@@ -38,6 +38,11 @@ namespace WinForms.TestTreeView
             docBrowser.TabIndex = 0;
             docBrowser.Dock = DockStyle.Fill;
             workPanel.Controls.Add(docBrowser);
+
+            var message = "BindingContextChanged events counted\r\n\r\n";
+            message += string.Format("\tTreeView: {0}\r\n", docBrowser.TreeViewContextCounter);
+
+            MessageBox.Show(message, "Binding context changed");
         }
 
         private void manualTreeViewButton_Click(object sender, EventArgs e)

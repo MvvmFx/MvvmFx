@@ -42,7 +42,7 @@ using Wisej.Web;
 using System.Windows.Forms;
 #endif
 
-namespace WisejWeb.TestTreeView
+namespace MvvmFx.WisejWeb
 {
     /// <summary>
     /// Tree node with additional data related information.
@@ -177,7 +177,7 @@ namespace WisejWeb.TestTreeView
 #if WISEJ
                 OpenedImageIndex = -1;
 #endif
-			}
+            }
         }
 
         #endregion
