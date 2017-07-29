@@ -52,6 +52,9 @@
       <DependentUpon>AutoTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="BindingSourceRefresh.cs" />
+    <Compile Include="BoundListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BoundTreeNode.cs" />
     <Compile Include="BoundTreeView.cs">
       <SubType>Component</SubType>
@@ -81,6 +84,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyncedLists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SyncedLists.Designer.cs">
+      <DependentUpon>SyncedLists.cs</DependentUpon>
+    </Compile>
     <Compile Include="TreeNodeSorter.cs" />
     <EmbeddedResource Include="AutoTreeView.resx">
       <DependentUpon>AutoTreeView.cs</DependentUpon>
@@ -106,6 +115,9 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="SyncedLists.resx">
+      <DependentUpon>SyncedLists.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

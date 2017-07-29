@@ -62,10 +62,10 @@
             // ManualTreeView
             // 
             this.Controls.Add(this.treeView1);
-            this.MaximumSize = new System.Drawing.Size(931, 425);
-            this.MinimumSize = new System.Drawing.Size(931, 425);
+            this.MaximumSize = new System.Drawing.Size(931, 438);
+            this.MinimumSize = new System.Drawing.Size(931, 438);
             this.Name = "ManualTreeView";
-            this.Size = new System.Drawing.Size(931, 425);
+            this.Size = new System.Drawing.Size(931, 438);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

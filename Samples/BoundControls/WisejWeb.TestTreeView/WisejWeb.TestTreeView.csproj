@@ -70,6 +70,9 @@
     <Compile Include="AutoTreeView.Designer.cs">
       <DependentUpon>AutoTreeView.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoundListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BoundTreeNode.cs" />
     <Compile Include="BoundTreeView.cs">
       <SubType>Component</SubType>
@@ -97,6 +100,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SyncedLists.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SyncedLists.Designer.cs">
+      <DependentUpon>SyncedLists.cs</DependentUpon>
     </Compile>
     <Compile Include="TreeNodeSorter.cs" />
   </ItemGroup>
@@ -132,6 +141,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyncedLists.resx">
+      <DependentUpon>SyncedLists.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -24,7 +24,28 @@ namespace WinForms.TestTreeView
             LogManager.GetLog = type => new NLogLogger(type);
 #endif
 
-            autoTreeViewButton_Click(this, EventArgs.Empty);
+            syncedListsButton_Click(this, EventArgs.Empty);
+        }
+
+        private void syncedListsButton_Click(object sender, EventArgs e)
+        {
+            foreach (IDisposable control in workPanel.Controls)
+                control.Dispose();
+
+            workPanel.Controls.Clear();
+
+            var docBrowser = new SyncedLists();
+            docBrowser.TabIndex = 0;
+            docBrowser.Dock = DockStyle.Fill;
+            workPanel.Controls.Add(docBrowser);
+
+            var message = "BindingContextChanged events counted\r\n\r\n";
+            message += string.Format("\tDataGridView: {0}\r\n", docBrowser.DataGridViewContextCounter);
+            message += string.Format("\tListBox: {0}\r\n", docBrowser.ListBoxContextCounter);
+            message += string.Format("\tListView: {0}\r\n", docBrowser.ListViewContextCounter);
+            message += string.Format("\tTreeView: {0}\r\n", docBrowser.TreeViewContextCounter);
+
+            MessageBox.Show(message, "Binding context changed");
         }
 
         private void autoTreeViewButton_Click(object sender, EventArgs e)
@@ -38,11 +59,6 @@ namespace WinForms.TestTreeView
             docBrowser.TabIndex = 0;
             docBrowser.Dock = DockStyle.Fill;
             workPanel.Controls.Add(docBrowser);
-
-            var message = "BindingContextChanged events counted\r\n\r\n";
-            message += string.Format("\tTreeView: {0}\r\n", docBrowser.TreeViewContextCounter);
-
-            MessageBox.Show(message, "Binding context changed");
         }
 
         private void manualTreeViewButton_Click(object sender, EventArgs e)
