@@ -27,6 +27,8 @@ namespace MvvmFx.WisejWeb
     {
         #region Fields
 
+        private bool _ignoreBindingContextChanged;
+
         private readonly Container _components = null;
         private object _dataSource;
         private string _dataMember;
@@ -73,6 +75,7 @@ namespace MvvmFx.WisejWeb
                 if (_dataSource != value)
                 {
                     _dataSource = value;
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -121,6 +124,7 @@ namespace MvvmFx.WisejWeb
                 if (_dataMember != value)
                 {
                     _dataMember = value;
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -367,6 +371,10 @@ namespace MvvmFx.WisejWeb
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
+            if (_ignoreBindingContextChanged)
+                return;
+
+            _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
         }

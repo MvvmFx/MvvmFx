@@ -27,6 +27,8 @@ namespace MvvmFx.Windows.Forms
     {
         #region Fields
 
+        private bool _ignoreBindingContextChanged;
+
         private readonly Container _components = null;
         private object _dataSource;
         private string _dataMember;
@@ -73,6 +75,7 @@ namespace MvvmFx.Windows.Forms
                 if (_dataSource != value)
                 {
                     _dataSource = value;
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -121,6 +124,7 @@ namespace MvvmFx.Windows.Forms
                 if (_dataMember != value)
                 {
                     _dataMember = value;
+                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -361,12 +365,16 @@ namespace MvvmFx.Windows.Forms
         /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data. </param>
 #else
         /// <summary>
-        /// Raises the <see cref="Wisej.Web.Control.BindingContextChanged"/> event.
+        /// Raises the <see cref="Wisej.Base.ControlBase.BindingContextChanged"/> event.
         /// </summary>
         /// <param name="e">An <see cref="System.EventArgs"/> that contains the event data. </param>
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
+            if (_ignoreBindingContextChanged)
+                return;
+
+            _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
         }
