@@ -60,11 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // leafListBindingSource
-            // 
-            this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
-            this.leafListBindingSource.RefreshValueOnChange = true;
-            // 
             // buttonView
             // 
             this.buttonView.Location = new System.Drawing.Point(249, 101);
@@ -96,6 +91,11 @@
             this.buttonModel.TabIndex = 16;
             this.buttonModel.Text = "Set Model";
             this.buttonModel.Click += new System.EventHandler(this.tvButtonModel_Click);
+            // 
+            // leafListBindingSource
+            // 
+            this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
+            this.leafListBindingSource.RefreshValueOnChange = true;
             // 
             // boundTreeView1
             // 
@@ -141,25 +141,23 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = false;
+            this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(543, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 20;
-            this.label1.Text = "LeafName:";
+            this.label1.Text = "Leaf Name:";
             // 
             // leafName
             // 
-            this.leafName.AutoSize = false;
             this.leafName.Location = new System.Drawing.Point(661, 66);
             this.leafName.Name = "leafName";
             this.leafName.Size = new System.Drawing.Size(100, 13);
             this.leafName.TabIndex = 21;
-            this.leafName.Text = "LeafName";
+            this.leafName.Text = "Leaf Name";
             // 
             // dragDropStatusLabel
             // 
-            this.dragDropStatusLabel.AutoSize = false;
             this.dragDropStatusLabel.Location = new System.Drawing.Point(543, 216);
             this.dragDropStatusLabel.Name = "dragDropStatusLabel";
             this.dragDropStatusLabel.Size = new System.Drawing.Size(200, 13);
@@ -168,39 +166,37 @@
             // 
             // leafId
             // 
-            this.leafId.AutoSize = false;
             this.leafId.Location = new System.Drawing.Point(664, 104);
             this.leafId.Name = "leafId";
             this.leafId.Size = new System.Drawing.Size(100, 13);
             this.leafId.TabIndex = 30;
-            this.leafId.Text = "DocTypeId";
+            this.leafId.Text = "Leaf Id";
             // 
             // label3
             // 
-            this.label3.AutoSize = false;
+            this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(543, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 29;
-            this.label3.Text = "DocTypeId:";
+            this.label3.Text = "Leaf Id:";
             // 
             // leafParentId
             // 
-            this.leafParentId.AutoSize = false;
             this.leafParentId.Location = new System.Drawing.Point(666, 143);
             this.leafParentId.Name = "leafParentId";
             this.leafParentId.Size = new System.Drawing.Size(100, 13);
             this.leafParentId.TabIndex = 32;
-            this.leafParentId.Text = "DocTypeParentId";
+            this.leafParentId.Text = "Leaf Parent Id";
             // 
             // label5
             // 
-            this.label5.AutoSize = false;
+            this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(543, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 31;
-            this.label5.Text = "DocTypeParentId:";
+            this.label5.Text = "Leaf Parent Id:";
             // 
             // refreshButton
             // 
@@ -231,7 +227,7 @@
             // 
             // readOnlyAllowSelectCheckBox
             // 
-            this.readOnlyAllowSelectCheckBox.AutoSize = false;
+            this.readOnlyAllowSelectCheckBox.AutoSize = true;
             this.readOnlyAllowSelectCheckBox.Location = new System.Drawing.Point(249, 142);
             this.readOnlyAllowSelectCheckBox.Name = "readOnlyAllowSelectCheckBox";
             this.readOnlyAllowSelectCheckBox.Size = new System.Drawing.Size(134, 17);
@@ -241,7 +237,7 @@
             // 
             // readOnlyAllowDragCheckBox
             // 
-            this.readOnlyAllowDragCheckBox.AutoSize = false;
+            this.readOnlyAllowDragCheckBox.AutoSize = true;
             this.readOnlyAllowDragCheckBox.Location = new System.Drawing.Point(249, 159);
             this.readOnlyAllowDragCheckBox.Name = "readOnlyAllowDragCheckBox";
             this.readOnlyAllowDragCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -251,7 +247,7 @@
             // 
             // readOnlyAllowDropCheckBox
             // 
-            this.readOnlyAllowDropCheckBox.AutoSize = false;
+            this.readOnlyAllowDropCheckBox.AutoSize = true;
             this.readOnlyAllowDropCheckBox.Location = new System.Drawing.Point(249, 176);
             this.readOnlyAllowDropCheckBox.Name = "readOnlyAllowDropCheckBox";
             this.readOnlyAllowDropCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -270,7 +266,7 @@
             // 
             // allowDropOnDescendentsCheckBox
             // 
-            this.allowDropOnDescendentsCheckBox.AutoSize = false;
+            this.allowDropOnDescendentsCheckBox.AutoSize = true;
             this.allowDropOnDescendentsCheckBox.Location = new System.Drawing.Point(249, 192);
             this.allowDropOnDescendentsCheckBox.Name = "allowDropOnDescendentsCheckBox";
             this.allowDropOnDescendentsCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -280,7 +276,7 @@
             // 
             // allowDropOnRootCheckBox
             // 
-            this.allowDropOnRootCheckBox.AutoSize = false;
+            this.allowDropOnRootCheckBox.AutoSize = true;
             this.allowDropOnRootCheckBox.Location = new System.Drawing.Point(249, 208);
             this.allowDropOnRootCheckBox.Name = "allowDropOnRootCheckBox";
             this.allowDropOnRootCheckBox.Size = new System.Drawing.Size(127, 17);
@@ -311,10 +307,11 @@
             this.Controls.Add(this.textboxModel);
             this.Controls.Add(this.buttonModel);
             this.Controls.Add(this.boundTreeView1);
-            this.MaximumSize = new System.Drawing.Size(931, 425);
-            this.MinimumSize = new System.Drawing.Size(931, 425);
+            this.MaximumSize = new System.Drawing.Size(931, 438);
+            this.MinimumSize = new System.Drawing.Size(931, 438);
             this.Name = "AutoTreeView";
-            this.Size = new System.Drawing.Size(931, 425);
+            this.Size = new System.Drawing.Size(931, 438);
+            this.Text = "AutoTreeView";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).EndInit();
             this.ResumeLayout(false);

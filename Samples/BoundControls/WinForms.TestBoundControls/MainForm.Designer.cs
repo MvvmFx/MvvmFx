@@ -98,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1003, 487);
+            this.ClientSize = new System.Drawing.Size(1003, 522);
             this.Controls.Add(this.stripWindowButton);
             this.Controls.Add(this.autoTreeViewButton);
             this.Controls.Add(this.treeListViewButton);

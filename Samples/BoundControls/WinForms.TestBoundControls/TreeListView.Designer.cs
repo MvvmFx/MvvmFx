@@ -51,10 +51,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.boundListView1);
-            this.MaximumSize = new System.Drawing.Size(931, 425);
-            this.MinimumSize = new System.Drawing.Size(931, 425);
+            this.MaximumSize = new System.Drawing.Size(931, 438);
+            this.MinimumSize = new System.Drawing.Size(931, 438);
             this.Name = "TreeListView";
-            this.Size = new System.Drawing.Size(931, 425);
+            this.Size = new System.Drawing.Size(931, 438);
+            this.Text = "TreeListView";
             this.ResumeLayout(false);
 
         }
