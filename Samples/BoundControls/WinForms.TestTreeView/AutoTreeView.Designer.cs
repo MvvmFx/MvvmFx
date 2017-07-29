@@ -308,10 +308,10 @@
             this.Controls.Add(this.textboxModel);
             this.Controls.Add(this.buttonModel);
             //this.Controls.Add(this.boundTreeView1);
-            this.MaximumSize = new System.Drawing.Size(931, 425);
-            this.MinimumSize = new System.Drawing.Size(931, 425);
+            this.MaximumSize = new System.Drawing.Size(931, 438);
+            this.MinimumSize = new System.Drawing.Size(931, 438);
             this.Name = "AutoTreeView";
-            this.Size = new System.Drawing.Size(931, 425);
+            this.Size = new System.Drawing.Size(931, 438);
             this.Text = "AutoTreeView";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).EndInit();

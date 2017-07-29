@@ -56,7 +56,7 @@ namespace WinForms.TestTreeView
 
         private void BindUI()
         {
-            LeafList = LeafList.GetLeafListWithErrors();
+            LeafList = LeafList.GetLeafList();
 
             Logger.Trace("AutoTreeView.BindUI");
             leafListBindingSource.DataSource = LeafList;
