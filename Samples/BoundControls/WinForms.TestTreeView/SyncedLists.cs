@@ -39,7 +39,7 @@ namespace WinForms.TestTreeView
             LeafList.ListChanged += LeafList_ListChanged;
         }
 
-        void LeafList_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
+        private void LeafList_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
         {
             MessageBox.Show("Business object ListChanged event.", "Event triggered", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
