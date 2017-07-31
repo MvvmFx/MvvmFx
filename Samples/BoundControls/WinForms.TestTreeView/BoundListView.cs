@@ -40,7 +40,6 @@ namespace MvvmFx.Windows.Forms
 
         private object _dataSource;
         private string _dataMember;
-        private bool _sorted;
 
         #endregion
 
@@ -50,6 +49,7 @@ namespace MvvmFx.Windows.Forms
         /// The logger
         /// </summary>
         private static readonly ILog Logger = LogManager.GetLog(typeof(BoundListView));
+        //private static readonly ILog Logger = new NullLogger();
 
         #endregion
 
@@ -141,34 +141,6 @@ namespace MvvmFx.Windows.Forms
                 {
                     _dataMember = value;
                     Logger.Trace("DataSource");
-                    _ignoreBindingContextChanged = false;
-                    TryDataBinding();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the sort order for items in the control.
-        /// </summary>
-        /// <returns>
-        /// One of the System.Windows.Forms.SortOrder values. The default is System.Windows.Forms.SortOrder.None.
-        /// </returns>
-        /// <exception cref="System.ComponentModel.InvalidEnumArgumentException">
-        /// The value specified is not one of the System.Windows.Forms.SortOrder values.
-        /// </exception>
-        [Browsable(true)]
-        //[Bindable(false, BindingDirection.TwoWay)]
-        [DefaultValue(SortOrder.None)]
-        public new SortOrder Sorting
-        {
-            get { return base.Sorting; }
-            set
-            {
-                if (base.Sorting != value)
-                {
-                    _sorted = true;
-                    base.Sorting = value;
-                    Logger.Trace("Sorting");
                     _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
@@ -298,23 +270,15 @@ namespace MvvmFx.Windows.Forms
 
             if (_listManager.Position > -1)
             {
-                if (_sorted)
+                for (var index = 0; index < Items.Count; index++)
                 {
-                    for (var index = 0; index < Items.Count; index++)
+                    if (Items[index].Tag == _listManager.List[_listManager.Position])
                     {
-                        if (Items[index].Tag == _listManager.List[_listManager.Position])
-                        {
-                            Items[index].Selected = true;
-                            EnsureVisible(index);
-                        }
-                        else
-                            Items[index].Selected = false;
+                        Items[index].Selected = true;
+                        EnsureVisible(index);
                     }
-                }
-                else
-                {
-                    Items[_listManager.Position].Selected = true;
-                    EnsureVisible(_listManager.Position);
+                    else
+                        Items[index].Selected = false;
                 }
             }
         }
@@ -401,12 +365,6 @@ namespace MvvmFx.Windows.Forms
             }
         }
 
-        public new void Sort()
-        {
-            _sorted = true;
-            base.Sort();
-        }
-
         #endregion
 
         #region BindingContext Events
@@ -439,31 +397,25 @@ namespace MvvmFx.Windows.Forms
 
         private void ListManager_PositionChanged(object sender, EventArgs e)
         {
-            if(_isHandlingPositionChange)
+            if (_isHandlingPositionChange)
                 return;
 
             _isHandlingPositionChange = true;
+
             if (Items.Count > _listManager.Position)
             {
-                if (_sorted)
+                for (var index = 0; index < Items.Count; index++)
                 {
-                    for (var index = 0; index < Items.Count; index++)
+                    if (Items[index].Tag == _listManager.List[_listManager.Position])
                     {
-                        if (Items[index].Tag == _listManager.List[_listManager.Position])
-                        {
-                            Items[index].Selected = true;
-                            EnsureVisible(index);
-                        }
-                        else
-                            Items[index].Selected = false;
+                        Items[index].Selected = true;
+                        EnsureVisible(index);
                     }
-                }
-                else
-                {
-                    Items[_listManager.Position].Selected = true;
-                    EnsureVisible(_listManager.Position);
+                    else
+                        Items[index].Selected = false;
                 }
             }
+
             _isHandlingPositionChange = false;
         }
 
@@ -523,6 +475,7 @@ namespace MvvmFx.Windows.Forms
                 return;
 
             _isHandlingPositionChange = true;
+
             Logger.Trace("OnSelectedIndexChanged - START");
             try
             {
@@ -548,8 +501,9 @@ namespace MvvmFx.Windows.Forms
             }
             catch
             {
-                // Could appear, if you change the position while someone edits a row with invalid data.
+                // Could happen, if you change the position while someone edits a row with invalid data.
             }
+
             _isHandlingPositionChange = false;
             base.OnSelectedIndexChanged(e);
         }

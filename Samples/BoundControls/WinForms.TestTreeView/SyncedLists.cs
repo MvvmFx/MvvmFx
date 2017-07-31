@@ -283,8 +283,8 @@ namespace WinForms.TestTreeView
 
         private void sortButton_Click(object sender, EventArgs e)
         {
-            GroupsListView();
             SortListView();
+            GroupsListView();
             SortTreeView();
         }
 

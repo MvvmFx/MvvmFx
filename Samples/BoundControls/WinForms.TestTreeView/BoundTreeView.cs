@@ -122,8 +122,8 @@ namespace MvvmFx.Windows.Forms
         /// <summary>
         /// The logger
         /// </summary>
-        //private static readonly ILog Logger = LogManager.GetLog(typeof(BoundTreeView));
-        private static readonly ILog Logger = new NullLogger();
+        private static readonly ILog Logger = LogManager.GetLog(typeof(BoundTreeView));
+        //private static readonly ILog Logger = new NullLogger();
 
         /// <summary>
         /// Gets or sets the duplicated caption for the MessageBox.

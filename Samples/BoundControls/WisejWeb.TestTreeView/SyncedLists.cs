@@ -34,7 +34,6 @@ namespace WisejWeb.TestTreeView
             BindUI();
 
             GroupsListView();
-            SortListView();
 
             LeafList.ListChanged += LeafList_ListChanged;
         }
@@ -63,7 +62,6 @@ namespace WisejWeb.TestTreeView
         {
             LeafList.ResetBindings(); // force update all data bound objects
             GroupsListView();
-            SortListView();
             boundTreeView1.ExpandAll();
         }
 
@@ -76,6 +74,7 @@ namespace WisejWeb.TestTreeView
 
         private void ColumnsListView()
         {
+            boundListView1.Columns.RemoveAt(4);
             boundListView1.Columns.RemoveAt(3);
             boundListView1.Columns.RemoveAt(1);
             boundListView1.Columns[0].Text = "Id";
@@ -117,7 +116,6 @@ namespace WisejWeb.TestTreeView
         private void SortTreeView()
         {
             boundTreeView1.Sort();
-            //boundTreeView1.Sorted = true;
         }
 
         #endregion
@@ -285,6 +283,8 @@ namespace WisejWeb.TestTreeView
 
         private void sortButton_Click(object sender, EventArgs e)
         {
+            SortListView();
+            GroupsListView();
             SortTreeView();
         }
 
