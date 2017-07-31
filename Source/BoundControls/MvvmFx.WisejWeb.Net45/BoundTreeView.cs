@@ -120,7 +120,7 @@ namespace MvvmFx.WisejWeb
         /// <summary>
         /// The logger
         /// </summary>
-        private static readonly ILog Logger = LogManager.GetLog(typeof(Action));
+        private static readonly ILog Logger = LogManager.GetLog(typeof(BoundTreeView));
 
         /// <summary>
         /// Gets or sets the duplicated caption for the MessageBox.
@@ -549,23 +549,6 @@ namespace MvvmFx.WisejWeb
             }
         }
 
-#if WEBGUI
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the selection change event is critical.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if the selection change event is critical; otherwise, <c>false</c>.
-        /// </value>
-        /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue(false)]
-        [RefreshProperties(RefreshProperties.Repaint)]
-        [Category("Behavior")]
-        [Description("Indicates whether the selection change event is critical.")]
-        public bool IsSelectionChangeCritical { get; set; }
-
-#endif
-
         /// <summary>
         /// Gets or sets a value indicating whether the tree nodes in the tree view are sorted.
         /// </summary>
@@ -591,6 +574,7 @@ namespace MvvmFx.WisejWeb
                 }
             }
         }
+
 #if WINFORMS
         /// <summary>Gets or sets the index of the image that is displayed for the ReadOnly tree node.</summary>
         /// <returns>The zero-based index of the image in the <see cref="System.Windows.Forms.ImageList"></see> that is displayed
@@ -1051,7 +1035,7 @@ namespace MvvmFx.WisejWeb
 
         #endregion
 
-        #region Constructors
+        #region Constructor & Dispose
 
         /// <summary>
         /// Default constructor.
@@ -1136,7 +1120,10 @@ namespace MvvmFx.WisejWeb
         {
             if (_dataSource == null ||
                 BindingContext == null)
+            {
+                _ignoreBindingContextChanged = false;
                 return;
+            }
 
             CurrencyManager currencyManager;
             try
@@ -2187,34 +2174,6 @@ namespace MvvmFx.WisejWeb
                 }
             }
         }
-
-        #endregion
-
-        #region VWG Critical Events
-
-#if WEBGUI
-
-        /// <summary>
-        /// Gets the critical events.
-        /// </summary>
-        /// <returns></returns>
-        protected override CriticalEventsData GetCriticalEventsData()
-        {
-            var objEvents = base.GetCriticalEventsData();
-
-            if (IsSelectionChangeCritical)
-            {
-                objEvents.Set(WGEvents.SelectionChange);
-                objEvents.Set(WGEvents.Click);
-                objEvents.Set(WGEvents.DoubleClick);
-                objEvents.Set(WGEvents.Collapse);
-            }
-
-            objEvents.Set(WGEvents.DragDrop);
-            return objEvents;
-        }
-
-#endif
 
         #endregion
 

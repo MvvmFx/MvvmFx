@@ -1,7 +1,7 @@
 ﻿/********************************************************************
     created:	2005/03/27
     created:	27:3:2005   7:05
-    filename: 	BoundTreeNode.cs	
+    filename: 	BoundTreeNode.cs
     author:		Mike Chaliy
     published:  http://www.codeproject.com/Articles/9949/Hierarchical-TreeView-control-with-data-binding-en
 
@@ -177,7 +177,7 @@ namespace MvvmFx.Windows.Forms
 #if WISEJ
                 OpenedImageIndex = -1;
 #endif
-			}
+            }
         }
 
         #endregion

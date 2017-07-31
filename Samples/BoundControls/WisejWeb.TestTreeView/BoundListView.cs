@@ -17,6 +17,8 @@ using LogManager = WinForms.TestTreeView.LogManager;
 // code from Sascha Knopf
 // http://www.codeproject.com/Articles/15396/Implementing-complex-data-binding-in-custom-contro
 
+// Improvements by Tiago Freitas Leal (MvvmFx project).
+
 namespace MvvmFx.WisejWeb
 {
     /// <summary>
@@ -239,7 +241,7 @@ namespace MvvmFx.WisejWeb
 
             // Update metadata and data
             CalculateColumns();
-			Logger.Trace("TryDataBinding - UpdateAllData");
+            Logger.Trace("TryDataBinding - UpdateAllData");
             UpdateAllData();
 
             // Wire the new CurrencyManager
