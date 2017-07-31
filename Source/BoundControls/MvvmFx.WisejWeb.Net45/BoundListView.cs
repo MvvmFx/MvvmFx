@@ -14,6 +14,8 @@ using MvvmFx.Windows.Forms.Properties;
 // code from Sascha Knopf
 // http://www.codeproject.com/Articles/15396/Implementing-complex-data-binding-in-custom-contro
 
+// Improvements by Tiago Freitas Leal (MvvmFx project).
+
 namespace MvvmFx.WisejWeb
 {
     /// <summary>
@@ -28,14 +30,15 @@ namespace MvvmFx.WisejWeb
         #region Fields
 
         private bool _ignoreBindingContextChanged;
+        private bool _isHandlingPositionChange;
 
         private readonly Container _components = null;
-        private object _dataSource;
-        private string _dataMember;
         private readonly ListChangedEventHandler _listChangedHandler;
         private readonly EventHandler _positionChangedHandler;
         private CurrencyManager _listManager;
 
+        private object _dataSource;
+        private string _dataMember;
         #endregion
 
         #region Properties
@@ -130,23 +133,6 @@ namespace MvvmFx.WisejWeb
             }
         }
 
-#if WEBGUI
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the selection change is critical.
-        /// </summary>
-        /// <value>
-        /// <c>true</c> if the selection change is critical; otherwise, <c>false</c>.
-        /// </value>
-        /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue(false)]
-        [RefreshProperties(RefreshProperties.Repaint)]
-        [Category("Behavior")]
-        [Description("Indicates whether the selection change is critical.")]
-        public bool IsSelectionChangeCritical { get; set; }
-
-#endif
-
         /// <summary>
         /// Gets the selected item.
         /// </summary>
@@ -174,7 +160,7 @@ namespace MvvmFx.WisejWeb
             _positionChangedHandler = ListManager_PositionChanged;
 
             View = View.Details;
-#if !WISEJ
+#if WINFORMS
             FullRowSelect = true;
             HideSelection = false;
 #endif
@@ -206,7 +192,10 @@ namespace MvvmFx.WisejWeb
         {
             if (DataSource == null ||
                 BindingContext == null)
+            {
+                _ignoreBindingContextChanged = false;
                 return;
+            }
 
             CurrencyManager currencyManager;
             try
@@ -221,26 +210,23 @@ namespace MvvmFx.WisejWeb
 
             BeginUpdate();
 
-            if (_listManager != currencyManager)
+            // Unwire the old CurrencyManager
+            if (_listManager != null)
             {
-                // Unwire the old CurrencyManager
-                if (_listManager != null)
-                {
-                    _listManager.ListChanged -= _listChangedHandler;
-                    _listManager.PositionChanged -= _positionChangedHandler;
-                }
-                _listManager = currencyManager;
+                _listManager.ListChanged -= _listChangedHandler;
+                _listManager.PositionChanged -= _positionChangedHandler;
+            }
+            _listManager = currencyManager;
 
-                // Update metadata and data
-                CalculateColumns();
-                UpdateAllData();
+            // Update metadata and data
+            CalculateColumns();
+            UpdateAllData();
 
-                // Wire the new CurrencyManager
-                if (_listManager != null)
-                {
-                    _listManager.ListChanged += _listChangedHandler;
-                    _listManager.PositionChanged += _positionChangedHandler;
-                }
+            // Wire the new CurrencyManager
+            if (_listManager != null)
+            {
+                _listManager.ListChanged += _listChangedHandler;
+                _listManager.PositionChanged += _positionChangedHandler;
             }
 
             EndUpdate();
@@ -263,12 +249,16 @@ namespace MvvmFx.WisejWeb
 
             if (_listManager.Position > -1)
             {
-#if !WEBGUI
-                Items[_listManager.Position].Selected = true;
-#else
-                SelectedIndex = _listManager.Position;
-#endif
-                EnsureVisible(_listManager.Position);
+                for (var index = 0; index < Items.Count; index++)
+                {
+                    if (Items[index].Tag == _listManager.List[_listManager.Position])
+                    {
+                        Items[index].Selected = true;
+                        EnsureVisible(index);
+                    }
+                    else
+                        Items[index].Selected = false;
+                }
             }
         }
 
@@ -385,15 +375,26 @@ namespace MvvmFx.WisejWeb
 
         private void ListManager_PositionChanged(object sender, EventArgs e)
         {
+            if (_isHandlingPositionChange)
+                return;
+
+            _isHandlingPositionChange = true;
+
             if (Items.Count > _listManager.Position)
             {
-#if !WEBGUI
-                Items[_listManager.Position].Selected = true;
-#else
-                SelectedIndex = _listManager.Position;
-#endif
-                EnsureVisible(_listManager.Position);
+                for (var index = 0; index < Items.Count; index++)
+                {
+                    if (Items[index].Tag == _listManager.List[_listManager.Position])
+                    {
+                        Items[index].Selected = true;
+                        EnsureVisible(index);
+                    }
+                    else
+                        Items[index].Selected = false;
+                }
             }
+
+            _isHandlingPositionChange = false;
         }
 
         #endregion
@@ -427,7 +428,6 @@ namespace MvvmFx.WisejWeb
             {
                 // Update metadata and all data
                 CalculateColumns();
-                UpdateAllData();
             }
         }
 
@@ -443,15 +443,33 @@ namespace MvvmFx.WisejWeb
         /// <param name="e">An <see cref="System.EventArgs" /> that contains the event data.</param>
         protected override void OnSelectedIndexChanged(EventArgs e)
         {
+            if (_isHandlingPositionChange)
+                return;
+
+            _isHandlingPositionChange = true;
+
             try
             {
-                if (SelectedIndices.Count > 0 && _listManager.Position != SelectedIndices[0])
-                    _listManager.Position = SelectedIndices[0];
+                if (SelectedIndices.Count > 0)
+                {
+                    var selectedIndex = SelectedIndices[0];
+
+                    for (var index = 0; index < Items.Count; index++)
+                    {
+                        if (Items[selectedIndex].Tag == _listManager.List[index])
+                        {
+                            _listManager.Position = index;
+                            break;
+                        }
+                    }
+                }
             }
             catch
             {
-                // Could appear, if you change the position while someone edits a row with invalid data.
+                // Could happen, if you change the position while someone edits a row with invalid data.
             }
+
+            _isHandlingPositionChange = false;
             base.OnSelectedIndexChanged(e);
         }
 
@@ -546,28 +564,6 @@ namespace MvvmFx.WisejWeb
                 }
             }
         }
-
-        #endregion
-
-        #region VWG Critical Events
-
-#if WEBGUI
-
-        /// <summary>
-        /// Gets the critical events.
-        /// </summary>
-        /// <returns></returns>
-        protected override CriticalEventsData GetCriticalEventsData()
-        {
-            var objEvents = base.GetCriticalEventsData();
-
-            if (IsSelectionChangeCritical)
-                objEvents.Set(WGEvents.SelectionChange);
-
-            return objEvents;
-        }
-
-#endif
 
         #endregion
     }

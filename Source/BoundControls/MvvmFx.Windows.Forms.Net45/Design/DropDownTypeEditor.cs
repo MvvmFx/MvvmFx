@@ -1,7 +1,7 @@
 /********************************************************************
     created:	2005/03/27
     created:	27:3:2005   7:05
-    filename: 	DropDownTypeEditor.cs	
+    filename: 	DropDownTypeEditor.cs
     author:		Mike Chaliy
 
     purpose:	Base class for simple drop down type editors.
@@ -39,7 +39,7 @@ namespace MvvmFx.Windows.Forms.Design
 {
     /// <summary>
     /// Base class for simple drop down type editors.
-    /// </summary>	
+    /// </summary>
     public abstract class DropDownTypeEditor : UITypeEditor
     {
         #region Fields

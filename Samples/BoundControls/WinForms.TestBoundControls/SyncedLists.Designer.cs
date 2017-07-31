@@ -375,7 +375,7 @@
             this.sortButton.Name = "sortButton";
             this.sortButton.Size = new System.Drawing.Size(84, 23);
             this.sortButton.TabIndex = 33;
-            this.sortButton.Text = "Sort";
+            this.sortButton.Text = "UI Sort";
             this.sortButton.UseVisualStyleBackColor = true;
             this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
             // 
