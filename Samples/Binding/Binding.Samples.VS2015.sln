@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceTests", "Perform
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleBindings", "SimpleBindings\SimpleBindings.csproj", "{F9348B50-86E7-442F-A01C-18912A8B29CB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projetcs", "Framework projetcs", "{523BA48E-1F68-4439-96B3-142AC15B2F31}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Framework projects", "{523BA48E-1F68-4439-96B3-142AC15B2F31}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binding", "Binding", "{613B008F-4FB1-4725-A40A-8DFCD8784C52}"
 EndProject
