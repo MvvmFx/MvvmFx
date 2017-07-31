@@ -3,12 +3,15 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
+using MvvmFx.Logging;
 #if WISEJ
 using Wisej.Web;
 using WisejWeb.TestTreeView.Properties;
+using LogManager = WisejWeb.TestTreeView.LogManager;
 #else
 using System.Windows.Forms;
 using WinForms.TestTreeView.Properties;
+using LogManager = WinForms.TestTreeView.LogManager;
 #endif
 
 // code from Sascha Knopf
@@ -28,13 +31,25 @@ namespace MvvmFx.Windows.Forms
         #region Fields
 
         private bool _ignoreBindingContextChanged;
+        private bool _isHandlingPositionChange;
 
         private readonly Container _components = null;
-        private object _dataSource;
-        private string _dataMember;
         private readonly ListChangedEventHandler _listChangedHandler;
         private readonly EventHandler _positionChangedHandler;
         private CurrencyManager _listManager;
+
+        private object _dataSource;
+        private string _dataMember;
+        private bool _sorted;
+
+        #endregion
+
+        #region Log
+
+        /// <summary>
+        /// The logger
+        /// </summary>
+        private static readonly ILog Logger = LogManager.GetLog(typeof(BoundListView));
 
         #endregion
 
@@ -75,6 +90,7 @@ namespace MvvmFx.Windows.Forms
                 if (_dataSource != value)
                 {
                     _dataSource = value;
+                    Logger.Trace("DataSource");
                     _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
@@ -124,28 +140,40 @@ namespace MvvmFx.Windows.Forms
                 if (_dataMember != value)
                 {
                     _dataMember = value;
+                    Logger.Trace("DataSource");
                     _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
         }
 
-#if WEBGUI
-
         /// <summary>
-        /// Gets or sets a value indicating whether the selection change is critical.
+        /// Gets or sets the sort order for items in the control.
         /// </summary>
-        /// <value>
-        /// <c>true</c> if the selection change is critical; otherwise, <c>false</c>.
-        /// </value>
-        /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
-        [DefaultValue(false)]
-        [RefreshProperties(RefreshProperties.Repaint)]
-        [Category("Behavior")]
-        [Description("Indicates whether the selection change is critical.")]
-        public bool IsSelectionChangeCritical { get; set; }
-
-#endif
+        /// <returns>
+        /// One of the System.Windows.Forms.SortOrder values. The default is System.Windows.Forms.SortOrder.None.
+        /// </returns>
+        /// <exception cref="System.ComponentModel.InvalidEnumArgumentException">
+        /// The value specified is not one of the System.Windows.Forms.SortOrder values.
+        /// </exception>
+        [Browsable(true)]
+        //[Bindable(false, BindingDirection.TwoWay)]
+        [DefaultValue(SortOrder.None)]
+        public new SortOrder Sorting
+        {
+            get { return base.Sorting; }
+            set
+            {
+                if (base.Sorting != value)
+                {
+                    _sorted = true;
+                    base.Sorting = value;
+                    Logger.Trace("Sorting");
+                    _ignoreBindingContextChanged = false;
+                    TryDataBinding();
+                }
+            }
+        }
 
         /// <summary>
         /// Gets the selected item.
@@ -170,11 +198,13 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         public BoundListView()
         {
+            Logger.Trace("Constructor");
+
             _listChangedHandler = ListManager_ListChanged;
             _positionChangedHandler = ListManager_PositionChanged;
 
             View = View.Details;
-#if !WISEJ
+#if WINFORMS
             FullRowSelect = true;
             HideSelection = false;
 #endif
@@ -187,6 +217,8 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         protected override void Dispose(bool disposing)
         {
+            Logger.Trace("Dispose");
+
             if (disposing)
             {
                 if (_components != null)
@@ -206,7 +238,10 @@ namespace MvvmFx.Windows.Forms
         {
             if (DataSource == null ||
                 BindingContext == null)
+            {
+                _ignoreBindingContextChanged = false;
                 return;
+            }
 
             CurrencyManager currencyManager;
             try
@@ -219,30 +254,30 @@ namespace MvvmFx.Windows.Forms
                 return;
             }
 
+            Logger.Trace("TryDataBinding - BeginUpdate");
             BeginUpdate();
 
-            if (_listManager != currencyManager)
+            // Unwire the old CurrencyManager
+            if (_listManager != null)
             {
-                // Unwire the old CurrencyManager
-                if (_listManager != null)
-                {
-                    _listManager.ListChanged -= _listChangedHandler;
-                    _listManager.PositionChanged -= _positionChangedHandler;
-                }
-                _listManager = currencyManager;
+                _listManager.ListChanged -= _listChangedHandler;
+                _listManager.PositionChanged -= _positionChangedHandler;
+            }
+            _listManager = currencyManager;
 
-                // Update metadata and data
-                CalculateColumns();
-                UpdateAllData();
+            // Update metadata and data
+            CalculateColumns();
+			Logger.Trace("TryDataBinding - UpdateAllData");
+            UpdateAllData();
 
-                // Wire the new CurrencyManager
-                if (_listManager != null)
-                {
-                    _listManager.ListChanged += _listChangedHandler;
-                    _listManager.PositionChanged += _positionChangedHandler;
-                }
+            // Wire the new CurrencyManager
+            if (_listManager != null)
+            {
+                _listManager.ListChanged += _listChangedHandler;
+                _listManager.PositionChanged += _positionChangedHandler;
             }
 
+            Logger.Trace("TryDataBinding - EndUpdate");
             EndUpdate();
         }
 
@@ -263,12 +298,24 @@ namespace MvvmFx.Windows.Forms
 
             if (_listManager.Position > -1)
             {
-#if !WEBGUI
-                Items[_listManager.Position].Selected = true;
-#else
-                SelectedIndex = _listManager.Position;
-#endif
-                EnsureVisible(_listManager.Position);
+                if (_sorted)
+                {
+                    for (var index = 0; index < Items.Count; index++)
+                    {
+                        if (Items[index].Tag == _listManager.List[_listManager.Position])
+                        {
+                            Items[index].Selected = true;
+                            EnsureVisible(index);
+                        }
+                        else
+                            Items[index].Selected = false;
+                    }
+                }
+                else
+                {
+                    Items[_listManager.Position].Selected = true;
+                    EnsureVisible(_listManager.Position);
+                }
             }
         }
 
@@ -354,6 +401,12 @@ namespace MvvmFx.Windows.Forms
             }
         }
 
+        public new void Sort()
+        {
+            _sorted = true;
+            base.Sort();
+        }
+
         #endregion
 
         #region BindingContext Events
@@ -374,6 +427,7 @@ namespace MvvmFx.Windows.Forms
             if (_ignoreBindingContextChanged)
                 return;
 
+            Logger.Trace("OnBindingContextChanged");
             _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
@@ -385,15 +439,32 @@ namespace MvvmFx.Windows.Forms
 
         private void ListManager_PositionChanged(object sender, EventArgs e)
         {
+            if(_isHandlingPositionChange)
+                return;
+
+            _isHandlingPositionChange = true;
             if (Items.Count > _listManager.Position)
             {
-#if !WEBGUI
-                Items[_listManager.Position].Selected = true;
-#else
-                SelectedIndex = _listManager.Position;
-#endif
-                EnsureVisible(_listManager.Position);
+                if (_sorted)
+                {
+                    for (var index = 0; index < Items.Count; index++)
+                    {
+                        if (Items[index].Tag == _listManager.List[_listManager.Position])
+                        {
+                            Items[index].Selected = true;
+                            EnsureVisible(index);
+                        }
+                        else
+                            Items[index].Selected = false;
+                    }
+                }
+                else
+                {
+                    Items[_listManager.Position].Selected = true;
+                    EnsureVisible(_listManager.Position);
+                }
             }
+            _isHandlingPositionChange = false;
         }
 
         #endregion
@@ -402,32 +473,37 @@ namespace MvvmFx.Windows.Forms
 
         private void ListManager_ListChanged(object sender, ListChangedEventArgs e)
         {
+            Logger.Trace("ListManager_ListChanged - ListChangedType." + e.ListChangedType + " - START");
             if (e.ListChangedType == ListChangedType.Reset ||
                 e.ListChangedType == ListChangedType.ItemMoved)
             {
+                Logger.Trace("ListManager_ListChanged - ListChangedType.Reset || ListChangedType.ItemMoved - UpdateAllData");
                 // Update all data
                 UpdateAllData();
             }
             else if (e.ListChangedType == ListChangedType.ItemAdded)
             {
+                Logger.Trace("ListManager_ListChanged - ListChangedType.ItemAdded - AddItem");
                 // Add new Item
                 AddItem(e.NewIndex);
             }
             else if (e.ListChangedType == ListChangedType.ItemChanged)
             {
+                Logger.Trace("ListManager_ListChanged - ListChangedType.ItemChanged - UpdateItem");
                 // Change Item
                 UpdateItem(e.NewIndex);
             }
             else if (e.ListChangedType == ListChangedType.ItemDeleted)
             {
+                Logger.Trace("ListManager_ListChanged - ListChangedType.ItemDeleted - DeleteItem");
                 // Delete Item
                 DeleteItem(e.NewIndex);
             }
             else
             {
+                Logger.Trace("ListManager_ListChanged - CalculateColumns + UpdateAllData");
                 // Update metadata and all data
                 CalculateColumns();
-                UpdateAllData();
             }
         }
 
@@ -443,15 +519,38 @@ namespace MvvmFx.Windows.Forms
         /// <param name="e">An <see cref="System.EventArgs" /> that contains the event data.</param>
         protected override void OnSelectedIndexChanged(EventArgs e)
         {
+            if (_isHandlingPositionChange)
+                return;
+
+            _isHandlingPositionChange = true;
+            Logger.Trace("OnSelectedIndexChanged - START");
             try
             {
-                if (SelectedIndices.Count > 0 && _listManager.Position != SelectedIndices[0])
-                    _listManager.Position = SelectedIndices[0];
+                if (SelectedIndices.Count > 0)
+                {
+                    var selectedIndex = SelectedIndices[0];
+
+                    for (var index = 0; index < Items.Count; index++)
+                    {
+                        if (Items[selectedIndex].Tag == _listManager.List[index])
+                        {
+                            Logger.Trace("OnSelectedIndexChanged - {0} - Id={1} - Name={2} - list index {3}",
+                                selectedIndex,
+                                ((BoundControls.Business.Leaf)_listManager.List[index]).LeafId,
+                                ((BoundControls.Business.Leaf)_listManager.List[index]).LeafName,
+                                index);
+
+                            _listManager.Position = index;
+                            break;
+                        }
+                    }
+                }
             }
             catch
             {
                 // Could appear, if you change the position while someone edits a row with invalid data.
             }
+            _isHandlingPositionChange = false;
             base.OnSelectedIndexChanged(e);
         }
 
@@ -546,28 +645,6 @@ namespace MvvmFx.Windows.Forms
                 }
             }
         }
-
-        #endregion
-
-        #region VWG Critical Events
-
-#if WEBGUI
-
-        /// <summary>
-        /// Gets the critical events.
-        /// </summary>
-        /// <returns></returns>
-        protected override CriticalEventsData GetCriticalEventsData()
-        {
-            var objEvents = base.GetCriticalEventsData();
-
-            if (IsSelectionChangeCritical)
-                objEvents.Set(WGEvents.SelectionChange);
-
-            return objEvents;
-        }
-
-#endif
 
         #endregion
     }

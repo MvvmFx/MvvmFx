@@ -34,7 +34,6 @@ namespace WinForms.TestTreeView
             BindUI();
 
             GroupsListView();
-            SortListView();
 
             LeafList.ListChanged += LeafList_ListChanged;
         }
@@ -63,7 +62,6 @@ namespace WinForms.TestTreeView
         {
             LeafList.ResetBindings(); // force update all data bound objects
             GroupsListView();
-            SortListView();
             boundTreeView1.ExpandAll();
         }
 
@@ -76,6 +74,7 @@ namespace WinForms.TestTreeView
 
         private void ColumnsListView()
         {
+            boundListView1.Columns.RemoveAt(4);
             boundListView1.Columns.RemoveAt(3);
             boundListView1.Columns.RemoveAt(1);
             boundListView1.Columns[0].Text = "Id";
@@ -86,7 +85,7 @@ namespace WinForms.TestTreeView
 
         private void GroupsListView()
         {
-            /*boundListView1.Groups.Clear();
+            boundListView1.Groups.Clear();
 
             boundListView1.Groups.Add(new ListViewGroup("Root", HorizontalAlignment.Left));
             boundListView1.Groups.Add(new ListViewGroup("One", HorizontalAlignment.Left));
@@ -106,7 +105,7 @@ namespace WinForms.TestTreeView
                     boundListView1.Groups[2].Items.Add(item);
                 else
                     boundListView1.Groups[3].Items.Add(item);
-            }*/
+            }
         }
 
         private void SortListView()
@@ -117,7 +116,6 @@ namespace WinForms.TestTreeView
         private void SortTreeView()
         {
             boundTreeView1.Sort();
-            //boundTreeView1.Sorted = true;
         }
 
         #endregion
@@ -285,6 +283,8 @@ namespace WinForms.TestTreeView
 
         private void sortButton_Click(object sender, EventArgs e)
         {
+            GroupsListView();
+            SortListView();
             SortTreeView();
         }
 
