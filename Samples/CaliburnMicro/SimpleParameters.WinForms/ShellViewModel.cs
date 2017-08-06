@@ -1,5 +1,10 @@
 ﻿using MvvmFx.CaliburnMicro;
 using SimpleParameters.UI.ViewModels;
+#if WISEJ
+using Wisej.Web;
+#else
+using System.Windows.Forms;
+#endif
 using Screen = MvvmFx.CaliburnMicro.Screen;
 
 namespace SimpleParameters.UI
@@ -83,9 +88,13 @@ namespace SimpleParameters.UI
         {
             ((ShellViewModelClass) Model).ButtonDescription = "showToolStripTest pressed.";
             ButtonNr = "4";
+#if !WISEJ
             if (_toolStripViewModel == null)
                 _toolStripViewModel = new ToolStripViewModel();
             ActiveItem = _toolStripViewModel;
+#else
+            MessageBox.Show("Option disabled under Wisej.","Alert");
+#endif
         }
 
         public object Model { get; set; }

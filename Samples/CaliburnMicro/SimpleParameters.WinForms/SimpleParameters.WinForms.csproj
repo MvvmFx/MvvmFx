@@ -7,7 +7,7 @@
     <ProjectGuid>{72408A75-38CB-45F5-AB8F-DD519E1AA958}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleParameters.WinForms</RootNamespace>
+    <RootNamespace>SimpleParameters.UI</RootNamespace>
     <AssemblyName>SimpleParameters.WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

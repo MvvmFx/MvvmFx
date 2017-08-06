@@ -1,8 +1,9 @@
 ﻿using System;
-#if WINFORMS
-using System.Windows.Forms;
+#if WISEJ
+using Wisej.Web;
+using ToolStripMenuItem = Wisej.Web.MenuItem;
 #else
-using Gizmox.WebGUI.Forms;
+using System.Windows.Forms;
 #endif
 using MvvmFx.CaliburnMicro;
 

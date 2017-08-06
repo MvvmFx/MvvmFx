@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.showButtonTest = new System.Windows.Forms.Button();
-            this.showButtonParameterTest = new System.Windows.Forms.Button();
-            this.showMenuStripTest = new System.Windows.Forms.Button();
-            this.showToolStripTest = new System.Windows.Forms.Button();
+            this.showButtonTest = new Wisej.Web.Button();
+            this.showButtonParameterTest = new Wisej.Web.Button();
+            this.showMenuStripTest = new Wisej.Web.Button();
+            this.showToolStripTest = new Wisej.Web.Button();
             this.ActiveItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this._buttonNr = new System.Windows.Forms.Label();
-            this._model_buttonDescription = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.menuStrip1 = new Wisej.Web.MenuBar();
+            this._buttonNr = new Wisej.Web.Label();
+            this._model_buttonDescription = new Wisej.Web.Label();
+            this.toolTip1 = new Wisej.Web.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // showButtonTest
@@ -47,7 +47,6 @@
             this.showButtonTest.Size = new System.Drawing.Size(120, 23);
             this.showButtonTest.TabIndex = 0;
             this.showButtonTest.Text = "Button test";
-            this.showButtonTest.UseVisualStyleBackColor = true;
             // 
             // showButtonParameterTest
             // 
@@ -56,7 +55,6 @@
             this.showButtonParameterTest.Size = new System.Drawing.Size(120, 23);
             this.showButtonParameterTest.TabIndex = 0;
             this.showButtonParameterTest.Text = "Button Parameter test";
-            this.showButtonParameterTest.UseVisualStyleBackColor = true;
             // 
             // showMenuStripTest
             // 
@@ -65,7 +63,6 @@
             this.showMenuStripTest.Size = new System.Drawing.Size(120, 23);
             this.showMenuStripTest.TabIndex = 1;
             this.showMenuStripTest.Text = "MenuStrip test";
-            this.showMenuStripTest.UseVisualStyleBackColor = true;
             // 
             // showToolStripTest
             // 
@@ -74,11 +71,13 @@
             this.showToolStripTest.Size = new System.Drawing.Size(120, 23);
             this.showToolStripTest.TabIndex = 2;
             this.showToolStripTest.Text = "ToolStrip test";
-            this.showToolStripTest.UseVisualStyleBackColor = true;
             // 
             // ActiveItem
             // 
-            this.ActiveItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ActiveItem.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+            //this.ActiveItem.Dock = Wisej.Web.DockStyle.Fill;
             this.ActiveItem.Location = new System.Drawing.Point(0, 49);
             this.ActiveItem.Name = "ActiveItem";
             this.ActiveItem.Size = new System.Drawing.Size(1003, 438);
@@ -113,12 +112,12 @@
             // 
             // toolTip1
             // 
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipIcon = Wisej.Web.ToolTipIcon.Info;
             // 
             // ShellView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1003, 487);
             this.Controls.Add(this._model_buttonDescription);
@@ -138,14 +137,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button showButtonParameterTest;
-        private System.Windows.Forms.Button showButtonTest;
-        private System.Windows.Forms.Button showMenuStripTest;
-        private System.Windows.Forms.Button showToolStripTest;
+        private Wisej.Web.Button showButtonParameterTest;
+        private Wisej.Web.Button showButtonTest;
+        private Wisej.Web.Button showMenuStripTest;
+        private Wisej.Web.Button showToolStripTest;
         private MvvmFx.CaliburnMicro.ContentContainer ActiveItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Label _buttonNr;
-        private System.Windows.Forms.Label _model_buttonDescription;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private Wisej.Web.MenuBar menuStrip1;
+        private Wisej.Web.Label _buttonNr;
+        private Wisej.Web.Label _model_buttonDescription;
+        private Wisej.Web.ToolTip toolTip1;
     }
 }
