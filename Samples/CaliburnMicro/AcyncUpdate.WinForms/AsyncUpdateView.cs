@@ -1,5 +1,9 @@
 ﻿using System;
+#if WISEJ
+using Wisej.Web;
+#else
 using System.Windows.Forms;
+#endif
 using MvvmFx.CaliburnMicro;
 
 namespace AcyncUpdate.UI
