@@ -1,9 +1,7 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     using System;
-#if WEBGUI
-    using Gizmox.WebGUI.Forms;
-#elif WISEJ
+#if WISEJ
     using Wisej.Web;
 #else
     using System.Windows.Forms;
@@ -155,7 +153,7 @@
 
                 if (close)
                 {
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
                     // needed because the DependencyObject implementation uses objects and should use WeakReference.
                     foreach (var view in Views)
                     {
@@ -202,7 +200,6 @@
                 if (closeMethod != null)
                     return () =>
                     {
-#if !SILVERLIGHT
                         var isClosed = false;
                         if (dialogResult != null)
                         {
@@ -218,9 +215,6 @@
                         {
                             closeMethod.Invoke(contextualView, null);
                         }
-#else
-                        closeMethod.Invoke(contextualView, null);
-#endif
                     };
 
                 var isOpenProperty = viewType.GetProperty("IsOpen");

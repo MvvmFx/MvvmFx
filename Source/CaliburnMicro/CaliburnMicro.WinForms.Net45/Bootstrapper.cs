@@ -4,9 +4,7 @@
     using System.Collections.Generic;
     using System.Reflection;
     using System.Windows;
-#if WEBGUI
-    using Gizmox.WebGUI.Forms;
-#elif WISEJ
+#if WISEJ
     using Wisej.Web;
     using System.Threading;
 #elif WINFORMS
@@ -24,7 +22,7 @@
         private readonly bool useApplication;
         private bool isInitialized;
 
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
     /// <summary>
     /// The application.
     /// </summary>
@@ -38,7 +36,7 @@
         protected BootstrapperBase(bool useApplication = true)
         {
             this.useApplication = useApplication;
-#if WEBGUI
+#if WISEJ
             ApplicationContext.SetEntryAssembly(this);
 #endif
         }
@@ -74,7 +72,7 @@
             }
         }
 
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
         /// <summary>
         /// Runs this instance.
         /// </summary>
@@ -103,7 +101,7 @@
         /// </summary>
         protected virtual void StartRuntime()
         {
-#if WEBGUI || WISEJ
+#if WISEJ
             Execute.ResetWithoutDispatcher();
 #else
             Execute.InitializeWithDispatcher();
@@ -136,7 +134,7 @@
 
             if (useApplication)
             {
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
                 //Application = System.Windows.Forms.Application;
 #else
                 Application = Application.Current;
@@ -150,7 +148,7 @@
             IoC.BuildUp = BuildUp;
         }
 
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
         /// <summary>
         /// Provides an opportunity to hook into the application object.
         /// </summary>
@@ -244,7 +242,7 @@
         {
         }
 
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
         /// <summary>
         /// Handles the UnhandledException event of the AppDomain control.
         /// </summary>
@@ -254,14 +252,6 @@
         {
         }
 
-#if WEBGUI
-        /// <summary>
-        /// Handles the ThreadException event of the Application control.
-        /// </summary>
-        /// <param name="sender">The source of the event.</param>
-        /// <param name="e">The <see cref="ThreadExceptionEventArgs"/> instance containing the event data.</param>
-        protected virtual void Application_ThreadException(object sender, Gizmox.WebGUI.Forms.ThreadExceptionEventArgs e) { }
-#else
         /// <summary>
         /// Handles the ThreadException event of the Application control.
         /// </summary>
@@ -270,7 +260,6 @@
         protected virtual void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
         }
-#endif
 #endif
 
 #if SILVERLIGHT
@@ -282,7 +271,7 @@
         protected virtual void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
         }
-#elif !WINFORMS && !WEBGUI && !WISEJ
+#elif !WINFORMS && !WISEJ
     /// <summary>
     /// Override this to add custom behavior for unhandled exceptions.
     /// </summary>
@@ -330,7 +319,7 @@
         protected void DisplayRootViewFor(Type viewModelType, IDictionary<string, object> settings = null)
         {
             var windowManager = IoC.Get<IWindowManager>();
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
             windowManager.ShowMainWindow(IoC.GetInstance(viewModelType, null), null, settings);
 #else
             windowManager.ShowWindow(IoC.GetInstance(viewModelType, null), null, settings);

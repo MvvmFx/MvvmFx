@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-#if WEBGUI
-using FrameworkElement = Gizmox.WebGUI.Forms.Control;
-#elif WISEJ
+#if WISEJ
 using FrameworkElement = Wisej.Web.Control;
 #else
 using FrameworkElement = System.Windows.Forms.Control;

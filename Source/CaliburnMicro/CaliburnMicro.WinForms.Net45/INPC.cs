@@ -13,11 +13,10 @@
     using System.Windows.Forms;
 #elif WISEJ
     using Wisej.Web;
-#elif !WEBGUI
-    using System.Reflection;
 #endif
+    using System.Reflection;
 
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
     using System.Windows;
     using System.Windows.Threading;
 #endif
@@ -41,7 +40,7 @@
                 {
 #if SILVERLIGHT
                     inDesignMode = DesignerProperties.IsInDesignTool;
-#elif WINFORMS || WEBGUI || WISEJ
+#elif WINFORMS || WISEJ
                     inDesignMode =
                         (bool) Process.GetCurrentProcess().ProcessName.StartsWith("devenv", StringComparison.Ordinal);
 #else
@@ -95,9 +94,9 @@
                             "An error occurred while dispatching a call to the UI Thread", exception);
                 }
             });
-#elif WINFORMS || WEBGUI || WISEJ
+#elif WINFORMS || WISEJ
             var context = SynchronizationContext.Current;
-#if !WEBGUI  && !WISEJ
+#if !WISEJ
             if (!(context is WindowsFormsSynchronizationContext))
             {
                 var dlg = new Form();
@@ -175,9 +174,7 @@
     /// <summary>
     ///   A base class that implements the infrastructure for property change notification and automatically performs UI thread marshalling.
     /// </summary>
-#if !SILVERLIGHT
     [Serializable]
-#endif
     public class PropertyChangedBase : INotifyPropertyChangedEx
     {
         /// <summary>

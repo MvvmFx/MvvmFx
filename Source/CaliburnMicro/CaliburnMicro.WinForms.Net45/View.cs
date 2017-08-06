@@ -2,10 +2,7 @@
 {
     using System;
     using System.Windows;
-#if WEBGUI
-    using Gizmox.WebGUI.Forms;
-    using FrameworkElement = Gizmox.WebGUI.Forms.Control;
-#elif WISEJ
+#if WISEJ
     using Wisej.Web;
     using FrameworkElement = Wisej.Web.Control;
 #else
@@ -76,16 +73,12 @@
         /// <returns>true if the handler was executed immediately; false otherwise</returns>
         public static bool ExecuteOnLoad(FrameworkElement element, EventHandler handler)
         {
-#if WEBGUI
-            handler(element, new EventArgs());
-            return true;
-#else
             if (element.IsHandleCreated)
             {
                 handler(element, new EventArgs());
                 return true;
             }
-            
+
             EventHandler loaded = null;
             loaded = (s, e) =>
             {
@@ -95,7 +88,6 @@
 
             element.HandleCreated += loaded;
             return false;
-#endif
         }
 
 #if WINFORMS
@@ -123,7 +115,7 @@
         /// <remarks>In certain instances the services create UI elements.
         /// For example, if you ask the window manager to show a UserControl as a dialog, it creates a window to host the UserControl in.
         /// The WindowManager marks that element as a framework-created element so that it can determine what it created vs. what was intended by the developer.
-        /// Calling GetFirstNonGeneratedView allows the framework to discover what the original element was. 
+        /// Calling GetFirstNonGeneratedView allows the framework to discover what the original element was.
         /// </remarks>
         public static Func<object, object> GetFirstNonGeneratedView = view =>
         {

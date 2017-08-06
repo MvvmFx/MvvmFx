@@ -2,10 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
-using Gizmox.WebGUI.Forms.Design;
-#elif WISEJ
+#if WISEJ
 using Wisej.Web;
 using System.Windows.Forms.Design;
 #else
