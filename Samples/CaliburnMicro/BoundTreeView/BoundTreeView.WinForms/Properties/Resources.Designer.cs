@@ -111,9 +111,9 @@ namespace BoundTreeView.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Female.
         /// </summary>
-        internal static string Gende_Female {
+        internal static string Gender_Female {
             get {
-                return ResourceManager.GetString("Gende_Female", resourceCulture);
+                return ResourceManager.GetString("Gender_Female", resourceCulture);
             }
         }
         

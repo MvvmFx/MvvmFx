@@ -1,25 +1,22 @@
 ﻿using System;
-using Wisej.Web;
+using System.Windows.Forms;
 
-namespace BoundTreeView.WisejWeb
+namespace BoundTreeView
 {
     static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        [STAThread]
+        private static void Main()
         {
-            Window1 window = new Window1();
-            window.Show();
-        }
+#if WINFORMS
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+#endif
 
-        //
-        // You can use the entry method below
-        // to receive the parameters from the URL in the args collection.
-        //
-        //static void Main(NameValueCollection args)
-        //{
-        //}
+            new AppBootstrapper().Run();
+        }
     }
 }

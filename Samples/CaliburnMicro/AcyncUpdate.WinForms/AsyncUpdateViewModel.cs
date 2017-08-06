@@ -3,7 +3,8 @@ using System.Collections.Generic;
 #if WINFORMS
 using System.Windows.Forms;
 #else
-using Gizmox.WebGUI.Forms;
+using Wisej.Web;
+using Wisej.Base;
 #endif
 using MvvmFx.CaliburnMicro;
 using Screen = MvvmFx.CaliburnMicro.Screen;
@@ -142,7 +143,12 @@ namespace AcyncUpdate.UI
         public IEnumerable<IResult> GetId()
         {
             IsCustomerNameReadOnly = true;
-            var result = new CustomerIdResult();
+            CustomerIdResult result;
+#if WINFORMS
+            result = new CustomerIdResult();
+#else
+            result = new CustomerIdResult((Form) GetView());
+#endif
 
             CanDataEntry = false;
             yield return Show.Busy("Generating Customer Id");
@@ -156,6 +162,15 @@ namespace AcyncUpdate.UI
 
     public class CustomerIdResult : IResult
     {
+#if WISEJ
+        private Form _view;
+
+        public CustomerIdResult(Form view)
+        {
+            _view = view;
+        }
+#endif
+
         public Guid Response { get; set; }
 
         public void Execute(ActionExecutionContext context)
@@ -166,6 +181,9 @@ namespace AcyncUpdate.UI
 
                 Response = Guid.NewGuid();
                 Completed(this, new ResultCompletionEventArgs());
+#if WISEJ
+                ApplicationBase.Update(_view);
+#endif
             });
         }
 

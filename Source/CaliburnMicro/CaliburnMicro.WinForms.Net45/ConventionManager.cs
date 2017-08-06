@@ -4,9 +4,7 @@
     using System.Collections.Generic;
     using System.Reflection;
     using System.Windows;
-#if WEBGUI
-    using Gizmox.WebGUI.Forms;
-#elif WISEJ
+#if WISEJ
     using Wisej.Web;
 #else
     using System.Windows.Forms;
@@ -17,7 +15,7 @@
     /// </summary>
     public static class ConventionManager
     {
-#if WEBGUI
+#if WISEJ
         private static readonly Logging.ILog Log = LogManager.GetLog(typeof (ConventionManager));
 #endif
         static ConventionManager()
@@ -33,13 +31,11 @@
             AddElementConvention<ListControl>("DataSource", null, null);
             AddElementConvention<TreeView>("DataSource", null, null);
             AddElementConvention<GroupBox>("Name", null, null);
-#if !WISEJ
             AddElementConvention<ToolStripItemProxy>("Name", null, "Click")
                 .CreateAction = (element, methodName, parameters) =>
                 {
                     return new ActionMessage(element, "Click", methodName, parameters);
                 };
-#endif
             AddElementConvention<TabControl>("SelectedTab", null, null)
                 .ApplyBinding = (viewModel, path, property, control, convention) => { return true; };
         }
@@ -113,27 +109,7 @@
 
                 //TODO: Add auto validation hookup
 
-#if WEBGUI
-                try
-                {
-#if DEBUG
-                    Log.Debug("'try' DataBindings.Add on control " + control.Name);
-#endif
-                    control.DataBindings.Add(binding);
-                }
-                catch (ArgumentNullException)
-                {
-#if DEBUG
-                    var detailMessage = ".";
-                    if (path.IndexOf('.') > -1)
-                        detailMessage = "; the DataMember " + path + " must not have a null object on the path.";
-
-                    Log.Debug("'catch' System.ArgumentNullException" + detailMessage);
-#endif
-                }
-#else
                 control.DataBindings.Add(binding);
-#endif
 
                 return true;
             };

@@ -1,5 +1,9 @@
 ﻿using System;
+#if WISEJ
+using Wisej.Web;
+#else
 using System.Windows.Forms;
+#endif
 
 namespace AcyncUpdate.UI
 {
@@ -56,17 +60,17 @@ namespace AcyncUpdate.UI
         {
             System.ComponentModel.ComponentResourceManager resources =
                 new System.ComponentModel.ComponentResourceManager(typeof (BusyIndicator));
-            this.Message = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Message = new Label();
+            this.pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Message
             // 
             this.Message.Anchor =
-                ((System.Windows.Forms.AnchorStyles)
-                    (((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                      | System.Windows.Forms.AnchorStyles.Right)));
+                ((AnchorStyles)
+                    (((AnchorStyles.Bottom | AnchorStyles.Left)
+                      | AnchorStyles.Right)));
             this.Message.Location = new System.Drawing.Point(10, 62);
             this.Message.Name = "Message";
             this.Message.Size = new System.Drawing.Size(50, 13);
@@ -76,12 +80,12 @@ namespace AcyncUpdate.UI
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Anchor = AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(11, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 

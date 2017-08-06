@@ -5,18 +5,14 @@
     using System.Text.RegularExpressions;
     using System.Collections.Generic;
     using System.Windows;
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
     using System.Reflection;
     using System.Windows.Controls;
 #if !SILVERLIGHT && !WinRT
     using System.Windows.Interop;
 #endif
 #endif
-#if WEBGUI
-    using Window = Gizmox.WebGUI.Forms.Form;
-    using UIElement = Gizmox.WebGUI.Forms.Control;
-    using TextBlock = Gizmox.WebGUI.Forms.Label;
-#elif WISEJ
+#if WISEJ
     using Window = Wisej.Web.Form;
     using UIElement = Wisej.Web.Control;
     using TextBlock = Wisej.Web.Label;
@@ -293,7 +289,7 @@
 
             if (view != null)
             {
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
                 InitializeComponent(view);
 #endif
                 return view;
@@ -311,7 +307,7 @@
 #endif
 
             view = (UIElement) Activator.CreateInstance(viewType);
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
             InitializeComponent(view);
 #endif
             return view;
@@ -443,7 +439,7 @@
                     var view = viewAware.GetView(context) as UIElement;
                     if (view != null)
                     {
-#if !SILVERLIGHT && !WinRT && !WINFORMS && !WEBGUI && !WISEJ
+#if !SILVERLIGHT && !WinRT && !WINFORMS && !WISEJ
                         var windowCheck = view as Window;
                         if (windowCheck == null ||
                             (!windowCheck.IsLoaded && !(new WindowInteropHelper(windowCheck).Handle == IntPtr.Zero)))
@@ -461,7 +457,7 @@
                 return LocateForModelType(model.GetType(), displayLocation, context);
             };
 
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
         /// <summary>
         /// Transforms a view type into a pack uri.
         /// </summary>

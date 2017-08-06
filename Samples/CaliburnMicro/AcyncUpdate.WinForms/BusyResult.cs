@@ -4,7 +4,7 @@ using MvvmFx.CaliburnMicro;
 #if WINFORMS
 using System.Windows.Forms;
 #else
-using Gizmox.WebGUI.Forms;
+using Wisej.Web;
 #endif
 
 namespace AcyncUpdate.UI
@@ -43,11 +43,7 @@ namespace AcyncUpdate.UI
             if (view == null)
             {
                 var queue = new Queue<Control>();
-#if WINFORMS
                 queue.Enqueue(Form.ActiveForm);
-#else
-                queue.Enqueue(ApplicationContext.WebGUIActiveForm);
-#endif
                 while (queue.Count > 0)
                 {
                     var current = queue.Dequeue();

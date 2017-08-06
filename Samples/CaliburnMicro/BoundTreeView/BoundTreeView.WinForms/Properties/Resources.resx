@@ -145,7 +145,7 @@
   <data name="Gender_Male" xml:space="preserve">
     <value>Male</value>
   </data>
-  <data name="Gende_Female" xml:space="preserve">
+  <data name="Gender_Female" xml:space="preserve">
     <value>Female</value>
   </data>
 </root>

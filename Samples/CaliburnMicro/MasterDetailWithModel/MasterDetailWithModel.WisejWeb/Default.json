@@ -27,5 +27,5 @@
 //                          Custom settings are available using Application.Configuration.Settings.
 {
     "url": "Default.html",
-    "startup": "MasterDetailWithModel.WisejWeb.Program.Main, MasterDetailWithModel.WisejWeb"
+    "startup": "MasterDetailWithModel.Program.Main, MasterDetailWithModel.WisejWeb"
 }

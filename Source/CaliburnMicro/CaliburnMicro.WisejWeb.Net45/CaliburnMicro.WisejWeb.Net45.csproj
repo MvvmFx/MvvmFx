@@ -201,6 +201,10 @@
     <Compile Include="..\CaliburnMicro.WinForms.Net45\StartupEventArgs.cs">
       <Link>StartupEventArgs.cs</Link>
     </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ToolStripItemProxy.cs">
+      <Link>ToolStripItemProxy.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\TypeMappingConfiguration.cs">
       <Link>TypeMappingConfiguration.cs</Link>
     </Compile>

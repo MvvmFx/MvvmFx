@@ -6,9 +6,7 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Reflection;
-#if WEBGUI
-    using UIElement = Gizmox.WebGUI.Forms.Control;
-#elif WISEJ
+#if WISEJ
     using UIElement = Wisej.Web.Control;
 #else
     using UIElement = System.Windows.Forms.Control;

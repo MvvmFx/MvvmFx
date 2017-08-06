@@ -44,7 +44,7 @@
             // 
             this.showButtonTest.Location = new System.Drawing.Point(13, 13);
             this.showButtonTest.Name = "showButtonTest";
-            this.showButtonTest.Size = new System.Drawing.Size(100, 23);
+            this.showButtonTest.Size = new System.Drawing.Size(120, 23);
             this.showButtonTest.TabIndex = 0;
             this.showButtonTest.Text = "Button test";
             this.showButtonTest.UseVisualStyleBackColor = true;
@@ -53,7 +53,7 @@
             // 
             this.showButtonParameterTest.Location = new System.Drawing.Point(143, 13);
             this.showButtonParameterTest.Name = "showButtonParameterTest";
-            this.showButtonParameterTest.Size = new System.Drawing.Size(100, 23);
+            this.showButtonParameterTest.Size = new System.Drawing.Size(120, 23);
             this.showButtonParameterTest.TabIndex = 0;
             this.showButtonParameterTest.Text = "Button Parameter test";
             this.showButtonParameterTest.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@
             // 
             this.showMenuStripTest.Location = new System.Drawing.Point(273, 13);
             this.showMenuStripTest.Name = "showMenuStripTest";
-            this.showMenuStripTest.Size = new System.Drawing.Size(100, 23);
+            this.showMenuStripTest.Size = new System.Drawing.Size(120, 23);
             this.showMenuStripTest.TabIndex = 1;
             this.showMenuStripTest.Text = "MenuStrip test";
             this.showMenuStripTest.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             // 
             this.showToolStripTest.Location = new System.Drawing.Point(403, 13);
             this.showToolStripTest.Name = "showToolStripTest";
-            this.showToolStripTest.Size = new System.Drawing.Size(100, 23);
+            this.showToolStripTest.Size = new System.Drawing.Size(120, 23);
             this.showToolStripTest.TabIndex = 2;
             this.showToolStripTest.Text = "ToolStrip test";
             this.showToolStripTest.UseVisualStyleBackColor = true;

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using BoundTreeView.ViewModels;
 using FamilyBusiness;
 using MvvmFx.CaliburnMicro;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
+#if WISEJ
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif

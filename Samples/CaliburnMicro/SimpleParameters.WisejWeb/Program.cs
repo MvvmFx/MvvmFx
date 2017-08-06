@@ -1,25 +1,26 @@
 ﻿using System;
+#if WISEJ
 using Wisej.Web;
+#else
+using System.Windows.Forms;
+#endif
 
-namespace SimpleParameters.WisejWeb
+namespace SimpleParameters.UI
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        [STAThread]
+        private static void Main()
         {
-            Window1 window = new Window1();
-            window.Show();
-        }
+#if WINFORMS
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+#endif
 
-        //
-        // You can use the entry method below
-        // to receive the parameters from the URL in the args collection.
-        //
-        //static void Main(NameValueCollection args)
-        //{
-        //}
+            new AppBootstrapper().Run();
+        }
     }
 }

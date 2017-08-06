@@ -27,5 +27,5 @@
 //                          Custom settings are available using Application.Configuration.Settings.
 {
     "url": "Default.html",
-    "startup": "BoundTreeView.WisejWeb.Program.Main, BoundTreeView.WisejWeb"
+    "startup": "BoundTreeView.Program.Main, BoundTreeView.WisejWeb"
 }

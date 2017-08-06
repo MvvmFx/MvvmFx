@@ -11,8 +11,10 @@ namespace MasterDetailWithModel
         [STAThread]
         private static void Main()
         {
+#if WINFORMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+#endif
 
             new AppBootstrapper().Run();
         }

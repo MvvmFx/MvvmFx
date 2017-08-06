@@ -5,12 +5,7 @@
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Drawing;
-#if WEBGUI
-    using Gizmox.WebGUI.Forms;
-    using Window = Gizmox.WebGUI.Forms.Form;
-    using NavigationWindow = Gizmox.WebGUI.Forms.Form;
-    using Popup = Gizmox.WebGUI.Forms.Panel;
-#elif WISEJ
+#if WISEJ
     using Wisej.Web;
     using Window = Wisej.Web.Form;
     using NavigationWindow = Wisej.Web.Form;
@@ -201,24 +196,25 @@
         public virtual void ShowMainWindow(object rootModel, object context = null,
             IDictionary<string, object> settings = null)
         {
-#if !WISEJ
+            Window root;
             if (ApplicationContext.StartupForm != null)
             {
-                Window root = CreateWindow(rootModel, true, context, settings, ApplicationContext.StartupForm);
-                new ApplicationContext(root);
+                root = CreateWindow(rootModel, true, context, settings, ApplicationContext.StartupForm);
             }
-#if WINFORMS
             else
             {
-                Window root = CreateWindow(rootModel, true, context, settings);
-                var applicationContext = new ApplicationContext(root);
-                Execute.OnUIThread(() =>
-                {
-                    //applicationContext.MainForm.ShowDialog();
-                    Application.Run(applicationContext);
-                });
+                root = CreateWindow(rootModel, true, context, settings);
             }
-#endif
+#if WISEJ
+            new ApplicationContext(root);
+            ApplicationContext.MainWindow.ShowDialog();
+#else
+            var applicationContext = new ApplicationContext(root);
+            Execute.OnUIThread(() =>
+            {
+                //applicationContext.MainForm.ShowDialog();
+                Application.Run(applicationContext);
+            });
 #endif
         }
 
@@ -287,8 +283,9 @@
                 //window.SetValue(View.IsGeneratedProperty, true);
                 window.Controls.Add(contentControl);
 
-#if WEBGUI
-                var owner = ApplicationContext.WebGUIActiveForm;
+#if WISEJ
+                var owner = ApplicationContext.MainWindow;
+                var owner2 = Window.ActiveForm;
 #else
                 var owner = Window.ActiveForm;
 #endif

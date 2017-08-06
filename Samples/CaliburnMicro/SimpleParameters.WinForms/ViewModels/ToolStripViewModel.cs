@@ -1,8 +1,10 @@
 ﻿using System;
-#if WINFORMS
-using System.Windows.Forms;
+#if WISEJ
+using Wisej.Web;
+using ToolStripButton = Wisej.Web.ToolBarButton;
+using ToolStripItem = Wisej.Web.MenuItem;
 #else
-using Gizmox.WebGUI.Forms;
+using System.Windows.Forms;
 #endif
 using MvvmFx.CaliburnMicro;
 
@@ -25,11 +27,13 @@ namespace SimpleParameters.UI.ViewModels
             else
             {
                 helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
+#if !WISEJ
                 var btn = proxy.Item as ToolStripButton;
                 if (btn == null)
                     helper = "$this is null";
                 else
                     helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
+#endif
             }
 
             ActionDetail = helper;

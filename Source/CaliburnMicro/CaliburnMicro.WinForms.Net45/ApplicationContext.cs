@@ -1,9 +1,4 @@
-﻿#if WEBGUI
-using System.Reflection;
-using Gizmox.WebGUI.Forms;
-using Gizmox.WebGUI.Hosting;
-using Gizmox.WebGUI.Server;
-#elif WISEJ
+﻿#if WISEJ
 using System.Reflection;
 using Wisej.Web;
 #else
@@ -15,9 +10,7 @@ namespace MvvmFx.CaliburnMicro
     /// <summary>
     /// Specifies the contextual information about an application.
     /// </summary>
-#if WEBGUI
-    public class ApplicationContext : Context
-#elif WISEJ
+#if WISEJ
     public class ApplicationContext
 #else
     public class ApplicationContext : System.Windows.Forms.ApplicationContext
@@ -40,7 +33,7 @@ namespace MvvmFx.CaliburnMicro
             StartupForm = form;
         }
 
-#if WEBGUI || WISEJ
+#if WISEJ
     /// <summary>
     /// Gets or sets the entry assembly.
     /// </summary>
@@ -58,27 +51,15 @@ namespace MvvmFx.CaliburnMicro
             EntryAssembly = obj.GetType().Assembly;
         }
 
-#if !WISEJ
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationContext"/> class, using a given main windows Form.
         /// </summary>
         /// <param name="mainWindow">The main window.</param>
         public ApplicationContext(Form mainWindow)
-            : base(HostContext.Current)
         {
-            MainForm = mainWindow;
-            //WebGUIActiveForm = ActiveForm as Form;
-            WebGUIActiveForm = MainForm as Form;
+            _mainWindow = mainWindow;
         }
-#endif
 
-        /// <summary>
-        /// Gets the WebGUI active form.
-        /// </summary>
-        /// <value>
-        /// The WebGUI active form.
-        /// </value>
-        public static Form WebGUIActiveForm { get; private set; }
 #else
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationContext"/> class, using a given main windows Form.
@@ -87,7 +68,6 @@ namespace MvvmFx.CaliburnMicro
         public ApplicationContext(Form mainWindow)
             : base(mainWindow)
         {
-            MainForm = mainWindow;
             _mainWindow = mainWindow;
         }
 #endif

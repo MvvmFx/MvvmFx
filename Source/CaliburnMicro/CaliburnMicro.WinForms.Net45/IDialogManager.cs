@@ -3,7 +3,7 @@
 namespace MvvmFx.CaliburnMicro
 {
   /// <summary>
-  /// 
+  ///
   /// </summary>
   public interface IDialogManager
   {

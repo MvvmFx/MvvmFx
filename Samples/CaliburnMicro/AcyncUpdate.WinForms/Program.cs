@@ -1,5 +1,9 @@
 ﻿using System;
+#if WISEJ
+using Wisej.Web;
+#else
 using System.Windows.Forms;
+#endif
 
 namespace AcyncUpdate.UI
 {
@@ -11,8 +15,10 @@ namespace AcyncUpdate.UI
         [STAThread]
         private static void Main()
         {
+#if WINFORMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+#endif
 
             new AppBootstrapper().Run();
         }

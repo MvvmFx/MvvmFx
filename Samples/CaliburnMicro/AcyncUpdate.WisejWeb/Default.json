@@ -27,5 +27,5 @@
 //                          Custom settings are available using Application.Configuration.Settings.
 {
     "url": "Default.html",
-    "startup": "AcyncUpdate.WisejWeb.Program.Main, AcyncUpdate.WisejWeb"
+    "startup": "AcyncUpdate.UI.Program.Main, AcyncUpdate.WisejWeb"
 }

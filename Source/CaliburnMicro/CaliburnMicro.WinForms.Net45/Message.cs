@@ -1,7 +1,7 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     using System.Windows;
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
     using System.Linq;
     using System.Windows.Interactivity;
     using TriggerBase = System.Windows.Interactivity.TriggerBase;
@@ -20,7 +20,7 @@
                 null
                 );
 
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
         private static readonly DependencyProperty MessageTriggersProperty =
             DependencyProperty.RegisterAttached(
                 "MessageTriggers",
@@ -50,7 +50,7 @@
             return d.GetValue(HandlerProperty);
         }
 
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
         /// <summary>
         ///   Gets the message handler for this element.
         /// </summary>
@@ -107,7 +107,7 @@
 
         private static void OnAttachChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-#if !WINFORMS && !WEBGUI && !WISEJ
+#if !WINFORMS && !WISEJ
             if(e.NewValue == e.OldValue)
             {
                 return;

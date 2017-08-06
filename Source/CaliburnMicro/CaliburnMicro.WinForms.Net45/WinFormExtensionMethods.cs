@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using MvvmFx.Windows.Data;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
-#elif WISEJ
+#if WISEJ
 using Wisej.Web;
+using ToolStrip = Wisej.Web.MenuBar;
+using ToolStripItem = Wisej.Web.MenuItem;
+using ToolStripDropDownItem = Wisej.Web.MenuItem;
 #else
 using System.Windows.Forms;
 #endif
@@ -68,25 +69,24 @@ namespace MvvmFx.CaliburnMicro
             {
                 foreach (var x in control.Controls.Cast<Control>())
                 {
-#if !WISEJ
+
                     if (x is ToolStrip)
                     {
+#if WINFORMS
                         foreach (ToolStripItem item in ((ToolStrip) x).Items)
+#else
+                        foreach (ToolStripItem item in ((ToolStrip) x).MenuItems)
+#endif
                         {
                             if (item.GetType().FullName.IndexOf("MvvmFx.", StringComparison.InvariantCulture) != 0)
                             {
-#if WINFORMS
                                 yield return new ToolStripItemProxy(item, x.Parent, true);
-#else
-                                yield return new ToolStripItemProxy(item, x, true);
-#endif
                             }
 
                             foreach (var toolStripItems in RecursiveGetToolStripItems(item, x))
                                 yield return toolStripItems;
                         }
                     }
-#endif
                     yield return x;
                     foreach (var child in GetNamedElements(x))
                         yield return child;
@@ -94,20 +94,19 @@ namespace MvvmFx.CaliburnMicro
             }
         }
 
-#if !WISEJ
         private static IEnumerable<Control> RecursiveGetToolStripItems(ToolStripItem item, Control x)
         {
             if (item is ToolStripDropDownItem)
             {
+#if WINFORMS
                 foreach (ToolStripItem t in ((ToolStripDropDownItem) item).DropDownItems)
+#else
+                foreach (ToolStripItem t in ((ToolStripDropDownItem) item).MenuItems)
+#endif
                 {
                     if (item.GetType().FullName.IndexOf("MvvmFx.", StringComparison.InvariantCulture) != 0)
                     {
-#if WINFORMS
                         yield return new ToolStripItemProxy(t, x.Parent, true);
-#else
-                        yield return new ToolStripItemProxy(t, x, true);
-#endif
                     }
                     foreach (var toolStripItems in RecursiveGetToolStripItems(t, x))
                         yield return toolStripItems;
@@ -159,7 +158,6 @@ namespace MvvmFx.CaliburnMicro
                 Mode = BindingMode.OneWayToTarget
             });
         }
-#endif
 
         /// <summary>
         /// Gets a property by name, ignoring case and searching all interfaces.

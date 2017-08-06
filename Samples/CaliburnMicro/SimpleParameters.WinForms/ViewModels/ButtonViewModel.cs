@@ -1,8 +1,8 @@
 ﻿using System;
-#if WINFORMS
-using System.Windows.Forms;
+#if WISEJ
+using Wisej.Web;
 #else
-using Gizmox.WebGUI.Forms;
+using System.Windows.Forms;
 #endif
 using MvvmFx.CaliburnMicro;
 using Screen = MvvmFx.CaliburnMicro.Screen;

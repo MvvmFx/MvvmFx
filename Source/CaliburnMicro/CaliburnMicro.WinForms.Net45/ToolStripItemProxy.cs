@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
+#if WISEJ
+using Wisej.Web;
+using ToolStripItem = Wisej.Web.MenuItem;
 #else
 using System.Windows.Forms;
 #endif
@@ -65,9 +66,11 @@ namespace MvvmFx.CaliburnMicro
 
             EnabledChanged += ToolStripItemProxy_EnabledChanged;
             VisibleChanged += ToolStripItemProxy_VisibleChanged;
+#if WINFORMS
             _item.EnabledChanged += Item_EnabledChanged;
             _item.VisibleChanged += Item_VisibleChanged;
             _item.DoubleClick += item_DoubleClick;
+#endif
             _item.Click += item_Click;
             _item.Disposed += item_Disposed;
 
@@ -82,13 +85,15 @@ namespace MvvmFx.CaliburnMicro
             if (!_eventsWired)
                 return;
 
-            _item.DoubleClick -= item_DoubleClick;
-            _item.Click -= item_Click;
             _item.Disposed -= item_Disposed;
-            _item.EnabledChanged -= Item_EnabledChanged;
+            _item.Click -= item_Click;
+#if WINFORMS
+            _item.DoubleClick -= item_DoubleClick;
             _item.VisibleChanged -= Item_VisibleChanged;
-            EnabledChanged -= ToolStripItemProxy_EnabledChanged;
+            _item.EnabledChanged -= Item_EnabledChanged;
+#endif
             VisibleChanged -= ToolStripItemProxy_VisibleChanged;
+            EnabledChanged -= ToolStripItemProxy_EnabledChanged;
 
             _eventsWired = false;
         }
@@ -99,10 +104,12 @@ namespace MvvmFx.CaliburnMicro
             Dispose();
         }
 
+#if WINFORMS
         private void item_DoubleClick(object sender, EventArgs e)
         {
             OnDoubleClick(e);
         }
+#endif
 
         private void item_Click(object sender, EventArgs e)
         {
@@ -119,6 +126,7 @@ namespace MvvmFx.CaliburnMicro
             _isEnabledChanging = false;
         }
 
+#if WINFORMS
         private void Item_VisibleChanged(object sender, EventArgs e)
         {
             if (_isVisibleChanging)
@@ -128,6 +136,7 @@ namespace MvvmFx.CaliburnMicro
             Visible = _item.Visible;
             _isVisibleChanging = false;
         }
+#endif
 
         private void ToolStripItemProxy_EnabledChanged(object sender, EventArgs e)
         {

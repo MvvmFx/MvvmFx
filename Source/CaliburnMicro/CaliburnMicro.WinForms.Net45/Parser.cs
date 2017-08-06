@@ -5,10 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using MvvmFx.Windows.Data;
 using Binding = MvvmFx.Windows.Data.Binding;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
-using FrameworkElement = Gizmox.WebGUI.Forms.Control;
-#elif WISEJ
+#if WISEJ
 using Wisej.Web;
 using FrameworkElement = Wisej.Web.Control;
 #else

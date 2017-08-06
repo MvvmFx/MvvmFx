@@ -23,7 +23,7 @@
                 //The event’s EventArgs or input parameter to your Action.
                 //Note: This will be null for guard methods since the trigger hasn’t actually occurred.
                 {"$eventargs", c => c.EventArgs},
-#if WINFORMS || WEBGUI || WISEJ
+#if WINFORMS || WISEJ
                 // The BindingContext of the Control that the ActionMessage is attached to.
                 {"$bindingcontext", c => c.Source.BindingContext},
                 // The DataContext of the Control that the ActionMessage is attached to.
