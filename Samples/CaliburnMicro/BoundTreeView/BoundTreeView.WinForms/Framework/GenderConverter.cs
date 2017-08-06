@@ -24,7 +24,7 @@ namespace BoundTreeView.Framework
                     result = Resources.Gender_Male;
                     break;
                 case Gender.Female:
-                    result = Resources.Gende_Female;
+                    result = Resources.Gender_Female;
                     break;
             }
 
@@ -42,7 +42,7 @@ namespace BoundTreeView.Framework
             {
                 result = Gender.Male;
             }
-            else if (string.Equals(((string) value), Resources.Gende_Female, StringComparison.CurrentCultureIgnoreCase))
+            else if (string.Equals(((string) value), Resources.Gender_Female, StringComparison.CurrentCultureIgnoreCase))
             {
                 result = Gender.Female;
             }
