@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using MasterDetailWithModel.ViewModels;
 using MvvmFx.CaliburnMicro;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
+#if WISEJ
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif
