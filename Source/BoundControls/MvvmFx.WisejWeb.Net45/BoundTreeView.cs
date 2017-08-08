@@ -70,10 +70,10 @@ namespace MvvmFx.WisejWeb
 
 #if WINFORMS
         private const int SbHorz = 0;
+        private bool _ignoreBindingContextChanged;
 #endif
         private bool _isDraggingOver;
         private bool _isDroppingOnRoot;
-        private bool _ignoreBindingContextChanged;
 
         private readonly Container _components = null;
         private readonly ListChangedEventHandler _listChangedHandler;
@@ -206,7 +206,6 @@ namespace MvvmFx.WisejWeb
                 if (_dataSource != value)
                 {
                     _dataSource = value;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -246,7 +245,6 @@ namespace MvvmFx.WisejWeb
                 if (_dataMember != value)
                 {
                     _dataMember = value;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -286,7 +284,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _displayMember = value;
                     _displayProperty = null;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -324,7 +321,6 @@ namespace MvvmFx.WisejWeb
                     _valueMember = value;
                     _valueProperty = null;
                     _valueConverter = null;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -355,7 +351,6 @@ namespace MvvmFx.WisejWeb
                     if (string.IsNullOrEmpty(_valueMember))
                         ValueMember = _identifierMember;
 
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -382,7 +377,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _parentIdentifierMember = value;
                     _parentIdentifierProperty = null;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -409,7 +403,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _toolTipTextMember = value;
                     _toolTipTextProperty = null;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -436,7 +429,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _readOnlyMember = value;
                     _readOnlyProperty = null;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -569,7 +561,6 @@ namespace MvvmFx.WisejWeb
                 if (base.Sorted != value)
                 {
                     base.Sorted = value;
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -1082,8 +1073,10 @@ namespace MvvmFx.WisejWeb
         /// </summary>
         protected override void InitLayout()
         {
+            _ignoreBindingContextChanged = true;
             base.InitLayout();
             ShowScrollBar(Handle, SbHorz, false);
+            _ignoreBindingContextChanged = false;
         }
 #endif
 
@@ -1120,10 +1113,7 @@ namespace MvvmFx.WisejWeb
         {
             if (_dataSource == null ||
                 BindingContext == null)
-            {
-                _ignoreBindingContextChanged = false;
                 return;
-            }
 
             CurrencyManager currencyManager;
             try
@@ -1585,10 +1575,10 @@ namespace MvvmFx.WisejWeb
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
+#if WINFORMS
             if (_ignoreBindingContextChanged)
                 return;
-
-            _ignoreBindingContextChanged = true;
+#endif
             TryDataBinding();
             base.OnBindingContextChanged(e);
         }
