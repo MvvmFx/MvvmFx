@@ -72,10 +72,10 @@ namespace MvvmFx.WisejWeb
 
 #if WINFORMS
         private const int SbHorz = 0;
+        private bool _ignoreBindingContextChanged;
 #endif
         private bool _isDraggingOver;
         private bool _isDroppingOnRoot;
-        private bool _ignoreBindingContextChanged;
 
         private readonly Container _components = null;
         private readonly ListChangedEventHandler _listChangedHandler;
@@ -210,7 +210,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _dataSource = value;
                     Logger.Trace("DataSource");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -251,7 +250,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _dataMember = value;
                     Logger.Trace("DataMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -292,7 +290,6 @@ namespace MvvmFx.WisejWeb
                     _displayMember = value;
                     _displayProperty = null;
                     Logger.Trace("DisplayMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -331,7 +328,6 @@ namespace MvvmFx.WisejWeb
                     _valueProperty = null;
                     _valueConverter = null;
                     Logger.Trace("ValueMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -363,7 +359,6 @@ namespace MvvmFx.WisejWeb
                         ValueMember = _identifierMember;
 
                     Logger.Trace("IdentifierMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -391,7 +386,6 @@ namespace MvvmFx.WisejWeb
                     _parentIdentifierMember = value;
                     _parentIdentifierProperty = null;
                     Logger.Trace("ParentIdentifierMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -419,7 +413,6 @@ namespace MvvmFx.WisejWeb
                     _toolTipTextMember = value;
                     _toolTipTextProperty = null;
                     Logger.Trace("ToolTipTextMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -447,7 +440,6 @@ namespace MvvmFx.WisejWeb
                     _readOnlyMember = value;
                     _readOnlyProperty = null;
                     Logger.Trace("ReadOnlyMember");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -581,7 +573,6 @@ namespace MvvmFx.WisejWeb
                 {
                     base.Sorted = value;
                     Logger.Trace("Sorted");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -1096,8 +1087,12 @@ namespace MvvmFx.WisejWeb
         /// </summary>
         protected override void InitLayout()
         {
+            Logger.Trace("InitLayout - START");
+            _ignoreBindingContextChanged = true;
             base.InitLayout();
             ShowScrollBar(Handle, SbHorz, false);
+            _ignoreBindingContextChanged = false;
+            Logger.Trace("InitLayout - END");
         }
 #endif
 
@@ -1136,10 +1131,7 @@ namespace MvvmFx.WisejWeb
         {
             if (_dataSource == null ||
                 BindingContext == null)
-            {
-                _ignoreBindingContextChanged = false;
                 return;
-            }
 
             CurrencyManager currencyManager;
             try
@@ -1604,11 +1596,11 @@ namespace MvvmFx.WisejWeb
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
+#if WINFORMS
             if (_ignoreBindingContextChanged)
                 return;
-
+#endif
             Logger.Trace("OnBindingContextChanged");
-            _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
         }

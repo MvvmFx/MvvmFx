@@ -32,7 +32,6 @@ namespace MvvmFx.WisejWeb
     {
         #region Fields
 
-        private bool _ignoreBindingContextChanged;
         private bool _isHandlingPositionChange;
 
         private readonly Container _components = null;
@@ -93,7 +92,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _dataSource = value;
                     Logger.Trace("DataSource");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -143,7 +141,6 @@ namespace MvvmFx.WisejWeb
                 {
                     _dataMember = value;
                     Logger.Trace("DataSource");
-                    _ignoreBindingContextChanged = false;
                     TryDataBinding();
                 }
             }
@@ -212,10 +209,7 @@ namespace MvvmFx.WisejWeb
         {
             if (DataSource == null ||
                 BindingContext == null)
-            {
-                _ignoreBindingContextChanged = false;
                 return;
-            }
 
             CurrencyManager currencyManager;
             try
@@ -384,11 +378,7 @@ namespace MvvmFx.WisejWeb
 #endif
         protected override void OnBindingContextChanged(EventArgs e)
         {
-            if (_ignoreBindingContextChanged)
-                return;
-
             Logger.Trace("OnBindingContextChanged");
-            _ignoreBindingContextChanged = true;
             TryDataBinding();
             base.OnBindingContextChanged(e);
         }
