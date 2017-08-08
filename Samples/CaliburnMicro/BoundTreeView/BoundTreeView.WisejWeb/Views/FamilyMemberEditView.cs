@@ -60,7 +60,7 @@ namespace BoundTreeView.Views
             if (_isBindingSet)
                 return;
 
-            if (modelDeleteMode.ComboBox != null)
+           /* if (modelDeleteMode.ComboBox != null)
                 SetDeleteModeComboBoxDataSource();
 
             if (modelGender != null)
@@ -72,7 +72,7 @@ namespace BoundTreeView.Views
             {
                 Converter = new DeleteModeDescriptionConverter(),
                 Mode = BindingMode.TwoWay
-            });
+            });*/
 
             _bindingManager.Bindings.Add(new Binding(modelGender, "Text", _viewModel.Model as FamilyMember, "Gender")
             {
@@ -91,7 +91,7 @@ namespace BoundTreeView.Views
 
         private void SetDeleteModeComboBoxDataSource()
         {
-            if (modelDeleteMode.ComboBox == null)
+            /*if (modelDeleteMode.ComboBox == null)
                 return;
 
             var ds = new List<string>
@@ -101,12 +101,12 @@ namespace BoundTreeView.Views
                 Resources.Orphan_Child_Nodes
             };
 
-            modelDeleteMode.ComboBox.DataSource = ds;
+            modelDeleteMode.ComboBox.DataSource = ds;*/
         }
 
         private void SetGenderComboBoxDataSource()
         {
-            if (modelDeleteMode.ComboBox == null)
+            /*if (modelDeleteMode.ComboBox == null)
                 return;
 
             var ds = new List<string>
@@ -116,7 +116,7 @@ namespace BoundTreeView.Views
                 Resources.Gender_Female
             };
 
-            modelGender.DataSource = ds;
+            modelGender.DataSource = ds;*/
         }
 
         #endregion
