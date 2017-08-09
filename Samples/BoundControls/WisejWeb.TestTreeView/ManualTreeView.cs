@@ -1,6 +1,7 @@
 ﻿using System;
 using BoundControls.Business;
 #if WINFORMS
+using System.Drawing;
 using System.Windows.Forms;
 #else
 using Wisej.Web;
@@ -105,6 +106,9 @@ namespace WisejWeb.TestTreeView
                 var dragNode = (TreeNode) e.Data.GetData(typeof(TreeNode));
 
                 if (dragNode != null)
+                {
+                    // now you can drag
+
                     if (dropNode != null)
                     {
                         // dropNode is a TreeNode
@@ -123,6 +127,7 @@ namespace WisejWeb.TestTreeView
                         ChangeParentToRoot(tv, dragNode);
                         tv.ExpandAll();
                     }
+                }
             }
         }
 

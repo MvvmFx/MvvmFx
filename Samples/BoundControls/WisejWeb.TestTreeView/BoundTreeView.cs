@@ -572,7 +572,7 @@ namespace MvvmFx.WisejWeb
                 if (base.Sorted != value)
                 {
                     base.Sorted = value;
-                    Logger.Trace("Sorted");
+                    Logger.Trace("Sorted - TryDataBinding");
                     TryDataBinding();
                 }
             }
@@ -1140,16 +1140,20 @@ namespace MvvmFx.WisejWeb
             }
             catch (ArgumentException)
             {
+                Logger.Trace("TryDataBinding - No CurrencyManager found");
                 // If no CurrencyManager was found
                 return;
             }
 
+#if WINFORMS
             Logger.Trace("TryDataBinding - BeginUpdate");
             BeginUpdate();
+#endif
 
             // Unwire the old CurrencyManager
             if (_listManager != null)
             {
+                Logger.Trace("TryDataBinding - Unwire the old CurrencyManager");
                 _listManager.ListChanged -= _listChangedHandler;
                 _listManager.PositionChanged -= _positionChangedHandler;
             }
@@ -1162,12 +1166,15 @@ namespace MvvmFx.WisejWeb
             // Wire the new CurrencyManager
             if (_listManager != null)
             {
+                Logger.Trace("TryDataBinding - Wire the new CurrencyManager");
                 _listManager.ListChanged += _listChangedHandler;
                 _listManager.PositionChanged += _positionChangedHandler;
             }
 
+#if WINFORMS
             Logger.Trace("TryDataBinding - EndUpdate");
             EndUpdate();
+#endif
         }
 
         #endregion
@@ -1232,10 +1239,15 @@ namespace MvvmFx.WisejWeb
 
         private void Clear()
         {
+            Logger.Trace("Clear");
             _itemsPositions.Clear();
             _itemsIdentifiers.Clear();
 
+#if WINFORMS
             Nodes.Clear();
+#else
+            Nodes.Clear(true);
+#endif
         }
 
 #if WINFORMS
@@ -1279,21 +1291,29 @@ namespace MvvmFx.WisejWeb
         /// </summary>
         private void UpdateAllData()
         {
+            Logger.Trace("UpdateAllData - START");
             if (PrepareDescriptors() && _listManager.Count > 0)
             {
                 Clear();
 
                 var controlNodeList = new ArrayList();
 
+                Logger.Trace(string.Format("UpdateAllData - _listManager.Count {0}", _listManager.Count));
+
                 for (var index = 0; index < _listManager.Count; index++)
                 {
                     controlNodeList.Add(CreateNode(index));
                 }
 
+                Logger.Trace("UpdateAllData - Nodes added");
+
                 if (Sorted)
                     controlNodeList.Sort(new TreeNodeSorter());
 
                 var nodeError = false;
+
+                Logger.Trace(string.Format("UpdateAllData - controlNodeList.Count {0}", controlNodeList.Count));
+
                 while (controlNodeList.Count > 0)
                 {
                     var loopNodeList = Clone(controlNodeList);
@@ -1340,6 +1360,7 @@ namespace MvvmFx.WisejWeb
             {
                 Clear();
             }
+            Logger.Trace("UpdateAllData - END");
         }
 
         private bool TryAddNode(BoundTreeNode node)
@@ -1703,8 +1724,10 @@ namespace MvvmFx.WisejWeb
 
         private void RefreshTree()
         {
+#if WINFORMS
             Logger.Trace("RefreshTree - BeginUpdate");
             BeginUpdate();
+#endif
 
             //save all expanded nodes
             var expandedNodes = _itemsIdentifiers.Cast<object>()
@@ -1729,8 +1752,10 @@ namespace MvvmFx.WisejWeb
                 }
             }
 
+#if WINFORMS
             Logger.Trace("RefreshTree - EndUpdate");
             EndUpdate();
+#endif
         }
 
         #endregion
