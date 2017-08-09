@@ -1126,7 +1126,9 @@ namespace MvvmFx.WisejWeb
                 return;
             }
 
+#if WINFORMS
             BeginUpdate();
+#endif
 
             // Unwire the old CurrencyManager
             if (_listManager != null)
@@ -1146,7 +1148,9 @@ namespace MvvmFx.WisejWeb
                 _listManager.PositionChanged += _positionChangedHandler;
             }
 
+#if WINFORMS
             EndUpdate();
+#endif
         }
 
         #endregion
@@ -1214,7 +1218,11 @@ namespace MvvmFx.WisejWeb
             _itemsPositions.Clear();
             _itemsIdentifiers.Clear();
 
+#if WINFORMS
             Nodes.Clear();
+#else
+            Nodes.Clear(true);
+#endif
         }
 
 #if WINFORMS
@@ -1677,7 +1685,9 @@ namespace MvvmFx.WisejWeb
 
         private void RefreshTree()
         {
+#if WINFORMS
             BeginUpdate();
+#endif
 
             //save all expanded nodes
             var expandedNodes = _itemsIdentifiers.Cast<object>()
@@ -1701,7 +1711,9 @@ namespace MvvmFx.WisejWeb
                 }
             }
 
+#if WINFORMS
             EndUpdate();
+#endif
         }
 
         #endregion

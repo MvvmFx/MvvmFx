@@ -1,11 +1,12 @@
 ﻿using System;
-using MvvmFx.WisejWeb;
 using MvvmFx.Logging;
 using BoundControls.Business;
 #if WINFORMS
 using System.Windows.Forms;
+using MvvmFx.Windows.Forms;
 #else
 using Wisej.Web;
+using MvvmFx.WisejWeb;
 using BoundUserControl = Wisej.Web.UserControl;
 #endif
 
@@ -15,7 +16,7 @@ namespace WisejWeb.TestTreeView
     {
         #region Private Members
 
-        private static readonly ILog Logger = LogManager.GetLog(typeof(Action));
+        private static readonly ILog Logger = LogManager.GetLog(typeof(AutoTreeView));
 
         #endregion
 

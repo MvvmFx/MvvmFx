@@ -83,7 +83,7 @@ namespace WinForms.TestTreeView
 
         private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)
         {
-            var tv = (TreeView)sender;
+            var tv = (TreeView) sender;
             tv.DoDragDrop(e.Item, DragDropEffects.Copy | DragDropEffects.Move);
         }
 

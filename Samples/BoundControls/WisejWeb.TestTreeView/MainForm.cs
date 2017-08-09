@@ -24,7 +24,7 @@ namespace WisejWeb.TestTreeView
             LogManager.GetLog = type => new NLogLogger(type);
 #endif
 
-            syncedListsButton_Click(this, EventArgs.Empty);
+            autoTreeViewButton_Click(this, EventArgs.Empty);
         }
 
         private void syncedListsButton_Click(object sender, EventArgs e)
