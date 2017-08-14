@@ -48,7 +48,7 @@ namespace WisejWeb.TestBoundControls
                     if (((IHaveName) component).Name == item.Name)
                     {
                         ((IBindableComponent) component).DataBindings.Add("Text", item, "Text");
-                        ((IBindableComponent) component).DataBindings.Add("ToolTipText", item, "ToolTipText");
+                        //((IBindableComponent) component).DataBindings.Add("ToolTipText", item, "ToolTipText");
                         ((IBindableComponent) component).DataBindings.Add("Enabled", item, "Enabled");
                         ((IBindableComponent) component).DataBindings.Add("Visible", item, "Visible");
                         isMatch = true;
@@ -60,7 +60,7 @@ namespace WisejWeb.TestBoundControls
                             if (subControl.Name == item.Name)
                             {
                                 subControl.DataBindings.Add("Text", item, "Text");
-                                subControl.DataBindings.Add("ToolTipText", item, "ToolTipText");
+                                //subControl.DataBindings.Add("ToolTipText", item, "ToolTipText");
                                 subControl.DataBindings.Add("Enabled", item, "Enabled");
                                 subControl.DataBindings.Add("Visible", item, "Visible");
                                 isMatch = true;
@@ -114,8 +114,8 @@ namespace WisejWeb.TestBoundControls
                     {
                         ((IBindableComponent) component).DataBindings.Add("Text", item, "Text");
                         ((IBindableComponent) component).DataBindings.Add("ToolTipText", item, "ToolTipText");
-                        ((IBindableComponent) component).DataBindings.Add("Enabled", item, "Enabled");
-                        ((IBindableComponent) component).DataBindings.Add("Visible", item, "Visible");
+                        //((IBindableComponent) component).DataBindings.Add("Enabled", item, "Enabled");
+                        //((IBindableComponent) component).DataBindings.Add("Visible", item, "Visible");
                         isMatch = true;
                     }
                 }

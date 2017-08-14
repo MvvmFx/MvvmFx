@@ -30,9 +30,9 @@
         {
             this.boundListView1 = new MvvmFx.Windows.Forms.BoundListView();
             this.SuspendLayout();
-            // 
+            //
             // boundListView1
-            // 
+            //
             this.boundListView1.FullRowSelect = true;
             this.boundListView1.HideSelection = false;
             this.boundListView1.LabelEdit = true;
@@ -45,9 +45,9 @@
             this.boundListView1.TabIndex = 0;
             this.boundListView1.UseCompatibleStateImageBehavior = false;
             this.boundListView1.View = System.Windows.Forms.View.Details;
-            // 
+            //
             // TreeListView
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.boundListView1);

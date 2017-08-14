@@ -1,10 +1,10 @@
 /********************************************************************
-    created:	2005/03/27
-    created:	27:3:2005   7:05
-    filename: 	DropDownTypeEditor.cs
-    author:		Mike Chaliy
+    created:    2005/03/27
+    created:    27:3:2005   7:05
+    filename:   DropDownTypeEditor.cs
+    author:     Mike Chaliy
 
-    purpose:	Base class for simple drop down type editors.
+    purpose:    Base class for simple drop down type editors.
 
 The MIT License (MIT)
 

@@ -36,10 +36,12 @@
             Wisej.Web.ImageListEntry imageListEntry4 = new Wisej.Web.ImageListEntry(((System.Drawing.Image)(resources.GetObject("imageList.Images3"))), "ReadOnlyNodeSelected.png");
             this.treeView1 = new Wisej.Web.TreeView();
             this.imageList = new Wisej.Web.ImageList(this.components);
+            this.expandButton = new Wisej.Web.Button();
+            this.collapseButton = new Wisej.Web.Button();
             this.SuspendLayout();
-            // 
+            //
             // treeView1
-            // 
+            //
             this.treeView1.AllowDrag = true;
             this.treeView1.AllowDrop = true;
             this.treeView1.ImageIndex = 0;
@@ -54,18 +56,38 @@
             this.treeView1.TabIndex = 15;
             this.treeView1.ItemDrag += new Wisej.Web.ItemDragEventHandler(this.treeView1_ItemDrag);
             this.treeView1.DragDrop += new Wisej.Web.DragEventHandler(this.treeView1_DragDrop);
-            // 
+            //
             // imageList
-            // 
+            //
             this.imageList.Images.AddRange(new Wisej.Web.ImageListEntry[] {
             imageListEntry1,
             imageListEntry2,
             imageListEntry3,
             imageListEntry4});
-            // 
+            //
+            // expandButton
+            //
+            this.expandButton.Location = new System.Drawing.Point(249, 343);
+            this.expandButton.Name = "expandButton";
+            this.expandButton.Size = new System.Drawing.Size(84, 23);
+            this.expandButton.TabIndex = 33;
+            this.expandButton.Text = "Expand";
+            this.expandButton.Click += new System.EventHandler(this.expandButton_Click);
+            //
+            // collapseButton
+            //
+            this.collapseButton.Location = new System.Drawing.Point(249, 384);
+            this.collapseButton.Name = "collapseButton";
+            this.collapseButton.Size = new System.Drawing.Size(84, 23);
+            this.collapseButton.TabIndex = 33;
+            this.collapseButton.Text = "Collapse";
+            this.collapseButton.Click += new System.EventHandler(this.collapseButton_Click);
+            //
             // ManualTreeView
-            // 
+            //
             this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.collapseButton);
+            this.Controls.Add(this.expandButton);
             this.MaximumSize = new System.Drawing.Size(931, 438);
             this.MinimumSize = new System.Drawing.Size(931, 438);
             this.Name = "ManualTreeView";
@@ -79,5 +101,7 @@
 
         private Wisej.Web.TreeView treeView1;
         private Wisej.Web.ImageList imageList;
+        private Wisej.Web.Button expandButton;
+        private Wisej.Web.Button collapseButton;
     }
 }

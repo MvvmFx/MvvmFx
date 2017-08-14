@@ -1,5 +1,9 @@
 ﻿using System;
+#if WINFORMS
+using System.Windows.Forms;
+#else
 using Wisej.Web;
+#endif
 
 namespace WisejWeb.TestTreeView
 {
@@ -8,18 +12,17 @@ namespace WisejWeb.TestTreeView
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        [STAThread]
         static void Main()
         {
+#if WINFORMS
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+#else
             MainForm window = new MainForm();
             window.Show();
+#endif
         }
-
-        //
-        // You can use the entry method below
-        // to receive the parameters from the URL in the args collection.
-        //
-        //static void Main(NameValueCollection args)
-        //{
-        //}
     }
 }
