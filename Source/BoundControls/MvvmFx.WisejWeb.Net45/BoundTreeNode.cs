@@ -1,11 +1,11 @@
 ﻿/********************************************************************
-    created:	2005/03/27
-    created:	27:3:2005   7:05
-    filename: 	BoundTreeNode.cs
-    author:		Mike Chaliy
+    created:    2005/03/27
+    created:    27:3:2005   7:05
+    filename:   BoundTreeNode.cs
+    author:     Mike Chaliy
     published:  http://www.codeproject.com/Articles/9949/Hierarchical-TreeView-control-with-data-binding-en
 
-    purpose:	Data binding enabled hierarchical tree view control.
+    purpose:    Data binding enabled hierarchical tree view control.
 
 The MIT License (MIT)
 
@@ -66,6 +66,17 @@ namespace MvvmFx.WisejWeb
         {
             Position = position;
         }
+
+#if WISEJ
+        protected override void Dispose(bool disposing)
+        {
+            for (int node = 0; node < Nodes.Count; node++)
+            {
+                ((BoundTreeNode)Nodes[node]).Dispose(true);
+            }
+            base.Dispose(disposing);
+        }
+#endif
 
         #endregion
 
