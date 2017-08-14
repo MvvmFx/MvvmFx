@@ -1,10 +1,10 @@
 /********************************************************************
-    created:	2005/03/27
-    created:	27:3:2005   7:05
-    filename: 	FieldTypeEditor.cs
-    author:		Mike Chaliy
+    created:    2005/03/27
+    created:    27:3:2005   7:05
+    filename:   FieldTypeEditor.cs
+    author:     Mike Chaliy
 
-    purpose:	Data members fields editor.
+    purpose:    Data members fields editor.
 
 The MIT License (MIT)
 

@@ -36,6 +36,8 @@ namespace WinForms.TestBoundControls
             GroupsListView();
 
             LeafList.ListChanged += LeafList_ListChanged;
+
+            boundTreeView1.ExpandAll();
         }
 
         private void LeafList_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
@@ -279,6 +281,11 @@ namespace WinForms.TestBoundControls
             var leaf = LeafList.FindLeafByLeafId((int) e.Node.Tag);
             leafName.Text = leaf.LeafName;
             RedrawForm();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            LeafList.ResetBindings();
         }
 
         private void sortButton_Click(object sender, EventArgs e)

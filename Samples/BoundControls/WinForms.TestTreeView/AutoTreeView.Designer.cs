@@ -56,9 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // buttonView
-            // 
+            //
             this.buttonView.Location = new System.Drawing.Point(249, 101);
             this.buttonView.Name = "buttonView";
             this.buttonView.Size = new System.Drawing.Size(84, 23);
@@ -66,23 +66,23 @@
             this.buttonView.Text = "Set View";
             this.buttonView.UseVisualStyleBackColor = true;
             this.buttonView.Click += new System.EventHandler(this.tvButtonView_Click);
-            // 
+            //
             // textboxView
-            // 
+            //
             this.textboxView.Location = new System.Drawing.Point(249, 78);
             this.textboxView.Name = "textboxView";
             this.textboxView.Size = new System.Drawing.Size(100, 20);
             this.textboxView.TabIndex = 18;
-            // 
+            //
             // textboxModel
-            // 
+            //
             this.textboxModel.Location = new System.Drawing.Point(249, 13);
             this.textboxModel.Name = "textboxModel";
             this.textboxModel.Size = new System.Drawing.Size(100, 20);
             this.textboxModel.TabIndex = 17;
-            // 
+            //
             // buttonModel
-            // 
+            //
             this.buttonModel.Location = new System.Drawing.Point(249, 36);
             this.buttonModel.Name = "buttonModel";
             this.buttonModel.Size = new System.Drawing.Size(84, 23);
@@ -90,14 +90,14 @@
             this.buttonModel.Text = "Set Model";
             this.buttonModel.UseVisualStyleBackColor = true;
             this.buttonModel.Click += new System.EventHandler(this.tvButtonModel_Click);
-            // 
+            //
             // leafListBindingSource
-            // 
+            //
             this.leafListBindingSource.DataSource = typeof(BoundControls.Business.LeafList);
             this.bindingSourceRefresh.SetReadValuesOnChange(this.leafListBindingSource, true);
-            // 
+            //
             // boundTreeView1
-            // 
+            //
             this.boundTreeView1.AllowDrop = true;
             //this.boundTreeView1.DataSource = this.leafListBindingSource;
             this.boundTreeView1.DisplayMember = "LeafName";
@@ -129,104 +129,104 @@
             this.boundTreeView1.BindingContextChanged += new System.EventHandler(this.boundTreeView1_BindingContextChanged);
             this.boundTreeView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.boundTreeView1_DragDrop);
             this.boundTreeView1.SelectedValueChanged += new System.EventHandler(this.boundTreeView1_SelectedValueChanged);
-            // 
+            //
             // imageList
-            // 
+            //
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList.Images.SetKeyName(0, "Node.png");
             this.imageList.Images.SetKeyName(1, "NodeSelected.png");
             this.imageList.Images.SetKeyName(2, "ReadOnlyNode.png");
             this.imageList.Images.SetKeyName(3, "ReadOnlyNodeSelected.png");
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(543, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Leaf Name:";
-            // 
+            //
             // leafName
-            // 
+            //
             this.leafName.Location = new System.Drawing.Point(661, 66);
             this.leafName.Name = "leafName";
             this.leafName.Size = new System.Drawing.Size(100, 13);
             this.leafName.TabIndex = 21;
             this.leafName.Text = "Leaf Name";
-            // 
+            //
             // dragDropStatusLabel
-            // 
+            //
             this.dragDropStatusLabel.Location = new System.Drawing.Point(543, 216);
             this.dragDropStatusLabel.Name = "dragDropStatusLabel";
             this.dragDropStatusLabel.Size = new System.Drawing.Size(200, 13);
             this.dragDropStatusLabel.TabIndex = 28;
             this.dragDropStatusLabel.Text = "Current Drag&&Drop Status";
-            // 
+            //
             // leafId
-            // 
+            //
             this.leafId.Location = new System.Drawing.Point(664, 104);
             this.leafId.Name = "leafId";
             this.leafId.Size = new System.Drawing.Size(100, 13);
             this.leafId.TabIndex = 30;
             this.leafId.Text = "Leaf Id";
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(543, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 29;
             this.label3.Text = "Leaf Id:";
-            // 
+            //
             // leafParentId
-            // 
+            //
             this.leafParentId.Location = new System.Drawing.Point(666, 143);
             this.leafParentId.Name = "leafParentId";
             this.leafParentId.Size = new System.Drawing.Size(100, 13);
             this.leafParentId.TabIndex = 32;
             this.leafParentId.Text = "Leaf Parent Id";
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(543, 143);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 31;
             this.label5.Text = "Leaf Parent Id:";
-            // 
+            //
             // refreshButton
-            // 
+            //
             this.refreshButton.Location = new System.Drawing.Point(249, 261);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(84, 23);
             this.refreshButton.TabIndex = 33;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
+            //
             // sortButton
-            // 
+            //
             this.sortButton.Location = new System.Drawing.Point(249, 300);
             this.sortButton.Name = "sortButton";
             this.sortButton.Size = new System.Drawing.Size(84, 23);
             this.sortButton.TabIndex = 33;
             this.sortButton.Text = "Sort";
             this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
-            // 
+            //
             // expandButton
-            // 
+            //
             this.expandButton.Location = new System.Drawing.Point(249, 343);
             this.expandButton.Name = "expandButton";
             this.expandButton.Size = new System.Drawing.Size(84, 23);
             this.expandButton.TabIndex = 33;
             this.expandButton.Text = "Expand";
             this.expandButton.Click += new System.EventHandler(this.expandButton_Click);
-            // 
+            //
             // readOnlyAllowSelectCheckBox
-            // 
+            //
             this.readOnlyAllowSelectCheckBox.AutoSize = true;
             this.readOnlyAllowSelectCheckBox.Location = new System.Drawing.Point(249, 142);
             this.readOnlyAllowSelectCheckBox.Name = "readOnlyAllowSelectCheckBox";
@@ -234,9 +234,9 @@
             this.readOnlyAllowSelectCheckBox.TabIndex = 34;
             this.readOnlyAllowSelectCheckBox.Text = "ReadOnly Allow Select";
             this.readOnlyAllowSelectCheckBox.CheckedChanged += new System.EventHandler(this.readOnlyAllowSelectCheckBox_CheckedChanged);
-            // 
+            //
             // readOnlyAllowDragCheckBox
-            // 
+            //
             this.readOnlyAllowDragCheckBox.AutoSize = true;
             this.readOnlyAllowDragCheckBox.Location = new System.Drawing.Point(249, 159);
             this.readOnlyAllowDragCheckBox.Name = "readOnlyAllowDragCheckBox";
@@ -244,9 +244,9 @@
             this.readOnlyAllowDragCheckBox.TabIndex = 34;
             this.readOnlyAllowDragCheckBox.Text = "ReadOnly Allow Drag";
             this.readOnlyAllowDragCheckBox.CheckedChanged += new System.EventHandler(this.readOnlyAllowDragCheckBox_CheckedChanged);
-            // 
+            //
             // readOnlyAllowDropCheckBox
-            // 
+            //
             this.readOnlyAllowDropCheckBox.AutoSize = true;
             this.readOnlyAllowDropCheckBox.Location = new System.Drawing.Point(249, 176);
             this.readOnlyAllowDropCheckBox.Name = "readOnlyAllowDropCheckBox";
@@ -254,18 +254,18 @@
             this.readOnlyAllowDropCheckBox.TabIndex = 34;
             this.readOnlyAllowDropCheckBox.Text = "ReadOnly Allow Drop";
             this.readOnlyAllowDropCheckBox.CheckedChanged += new System.EventHandler(this.readOnlyAllowDropCheckBox_CheckedChanged);
-            // 
+            //
             // collapseButton
-            // 
+            //
             this.collapseButton.Location = new System.Drawing.Point(249, 384);
             this.collapseButton.Name = "collapseButton";
             this.collapseButton.Size = new System.Drawing.Size(84, 23);
             this.collapseButton.TabIndex = 33;
             this.collapseButton.Text = "Collapse";
             this.collapseButton.Click += new System.EventHandler(this.collapseButton_Click);
-            // 
+            //
             // allowDropOnDescendentsCheckBox
-            // 
+            //
             this.allowDropOnDescendentsCheckBox.AutoSize = true;
             this.allowDropOnDescendentsCheckBox.Location = new System.Drawing.Point(249, 192);
             this.allowDropOnDescendentsCheckBox.Name = "allowDropOnDescendentsCheckBox";
@@ -273,9 +273,9 @@
             this.allowDropOnDescendentsCheckBox.TabIndex = 35;
             this.allowDropOnDescendentsCheckBox.Text = "Allow Drop On Descendents";
             this.allowDropOnDescendentsCheckBox.CheckedChanged += new System.EventHandler(this.allowDropOnDescendentsCheckBox_CheckedChanged);
-            // 
+            //
             // allowDropOnRootCheckBox
-            // 
+            //
             this.allowDropOnRootCheckBox.AutoSize = true;
             this.allowDropOnRootCheckBox.Location = new System.Drawing.Point(249, 208);
             this.allowDropOnRootCheckBox.Name = "allowDropOnRootCheckBox";
@@ -283,9 +283,9 @@
             this.allowDropOnRootCheckBox.TabIndex = 35;
             this.allowDropOnRootCheckBox.Text = "Allow Drop On Root";
             this.allowDropOnRootCheckBox.CheckedChanged += new System.EventHandler(this.allowDropOnRootCheckBox_CheckedChanged);
-            // 
+            //
             // AutoTreeView
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.Controls.Add(this.allowDropOnRootCheckBox);
             this.Controls.Add(this.allowDropOnDescendentsCheckBox);

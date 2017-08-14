@@ -34,9 +34,9 @@
             this.workPanel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
-            // 
+            //
             // syncedListsButton
-            // 
+            //
             this.syncedListsButton.Location = new System.Drawing.Point(13, 13);
             this.syncedListsButton.Name = "syncedListsButton";
             this.syncedListsButton.Size = new System.Drawing.Size(100, 23);
@@ -44,9 +44,9 @@
             this.syncedListsButton.Text = "Synced Lists";
             this.syncedListsButton.UseVisualStyleBackColor = true;
             this.syncedListsButton.Click += new System.EventHandler(this.syncedListsButton_Click);
-            // 
+            //
             // autoTreeViewButton
-            // 
+            //
             this.autoTreeViewButton.Location = new System.Drawing.Point(265, 13);
             this.autoTreeViewButton.Name = "autoTreeViewButton";
             this.autoTreeViewButton.Size = new System.Drawing.Size(100, 23);
@@ -54,9 +54,9 @@
             this.autoTreeViewButton.Text = "Auto TreeView";
             this.autoTreeViewButton.UseVisualStyleBackColor = true;
             this.autoTreeViewButton.Click += new System.EventHandler(this.autoTreeViewButton_Click);
-            // 
+            //
             // manualTreeViewButton
-            // 
+            //
             this.manualTreeViewButton.Location = new System.Drawing.Point(139, 13);
             this.manualTreeViewButton.Name = "manualTreeViewButton";
             this.manualTreeViewButton.Size = new System.Drawing.Size(100, 23);
@@ -64,26 +64,26 @@
             this.manualTreeViewButton.Text = "Manual TreeView";
             this.manualTreeViewButton.UseVisualStyleBackColor = true;
             this.manualTreeViewButton.Click += new System.EventHandler(this.manualTreeViewButton_Click);
-            // 
+            //
             // workPanel
-            // 
+            //
             this.workPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workPanel.Location = new System.Drawing.Point(0, 49);
             this.workPanel.Name = "workPanel";
             this.workPanel.Size = new System.Drawing.Size(1003, 438);
             this.workPanel.TabIndex = 4;
-            // 
+            //
             // menuStrip1
-            // 
+            //
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1003, 49);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            // 
+            //
             // MainForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;

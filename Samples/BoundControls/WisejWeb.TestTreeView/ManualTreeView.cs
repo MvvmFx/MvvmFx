@@ -79,6 +79,20 @@ namespace WisejWeb.TestTreeView
 
         #endregion
 
+        #region UI Events
+
+        private void expandButton_Click(object sender, EventArgs e)
+        {
+            treeView1.ExpandAll();
+        }
+
+        private void collapseButton_Click(object sender, EventArgs e)
+        {
+            treeView1.CollapseAll();
+        }
+
+        #endregion
+
         #region TreeView Drag&Drop events
 
         private void treeView1_ItemDrag(object sender, ItemDragEventArgs e)

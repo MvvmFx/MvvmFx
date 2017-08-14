@@ -30,9 +30,9 @@
         {
             this.boundListView1 = new MvvmFx.WisejWeb.BoundListView();
             this.SuspendLayout();
-            // 
+            //
             // boundListView1
-            // 
+            //
             this.boundListView1.LabelEdit = true;
             this.boundListView1.Location = new System.Drawing.Point(4, 4);
             this.boundListView1.MaximumSize = new System.Drawing.Size(500, 418);
@@ -42,9 +42,9 @@
             this.boundListView1.Size = new System.Drawing.Size(500, 418);
             this.boundListView1.TabIndex = 0;
             this.boundListView1.View = Wisej.Web.View.Details;
-            // 
+            //
             // TreeListView
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.boundListView1);

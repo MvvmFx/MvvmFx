@@ -29,6 +29,7 @@ namespace WisejWeb.TestBoundControls
         private void Form1_Load(object sender, EventArgs e)
         {
             BindUI();
+            boundTreeView1.ExpandAll();
 
             readOnlyAllowSelectCheckBox.Checked = boundTreeView1.ReadOnlyAllowSelect;
             readOnlyAllowDragCheckBox.Checked = boundTreeView1.ReadOnlyAllowDrag;
