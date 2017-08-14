@@ -37,10 +37,10 @@ Improvements by Tiago Freitas Leal (MvvmFx project).
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
-using System.Linq;
 using MvvmFx.Logging;
 #if WISEJ
 using Wisej.Web;
@@ -177,8 +177,7 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
-        /// <see cref="System.ComponentModel.IListSource"/> interfaces,
-        /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
+        /// <see cref="System.ComponentModel.IListSource"/> interfaces. The default is null.
         /// </returns>
 #else
         /// <summary>
@@ -186,8 +185,7 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
-        /// <see cref="System.ComponentModel.IListSource"/> interfaces,
-        /// such as a <see cref="System.Data.DataSet"/> or an <see cref="System.Array"/>. The default is null.
+        /// <see cref="System.ComponentModel.IListSource"/> interfaces. The default is null.
         /// </returns>
 #endif
         /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
@@ -1213,7 +1211,7 @@ namespace MvvmFx.Windows.Forms
 
         #region Item Methods
 
-        private void Clear()
+        private void NodesClear()
         {
             _itemsPositions.Clear();
             _itemsIdentifiers.Clear();
@@ -1266,10 +1264,20 @@ namespace MvvmFx.Windows.Forms
         /// </summary>
         private void UpdateAllData()
         {
+
+            //save all expanded nodes
+            var expandedNodes = new List<int>();
+            foreach (var item in _itemsIdentifiers)
+            {
+                var node = ((DictionaryEntry)item).Value as BoundTreeNode;
+                if (node != null && node.IsExpanded)
+                    expandedNodes.Add(node.NodeId.GetHashCode());
+            }
+
+            NodesClear();
+
             if (PrepareDescriptors() && _listManager.Count > 0)
             {
-                Clear();
-
                 var controlNodeList = new ArrayList();
 
                 for (var index = 0; index < _listManager.Count; index++)
@@ -1318,14 +1326,24 @@ namespace MvvmFx.Windows.Forms
                     }
                 }
 
+                //restore all expanded nodes
+                foreach (var expandedNode in expandedNodes)
+                {
+                    foreach (var item in _itemsIdentifiers)
+                    {
+                        var node = ((DictionaryEntry) item).Value as BoundTreeNode;
+                        if (node != null && node.NodeId.GetHashCode() == expandedNode)
+                        {
+                            node.Expand();
+                            break;
+                        }
+                    }
+                }
+
                 if (_listManager.Position > -1)
                 {
                     ListManager_PositionChanged(this, EventArgs.Empty);
                 }
-            }
-            else if (_listManager.Count == 0)
-            {
-                Clear();
             }
         }
 
@@ -1689,27 +1707,7 @@ namespace MvvmFx.Windows.Forms
             BeginUpdate();
 #endif
 
-            //save all expanded nodes
-            var expandedNodes = _itemsIdentifiers.Cast<object>()
-                .Select(itemsIdentifier => ((DictionaryEntry) itemsIdentifier).Value as BoundTreeNode)
-                .Where(node => node.IsExpanded)
-                .ToList();
-
             UpdateAllData();
-
-            //restore all expanded nodes
-            foreach (var expandedNode in expandedNodes)
-            {
-                foreach (var itemsIdentifier in _itemsIdentifiers)
-                {
-                    var node = ((DictionaryEntry) itemsIdentifier).Value as BoundTreeNode;
-                    if (node != null && node.NodeId.GetHashCode() == expandedNode.NodeId.GetHashCode())
-                    {
-                        node.Expand();
-                        break;
-                    }
-                }
-            }
 
 #if WINFORMS
             EndUpdate();
