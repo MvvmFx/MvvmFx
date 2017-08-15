@@ -41,22 +41,24 @@
             this.closeFamilyMember = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
             // 
+            this.mainMenu.Dock = Wisej.Web.DockStyle.Top;
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.fileMenu,
             this.familyMemberMenu});
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1348, 24);
+            this.mainMenu.Size = new System.Drawing.Size(830, 22);
             this.mainMenu.TabIndex = 0;
+            this.mainMenu.TabStop = false;
             this.mainMenu.Text = "mainMenu";
             // 
             // fileMenu
             // 
+            this.fileMenu.Index = 0;
             this.fileMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.openFamilyMemberTree,
             this.closeFamilyMemberTree,
@@ -67,25 +69,31 @@
             // 
             // openFamilyMemberTree
             // 
+            this.openFamilyMemberTree.Index = 0;
             this.openFamilyMemberTree.Name = "openFamilyMemberTree";
             this.openFamilyMemberTree.Text = "Open family member tree";
             // 
             // closeFamilyMemberTree
             // 
+            this.closeFamilyMemberTree.Index = 1;
             this.closeFamilyMemberTree.Name = "closeFamilyMemberTree";
             this.closeFamilyMemberTree.Text = "Close family member tree";
             // 
             // fileMenuSeparator
             // 
+            this.fileMenuSeparator.Index = 2;
             this.fileMenuSeparator.Name = "fileMenuSeparator";
+            this.fileMenuSeparator.Text = "";
             // 
             // exit
             // 
+            this.exit.Index = 3;
             this.exit.Name = "exit";
             this.exit.Text = "Exit";
             // 
             // familyMemberMenu
             // 
+            this.familyMemberMenu.Index = 1;
             this.familyMemberMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.createNewFamilyMember,
             this.saveFamilyMember,
@@ -96,55 +104,57 @@
             // 
             // createNewFamilyMember
             // 
+            this.createNewFamilyMember.Index = 0;
             this.createNewFamilyMember.Name = "createNewFamilyMember";
             this.createNewFamilyMember.Text = "New family member";
             // 
             // saveFamilyMember
             // 
+            this.saveFamilyMember.Index = 1;
             this.saveFamilyMember.Name = "saveFamilyMember";
             this.saveFamilyMember.Text = "Save family member";
             // 
             // deleteFamilyMember
             // 
+            this.deleteFamilyMember.Index = 2;
             this.deleteFamilyMember.Name = "deleteFamilyMember";
             this.deleteFamilyMember.Text = "Delete family member";
             // 
             // closeFamilyMember
             // 
+            this.closeFamilyMember.Index = 3;
             this.closeFamilyMember.Name = "closeFamilyMember";
             this.closeFamilyMember.Text = "Close family member form";
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 678);
+            this.statusBar.Location = new System.Drawing.Point(0, 446);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(1348, 22);
+            this.statusBar.Size = new System.Drawing.Size(830, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
             // 
             // activeItem
             // 
-            this.activeItem.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom)
-            | Wisej.Web.AnchorStyles.Left)
+            this.activeItem.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
             | Wisej.Web.AnchorStyles.Right)));
             //this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 24);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1348, 654);
+            this.activeItem.Size = new System.Drawing.Size(830, 422);
             this.activeItem.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 700);
+            this.ClientSize = new System.Drawing.Size(830, 468);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.mainMenu.ResumeLayout(false);
-            this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -40,11 +40,17 @@
             this.boundTreeView1.AllowDropOnRoot = false;
             this.boundTreeView1.Anchor = ((Wisej.Web.AnchorStyles)(((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
             | Wisej.Web.AnchorStyles.Left)));
+            this.boundTreeView1.DuplicatedCaption = "Duplicated Identifier Error";
+            this.boundTreeView1.DuplicatedMessage = "Node \"{0}\" duplicates identifier \"{1}\"";
+            this.boundTreeView1.GeneralNodeError = "Error at node.";
+            this.boundTreeView1.InexistentParent = "Parent of node does not exist.";
             this.boundTreeView1.Location = new System.Drawing.Point(0, 26);
             this.boundTreeView1.Name = "boundTreeView1";
             this.boundTreeView1.ReadOnlyImageKey = null;
+            this.boundTreeView1.ReadOnlyOpenedImageKey = null;
             this.boundTreeView1.ReadOnlySelectedImageKey = null;
-            this.boundTreeView1.Size = new System.Drawing.Size(348, 628);
+            this.boundTreeView1.SelfParent = "Parent of node cannot be the node itself.";
+            this.boundTreeView1.Size = new System.Drawing.Size(348, 396);
             this.boundTreeView1.Sorted = false;
             this.boundTreeView1.TabIndex = 0;
             // 
@@ -53,7 +59,7 @@
             this.displayName.AutoSize = true;
             this.displayName.Location = new System.Drawing.Point(4, 4);
             this.displayName.Name = "displayName";
-            this.displayName.Size = new System.Drawing.Size(0, 13);
+            this.displayName.Size = new System.Drawing.Size(4, 15);
             this.displayName.TabIndex = 1;
             // 
             // activeItem
@@ -65,18 +71,18 @@
             this.activeItem.AutoScrollMinSize = new System.Drawing.Size(470, 350);
             this.activeItem.Location = new System.Drawing.Point(354, 26);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(994, 625);
+            this.activeItem.Size = new System.Drawing.Size(476, 393);
             this.activeItem.TabIndex = 2;
             // 
             // FamilyMemberTreeView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.displayName);
             this.Controls.Add(this.boundTreeView1);
             this.Name = "FamilyMemberTreeView";
-            this.Size = new System.Drawing.Size(1348, 654);
+            this.Size = new System.Drawing.Size(830, 422);
             this.ResumeLayout(false);
             this.PerformLayout();
 
