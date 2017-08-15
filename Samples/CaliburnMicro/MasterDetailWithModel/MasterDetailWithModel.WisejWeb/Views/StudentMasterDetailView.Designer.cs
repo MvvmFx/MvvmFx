@@ -113,31 +113,37 @@
             this.toolStrip1.Size = new System.Drawing.Size(476, 41);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.TabStop = false;
+            this.toolStrip1.Text = "toolStrip1";
             this.toolTip1.SetToolTip(this.toolStrip1, null);
             // 
             // createNew
             // 
+            //this.createNew.DisplayStyle = Wisej.Web.ToolBarItemDisplayStyle.Image;
             this.createNew.Image = global::MasterDetailWithModel.Properties.Resources.AddNew16;
             this.createNew.Name = "createNew";
-            this.createNew.Text = "Create New";
+            this.createNew.ToolTipText = "Create New";
             // 
             // save
             // 
+            //this.save.DisplayStyle = Wisej.Web.ToolBarItemDisplayStyle.Image;
             this.save.Image = global::MasterDetailWithModel.Properties.Resources.Save16;
             this.save.Name = "save";
-            this.save.Text = "Save";
+            this.save.ToolTipText = "Save";
             // 
             // delete
             // 
+            //this.delete.DisplayStyle = Wisej.Web.ToolBarItemDisplayStyle.Image;
             this.delete.Image = global::MasterDetailWithModel.Properties.Resources.Delete16;
             this.delete.Name = "delete";
-            this.delete.Text = "Delete";
+            this.delete.ToolTipText = "Delete";
             // 
             // close
             // 
+            //this.close.Alignment = Wisej.Web.ToolBarItemAlignment.Right;
+            //this.close.DisplayStyle = Wisej.Web.ToolBarItemDisplayStyle.Image;
             this.close.Image = global::MasterDetailWithModel.Properties.Resources.Close16;
             this.close.Name = "close";
-            this.close.Text = "Close form";
+            this.close.ToolTipText = "Close form";
             // 
             // model_StudentEdit_CountryAddress
             // 
@@ -199,7 +205,7 @@
             this.model_StudentEdit_FamilyName.Name = "model_StudentEdit_FamilyName";
             this.model_StudentEdit_FamilyName.Size = new System.Drawing.Size(334, 20);
             this.model_StudentEdit_FamilyName.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.model_StudentEdit_FamilyName, "Can\'t be empty.");
+            this.toolTip1.SetToolTip(this.model_StudentEdit_FamilyName, "Business rule:\r\nCan\'t be empty.");
             // 
             // label3
             // 
@@ -217,7 +223,7 @@
             this.model_StudentEdit_FirstName.Name = "model_StudentEdit_FirstName";
             this.model_StudentEdit_FirstName.Size = new System.Drawing.Size(334, 20);
             this.model_StudentEdit_FirstName.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.model_StudentEdit_FirstName, "Can\'t be empty.");
+            this.toolTip1.SetToolTip(this.model_StudentEdit_FirstName, "Business rule:\r\nCan\'t be empty.");
             // 
             // label2
             // 
@@ -260,6 +266,7 @@
             // 
             // toolTip1
             // 
+            //this.toolTip1.Title = "Business Rule";
             this.toolTip1.ToolTipIcon = Wisej.Web.ToolTipIcon.Warning;
             // 
             // StudentMasterDetailView
@@ -271,7 +278,6 @@
             this.Controls.Add(this.displayName);
             this.Name = "StudentMasterDetailView";
             this.Size = new System.Drawing.Size(830, 422);
-            this.toolTip1.SetToolTip(this, "Business Rule");
             this.studentEditPanel.ResumeLayout(false);
             this.studentEditPanel.PerformLayout();
             this.ResumeLayout(false);
