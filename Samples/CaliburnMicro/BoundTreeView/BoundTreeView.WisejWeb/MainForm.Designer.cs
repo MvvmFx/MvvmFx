@@ -124,7 +124,10 @@
             // 
             // activeItem
             // 
-            this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
+            this.activeItem.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom)
+            | Wisej.Web.AnchorStyles.Left)
+            | Wisej.Web.AnchorStyles.Right)));
+            //this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 24);
             this.activeItem.Name = "activeItem";
             this.activeItem.Size = new System.Drawing.Size(1348, 654);
