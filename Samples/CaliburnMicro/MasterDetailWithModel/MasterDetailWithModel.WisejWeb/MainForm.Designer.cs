@@ -42,22 +42,24 @@
             this.closeStudent = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
             // 
+            this.mainMenu.Dock = Wisej.Web.DockStyle.Top;
+            this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.fileMenu,
             this.studentMenu});
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1348, 24);
+            this.mainMenu.Size = new System.Drawing.Size(830, 22);
             this.mainMenu.TabIndex = 0;
+            this.mainMenu.TabStop = false;
             this.mainMenu.Text = "mainMenu";
             // 
             // fileMenu
             // 
+            this.fileMenu.Index = 0;
             this.fileMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.openStudentList1,
             this.openStudentList2,
@@ -69,30 +71,37 @@
             // 
             // openStudentList1
             // 
+            this.openStudentList1.Index = 0;
             this.openStudentList1.Name = "openStudentList1";
             this.openStudentList1.Text = "Open student list (method 1)";
             // 
             // openStudentList2
             // 
+            this.openStudentList2.Index = 1;
             this.openStudentList2.Name = "openStudentList2";
             this.openStudentList2.Text = "Open student list (method 2)";
             // 
             // fileMenuSeparator
             // 
+            this.fileMenuSeparator.Index = 2;
             this.fileMenuSeparator.Name = "fileMenuSeparator";
+            this.fileMenuSeparator.Text = "";
             // 
             // closeStudentList
             // 
+            this.closeStudentList.Index = 3;
             this.closeStudentList.Name = "closeStudentList";
             this.closeStudentList.Text = "Close student list";
             // 
             // exit
             // 
+            this.exit.Index = 4;
             this.exit.Name = "exit";
             this.exit.Text = "Exit";
             // 
             // studentMenu
             // 
+            this.studentMenu.Index = 1;
             this.studentMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.createNewStudent,
             this.saveStudent,
@@ -103,52 +112,57 @@
             // 
             // createNewStudent
             // 
+            this.createNewStudent.Index = 0;
             this.createNewStudent.Name = "createNewStudent";
             this.createNewStudent.Text = "New student";
             // 
             // saveStudent
             // 
+            this.saveStudent.Index = 1;
             this.saveStudent.Name = "saveStudent";
             this.saveStudent.Text = "Save student";
             // 
             // deleteStudent
             // 
+            this.deleteStudent.Index = 2;
             this.deleteStudent.Name = "deleteStudent";
             this.deleteStudent.Text = "Delete student";
             // 
             // closeStudent
             // 
+            this.closeStudent.Index = 3;
             this.closeStudent.Name = "closeStudent";
             this.closeStudent.Text = "Close student form";
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 678);
+            this.statusBar.Location = new System.Drawing.Point(0, 446);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(1348, 22);
+            this.statusBar.Size = new System.Drawing.Size(830, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
             // 
             // activeItem
             // 
-            this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
+            this.activeItem.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
+            | Wisej.Web.AnchorStyles.Left) 
+            | Wisej.Web.AnchorStyles.Right)));
+            //this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 24);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1348, 654);
+            this.activeItem.Size = new System.Drawing.Size(830, 422);
             this.activeItem.TabIndex = 2;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 700);
+            this.ClientSize = new System.Drawing.Size(830, 468);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.mainMenu.ResumeLayout(false);
-            this.mainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

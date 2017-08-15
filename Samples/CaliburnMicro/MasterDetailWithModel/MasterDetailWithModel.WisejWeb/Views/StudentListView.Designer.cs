@@ -43,7 +43,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(0, 26);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(348, 628);
+            this.listBox1.Size = new System.Drawing.Size(348, 396);
             this.listBox1.TabIndex = 0;
             this.toolTip1.SetToolTip(this.listBox1, resources.GetString("listBox1.ToolTip"));
             // 
@@ -52,8 +52,9 @@
             this.displayName.AutoSize = true;
             this.displayName.Location = new System.Drawing.Point(4, 4);
             this.displayName.Name = "displayName";
-            this.displayName.Size = new System.Drawing.Size(0, 13);
+            this.displayName.Size = new System.Drawing.Size(4, 15);
             this.displayName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.displayName, null);
             // 
             // activeItem
             // 
@@ -64,24 +65,25 @@
             this.activeItem.AutoScrollMinSize = new System.Drawing.Size(470, 350);
             this.activeItem.Location = new System.Drawing.Point(354, 26);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(994, 625);
+            this.activeItem.Size = new System.Drawing.Size(476, 393);
             this.activeItem.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.activeItem, null);
             // 
             // toolTip1
             // 
             this.toolTip1.AutoPopDelay = 10000;
             this.toolTip1.ToolTipIcon = Wisej.Web.ToolTipIcon.Info;
-            this.toolTip1.SetToolTip(this, "Why this method doesn\'t work correctly\r\nunder Windows Forms?");
             // 
             // StudentListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.displayName);
             this.Controls.Add(this.listBox1);
             this.Name = "StudentListView";
-            this.Size = new System.Drawing.Size(1348, 654);
+            this.Size = new System.Drawing.Size(830, 422);
+            this.toolTip1.SetToolTip(this, "Why this method doesn\'t work correctly\r\nunder Windows Forms?");
             this.ResumeLayout(false);
             this.PerformLayout();
 
