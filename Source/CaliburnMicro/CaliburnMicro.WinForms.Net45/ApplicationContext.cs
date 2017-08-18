@@ -34,12 +34,12 @@ namespace MvvmFx.CaliburnMicro
         }
 
 #if WISEJ
-    /// <summary>
-    /// Gets or sets the entry assembly.
-    /// </summary>
-    /// <value>
-    /// The entry assembly.
-    /// </value>
+        /// <summary>
+        /// Gets or sets the entry assembly.
+        /// </summary>
+        /// <value>
+        /// The entry assembly.
+        /// </value>
         internal static Assembly EntryAssembly { get; private set; }
 
         /// <summary>
