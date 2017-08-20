@@ -16,7 +16,7 @@ using Binding = MvvmFx.Windows.Data.Binding;
 namespace MvvmFx.CaliburnMicro
 {
     /// <summary>
-    /// Extension methods for Windows Forms and Visual WebGUI
+    /// Extension methods for Windows Forms and Wisej
     /// </summary>
     public static class WinFormExtensionMethods
     {
