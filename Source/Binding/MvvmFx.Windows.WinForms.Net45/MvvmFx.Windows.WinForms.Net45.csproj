@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin\Debug\WinForms\net45\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;MVVMFX</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;MVVMFX;WINFORMS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
@@ -29,7 +29,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\bin\Release\WinForms\net45\</OutputPath>
-    <DefineConstants>TRACE;MVVMFX</DefineConstants>
+    <DefineConstants>TRACE;MVVMFX;WINFORMS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\..\bin\Release\WinForms\net45\MvvmFx.Windows.WinForms.xml</DocumentationFile>
