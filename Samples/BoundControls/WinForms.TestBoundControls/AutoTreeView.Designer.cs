@@ -53,6 +53,8 @@
             this.collapseButton = new System.Windows.Forms.Button();
             this.allowDropOnDescendentsCheckBox = new System.Windows.Forms.CheckBox();
             this.allowDropOnRootCheckBox = new System.Windows.Forms.CheckBox();
+            this.textBoxSelectValue = new System.Windows.Forms.TextBox();
+            this.selectValueButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -283,9 +285,46 @@
             this.allowDropOnRootCheckBox.Text = "Allow Drop On Root";
             this.allowDropOnRootCheckBox.CheckedChanged += new System.EventHandler(this.allowDropOnRootCheckBox_CheckedChanged);
             //
+            // textBoxSelectValue
+            //
+            this.textBoxSelectValue.AutoCompleteCustomSource.AddRange(new string[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.textBoxSelectValue.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBoxSelectValue.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxSelectValue.Location = new System.Drawing.Point(546, 264);
+            this.textBoxSelectValue.Name = "textBoxSelectValue";
+            this.textBoxSelectValue.Size = new System.Drawing.Size(84, 20);
+            this.textBoxSelectValue.TabIndex = 37;
+            //
+            // selectValueButton
+            //
+            this.selectValueButton.Location = new System.Drawing.Point(546, 287);
+            this.selectValueButton.Name = "selectValueButton";
+            this.selectValueButton.Size = new System.Drawing.Size(84, 23);
+            this.selectValueButton.TabIndex = 36;
+            this.selectValueButton.Text = "Select Value";
+            this.selectValueButton.UseVisualStyleBackColor = true;
+            this.selectValueButton.Click += new System.EventHandler(this.selectValueButton_Click);
+            //
             // AutoTreeView
             //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Controls.Add(this.textBoxSelectValue);
+            this.Controls.Add(this.selectValueButton);
             this.Controls.Add(this.allowDropOnRootCheckBox);
             this.Controls.Add(this.allowDropOnDescendentsCheckBox);
             this.Controls.Add(this.collapseButton);
@@ -345,5 +384,7 @@
         private System.Windows.Forms.CheckBox allowDropOnDescendentsCheckBox;
         private System.Windows.Forms.CheckBox allowDropOnRootCheckBox;
         private System.Windows.Forms.BindingSource leafListBindingSource;
+        private System.Windows.Forms.TextBox textBoxSelectValue;
+        private System.Windows.Forms.Button selectValueButton;
     }
 }

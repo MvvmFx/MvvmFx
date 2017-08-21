@@ -55,6 +55,8 @@
             this.readOnlyAllowDragCheckBox = new Wisej.Web.CheckBox();
             this.readOnlyAllowDropCheckBox = new Wisej.Web.CheckBox();
             this.collapseButton = new Wisej.Web.Button();
+            this.textBoxSelectValue = new Wisej.Web.TextBox();
+            this.selectValueButton = new Wisej.Web.Button();
             this.allowDropOnDescendentsCheckBox = new Wisej.Web.CheckBox();
             this.allowDropOnRootCheckBox = new Wisej.Web.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.leafListBindingSource)).BeginInit();
@@ -285,8 +287,43 @@
             this.allowDropOnRootCheckBox.Text = "Allow Drop On Root";
             this.allowDropOnRootCheckBox.CheckedChanged += new System.EventHandler(this.allowDropOnRootCheckBox_CheckedChanged);
             //
+            // textBoxSelectValue
+            //
+            this.textBoxSelectValue.AutoComplete = Wisej.Web.AutoComplete.On;
+            this.textBoxSelectValue.AutoCompleteList = new string[] {
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"};
+            this.textBoxSelectValue.Location = new System.Drawing.Point(546, 264);
+            this.textBoxSelectValue.Name = "textBoxSelectValue";
+            this.textBoxSelectValue.Size = new System.Drawing.Size(84, 20);
+            this.textBoxSelectValue.TabIndex = 37;
+            //
+            // selectValueButton
+            //
+            this.selectValueButton.Location = new System.Drawing.Point(546, 287);
+            this.selectValueButton.Name = "selectValueButton";
+            this.selectValueButton.Size = new System.Drawing.Size(84, 23);
+            this.selectValueButton.TabIndex = 36;
+            this.selectValueButton.Text = "Select Value";
+            this.selectValueButton.Click += new System.EventHandler(this.selectValueButton_Click);
+            //
             // AutoTreeView
             //
+            this.Controls.Add(this.textBoxSelectValue);
+            this.Controls.Add(this.selectValueButton);
             this.Controls.Add(this.allowDropOnRootCheckBox);
             this.Controls.Add(this.allowDropOnDescendentsCheckBox);
             this.Controls.Add(this.collapseButton);
@@ -345,5 +382,7 @@
         private Wisej.Web.CheckBox allowDropOnDescendentsCheckBox;
         private Wisej.Web.CheckBox allowDropOnRootCheckBox;
         private Wisej.Web.BindingSource leafListBindingSource;
+        private Wisej.Web.TextBox textBoxSelectValue;
+        private Wisej.Web.Button selectValueButton;
     }
 }

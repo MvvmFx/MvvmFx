@@ -172,6 +172,12 @@ namespace WinForms.TestBoundControls
             }
         }
 
+        private void selectValueButton_Click(object sender, EventArgs e)
+        {
+            readOnlyAllowSelectCheckBox.Checked = true;
+            boundTreeView1.SelectedValue = Convert.ToInt32(textBoxSelectValue.Text);
+        }
+
         #endregion
     }
 }
