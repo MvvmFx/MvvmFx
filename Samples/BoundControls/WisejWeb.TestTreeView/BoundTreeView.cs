@@ -2144,8 +2144,8 @@ namespace MvvmFx.WisejWeb
 
             if ((disallowSelect && !_isDraggingOver) && !allowDropOnRoot)
                 e.Cancel = true;
-            else
-                base.OnBeforeSelect(e);
+            
+			base.OnBeforeSelect(e);
         }
 
 #if WINFORMS
