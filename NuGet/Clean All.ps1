@@ -1,7 +1,7 @@
 ##
-##	Clean out all output folders
+##    Clean out all output folders
 ##  ============================
-##  
+##
 
 function Pause ($Message="Press any key to continue...")
 {
@@ -10,7 +10,7 @@ function Pause ($Message="Press any key to continue...")
     Write-Host ""
 }
 
-try 
+try
 {
     ## Initialise
     ## ----------
@@ -25,25 +25,25 @@ try
     $packages += @("Binding.WPF", "Binding.WinForms", "Binding.WebGUI")
     ##$packages += @("Binding.Desktop")
     #$packages += @("MvvmLight.WinForms", "MvvmLight.WebGUI")
-    
+
     $host.UI.RawUI.BackgroundColor = [System.ConsoleColor]::Black
     $host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::White
-    
+
     Write-Host "Clean all MVVM FX NuGet build outputs" -ForegroundColor White
     Write-Host "=====================================" -ForegroundColor White
-    
+
     ## NB - Cleanup destination package folder
     ## ---------------------------------------
     Write-Host "Clean destination folders..." -ForegroundColor Yellow
     Remove-Item ".\Packages\*.nupkg" -Recurse -Force -ErrorAction SilentlyContinue
-    
+
     ## Spawn off individual create processes...
     ## ---------------------------------------
     Set-Location "$originalLocation\Definition" ## Adjust current working directory since scripts are using relative paths
     $packages | ForEach { & ".\Clean.ps1" $_ }
     Write-Host "Clean all done." -ForegroundColor Green
 }
-catch 
+catch
 {
     $baseException = $_.Exception.GetBaseException()
     if ($_.Exception -ne $baseException)
@@ -52,8 +52,8 @@ catch
     }
     Write-Host $_.Exception.Message -ForegroundColor Magenta
     Pause
-} 
-finally 
+}
+finally
 {
     ## Restore original values
     $host.UI.RawUI.BackgroundColor = $originalBackground
