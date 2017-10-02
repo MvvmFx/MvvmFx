@@ -1,4 +1,4 @@
-param($package) 
+param($package)
 
 if ($package -eq $null)
 {
@@ -9,17 +9,17 @@ if ($package -eq $null)
     return
 }
 
-try 
+try
 {
     ## Initialise
     ## ----------
     $configuration = "Release"
     $basePath = Get-Location
     $pathToNuGetLib = [System.IO.Path]::GetFullPath( "$basePath\$package" )
-    
+
     $originalBackground = $host.UI.RawUI.BackgroundColor
     $originalForeground = $host.UI.RawUI.ForegroundColor
-    
+
     $host.UI.RawUI.BackgroundColor = [System.ConsoleColor]::Black
     $host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::White
 
@@ -34,7 +34,7 @@ try
 
     Write-Host "Clean operation done." -ForegroundColor Green
 }
-catch 
+catch
 {
     $baseException = $_.Exception.GetBaseException()
     if ($_.Exception -ne $baseException)
@@ -43,8 +43,8 @@ catch
     }
     Write-Host $_.Exception.Message -ForegroundColor Magenta
     Pause
-} 
-finally 
+}
+finally
 {
     $host.UI.RawUI.BackgroundColor = $originalBackground
     $host.UI.RawUI.ForegroundColor = $originalForeground

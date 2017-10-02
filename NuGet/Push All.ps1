@@ -1,8 +1,8 @@
 ##
-##	Publish All Packages
+##    Publish All Packages
 ##  ====================
 ##  Remeber the initial once off setting of your API Key
-##  
+##
 ##      NuGet SetApiKey Your-API-Key
 ##
 
@@ -13,36 +13,36 @@ function Pause ($Message="Press any key to continue...")
     Write-Host ""
 }
 
-try 
+try
 {
     ## Initialise
     ## ----------
     $originalBackground = $host.UI.RawUI.BackgroundColor
     $originalForeground = $host.UI.RawUI.ForegroundColor
     $originalLocation = Get-Location
-    
+
     $basePath = Get-Location
     $pathToNuGetPackager = [System.IO.Path]::GetFullPath( "$basePath\Tools\NuGet.exe" )
     $pathToNuGetPackageOutput = [System.IO.Path]::GetFullPath( "$basePath\Packages" )
-    
+
     $host.UI.RawUI.BackgroundColor = [System.ConsoleColor]::Black
     $host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::White
-    
+
     Write-Host "Publish all MVVM FX NuGet packages" -ForegroundColor White
     Write-Host "==================================" -ForegroundColor White
-    
+
     ## Get list of packages (without ".symbols.") from Packages folder
     ## ---------------------------------------------------------------
     Write-Host "Get list of packages..." -ForegroundColor Yellow
     $packages = Get-ChildItem $pathToNuGetPackageOutput -Exclude "*.symbols.*"
-    
+
     ## Spawn off individual publish processes...
     ## -----------------------------------------
     Write-Host "Publishing packages..." -ForegroundColor Yellow
-    $packages | ForEach { & $pathToNuGetPackager Push "$_" }
+    $packages | ForEach { & $pathToNuGetPackager Push "$_" -Source https://www.nuget.org/api/v2/package }
     Write-Host "Publish all done." -ForegroundColor Green
 }
-catch 
+catch
 {
     $baseException = $_.Exception.GetBaseException()
     if ($_.Exception -ne $baseException)
@@ -51,8 +51,8 @@ catch
     }
     Write-Host $_.Exception.Message -ForegroundColor Magenta
     Pause
-} 
-finally 
+}
+finally
 {
     ## Restore original values
     $host.UI.RawUI.BackgroundColor = $originalBackground
