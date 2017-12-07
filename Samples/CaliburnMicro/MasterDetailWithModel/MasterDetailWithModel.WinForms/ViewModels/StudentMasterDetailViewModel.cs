@@ -76,7 +76,7 @@ namespace MasterDetailWithModel.ViewModels
 
         public StudentMasterDetailViewModel()
         {
-            DisplayName = "Student List (method 2) - It runs nicely under Windows.Forms and WebGUI.";
+            DisplayName = "Student List (method 2) - It runs nicely under Windows.Forms, Wisej and WebGUI.";
             Model = StudentEditMasterDetail.NewStudentMasterDetail();
             if (_model.Students.Count == 0)
                 ListItemId = -1;
