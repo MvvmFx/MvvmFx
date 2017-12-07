@@ -55,6 +55,7 @@
             // employeeListBindingSource
             // 
             this.employeeListBindingSource.DataSource = typeof(BusinessObjects.EmployeeList);
+            this.employeeListBindingSource.RefreshValueOnChange = true;
             // 
             // employeeIDDataGridViewTextBoxColumn
             // 
