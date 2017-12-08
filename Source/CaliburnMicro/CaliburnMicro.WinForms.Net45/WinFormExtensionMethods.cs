@@ -27,6 +27,9 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The attached message text.</returns>
         public static string GetAttachedMessage(this Control control)
         {
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
+
             if (!string.IsNullOrEmpty(control.Tag as string) &&
                 ((string) control.Tag).StartsWith("message.attach=", StringComparison.OrdinalIgnoreCase))
             {
@@ -47,6 +50,9 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The attached message text.</returns>
         public static string GetFullAttachedMessage(this Control control)
         {
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
+
             if (!string.IsNullOrEmpty(control.Tag as string) &&
                 ((string) control.Tag).StartsWith("message.attach=", StringComparison.OrdinalIgnoreCase))
             {
@@ -65,11 +71,13 @@ namespace MvvmFx.CaliburnMicro
         /// </returns>
         public static IEnumerable<Control> GetNamedElements(this Control control)
         {
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
+
             if (null != control)
             {
                 foreach (var x in control.Controls.Cast<Control>())
                 {
-
                     if (x is ToolStrip)
                     {
 #if WINFORMS
@@ -96,6 +104,11 @@ namespace MvvmFx.CaliburnMicro
 
         private static IEnumerable<Control> RecursiveGetToolStripItems(ToolStripItem item, Control x)
         {
+            if (item == null)
+                throw new ArgumentNullException(nameof(item));
+            if (x == null)
+                throw new ArgumentNullException(nameof(x));
+
             if (item is ToolStripDropDownItem)
             {
 #if WINFORMS
@@ -123,6 +136,13 @@ namespace MvvmFx.CaliburnMicro
         public static void BindToolStripItemProxyProperties(List<Control> namedElements, object viewModel,
             BindingManager bindingManager)
         {
+            if (namedElements == null)
+                throw new ArgumentNullException(nameof(namedElements));
+            if (viewModel == null)
+                throw new ArgumentNullException(nameof(viewModel));
+            if (bindingManager == null)
+                throw new ArgumentNullException(nameof(bindingManager));
+
             foreach (var control in namedElements)
             {
                 if (control is ToolStripItemProxy)
@@ -132,7 +152,9 @@ namespace MvvmFx.CaliburnMicro
                     {
                         // must enforce the Visible property
                         ((ToolStripItemProxy) control).Item.Visible =
-                            (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);
+                            (bool) property.GetValue(viewModel,
+                                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
+                                null);
                         BindToolStripItemProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
                     }
                     else
@@ -143,7 +165,8 @@ namespace MvvmFx.CaliburnMicro
                             // no need for enforce the Enabled property
                             /*((ToolStripItemProxy) control).Item.Enabled =
                                 (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel, bindingManager);
+                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel,
+                                bindingManager);
                         }
                     }
                 }
@@ -153,6 +176,17 @@ namespace MvvmFx.CaliburnMicro
         private static void BindToolStripItemProxyProperties(string sourcePath, Control target, string targetPath,
             object viewModel, BindingManager bindingManager)
         {
+            if (sourcePath == null)
+                throw new ArgumentNullException(nameof(sourcePath));
+            if (target == null)
+                throw new ArgumentNullException(nameof(target));
+            if (targetPath == null)
+                throw new ArgumentNullException(nameof(targetPath));
+            if (viewModel == null)
+                throw new ArgumentNullException(nameof(viewModel));
+            if (bindingManager == null)
+                throw new ArgumentNullException(nameof(bindingManager));
+
             bindingManager.Bindings.Add(new Binding(target, targetPath, viewModel, sourcePath)
             {
                 Mode = BindingMode.OneWayToTarget
@@ -178,7 +212,13 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The property or null if not found.</returns>
         public static PropertyInfo GetPropertyCaseInsensitive(this Type type, string propertyName)
         {
-            return type.GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+            if (propertyName == null)
+                throw new ArgumentNullException(nameof(propertyName));
+
+            return type.GetProperty(propertyName,
+                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
         }
 
         /// <summary>
@@ -200,6 +240,11 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The method or null if not found.</returns>
         public static MethodInfo GetMethodCaseSensitive(this Type type, string methodName)
         {
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+            if (methodName == null)
+                throw new ArgumentNullException(nameof(methodName));
+
             return type.GetMethod(methodName, BindingFlags.Public | BindingFlags.Instance);
         }
     }

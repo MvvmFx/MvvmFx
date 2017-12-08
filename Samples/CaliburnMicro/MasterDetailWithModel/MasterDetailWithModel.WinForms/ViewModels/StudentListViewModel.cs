@@ -45,7 +45,7 @@ namespace MasterDetailWithModel.ViewModels
 
         public StudentListViewModel()
         {
-            DisplayName = "Student List (method 1) - There are issues when running under Windows.Forms but runs nicely under WebGUI.";
+            DisplayName = "Student List (method 1) - There are issues when running under Windows.Forms and Wisej but runs nicely under WebGUI.";
             Model = StudentInfo.GetStudentInfoList();
         }
 

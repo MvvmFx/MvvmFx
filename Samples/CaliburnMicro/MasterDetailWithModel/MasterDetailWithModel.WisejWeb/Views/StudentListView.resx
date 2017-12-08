@@ -124,6 +124,7 @@
     <value>Delete a student in the middle of the list and notice the student edit panel is empty.
 Now click anywhere inside the bounds of the list.
 Notice the student edit panel is populated.
+On Wisej you have to click another line to populate the student edit panel.
 This behaviour doesn't happen on Visual WebGUI.</value>
   </data>
 </root>
