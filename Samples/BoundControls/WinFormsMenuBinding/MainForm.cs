@@ -12,25 +12,33 @@ namespace WinForms.MenuBinding
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (var boundMenu = new BoundOnDemand())
+            using (var winFormsBindMenu = new WinFormsBindMenu())
             {
-                boundMenu.ShowDialog();
+                winFormsBindMenu.ShowDialog();
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (var autoBind = new AutoBind())
+            using (var mvvmFxBindMenu = new MvvmFxBindMenu())
             {
-                autoBind.ShowDialog();
+                mvvmFxBindMenu.ShowDialog();
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            using (var mvvmFxBind = new MvvmFxBind())
+            using (var winFormsBindToolBar = new WinFormsBindToolBar())
             {
-                mvvmFxBind.ShowDialog();
+                winFormsBindToolBar.ShowDialog();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var mvvmFxBindToolbar = new MvvmFxBindToolbar())
+            {
+                mvvmFxBindToolbar.ShowDialog();
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace WinForms.MenuBinding
 {
-    partial class MvvmFxBind
+    partial class WinFormsBindMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -130,7 +130,7 @@
             this.changeItem.UseVisualStyleBackColor = true;
             this.changeItem.Click += new System.EventHandler(this.changeItem_Click);
             // 
-            // MvvmFxBind
+            // WinFormsBindMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,9 +139,9 @@
             this.Controls.Add(this.showItem);
             this.Controls.Add(this.menuBar1);
             this.MainMenuStrip = this.menuBar1;
-            this.Name = "MvvmFxBind";
-            this.Text = "MvvmFx Bind";
-            this.Load += new System.EventHandler(this.MvvmFxBind_Load);
+            this.Name = "WinFormsBindMenu";
+            this.Text = "WinForms Bind Menu";
+            this.Load += new System.EventHandler(this.AutoBind_Load);
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.ResumeLayout(false);
