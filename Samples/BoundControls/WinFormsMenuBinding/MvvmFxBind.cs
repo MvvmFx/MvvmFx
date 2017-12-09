@@ -1,12 +1,12 @@
-﻿using BoundControls.Business;
+﻿using System.Windows.Forms;
+using BoundControls.Business;
 using MvvmFx.CaliburnMicro;
-using Wisej.Web;
 
-namespace WisejWeb.MenuBinding
+namespace WinForms.MenuBinding
 {
-    public partial class AutoBind : Form
+    public partial class MvvmFxBind : Form
     {
-        public AutoBind()
+        public MvvmFxBind()
         {
             InitializeComponent();
 

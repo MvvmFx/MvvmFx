@@ -4,9 +4,9 @@ using Wisej.Web;
 
 namespace WisejWeb.MenuBinding
 {
-    public partial class AutoBind : Form
+    public partial class MvvmFxBind : Form
     {
-        public AutoBind()
+        public MvvmFxBind()
         {
             InitializeComponent();
 

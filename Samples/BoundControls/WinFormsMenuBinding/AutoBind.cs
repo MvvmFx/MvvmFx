@@ -9,6 +9,11 @@ namespace WinForms.MenuBinding
         public AutoBind()
         {
             InitializeComponent();
+
+            var menu = MenuCollection.GetMenu("menuItem6");
+            menu.Visible = false;
+            menu.Text = "Hidden";
+            menu.ToolTipText = "Hidden menu entry";
             this.SetBindings();
         }
 

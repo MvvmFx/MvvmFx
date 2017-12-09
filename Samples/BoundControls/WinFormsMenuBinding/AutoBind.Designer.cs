@@ -140,7 +140,7 @@
             this.Controls.Add(this.menuBar1);
             this.MainMenuStrip = this.menuBar1;
             this.Name = "AutoBind";
-            this.Text = "Auto Bind";
+            this.Text = "MvvmFx Bind";
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.ResumeLayout(false);

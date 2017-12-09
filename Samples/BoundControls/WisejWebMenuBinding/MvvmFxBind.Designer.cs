@@ -1,6 +1,6 @@
 ﻿namespace WisejWeb.MenuBinding
 {
-    partial class AutoBind
+    partial class MvvmFxBind
     {
         /// <summary>
         /// Required designer variable.

@@ -28,52 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonHardBind = new System.Windows.Forms.Button();
-            this.buttonBoundOnDemand = new System.Windows.Forms.Button();
-            this.buttonAutoBind = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // buttonHardBind
+            // button1
             // 
-            this.buttonHardBind.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonHardBind.Location = new System.Drawing.Point(50, 50);
-            this.buttonHardBind.Name = "buttonHardBind";
-            this.buttonHardBind.Size = new System.Drawing.Size(200, 40);
-            this.buttonHardBind.TabIndex = 0;
-            this.buttonHardBind.Text = "Hard Bind";
-            this.buttonHardBind.UseVisualStyleBackColor = true;
-            this.buttonHardBind.Click += new System.EventHandler(this.buttonHardBind_Click);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.Location = new System.Drawing.Point(50, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Bind On Demand";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonBoundOnDemand
+            // button2
             // 
-            this.buttonBoundOnDemand.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonBoundOnDemand.Location = new System.Drawing.Point(50, 150);
-            this.buttonBoundOnDemand.Name = "buttonBoundOnDemand";
-            this.buttonBoundOnDemand.Size = new System.Drawing.Size(200, 40);
-            this.buttonBoundOnDemand.TabIndex = 1;
-            this.buttonBoundOnDemand.Text = "Bound On Demand";
-            this.buttonBoundOnDemand.UseVisualStyleBackColor = true;
-            this.buttonBoundOnDemand.Click += new System.EventHandler(this.buttonBoundOnDemand_Click);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.Location = new System.Drawing.Point(50, 150);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 40);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Auto Bind";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buttonAutoBind
+            // button3
             // 
-            this.buttonAutoBind.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonAutoBind.Location = new System.Drawing.Point(50, 250);
-            this.buttonAutoBind.Name = "buttonAutoBind";
-            this.buttonAutoBind.Size = new System.Drawing.Size(200, 40);
-            this.buttonAutoBind.TabIndex = 1;
-            this.buttonAutoBind.Text = "Auto Bind";
-            this.buttonAutoBind.UseVisualStyleBackColor = true;
-            this.buttonAutoBind.Click += new System.EventHandler(this.buttonAutoBind_Click);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button3.Location = new System.Drawing.Point(50, 250);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 40);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "MvvmFx Bind";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 471);
-            this.Controls.Add(this.buttonAutoBind);
-            this.Controls.Add(this.buttonBoundOnDemand);
-            this.Controls.Add(this.buttonHardBind);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.ResumeLayout(false);
@@ -82,8 +82,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonHardBind;
-        private System.Windows.Forms.Button buttonBoundOnDemand;
-        private System.Windows.Forms.Button buttonAutoBind;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
