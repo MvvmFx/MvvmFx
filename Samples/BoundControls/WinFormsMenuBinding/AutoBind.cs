@@ -21,8 +21,8 @@ namespace WinForms.MenuBinding
         private void changeItem_Click(object sender, System.EventArgs e)
         {
             var menu = MenuCollection.GetMenu("menuItem6");
-            menu.Text = "Apply Style Sheet";
-            menu.ToolTipText = "Apply Style Sheet menu entry";
+            menu.Text = "Help";
+            menu.ToolTipText = "Help menu entry";
         }
     }
 }

@@ -47,7 +47,8 @@
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.menuItem1,
-            this.menuItem2});
+            this.menuItem2,
+            this.menuItem6});
             this.menuBar1.Name = "menuBar1";
             this.menuBar1.Size = new System.Drawing.Size(612, 28);
             this.menuBar1.TabIndex = 2;
@@ -85,14 +86,13 @@
             // 
             this.menuItem5.Index = 2;
             this.menuItem5.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.menuItem6,
             this.menuItem7});
             this.menuItem5.Name = "menuItem5";
             this.menuItem5.Text = "menuItem5";
             // 
             // menuItem6
             // 
-            this.menuItem6.Index = 0;
+            this.menuItem6.Index = 2;
             this.menuItem6.Name = "menuItem6";
             this.menuItem6.Text = "menuItem6";
             // 

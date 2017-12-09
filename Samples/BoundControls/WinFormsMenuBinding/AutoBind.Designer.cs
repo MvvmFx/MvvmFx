@@ -46,7 +46,8 @@
             // 
             this.menuBar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItem1,
-            this.menuItem2});
+            this.menuItem2,
+            this.menuItem6});
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.Name = "menuBar1";
             this.menuBar1.Size = new System.Drawing.Size(596, 26);
@@ -84,7 +85,6 @@
             // menuItem5
             // 
             this.menuItem5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItem6,
             this.menuItem7});
             this.menuItem5.Name = "menuItem5";
             this.menuItem5.Size = new System.Drawing.Size(135, 22);
