@@ -122,16 +122,22 @@
             this.statusItem1,
             this.statusItem2,
             this.statusItem3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 419);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 417);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(596, 22);
+            this.statusStrip1.ShowItemToolTips = true;
+            this.statusStrip1.Size = new System.Drawing.Size(596, 24);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statusItem1
             // 
+            this.statusItem1.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.statusItem1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.statusItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.statusItem1.Name = "statusItem1";
-            this.statusItem1.Size = new System.Drawing.Size(68, 17);
+            this.statusItem1.Size = new System.Drawing.Size(72, 19);
             this.statusItem1.Text = "statusItem1";
             // 
             // statusItem2
@@ -148,13 +154,13 @@
             // statusItem5
             // 
             this.statusItem5.Name = "statusItem5";
-            this.statusItem5.Size = new System.Drawing.Size(135, 22);
+            this.statusItem5.Size = new System.Drawing.Size(152, 22);
             this.statusItem5.Text = "statusItem5";
             // 
             // statusItem4
             // 
             this.statusItem4.Name = "statusItem4";
-            this.statusItem4.Size = new System.Drawing.Size(135, 22);
+            this.statusItem4.Size = new System.Drawing.Size(152, 22);
             this.statusItem4.Text = "statusItem4";
             // 
             // statusItem3
@@ -210,6 +216,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "WinFormsBindToolBar";
+            this.ShowInTaskbar = false;
             this.Text = "WinForms Bind Toolbar";
             this.Load += new System.EventHandler(this.WinFormsBindToolBar_Load);
             this.toolStrip1.ResumeLayout(false);

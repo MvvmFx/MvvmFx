@@ -30,7 +30,7 @@ namespace WinForms.MenuBinding
         {
             var menu = MenuCollection.GetMenu("menuItem6");
             menu.Text = "Help";
-            menu.ToolTipText = "Help menu entry";
+            menu.ToolTipText = "Get help about an application topic.";
         }
     }
 }

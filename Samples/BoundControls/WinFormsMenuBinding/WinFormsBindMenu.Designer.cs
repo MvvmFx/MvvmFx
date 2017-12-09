@@ -50,6 +50,7 @@
             this.menuItem6});
             this.menuBar1.Location = new System.Drawing.Point(0, 0);
             this.menuBar1.Name = "menuBar1";
+            this.menuBar1.ShowItemToolTips = true;
             this.menuBar1.Size = new System.Drawing.Size(596, 26);
             this.menuBar1.TabIndex = 2;
             this.menuBar1.Text = "menuBar1";
@@ -140,6 +141,7 @@
             this.Controls.Add(this.menuBar1);
             this.MainMenuStrip = this.menuBar1;
             this.Name = "WinFormsBindMenu";
+            this.ShowInTaskbar = false;
             this.Text = "WinForms Bind Menu";
             this.Load += new System.EventHandler(this.WinFormsBindMenu_Load);
             this.menuBar1.ResumeLayout(false);

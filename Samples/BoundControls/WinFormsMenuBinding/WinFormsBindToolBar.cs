@@ -14,24 +14,24 @@ namespace WinForms.MenuBinding
 
         private void WinFormsBindToolBar_Load(object sender, EventArgs e)
         {
-            var menu = MenuCollection.GetMenu("menuItem6");
+            var menu = MenuCollection.GetMenu("statusItem3");
             menu.Visible = false;
             menu.Text = "Hidden";
-            menu.ToolTipText = "Hidden menu entry";
+            menu.ToolTipText = "Hidden status bar entry";
             this.SetBindings();
         }
 
         private void showItem_Click(object sender, System.EventArgs e)
         {
-            var menu = MenuCollection.GetMenu("menuItem6");
+            var menu = MenuCollection.GetMenu("statusItem3");
             menu.Visible = true;
         }
 
         private void changeItem_Click(object sender, System.EventArgs e)
         {
-            var menu = MenuCollection.GetMenu("menuItem6");
-            menu.Text = "Help";
-            menu.ToolTipText = "Help menu entry";
+            var menu = MenuCollection.GetMenu("statusItem3");
+            menu.Text = "Using \"master\" branch";
+            menu.ToolTipText = "Branch in use.";
         }
     }
 }

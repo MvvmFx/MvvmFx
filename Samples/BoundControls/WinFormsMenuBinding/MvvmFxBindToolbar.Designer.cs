@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MvvmFxBindToolbar));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolItem1 = new MvvmFx.Windows.Forms.ToolStripLabel();
             this.toolItem2 = new MvvmFx.Windows.Forms.ToolStripButton();
@@ -73,7 +72,6 @@
             // toolItem2
             // 
             this.toolItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolItem2.Image")));
             this.toolItem2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItem2.Name = "toolItem2";
             this.toolItem2.Size = new System.Drawing.Size(62, 22);
@@ -85,7 +83,6 @@
             this.toolItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolItem4,
             this.toolItem5});
-            this.toolItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolItem3.Image")));
             this.toolItem3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItem3.Name = "toolItem3";
             this.toolItem3.Size = new System.Drawing.Size(74, 22);
@@ -114,7 +111,6 @@
             // toolItem7
             // 
             this.toolItem7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolItem7.Image")));
             this.toolItem7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolItem7.Name = "toolItem7";
             this.toolItem7.Size = new System.Drawing.Size(62, 22);
@@ -126,16 +122,22 @@
             this.statusItem1,
             this.statusItem2,
             this.statusItem3});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 419);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 417);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(596, 22);
+            this.statusStrip1.ShowItemToolTips = true;
+            this.statusStrip1.Size = new System.Drawing.Size(596, 24);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statusItem1
             // 
+            this.statusItem1.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.statusItem1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
+            this.statusItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.statusItem1.Name = "statusItem1";
-            this.statusItem1.Size = new System.Drawing.Size(68, 17);
+            this.statusItem1.Size = new System.Drawing.Size(72, 19);
             this.statusItem1.Text = "statusItem1";
             // 
             // statusItem2
@@ -144,7 +146,6 @@
             this.statusItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusItem5,
             this.statusItem4});
-            this.statusItem2.Image = ((System.Drawing.Image)(resources.GetObject("statusItem2.Image")));
             this.statusItem2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.statusItem2.Name = "statusItem2";
             this.statusItem2.Size = new System.Drawing.Size(81, 20);
@@ -153,13 +154,13 @@
             // statusItem5
             // 
             this.statusItem5.Name = "statusItem5";
-            this.statusItem5.Size = new System.Drawing.Size(135, 22);
+            this.statusItem5.Size = new System.Drawing.Size(152, 22);
             this.statusItem5.Text = "statusItem5";
             // 
             // statusItem4
             // 
             this.statusItem4.Name = "statusItem4";
-            this.statusItem4.Size = new System.Drawing.Size(135, 22);
+            this.statusItem4.Size = new System.Drawing.Size(152, 22);
             this.statusItem4.Text = "statusItem4";
             // 
             // statusItem3
@@ -168,7 +169,6 @@
             this.statusItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusItem7,
             this.statusItem6});
-            this.statusItem3.Image = ((System.Drawing.Image)(resources.GetObject("statusItem3.Image")));
             this.statusItem3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.statusItem3.Name = "statusItem3";
             this.statusItem3.Size = new System.Drawing.Size(84, 20);
@@ -216,6 +216,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MvvmFxBindToolbar";
+            this.ShowInTaskbar = false;
             this.Text = "MvvmFx Bind Toolbar";
             this.Load += new System.EventHandler(this.MvvmFxBindToolbar_Load);
             this.toolStrip1.ResumeLayout(false);

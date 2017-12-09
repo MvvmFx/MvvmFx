@@ -123,16 +123,19 @@
             // 
             this.statusItem1.Name = "statusItem1";
             this.statusItem1.Text = "statusItem1";
+            this.statusItem1.Width = 200;
             // 
             // statusItem2
             // 
             this.statusItem2.Name = "statusItem2";
             this.statusItem2.Text = "statusItem2";
+            this.statusItem2.Width = 200;
             // 
             // statusItem3
             // 
             this.statusItem3.Name = "statusItem3";
             this.statusItem3.Text = "statusItem3";
+            this.statusItem3.Width = 200;
             // 
             // changeItem
             // 
