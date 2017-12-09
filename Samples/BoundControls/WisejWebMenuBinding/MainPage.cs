@@ -10,16 +10,7 @@ namespace WisejWeb.MenuBinding
             InitializeComponent();
         }
 
-        private void buttonHardBind_Click(object sender, EventArgs e)
-        {
-            using (var manualMenu = new HardBind())
-            {
-                manualMenu.closeFile.Visible = false;
-                manualMenu.ShowDialog();
-            }
-        }
-
-        private void buttonBoundOnDemand_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             using (var boundMenu = new BoundOnDemand())
             {
@@ -27,11 +18,19 @@ namespace WisejWeb.MenuBinding
             }
         }
 
-        private void buttonAutoBind_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             using (var autoBind = new AutoBind())
             {
                 autoBind.ShowDialog();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (var mvvmFxBind = new MvvmFxBind())
+            {
+                mvvmFxBind.ShowDialog();
             }
         }
     }

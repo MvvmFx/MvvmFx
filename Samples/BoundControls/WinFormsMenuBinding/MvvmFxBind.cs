@@ -1,23 +1,26 @@
-﻿using BoundControls.Business;
+﻿using System.Windows.Forms;
+using BoundControls.Business;
 using MvvmFx.CaliburnMicro;
-using Wisej.Web;
 
-namespace WisejWeb.MenuBinding
+namespace WinForms.MenuBinding
 {
-    public partial class AutoBind : Form
+    public partial class MvvmFxBind : Form
     {
-        public AutoBind()
+        private readonly MvvmFxBindComponents _binder = new MvvmFxBindComponents();
+
+        public MvvmFxBind()
         {
             InitializeComponent();
         }
 
-        private void AutoBind_Load(object sender, System.EventArgs e)
+        private void MvvmFxBind_Load(object sender, System.EventArgs e)
         {
             var menu = MenuCollection.GetMenu("menuItem6");
             menu.Visible = false;
             menu.Text = "Hidden";
             menu.ToolTipText = "Hidden menu entry";
-            this.SetBindings();
+
+            _binder.SetMvvmFxBindings(this);
         }
 
         private void showItem_Click(object sender, System.EventArgs e)

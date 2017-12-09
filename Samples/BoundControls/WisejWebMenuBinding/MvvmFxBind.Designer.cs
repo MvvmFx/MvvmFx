@@ -1,6 +1,6 @@
 ﻿namespace WisejWeb.MenuBinding
 {
-    partial class AutoBind
+    partial class MvvmFxBind
     {
         /// <summary>
         /// Required designer variable.
@@ -128,7 +128,7 @@
             this.changeItem.Text = "Change Item";
             this.changeItem.Click += new System.EventHandler(this.changeItem_Click);
             // 
-            // AutoBind
+            // MvvmFxBind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
@@ -136,9 +136,9 @@
             this.Controls.Add(this.changeItem);
             this.Controls.Add(this.showItem);
             this.Controls.Add(this.menuBar1);
-            this.Name = "AutoBind";
+            this.Name = "MvvmFxBind";
             this.Text = "Bind On Demand";
-            this.Load += new System.EventHandler(this.AutoBind_Load);
+            this.Load += new System.EventHandler(this.MvvmFxBind_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

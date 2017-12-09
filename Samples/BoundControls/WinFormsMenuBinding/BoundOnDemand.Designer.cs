@@ -95,7 +95,7 @@
             this.Controls.Add(this.menuBar1);
             this.MainMenuStrip = this.menuBar1;
             this.Name = "BoundOnDemand";
-            this.Text = "Bound On Demand";
+            this.Text = "Bind On Demand";
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.ResumeLayout(false);

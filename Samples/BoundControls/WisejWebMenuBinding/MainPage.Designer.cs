@@ -28,48 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonHardBind = new Wisej.Web.Button();
-            this.buttonBoundOnDemand = new Wisej.Web.Button();
-            this.buttonAutoBind = new Wisej.Web.Button();
+            this.button1 = new Wisej.Web.Button();
+            this.button2 = new Wisej.Web.Button();
+            this.button3 = new Wisej.Web.Button();
             this.SuspendLayout();
             // 
-            // buttonHardBind
+            // button1
             // 
-            this.buttonHardBind.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonHardBind.Location = new System.Drawing.Point(50, 50);
-            this.buttonHardBind.Name = "buttonHardBind";
-            this.buttonHardBind.Size = new System.Drawing.Size(200, 40);
-            this.buttonHardBind.TabIndex = 0;
-            this.buttonHardBind.Text = "Hard Bind";
-            this.buttonHardBind.Click += new System.EventHandler(this.buttonHardBind_Click);
+            this.button1.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button1.Location = new System.Drawing.Point(50, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Bind On Demand";
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonBoundOnDemand
+            // button2
             // 
-            this.buttonBoundOnDemand.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonBoundOnDemand.Location = new System.Drawing.Point(50, 150);
-            this.buttonBoundOnDemand.Name = "buttonBoundOnDemand";
-            this.buttonBoundOnDemand.Size = new System.Drawing.Size(200, 40);
-            this.buttonBoundOnDemand.TabIndex = 1;
-            this.buttonBoundOnDemand.Text = "Bound On Demand";
-            this.buttonBoundOnDemand.Click += new System.EventHandler(this.buttonBoundOnDemand_Click);
+            this.button2.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button2.Location = new System.Drawing.Point(50, 150);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 40);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Auto Bind";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buttonAutoBind
+            // button3
             // 
-            this.buttonAutoBind.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonAutoBind.Location = new System.Drawing.Point(50, 250);
-            this.buttonAutoBind.Name = "buttonAutoBind";
-            this.buttonAutoBind.Size = new System.Drawing.Size(200, 40);
-            this.buttonAutoBind.TabIndex = 1;
-            this.buttonAutoBind.Text = "Auto Bind";
-            this.buttonAutoBind.Click += new System.EventHandler(this.buttonAutoBind_Click);
+            this.button3.Font = new System.Drawing.Font("default", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.button3.Location = new System.Drawing.Point(50, 250);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(200, 40);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "MvvmFx Bind";
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonAutoBind);
-            this.Controls.Add(this.buttonBoundOnDemand);
-            this.Controls.Add(this.buttonHardBind);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "MainForm";
             this.Text = "Main Form";
             this.Size = new System.Drawing.Size(999, 548);
@@ -79,8 +79,8 @@
 
         #endregion
 
-        private Wisej.Web.Button buttonHardBind;
-        private Wisej.Web.Button buttonBoundOnDemand;
-        private Wisej.Web.Button buttonAutoBind;
+        private Wisej.Web.Button button1;
+        private Wisej.Web.Button button2;
+        private Wisej.Web.Button button3;
     }
 }

@@ -65,6 +65,9 @@
     <Compile Include="..\WinFormsMenuBinding\MenuCollection.cs">
       <Link>MenuCollection.cs</Link>
     </Compile>
+    <Compile Include="..\WinFormsMenuBinding\MvvmFxBindComponents.cs">
+      <Link>MvvmFxBindComponents.cs</Link>
+    </Compile>
     <Compile Include="AutoBind.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +80,11 @@
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="HardBind.cs">
+    <Compile Include="MvvmFxBind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HardBind.Designer.cs">
-      <DependentUpon>HardBind.cs</DependentUpon>
+    <Compile Include="MvvmFxBind.Designer.cs">
+      <DependentUpon>MvvmFxBind.cs</DependentUpon>
     </Compile>
     <Compile Include="BoundOnDemand.cs">
       <SubType>Form</SubType>
@@ -115,8 +118,8 @@
     <EmbeddedResource Include="BoundOnDemand.resx">
       <DependentUpon>BoundOnDemand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HardBind.resx">
-      <DependentUpon>HardBind.cs</DependentUpon>
+    <EmbeddedResource Include="MvvmFxBind.resx">
+      <DependentUpon>MvvmFxBind.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

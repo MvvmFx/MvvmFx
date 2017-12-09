@@ -9,6 +9,14 @@ namespace WinForms.MenuBinding
         public AutoBind()
         {
             InitializeComponent();
+        }
+
+        private void AutoBind_Load(object sender, System.EventArgs e)
+        {
+            var menu = MenuCollection.GetMenu("menuItem6");
+            menu.Visible = false;
+            menu.Text = "Hidden";
+            menu.ToolTipText = "Hidden menu entry";
             this.SetBindings();
         }
 
@@ -21,8 +29,8 @@ namespace WinForms.MenuBinding
         private void changeItem_Click(object sender, System.EventArgs e)
         {
             var menu = MenuCollection.GetMenu("menuItem6");
-            menu.Text = "Apply Style Sheet";
-            menu.ToolTipText = "Apply Style Sheet menu entry";
+            menu.Text = "Help";
+            menu.ToolTipText = "Help menu entry";
         }
     }
 }

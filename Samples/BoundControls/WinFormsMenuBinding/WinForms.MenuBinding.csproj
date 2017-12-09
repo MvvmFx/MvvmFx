@@ -58,14 +58,15 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HardBind.cs">
+    <Compile Include="MvvmFxBind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HardBind.Designer.cs">
-      <DependentUpon>HardBind.cs</DependentUpon>
+    <Compile Include="MvvmFxBind.Designer.cs">
+      <DependentUpon>MvvmFxBind.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs" />
     <Compile Include="MenuCollection.cs" />
+    <Compile Include="MvvmFxBindComponents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BoundOnDemand.cs">
@@ -74,14 +75,20 @@
     <Compile Include="BoundOnDemand.Designer.cs">
       <DependentUpon>BoundOnDemand.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolBarBind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolBarBind.Designer.cs">
+      <DependentUpon>ToolBarBind.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AutoBind.resx">
       <DependentUpon>AutoBind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HardBind.resx">
-      <DependentUpon>HardBind.cs</DependentUpon>
+    <EmbeddedResource Include="MvvmFxBind.resx">
+      <DependentUpon>MvvmFxBind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="BoundOnDemand.resx">
       <DependentUpon>BoundOnDemand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolBarBind.resx">
+      <DependentUpon>ToolBarBind.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
