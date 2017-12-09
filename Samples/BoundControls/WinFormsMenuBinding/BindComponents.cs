@@ -1,4 +1,5 @@
-﻿using BoundControls.Business;
+﻿using System.ComponentModel;
+using BoundControls.Business;
 using Menu = BoundControls.Business.Menu;
 #if WISEJ
 using MvvmFx.WisejWeb;
@@ -6,7 +7,6 @@ using Wisej.Web;
 using ToolStrip = Wisej.Web.MenuBar;
 using ToolStripDropDownItem = Wisej.Web.MenuItem;
 using ToolStripItem = Wisej.Web.MenuItem;
-
 #else
 using MvvmFx.Windows.Forms;
 using System.Windows.Forms;
@@ -22,9 +22,7 @@ namespace MvvmFx.CaliburnMicro
             {
                 if (control is ToolStrip)
                 {
-                    var toolStrip = control as ToolStrip;
-
-                    ParseComponents(toolStrip);
+                    ParseComponents(control as ToolStrip);
                 }
             }
         }
@@ -32,18 +30,13 @@ namespace MvvmFx.CaliburnMicro
         private static void ParseComponents(ToolStrip toolStrip)
         {
 #if WISEJ
-            foreach (ToolStripItem toolStripItem in toolStrip.MenuItems)
+            foreach (ToolStripItem item in toolStrip.MenuItems)
 #else
-            foreach (ToolStripItem toolStripItem in toolStrip.Items)
+            foreach (ToolStripItem item in toolStrip.Items)
 #endif
             {
-                if (toolStripItem is INamedBindable)
-                {
-                    var namedBindable = toolStripItem as INamedBindable;
-                    var menu = MenuCollection.GetMenu(namedBindable);
-                    Bind(namedBindable, menu);
-                }
-                RecurseToolStripItem(toolStripItem);
+                TryBind(item);
+                RecurseToolStripItem(item);
             }
         }
 
@@ -57,14 +50,19 @@ namespace MvvmFx.CaliburnMicro
                 foreach (ToolStripItem item in ((ToolStripDropDownItem) toolStripItem).DropDownItems)
 #endif
                 {
-                    if (toolStripItem is INamedBindable)
-                    {
-                        var namedBindable = item as INamedBindable;
-                        var menu = MenuCollection.GetMenu(namedBindable);
-                        Bind(namedBindable, menu);
-                    }
+                    TryBind(item);
                     RecurseToolStripItem(item);
                 }
+            }
+        }
+
+        private static void TryBind(Component component)
+        {
+            if (component is INamedBindable)
+            {
+                var namedBindable = component as INamedBindable;
+                var menu = MenuCollection.GetMenu(namedBindable);
+                Bind(namedBindable, menu);
             }
         }
 

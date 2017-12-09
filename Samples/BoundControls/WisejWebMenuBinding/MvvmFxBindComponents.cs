@@ -26,61 +26,43 @@ namespace MvvmFx.CaliburnMicro
             {
                 if (control is MenuBar)
                 {
-                    var menuBar = control as MenuBar;
-                    ParseComponents(menuBar);
+                    ParseComponents(control as MenuBar);
                 }
                 else if (control is ToolBar)
                 {
-                    var toolBar = control as ToolBar;
-                    ParseComponents(toolBar);
+                    ParseComponents(control as ToolBar);
                 }
                 else if (control is StatusBar)
                 {
-                    var statusBar = control as StatusBar;
-                    ParseComponents(statusBar);
+                    ParseComponents(control as StatusBar);
                 }
             }
         }
 
         private void ParseComponents(MenuBar menubar)
         {
-            foreach (MenuItem menuItem in menubar.MenuItems)
+            foreach (MenuItem item in menubar.MenuItems)
             {
-                if (menuItem is INamedBindable)
-                {
-                    var bindable = menuItem as INamedBindable;
-                    var menu = MenuCollection.GetMenu(menuItem as INamedBindable);
-                    Bind(bindable, menu);
-                }
-                RecurseItem(menuItem);
+                TryBind(item);
+                RecurseItem(item);
             }
         }
 
         private void ParseComponents(ToolBar toolBar)
         {
-            foreach (ToolBarButton toolBarButton in toolBar.Buttons)
+            foreach (ToolBarButton item in toolBar.Buttons)
             {
-                if (toolBarButton is INamedBindable)
-                {
-                    var bindable = toolBarButton as INamedBindable;
-                    var menu = MenuCollection.GetMenu(toolBarButton as INamedBindable);
-                    Bind(bindable, menu);
-                }
-                RecurseItem(toolBarButton);
+                TryBind(item);
+                RecurseItem(item);
             }
         }
 
         private void ParseComponents(StatusBar statusBar)
         {
-            foreach (StatusBarPanel statusBarPanel in statusBar.Panels)
+            foreach (StatusBarPanel item in statusBar.Panels)
             {
-                if (statusBarPanel is INamedBindable)
-                {
-                    var bindable = statusBarPanel as INamedBindable;
-                    var menu = MenuCollection.GetMenu(statusBarPanel as INamedBindable);
-                    Bind(bindable, menu);
-                }
-                RecurseItem(statusBarPanel);
+                TryBind(item);
+                RecurseItem(item);
             }
         }
 
@@ -90,9 +72,7 @@ namespace MvvmFx.CaliburnMicro
             {
                 foreach (MenuItem item in ((MenuItem) component).MenuItems)
                 {
-                    var bindable = item as INamedBindable;
-                    var menu = MenuCollection.GetMenu(item as INamedBindable);
-                    Bind(bindable, menu);
+                    TryBind(item);
                     RecurseItem(item);
                 }
             }
@@ -100,9 +80,7 @@ namespace MvvmFx.CaliburnMicro
             {
                 foreach (MenuItem item in ((ToolBarButton) component).DropDownMenu.MenuItems)
                 {
-                    var bindable = item as INamedBindable;
-                    var menu = MenuCollection.GetMenu(item as INamedBindable);
-                    Bind(bindable, menu);
+                    TryBind(item);
                     RecurseItem(item);
                 }
             }
@@ -110,12 +88,20 @@ namespace MvvmFx.CaliburnMicro
             {
                 foreach (MenuItem item in ((StatusBarPanel) component).Panels)
                 {
-                    var bindable = item as INamedBindable;
-                    var menu = MenuCollection.GetMenu(item as INamedBindable);
-                    Bind(bindable, menu);
+                    TryBind(item);
                     RecurseItem(item);
                 }
             }*/
+        }
+
+        private void TryBind(Component component)
+        {
+            if (component is INamedBindable)
+            {
+                var namedBindable = component as INamedBindable;
+                var menu = MenuCollection.GetMenu(namedBindable);
+                Bind(namedBindable, menu);
+            }
         }
 
         private void Bind(IBindableComponent bindable, Menu menu)

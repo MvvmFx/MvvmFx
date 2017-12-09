@@ -1,4 +1,5 @@
-﻿using BoundControls.Business;
+﻿using System.ComponentModel;
+using BoundControls.Business;
 using MvvmFx.Windows.Data;
 using Binding = MvvmFx.Windows.Data.Binding;
 using Menu = BoundControls.Business.Menu;
@@ -8,11 +9,9 @@ using Wisej.Web;
 using ToolStrip = Wisej.Web.MenuBar;
 using ToolStripDropDownItem = Wisej.Web.MenuItem;
 using ToolStripItem = Wisej.Web.MenuItem;
-
 #else
 using MvvmFx.Windows.Forms;
 using System.Windows.Forms;
-
 #endif
 
 namespace MvvmFx.CaliburnMicro
@@ -29,9 +28,7 @@ namespace MvvmFx.CaliburnMicro
             {
                 if (control is ToolStrip)
                 {
-                    var toolStrip = control as ToolStrip;
-
-                    ParseComponents(toolStrip);
+                    ParseComponents(control as ToolStrip);
                 }
             }
         }
@@ -44,12 +41,7 @@ namespace MvvmFx.CaliburnMicro
             foreach (ToolStripItem item in toolStrip.Items)
 #endif
             {
-                if (item is INamedBindable)
-                {
-                    var namedBindable = item as INamedBindable;
-                    var menu = MenuCollection.GetMenu(namedBindable);
-                    Bind(namedBindable, menu);
-                }
+                TryBind(item);
                 RecurseToolStripItem(item);
             }
         }
@@ -64,14 +56,19 @@ namespace MvvmFx.CaliburnMicro
                 foreach (ToolStripItem item in ((ToolStripDropDownItem) toolStripItem).DropDownItems)
 #endif
                 {
-                    if (item is INamedBindable)
-                    {
-                        var namedBindable = item as INamedBindable;
-                        var menu = MenuCollection.GetMenu(namedBindable);
-                        Bind(namedBindable, menu);
-                    }
+                    TryBind(item);
                     RecurseToolStripItem(item);
                 }
+            }
+        }
+
+        private void TryBind(Component component)
+        {
+            if (component is INamedBindable)
+            {
+                var namedBindable = component as INamedBindable;
+                var menu = MenuCollection.GetMenu(namedBindable);
+                Bind(namedBindable, menu);
             }
         }
 
