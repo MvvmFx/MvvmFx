@@ -9,7 +9,10 @@ namespace WisejWeb.MenuBinding
         public AutoBind()
         {
             InitializeComponent();
+        }
 
+        private void AutoBind_Load(object sender, System.EventArgs e)
+        {
             var menu = MenuCollection.GetMenu("menuItem6");
             menu.Visible = false;
             menu.Text = "Hidden";

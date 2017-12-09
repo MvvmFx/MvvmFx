@@ -65,6 +65,9 @@
     <Compile Include="..\WinFormsMenuBinding\MenuCollection.cs">
       <Link>MenuCollection.cs</Link>
     </Compile>
+    <Compile Include="..\WinFormsMenuBinding\MvvmFxBindComponents.cs">
+      <Link>MvvmFxBindComponents.cs</Link>
+    </Compile>
     <Compile Include="AutoBind.cs">
       <SubType>Form</SubType>
     </Compile>

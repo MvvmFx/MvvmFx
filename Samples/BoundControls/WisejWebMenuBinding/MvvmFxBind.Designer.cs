@@ -34,9 +34,9 @@
             this.menuItem3 = new MvvmFx.WisejWeb.MenuItem();
             this.menuItem4 = new MvvmFx.WisejWeb.MenuItem();
             this.menuItem5 = new MvvmFx.WisejWeb.MenuItem();
-            this.menuItem6 = new MvvmFx.WisejWeb.MenuItem();
             this.menuItem7 = new MvvmFx.WisejWeb.MenuItem();
             this.menuItem8 = new MvvmFx.WisejWeb.MenuItem();
+            this.menuItem6 = new MvvmFx.WisejWeb.MenuItem();
             this.showItem = new Wisej.Web.Button();
             this.changeItem = new Wisej.Web.Button();
             this.SuspendLayout();
@@ -90,15 +90,9 @@
             this.menuItem5.Name = "menuItem5";
             this.menuItem5.Text = "menuItem5";
             // 
-            // menuItem6
-            // 
-            this.menuItem6.Index = 2;
-            this.menuItem6.Name = "menuItem6";
-            this.menuItem6.Text = "menuItem6";
-            // 
             // menuItem7
             // 
-            this.menuItem7.Index = 1;
+            this.menuItem7.Index = 0;
             this.menuItem7.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.menuItem8});
             this.menuItem7.Name = "menuItem7";
@@ -109,6 +103,12 @@
             this.menuItem8.Index = 0;
             this.menuItem8.Name = "menuItem8";
             this.menuItem8.Text = "menuItem8";
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 2;
+            this.menuItem6.Name = "menuItem6";
+            this.menuItem6.Text = "menuItem6";
             // 
             // showItem
             // 
@@ -128,7 +128,7 @@
             this.changeItem.Text = "Change Item";
             this.changeItem.Click += new System.EventHandler(this.changeItem_Click);
             // 
-            // AutoBind
+            // MvvmFxBind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
@@ -136,8 +136,9 @@
             this.Controls.Add(this.changeItem);
             this.Controls.Add(this.showItem);
             this.Controls.Add(this.menuBar1);
-            this.Name = "AutoBind";
+            this.Name = "MvvmFxBind";
             this.Text = "Bind On Demand";
+            this.Load += new System.EventHandler(this.MvvmFxBind_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

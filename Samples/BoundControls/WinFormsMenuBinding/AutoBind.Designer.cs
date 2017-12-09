@@ -34,9 +34,9 @@
             this.menuItem3 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
             this.menuItem4 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
             this.menuItem5 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
-            this.menuItem6 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
             this.menuItem7 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
             this.menuItem8 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
+            this.menuItem6 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
             this.showItem = new System.Windows.Forms.Button();
             this.changeItem = new System.Windows.Forms.Button();
             this.menuBar1.SuspendLayout();
@@ -90,12 +90,6 @@
             this.menuItem5.Size = new System.Drawing.Size(135, 22);
             this.menuItem5.Text = "menuItem5";
             // 
-            // menuItem6
-            // 
-            this.menuItem6.Name = "menuItem6";
-            this.menuItem6.Size = new System.Drawing.Size(135, 22);
-            this.menuItem6.Text = "menuItem6";
-            // 
             // menuItem7
             // 
             this.menuItem7.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,6 +103,12 @@
             this.menuItem8.Name = "menuItem8";
             this.menuItem8.Size = new System.Drawing.Size(135, 22);
             this.menuItem8.Text = "menuItem8";
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Name = "menuItem6";
+            this.menuItem6.Size = new System.Drawing.Size(80, 22);
+            this.menuItem6.Text = "menuItem6";
             // 
             // showItem
             // 
@@ -141,6 +141,7 @@
             this.MainMenuStrip = this.menuBar1;
             this.Name = "AutoBind";
             this.Text = "MvvmFx Bind";
+            this.Load += new System.EventHandler(this.AutoBind_Load);
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.ResumeLayout(false);

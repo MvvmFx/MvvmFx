@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Menu.cs" />
     <Compile Include="MenuCollection.cs" />
+    <Compile Include="MvvmFxBindComponents.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BoundOnDemand.cs">
