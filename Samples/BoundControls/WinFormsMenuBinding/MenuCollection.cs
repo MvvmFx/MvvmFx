@@ -51,7 +51,7 @@ namespace BoundControls.Business
             return Instance();
         }
 
-        public static Menu GetMenu(IHaveName namedComponent)
+        public static Menu GetMenu(INamedBindable namedComponent)
         {
             foreach (Menu menu in Instance())
             {

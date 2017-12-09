@@ -34,14 +34,14 @@ namespace MvvmFx.CaliburnMicro
 #if WISEJ
             foreach (ToolStripItem toolStripItem in toolStrip.MenuItems)
 #else
-                foreach (ToolStripItem toolStripItem in toolStrip.Items)
+            foreach (ToolStripItem toolStripItem in toolStrip.Items)
 #endif
             {
-                if (toolStripItem is IBindableComponent && toolStripItem is IHaveName)
+                if (toolStripItem is INamedBindable)
                 {
-                    var bindable = toolStripItem as IBindableComponent;
-                    var menu = MenuCollection.GetMenu(toolStripItem as IHaveName);
-                    Bind(bindable, menu);
+                    var namedBindable = toolStripItem as INamedBindable;
+                    var menu = MenuCollection.GetMenu(namedBindable);
+                    Bind(namedBindable, menu);
                 }
                 RecurseToolStripItem(toolStripItem);
             }
@@ -57,9 +57,12 @@ namespace MvvmFx.CaliburnMicro
                 foreach (ToolStripItem item in ((ToolStripDropDownItem) toolStripItem).DropDownItems)
 #endif
                 {
-                    var bindable = item as IBindableComponent;
-                    var menu = MenuCollection.GetMenu(item as IHaveName);
-                    Bind(bindable, menu);
+                    if (toolStripItem is INamedBindable)
+                    {
+                        var namedBindable = item as INamedBindable;
+                        var menu = MenuCollection.GetMenu(namedBindable);
+                        Bind(namedBindable, menu);
+                    }
                     RecurseToolStripItem(item);
                 }
             }

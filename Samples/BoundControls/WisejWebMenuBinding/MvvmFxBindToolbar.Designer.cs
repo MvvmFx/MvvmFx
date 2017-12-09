@@ -32,10 +32,10 @@
             this.toolItem1 = new MvvmFx.WisejWeb.ToolBarButton();
             this.toolItem2 = new MvvmFx.WisejWeb.ToolBarButton();
             this.toolItem3 = new MvvmFx.WisejWeb.ToolBarButton();
-            this.tooltem3Menu = new Wisej.Web.ContextMenu();
-            this.tooltem4 = new MvvmFx.WisejWeb.MenuItem();
-            this.tooltem5 = new MvvmFx.WisejWeb.MenuItem();
-            this.tooltem6 = new MvvmFx.WisejWeb.MenuItem();
+            this.toolItem3Menu = new Wisej.Web.ContextMenu();
+            this.toolItem4 = new MvvmFx.WisejWeb.MenuItem();
+            this.toolItem5 = new MvvmFx.WisejWeb.MenuItem();
+            this.toolItem6 = new MvvmFx.WisejWeb.MenuItem();
             this.toolItem7 = new MvvmFx.WisejWeb.ToolBarButton();
             this.statusBar1 = new Wisej.Web.StatusBar();
             this.statusItem1 = new MvvmFx.WisejWeb.StatusBarPanel();
@@ -70,37 +70,37 @@
             // 
             // toolItem3
             // 
-            this.toolItem3.DropDownMenu = this.tooltem3Menu;
+            this.toolItem3.DropDownMenu = this.toolItem3Menu;
             this.toolItem3.Name = "toolItem3";
             this.toolItem3.Style = Wisej.Web.ToolBarButtonStyle.DropDownButton;
             this.toolItem3.Text = "toolItem3";
             // 
-            // tooltem3Menu
+            // toolItem3Menu
             // 
-            this.tooltem3Menu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.tooltem4,
-            this.tooltem5});
-            this.tooltem3Menu.Name = "tooltem3Menu";
+            this.toolItem3Menu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
+            this.toolItem4,
+            this.toolItem5});
+            this.toolItem3Menu.Name = "toolItem3Menu";
             // 
-            // tooltem4
+            // toolItem4
             // 
-            this.tooltem4.Index = 0;
-            this.tooltem4.Name = "tooltem4";
-            this.tooltem4.Text = "tooltem4";
+            this.toolItem4.Index = 0;
+            this.toolItem4.Name = "toolItem4";
+            this.toolItem4.Text = "toolItem4";
             // 
-            // tooltem5
+            // toolItem5
             // 
-            this.tooltem5.Index = 1;
-            this.tooltem5.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.tooltem6});
-            this.tooltem5.Name = "tooltem5";
-            this.tooltem5.Text = "tooltem5";
+            this.toolItem5.Index = 1;
+            this.toolItem5.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
+            this.toolItem6});
+            this.toolItem5.Name = "toolItem5";
+            this.toolItem5.Text = "toolItem5";
             // 
-            // tooltem6
+            // toolItem6
             // 
-            this.tooltem6.Index = 0;
-            this.tooltem6.Name = "tooltem6";
-            this.tooltem6.Text = "tooltem6";
+            this.toolItem6.Index = 0;
+            this.toolItem6.Name = "toolItem6";
+            this.toolItem6.Text = "toolItem6";
             // 
             // toolItem7
             // 
@@ -152,7 +152,7 @@
             this.showItem.Text = "Show Item";
             this.showItem.Click += new System.EventHandler(this.showItem_Click);
             // 
-            // WinFormsBindToolBar
+            // MvvmFxBindToolbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
@@ -161,7 +161,7 @@
             this.Controls.Add(this.showItem);
             this.Controls.Add(this.statusBar1);
             this.Controls.Add(this.toolBar1);
-            this.Name = "WinFormsBindToolBar";
+            this.Name = "MvvmFxBindToolbar";
             this.Text = "MvvmFx Bind ToolBar";
             this.Load += new System.EventHandler(this.MvvmFxBindToolbar_Load);
             this.ResumeLayout(false);
@@ -179,10 +179,10 @@
         private MvvmFx.WisejWeb.StatusBarPanel statusItem1;
         private MvvmFx.WisejWeb.StatusBarPanel statusItem2;
         private MvvmFx.WisejWeb.StatusBarPanel statusItem3;
-        private Wisej.Web.ContextMenu tooltem3Menu;
-        private MvvmFx.WisejWeb.MenuItem tooltem4;
-        private MvvmFx.WisejWeb.MenuItem tooltem5;
-        private MvvmFx.WisejWeb.MenuItem tooltem6;
+        private Wisej.Web.ContextMenu toolItem3Menu;
+        private MvvmFx.WisejWeb.MenuItem toolItem4;
+        private MvvmFx.WisejWeb.MenuItem toolItem5;
+        private MvvmFx.WisejWeb.MenuItem toolItem6;
         private MvvmFx.WisejWeb.ToolBarButton toolItem7;
         private Wisej.Web.Button changeItem;
         private Wisej.Web.Button showItem;

@@ -39,17 +39,18 @@ namespace MvvmFx.CaliburnMicro
         private void ParseComponents(ToolStrip toolStrip)
         {
 #if WISEJ
-            foreach (ToolStripItem toolStripItem in toolStrip.MenuItems)
+            foreach (ToolStripItem item in toolStrip.MenuItems)
 #else
-            foreach (ToolStripItem toolStripItem in toolStrip.Items)
+            foreach (ToolStripItem item in toolStrip.Items)
 #endif
             {
-                if (toolStripItem is IBindableComponent && toolStripItem is IHaveName)
+                if (item is INamedBindable)
                 {
-                    var menu = MenuCollection.GetMenu(toolStripItem as IHaveName);
-                    Bind(toolStripItem, menu);
+                    var namedBindable = item as INamedBindable;
+                    var menu = MenuCollection.GetMenu(namedBindable);
+                    Bind(namedBindable, menu);
                 }
-                RecurseToolStripItem(toolStripItem);
+                RecurseToolStripItem(item);
             }
         }
 
@@ -63,30 +64,34 @@ namespace MvvmFx.CaliburnMicro
                 foreach (ToolStripItem item in ((ToolStripDropDownItem) toolStripItem).DropDownItems)
 #endif
                 {
-                    var menu = MenuCollection.GetMenu(item as IHaveName);
-                    Bind(item, menu);
+                    if (item is INamedBindable)
+                    {
+                        var namedBindable = item as INamedBindable;
+                        var menu = MenuCollection.GetMenu(namedBindable);
+                        Bind(namedBindable, menu);
+                    }
                     RecurseToolStripItem(item);
                 }
             }
         }
 
-        private void Bind(ToolStripItem toolStripItem, Menu menu)
+        private void Bind(IBindableComponent bindable, Menu menu)
         {
-            _bindingManager.Bindings.Add(new Binding(toolStripItem, "Text", menu, "Text")
+            _bindingManager.Bindings.Add(new Binding(bindable, "Text", menu, "Text")
             {
                 Mode = BindingMode.OneWayToTarget
             });
 #if !WISEJ
-            _bindingManager.Bindings.Add(new Binding(toolStripItem, "ToolTipText", menu, "ToolTipText")
+            _bindingManager.Bindings.Add(new Binding(bindable, "ToolTipText", menu, "ToolTipText")
             {
                 Mode = BindingMode.OneWayToTarget
             });
 #endif
-            _bindingManager.Bindings.Add(new Binding(toolStripItem, "Enabled", menu, "Enabled")
+            _bindingManager.Bindings.Add(new Binding(bindable, "Enabled", menu, "Enabled")
             {
                 Mode = BindingMode.OneWayToTarget
             });
-            _bindingManager.Bindings.Add(new Binding(toolStripItem, "Visible", menu, "Visible")
+            _bindingManager.Bindings.Add(new Binding(bindable, "Visible", menu, "Visible")
             {
                 Mode = BindingMode.OneWayToTarget
             });

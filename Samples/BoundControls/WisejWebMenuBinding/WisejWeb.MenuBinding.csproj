@@ -56,18 +56,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\WinFormsMenuBinding\BindComponents.cs">
-      <Link>BindComponents.cs</Link>
-    </Compile>
     <Compile Include="..\WinFormsMenuBinding\Menu.cs">
       <Link>Menu.cs</Link>
     </Compile>
     <Compile Include="..\WinFormsMenuBinding\MenuCollection.cs">
       <Link>MenuCollection.cs</Link>
     </Compile>
-    <Compile Include="..\WinFormsMenuBinding\MvvmFxBindComponents.cs">
-      <Link>MvvmFxBindComponents.cs</Link>
-    </Compile>
+    <Compile Include="BindComponents.cs" />
+    <Compile Include="MvvmFxBindComponents.cs" />
     <Compile Include="WinFormsBindMenu.cs">
       <SubType>Form</SubType>
     </Compile>
