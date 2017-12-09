@@ -1,15 +1,7 @@
 ﻿using System.ComponentModel;
-using BoundControls.Business;
-#if WISEJ
-using MvvmFx.WisejWeb;
-using Wisej.Web;
-using ToolStrip = Wisej.Web.MenuBar;
-using ToolStripDropDownItem = Wisej.Web.MenuItem;
-using ToolStripItem = Wisej.Web.MenuItem;
-#else
-using MvvmFx.Windows.Forms;
 using System.Windows.Forms;
-#endif
+using BoundControls.Business;
+using MvvmFx.Windows.Forms;
 
 namespace MvvmFx.CaliburnMicro
 {
@@ -28,11 +20,7 @@ namespace MvvmFx.CaliburnMicro
 
         private static void ParseComponents(ToolStrip toolStrip)
         {
-#if WISEJ
-            foreach (ToolStripItem item in toolStrip.MenuItems)
-#else
             foreach (ToolStripItem item in toolStrip.Items)
-#endif
             {
                 TryBind(item);
                 RecurseToolStripItem(item);
@@ -43,11 +31,7 @@ namespace MvvmFx.CaliburnMicro
         {
             if (toolStripItem is ToolStripDropDownItem)
             {
-#if WISEJ
-                foreach (ToolStripItem item in ((ToolStripDropDownItem) toolStripItem).MenuItems)
-#else
                 foreach (ToolStripItem item in ((ToolStripDropDownItem) toolStripItem).DropDownItems)
-#endif
                 {
                     TryBind(item);
                     RecurseToolStripItem(item);
@@ -68,9 +52,7 @@ namespace MvvmFx.CaliburnMicro
         private static void Bind(IBindableComponent bindable, Item item)
         {
             bindable.DataBindings.Add("Text", item, "Text");
-#if !WISEJ
             bindable.DataBindings.Add("ToolTipText", item, "ToolTipText");
-#endif
             bindable.DataBindings.Add("Enabled", item, "Enabled");
             bindable.DataBindings.Add("Visible", item, "Visible");
         }
