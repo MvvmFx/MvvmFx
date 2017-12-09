@@ -16,25 +16,37 @@ namespace WinForms.MenuBinding
 
         private void MvvmFxBindToolbar_Load(object sender, EventArgs e)
         {
-            var menu = MenuCollection.GetMenu("statusItem3");
-            menu.Visible = false;
-            menu.Text = "Hidden";
-            menu.ToolTipText = "Hidden status bar entry";
+            var item = ItemCollection.GetItem("statusItem3");
+            item.Visible = false;
+            item.Text = "Hidden";
+            item.ToolTipText = "Hidden status bar entry";
 
-            _binder.SetMvvmFxBindings(this);
+            item = ItemCollection.GetItem("toolItem7");
+            item.Visible = false;
+            item.Text = "Hidden";
+            item.ToolTipText = "Hidden tool bar entry";
+
+            this.SetBindings();
         }
 
-        private void showItem_Click(object sender, System.EventArgs e)
+        private void showItem_Click(object sender, EventArgs e)
         {
-            var menu = MenuCollection.GetMenu("statusItem3");
-            menu.Visible = true;
+            var getItem = ItemCollection.GetItem("statusItem3");
+            getItem.Visible = true;
+
+            getItem = ItemCollection.GetItem("toolItem7");
+            getItem.Visible = true;
         }
 
-        private void changeItem_Click(object sender, System.EventArgs e)
+        private void changeItem_Click(object sender, EventArgs e)
         {
-            var menu = MenuCollection.GetMenu("statusItem3");
-            menu.Text = "Using \"master\" branch";
-            menu.ToolTipText = "Branch in use.";
+            var item = ItemCollection.GetItem("statusItem3");
+            item.Text = "Using \"master\" branch";
+            item.ToolTipText = "Branch in use.";
+
+            item = ItemCollection.GetItem("toolItem7");
+            item.Text = "Save Styles";
+            item.ToolTipText = "Save the full set of Style Sheets.";
         }
     }
 }

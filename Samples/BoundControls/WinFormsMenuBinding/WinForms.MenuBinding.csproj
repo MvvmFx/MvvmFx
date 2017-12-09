@@ -70,8 +70,8 @@
     <Compile Include="MvvmFxBindMenu.Designer.cs">
       <DependentUpon>MvvmFxBindMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuCollection.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemCollection.cs" />
     <Compile Include="MvvmFxBindComponents.cs" />
     <Compile Include="MvvmFxBindToolbar.cs">
       <SubType>Form</SubType>

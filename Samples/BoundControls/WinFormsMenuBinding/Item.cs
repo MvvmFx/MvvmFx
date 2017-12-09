@@ -2,11 +2,11 @@
 
 namespace BoundControls.Business
 {
-    public class Menu : INotifyPropertyChanged
+    public class Item : INotifyPropertyChanged
     {
         #region Constructor
 
-        public Menu(string name, string text, string toolTipText, bool enabled, bool visible)
+        public Item(string name, string text, string toolTipText, bool enabled, bool visible)
         {
             Name = name;
             Text = text;

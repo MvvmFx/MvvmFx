@@ -2,7 +2,6 @@
 using BoundControls.Business;
 using MvvmFx.Windows.Data;
 using Binding = MvvmFx.Windows.Data.Binding;
-using Menu = BoundControls.Business.Menu;
 #if WISEJ
 using MvvmFx.WisejWeb;
 using Wisej.Web;
@@ -67,28 +66,28 @@ namespace MvvmFx.CaliburnMicro
             if (component is INamedBindable)
             {
                 var namedBindable = component as INamedBindable;
-                var menu = MenuCollection.GetMenu(namedBindable);
-                Bind(namedBindable, menu);
+                var item = ItemCollection.GetItem(namedBindable);
+                Bind(namedBindable, item);
             }
         }
 
-        private void Bind(IBindableComponent bindable, Menu menu)
+        private void Bind(IBindableComponent bindable, Item item)
         {
-            _bindingManager.Bindings.Add(new Binding(bindable, "Text", menu, "Text")
+            _bindingManager.Bindings.Add(new Binding(bindable, "Text", item, "Text")
             {
                 Mode = BindingMode.OneWayToTarget
             });
 #if !WISEJ
-            _bindingManager.Bindings.Add(new Binding(bindable, "ToolTipText", menu, "ToolTipText")
+            _bindingManager.Bindings.Add(new Binding(bindable, "ToolTipText", item, "ToolTipText")
             {
                 Mode = BindingMode.OneWayToTarget
             });
 #endif
-            _bindingManager.Bindings.Add(new Binding(bindable, "Enabled", menu, "Enabled")
+            _bindingManager.Bindings.Add(new Binding(bindable, "Enabled", item, "Enabled")
             {
                 Mode = BindingMode.OneWayToTarget
             });
-            _bindingManager.Bindings.Add(new Binding(bindable, "Visible", menu, "Visible")
+            _bindingManager.Bindings.Add(new Binding(bindable, "Visible", item, "Visible")
             {
                 Mode = BindingMode.OneWayToTarget
             });

@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using BoundControls.Business;
-using Menu = BoundControls.Business.Menu;
 #if WISEJ
 using MvvmFx.WisejWeb;
 using Wisej.Web;
@@ -61,19 +60,19 @@ namespace MvvmFx.CaliburnMicro
             if (component is INamedBindable)
             {
                 var namedBindable = component as INamedBindable;
-                var menu = MenuCollection.GetMenu(namedBindable);
-                Bind(namedBindable, menu);
+                var item = ItemCollection.GetItem(namedBindable);
+                Bind(namedBindable, item);
             }
         }
 
-        private static void Bind(IBindableComponent bindable, Menu menu)
+        private static void Bind(IBindableComponent bindable, Item item)
         {
-            bindable.DataBindings.Add("Text", menu, "Text");
+            bindable.DataBindings.Add("Text", item, "Text");
 #if !WISEJ
-            bindable.DataBindings.Add("ToolTipText", menu, "ToolTipText");
+            bindable.DataBindings.Add("ToolTipText", item, "ToolTipText");
 #endif
-            bindable.DataBindings.Add("Enabled", menu, "Enabled");
-            bindable.DataBindings.Add("Visible", menu, "Visible");
+            bindable.DataBindings.Add("Enabled", item, "Enabled");
+            bindable.DataBindings.Add("Visible", item, "Visible");
         }
     }
 }
