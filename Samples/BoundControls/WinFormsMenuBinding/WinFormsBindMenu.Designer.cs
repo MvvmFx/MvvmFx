@@ -141,7 +141,7 @@
             this.MainMenuStrip = this.menuBar1;
             this.Name = "WinFormsBindMenu";
             this.Text = "WinForms Bind Menu";
-            this.Load += new System.EventHandler(this.AutoBind_Load);
+            this.Load += new System.EventHandler(this.WinFormsBindMenu_Load);
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.ResumeLayout(false);

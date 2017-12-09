@@ -138,7 +138,7 @@
             this.Controls.Add(this.menuBar1);
             this.Name = "MvvmFxBindMenu";
             this.Text = "MvvmFx Bind Menu";
-            this.Load += new System.EventHandler(this.MvvmFxBind_Load);
+            this.Load += new System.EventHandler(this.MvvmFxBindMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

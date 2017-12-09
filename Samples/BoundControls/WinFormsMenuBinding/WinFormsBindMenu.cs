@@ -11,7 +11,7 @@ namespace WinForms.MenuBinding
             InitializeComponent();
         }
 
-        private void AutoBind_Load(object sender, System.EventArgs e)
+        private void WinFormsBindMenu_Load(object sender, System.EventArgs e)
         {
             var menu = MenuCollection.GetMenu("menuItem6");
             menu.Visible = false;

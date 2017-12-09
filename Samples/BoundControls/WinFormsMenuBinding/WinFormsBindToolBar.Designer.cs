@@ -210,7 +210,7 @@
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "WinFormsBindToolBar";
-            this.Text = "MvvmFx Bind Toolbar";
+            this.Text = "WinForms Bind Toolbar";
             this.Load += new System.EventHandler(this.WinFormsBindToolBar_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

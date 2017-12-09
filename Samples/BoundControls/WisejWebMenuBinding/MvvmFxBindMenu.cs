@@ -14,7 +14,7 @@ namespace WisejWeb.MenuBinding
         }
 
 
-        private void MvvmFxBind_Load(object sender, System.EventArgs e)
+        private void MvvmFxBindMenu_Load(object sender, System.EventArgs e)
         {
             var menu = MenuCollection.GetMenu("menuItem6");
             menu.Visible = false;

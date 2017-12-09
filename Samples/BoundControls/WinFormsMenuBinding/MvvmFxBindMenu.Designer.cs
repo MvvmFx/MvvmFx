@@ -141,7 +141,7 @@
             this.MainMenuStrip = this.menuBar1;
             this.Name = "MvvmFxBindMenu";
             this.Text = "MvvmFx Bind Menu";
-            this.Load += new System.EventHandler(this.MvvmFxBind_Load);
+            this.Load += new System.EventHandler(this.MvvmFxBindMenu_Load);
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.ResumeLayout(false);
