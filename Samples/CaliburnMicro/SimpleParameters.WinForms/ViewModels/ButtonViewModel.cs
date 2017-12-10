@@ -179,7 +179,7 @@ namespace SimpleParameters.UI.ViewModels
 
         public bool CanShowBound(string parameter)
         {
-            if(string.IsNullOrWhiteSpace(parameter))
+            if (string.IsNullOrWhiteSpace(parameter))
             {
                 BoundLabel = "Type here to activate the Bound button";
                 return false;

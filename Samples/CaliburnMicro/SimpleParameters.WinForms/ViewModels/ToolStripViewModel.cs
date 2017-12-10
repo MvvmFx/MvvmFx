@@ -1,8 +1,6 @@
 ﻿using System;
 #if WISEJ
 using Wisej.Web;
-using ToolStripButton = Wisej.Web.ToolBarButton;
-using ToolStripItem = Wisej.Web.MenuItem;
 #else
 using System.Windows.Forms;
 #endif
@@ -19,22 +17,49 @@ namespace SimpleParameters.UI.ViewModels
 
         public new void ShowThis(object obj)
         {
-            string helper;
+            string helper = string.Empty;
 
+#if WINFORMS
             var proxy = obj as ToolStripItemProxy;
             if (proxy == null)
                 helper = "$this is null";
             else
             {
                 helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
-#if !WISEJ
                 var btn = proxy.Item as ToolStripButton;
                 if (btn == null)
                     helper = "$this is null";
                 else
                     helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
-#endif
+
             }
+#else
+            if (obj is MenuItemProxy)
+            {
+                var proxy = obj as MenuItemProxy;
+                {
+                    helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
+                    var btn = proxy.Item;
+                    if (btn == null)
+                        helper = "$this is null";
+                    else
+                        helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
+                }
+            }
+            if (obj is ToolBarButtonProxy)
+            {
+                var proxy = obj as ToolBarButtonProxy;
+                {
+                    helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
+                    var btn = proxy.Item;
+                    if (btn == null)
+                        helper = "$this is null";
+                    else
+                        helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
+                }
+            }
+
+#endif
 
             ActionDetail = helper;
             ActionDescription = "$this";
