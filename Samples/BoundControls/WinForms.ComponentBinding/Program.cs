@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace WinForms.MenuBinding
+namespace WinForms.ComponentBinding
 {
     static class Program
     {

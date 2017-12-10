@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Windows.Forms;
+using Wisej.Web;
 
-namespace WinForms.MenuBinding
+namespace WisejWeb.ComponentBinding
 {
-    public partial class MainForm : Form
+    public partial class MainPage : Page
     {
-        public MainForm()
+        public MainPage()
         {
             InitializeComponent();
         }
@@ -24,6 +24,6 @@ namespace WinForms.MenuBinding
             {
                 mvvmFxBindMenu.ShowDialog();
             }
-        }        
+        }
     }
 }

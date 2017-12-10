@@ -1,6 +1,6 @@
-﻿namespace WinForms.MenuBinding
+﻿namespace WinForms.ComponentBinding
 {
-    partial class WinFormsBindings
+    partial class MvvmFxBindings
     {
         /// <summary>
         /// Required designer variable.
@@ -214,8 +214,8 @@
             // 
             // statusItem1
             // 
-            this.statusItem1.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)
+            this.statusItem1.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.statusItem1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner;
             this.statusItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -329,7 +329,7 @@
             this.changeStatusItem.UseVisualStyleBackColor = true;
             this.changeStatusItem.Click += new System.EventHandler(this.changeStatusItem_Click);
             // 
-            // MvvmFxBindings
+            // MvvmFxBindMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,10 +344,10 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuBar1);
             this.MainMenuStrip = this.menuBar1;
-            this.Name = "WinFormsBindings";
+            this.Name = "MvvmFxBindings";
             this.ShowInTaskbar = false;
-            this.Text = "WinForms Bindings";
-            this.Load += new System.EventHandler(this.WinFormsBindings_Load);
+            this.Text = "MvvmFx Bindings";
+            this.Load += new System.EventHandler(this.MvvmFxBindings_Load);
             this.menuBar1.ResumeLayout(false);
             this.menuBar1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

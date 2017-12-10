@@ -1,6 +1,6 @@
-﻿namespace WisejWeb.MenuBinding
+﻿namespace WisejWeb.ComponentBinding
 {
-    partial class MvvmFxBindings
+    partial class WinFormsBindings
     {
         /// <summary>
         /// Required designer variable.
@@ -287,9 +287,9 @@
             this.Controls.Add(this.statusBar1);
             this.Controls.Add(this.toolBar1);
             this.Controls.Add(this.menuBar1);
-            this.Name = "MvvmFxBindings";
-            this.Text = "MvvmFx Bindings";
-            this.Load += new System.EventHandler(this.MvvmFxBindMenu_Load);
+            this.Name = "WinFormsBindings";
+            this.Text = "WinForms Bindings";
+            this.Load += new System.EventHandler(this.WinFormsBindings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

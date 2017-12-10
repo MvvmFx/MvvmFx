@@ -1,4 +1,4 @@
-﻿namespace WisejWeb.MenuBinding
+﻿namespace WisejWeb.ComponentBinding
 {
     static class Program
     {

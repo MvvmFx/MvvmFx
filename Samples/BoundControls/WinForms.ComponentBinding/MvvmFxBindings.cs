@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using BoundControls.Business;
 using MvvmFx.CaliburnMicro;
 
-namespace WinForms.MenuBinding
+namespace WinForms.ComponentBinding
 {
     public partial class MvvmFxBindings : Form
     {

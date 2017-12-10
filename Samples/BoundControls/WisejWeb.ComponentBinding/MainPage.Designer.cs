@@ -1,4 +1,4 @@
-﻿namespace WisejWeb.MenuBinding
+﻿namespace WisejWeb.ComponentBinding
 {
     partial class MainPage
     {
@@ -59,7 +59,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MainPage";
-            this.Size = new System.Drawing.Size(999, 548);
+            this.Size = new System.Drawing.Size(1024, 548);
             this.Text = "Component Binding";
             this.ResumeLayout(false);
 

@@ -1,4 +1,4 @@
-﻿namespace WinForms.MenuBinding
+﻿namespace WinForms.ComponentBinding
 {
     partial class MainForm
     {

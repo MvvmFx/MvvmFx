@@ -3,15 +3,17 @@ using BoundControls.Business;
 using MvvmFx.CaliburnMicro;
 using Wisej.Web;
 
-namespace WisejWeb.MenuBinding
+namespace WisejWeb.ComponentBinding
 {
-    public partial class WinFormsBindings : Form
+    public partial class MvvmFxBindings : Form
     {
+        private readonly MvvmFxBindComponents _binder = new MvvmFxBindComponents();
+
         private bool _menuItemIsVisible = true;
         private bool _toolItemIsVisible = true;
         private bool _statusItemIsVisible = true;
 
-        public WinFormsBindings()
+        public MvvmFxBindings()
         {
             InitializeComponent();
         }
@@ -52,7 +54,7 @@ namespace WisejWeb.MenuBinding
             }
         }
 
-        private void WinFormsBindings_Load(object sender, EventArgs e)
+        private void MvvmFxBindMenu_Load(object sender, EventArgs e)
         {
             MenuItemIsVisible = false;
             ToolItemIsVisible = false;
@@ -73,7 +75,7 @@ namespace WisejWeb.MenuBinding
             item.Text = "Hidden";
             item.ToolTipText = "Hidden tool bar entry";
 
-            this.SetBindings();
+            _binder.SetMvvmFxBindings(this);
         }
 
         private void showMenuItem_Click(object sender, EventArgs e)
