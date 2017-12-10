@@ -31,11 +31,24 @@
             AddElementConvention<ListControl>("DataSource", null, null);
             AddElementConvention<TreeView>("DataSource", null, null);
             AddElementConvention<GroupBox>("Name", null, null);
+#if WINFORMS
             AddElementConvention<ToolStripItemProxy>("Name", null, "Click")
                 .CreateAction = (element, methodName, parameters) =>
                 {
                     return new ActionMessage(element, "Click", methodName, parameters);
                 };
+#else
+            AddElementConvention<MenuItemProxy>("Name", null, "Click")
+                .CreateAction = (element, methodName, parameters) =>
+            {
+                return new ActionMessage(element, "Click", methodName, parameters);
+            };
+            AddElementConvention<ToolBarButtonProxy>("Name", null, "Click")
+                .CreateAction = (element, methodName, parameters) =>
+            {
+                return new ActionMessage(element, "Click", methodName, parameters);
+            };
+#endif
             AddElementConvention<TabControl>("SelectedTab", null, null)
                 .ApplyBinding = (viewModel, path, property, control, convention) => { return true; };
         }
