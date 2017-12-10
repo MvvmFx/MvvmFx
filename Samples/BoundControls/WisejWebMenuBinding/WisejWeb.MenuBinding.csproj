@@ -64,17 +64,11 @@
     </Compile>
     <Compile Include="BindComponents.cs" />
     <Compile Include="MvvmFxBindComponents.cs" />
-    <Compile Include="WinFormsBindMenu.cs">
+    <Compile Include="WinFormsBindings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinFormsBindMenu.Designer.cs">
-      <DependentUpon>WinFormsBindMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WinFormsBindToolBar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinFormsBindToolBar.Designer.cs">
-      <DependentUpon>WinFormsBindToolBar.cs</DependentUpon>
+    <Compile Include="WinFormsBindings.Designer.cs">
+      <DependentUpon>WinFormsBindings.cs</DependentUpon>
     </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
@@ -82,17 +76,11 @@
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MvvmFxBindMenu.cs">
+    <Compile Include="MvvmFxBindings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MvvmFxBindMenu.Designer.cs">
-      <DependentUpon>MvvmFxBindMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MvvmFxBindToolbar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MvvmFxBindToolbar.Designer.cs">
-      <DependentUpon>MvvmFxBindToolbar.cs</DependentUpon>
+    <Compile Include="MvvmFxBindings.Designer.cs">
+      <DependentUpon>MvvmFxBindings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,20 +99,14 @@
     <Reference Include="Wisej.Web" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WinFormsBindMenu.resx">
-      <DependentUpon>WinFormsBindMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WinFormsBindToolBar.resx">
-      <DependentUpon>WinFormsBindToolBar.cs</DependentUpon>
+    <EmbeddedResource Include="WinFormsBindings.resx">
+      <DependentUpon>WinFormsBindings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MvvmFxBindMenu.resx">
-      <DependentUpon>MvvmFxBindMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MvvmFxBindToolbar.resx">
-      <DependentUpon>MvvmFxBindToolbar.cs</DependentUpon>
+    <EmbeddedResource Include="MvvmFxBindings.resx">
+      <DependentUpon>MvvmFxBindings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
