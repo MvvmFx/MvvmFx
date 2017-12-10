@@ -5,9 +5,6 @@ using System.Reflection;
 using MvvmFx.Windows.Data;
 #if WISEJ
 using Wisej.Web;
-using ToolStrip = Wisej.Web.MenuBar;
-using ToolStripItem = Wisej.Web.MenuItem;
-using ToolStripDropDownItem = Wisej.Web.MenuItem;
 #else
 using System.Windows.Forms;
 #endif
@@ -62,6 +59,7 @@ namespace MvvmFx.CaliburnMicro
             return string.Empty;
         }
 
+#if WINFORMS
         /// <summary>
         /// Gets all the <see cref="Control" /> instances with names in the scope.
         /// </summary>
@@ -74,31 +72,22 @@ namespace MvvmFx.CaliburnMicro
             if (control == null)
                 throw new ArgumentNullException(nameof(control));
 
-            if (null != control)
+            foreach (var x in control.Controls.Cast<Control>())
             {
-                foreach (var x in control.Controls.Cast<Control>())
+                if (x is ToolStrip)
                 {
-                    if (x is ToolStrip)
+                    foreach (ToolStripItem item in ((ToolStrip) x).Items)
                     {
-#if WINFORMS
-                        foreach (ToolStripItem item in ((ToolStrip) x).Items)
-#else
-                        foreach (ToolStripItem item in ((ToolStrip) x).MenuItems)
-#endif
-                        {
-                            if (item.GetType().FullName.IndexOf("MvvmFx.", StringComparison.InvariantCulture) != 0)
-                            {
-                                yield return new ToolStripItemProxy(item, x.Parent, true);
-                            }
+                        yield return new ToolStripItemProxy(item, x.Parent, true);
 
-                            foreach (var toolStripItems in RecursiveGetToolStripItems(item, x))
-                                yield return toolStripItems;
-                        }
+                        foreach (var toolStripItems in RecursiveGetToolStripItems(item, x))
+                            yield return toolStripItems;
                     }
-                    yield return x;
-                    foreach (var child in GetNamedElements(x))
-                        yield return child;
                 }
+
+                yield return x;
+                foreach (var child in GetNamedElements(x))
+                    yield return child;
             }
         }
 
@@ -111,16 +100,10 @@ namespace MvvmFx.CaliburnMicro
 
             if (item is ToolStripDropDownItem)
             {
-#if WINFORMS
                 foreach (ToolStripItem t in ((ToolStripDropDownItem) item).DropDownItems)
-#else
-                foreach (ToolStripItem t in ((ToolStripDropDownItem) item).MenuItems)
-#endif
                 {
-                    if (item.GetType().FullName.IndexOf("MvvmFx.", StringComparison.InvariantCulture) != 0)
-                    {
-                        yield return new ToolStripItemProxy(t, x.Parent, true);
-                    }
+                    yield return new ToolStripItemProxy(t, x.Parent, true);
+
                     foreach (var toolStripItems in RecursiveGetToolStripItems(t, x))
                         yield return toolStripItems;
                 }
@@ -172,6 +155,171 @@ namespace MvvmFx.CaliburnMicro
                 }
             }
         }
+
+#else
+
+        /// <summary>
+        /// Gets all the <see cref="Control" /> instances with names in the scope.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <returns>
+        /// Named <see cref="Control" /> instances in the provided scope.
+        /// </returns>
+        public static IEnumerable<Control> GetNamedElements(this Control control)
+        {
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
+
+            foreach (var x in control.Controls.Cast<Control>())
+            {
+                if (x is MenuBar)
+                {
+                    foreach (MenuItem menuItem in ((MenuBar) x).MenuItems)
+                    {
+                        yield return new MenuItemProxy(menuItem, x.Parent, true);
+
+                        foreach (var item in RecursiveGetItems(menuItem, x))
+                            yield return item;
+                    }
+                }
+                else if (control is ToolBar)
+                {
+                    foreach (ToolBarButton toolBarButton in ((ToolBar) x).Buttons)
+                    {
+                        yield return new ToolBarButtonProxy(toolBarButton, x.Parent, true);
+
+                        foreach (var item in RecursiveGetItems(toolBarButton, x))
+                            yield return item;
+                    }
+                }
+                else if (control is StatusBar)
+                {
+                    foreach (StatusBarPanel statusBarPanel in ((StatusBar) x).Panels)
+                    {
+                        yield return new StatusBarPanelProxy(statusBarPanel, x.Parent, true);
+
+                        foreach (var item in RecursiveGetItems(statusBarPanel, x))
+                            yield return item;
+                    }
+                }
+
+                yield return x;
+                foreach (var child in GetNamedElements(x))
+                    yield return child;
+            }
+        }
+
+        private static IEnumerable<Control> RecursiveGetItems(Component component, Control x)
+        {
+            if (component == null)
+                throw new ArgumentNullException(nameof(component));
+            if (x == null)
+                throw new ArgumentNullException(nameof(x));
+
+            if (component is MenuItem)
+            {
+                foreach (MenuItem t in ((MenuItem) component).MenuItems)
+                {
+                    yield return new MenuItemProxy(t, x.Parent, true);
+
+                    foreach (var item in RecursiveGetItems(t, x))
+                        yield return item;
+                }
+            }
+            else if ((component as ToolBarButton)?.DropDownMenu != null)
+            {
+                foreach (MenuItem t in ((ToolBarButton) component).DropDownMenu.MenuItems)
+                {
+                    yield return new MenuItemProxy(t, x.Parent, true);
+
+                    foreach (var item in RecursiveGetItems(t, x))
+                        yield return item;
+                }
+            }
+            /*else if (component is StatusBarPanel)
+            {
+                foreach (StatusBarPanel t in ((StatusBarPanel)component).Panels)
+                {
+                    yield return new StatusBarPanelProxy(t, x.Parent, true);
+
+                    foreach (var item in RecursiveGetItems(t, x))
+                        yield return item;
+                }
+            }*/
+        }
+
+        /// <summary>
+        /// Binds the control visible and enabled properties.
+        /// </summary>
+        /// <param name="namedElements">The list of elements in scope.</param>
+        /// <param name="viewModel">The view model to bind to.</param>
+        /// <param name="bindingManager">The binding manager to use.</param>
+        public static void BindToolStripItemProxyProperties(List<Control> namedElements, object viewModel,
+            BindingManager bindingManager)
+        {
+            if (namedElements == null)
+                throw new ArgumentNullException(nameof(namedElements));
+            if (viewModel == null)
+                throw new ArgumentNullException(nameof(viewModel));
+            if (bindingManager == null)
+                throw new ArgumentNullException(nameof(bindingManager));
+
+            foreach (var control in namedElements)
+            {
+                if (control is MenuItemProxy)
+                {
+                    var property = viewModel.GetPropertyCaseInsensitive(control.Name + "Visible");
+                    if (property != null)
+                    {
+                        // must enforce the Visible property
+                        ((MenuItemProxy) control).Item.Visible =
+                            (bool) property.GetValue(viewModel,
+                                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
+                                null);
+                        BindToolStripItemProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
+                    }
+                    else
+                    {
+                        property = viewModel.GetPropertyCaseInsensitive(control.Name + "Enabled");
+                        if (property != null)
+                        {
+                            // no need for enforce the Enabled property
+                            /*((ToolStripItemProxy) control).Item.Enabled =
+                                (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
+                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel,
+                                bindingManager);
+                        }
+                    }
+                }
+                else if (control is ToolBarButtonProxy)
+                {
+                    var property = viewModel.GetPropertyCaseInsensitive(control.Name + "Visible");
+                    if (property != null)
+                    {
+                        // must enforce the Visible property
+                        ((ToolBarButtonProxy) control).Item.Visible =
+                            (bool) property.GetValue(viewModel,
+                                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
+                                null);
+                        BindToolStripItemProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
+                    }
+                    else
+                    {
+                        property = viewModel.GetPropertyCaseInsensitive(control.Name + "Enabled");
+                        if (property != null)
+                        {
+                            // no need for enforce the Enabled property
+                            /*((ToolStripItemProxy) control).Item.Enabled =
+                                (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
+                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel,
+                                bindingManager);
+                        }
+                    }
+                }
+            }
+        }
+
+#endif
 
         private static void BindToolStripItemProxyProperties(string sourcePath, Control target, string targetPath,
             object viewModel, BindingManager bindingManager)
