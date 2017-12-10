@@ -1,7 +1,7 @@
 ﻿using System;
 #if WISEJ
 using Wisej.Web;
-using ToolStripMenuItem = MvvmFx.WisejWeb.MenuItem;
+using ToolStripMenuItem = Wisej.Web.MenuItem;
 using ToolStripItemProxy = MvvmFx.CaliburnMicro.MenuItemProxy;
 #else
 using System.Windows.Forms;

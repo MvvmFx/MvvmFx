@@ -44,7 +44,7 @@ namespace WinForms.TestBoundControls
                     if (isMatch)
                         break;
 
-                    if (((IHaveName) component).Name == item.Name)
+                    if (((INamedBindable) component).Name == item.Name)
                     {
                         ((IBindableComponent) component).DataBindings.Add("Text", item, "Text");
                         ((IBindableComponent) component).DataBindings.Add("ToolTipText", item, "ToolTipText");
@@ -83,7 +83,7 @@ namespace WinForms.TestBoundControls
                     if (isMatch)
                         break;
 
-                    if (((IHaveName) component).Name == item.Name)
+                    if (((INamedBindable) component).Name == item.Name)
                     {
                         ((IBindableComponent) component).DataBindings.Add("Text", item, "Text");
                         ((IBindableComponent) component).DataBindings.Add("ToolTipText", item, "ToolTipText");
@@ -108,7 +108,7 @@ namespace WinForms.TestBoundControls
                     if (isMatch)
                         break;
 
-                    if (((IHaveName) component).Name == item.Name)
+                    if (((INamedBindable) component).Name == item.Name)
                     {
                         ((IBindableComponent) component).DataBindings.Add("Text", item, "Text");
                         ((IBindableComponent) component).DataBindings.Add("ToolTipText", item, "ToolTipText");
