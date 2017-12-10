@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled StatusBarPanel.
     /// </summary>
-    public class StatusBarPanel : System.Windows.Forms.StatusBarPanel, IBindableComponent, IHaveName
+    public class StatusBarPanel : System.Windows.Forms.StatusBarPanel, INamedBindable
     {
         #region IBindableComponent Members
 

@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolStripStatusLabel.
     /// </summary>
-    public class ToolStripStatusLabel : System.Windows.Forms.ToolStripStatusLabel, IBindableComponent, IHaveName
+    public class ToolStripStatusLabel : System.Windows.Forms.ToolStripStatusLabel, INamedBindable
     {
         #region IBindableComponent Members
 

@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolStripProgressBar.
     /// </summary>
-    public class ToolStripProgressBar : System.Windows.Forms.ToolStripProgressBar, IBindableComponent, IHaveName
+    public class ToolStripProgressBar : System.Windows.Forms.ToolStripProgressBar, INamedBindable
     {
         #region IBindableComponent Members
 

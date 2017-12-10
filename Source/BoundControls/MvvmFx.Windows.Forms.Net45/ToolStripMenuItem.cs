@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolStripMenuItem.
     /// </summary>
-    public class ToolStripMenuItem : System.Windows.Forms.ToolStripMenuItem, IBindableComponent, IHaveName
+    public class ToolStripMenuItem : System.Windows.Forms.ToolStripMenuItem, INamedBindable
     {
         #region IBindableComponent Members
 

@@ -88,13 +88,9 @@ namespace SimpleParameters.UI
         {
             ((ShellViewModelClass) Model).ButtonDescription = "showToolStripTest pressed.";
             ButtonNr = "4";
-#if !WISEJ
             if (_toolStripViewModel == null)
                 _toolStripViewModel = new ToolStripViewModel();
             ActiveItem = _toolStripViewModel;
-#else
-            MessageBox.Show("Option disabled under Wisej.","Alert");
-#endif
         }
 
         public object Model { get; set; }

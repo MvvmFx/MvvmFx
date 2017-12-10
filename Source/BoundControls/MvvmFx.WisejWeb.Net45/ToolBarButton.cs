@@ -10,7 +10,7 @@ namespace MvvmFx.WisejWeb
     /// <summary>
     /// Data binding enabled ToolBarButton.
     /// </summary>
-    public class ToolBarButton : Wisej.Web.ToolBarButton, IBindableComponent, IHaveName
+    public class ToolBarButton : Wisej.Web.ToolBarButton, INamedBindable
     {
         #region IBindableComponent Members
 

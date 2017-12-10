@@ -1,25 +1,20 @@
 ﻿using System;
 using System.ComponentModel;
-#if WISEJ
 using Wisej.Web;
-using ToolStripItem = Wisej.Web.MenuItem;
-#else
-using System.Windows.Forms;
-#endif
 
 namespace MvvmFx.CaliburnMicro
 {
     /// <summary>
-    /// Proxy class for <see cref="ToolStripItem"/> components.
+    /// Proxy class for <see cref="MenuItem"/> components.
     /// </summary>
     [DefaultProperty("Name")]
-    public class ToolStripItemProxy : Control
+    public class MenuItemProxy : Control
     {
         private bool _eventsWired;
         private bool _isEnabledChanging;
         private bool _isVisibleChanging;
 
-        private readonly ToolStripItem _item;
+        private readonly MenuItem _item;
 
         /// <summary>
         /// Gets the proxy item.
@@ -27,23 +22,34 @@ namespace MvvmFx.CaliburnMicro
         /// <value>
         /// The proxy item.
         /// </value>
-        public ToolStripItem Item
+        public MenuItem Item
         {
             get { return _item; }
         }
 
-        private ToolStripItemProxy()
+        private MenuItemProxy()
         {
             // force to use parametrized constructor
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            UnwireEvents();
+            for (var index = _item.MenuItems.Count - 1; index >= 0; index--)
+            {
+                _item.MenuItems[index].Dispose();
+            }
+            _item.Dispose();
+            base.Dispose(disposing);
+        }
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="ToolStripItemProxy" /> class, for the specified <see cref="ToolStripItem" />.
+        /// Initializes a new instance of the <see cref="MenuItemProxy" /> class, for the specified <see cref="MenuItem" />.
         /// </summary>
         /// <param name="item">The tool strip item.</param>
         /// <param name="parent">The parent Control.</param>
         /// <param name="wireEvents">if set to <c>true</c>, the constructor will wire the item events.</param>
-        public ToolStripItemProxy(ToolStripItem item, Control parent, bool wireEvents)
+        public MenuItemProxy(MenuItem item, Control parent, bool wireEvents)
         {
             Parent = parent;
             _item = item;
@@ -64,12 +70,8 @@ namespace MvvmFx.CaliburnMicro
             if (_eventsWired)
                 return;
 
-            EnabledChanged += ToolStripItemProxy_EnabledChanged;
-            VisibleChanged += ToolStripItemProxy_VisibleChanged;
-
-            _item.EnabledChanged += Item_EnabledChanged;
-            _item.VisibleChanged += Item_VisibleChanged;
-            _item.DoubleClick += item_DoubleClick;
+            EnabledChanged += MenuItemProxy_EnabledChanged;
+            VisibleChanged += MenuItemProxy_VisibleChanged;
             _item.Click += item_Click;
             _item.Disposed += item_Disposed;
 
@@ -86,12 +88,8 @@ namespace MvvmFx.CaliburnMicro
 
             _item.Disposed -= item_Disposed;
             _item.Click -= item_Click;
-            _item.DoubleClick -= item_DoubleClick;
-            _item.VisibleChanged -= Item_VisibleChanged;
-            _item.EnabledChanged -= Item_EnabledChanged;
-
-            VisibleChanged -= ToolStripItemProxy_VisibleChanged;
-            EnabledChanged -= ToolStripItemProxy_EnabledChanged;
+            VisibleChanged -= MenuItemProxy_VisibleChanged;
+            EnabledChanged -= MenuItemProxy_EnabledChanged;
 
             _eventsWired = false;
         }
@@ -102,37 +100,12 @@ namespace MvvmFx.CaliburnMicro
             Dispose();
         }
 
-        private void item_DoubleClick(object sender, EventArgs e)
-        {
-            OnDoubleClick(e);
-        }
-
         private void item_Click(object sender, EventArgs e)
         {
             OnClick(e);
         }
 
-        private void Item_EnabledChanged(object sender, EventArgs e)
-        {
-            if (_isEnabledChanging)
-                return;
-
-            _isEnabledChanging = true;
-            Enabled = _item.Enabled;
-            _isEnabledChanging = false;
-        }
-
-        private void Item_VisibleChanged(object sender, EventArgs e)
-        {
-            if (_isVisibleChanging)
-                return;
-
-            _isVisibleChanging = true;
-            Visible = _item.Visible;
-            _isVisibleChanging = false;
-        }
-
-        private void ToolStripItemProxy_EnabledChanged(object sender, EventArgs e)
+        private void MenuItemProxy_EnabledChanged(object sender, EventArgs e)
         {
             if (_isEnabledChanging)
                 return;
@@ -142,7 +115,7 @@ namespace MvvmFx.CaliburnMicro
             _isEnabledChanging = false;
         }
 
-        private void ToolStripItemProxy_VisibleChanged(object sender, EventArgs e)
+        private void MenuItemProxy_VisibleChanged(object sender, EventArgs e)
         {
             if (_isVisibleChanging)
                 return;

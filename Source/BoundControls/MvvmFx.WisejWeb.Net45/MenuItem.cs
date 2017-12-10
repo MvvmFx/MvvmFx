@@ -10,7 +10,7 @@ namespace MvvmFx.WisejWeb
     /// <summary>
     /// Data binding enabled MenuItem.
     /// </summary>
-    public class MenuItem : Wisej.Web.MenuItem, IBindableComponent, IHaveName
+    public class MenuItem : Wisej.Web.MenuItem, INamedBindable
     {
         #region IBindableComponent Members
 
