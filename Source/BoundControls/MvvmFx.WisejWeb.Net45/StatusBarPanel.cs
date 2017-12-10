@@ -10,7 +10,7 @@ namespace MvvmFx.WisejWeb
     /// <summary>
     /// Data binding enabled StatusBarPanel.
     /// </summary>
-    public class StatusBarPanel : Wisej.Web.StatusBarPanel, IBindableComponent, IHaveName
+    public class StatusBarPanel : Wisej.Web.StatusBarPanel, INamedBindable
     {
         #region IBindableComponent Members
 

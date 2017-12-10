@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolBarButton.
     /// </summary>
-    public class ToolBarButton : System.Windows.Forms.ToolBarButton, IBindableComponent, IHaveName
+    public class ToolBarButton : System.Windows.Forms.ToolBarButton, INamedBindable
     {
         #region IBindableComponent Members
 

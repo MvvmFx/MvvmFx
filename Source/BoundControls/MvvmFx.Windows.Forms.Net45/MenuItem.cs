@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled MenuItem.
     /// </summary>
-    public class MenuItem : System.Windows.Forms.MenuItem, IBindableComponent, IHaveName
+    public class MenuItem : System.Windows.Forms.MenuItem, INamedBindable
     {
         #region IBindableComponent Members
 

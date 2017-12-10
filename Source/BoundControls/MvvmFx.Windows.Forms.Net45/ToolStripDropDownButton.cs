@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolStripDropDownButton.
     /// </summary>
-    public class ToolStripDropDownButton : System.Windows.Forms.ToolStripDropDownButton, IBindableComponent, IHaveName
+    public class ToolStripDropDownButton : System.Windows.Forms.ToolStripDropDownButton, INamedBindable
     {
         #region IBindableComponent Members
 

@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolStripSeparator.
     /// </summary>
-    public class ToolStripSeparator : System.Windows.Forms.ToolStripSeparator, IBindableComponent, IHaveName
+    public class ToolStripSeparator : System.Windows.Forms.ToolStripSeparator, INamedBindable
     {
         #region IBindableComponent Members
 

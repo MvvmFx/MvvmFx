@@ -10,7 +10,7 @@ namespace MvvmFx.Windows.Forms
     /// <summary>
     /// Data binding enabled ToolStripButton.
     /// </summary>
-    public class ToolStripButton : System.Windows.Forms.ToolStripButton, IBindableComponent, IHaveName
+    public class ToolStripButton : System.Windows.Forms.ToolStripButton, INamedBindable
     {
         #region IBindableComponent Members
 
