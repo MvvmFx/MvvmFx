@@ -52,8 +52,12 @@ namespace MasterDetailWithModel.ViewModels
             if (e.PropertyName == "Parent")
             {
                 PropertyChanged -= OnStudentEditViewModelPropertyChanged;
-                var parent = Parent as StudentListViewModel;
-                _menuObject = parent.Parent as MainFormViewModel;
+                if (Parent != null)
+                {
+                    var parent = Parent as StudentListViewModel;
+                    if (parent != null)
+                        _menuObject = parent.Parent as MainFormViewModel;
+                }
                 Bind();
             }
         }
@@ -69,31 +73,28 @@ namespace MasterDetailWithModel.ViewModels
 
             // bind to main form properties
             BindMenuItem("CanSaveStudent", "CanSave");
-            BindMenuItem("CanCreateNewStudent", "CanCreateNew");
+            BindMenuItem("CanCreateStudent", "CanCreate");
             BindMenuItem("CanDeleteStudent", "CanDelete");
-            BindMenuItem("CanCloseStudent", "CanClose");
 
-            CanCreateNew = true;
+            CanCreate = true;
             CanSave = false;
             CanDelete = false;
-            CanClose = false;
 
             if (_model != null)
             {
                 // set new bindings for this object
-                BindingManager.Bindings.Add(new Binding(this, "CanCreateNew", _model as Student, "IsDirty")
+                BindingManager.Bindings.Add(new Binding(this, "CanCreate", _model, "IsDirty")
                 {
                     Converter = new InverseBooleanConverter(),
                     Mode = BindingMode.OneWayToTarget
                 });
 
-                BindingManager.Bindings.Add(new Binding(this, "CanSave", _model as Student, "IsSavable")
+                BindingManager.Bindings.Add(new Binding(this, "CanSave", _model, "IsSavable")
                 {
                     Mode = BindingMode.OneWayToTarget
                 });
 
                 CanDelete = true;
-                CanClose = true;
             }
         }
 
@@ -109,25 +110,30 @@ namespace MasterDetailWithModel.ViewModels
 
         #region Actions methods and guard properties
 
-        public void CreateNew()
+        public void Create()
         {
             var student = Student.AddNewStudent();
-            (Parent as StudentListViewModel).ListItemId = student.StudentId;
+            if (Parent != null)
+            {
+                var parent = Parent as StudentListViewModel;
+                if (parent != null)
+                    parent.ListItemId = student.StudentId;
+            }
 
             TryClose();
         }
 
-        private bool _canCreateNew;
+        private bool _canCreate;
 
-        public bool CanCreateNew
+        public bool CanCreate
         {
-            get { return _canCreateNew; }
+            get { return _canCreate; }
             set
             {
-                if (_canCreateNew != value)
+                if (_canCreate != value)
                 {
-                    _canCreateNew = value;
-                    NotifyOfPropertyChange("CanCreateNew");
+                    _canCreate = value;
+                    NotifyOfPropertyChange("CanCreate");
                 }
             }
         }
@@ -154,14 +160,50 @@ namespace MasterDetailWithModel.ViewModels
 
         public void Delete()
         {
+            StudentListViewModel parent = null;
+            var newItem = -1;
+
+            if (Parent != null)
+            {
+                parent = Parent as StudentListViewModel;
+                newItem = ItemToShowAfterDelete(parent);
+            }
+
             _model.Delete();
 
-            CanCreateNew = true;
+            CanCreate = true;
             CanSave = false;
             CanDelete = false;
-            CanClose = false;
 
             TryClose();
+
+            if (parent != null)
+                parent.ListItemId = newItem;
+        }
+
+        private int ItemToShowAfterDelete(StudentListViewModel parent)
+        {
+            var result = -1;
+
+            if (parent != null)
+            {
+                StudentInfoList parentModel = (StudentInfoList) parent.Model;
+                for (var index = 0; index < parentModel.Count; index++)
+                {
+                    var info = parentModel[index];
+                    if (info.StudentId == _model.StudentId)
+                    {
+                        if (parentModel.Count > index + 1)
+                            result = parentModel[index + 1].StudentId;
+                        else if (parentModel.Count > 1)
+                            result = parentModel[index - 1].StudentId;
+
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
 
         private bool _canDelete = true;
@@ -184,21 +226,6 @@ namespace MasterDetailWithModel.ViewModels
             TryClose();
             ((StudentListViewModel) Parent).ListItemId = -1;
             BindingManager.Bindings.Clear();
-        }
-
-        private bool _canClose = true;
-
-        public new bool CanClose
-        {
-            get { return _canClose; }
-            set
-            {
-                if (_canClose != value)
-                {
-                    _canClose = value;
-                    NotifyOfPropertyChange("CanClose");
-                }
-            }
         }
 
         #endregion
