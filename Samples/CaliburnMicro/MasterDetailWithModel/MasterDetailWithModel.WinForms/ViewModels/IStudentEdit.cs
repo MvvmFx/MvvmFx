@@ -4,10 +4,10 @@ namespace MasterDetailWithModel.ViewModels
 {
     public interface IStudentEdit : IHaveModel
     {
-        void CreateNew();
-        bool CanCreateNew { get; set; }
+        void Create();
+        bool CanCreate { get; set; }
         void Save();
-        bool CanSave { get; set; }
+        bool CanSave { get; }
         void Delete();
         void Close();
     }
