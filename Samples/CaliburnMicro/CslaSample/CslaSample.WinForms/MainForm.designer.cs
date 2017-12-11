@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.mainMenu = new System.Windows.Forms.MenuStrip();
-            this.documentMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.createNewDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.saveDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.folders = new System.Windows.Forms.ToolStripMenuItem();
-            this.editFoldersModal = new System.Windows.Forms.ToolStripMenuItem();
-            this.editFoldersModeless = new System.Windows.Forms.ToolStripMenuItem();
+            this.editFolderModal = new System.Windows.Forms.ToolStripMenuItem();
+            this.editFolderModeless = new System.Windows.Forms.ToolStripMenuItem();
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
@@ -45,7 +45,7 @@
             // mainMenu
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.documentMenu,
+            this.documentsMenu,
             this.folders,
             this.exit});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
@@ -54,54 +54,54 @@
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "mainMenu";
             // 
-            // documentMenu
+            // documentsMenu
             // 
-            this.documentMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.documentsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createNewDocument,
             this.saveDocument,
             this.deleteDocument});
-            this.documentMenu.Name = "documentMenu";
-            this.documentMenu.Size = new System.Drawing.Size(75, 20);
-            this.documentMenu.Text = "Document";
+            this.documentsMenu.Name = "documentsMenu";
+            this.documentsMenu.Size = new System.Drawing.Size(75, 20);
+            this.documentsMenu.Text = "Documents";
             // 
             // createNewDocument
             // 
             this.createNewDocument.Name = "createNewDocument";
             this.createNewDocument.Size = new System.Drawing.Size(165, 22);
-            this.createNewDocument.Text = "New document";
+            this.createNewDocument.Text = "New Document";
             // 
             // saveDocument
             // 
             this.saveDocument.Name = "saveDocument";
             this.saveDocument.Size = new System.Drawing.Size(165, 22);
-            this.saveDocument.Text = "Save document";
+            this.saveDocument.Text = "Save Document";
             // 
             // deleteDocument
             // 
             this.deleteDocument.Name = "deleteDocument";
             this.deleteDocument.Size = new System.Drawing.Size(165, 22);
-            this.deleteDocument.Text = "Delete document";
+            this.deleteDocument.Text = "Delete Document";
             // 
             // folders
             // 
             this.folders.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editFoldersModal,
-            this.editFoldersModeless});
+            this.editFolderModal,
+            this.editFolderModeless});
             this.folders.Name = "folders";
             this.folders.Size = new System.Drawing.Size(57, 20);
             this.folders.Text = "Folders";
             // 
-            // editFoldersModal
+            // editFolderModal
             // 
-            this.editFoldersModal.Name = "editFoldersModal";
-            this.editFoldersModal.Size = new System.Drawing.Size(188, 22);
-            this.editFoldersModal.Text = "Edit Folders Modal";
+            this.editFolderModal.Name = "editFolderModal";
+            this.editFolderModal.Size = new System.Drawing.Size(188, 22);
+            this.editFolderModal.Text = "Edit Folder Modal";
             // 
-            // editFoldersModeless
+            // editFolderModeless
             // 
-            this.editFoldersModeless.Name = "editFoldersModeless";
-            this.editFoldersModeless.Size = new System.Drawing.Size(188, 22);
-            this.editFoldersModeless.Text = "Edit Folders Modeless";
+            this.editFolderModeless.Name = "editFolderModeless";
+            this.editFolderModeless.Size = new System.Drawing.Size(188, 22);
+            this.editFolderModeless.Text = "Edit Folder Modeless";
             // 
             // exit
             // 
@@ -148,13 +148,13 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mainMenu;
-        private System.Windows.Forms.ToolStripMenuItem documentMenu;
+        private System.Windows.Forms.ToolStripMenuItem documentsMenu;
         private System.Windows.Forms.ToolStripMenuItem createNewDocument;
         private System.Windows.Forms.ToolStripMenuItem saveDocument;
         private System.Windows.Forms.ToolStripMenuItem deleteDocument;
         private System.Windows.Forms.ToolStripMenuItem folders;
-        private System.Windows.Forms.ToolStripMenuItem editFoldersModal;
-        private System.Windows.Forms.ToolStripMenuItem editFoldersModeless;
+        private System.Windows.Forms.ToolStripMenuItem editFolderModal;
+        private System.Windows.Forms.ToolStripMenuItem editFolderModeless;
         private System.Windows.Forms.ToolStripMenuItem exit;
         private System.Windows.Forms.StatusStrip statusBar;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;

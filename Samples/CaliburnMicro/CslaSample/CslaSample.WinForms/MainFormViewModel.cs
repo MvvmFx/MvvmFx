@@ -49,9 +49,9 @@ namespace CslaSample
 
         #region Folder menu action methods and CAN guard properties
 
-        public void EditFoldersModal()
+        public void EditFolderModal()
         {
-            if (_canEditFoldersModal)
+            if (_canEditFolderModal)
             {
                 new WindowManager().ShowDialog(FolderListEditViewModel.Instance());
                 foreach (var child in GetChildren())
@@ -61,24 +61,24 @@ namespace CslaSample
             }
         }
 
-        private bool _canEditFoldersModal = true;
+        private bool _canEditFolderModal = true;
 
-        public bool CanEditFoldersModal
+        public bool CanEditFolderModal
         {
-            get { return _canEditFoldersModal; }
+            get { return _canEditFolderModal; }
             set
             {
-                if (_canEditFoldersModal != value)
+                if (_canEditFolderModal != value)
                 {
-                    _canEditFoldersModal = value;
-                    NotifyOfPropertyChange("CanEditFoldersModal");
+                    _canEditFolderModal = value;
+                    NotifyOfPropertyChange("CanEditFolderModal");
                 }
             }
         }
 
-        public void EditFoldersModeless()
+        public void EditFolderModeless()
         {
-            if (_canEditFoldersModeless)
+            if (_canEditFolderModeless)
             {
                 ViewLocator.ContextSeparator = "";
                 new WindowManager().ShowWindow(FolderListEditViewModel.Instance(), "ViewModel");
@@ -86,17 +86,17 @@ namespace CslaSample
             }
         }
 
-        private bool _canEditFoldersModeless = true;
+        private bool _canEditFolderModeless = true;
 
-        public bool CanEditFoldersModeless
+        public bool CanEditFolderModeless
         {
-            get { return _canEditFoldersModeless; }
+            get { return _canEditFolderModeless; }
             set
             {
-                if (_canEditFoldersModeless != value)
+                if (_canEditFolderModeless != value)
                 {
-                    _canEditFoldersModeless = value;
-                    NotifyOfPropertyChange("CanEditFoldersModeless");
+                    _canEditFolderModeless = value;
+                    NotifyOfPropertyChange("CanEditFolderModeless");
                 }
             }
         }

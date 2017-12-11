@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Wisej Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.mainMenu = new Wisej.Web.MenuBar();
-            this.documentMenu = new Wisej.Web.MenuItem();
+            this.documentsMenu = new Wisej.Web.MenuItem();
             this.createNewDocument = new Wisej.Web.MenuItem();
             this.saveDocument = new Wisej.Web.MenuItem();
             this.deleteDocument = new Wisej.Web.MenuItem();
             this.folders = new Wisej.Web.MenuItem();
-            this.editFoldersModal = new Wisej.Web.MenuItem();
-            this.editFoldersModeless = new Wisej.Web.MenuItem();
+            this.editFolderModal = new Wisej.Web.MenuItem();
+            this.editFolderModeless = new Wisej.Web.MenuItem();
             this.exit = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
@@ -43,64 +43,65 @@
             // 
             // mainMenu
             // 
+            this.mainMenu.Dock = Wisej.Web.DockStyle.Top;
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.documentMenu,
+            this.documentsMenu,
             this.folders,
             this.exit});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1348, 28);
+            this.mainMenu.Size = new System.Drawing.Size(1255, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
             // 
-            // documentMenu
+            // documentsMenu
             // 
-            this.documentMenu.Index = 0;
-            this.documentMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
+            this.documentsMenu.Index = 0;
+            this.documentsMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.createNewDocument,
             this.saveDocument,
             this.deleteDocument});
-            this.documentMenu.Name = "documentMenu";
-            this.documentMenu.Text = "Document";
+            this.documentsMenu.Name = "documentsMenu";
+            this.documentsMenu.Text = "Documents";
             // 
             // createNewDocument
             // 
             this.createNewDocument.Index = 0;
             this.createNewDocument.Name = "createNewDocument";
-            this.createNewDocument.Text = "New document";
+            this.createNewDocument.Text = "New Document";
             // 
             // saveDocument
             // 
             this.saveDocument.Index = 1;
             this.saveDocument.Name = "saveDocument";
-            this.saveDocument.Text = "Save document";
+            this.saveDocument.Text = "Save Document";
             // 
             // deleteDocument
             // 
             this.deleteDocument.Index = 2;
             this.deleteDocument.Name = "deleteDocument";
-            this.deleteDocument.Text = "Delete document";
+            this.deleteDocument.Text = "Delete Document";
             // 
             // folders
             // 
             this.folders.Index = 1;
             this.folders.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.editFoldersModal,
-            this.editFoldersModeless});
+            this.editFolderModal,
+            this.editFolderModeless});
             this.folders.Name = "folders";
             this.folders.Text = "Folders";
             // 
-            // editFoldersModal
+            // editFolderModal
             // 
-            this.editFoldersModal.Index = 0;
-            this.editFoldersModal.Name = "editFoldersModal";
-            this.editFoldersModal.Text = "Edit Folders Modal";
+            this.editFolderModal.Index = 0;
+            this.editFolderModal.Name = "editFolderModal";
+            this.editFolderModal.Text = "Edit Folder Modal";
             // 
-            // editFoldersModeless
+            // editFolderModeless
             // 
-            this.editFoldersModeless.Index = 1;
-            this.editFoldersModeless.Name = "editFoldersModeless";
-            this.editFoldersModeless.Text = "Edit Folders Modeless";
+            this.editFolderModeless.Index = 1;
+            this.editFolderModeless.Name = "editFolderModeless";
+            this.editFolderModeless.Text = "Edit Folder Modeless";
             // 
             // exit
             // 
@@ -119,23 +120,28 @@
             // activeItem
             // 
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
-            this.activeItem.Location = new System.Drawing.Point(0, 0);
+            this.activeItem.Location = new System.Drawing.Point(0, 22);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1255, 538);
+            this.activeItem.Size = new System.Drawing.Size(1255, 516);
             this.activeItem.TabIndex = 2;
+            this.activeItem.Text = "activeItem";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(1255, 560);
+            this.ClientSize = new System.Drawing.Size(699, 446);
+            this.CloseBox = false;
+            this.ControlBox = false;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(1007, 531);
             this.Text = "MainForm";
+            this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,13 +150,13 @@
         #endregion
 
         private Wisej.Web.MenuBar mainMenu;
-        private Wisej.Web.MenuItem documentMenu;
+        private Wisej.Web.MenuItem documentsMenu;
         private Wisej.Web.MenuItem createNewDocument;
         private Wisej.Web.MenuItem saveDocument;
         private Wisej.Web.MenuItem deleteDocument;
         private Wisej.Web.MenuItem folders;
-        private Wisej.Web.MenuItem editFoldersModal;
-        private Wisej.Web.MenuItem editFoldersModeless;
+        private Wisej.Web.MenuItem editFolderModal;
+        private Wisej.Web.MenuItem editFolderModeless;
         private Wisej.Web.MenuItem exit;
         private Wisej.Web.StatusBar statusBar;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;

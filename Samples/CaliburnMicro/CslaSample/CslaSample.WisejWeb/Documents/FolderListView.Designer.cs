@@ -86,7 +86,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(248, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolTip1.SetToolTip(this.toolStrip1, "Why this method doesn\'t work correctly\r\nunder Windows Forms?");
             // 
             // displayName
             // 

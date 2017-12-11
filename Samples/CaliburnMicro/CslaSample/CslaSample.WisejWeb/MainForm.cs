@@ -6,7 +6,7 @@ using MvvmFx.Windows.Data;
 
 namespace CslaSample
 {
-    public partial class MainForm : Page, IHaveDataContext
+    public partial class MainForm : Form, IHaveDataContext
     {
         private readonly BindingManager _bindingManager = new BindingManager();
 
