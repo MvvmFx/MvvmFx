@@ -36,7 +36,7 @@
             this.closeStudentList = new System.Windows.Forms.ToolStripMenuItem();
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.studentMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.createStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.saveStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.closeStudent = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +100,7 @@
             // studentMenu
             // 
             this.studentMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewStudent,
+            this.createStudent,
             this.saveStudent,
             this.deleteStudent,
             this.closeStudent});
@@ -108,11 +108,11 @@
             this.studentMenu.Size = new System.Drawing.Size(60, 20);
             this.studentMenu.Text = "Student";
             // 
-            // createNewStudent
+            // createStudent
             // 
-            this.createNewStudent.Name = "createNewStudent";
-            this.createNewStudent.Size = new System.Drawing.Size(175, 22);
-            this.createNewStudent.Text = "New student";
+            this.createStudent.Name = "createStudent";
+            this.createStudent.Size = new System.Drawing.Size(175, 22);
+            this.createStudent.Text = "New student";
             // 
             // saveStudent
             // 
@@ -176,7 +176,7 @@
         private System.Windows.Forms.ToolStripMenuItem closeStudentList;
         private System.Windows.Forms.ToolStripMenuItem exit;
         private System.Windows.Forms.ToolStripMenuItem studentMenu;
-        private System.Windows.Forms.ToolStripMenuItem createNewStudent;
+        private System.Windows.Forms.ToolStripMenuItem createStudent;
         private System.Windows.Forms.ToolStripMenuItem saveStudent;
         private System.Windows.Forms.ToolStripMenuItem deleteStudent;
         private System.Windows.Forms.ToolStripMenuItem closeStudent;

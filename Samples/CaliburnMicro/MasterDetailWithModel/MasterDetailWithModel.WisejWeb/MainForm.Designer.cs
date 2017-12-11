@@ -36,7 +36,7 @@
             this.closeStudentList = new Wisej.Web.MenuItem();
             this.exit = new Wisej.Web.MenuItem();
             this.studentMenu = new Wisej.Web.MenuItem();
-            this.createNewStudent = new Wisej.Web.MenuItem();
+            this.createStudent = new Wisej.Web.MenuItem();
             this.saveStudent = new Wisej.Web.MenuItem();
             this.deleteStudent = new Wisej.Web.MenuItem();
             this.closeStudent = new Wisej.Web.MenuItem();
@@ -103,18 +103,18 @@
             // 
             this.studentMenu.Index = 1;
             this.studentMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.createNewStudent,
+            this.createStudent,
             this.saveStudent,
             this.deleteStudent,
             this.closeStudent});
             this.studentMenu.Name = "studentMenu";
             this.studentMenu.Text = "Student";
             // 
-            // createNewStudent
+            // createStudent
             // 
-            this.createNewStudent.Index = 0;
-            this.createNewStudent.Name = "createNewStudent";
-            this.createNewStudent.Text = "New student";
+            this.createStudent.Index = 0;
+            this.createStudent.Name = "createStudent";
+            this.createStudent.Text = "New student";
             // 
             // saveStudent
             // 
@@ -178,7 +178,7 @@
         private Wisej.Web.MenuItem closeStudentList;
         private Wisej.Web.MenuItem exit;
         private Wisej.Web.MenuItem studentMenu;
-        private Wisej.Web.MenuItem createNewStudent;
+        private Wisej.Web.MenuItem createStudent;
         private Wisej.Web.MenuItem saveStudent;
         private Wisej.Web.MenuItem deleteStudent;
         private Wisej.Web.MenuItem closeStudent;
