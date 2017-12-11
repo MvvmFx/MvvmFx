@@ -182,7 +182,7 @@ namespace MvvmFx.CaliburnMicro
                             yield return item;
                     }
                 }
-                else if (control is ToolBar)
+                else if (x is ToolBar)
                 {
                     foreach (ToolBarButton toolBarButton in ((ToolBar) x).Buttons)
                     {
@@ -192,7 +192,7 @@ namespace MvvmFx.CaliburnMicro
                             yield return item;
                     }
                 }
-                else if (control is StatusBar)
+                else if (x is StatusBar)
                 {
                     foreach (StatusBarPanel statusBarPanel in ((StatusBar) x).Panels)
                     {
