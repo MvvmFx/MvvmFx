@@ -2,8 +2,8 @@
 using CslaSample.Documents;
 using CslaSample.FolderEdit;
 using MvvmFx.CaliburnMicro;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
+#if WISEJ
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif

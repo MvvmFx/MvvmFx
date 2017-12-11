@@ -27,5 +27,5 @@
 //                          Custom settings are available using Application.Configuration.Settings.
 {
     "url": "Default.html",
-    "startup": "CslaSample.WisejWeb.Program.Main, CslaSample.WisejWeb"
+    "startup": "CslaSample.Program.Main, CslaSample.WisejWeb"
 }

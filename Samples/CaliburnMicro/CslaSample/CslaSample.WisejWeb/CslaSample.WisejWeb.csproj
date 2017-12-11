@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CslaSample.WisejWeb</RootNamespace>
+    <RootNamespace>CslaSample</RootNamespace>
     <AssemblyName>CslaSample.WisejWeb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -42,10 +42,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="App_Data\CslaSample.mdf" />
+    <Content Include="App_Data\CslaSample_log.ldf">
+      <DependentUpon>CslaSample.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
+    <Content Include="Themes\Classic-2.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -54,21 +59,79 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\AddNew16.png" />
+    <Content Include="Resources\Close16.png" />
+    <Content Include="Resources\Delete16.png" />
+    <Content Include="Resources\Refresh16.png" />
+    <Content Include="Resources\Save16.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Window1.cs">
+    <Compile Include="..\CslaSample.WinForms\AppBootstrapper.cs">
+      <Link>AppBootstrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Documents\DocumentEditViewModel.cs">
+      <Link>Documents\DocumentEditViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Documents\DocumentListViewModel.cs">
+      <Link>Documents\DocumentListViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Documents\FolderListViewModel.cs">
+      <Link>Documents\FolderListViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\FolderEdit\FolderListEditViewModel.cs">
+      <Link>FolderEdit\FolderListEditViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Framework\ComboValidation.cs">
+      <Link>Framework\ComboValidation.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Framework\InverseBooleanConverter.cs">
+      <Link>Framework\InverseBooleanConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\MainFormViewModel.cs">
+      <Link>MainFormViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
+    <Compile Include="Documents\DocumentEditView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\DocumentEditView.Designer.cs">
+      <DependentUpon>DocumentEditView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\DocumentListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\DocumentListView.Designer.cs">
+      <DependentUpon>DocumentListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\FolderListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Documents\FolderListView.Designer.cs">
+      <DependentUpon>FolderListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FolderEdit\FolderListEditView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Window1.Designer.cs">
-      <DependentUpon>Window1.cs</DependentUpon>
+    <Compile Include="FolderEdit\FolderListEditView.Designer.cs">
+      <DependentUpon>FolderListEditView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Csla, Version=4.6.603.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
@@ -84,12 +147,54 @@
     <Reference Include="Wisej.Web" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Window1.resx">
-      <DependentUpon>Window1.cs</DependentUpon>
+    <EmbeddedResource Include="Documents\DocumentEditView.resx">
+      <DependentUpon>DocumentEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\DocumentListView.resx">
+      <DependentUpon>DocumentListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\FolderListView.resx">
+      <DependentUpon>FolderListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderEdit\FolderListEditView.resx">
+      <DependentUpon>FolderListEditView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.6.603\analyzers\c#\Csla.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj">
+      <Project>{41adbee4-19f6-40f8-a10a-6beb7db842cf}</Project>
+      <Name>MvvmFx.DataBinding.WisejWeb.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.Csla.WisejWeb.Net45\CaliburnMicro.Csla.WisejWeb.Net45.csproj">
+      <Project>{2b41e1cd-7d7b-4b56-9a54-3d46bd9c1330}</Project>
+      <Name>CaliburnMicro.Csla.WisejWeb.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WisejWeb.Net45\CaliburnMicro.WisejWeb.Net45.csproj">
+      <Project>{1ca317b0-d30d-494b-83a4-20fbbbe71e22}</Project>
+      <Name>CaliburnMicro.WisejWeb.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
+      <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
+      <Name>MvvmFx.Logging.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CslaSample.Business\CslaSample.Business.csproj">
+      <Project>{c8e78e6e-506d-495e-ad16-1ba31dc58dbc}</Project>
+      <Name>CslaSample.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartDateExtendedParser\SmartDateExtendedParser.csproj">
+      <Project>{8e14cc07-2607-4893-8c77-ac84bacfe8d0}</Project>
+      <Name>SmartDateExtendedParser</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
