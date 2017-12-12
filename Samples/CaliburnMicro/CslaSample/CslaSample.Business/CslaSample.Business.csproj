@@ -35,6 +35,10 @@
       <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CslaContrib, Version=4.6.602.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib.4.6.602\lib\net45\CslaContrib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -43,8 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessRules\CollapseWhiteSpace.cs" />
-    <Compile Include="BusinessRules\DateNotInFutureAttr.cs" />
     <Compile Include="DatabaseCslaSample.cs" />
     <Compile Include="DataPortalHookArgs.cs" />
     <Compile Include="DocumentEdit.cs" />
