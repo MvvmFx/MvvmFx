@@ -40,6 +40,14 @@
       <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CslaContrib, Version=4.6.602.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib.4.6.602\lib\net45\CslaContrib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CslaContrib.Windows, Version=4.6.602.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib-Windows.4.6.602\lib\net45\CslaContrib.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
@@ -124,15 +132,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj">
@@ -154,10 +153,6 @@
     <ProjectReference Include="..\CslaSample.Business\CslaSample.Business.csproj">
       <Project>{c8e78e6e-506d-495e-ad16-1ba31dc58dbc}</Project>
       <Name>CslaSample.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SmartDateExtendedParser\SmartDateExtendedParser.csproj">
-      <Project>{8E14CC07-2607-4893-8C77-AC84BACFE8D0}</Project>
-      <Name>SmartDateExtendedParser</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

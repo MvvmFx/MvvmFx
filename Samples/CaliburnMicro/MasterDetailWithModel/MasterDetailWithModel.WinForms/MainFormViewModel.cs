@@ -99,7 +99,7 @@ namespace MasterDetailWithModel
 
             if (ActiveItem != null)
             {
-                if (ActiveItem.GetType() != typeof (StudentListViewModel))
+                if (ActiveItem.GetType() != typeof(StudentListViewModel))
                     ActiveItem.TryClose();
             }
             ActivateItem(new StudentListViewModel());
@@ -114,7 +114,7 @@ namespace MasterDetailWithModel
 
             if (ActiveItem != null)
             {
-                if (ActiveItem.GetType() != typeof (StudentMasterDetailViewModel))
+                if (ActiveItem.GetType() != typeof(StudentMasterDetailViewModel))
                     ActiveItem.TryClose();
             }
             ActivateItem(new StudentMasterDetailViewModel());
@@ -159,23 +159,23 @@ namespace MasterDetailWithModel
 
         #region Student menu action methods and CAN guard properties
 
-        public void CreateNewStudent()
+        public void CreateStudent()
         {
-            if (_canCreateNewStudent)
-                GetStudentEdit().CreateNew();
+            if (_canCreateStudent)
+                GetStudentEdit().Create();
         }
 
-        private bool _canCreateNewStudent;
+        private bool _canCreateStudent;
 
-        public bool CanCreateNewStudent
+        public bool CanCreateStudent
         {
-            get { return _canCreateNewStudent; }
+            get { return _canCreateStudent; }
             set
             {
-                if (_canCreateNewStudent != value)
+                if (_canCreateStudent != value)
                 {
-                    _canCreateNewStudent = value;
-                    NotifyOfPropertyChange("CanCreateNewStudent");
+                    _canCreateStudent = value;
+                    NotifyOfPropertyChange("CanCreateStudent");
                 }
             }
         }
@@ -223,21 +223,6 @@ namespace MasterDetailWithModel
         public void CloseStudent()
         {
             GetStudentEdit().Close();
-        }
-
-        private bool _canCloseStudent;
-
-        public bool CanCloseStudent
-        {
-            get { return _canCloseStudent; }
-            set
-            {
-                if (_canCloseStudent != value)
-                {
-                    _canCloseStudent = value;
-                    NotifyOfPropertyChange("CanCloseStudent");
-                }
-            }
         }
 
         private IStudentEdit GetStudentEdit()

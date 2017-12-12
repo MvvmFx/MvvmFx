@@ -43,7 +43,8 @@ namespace CslaSample.Documents
             {
                 PropertyChanged -= OnDocumentListViewModelPropertyChanged;
                 var parent = Parent as FolderListViewModel;
-                DisplayName = string.Format("{0} documents", parent.Model.FindFolderInfoByFolderId(_folderId).FolderName);
+                DisplayName = string.Format("{0} documents",
+                    parent.Model.FindFolderInfoByFolderId(_folderId).FolderName);
             }
         }
 
@@ -63,7 +64,7 @@ namespace CslaSample.Documents
 
         #region Activate New Document
 
-        public void CreateNew()
+        public void Create()
         {
             foreach (var child in GetChildren())
             {

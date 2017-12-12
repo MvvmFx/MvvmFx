@@ -84,7 +84,7 @@ namespace CslaSample.Business
         /// <returns><c>true</c> if the FolderEdit is a deleted collection item; otherwise, <c>false</c>.</returns>
         public bool ContainsDeleted(int folderId)
         {
-            foreach (var folderEdit in this.DeletedList)
+            foreach (var folderEdit in DeletedList)
             {
                 if (folderEdit.FolderId == folderId)
                 {
@@ -146,9 +146,10 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderEditCollection"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public FolderEditCollection()
         {
-            // Prevent direct creation
+            // Use factory methods and do not use direct creation.
             Saved += OnFolderEditCollectionSaved;
 
             var rlce = RaiseListChangedEvents;
@@ -194,9 +195,10 @@ namespace CslaSample.Business
         /// </summary>
         protected void DataPortal_Fetch()
         {
-            using (var ctx = ConnectionManager<SqlConnection>.GetManager("CslaSample"))
+            using (var ctx = ConnectionManager<SqlConnection>.GetManager(Database.CslaSampleConnection, false))
             {
-                using (var cmd = new SqlCommand(GetFolderEditCollectionInlineQuery(), ctx.Connection))
+                GetQueryGetFolderEditCollection();
+                using (var cmd = new SqlCommand(getFolderEditCollectionInlineQuery, ctx.Connection))
                 {
                     cmd.CommandType = CommandType.Text;
                     var args = new DataPortalHookArgs(cmd);
@@ -235,7 +237,7 @@ namespace CslaSample.Business
         /// </summary>
         protected override void DataPortal_Update()
         {
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 base.Child_Update();
                 ctx.Commit();
@@ -244,7 +246,16 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Pseudo Events
+        #region Inline queries fields and partial methods
+
+        [NotUndoable, NonSerialized]
+        private string getFolderEditCollectionInlineQuery;
+
+        partial void GetQueryGetFolderEditCollection();
+
+        #endregion
+
+        #region DataPortal Hooks
 
         /// <summary>
         /// Occurs after setting query parameters and before the fetch operation.

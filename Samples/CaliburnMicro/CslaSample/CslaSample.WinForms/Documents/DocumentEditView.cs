@@ -29,7 +29,13 @@ namespace CslaSample.Documents
                     if (viewModel != null)
                     {
                         _viewModel = viewModel;
+                        errorProvider.DataSource = _viewModel.Model;
+                        model_DocumentReference.DataBindings.Add(new Binding("Text", _viewModel.Model, "DocumentReference", false, DataSourceUpdateMode.OnValidation));
                         model_DocumentDate.DataBindings.Add(new Binding("Text", _viewModel.Model, "DocumentDate", false, DataSourceUpdateMode.OnValidation));
+                        model_Subject.DataBindings.Add(new Binding("Text", _viewModel.Model, "Subject", false, DataSourceUpdateMode.OnValidation));
+                        model_Sender.DataBindings.Add(new Binding("Text", _viewModel.Model, "Sender", false, DataSourceUpdateMode.OnValidation));
+                        model_Receiver.DataBindings.Add(new Binding("Text", _viewModel.Model, "Receiver", false, DataSourceUpdateMode.OnValidation));
+                        model_TextContent.DataBindings.Add(new Binding("Text", _viewModel.Model, "TextContent", false, DataSourceUpdateMode.OnValidation));
                         DataContextChanged(this, new DataContextChangedEventArgs());
                     }
                 }

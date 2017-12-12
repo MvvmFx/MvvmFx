@@ -2,8 +2,8 @@
 using CslaSample.Documents;
 using CslaSample.FolderEdit;
 using MvvmFx.CaliburnMicro;
-#if WEBGUI
-using Gizmox.WebGUI.Forms;
+#if WISEJ
+using Wisej.Web;
 #else
 using System.Windows.Forms;
 #endif
@@ -17,8 +17,6 @@ namespace CslaSample
 
     public class MainFormViewModel : Conductor<Screen>, IMainFormViewModel
     {
-        //todo: bind menu items directly to DocumentEditViewModel
-
         #region Fields and properties
 
         public List<Control> ViewNamedElements { get; set; }
@@ -49,9 +47,9 @@ namespace CslaSample
 
         #region Folder menu action methods and CAN guard properties
 
-        public void EditFoldersModal()
+        public void EditFolderModal()
         {
-            if (_canEditFoldersModal)
+            if (_canEditFolderModal)
             {
                 new WindowManager().ShowDialog(FolderListEditViewModel.Instance());
                 foreach (var child in GetChildren())
@@ -61,24 +59,24 @@ namespace CslaSample
             }
         }
 
-        private bool _canEditFoldersModal = true;
+        private bool _canEditFolderModal = true;
 
-        public bool CanEditFoldersModal
+        public bool CanEditFolderModal
         {
-            get { return _canEditFoldersModal; }
+            get { return _canEditFolderModal; }
             set
             {
-                if (_canEditFoldersModal != value)
+                if (_canEditFolderModal != value)
                 {
-                    _canEditFoldersModal = value;
-                    NotifyOfPropertyChange("CanEditFoldersModal");
+                    _canEditFolderModal = value;
+                    NotifyOfPropertyChange("CanEditFolderModal");
                 }
             }
         }
 
-        public void EditFoldersModeless()
+        public void EditFolderModeless()
         {
-            if (_canEditFoldersModeless)
+            if (_canEditFolderModeless)
             {
                 ViewLocator.ContextSeparator = "";
                 new WindowManager().ShowWindow(FolderListEditViewModel.Instance(), "ViewModel");
@@ -86,17 +84,17 @@ namespace CslaSample
             }
         }
 
-        private bool _canEditFoldersModeless = true;
+        private bool _canEditFolderModeless = true;
 
-        public bool CanEditFoldersModeless
+        public bool CanEditFolderModeless
         {
-            get { return _canEditFoldersModeless; }
+            get { return _canEditFolderModeless; }
             set
             {
-                if (_canEditFoldersModeless != value)
+                if (_canEditFolderModeless != value)
                 {
-                    _canEditFoldersModeless = value;
-                    NotifyOfPropertyChange("CanEditFoldersModeless");
+                    _canEditFolderModeless = value;
+                    NotifyOfPropertyChange("CanEditFolderModeless");
                 }
             }
         }
@@ -128,31 +126,31 @@ namespace CslaSample
         {
             if (ActiveItem != null)
             {
-                if (ActiveItem.GetType() != typeof (FolderListViewModel))
+                if (ActiveItem.GetType() != typeof(FolderListViewModel))
                     ActiveItem.TryClose();
             }
             ActivateItem(new FolderListViewModel());
         }
 
-        public void CreateNewDocument()
+        public void CreateDocument()
         {
-            if (_canCreateNewDocument)
+            if (_canCreateDocument)
             {
-                GetDocumentList().CreateNew();
+                GetDocumentList().Create();
             }
         }
 
-        private bool _canCreateNewDocument;
+        private bool _canCreateDocument;
 
-        public bool CanCreateNewDocument
+        public bool CanCreateDocument
         {
-            get { return _canCreateNewDocument; }
+            get { return _canCreateDocument; }
             set
             {
-                if (_canCreateNewDocument != value)
+                if (_canCreateDocument != value)
                 {
-                    _canCreateNewDocument = value;
-                    NotifyOfPropertyChange("CanCreateNewDocument");
+                    _canCreateDocument = value;
+                    NotifyOfPropertyChange("CanCreateDocument");
                 }
             }
         }
@@ -200,21 +198,6 @@ namespace CslaSample
         public void CloseDocument()
         {
             GetDocumentEdit().Close();
-        }
-
-        private bool _canCloseDocument;
-
-        public bool CanCloseDocument
-        {
-            get { return _canCloseDocument; }
-            set
-            {
-                if (_canCloseDocument != value)
-                {
-                    _canCloseDocument = value;
-                    NotifyOfPropertyChange("CanCloseDocument");
-                }
-            }
         }
 
         private DocumentListViewModel GetDocumentList()

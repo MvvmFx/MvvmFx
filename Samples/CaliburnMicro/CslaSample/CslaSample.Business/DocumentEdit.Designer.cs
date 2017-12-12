@@ -61,8 +61,8 @@ namespace CslaSample.Business
         /// <value>The Document Date.</value>
         public string DocumentDate
         {
-            get { return GetPropertyConvert<SmartDate, String>(DocumentDateProperty); }
-            set { SetPropertyConvert<SmartDate, String>(DocumentDateProperty, value); }
+            get { return GetPropertyConvert<SmartDate, string>(DocumentDateProperty); }
+            set { SetPropertyConvert<SmartDate, string>(DocumentDateProperty, value); }
         }
 
         /// <summary>
@@ -261,11 +261,57 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentEdit"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public DocumentEdit()
         {
-            // Prevent direct creation
+            // Use factory methods and do not use direct creation.
             Saved += OnDocumentEditSaved;
         }
+
+        #endregion
+
+        #region Business Rules and Property Authorization
+
+        /// <summary>
+        /// Override this method in your business class to be notified when you need to set up shared business rules.
+        /// </summary>
+        /// <remarks>
+        /// This method is automatically called by CSLA.NET when your object should associate
+        /// per-type validation rules with its properties.
+        /// </remarks>
+        protected override void AddBusinessRules()
+        {
+            base.AddBusinessRules();
+
+            // Property Business Rules
+
+            // DocumentReference
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.CollapseSpace(DocumentReferenceProperty));
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.MaxLength(DocumentReferenceProperty, 20) { Priority = 1 });
+            // DocumentDate
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.Required(DocumentDateProperty));
+            BusinessRules.AddRule(new CslaContrib.Rules.DateRules.DateNotInFuture(DocumentDateProperty) { Priority = 1 });
+            // Subject
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.CollapseSpace(SubjectProperty));
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.MaxLength(SubjectProperty, 150) { Priority = 1 });
+            // Sender
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.Required(SenderProperty));
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.CollapseSpace(SenderProperty) { Priority = 1 });
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.MaxLength(SenderProperty, 50) { Priority = 2 });
+            // Receiver
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.CollapseSpace(ReceiverProperty));
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.MaxLength(ReceiverProperty, 50) { Priority = 1 });
+            // TextContent
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.CollapseSpace(TextContentProperty));
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.MaxLength(TextContentProperty, 500) { Priority = 1 });
+
+            AddBusinessRulesExtend();
+        }
+
+        /// <summary>
+        /// Allows the set up of custom shared business rules.
+        /// </summary>
+        partial void AddBusinessRulesExtend();
 
         #endregion
 
@@ -274,7 +320,7 @@ namespace CslaSample.Business
         /// <summary>
         /// Loads default values for the <see cref="DocumentEdit"/> object properties.
         /// </summary>
-        [Csla.RunLocal]
+        [RunLocal]
         protected override void DataPortal_Create()
         {
             LoadProperty(DocumentIdProperty, System.Threading.Interlocked.Decrement(ref _lastID));
@@ -293,7 +339,7 @@ namespace CslaSample.Business
         /// <param name="documentId">The Document Id.</param>
         protected void DataPortal_Fetch(int documentId)
         {
-            using (var ctx = ConnectionManager<SqlConnection>.GetManager("CslaSample"))
+            using (var ctx = ConnectionManager<SqlConnection>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("GetDocumentEdit", ctx.Connection))
                 {
@@ -328,8 +374,8 @@ namespace CslaSample.Business
         {
             // Value properties
             LoadProperty(DocumentIdProperty, dr.GetInt32("DocumentId"));
-            LoadProperty(DocumentReferenceProperty, dr.GetString("DocumentReference"));
-            LoadProperty(DocumentDateProperty, dr.GetSmartDate("DocumentDate", true));
+            LoadProperty(DocumentReferenceProperty, dr.IsDBNull("DocumentReference") ? null : dr.GetString("DocumentReference"));
+            LoadProperty(DocumentDateProperty, dr.IsDBNull("DocumentDate") ? null : dr.GetSmartDate("DocumentDate", true));
             LoadProperty(SubjectProperty, dr.GetString("Subject"));
             LoadProperty(SenderProperty, dr.GetString("Sender"));
             LoadProperty(ReceiverProperty, dr.GetString("Receiver"));
@@ -349,7 +395,7 @@ namespace CslaSample.Business
         protected override void DataPortal_Insert()
         {
             SimpleAuditTrail();
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("AddDocumentEdit", ctx.Connection))
                 {
@@ -381,7 +427,7 @@ namespace CslaSample.Business
         protected override void DataPortal_Update()
         {
             SimpleAuditTrail();
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("UpdateDocumentEdit", ctx.Connection))
                 {
@@ -430,7 +476,7 @@ namespace CslaSample.Business
         {
             // audit the object, just in case soft delete is used on this object
             SimpleAuditTrail();
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("DeleteDocumentEdit", ctx.Connection))
                 {
@@ -461,7 +507,7 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Pseudo Events
+        #region DataPortal Hooks
 
         /// <summary>
         /// Occurs after setting all defaults for object creation.

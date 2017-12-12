@@ -132,13 +132,45 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderEdit"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public FolderEdit()
         {
-            // Prevent direct creation
+            // Use factory methods and do not use direct creation.
 
             // show the framework that this is a child object
             MarkAsChild();
         }
+
+        #endregion
+
+        #region Business Rules and Property Authorization
+
+        /// <summary>
+        /// Override this method in your business class to be notified when you need to set up shared business rules.
+        /// </summary>
+        /// <remarks>
+        /// This method is automatically called by CSLA.NET when your object should associate
+        /// per-type validation rules with its properties.
+        /// </remarks>
+        protected override void AddBusinessRules()
+        {
+            base.AddBusinessRules();
+
+            // Property Business Rules
+
+            // FolderName
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.Required(FolderNameProperty));
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.CollapseSpace(FolderNameProperty) { Priority = 1 });
+            BusinessRules.AddRule(new Csla.Rules.CommonRules.MaxLength(FolderNameProperty, 30) { Priority = 2 });
+            BusinessRules.AddRule(new CslaContrib.Rules.CommonRules.NoDuplicates<FolderEditCollection,FolderEdit>(FolderNameProperty) { Priority = 3 });
+
+            AddBusinessRulesExtend();
+        }
+
+        /// <summary>
+        /// Allows the set up of custom shared business rules.
+        /// </summary>
+        partial void AddBusinessRulesExtend();
 
         #endregion
 
@@ -147,7 +179,7 @@ namespace CslaSample.Business
         /// <summary>
         /// Loads default values for the <see cref="FolderEdit"/> object properties.
         /// </summary>
-        [Csla.RunLocal]
+        [RunLocal]
         protected override void Child_Create()
         {
             LoadProperty(FolderIdProperty, System.Threading.Interlocked.Decrement(ref _lastID));
@@ -181,7 +213,7 @@ namespace CslaSample.Business
         private void Child_Insert()
         {
             SimpleAuditTrail();
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("AddFolderEdit", ctx.Connection))
                 {
@@ -209,7 +241,7 @@ namespace CslaSample.Business
                 return;
 
             SimpleAuditTrail();
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("UpdateFolderEdit", ctx.Connection))
                 {
@@ -242,7 +274,7 @@ namespace CslaSample.Business
         {
             // audit the object, just in case soft delete is used on this object
             SimpleAuditTrail();
-            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager("CslaSample"))
+            using (var ctx = TransactionManager<SqlConnection, SqlTransaction>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("DeleteFolderEdit", ctx.Connection))
                 {
@@ -259,7 +291,7 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Pseudo Events
+        #region DataPortal Hooks
 
         /// <summary>
         /// Occurs after setting all defaults for object creation.

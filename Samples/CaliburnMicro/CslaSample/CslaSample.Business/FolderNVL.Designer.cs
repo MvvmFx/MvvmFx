@@ -69,9 +69,10 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="FolderNVL"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public FolderNVL()
         {
-            // Prevent direct creation
+            // Use factory methods and do not use direct creation.
         }
 
         #endregion
@@ -89,7 +90,7 @@ namespace CslaSample.Business
                 return;
             }
 
-            using (var ctx = ConnectionManager<SqlConnection>.GetManager("CslaSample"))
+            using (var ctx = ConnectionManager<SqlConnection>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("GetFolderNVL", ctx.Connection))
                 {
@@ -133,7 +134,7 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Pseudo Events
+        #region DataPortal Hooks
 
         /// <summary>
         /// Occurs after setting query parameters and before the fetch operation.

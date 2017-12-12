@@ -76,7 +76,7 @@ namespace MasterDetailWithModel.ViewModels
 
         public StudentMasterDetailViewModel()
         {
-            DisplayName = "Student List (method 2) - It runs nicely under Windows.Forms, Wisej and WebGUI.";
+            DisplayName = "Student List (method 2) - Detail view is embedded in Master view.";
             Model = StudentEditMasterDetail.NewStudentMasterDetail();
             if (_model.Students.Count == 0)
                 ListItemId = -1;
@@ -101,7 +101,7 @@ namespace MasterDetailWithModel.ViewModels
 
         private void UpdateItem()
         {
-            ((StudentEditMasterDetail) _model).StudentEdit = Student.GetStudentById(_listItemId);
+            _model.StudentEdit = Student.GetStudentById(_listItemId);
             if (_model.StudentEdit == null)
                 _listItemId = -1;
             else
@@ -122,19 +122,17 @@ namespace MasterDetailWithModel.ViewModels
 
             // bind to main form properties
             BindMenuItem("CanSaveStudent", "CanSave");
-            BindMenuItem("CanCreateNewStudent", "CanCreateNew");
+            BindMenuItem("CanCreateStudent", "CanCreate");
             BindMenuItem("CanDeleteStudent", "CanDelete");
-            BindMenuItem("CanCloseStudent", "CanClose");
 
-            CanCreateNew = true;
+            CanCreate = true;
             CanSave = false;
             CanDelete = false;
-            CanClose = false;
 
             if (_model != null && _model.StudentEdit != null)
             {
                 // set new bindings for this object
-                BindingManager.Bindings.Add(new Binding(this, "CanCreateNew", _model.StudentEdit, "IsDirty")
+                BindingManager.Bindings.Add(new Binding(this, "CanCreate", _model.StudentEdit, "IsDirty")
                 {
                     Converter = new InverseBooleanConverter(),
                     Mode = BindingMode.OneWayToTarget
@@ -146,7 +144,6 @@ namespace MasterDetailWithModel.ViewModels
                 });
 
                 CanDelete = true;
-                CanClose = true;
 
                 // we need to rebind just because of FullName
                 if (ViewNamedElements != null)
@@ -166,23 +163,23 @@ namespace MasterDetailWithModel.ViewModels
 
         #region Actions methods and guard properties
 
-        public void CreateNew()
+        public void Create()
         {
             var student = Student.AddNewStudent();
             ListItemId = student.StudentId;
         }
 
-        private bool _canCreateNew;
+        private bool _canCreate;
 
-        public bool CanCreateNew
+        public bool CanCreate
         {
-            get { return _canCreateNew; }
+            get { return _canCreate; }
             set
             {
-                if (_canCreateNew != value)
+                if (_canCreate != value)
                 {
-                    _canCreateNew = value;
-                    NotifyOfPropertyChange("CanCreateNew");
+                    _canCreate = value;
+                    NotifyOfPropertyChange("CanCreate");
                 }
             }
         }
@@ -238,21 +235,6 @@ namespace MasterDetailWithModel.ViewModels
         {
             ListItemId = -1;
             BindingManager.Bindings.Clear();
-        }
-
-        private bool _canClose = true;
-
-        public new bool CanClose
-        {
-            get { return _canClose; }
-            set
-            {
-                if (_canClose != value)
-                {
-                    _canClose = value;
-                    NotifyOfPropertyChange("CanClose");
-                }
-            }
         }
 
         private int GetNewCurrentStudent(Student student)

@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new Wisej.Web.ToolBar();
-            this.createNew = new Wisej.Web.ToolBarButton();
+            this.create = new Wisej.Web.ToolBarButton();
             this.save = new Wisej.Web.ToolBarButton();
             this.delete = new Wisej.Web.ToolBarButton();
             this.close = new Wisej.Web.ToolBarButton();
@@ -53,7 +53,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Buttons.AddRange(new Wisej.Web.ToolBarButton[] {
-            this.createNew,
+            this.create,
             this.save,
             this.delete,
             this.close});
@@ -65,12 +65,12 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolTip1.SetToolTip(this.toolStrip1, null);
             // 
-            // createNew
+            // create
             // 
-            //this.createNew.DisplayStyle = Wisej.Web.ToolBarItemDisplayStyle.Image;
-            this.createNew.Image = global::MasterDetailWithModel.Properties.Resources.AddNew16;
-            this.createNew.Name = "createNew";
-            this.createNew.ToolTipText = "Create New";
+            //this.create.DisplayStyle = Wisej.Web.ToolBarItemDisplayStyle.Image;
+            this.create.Image = global::MasterDetailWithModel.Properties.Resources.AddNew16;
+            this.create.Name = "create";
+            this.create.ToolTipText = "Create New";
             // 
             // save
             // 
@@ -247,7 +247,7 @@
         #endregion
 
         private Wisej.Web.ToolBar toolStrip1;
-        private Wisej.Web.ToolBarButton createNew;
+        private Wisej.Web.ToolBarButton create;
         private Wisej.Web.ToolBarButton save;
         private Wisej.Web.ToolBarButton delete;
         private Wisej.Web.ToolBarButton close;

@@ -7,10 +7,8 @@
     <AutoCriteria>true</AutoCriteria>
     <AutoTimestampCriteria>false</AutoTimestampCriteria>
     <DatesDefaultStringWithTypeConversion>true</DatesDefaultStringWithTypeConversion>
-    <CreateTimestampPropertyMode>Managed</CreateTimestampPropertyMode>
     <ReadOnlyObjectsCopyAuditing>false</ReadOnlyObjectsCopyAuditing>
     <ReadOnlyObjectsCopyTimestamp>false</ReadOnlyObjectsCopyTimestamp>
-    <CreateReadOnlyObjectsPropertyMode>Managed</CreateReadOnlyObjectsPropertyMode>
     <DefaultDataBase>CslaSample</DefaultDataBase>
     <DefaultTransactionType>ADO</DefaultTransactionType>
     <DefaultPersistenceType>SqlConnectionManager</DefaultPersistenceType>
@@ -47,9 +45,9 @@
     <LogDateAndTime>true</LogDateAndTime>
     <LogInUtc>false</LogInUtc>
     <GetUserMethod>Security.UserInformation.UserID</GetUserMethod>
+    <EnforceGenericInheritance>true</EnforceGenericInheritance>
   </Params>
   <GenerationParams>
-    <AckSilverlightPublicPropertyInfo>true</AckSilverlightPublicPropertyInfo>
     <SaveBeforeGenerate>true</SaveBeforeGenerate>
     <TargetFramework>CSLA45</TargetFramework>
     <WriteTodo>false</WriteTodo>
@@ -57,15 +55,12 @@
     <RetryOnFileBusy>true</RetryOnFileBusy>
     <SeparateNamespaces>true</SeparateNamespaces>
     <SeparateBaseClasses>false</SeparateBaseClasses>
-    <ActiveObjects>false</ActiveObjects>
     <UseDotDesignerFileNameConvention>true</UseDotDesignerFileNameConvention>
     <OutputLanguage>CSharp</OutputLanguage>
     <UpdateOnlyDirtyChildren>true</UpdateOnlyDirtyChildren>
-    <NullableSupport>true</NullableSupport>
     <PropertyMode>Default</PropertyMode>
     <GenerateAuthorization>FullSupport</GenerateAuthorization>
     <HeaderVerbosity>None</HeaderVerbosity>
-    <UseBypassPropertyChecks>false</UseBypassPropertyChecks>
     <UseSingleCriteria>false</UseSingleCriteria>
     <UsePublicPropertyInfo>true</UsePublicPropertyInfo>
     <UseChildFactory>true</UseChildFactory>
@@ -86,6 +81,7 @@
     <GenerateQueriesWithSchema>false</GenerateQueriesWithSchema>
     <GenerateDatabaseClass>true</GenerateDatabaseClass>
     <DalName />
+    <UsesLazyGetProperty>true</UsesLazyGetProperty>
     <UsesCslaAuthorizationProvider>true</UsesCslaAuthorizationProvider>
     <GenerateWinForms>true</GenerateWinForms>
     <GenerateWPF>false</GenerateWPF>
@@ -97,10 +93,10 @@
     <GenerateDalObject>false</GenerateDalObject>
     <GenerateSynchronous>true</GenerateSynchronous>
     <GenerateAsynchronous>false</GenerateAsynchronous>
+    <GenerationDbProviderCollection />
   </GenerationParams>
   <CslaObjects>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -114,33 +110,35 @@
       </GenerateInlineQueries>
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>EditableRootCollection</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>FolderEditCollection</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>FolderEditCollection</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -150,6 +148,10 @@
       <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties />
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>Criteria</Name>
@@ -190,7 +192,6 @@
       <ParentType />
       <ParentProperties />
       <ParentInsertOnly>false</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType>FolderEdit</ItemType>
       <ContainsItem>true</ContainsItem>
@@ -222,32 +223,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -255,7 +267,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </Property>
       </FindMethodsParameters>
       <UpdaterType />
@@ -270,10 +281,7 @@
       </InvalidateCache>
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -283,8 +291,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -294,49 +300,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -348,33 +371,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>EditableChild</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>FolderEdit</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>FolderEdit</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -410,32 +435,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -443,7 +479,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>FolderName</ParameterName>
@@ -471,32 +506,382 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Name</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.Required</Type>
+              <Name>Required</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.CollapseSpace</Type>
+              <Name>CollapseSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.MaxLength</Type>
+              <Name>MaxLength</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">30</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>2</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.NoDuplicates&lt;T,C&gt;</Type>
+              <Name>NoDuplicates&lt;T,C&gt;</Name>
+              <NumberGenericParameters>2</NumberGenericParameters>
+              <OriginalGenericParameter1>T</OriginalGenericParameter1>
+              <OriginalGenericParameter2>C</OriginalGenericParameter2>
+              <GenericParameter1>FolderEditCollection</GenericParameter1>
+              <GenericParameter2>FolderEdit</GenericParameter2>
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">FolderName</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>errorMessageDelegate</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>3</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -504,7 +889,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>DocumentCount</ParameterName>
@@ -532,32 +916,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Count</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>0</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -565,7 +960,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>CreateDate</ParameterName>
@@ -593,32 +987,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Create Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>new SmartDate(DateTime.Now)</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -626,7 +1031,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>ChangeDate</ParameterName>
@@ -654,32 +1058,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Change Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>$CreateDate</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -687,9 +1102,12 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
       </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaNew</Name>
@@ -730,7 +1148,6 @@
       <ParentType>FolderEditCollection</ParentType>
       <ParentProperties />
       <ParentInsertOnly>true</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
       <ContainsItem>true</ContainsItem>
@@ -745,10 +1162,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -758,8 +1172,6 @@
       <DeleteProcedureName>DeleteFolderEdit</DeleteProcedureName>
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -769,49 +1181,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -823,33 +1252,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>ReadOnlyCollection</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>FolderList</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>FolderList</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -859,6 +1290,10 @@
       <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties />
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaGet</Name>
@@ -899,7 +1334,6 @@
       <ParentType />
       <ParentProperties />
       <ParentInsertOnly>false</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType>FolderInfo</ItemType>
       <ContainsItem>true</ContainsItem>
@@ -931,32 +1365,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -964,7 +1409,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </Property>
       </FindMethodsParameters>
       <UpdaterType />
@@ -976,10 +1420,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -989,8 +1430,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -1000,49 +1439,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -1054,33 +1510,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>false</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>ReadOnlyObject</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>FolderInfo</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>FolderInfo</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -1116,32 +1574,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1149,7 +1618,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>FolderName</ParameterName>
@@ -1177,32 +1645,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Name</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1210,14 +1689,16 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
       </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>false</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects />
       <ParentType>FolderList</ParentType>
       <ParentProperties />
       <ParentInsertOnly>true</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
       <ContainsItem>true</ContainsItem>
@@ -1232,10 +1713,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -1245,8 +1723,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -1256,49 +1732,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -1310,33 +1803,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>ReadOnlyCollection</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>DocumentList</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>DocumentList</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -1346,6 +1841,10 @@
       <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties />
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaGet</Name>
@@ -1374,6 +1873,7 @@
                 <IsNullable>false</IsNullable>
                 <IsIdentity>false</IsIdentity>
               </DbBindColumn>
+              <CustomPropertyType />
               <ParameterValue />
               <InlineQueryParameter>Plain</InlineQueryParameter>
             </Property>
@@ -1412,7 +1912,6 @@
       <ParentType />
       <ParentProperties />
       <ParentInsertOnly>false</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType>DocumentInfo</ItemType>
       <ContainsItem>true</ContainsItem>
@@ -1444,32 +1943,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1477,7 +1987,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </Property>
       </FindMethodsParameters>
       <UpdaterType>DocumentEdit</UpdaterType>
@@ -1489,10 +1998,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -1502,8 +2008,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -1513,49 +2017,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -1567,33 +2088,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>false</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>ReadOnlyObject</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>DocumentInfo</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>DocumentInfo</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -1696,32 +2219,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1729,7 +2263,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>DocumentReference</ParameterName>
@@ -1757,32 +2290,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Reference</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1790,7 +2334,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>DocumentDate</ParameterName>
@@ -1818,32 +2361,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>ManagedWithTypeConversion</DeclarationMode>
           <BackingFieldType>SmartDate</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1851,7 +2405,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Subject</ParameterName>
@@ -1879,32 +2432,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Subject</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1912,7 +2476,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Sender</ParameterName>
@@ -1940,32 +2503,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Sender</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -1973,7 +2547,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Receiver</ParameterName>
@@ -2001,32 +2574,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Receiver</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2034,9 +2618,12 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
       </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>false</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects />
       <ParentType>DocumentList</ParentType>
       <ParentProperties>
@@ -2066,32 +2653,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2099,11 +2697,9 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </Property>
       </ParentProperties>
       <ParentInsertOnly>true</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
       <ContainsItem>true</ContainsItem>
@@ -2118,10 +2714,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -2131,8 +2724,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -2142,49 +2733,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -2196,33 +2804,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>NameValueList</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>FolderNVL</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>FolderNVL</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -2258,32 +2868,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2291,7 +2912,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>FolderName</ParameterName>
@@ -2319,32 +2939,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Name</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2352,9 +2983,12 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
       </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaGet</Name>
@@ -2395,7 +3029,6 @@
       <ParentType />
       <ParentProperties />
       <ParentInsertOnly>false</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
       <ContainsItem>true</ContainsItem>
@@ -2410,10 +3043,7 @@
       <InvalidateCache />
       <ValueColumn>FolderId</ValueColumn>
       <NameColumn>FolderName</NameColumn>
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -2423,8 +3053,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -2434,49 +3062,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -2488,33 +3133,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>false</SupportUpdateProperties>
       <ObjectType>UnitOfWork</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>DocumentEditGetter</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>DocumentEditGetter</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties>
         <UnitOfWorkProperty>
           <ParameterName />
@@ -2547,11 +3194,14 @@
       <UpdateValueProperties />
       <InheritedValueProperties />
       <ValueProperties />
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>false</SupportUpdateProperties>
       <CriteriaObjects />
       <ParentType />
       <ParentProperties />
       <ParentInsertOnly>false</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
       <ContainsItem>true</ContainsItem>
@@ -2566,10 +3216,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -2579,8 +3226,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty />
       <BusinessRules />
       <AuthzProvider>IsInRole</AuthzProvider>
@@ -2590,49 +3235,66 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
     <CslaObjectInfo>
-      <ComponentName />
       <Generate>true</Generate>
       <GenerateConstructor>true</GenerateConstructor>
       <GenerateFactoryMethods>true</GenerateFactoryMethods>
@@ -2644,33 +3306,35 @@
       <GenerateInlineQueries />
       <DataSetLoadingScheme>false</DataSetLoadingScheme>
       <UseCustomLoading>false</UseCustomLoading>
-      <CheckRulesOnFetch>true</CheckRulesOnFetch>
-      <SupportUpdateProperties>true</SupportUpdateProperties>
       <ObjectType>EditableRoot</ObjectType>
       <UnitOfWorkType>CreatorGetter</UnitOfWorkType>
       <ObjectName>DocumentEdit</ObjectName>
+      <CslaBaseClass>None</CslaBaseClass>
+      <IsGenericType>false</IsGenericType>
+      <GenericArguments />
       <ObjectNamespace>CslaSample.Business</ObjectNamespace>
       <ClassVisibility>Public</ClassVisibility>
       <ClassSummary />
       <ClassRemarks />
       <Namespaces />
       <Attributes />
-      <Implements />
+      <Interfaces />
       <InheritedType>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedType>
       <InheritedTypeWinForms>
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <IsGenericType>false</IsGenericType>
       </InheritedTypeWinForms>
       <UseUnitOfWorkType />
       <ConstructorVisibility>Default</ConstructorVisibility>
       <Folder />
       <FileName>DocumentEdit</FileName>
-      <OutputLanguage>CSharp</OutputLanguage>
       <UnitOfWorkProperties />
       <ChildCollectionProperties />
       <ChildProperties />
@@ -2689,11 +3353,13 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Name</FriendlyName>
+          <IsDatabaseBound>false</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>AutoProperty</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
@@ -2701,7 +3367,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
           <BaseName>Folder</BaseName>
           <SourcePropertyName>FolderId</SourcePropertyName>
           <NVLConverter>FolderNVL.GetFolderNVL</NVLConverter>
@@ -2736,32 +3401,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2769,7 +3445,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>DocumentReference</ParameterName>
@@ -2797,32 +3472,213 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Reference</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.CollapseSpace</Type>
+              <Name>CollapseSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentReference</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.MaxLength</Type>
+              <Name>MaxLength</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentReference</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">20</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentReference</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentReference</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <MessageText />
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2830,7 +3686,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>DocumentDate</ParameterName>
@@ -2858,32 +3713,238 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>ManagedWithTypeConversion</DeclarationMode>
           <BackingFieldType>SmartDate</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.Required</Type>
+              <Name>Required</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentDate</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.DateRules.DateNotInFuture</Type>
+              <Name>DateNotInFuture</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentDate</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">DocumentDate</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2891,7 +3952,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Subject</ParameterName>
@@ -2919,32 +3979,212 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Subject</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.CollapseSpace</Type>
+              <Name>CollapseSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Subject</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.MaxLength</Type>
+              <Name>MaxLength</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Subject</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">150</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Subject</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Subject</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -2952,7 +4192,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Sender</ParameterName>
@@ -2980,32 +4219,309 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Sender</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.Required</Type>
+              <Name>Required</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.CollapseSpace</Type>
+              <Name>CollapseSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.MaxLength</Type>
+              <Name>MaxLength</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">50</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Sender</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>2</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3013,7 +4529,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>Receiver</ParameterName>
@@ -3041,32 +4556,212 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Receiver</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.CollapseSpace</Type>
+              <Name>CollapseSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Receiver</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.MaxLength</Type>
+              <Name>MaxLength</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Receiver</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">50</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Receiver</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">Receiver</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3074,7 +4769,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>TextContent</ParameterName>
@@ -3102,32 +4796,212 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Text Content</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
-          <BusinessRules />
+          <Interfaces />
+          <BusinessRules>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\CslaContrib.dll</AssemblyFile>
+              <Type>CslaContrib.Rules.CommonRules.CollapseSpace</Type>
+              <Name>CollapseSpace</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">TextContent</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>0</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+            <BusinessRule>
+              <BaseRuleProperties>
+                <string>Severity</string>
+                <string>MessageText</string>
+                <string>MessageDelegate</string>
+                <string>CanRunAsAffectedProperty</string>
+                <string>CanRunOnServer</string>
+                <string>CanRunInCheckRules</string>
+                <string>PrimaryProperty</string>
+                <string>Priority</string>
+                <string>RunMode</string>
+              </BaseRuleProperties>
+              <ObjectName />
+              <AssemblyFile>C:\VS_GitHub\CslaExtremeDemos\CslaExtremeDemos\Dependencies\Csla.dll</AssemblyFile>
+              <Type>Csla.Rules.CommonRules.MaxLength</Type>
+              <Name>MaxLength</Name>
+              <NumberGenericParameters>0</NumberGenericParameters>
+              <OriginalGenericParameter1 />
+              <OriginalGenericParameter2 />
+              <GenericParameter1 />
+              <GenericParameter2 />
+              <Constructors>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #1 (Active)</Name>
+                  <IsActive>true</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">TextContent</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">500</Value>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #2</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">TextContent</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>message</Name>
+                      <Type>String</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+                <BusinessRuleConstructor>
+                  <Name>Constructor #3</Name>
+                  <IsActive>false</IsActive>
+                  <ConstructorParameters>
+                    <BusinessRuleConstructorParameter>
+                      <Name>primaryProperty</Name>
+                      <Type>IPropertyInfo</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string">TextContent</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>max</Name>
+                      <Type>Int32</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>false</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:int">0</Value>
+                    </BusinessRuleConstructorParameter>
+                    <BusinessRuleConstructorParameter>
+                      <Name>messageDelegate</Name>
+                      <Type>Func&lt;String&gt;</Type>
+                      <IsParams>false</IsParams>
+                      <IsGenericType>false</IsGenericType>
+                      <IsGenericParameter>true</IsGenericParameter>
+                      <GenericType>Empty</GenericType>
+                      <Value xsi:type="xsd:string" />
+                    </BusinessRuleConstructorParameter>
+                  </ConstructorParameters>
+                </BusinessRuleConstructor>
+              </Constructors>
+              <RuleProperties />
+              <Severity>Error</Severity>
+              <CanRunAsAffectedProperty>true</CanRunAsAffectedProperty>
+              <CanRunOnServer>true</CanRunOnServer>
+              <CanRunInCheckRules>true</CanRunInCheckRules>
+              <Priority>1</Priority>
+              <RunMode>Default</RunMode>
+              <AffectedProperties />
+              <InputProperties />
+              <IsAsync>false</IsAsync>
+              <ProvideTargetWhenAsync>false</ProvideTargetWhenAsync>
+            </BusinessRule>
+          </BusinessRules>
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3135,7 +5009,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>CreateDate</ParameterName>
@@ -3163,32 +5036,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Create Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>new SmartDate(DateTime.Now)</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3196,7 +5080,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>ChangeDate</ParameterName>
@@ -3224,32 +5107,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Change Date</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>$CreateDate</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3257,7 +5151,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
         <ValueProperty>
           <ParameterName>FolderId</ParameterName>
@@ -3285,32 +5178,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Folder Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3318,9 +5222,12 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </ValueProperty>
       </ValueProperties>
+      <Singleton>false</Singleton>
+      <EditOnDemand>false</EditOnDemand>
+      <CheckRulesOnFetch>true</CheckRulesOnFetch>
+      <SupportUpdateProperties>true</SupportUpdateProperties>
       <CriteriaObjects>
         <Criteria>
           <Name>CriteriaNew</Name>
@@ -3384,6 +5291,7 @@
                 <IsNullable>false</IsNullable>
                 <IsIdentity>true</IsIdentity>
               </DbBindColumn>
+              <CustomPropertyType />
               <ParameterValue />
               <InlineQueryParameter>Plain</InlineQueryParameter>
             </Property>
@@ -3422,7 +5330,6 @@
       <ParentType />
       <ParentProperties />
       <ParentInsertOnly>true</ParentInsertOnly>
-      <LazyLoad>false</LazyLoad>
       <IsPolymorphic>false</IsPolymorphic>
       <ItemType />
       <ContainsItem>true</ContainsItem>
@@ -3437,10 +5344,7 @@
       <InvalidateCache />
       <ValueColumn />
       <NameColumn />
-      <CacheResults>true</CacheResults>
-      <DbName>CslaSample</DbName>
       <PersistenceType>SqlConnectionManager</PersistenceType>
-      <DbContextObject />
       <CommandTimeout />
       <TransactionType>ADO</TransactionType>
       <InsertUpdateRunLocal>false</InsertUpdateRunLocal>
@@ -3450,8 +5354,6 @@
       <DeleteProcedureName />
       <DeleteUseTimestamp>false</DeleteUseTimestamp>
       <RemoveItem>true</RemoveItem>
-      <HashcodeProperty />
-      <EqualsProperty />
       <ToStringProperty>
         <Property xsi:type="ValueProperty">
           <ParameterName>DocumentId</ParameterName>
@@ -3479,32 +5381,43 @@
           <PrimaryKey>DBProvidedPK</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Id</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue>_lastID</DefaultValue>
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3512,7 +5425,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>false</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </Property>
         <Property xsi:type="ValueProperty">
           <ParameterName>DocumentReference</ParameterName>
@@ -3540,32 +5452,43 @@
           <PrimaryKey>Default</PrimaryKey>
           <FKConstraint />
           <FriendlyName>Document Reference</FriendlyName>
+          <IsDatabaseBound>true</IsDatabaseBound>
+          <CustomPropertyType />
           <DeclarationMode>Managed</DeclarationMode>
           <BackingFieldType>Empty</BackingFieldType>
           <DefaultValue />
           <Attributes />
-          <Implements />
-          <Rules />
+          <Interfaces />
           <BusinessRules />
           <AuthzProvider>IsInRole</AuthzProvider>
           <ReadRoles />
           <WriteRoles />
           <ReadAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
           </ReadAuthzRuleType>
           <WriteAuthzRuleType>
             <BaseRuleProperties />
-            <Name />
             <ObjectName />
             <AssemblyFile />
             <Type />
+            <Name />
+            <NumberGenericParameters>0</NumberGenericParameters>
+            <OriginalGenericParameter1 />
+            <OriginalGenericParameter2 />
+            <GenericParameter1 />
+            <GenericParameter2 />
             <Constructors />
             <RuleProperties />
             <CacheResult>false</CacheResult>
@@ -3573,7 +5496,6 @@
           <Access>IsPublic</Access>
           <PropSetAccessibility>Default</PropSetAccessibility>
           <Undoable>true</Undoable>
-          <MarkDirtyOnChange>true</MarkDirtyOnChange>
         </Property>
       </ToStringProperty>
       <BusinessRules />
@@ -3584,51 +5506,69 @@
       <DeleteRoles />
       <NewAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </NewAuthzRuleType>
       <GetAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </GetAuthzRuleType>
       <UpdateAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </UpdateAuthzRuleType>
       <DeleteAuthzRuleType>
         <BaseRuleProperties />
-        <Name />
         <ObjectName />
         <AssemblyFile />
         <Type />
+        <Name />
+        <NumberGenericParameters>0</NumberGenericParameters>
+        <OriginalGenericParameter1 />
+        <OriginalGenericParameter2 />
+        <GenericParameter1 />
+        <GenericParameter2 />
         <Constructors />
         <RuleProperties />
         <CacheResult>false</CacheResult>
       </DeleteAuthzRuleType>
-      <PublishToChannel />
-      <SubscribeToChannel />
     </CslaObjectInfo>
   </CslaObjects>
   <AssociativeEntities />
   <ConnectionString>Server=.\;Database=CslaSample;persist security info=False;user id=sa;password=password_1234;packet size=4096</ConnectionString>
   <ProjectName>CslaSample</ProjectName>
-  <TargetDirectory>C:\VS Projects\MvvmFx\trunk\Samples\CaliburnMicro\CslaSample</TargetDirectory>
-  <FileVersion>4.0.3</FileVersion>
+  <TargetDirectory>C:\VS_GitHub\MvvmFx\Samples\CaliburnMicro\CslaSample</TargetDirectory>
+  <FileVersion>4.0.6</FileVersion>
 </CslaGeneratorUnit>

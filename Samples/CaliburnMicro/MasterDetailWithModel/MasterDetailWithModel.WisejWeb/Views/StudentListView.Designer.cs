@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentListView));
             this.listBox1 = new Wisej.Web.ListBox();
             this.displayName = new Wisej.Web.Label();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.toolTip1 = new Wisej.Web.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -45,16 +42,14 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(348, 396);
             this.listBox1.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.listBox1, resources.GetString("listBox1.ToolTip"));
             // 
             // displayName
             // 
             this.displayName.AutoSize = true;
             this.displayName.Location = new System.Drawing.Point(4, 4);
             this.displayName.Name = "displayName";
-            this.displayName.Size = new System.Drawing.Size(4, 15);
+            this.displayName.Size = new System.Drawing.Size(4, 13);
             this.displayName.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.displayName, null);
             // 
             // activeItem
             // 
@@ -67,12 +62,6 @@
             this.activeItem.Name = "activeItem";
             this.activeItem.Size = new System.Drawing.Size(476, 393);
             this.activeItem.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.activeItem, null);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 10000;
-            this.toolTip1.ToolTipIcon = Wisej.Web.ToolTipIcon.Info;
             // 
             // StudentListView
             // 
@@ -83,7 +72,6 @@
             this.Controls.Add(this.listBox1);
             this.Name = "StudentListView";
             this.Size = new System.Drawing.Size(830, 422);
-            this.toolTip1.SetToolTip(this, "Why this method doesn\'t work correctly\r\nunder Windows Forms?");
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,6 +82,5 @@
         private Wisej.Web.ListBox listBox1;
         private Wisej.Web.Label displayName;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
-        private Wisej.Web.ToolTip toolTip1;
     }
 }
