@@ -32,10 +32,10 @@ namespace CslaSample.Business
 
         #region Implementation of DataPortal Hooks
 
-        partial void OnCreate(DataPortalHookArgs args)
-        {
-            BusinessRules.CheckRules();
-        }
+        //partial void OnCreate(DataPortalHookArgs args)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //partial void OnDeletePre(DataPortalHookArgs args)
         //{
