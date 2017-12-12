@@ -49,6 +49,8 @@
             // 
             // foldersDataGridView
             // 
+            this.foldersDataGridView.AllowUserToAddRows = true;
+            this.foldersDataGridView.AllowUserToDeleteRows = true;
             this.foldersDataGridView.AllowUserToResizeRows = false;
             this.foldersDataGridView.ColumnHeadersHeightSizeMode = Wisej.Web.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.foldersDataGridView.Columns.AddRange(new Wisej.Web.DataGridViewColumn[] {
@@ -62,7 +64,7 @@
             this.foldersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.foldersDataGridView.MultiSelect = false;
             this.foldersDataGridView.Name = "foldersDataGridView";
-            this.foldersDataGridView.ReadOnly = true;
+            this.foldersDataGridView.ReadOnly = false;
             this.foldersDataGridView.ShowColumnVisibilityMenu = false;
             this.foldersDataGridView.Size = new System.Drawing.Size(738, 337);
             this.foldersDataGridView.TabIndex = 0;
