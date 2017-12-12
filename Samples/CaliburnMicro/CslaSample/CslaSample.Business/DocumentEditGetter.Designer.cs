@@ -18,7 +18,7 @@ namespace CslaSample.Business
         /// <summary>
         /// Maintains metadata about unit of work (child) <see cref="Document"/> property.
         /// </summary>
-        public static readonly PropertyInfo<DocumentEdit> DocumentProperty = RegisterProperty<DocumentEdit>(p => p.Document);
+        public static readonly PropertyInfo<DocumentEdit> DocumentProperty = RegisterProperty<DocumentEdit>(p => p.Document, "Document");
         /// <summary>
         /// Gets the Document object (unit of work child property).
         /// </summary>
@@ -32,7 +32,7 @@ namespace CslaSample.Business
         /// <summary>
         /// Maintains metadata about unit of work (child) <see cref="Folders"/> property.
         /// </summary>
-        public static readonly PropertyInfo<FolderNVL> FoldersProperty = RegisterProperty<FolderNVL>(p => p.Folders);
+        public static readonly PropertyInfo<FolderNVL> FoldersProperty = RegisterProperty<FolderNVL>(p => p.Folders, "Folders");
         /// <summary>
         /// Gets the Folders object (unit of work child property).
         /// </summary>
@@ -75,9 +75,10 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentEditGetter"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Unit of Work. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public DocumentEditGetter()
         {
-            // Prevent direct creation
+            // Use factory methods and do not use direct creation.
         }
 
         #endregion
@@ -94,7 +95,7 @@ namespace CslaSample.Business
             /// <summary>
             /// Maintains metadata about <see cref="CreateDocumentEdit"/> property.
             /// </summary>
-            public static readonly PropertyInfo<bool> CreateDocumentEditProperty = RegisterProperty<bool>(p => p.CreateDocumentEdit);
+            public static readonly PropertyInfo<bool> CreateDocumentEditProperty = RegisterProperty<bool>(p => p.CreateDocumentEdit, "Create Document Edit");
             /// <summary>
             /// Gets or sets the Create Document Edit.
             /// </summary>
@@ -108,7 +109,7 @@ namespace CslaSample.Business
             /// <summary>
             /// Maintains metadata about <see cref="DocumentId"/> property.
             /// </summary>
-            public static readonly PropertyInfo<int> DocumentIdProperty = RegisterProperty<int>(p => p.DocumentId);
+            public static readonly PropertyInfo<int> DocumentIdProperty = RegisterProperty<int>(p => p.DocumentId, "Document Id");
             /// <summary>
             /// Gets or sets the Document Id.
             /// </summary>

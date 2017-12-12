@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using Csla;
 using Csla.Data;
 
@@ -20,6 +22,25 @@ namespace CslaSample.Business
     [Serializable]
     public partial class DocumentList : ReadOnlyBindingListBase<DocumentList, DocumentInfo>
     {
+
+        #region Event handler properties
+
+        [NotUndoable]
+        private static bool _singleInstanceSavedHandler = true;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether only a single instance should handle the Saved event.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if only a single instance should handle the Saved event; otherwise, <c>false</c>.
+        /// </value>
+        public static bool SingleInstanceSavedHandler
+        {
+            get { return _singleInstanceSavedHandler; }
+            set { _singleInstanceSavedHandler = value; }
+        }
+
+        #endregion
 
         #region Collection Business Methods
 
@@ -84,10 +105,11 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentList"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public DocumentList()
         {
-            // Prevent direct creation
-            DocumentEdit.DocumentEditSaved += DocumentEditSavedHandler;
+            // Use factory methods and do not use direct creation.
+            DocumentEditSaved.Register(this);
 
             var rlce = RaiseListChangedEvents;
             RaiseListChangedEvents = false;
@@ -106,7 +128,7 @@ namespace CslaSample.Business
         /// </summary>
         /// <param name="sender">The sender of the event.</param>
         /// <param name="e">The <see cref="Csla.Core.SavedEventArgs"/> instance containing the event data.</param>
-        private void DocumentEditSavedHandler(object sender, Csla.Core.SavedEventArgs e)
+        internal void DocumentEditSavedHandler(object sender, Csla.Core.SavedEventArgs e)
         {
             var obj = (DocumentEdit)e.NewObject;
             if (((DocumentEdit)sender).IsNew)
@@ -161,7 +183,7 @@ namespace CslaSample.Business
         /// <param name="folderId">The Folder Id.</param>
         protected void DataPortal_Fetch(int folderId)
         {
-            using (var ctx = ConnectionManager<SqlConnection>.GetManager("CslaSample"))
+            using (var ctx = ConnectionManager<SqlConnection>.GetManager(Database.CslaSampleConnection, false))
             {
                 using (var cmd = new SqlCommand("GetDocumentList", ctx.Connection))
                 {
@@ -202,7 +224,7 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Pseudo Events
+        #region DataPortal Hooks
 
         /// <summary>
         /// Occurs after setting query parameters and before the fetch operation.
@@ -213,6 +235,69 @@ namespace CslaSample.Business
         /// Occurs after the fetch operation (object or collection is fully loaded and set up).
         /// </summary>
         partial void OnFetchPost(DataPortalHookArgs args);
+
+        #endregion
+
+        #region DocumentEditSaved nested class
+
+        /// <summary>
+        /// Nested class to manage the Saved events of <see cref="DocumentEdit"/>
+        /// to update the list of <see cref="DocumentInfo"/> objects.
+        /// </summary>
+        private static class DocumentEditSaved
+        {
+            private static List<WeakReference> _references;
+
+            private static bool Found(object obj)
+            {
+                return _references.Any(reference => Equals(reference.Target, obj));
+            }
+
+            /// <summary>
+            /// Registers a DocumentList instance to handle Saved events.
+            /// to update the list of <see cref="DocumentInfo"/> objects.
+            /// </summary>
+            /// <param name="obj">The DocumentList instance.</param>
+            public static void Register(DocumentList obj)
+            {
+                var mustRegister = _references == null;
+
+                if (mustRegister)
+                    _references = new List<WeakReference>();
+
+                if (DocumentList.SingleInstanceSavedHandler)
+                    _references.Clear();
+
+                if (!Found(obj))
+                    _references.Add(new WeakReference(obj));
+
+                if (mustRegister)
+                    DocumentEdit.DocumentEditSaved += DocumentEditSavedHandler;
+            }
+
+            /// <summary>
+            /// Handles Saved events of <see cref="DocumentEdit"/>.
+            /// </summary>
+            /// <param name="sender">The sender of the event.</param>
+            /// <param name="e">The <see cref="Csla.Core.SavedEventArgs"/> instance containing the event data.</param>
+            public static void DocumentEditSavedHandler(object sender, Csla.Core.SavedEventArgs e)
+            {
+                foreach (var reference in _references)
+                {
+                    if (reference.IsAlive)
+                        ((DocumentList) reference.Target).DocumentEditSavedHandler(sender, e);
+                }
+            }
+
+            /// <summary>
+            /// Removes event handling and clears all registered DocumentList instances.
+            /// </summary>
+            public static void Unregister()
+            {
+                DocumentEdit.DocumentEditSaved -= DocumentEditSavedHandler;
+                _references = null;
+            }
+        }
 
         #endregion
 

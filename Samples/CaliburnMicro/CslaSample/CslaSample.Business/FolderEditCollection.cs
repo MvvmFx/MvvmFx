@@ -21,28 +21,28 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Inlines queries
+        #region Inline queries
 
-        private string GetFolderEditCollectionInlineQuery()
+        partial void GetQueryGetFolderEditCollection()
         {
             var query = "SELECT [Folders].[FolderId], [Folders].[FolderName],";
             query += "(SELECT COUNT(*) FROM [Documents] WHERE [Documents].[FolderId] = [Folders].[FolderId]) AS [DocumentCount],";
             query += "[Folders].[CreateDate], [Folders].[ChangeDate] FROM [Folders]";
-            return query;
+            getFolderEditCollectionInlineQuery = query;
         }
 
         #endregion
 
-        #region Pseudo Event Handlers
+        #region Implementation of DataPortal Hooks
 
         //partial void OnFetchPre(DataPortalHookArgs args)
         //{
-        //    throw new System.Exception("The method or operation is not implemented.");
+        //    throw new NotImplementedException();
         //}
 
         //partial void OnFetchPost(DataPortalHookArgs args)
         //{
-        //    throw new System.Exception("The method or operation is not implemented.");
+        //    throw new NotImplementedException();
         //}
 
         #endregion

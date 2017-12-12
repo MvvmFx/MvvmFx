@@ -56,7 +56,7 @@ namespace CslaSample.Business
         /// <value>The Document Date.</value>
         public string DocumentDate
         {
-            get { return GetPropertyConvert<SmartDate, String>(DocumentDateProperty); }
+            get { return GetPropertyConvert<SmartDate, string>(DocumentDateProperty); }
         }
 
         /// <summary>
@@ -122,14 +122,15 @@ namespace CslaSample.Business
         /// Initializes a new instance of the <see cref="DocumentInfo"/> class.
         /// </summary>
         /// <remarks> Do not use to create a Csla object. Use factory methods instead.</remarks>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public DocumentInfo()
         {
-            // Prevent direct creation
+            // Use factory methods and do not use direct creation.
         }
 
         #endregion
 
-        #region Update properties on saved object
+        #region Update properties on saved object event
 
         /// <summary>
         /// Existing <see cref="DocumentInfo"/> object is updated by <see cref="DocumentEdit"/> Saved event.
@@ -166,8 +167,8 @@ namespace CslaSample.Business
         {
             // Value properties
             LoadProperty(DocumentIdProperty, dr.GetInt32("DocumentId"));
-            LoadProperty(DocumentReferenceProperty, dr.GetString("DocumentReference"));
-            LoadProperty(DocumentDateProperty, dr.GetSmartDate("DocumentDate", true));
+            LoadProperty(DocumentReferenceProperty, dr.IsDBNull("DocumentReference") ? null : dr.GetString("DocumentReference"));
+            LoadProperty(DocumentDateProperty, dr.IsDBNull("DocumentDate") ? null : dr.GetSmartDate("DocumentDate", true));
             LoadProperty(SubjectProperty, dr.GetString("Subject"));
             LoadProperty(SenderProperty, dr.GetString("Sender"));
             LoadProperty(ReceiverProperty, dr.GetString("Receiver"));
@@ -177,7 +178,7 @@ namespace CslaSample.Business
 
         #endregion
 
-        #region Pseudo Events
+        #region DataPortal Hooks
 
         /// <summary>
         /// Occurs after the low level fetch operation, before the data reader is destroyed.
