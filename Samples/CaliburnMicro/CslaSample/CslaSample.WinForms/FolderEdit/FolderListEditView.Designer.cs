@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyleMiddleCenter = new System.Windows.Forms.DataGridViewCellStyle();
             this.foldersDataGridView = new System.Windows.Forms.DataGridView();
             this.buttonPanel = new System.Windows.Forms.Panel();
@@ -40,8 +41,10 @@
             this.DocumentCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).BeginInit();
             this.buttonPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // foldersDataGridView
@@ -149,6 +152,10 @@
             this.ChangeDate.Name = "ChangeDate";
             this.ChangeDate.Width = 80;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FolderListEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +167,7 @@
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).EndInit();
             this.buttonPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,5 +185,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DocumentCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreateDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChangeDate;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

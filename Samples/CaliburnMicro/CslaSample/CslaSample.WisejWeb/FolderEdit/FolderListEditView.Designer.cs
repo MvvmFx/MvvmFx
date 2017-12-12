@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.foldersDataGridView = new Wisej.Web.DataGridView();
             this.FolderId = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -40,8 +41,10 @@
             this.save = new Wisej.Web.Button();
             this.validate = new Wisej.Web.Button();
             this.cancel = new Wisej.Web.Button();
+            this.errorProvider = new Wisej.Web.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).BeginInit();
             this.buttonPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // foldersDataGridView
@@ -153,9 +156,13 @@
             this.cancel.TabIndex = 1;
             this.cancel.Text = "Undo";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FolderListEditView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(738, 380);
             this.Controls.Add(this.buttonPanel);
@@ -163,6 +170,7 @@
             this.Name = "FolderListEditView";
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).EndInit();
             this.buttonPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,5 +188,6 @@
         private Wisej.Web.DataGridViewTextBoxColumn DocumentCount;
         private Wisej.Web.DataGridViewTextBoxColumn CreateDate;
         private Wisej.Web.DataGridViewTextBoxColumn ChangeDate;
+        private Wisej.Web.ErrorProvider errorProvider;
     }
 }

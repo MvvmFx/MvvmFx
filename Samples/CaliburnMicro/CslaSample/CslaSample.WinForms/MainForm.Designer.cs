@@ -30,9 +30,10 @@
         {
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.documentsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.createDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.saveDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.folders = new System.Windows.Forms.ToolStripMenuItem();
             this.editFolderModal = new System.Windows.Forms.ToolStripMenuItem();
             this.editFolderModeless = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,30 +58,37 @@
             // documentsMenu
             // 
             this.documentsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewDocument,
+            this.createDocument,
             this.saveDocument,
-            this.deleteDocument});
+            this.deleteDocument,
+            this.closeDocument});
             this.documentsMenu.Name = "documentsMenu";
-            this.documentsMenu.Size = new System.Drawing.Size(75, 20);
+            this.documentsMenu.Size = new System.Drawing.Size(80, 20);
             this.documentsMenu.Text = "Documents";
             // 
-            // createNewDocument
+            // createDocument
             // 
-            this.createNewDocument.Name = "createNewDocument";
-            this.createNewDocument.Size = new System.Drawing.Size(165, 22);
-            this.createNewDocument.Text = "New Document";
+            this.createDocument.Name = "createDocument";
+            this.createDocument.Size = new System.Drawing.Size(166, 22);
+            this.createDocument.Text = "New Document";
             // 
             // saveDocument
             // 
             this.saveDocument.Name = "saveDocument";
-            this.saveDocument.Size = new System.Drawing.Size(165, 22);
+            this.saveDocument.Size = new System.Drawing.Size(166, 22);
             this.saveDocument.Text = "Save Document";
             // 
             // deleteDocument
             // 
             this.deleteDocument.Name = "deleteDocument";
-            this.deleteDocument.Size = new System.Drawing.Size(165, 22);
+            this.deleteDocument.Size = new System.Drawing.Size(166, 22);
             this.deleteDocument.Text = "Delete Document";
+            // 
+            // closeDocument
+            // 
+            this.closeDocument.Name = "closeDocument";
+            this.closeDocument.Size = new System.Drawing.Size(166, 22);
+            this.closeDocument.Text = "Close Document";
             // 
             // folders
             // 
@@ -94,13 +102,13 @@
             // editFolderModal
             // 
             this.editFolderModal.Name = "editFolderModal";
-            this.editFolderModal.Size = new System.Drawing.Size(188, 22);
+            this.editFolderModal.Size = new System.Drawing.Size(183, 22);
             this.editFolderModal.Text = "Edit Folder Modal";
             // 
             // editFolderModeless
             // 
             this.editFolderModeless.Name = "editFolderModeless";
-            this.editFolderModeless.Size = new System.Drawing.Size(188, 22);
+            this.editFolderModeless.Size = new System.Drawing.Size(183, 22);
             this.editFolderModeless.Text = "Edit Folder Modeless";
             // 
             // exit
@@ -149,9 +157,10 @@
 
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem documentsMenu;
-        private System.Windows.Forms.ToolStripMenuItem createNewDocument;
+        private System.Windows.Forms.ToolStripMenuItem createDocument;
         private System.Windows.Forms.ToolStripMenuItem saveDocument;
         private System.Windows.Forms.ToolStripMenuItem deleteDocument;
+        private System.Windows.Forms.ToolStripMenuItem closeDocument;
         private System.Windows.Forms.ToolStripMenuItem folders;
         private System.Windows.Forms.ToolStripMenuItem editFolderModal;
         private System.Windows.Forms.ToolStripMenuItem editFolderModeless;

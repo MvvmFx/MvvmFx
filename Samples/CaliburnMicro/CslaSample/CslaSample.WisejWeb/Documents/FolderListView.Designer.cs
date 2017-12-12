@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FolderListView));
             this.folderListBox = new Wisej.Web.ListBox();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.toolTip1 = new Wisej.Web.ToolTip(this.components);
             this.panel1 = new Wisej.Web.Panel();
             this.toolStrip1 = new Wisej.Web.ToolBar();
             this.displayName = new Wisej.Web.ToolBarButton();
             this.refreshFolders = new Wisej.Web.ToolBarButton();
             this.panel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // folderListBox
@@ -50,7 +46,6 @@
             this.folderListBox.Name = "folderListBox";
             this.folderListBox.Size = new System.Drawing.Size(248, 628);
             this.folderListBox.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.folderListBox, resources.GetString("folderListBox.ToolTip"));
             // 
             // activeItem
             // 
@@ -61,12 +56,6 @@
             this.activeItem.Name = "activeItem";
             this.activeItem.Size = new System.Drawing.Size(1094, 654);
             this.activeItem.TabIndex = 2;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 10000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.ToolTipIcon = Wisej.Web.ToolTipIcon.Info;
             // 
             // panel1
             // 
@@ -83,13 +72,15 @@
             this.refreshFolders});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(248, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(248, 41);
             this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.TabStop = false;
             // 
             // displayName
             // 
+            this.displayName.Margin = new Wisej.Web.Padding(0, 0, 0, 12);
             this.displayName.Name = "displayName";
+            this.displayName.Text = "displayName";
             // 
             // refreshFolders
             // 
@@ -100,7 +91,7 @@
             // 
             // FolderListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.activeItem);
@@ -109,8 +100,6 @@
             this.Size = new System.Drawing.Size(1348, 654);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -119,7 +108,6 @@
 
         private Wisej.Web.ListBox folderListBox;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
-        private Wisej.Web.ToolTip toolTip1;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.ToolBar toolStrip1;
         private Wisej.Web.ToolBarButton displayName;

@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DocumentListView));
             this.documentListBox = new Wisej.Web.ListBox();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.toolTip1 = new Wisej.Web.ToolTip(this.components);
-            this.panel1 = new Wisej.Web.Panel();
             this.toolStrip1 = new Wisej.Web.ToolBar();
             this.displayName = new Wisej.Web.ToolBarButton();
             this.refreshDocuments = new Wisej.Web.ToolBarButton();
+            this.panel1 = new Wisej.Web.Panel();
             this.panel1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // documentListBox
@@ -50,7 +46,6 @@
             this.documentListBox.Name = "documentListBox";
             this.documentListBox.Size = new System.Drawing.Size(248, 628);
             this.documentListBox.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.documentListBox, resources.GetString("documentListBox.ToolTip"));
             // 
             // activeItem
             // 
@@ -62,11 +57,29 @@
             this.activeItem.Size = new System.Drawing.Size(1094, 654);
             this.activeItem.TabIndex = 2;
             // 
-            // toolTip1
+            // toolStrip1
             // 
-            this.toolTip1.AutoPopDelay = 10000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.ToolTipIcon = Wisej.Web.ToolTipIcon.Info;
+            this.toolStrip1.Buttons.AddRange(new Wisej.Web.ToolBarButton[] {
+            this.displayName,
+            this.refreshDocuments});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(248, 41);
+            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.TabStop = false;
+            // 
+            // displayName
+            // 
+            this.displayName.Margin = new Wisej.Web.Padding(0, 0, 0, 12);
+            this.displayName.Name = "displayName";
+            this.displayName.Text = "displayName";
+            // 
+            // refreshDocuments
+            // 
+            this.refreshDocuments.Image = global::CslaSample.Properties.Resources.Refresh16;
+            this.refreshDocuments.Name = "refreshDocuments";
+            this.refreshDocuments.Text = "Refresh document list";
+            this.refreshDocuments.ToolTipText = "Refresh document list";
             // 
             // panel1
             // 
@@ -76,32 +89,9 @@
             this.panel1.Size = new System.Drawing.Size(248, 27);
             this.panel1.TabIndex = 3;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Buttons.AddRange(new Wisej.Web.ToolBarButton[] {
-            this.displayName,
-            this.refreshDocuments});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(248, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolTip1.SetToolTip(this.toolStrip1, "Why this method doesn\'t work correctly\r\nunder Windows Forms?");
-            // 
-            // displayName
-            // 
-            this.displayName.Name = "displayName";
-            // 
-            // refreshDocuments
-            // 
-            this.refreshDocuments.Image = global::CslaSample.Properties.Resources.Refresh16;
-            this.refreshDocuments.Name = "refreshDocuments";
-            this.refreshDocuments.Text = "Refresh document list";
-            this.refreshDocuments.ToolTipText = "Refresh document list";
-            // 
             // DocumentListView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.activeItem);
@@ -110,8 +100,6 @@
             this.Size = new System.Drawing.Size(1348, 654);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -120,7 +108,6 @@
 
         private Wisej.Web.ListBox documentListBox;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
-        private Wisej.Web.ToolTip toolTip1;
         private Wisej.Web.Panel panel1;
         private Wisej.Web.ToolBar toolStrip1;
         private Wisej.Web.ToolBarButton displayName;

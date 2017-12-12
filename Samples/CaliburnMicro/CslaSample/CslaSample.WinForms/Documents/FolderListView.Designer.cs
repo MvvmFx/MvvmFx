@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FolderListView));
             this.folderListBox = new System.Windows.Forms.ListBox();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.displayName = new System.Windows.Forms.ToolStripLabel();
@@ -51,7 +48,6 @@
             this.folderListBox.Name = "folderListBox";
             this.folderListBox.Size = new System.Drawing.Size(248, 628);
             this.folderListBox.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.folderListBox, resources.GetString("folderListBox.ToolTip"));
             // 
             // activeItem
             // 
@@ -62,15 +58,6 @@
             this.activeItem.Name = "activeItem";
             this.activeItem.Size = new System.Drawing.Size(1094, 654);
             this.activeItem.TabIndex = 2;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.AutoPopDelay = 10000;
-            this.toolTip1.InitialDelay = 500;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ReshowDelay = 100;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Why this method doesn\'t work correctly\r\nunder Windows Forms?";
             // 
             // panel1
             // 
@@ -128,7 +115,6 @@
 
         private System.Windows.Forms.ListBox folderListBox;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel displayName;
