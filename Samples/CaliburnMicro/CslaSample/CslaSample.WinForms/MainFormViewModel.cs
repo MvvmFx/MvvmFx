@@ -17,8 +17,6 @@ namespace CslaSample
 
     public class MainFormViewModel : Conductor<Screen>, IMainFormViewModel
     {
-        //todo: bind menu items directly to DocumentEditViewModel
-
         #region Fields and properties
 
         public List<Control> ViewNamedElements { get; set; }
@@ -128,31 +126,31 @@ namespace CslaSample
         {
             if (ActiveItem != null)
             {
-                if (ActiveItem.GetType() != typeof (FolderListViewModel))
+                if (ActiveItem.GetType() != typeof(FolderListViewModel))
                     ActiveItem.TryClose();
             }
             ActivateItem(new FolderListViewModel());
         }
 
-        public void CreateNewDocument()
+        public void CreateDocument()
         {
-            if (_canCreateNewDocument)
+            if (_canCreateDocument)
             {
-                GetDocumentList().CreateNew();
+                GetDocumentList().Create();
             }
         }
 
-        private bool _canCreateNewDocument;
+        private bool _canCreateDocument;
 
-        public bool CanCreateNewDocument
+        public bool CanCreateDocument
         {
-            get { return _canCreateNewDocument; }
+            get { return _canCreateDocument; }
             set
             {
-                if (_canCreateNewDocument != value)
+                if (_canCreateDocument != value)
                 {
-                    _canCreateNewDocument = value;
-                    NotifyOfPropertyChange("CanCreateNewDocument");
+                    _canCreateDocument = value;
+                    NotifyOfPropertyChange("CanCreateDocument");
                 }
             }
         }
@@ -200,21 +198,6 @@ namespace CslaSample
         public void CloseDocument()
         {
             GetDocumentEdit().Close();
-        }
-
-        private bool _canCloseDocument;
-
-        public bool CanCloseDocument
-        {
-            get { return _canCloseDocument; }
-            set
-            {
-                if (_canCloseDocument != value)
-                {
-                    _canCloseDocument = value;
-                    NotifyOfPropertyChange("CanCloseDocument");
-                }
-            }
         }
 
         private DocumentListViewModel GetDocumentList()
