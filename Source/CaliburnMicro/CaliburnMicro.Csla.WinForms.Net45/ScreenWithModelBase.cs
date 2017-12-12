@@ -1042,6 +1042,8 @@ namespace MvvmFx.CaliburnMicro
             {
                 Unbind(Model, true);
             }
+
+            OnSetProperties();
         }
 
         #endregion
