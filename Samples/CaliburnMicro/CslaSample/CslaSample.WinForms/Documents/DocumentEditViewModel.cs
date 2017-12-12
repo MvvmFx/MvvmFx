@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using CslaSample.Business;
-using CslaSample.Framework;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Windows.Data;
 using Binding = MvvmFx.Windows.Data.Binding;
@@ -9,9 +8,9 @@ namespace CslaSample.Documents
 {
     public class DocumentEditViewModel : ScreenWithModel<DocumentEdit>
     {
-        //todo: last thing - recheck this class, namely the bindings
-
         #region Fields and properties
+
+        private DocumentListViewModel _parent;
 
         private static readonly BindingManager BindingManager = new BindingManager();
 
@@ -76,10 +75,10 @@ namespace CslaSample.Documents
             if (e.PropertyName == "Parent")
             {
                 PropertyChanged -= OnDocumentEditViewModelPropertyChanged;
-                var parent = Parent as DocumentListViewModel;
-                if (parent != null)
+                _parent = Parent as DocumentListViewModel;
+                if (_parent != null)
                 {
-                    var grandParent = parent.Parent as FolderListViewModel;
+                    var grandParent = _parent.Parent as FolderListViewModel;
                     if (grandParent != null)
                         _menuObject = grandParent.Parent as MainFormViewModel;
                 }
@@ -105,27 +104,8 @@ namespace CslaSample.Documents
 
             // bind to main form properties
             BindMenuItem("CanSaveDocument", "CanSave");
-            BindMenuItem("CanCreateNewDocument", "CanCreate");
+            BindMenuItem("CanCreateDocument", "CanCreate");
             BindMenuItem("CanDeleteDocument", "CanDelete");
-            BindMenuItem("CanCloseDocument", "CanClose");
-
-            CanCreate = true;
-            CanSave = false;
-            CanDelete = false;
-            CanClose = false;
-
-            if (Model != null)
-            {
-                // set new bindings for this object
-                BindingManager.Bindings.Add(new Binding(this, "CanCreate", Model, "IsDirty")
-                {
-                    Converter = new InverseBooleanConverter(),
-                    Mode = BindingMode.OneWayToTarget
-                });
-
-                CanDelete = true;
-                CanClose = true;
-            }
         }
 
         private void BindMenuItem(string target, string source)
@@ -138,55 +118,68 @@ namespace CslaSample.Documents
 
         #endregion
 
-        #region Actions methods and guard properties
+        #region Actions methods
 
-        public void CreateNew()
+        public void Create()
         {
-            var documentListViewModel = Parent as DocumentListViewModel;
-            if (documentListViewModel != null)
-                documentListViewModel.CreateNew();
+            if (_parent != null)
+                _parent.Create();
         }
 
         public override void Save()
         {
             base.Save();
             TryClose();
-            (Parent as DocumentListViewModel).ListItemId = Model.DocumentId;
+
+            if (_parent != null)
+                _parent.ListItemId = Model.DocumentId;
         }
 
         public override void Delete()
         {
+            var itemId = ItemToShowAfterDelete();
+
             DeleteImmediate();
             TryClose();
+
+            if (_parent != null)
+                _parent.ListItemId = itemId;
+        }
+
+        private int ItemToShowAfterDelete()
+        {
+            var result = -1;
+
+            if (_parent != null)
+            {
+                DocumentList parentModel = _parent.Model;
+                for (var index = 0; index < parentModel.Count; index++)
+                {
+                    var info = parentModel[index];
+                    if (info.DocumentId == Model.DocumentId)
+                    {
+                        if (parentModel.Count > index + 1)
+                            result = parentModel[index + 1].DocumentId;
+                        else if (parentModel.Count > 1)
+                            result = parentModel[index - 1].DocumentId;
+
+                        break;
+                    }
+                }
+            }
+
+            return result;
         }
 
         public override void Close()
         {
             base.Close();
             TryClose();
-            (Parent as DocumentListViewModel).ListItemId = -1;
 
-            CanCreate = true;
-            CanSave = false;
-            CanDelete = false;
-            CanClose = false;
+            if (_parent != null)
+                _parent.ListItemId = -1;
 
             BindingManager.Bindings.Clear();
-        }
-
-        private bool _canClose = true;
-
-        public new bool CanClose
-        {
-            get { return _canClose; }
-            set
-            {
-                if (_canClose != value)
-                {
-                    _canClose = value;
-                    NotifyOfPropertyChange("CanClose");
-                }
-            }
         }
 
         #endregion
