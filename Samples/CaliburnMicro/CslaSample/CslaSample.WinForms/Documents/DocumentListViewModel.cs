@@ -45,7 +45,6 @@ namespace CslaSample.Documents
                 var parent = Parent as FolderListViewModel;
                 if (parent != null)
                 {
-                    parent.CloseChildren();
                     DisplayName = string.Format("{0} documents",
                         parent.Model.FindFolderInfoByFolderId(_folderId).FolderName);
                 }
@@ -64,27 +63,24 @@ namespace CslaSample.Documents
                 haveDataContext.DataContext = this;
         }
 
-        public void CloseChildren()
-        {
-            foreach (var documentEditViewModel in GetChildren())
-            {
-                documentEditViewModel.CloseChildren();
-            }
-        }
-
         #endregion
 
         #region Activate New Document
 
         public void Create()
         {
-            foreach (var child in GetChildren())
-            {
-                child.TryClose();
-            }
+            CloseChildren();
 
             ListItemId = 0;
             ActivateItem(new DocumentEditViewModel(true, _folderId));
+        }
+
+        public void CloseChildren()
+        {
+            foreach (var child in GetChildren())
+            {
+                child.Close();
+            }
         }
 
         #endregion

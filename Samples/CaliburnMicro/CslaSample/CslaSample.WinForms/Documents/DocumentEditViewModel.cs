@@ -184,11 +184,6 @@ namespace CslaSample.Documents
             BindingManager.Bindings.Clear();
         }
 
-        public void CloseChildren()
-        {
-            Close();
-        }
-
         #endregion
     }
 }
