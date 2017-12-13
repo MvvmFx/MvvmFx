@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyleMiddleCenter = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle = new System.Windows.Forms.DataGridViewCellStyle();
             this.foldersDataGridView = new System.Windows.Forms.DataGridView();
-            this.buttonPanel = new System.Windows.Forms.Panel();
-            this.close = new System.Windows.Forms.Button();
-            this.save = new System.Windows.Forms.Button();
-            this.validate = new System.Windows.Forms.Button();
-            this.cancel = new System.Windows.Forms.Button();
             this.FolderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FolderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DocumentCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonPanel = new System.Windows.Forms.Panel();
+            this.close = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
+            this.validate = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).BeginInit();
             this.buttonPanel.SuspendLayout();
@@ -61,6 +61,46 @@
             this.foldersDataGridView.Name = "foldersDataGridView";
             this.foldersDataGridView.Size = new System.Drawing.Size(738, 337);
             this.foldersDataGridView.TabIndex = 0;
+            // 
+            // FolderId
+            // 
+            this.FolderId.DataPropertyName = "FolderId";
+            this.FolderId.HeaderText = "Id";
+            this.FolderId.Name = "FolderId";
+            this.FolderId.Visible = false;
+            this.FolderId.Width = 80;
+            // 
+            // FolderName
+            // 
+            this.FolderName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FolderName.DataPropertyName = "FolderName";
+            this.FolderName.HeaderText = "Name";
+            this.FolderName.Name = "FolderName";
+            // 
+            // DocumentCount
+            // 
+            this.DocumentCount.DataPropertyName = "DocumentCount";
+            dataGridViewCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle;
+            this.DocumentCount.HeaderText = "Documents";
+            this.DocumentCount.Name = "DocumentCount";
+            this.DocumentCount.Width = 80;
+            // 
+            // CreateDate
+            // 
+            this.CreateDate.DataPropertyName = "CreateDate";
+            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle;
+            this.CreateDate.HeaderText = "Created Date";
+            this.CreateDate.Name = "CreateDate";
+            this.CreateDate.Width = 80;
+            // 
+            // ChangeDate
+            // 
+            this.ChangeDate.DataPropertyName = "ChangeDate";
+            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle;
+            this.ChangeDate.HeaderText = "Changed Date";
+            this.ChangeDate.Name = "ChangeDate";
+            this.ChangeDate.Width = 80;
             // 
             // buttonPanel
             // 
@@ -109,48 +149,6 @@
             this.cancel.TabIndex = 1;
             this.cancel.Text = "Undo";
             this.cancel.UseVisualStyleBackColor = true;
-            // 
-            // FolderId
-            // 
-            this.FolderId.DataPropertyName = "FolderId";
-            this.FolderId.HeaderText = "Id";
-            this.FolderId.Name = "FolderId";
-            this.FolderId.Visible = false;
-            this.FolderId.Width = 80;
-            // 
-            // FolderName
-            // 
-            this.FolderName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FolderName.DataPropertyName = "FolderName";
-            this.FolderName.HeaderText = "Name";
-            this.FolderName.Name = "FolderName";
-            // 
-            // DocumentCount
-            // 
-            this.DocumentCount.DataPropertyName = "DocumentCount";
-            dataGridViewCellStyleMiddleCenter.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyleMiddleCenter;
-            this.DocumentCount.HeaderText = "Documents";
-            this.DocumentCount.Name = "DocumentCount";
-            this.DocumentCount.Width = 80;
-            // 
-            // CreateDate
-            // 
-            this.CreateDate.DataPropertyName = "CreateDate";
-            dataGridViewCellStyleMiddleCenter.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CreateDate.DefaultCellStyle = dataGridViewCellStyleMiddleCenter;
-            this.CreateDate.HeaderText = "Created Date";
-            this.CreateDate.Name = "CreateDate";
-            this.CreateDate.Width = 80;
-            // 
-            // ChangeDate
-            // 
-            this.ChangeDate.DataPropertyName = "ChangeDate";
-            dataGridViewCellStyleMiddleCenter.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyleMiddleCenter;
-            this.ChangeDate.HeaderText = "Changed Date";
-            this.ChangeDate.Name = "ChangeDate";
-            this.ChangeDate.Width = 80;
             // 
             // errorProvider
             // 
