@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Wisej Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle = new Wisej.Web.DataGridViewCellStyle();
             this.foldersDataGridView = new Wisej.Web.DataGridView();
             this.FolderId = new Wisej.Web.DataGridViewTextBoxColumn();
             this.FolderName = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -74,7 +74,6 @@
             this.FolderId.DataPropertyName = "FolderId";
             this.FolderId.HeaderText = "Id";
             this.FolderId.Name = "FolderId";
-            this.FolderId.ReadOnly = true;
             this.FolderId.Visible = false;
             this.FolderId.Width = 80;
             // 
@@ -84,34 +83,30 @@
             this.FolderName.DataPropertyName = "FolderName";
             this.FolderName.HeaderText = "Name";
             this.FolderName.Name = "FolderName";
-            this.FolderName.ReadOnly = true;
             // 
             // DocumentCount
             // 
             this.DocumentCount.DataPropertyName = "DocumentCount";
-            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle;
             this.DocumentCount.HeaderText = "Documents";
             this.DocumentCount.Name = "DocumentCount";
-            this.DocumentCount.ReadOnly = true;
             this.DocumentCount.Width = 80;
             // 
             // CreateDate
             // 
             this.CreateDate.DataPropertyName = "CreateDate";
-            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle;
             this.CreateDate.HeaderText = "Created Date";
             this.CreateDate.Name = "CreateDate";
-            this.CreateDate.ReadOnly = true;
             this.CreateDate.Width = 80;
             // 
             // ChangeDate
             // 
             this.ChangeDate.DataPropertyName = "ChangeDate";
-            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle;
             this.ChangeDate.HeaderText = "Changed Date";
             this.ChangeDate.Name = "ChangeDate";
-            this.ChangeDate.ReadOnly = true;
             this.ChangeDate.Width = 80;
             // 
             // buttonPanel

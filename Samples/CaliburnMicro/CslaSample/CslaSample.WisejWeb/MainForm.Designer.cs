@@ -148,6 +148,7 @@
             this.Controls.Add(this.mainMenu);
             this.FormBorderStyle = Wisej.Web.FormBorderStyle.Fixed;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Movable = false;
             this.Name = "MainForm";
             this.Text = "MainForm";

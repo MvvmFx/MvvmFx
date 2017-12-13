@@ -34,7 +34,8 @@ namespace MvvmFx.CaliburnMicro
             {
                 if (canClose)
                     ChangeActiveItem(item, true);
-                else OnActivationProcessed(item, false);
+                else
+                    OnActivationProcessed(item, false);
             });
         }
 
@@ -89,6 +90,9 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The collection of children.</returns>
         public override IEnumerable<TC> GetChildren()
         {
+            if (ActiveItem == null)
+                return new TC[0];
+
             return new[] {ActiveItem};
         }
     }
