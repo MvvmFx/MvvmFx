@@ -179,6 +179,8 @@ namespace CslaSample.Documents
             if (_parent != null)
                 _parent.ListItemId = -1;
 
+            CanCreate = true;
+
             BindingManager.Bindings.Clear();
         }
 

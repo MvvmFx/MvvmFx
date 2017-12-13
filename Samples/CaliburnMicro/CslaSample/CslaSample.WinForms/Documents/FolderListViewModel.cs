@@ -17,7 +17,7 @@ namespace CslaSample.Documents
                 if (_listItemId != value)
                 {
                     _listItemId = value;
-                    ActivateItem(new DocumentListViewModel(_listItemId));
+                    ActivateItem();
                     NotifyOfPropertyChange("ListItemId");
                 }
             }
@@ -44,6 +44,25 @@ namespace CslaSample.Documents
             var haveDataContext = GetView() as IHaveDataContext;
             if (haveDataContext != null)
                 haveDataContext.DataContext = this;
+        }
+
+        #endregion
+
+        #region Activate New Document List
+
+        public void ActivateItem()
+        {
+            CloseChildren();
+
+            ActivateItem(new DocumentListViewModel(_listItemId));
+        }
+
+        public void CloseChildren()
+        {
+            foreach (var child in GetChildren())
+            {
+                child.CloseChildren();
+            }
         }
 
         #endregion
