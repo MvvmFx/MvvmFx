@@ -15,11 +15,24 @@ namespace CslaSample.Documents
             get { return _listItemId; }
             set
             {
-                _listItemId = value;
-                var documentEditViewModel = new DocumentEditViewModel(_listItemId);
-                if (documentEditViewModel.Model.IsLoaded)
-                    ActivateItem(documentEditViewModel);
-                NotifyOfPropertyChange("ListItemId");
+                if (_listItemId != value)
+                {
+                    if (ActivateItem(value))
+                    {
+                        _listItemId = value;
+                        NotifyOfPropertyChange("ListItemId");
+                    }
+                }
+
+
+                /*if (_listItemId != value)
+                {
+                    _listItemId = value;
+                    var documentEditViewModel = new DocumentEditViewModel(_listItemId);
+                    if (documentEditViewModel.Model.IsLoaded)
+                        ActivateItem(documentEditViewModel);
+                    NotifyOfPropertyChange("ListItemId");
+                }*/
             }
         }
 
@@ -42,6 +55,7 @@ namespace CslaSample.Documents
             if (e.PropertyName == "Parent")
             {
                 PropertyChanged -= OnDocumentListViewModelPropertyChanged;
+
                 var parent = Parent as FolderListViewModel;
                 if (parent != null)
                 {
@@ -58,6 +72,7 @@ namespace CslaSample.Documents
         public void RefreshDocuments()
         {
             DoRefresh(() => DocumentList.GetDocumentList(_folderId));
+
             var haveDataContext = GetView() as IHaveDataContext;
             if (haveDataContext != null)
                 haveDataContext.DataContext = this;
@@ -67,20 +82,37 @@ namespace CslaSample.Documents
 
         #region Activate New Document
 
-        public void Create()
+        public bool ActivateItem(int listItemId)
         {
-            CloseChildren();
-
-            ListItemId = 0;
-            ActivateItem(new DocumentEditViewModel(true, _folderId));
+            if (CloseChildren())
+            {
+                var documentEditViewModel = new DocumentEditViewModel(listItemId);
+                if (documentEditViewModel.Model.IsLoaded)
+                    ActivateItem(documentEditViewModel);
+                return true;
+            }
+            return false;
         }
 
-        public void CloseChildren()
+        public void Create()
+        {
+            if (CloseChildren())
+            {
+                ListItemId = 0;
+                ActivateItem(new DocumentEditViewModel(true, _folderId));
+            }
+        }
+
+        public bool CloseChildren()
         {
             foreach (var child in GetChildren())
             {
+                child.TryClose();
+                if (child.IsActive)
+                    return false;
                 child.Close();
             }
+            return true;
         }
 
         #endregion

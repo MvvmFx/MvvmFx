@@ -82,8 +82,17 @@
     <Compile Include="..\CslaSample.WinForms\FolderEdit\FolderListEditViewModel.cs">
       <Link>FolderEdit\FolderListEditViewModel.cs</Link>
     </Compile>
+    <Compile Include="..\CslaSample.WinForms\Framework\ApplicationCloseCheck.cs">
+      <Link>Framework\ApplicationCloseCheck.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Framework\ApplicationCloseStrategy.cs">
+      <Link>Framework\ApplicationCloseStrategy.cs</Link>
+    </Compile>
     <Compile Include="..\CslaSample.WinForms\Framework\ComboValidation.cs">
       <Link>Framework\ComboValidation.cs</Link>
+    </Compile>
+    <Compile Include="..\CslaSample.WinForms\Framework\IHaveShutdownTask.cs">
+      <Link>Framework\IHaveShutdownTask.cs</Link>
     </Compile>
     <Compile Include="..\CslaSample.WinForms\Framework\InverseBooleanConverter.cs">
       <Link>Framework\InverseBooleanConverter.cs</Link>

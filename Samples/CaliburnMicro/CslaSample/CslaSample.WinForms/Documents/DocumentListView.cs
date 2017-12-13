@@ -26,53 +26,55 @@ namespace CslaSample.Documents
             get { return _viewModel; }
             set
             {
-                //if (value != _viewModel)
+                var viewModel = value as DocumentListViewModel;
+                if (viewModel != null)
                 {
-                    var viewModel = value as DocumentListViewModel;
-                    if (viewModel != null)
-                    {
-                        _bindingManager.Bindings.Clear();
-                        _viewModel = viewModel;
+                    _bindingManager.Bindings.Clear();
+                    _viewModel = viewModel;
 
-                        var displayNameBinding = new Binding();
-                        displayNameBinding.SourceObject = _viewModel;
-                        displayNameBinding.SourcePath = "DisplayName";
-                        displayNameBinding.TargetObject = displayName;
-                        displayNameBinding.TargetPath = "Text";
-                        displayNameBinding.Mode = BindingMode.OneWayToTarget;
-                        _bindingManager.Bindings.Add(displayNameBinding);
+                    var displayNameBinding = new Binding();
+                    displayNameBinding.SourceObject = _viewModel;
+                    displayNameBinding.SourcePath = "DisplayName";
+                    displayNameBinding.TargetObject = displayName;
+                    displayNameBinding.TargetPath = "Text";
+                    displayNameBinding.Mode = BindingMode.OneWayToTarget;
+                    _bindingManager.Bindings.Add(displayNameBinding);
 
-                        // as it is, it will select the first item of the list
+                    // as it is, it will select the first item of the list
 
-                        // comment to start with no item selected
-                        var binding = new Binding();
-                        binding.SourceObject = _viewModel;
-                        binding.SourcePath = "ListItemId";
-                        binding.TargetObject = documentListBox;
-                        binding.TargetPath = "SelectedValue";
-                        binding.Mode = BindingMode.TwoWay;
-                        _bindingManager.Bindings.Add(binding);
+                    // comment to start with no item selected
+                    var binding = new Binding();
+                    binding.SourceObject = _viewModel;
+                    binding.SourcePath = "ListItemId";
+                    binding.TargetObject = documentListBox;
+                    binding.TargetPath = "SelectedValue";
+                    binding.Mode = BindingMode.TwoWay;
+                    _bindingManager.Bindings.Add(binding);
 
-                        documentListBox.DataSource = _viewModel.Model;
-                        documentListBox.DisplayMember = "Subject";
-                        documentListBox.ValueMember = "DocumentId";
+                    documentListBox.DataSource = _viewModel.Model;
+                    documentListBox.DisplayMember = "Subject";
+                    documentListBox.ValueMember = "DocumentId";
 
-//                        _viewModel.PropertyChanged += ViewModelPropertyChanged;
+                    // _viewModel.PropertyChanged += ViewModelPropertyChanged;
 
-                        // uncomment to start with no item selected
-                        /*documentListBox.ClearSelected();
+                    // uncomment to start with no item selected
+                    /*documentListBox.ClearSelected();
 
-                        var binding = new Binding();
-                        binding.SourceObject = _viewModel;
-                        binding.SourcePath = "ListItemId";
-                        binding.TargetObject = documentListBox;
-                        binding.TargetPath = "SelectedValue";
-                        binding.Mode = BindingMode.TwoWay;
-                        _bindingManager.Bindings.Add(binding);*/
-                    }
-                    DataContextChanged(this, new DataContextChangedEventArgs());
+                    var binding = new Binding();
+                    binding.SourceObject = _viewModel;
+                    binding.SourcePath = "ListItemId";
+                    binding.TargetObject = documentListBox;
+                    binding.TargetPath = "SelectedValue";
+                    binding.Mode = BindingMode.TwoWay;
+                    _bindingManager.Bindings.Add(binding);*/
                 }
+                DataContextChanged(this, new DataContextChangedEventArgs());
             }
+        }
+
+        public void CancelClose(int selectedValue)
+        {
+            documentListBox.SelectedValue = selectedValue;
         }
 
         /*private void ViewModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)

@@ -1,14 +1,37 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using CslaSample.Business;
+using CslaSample.Framework;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Windows.Data;
 using Binding = MvvmFx.Windows.Data.Binding;
+#if WINFORMS
+using DialogResult = System.Windows.Forms.DialogResult;
+using MessageBox = System.Windows.Forms.MessageBox;
+using MessageBoxButtons = System.Windows.Forms.MessageBoxButtons;
+using MessageBoxDefaultButton = System.Windows.Forms.MessageBoxDefaultButton;
+using MessageBoxIcon = System.Windows.Forms.MessageBoxIcon;
+#else
+using DialogResult = Wisej.Web.DialogResult;
+using MessageBox = Wisej.Web.MessageBox;
+using MessageBoxButtons = Wisej.Web.MessageBoxButtons;
+using MessageBoxDefaultButton = Wisej.Web.MessageBoxDefaultButton;
+using MessageBoxIcon = Wisej.Web.MessageBoxIcon;
+
+#endif
 
 namespace CslaSample.Documents
 {
-    public class DocumentEditViewModel : ScreenWithModel<DocumentEdit>
+    public class DocumentEditViewModel : ScreenWithModel<DocumentEdit>, IHaveShutdownTask
     {
         #region Fields and properties
+
+        // Close checks
+
+        private bool _isShutdown;
+        private bool _isCancelling;
+        private bool _isSaving;
+
 
         private DocumentListViewModel _parent;
 
@@ -128,11 +151,22 @@ namespace CslaSample.Documents
 
         public override void Save()
         {
+            _isSaving = true;
+
             base.Save();
+
+            if (Error != null)
+            {
+                MessageBox.Show(Error.Message, @"Error on Save operation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             TryClose();
 
             if (_parent != null)
                 _parent.ListItemId = Model.DocumentId;
+
+            _isSaving = false;
         }
 
         public override void Delete()
@@ -173,6 +207,8 @@ namespace CslaSample.Documents
 
         public override void Close()
         {
+            _isCancelling = true;
+
             base.Close();
             TryClose();
 
@@ -182,6 +218,65 @@ namespace CslaSample.Documents
             CanCreate = true;
 
             BindingManager.Bindings.Clear();
+
+            _isCancelling = false;
+        }
+
+        #endregion
+
+        #region Close check
+
+        public override void CanClose(Action<bool> callback)
+        {
+            //if (Model.IsReadOnly || !IsDirty || _isCancelling || _isSaving)
+            if (!IsDirty || _isCancelling || _isSaving)
+            {
+                callback(true);
+            }
+            else
+            {
+                _isShutdown = false;
+                DoCloseCheck(callback);
+            }
+        }
+
+        public IResult GetShutdownTask()
+        {
+            //if (Model.IsReadOnly || !IsDirty)
+            if (!IsDirty)
+                return null;
+
+            _isShutdown = true;
+            return new ApplicationCloseCheck(this, DoCloseCheck);
+        }
+
+        protected void DoCloseCheck(Action<bool> callback)
+        {
+            var result = MessageBox.Show("Document is not saved and you will loose all changes.\r\n\r\nDo you want to close?",
+                @"Document is not saved.",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+
+            var close = result == DialogResult.Yes;
+
+            callback(close);
+
+            if (!close)
+            {
+                CloseCheckHelper(close);
+            }
+        }
+
+        private void CloseCheckHelper(bool doClose)
+        {
+            if (!_isShutdown)
+            {
+                (_parent.GetView() as DocumentListView)?.CancelClose(Model.DocumentId);
+
+                var grandParent = _parent.Parent as FolderListViewModel;
+
+                if (grandParent != null)
+                    (grandParent.GetView() as FolderListView)?.CancelClose(Model.FolderId);
+            }
         }
 
         #endregion

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CslaSample.Documents;
+using CslaSample.Framework;
 using CslaSample.FolderEdit;
 using MvvmFx.CaliburnMicro;
 #if WISEJ
@@ -15,7 +16,7 @@ namespace CslaSample
     {
     }
 
-    public class MainFormViewModel : Conductor<Screen>, IMainFormViewModel
+    public class MainFormViewModel : Conductor<FolderListViewModel>, IMainFormViewModel
     {
         #region Fields and properties
 
@@ -24,6 +25,11 @@ namespace CslaSample
         #endregion
 
         #region Initializers
+
+        public MainFormViewModel()
+        {
+            //CloseStrategy = new ApplicationCloseStrategy();
+        }
 
         protected override void OnInitialize()
         {
