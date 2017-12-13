@@ -43,8 +43,23 @@ namespace CslaSample.Documents
             {
                 PropertyChanged -= OnDocumentListViewModelPropertyChanged;
                 var parent = Parent as FolderListViewModel;
-                DisplayName = string.Format("{0} documents",
-                    parent.Model.FindFolderInfoByFolderId(_folderId).FolderName);
+                if (parent != null)
+                {
+                    CloseAllDocuments(parent);
+                    DisplayName = string.Format("{0} documents",
+                        parent.Model.FindFolderInfoByFolderId(_folderId).FolderName);
+                }
+            }
+        }
+
+        private void CloseAllDocuments(FolderListViewModel parent)
+        {
+            foreach (var listViewModel in parent.GetChildren())
+            {
+                foreach (var editViewModel in listViewModel.GetChildren())
+                {
+                    editViewModel.Close();
+                }
             }
         }
 
