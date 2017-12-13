@@ -44,6 +44,7 @@ namespace CslaSample.FolderEdit
             if (e.PropertyName == "Model")
             {
                 foldersDataGridView.DataSource = _viewModel.Model;
+                errorProvider.DataSource = _viewModel.Model;
             }
         }
 
