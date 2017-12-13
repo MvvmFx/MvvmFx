@@ -3,9 +3,10 @@
 using Wisej.Web;
 #else
 using System.Windows.Forms;
+
 #endif
 
-namespace WindowsUI.Framework
+namespace CslaSample.Framework
 {
     class ComboValidation : Binding
     {
@@ -17,8 +18,8 @@ namespace WindowsUI.Framework
 
         // TODO decide whether to add a basic constructor and create r/w properties for new fields
 
-        public ComboValidation(string propertyName, BindingSource dataSource, string dataMember, 
-            int keyProperty, ComboBox comboBox, ErrorProvider errorProvider, string friendlyName) : 
+        public ComboValidation(string propertyName, BindingSource dataSource, string dataMember,
+            int keyProperty, ComboBox comboBox, ErrorProvider errorProvider, string friendlyName) :
             base(propertyName, dataSource, dataMember)
         {
             _nameValueList = (Csla.NameValueListBase<int, string>) dataSource.List;
@@ -68,11 +69,10 @@ namespace WindowsUI.Framework
             _keyProperty = 0;
             if (string.IsNullOrEmpty(_comboBox.Text))
             {
-                _errorProvider.SetError(_comboBox, string.Format("{0} required.",_friendlyName));
+                _errorProvider.SetError(_comboBox, string.Format("{0} required.", _friendlyName));
             }
             else
                 _errorProvider.SetError(_comboBox, string.Format("{0} isn't a valid {1}.", e.Value, _friendlyName));
-
         }
     }
 }

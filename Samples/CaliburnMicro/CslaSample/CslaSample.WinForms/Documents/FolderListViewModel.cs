@@ -1,4 +1,5 @@
 ﻿using CslaSample.Business;
+using CslaSample.Framework;
 using MvvmFx.CaliburnMicro;
 
 namespace CslaSample.Documents
@@ -16,9 +17,11 @@ namespace CslaSample.Documents
             {
                 if (_listItemId != value)
                 {
-                    _listItemId = value;
-                    ActivateItem();
-                    NotifyOfPropertyChange("ListItemId");
+                    if (ActivateItem(value))
+                    {
+                        _listItemId = value;
+                        NotifyOfPropertyChange("ListItemId");
+                    }
                 }
             }
         }
@@ -29,6 +32,8 @@ namespace CslaSample.Documents
 
         public FolderListViewModel()
         {
+            CloseStrategy = new ApplicationCloseStrategy();
+
             ManageObjectLifetime = false;
             DisplayName = "Folder list";
             RefreshFolders();
@@ -50,19 +55,26 @@ namespace CslaSample.Documents
 
         #region Activate New Document List
 
-        public void ActivateItem()
+        public bool ActivateItem(int listItemId)
         {
-            CloseChildren();
+            if (CloseChildren())
+            {
+                ActivateItem(new DocumentListViewModel(listItemId));
+                return true;
+            }
 
-            ActivateItem(new DocumentListViewModel(_listItemId));
+            return false;
         }
 
-        public void CloseChildren()
+        public bool CloseChildren()
         {
             foreach (var child in GetChildren())
             {
-                child.CloseChildren();
+                if (!child.CloseChildren())
+                    return false;
             }
+
+            return true;
         }
 
         #endregion

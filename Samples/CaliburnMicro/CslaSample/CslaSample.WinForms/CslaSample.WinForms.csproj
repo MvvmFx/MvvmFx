@@ -69,7 +69,10 @@
       <DependentUpon>DocumentListView.cs</DependentUpon>
     </Compile>
     <Compile Include="Documents\DocumentListViewModel.cs" />
+    <Compile Include="Framework\ApplicationCloseCheck.cs" />
+    <Compile Include="Framework\ApplicationCloseStrategy.cs" />
     <Compile Include="Framework\ComboValidation.cs" />
+    <Compile Include="Framework\IHaveShutdownTask.cs" />
     <Compile Include="Framework\InverseBooleanConverter.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
