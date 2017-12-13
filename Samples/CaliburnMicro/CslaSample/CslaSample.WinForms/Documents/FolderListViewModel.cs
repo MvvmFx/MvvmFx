@@ -46,6 +46,14 @@ namespace CslaSample.Documents
                 haveDataContext.DataContext = this;
         }
 
+        public void CloseChildren()
+        {
+            foreach (var documentListViewModel in GetChildren())
+            {
+                documentListViewModel.CloseChildren();
+            }
+        }
+
         #endregion
     }
 }

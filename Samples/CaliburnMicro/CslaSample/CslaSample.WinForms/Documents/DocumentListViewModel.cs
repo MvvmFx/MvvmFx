@@ -45,20 +45,9 @@ namespace CslaSample.Documents
                 var parent = Parent as FolderListViewModel;
                 if (parent != null)
                 {
-                    CloseAllDocuments(parent);
+                    parent.CloseChildren();
                     DisplayName = string.Format("{0} documents",
                         parent.Model.FindFolderInfoByFolderId(_folderId).FolderName);
-                }
-            }
-        }
-
-        private void CloseAllDocuments(FolderListViewModel parent)
-        {
-            foreach (var listViewModel in parent.GetChildren())
-            {
-                foreach (var editViewModel in listViewModel.GetChildren())
-                {
-                    editViewModel.Close();
                 }
             }
         }
@@ -73,6 +62,14 @@ namespace CslaSample.Documents
             var haveDataContext = GetView() as IHaveDataContext;
             if (haveDataContext != null)
                 haveDataContext.DataContext = this;
+        }
+
+        public void CloseChildren()
+        {
+            foreach (var documentEditViewModel in GetChildren())
+            {
+                documentEditViewModel.CloseChildren();
+            }
         }
 
         #endregion
