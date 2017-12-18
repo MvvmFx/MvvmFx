@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foldersDataGridView = new System.Windows.Forms.DataGridView();
             this.FolderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FolderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,10 +40,8 @@
             this.save = new System.Windows.Forms.Button();
             this.validate = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).BeginInit();
             this.buttonPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // foldersDataGridView
@@ -80,8 +77,8 @@
             // DocumentCount
             // 
             this.DocumentCount.DataPropertyName = "DocumentCount";
-            dataGridViewCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle1;
             this.DocumentCount.HeaderText = "Documents";
             this.DocumentCount.Name = "DocumentCount";
             this.DocumentCount.Width = 80;
@@ -89,7 +86,7 @@
             // CreateDate
             // 
             this.CreateDate.DataPropertyName = "CreateDate";
-            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle;
+            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.CreateDate.HeaderText = "Created Date";
             this.CreateDate.Name = "CreateDate";
             this.CreateDate.Width = 80;
@@ -97,7 +94,7 @@
             // ChangeDate
             // 
             this.ChangeDate.DataPropertyName = "ChangeDate";
-            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle;
+            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.ChangeDate.HeaderText = "Changed Date";
             this.ChangeDate.Name = "ChangeDate";
             this.ChangeDate.Width = 80;
@@ -150,10 +147,6 @@
             this.cancel.Text = "Undo";
             this.cancel.UseVisualStyleBackColor = true;
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // FolderListEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,7 +158,6 @@
             this.ShowIcon = false;
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).EndInit();
             this.buttonPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -183,6 +175,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DocumentCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreateDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChangeDate;
-        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

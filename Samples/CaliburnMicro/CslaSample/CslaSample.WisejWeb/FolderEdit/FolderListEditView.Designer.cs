@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle = new Wisej.Web.DataGridViewCellStyle();
+            Wisej.Web.DataGridViewCellStyle dataGridViewCellStyle1 = new Wisej.Web.DataGridViewCellStyle();
             this.foldersDataGridView = new Wisej.Web.DataGridView();
             this.FolderId = new Wisej.Web.DataGridViewTextBoxColumn();
             this.FolderName = new Wisej.Web.DataGridViewTextBoxColumn();
@@ -41,10 +40,8 @@
             this.save = new Wisej.Web.Button();
             this.validate = new Wisej.Web.Button();
             this.cancel = new Wisej.Web.Button();
-            this.errorProvider = new Wisej.Web.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).BeginInit();
             this.buttonPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // foldersDataGridView
@@ -64,7 +61,6 @@
             this.foldersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.foldersDataGridView.MultiSelect = false;
             this.foldersDataGridView.Name = "foldersDataGridView";
-            this.foldersDataGridView.ReadOnly = false;
             this.foldersDataGridView.ShowColumnVisibilityMenu = false;
             this.foldersDataGridView.Size = new System.Drawing.Size(738, 337);
             this.foldersDataGridView.TabIndex = 0;
@@ -87,8 +83,8 @@
             // DocumentCount
             // 
             this.DocumentCount.DataPropertyName = "DocumentCount";
-            dataGridViewCellStyle.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
-            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle;
+            dataGridViewCellStyle1.Alignment = Wisej.Web.DataGridViewContentAlignment.MiddleCenter;
+            this.DocumentCount.DefaultCellStyle = dataGridViewCellStyle1;
             this.DocumentCount.HeaderText = "Documents";
             this.DocumentCount.Name = "DocumentCount";
             this.DocumentCount.Width = 80;
@@ -96,7 +92,7 @@
             // CreateDate
             // 
             this.CreateDate.DataPropertyName = "CreateDate";
-            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle;
+            this.CreateDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.CreateDate.HeaderText = "Created Date";
             this.CreateDate.Name = "CreateDate";
             this.CreateDate.Width = 80;
@@ -104,7 +100,7 @@
             // ChangeDate
             // 
             this.ChangeDate.DataPropertyName = "ChangeDate";
-            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle;
+            this.ChangeDate.DefaultCellStyle = dataGridViewCellStyle1;
             this.ChangeDate.HeaderText = "Changed Date";
             this.ChangeDate.Name = "ChangeDate";
             this.ChangeDate.Width = 80;
@@ -153,10 +149,6 @@
             this.cancel.TabIndex = 1;
             this.cancel.Text = "Undo";
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
             // FolderListEditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -167,7 +159,6 @@
             this.Name = "FolderListEditView";
             ((System.ComponentModel.ISupportInitialize)(this.foldersDataGridView)).EndInit();
             this.buttonPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,6 +176,5 @@
         private Wisej.Web.DataGridViewTextBoxColumn DocumentCount;
         private Wisej.Web.DataGridViewTextBoxColumn CreateDate;
         private Wisej.Web.DataGridViewTextBoxColumn ChangeDate;
-        private Wisej.Web.ErrorProvider errorProvider;
     }
 }
