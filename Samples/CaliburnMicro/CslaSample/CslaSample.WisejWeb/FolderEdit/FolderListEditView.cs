@@ -31,7 +31,6 @@ namespace CslaSample.FolderEdit
                         _viewModel = viewModel;
 
                         foldersDataGridView.DataSource = _viewModel.Model;
-                        errorProvider.DataSource = _viewModel.Model;
                         _viewModel.PropertyChanged += ViewModelPropertyChanged;
                     }
                     DataContextChanged(this, new DataContextChangedEventArgs());
@@ -44,7 +43,6 @@ namespace CslaSample.FolderEdit
             if (e.PropertyName == "Model")
             {
                 foldersDataGridView.DataSource = _viewModel.Model;
-                errorProvider.DataSource = _viewModel.Model;
             }
         }
 

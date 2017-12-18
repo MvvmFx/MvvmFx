@@ -38,7 +38,6 @@ namespace CslaSample.Documents
                         errorProvider.DataSource = _viewModel.Model;
                         DataContextChanged(this, new DataContextChangedEventArgs());
                     }
-
                 }
             }
         }
