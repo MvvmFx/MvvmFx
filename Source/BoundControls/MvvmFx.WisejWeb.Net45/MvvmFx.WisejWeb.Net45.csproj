@@ -58,6 +58,7 @@
     <Compile Include="Design\DropDownTypeEditor.cs" />
     <Compile Include="Design\FieldTypeEditor.cs" />
     <Compile Include="INamedBindable.cs" />
+    <Compile Include="LinkMenuItem.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
