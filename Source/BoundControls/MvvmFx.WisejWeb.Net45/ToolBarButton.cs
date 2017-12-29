@@ -1,9 +1,5 @@
 ﻿using System.ComponentModel;
-#if WISEJ
 using Wisej.Web;
-#else
-using System.Windows.Forms;
-#endif
 
 namespace MvvmFx.WisejWeb
 {
@@ -29,6 +25,7 @@ namespace MvvmFx.WisejWeb
                 {
                     _bindingContext = new BindingContext();
                 }
+
                 return _bindingContext;
             }
             set { _bindingContext = value; }
@@ -46,6 +43,7 @@ namespace MvvmFx.WisejWeb
                 {
                     _dataBindings = new ControlBindingsCollection(this);
                 }
+
                 return _dataBindings;
             }
         }
@@ -63,10 +61,7 @@ namespace MvvmFx.WisejWeb
         /// <returns>The <see cref="System.Windows.Forms.ControlBindingsCollection" /> for this <see cref="System.Windows.Forms.IBindableComponent" />.</returns>
         System.Windows.Forms.ControlBindingsCollection System.Windows.Forms.IBindableComponent.DataBindings
         {
-            get
-            {
-                return DataBindings;                 
-            }
+            get { return DataBindings; }
         }
 
         #endregion
