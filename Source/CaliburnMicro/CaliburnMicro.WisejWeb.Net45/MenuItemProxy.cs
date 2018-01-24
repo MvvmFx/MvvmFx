@@ -39,6 +39,7 @@ namespace MvvmFx.CaliburnMicro
             {
                 _item.MenuItems[index].Dispose();
             }
+
             _item.Dispose();
             base.Dispose(disposing);
         }
