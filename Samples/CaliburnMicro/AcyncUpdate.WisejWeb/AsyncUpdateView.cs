@@ -22,6 +22,11 @@ namespace AcyncUpdate.UI
             ActiveControl = customerName;
         }
 
+        public new void Close()
+        {
+            Application.Exit();
+        }
+
         public BusyIndicator Indicator
         {
             get { return busyIndicator; }
