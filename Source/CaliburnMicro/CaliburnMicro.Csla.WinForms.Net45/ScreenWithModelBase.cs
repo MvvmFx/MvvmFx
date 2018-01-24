@@ -111,14 +111,14 @@ namespace MvvmFx.CaliburnMicro
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the ViewModel 
+        /// Gets or sets a value indicating whether the ViewModel
         /// should automatically managed the lifetime of the Model.
         /// </summary>
         /// <remarks>Manage object lifetime means managing undo.</remarks>
         public bool ManageObjectLifetimeProperty = true;
 
         /// <summary>
-        /// Gets or sets a value indicating whether the ViewModel 
+        /// Gets or sets a value indicating whether the ViewModel
         /// should automatically managed the lifetime of the Model.
         /// </summary>
         /// <remarks>Manage object lifetime means managing undo.</remarks>
