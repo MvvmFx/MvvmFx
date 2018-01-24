@@ -24,6 +24,11 @@ namespace BoundTreeView
             LogManager.GetLog = type => new MvvmFx.Logging.DebugLogger(type);
         }
 
+        public new void Close()
+        {
+            Application.Exit();
+        }
+
         #region IHaveDataContext implementation
 
         public event EventHandler<DataContextChangedEventArgs> DataContextChanged = delegate { };
