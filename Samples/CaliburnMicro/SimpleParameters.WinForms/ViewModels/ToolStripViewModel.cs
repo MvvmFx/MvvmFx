@@ -1,7 +1,5 @@
 ﻿using System;
-#if WISEJ
-using Wisej.Web;
-#else
+#if WINFORMS
 using System.Windows.Forms;
 #endif
 using MvvmFx.CaliburnMicro;
@@ -17,13 +15,11 @@ namespace SimpleParameters.UI.ViewModels
 
         public new void ShowThis(object obj)
         {
-            string helper = string.Empty;
+            var helper = "$this is null";
 
 #if WINFORMS
             var proxy = obj as ToolStripItemProxy;
-            if (proxy == null)
-                helper = "$this is null";
-            else
+            if (proxy != null)
             {
                 helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
                 var btn = proxy.Item as ToolStripButton;
@@ -31,32 +27,27 @@ namespace SimpleParameters.UI.ViewModels
                     helper = "$this is null";
                 else
                     helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
-
             }
 #else
             if (obj is MenuItemProxy)
             {
-                var proxy = obj as MenuItemProxy;
-                {
-                    helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
-                    var btn = proxy.Item;
-                    if (btn == null)
-                        helper = "$this is null";
-                    else
-                        helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
-                }
+                var proxy = (MenuItemProxy) obj;
+                helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
+                var btn = proxy.Item;
+                if (btn == null)
+                    helper = "$this is null";
+                else
+                    helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
             }
             if (obj is ToolBarButtonProxy)
             {
-                var proxy = obj as ToolBarButtonProxy;
-                {
-                    helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
-                    var btn = proxy.Item;
-                    if (btn == null)
-                        helper = "$this is null";
-                    else
-                        helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
-                }
+                var proxy = (ToolBarButtonProxy) obj;
+                helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
+                var btn = proxy.Item;
+                if (btn == null)
+                    helper = "$this is null";
+                else
+                    helper += "Type: " + btn.GetType() + Environment.NewLine + "Name: " + btn.Name;
             }
 
 #endif

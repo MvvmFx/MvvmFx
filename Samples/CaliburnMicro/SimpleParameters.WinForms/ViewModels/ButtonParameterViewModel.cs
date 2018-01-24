@@ -153,14 +153,14 @@ namespace SimpleParameters.UI.ViewModels
                          "Type: " + ((IHaveDataContext) view).DataContext.GetType() + Environment.NewLine +
                          "Display name: " + ((Screen) ((IHaveDataContext) view).DataContext).DisplayName;
 
-                if (view.button7.Text == "This.Text")
+                if (view.button7.Text == @"This.Text")
                 {
-                    view.button7.Text = "This Text";
+                    view.button7.Text = @"This Text";
                     helper += Environment.NewLine + Environment.NewLine + "This Text button is disabled";
                 }
                 else
                 {
-                    view.button7.Text = "This.Text";
+                    view.button7.Text = @"This.Text";
                     helper += Environment.NewLine + Environment.NewLine + "This.Text button is ENABLED";
                 }
             }
