@@ -47,6 +47,7 @@
             this.showButtonTest.Size = new System.Drawing.Size(120, 23);
             this.showButtonTest.TabIndex = 0;
             this.showButtonTest.Text = "Button test";
+            this.toolTip1.SetToolTip(this.showButtonTest, null);
             // 
             // showButtonParameterTest
             // 
@@ -55,6 +56,7 @@
             this.showButtonParameterTest.Size = new System.Drawing.Size(120, 23);
             this.showButtonParameterTest.TabIndex = 0;
             this.showButtonParameterTest.Text = "Button Parameter test";
+            this.toolTip1.SetToolTip(this.showButtonParameterTest, null);
             // 
             // showMenuStripTest
             // 
@@ -63,6 +65,7 @@
             this.showMenuStripTest.Size = new System.Drawing.Size(120, 23);
             this.showMenuStripTest.TabIndex = 1;
             this.showMenuStripTest.Text = "MenuStrip test";
+            this.toolTip1.SetToolTip(this.showMenuStripTest, null);
             // 
             // showToolStripTest
             // 
@@ -71,6 +74,7 @@
             this.showToolStripTest.Size = new System.Drawing.Size(120, 23);
             this.showToolStripTest.TabIndex = 2;
             this.showToolStripTest.Text = "ToolStrip test";
+            this.toolTip1.SetToolTip(this.showToolStripTest, null);
             // 
             // ActiveItem
             // 
@@ -80,24 +84,25 @@
             //this.ActiveItem.Dock = Wisej.Web.DockStyle.Fill;
             this.ActiveItem.Location = new System.Drawing.Point(0, 49);
             this.ActiveItem.Name = "ActiveItem";
-            this.ActiveItem.Size = new System.Drawing.Size(1003, 438);
+            this.ActiveItem.Size = new System.Drawing.Size(1006, 438);
             this.ActiveItem.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.ActiveItem, null);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.AutoSize = false;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1003, 49);
             this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.TabStop = false;
+            this.toolTip1.SetToolTip(this.menuStrip1, null);
             // 
             // _buttonNr
             // 
             this._buttonNr.AutoSize = true;
             this._buttonNr.Location = new System.Drawing.Point(533, 18);
             this._buttonNr.Name = "_buttonNr";
-            this._buttonNr.Size = new System.Drawing.Size(0, 13);
+            this._buttonNr.Size = new System.Drawing.Size(4, 13);
             this._buttonNr.TabIndex = 5;
             this.toolTip1.SetToolTip(this._buttonNr, "ViewModel property");
             // 
@@ -106,7 +111,7 @@
             this._model_buttonDescription.AutoSize = true;
             this._model_buttonDescription.Location = new System.Drawing.Point(563, 18);
             this._model_buttonDescription.Name = "_model_buttonDescription";
-            this._model_buttonDescription.Size = new System.Drawing.Size(0, 13);
+            this._model_buttonDescription.Size = new System.Drawing.Size(4, 13);
             this._model_buttonDescription.TabIndex = 6;
             this.toolTip1.SetToolTip(this._model_buttonDescription, "ViewModel.Model object property");
             // 
@@ -116,10 +121,11 @@
             // 
             // ShellView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1003, 487);
+            this.ClientSize = new System.Drawing.Size(1006, 487);
+            this.CloseBox = false;
+            this.ControlBox = false;
             this.Controls.Add(this._model_buttonDescription);
             this.Controls.Add(this._buttonNr);
             this.Controls.Add(this.showToolStripTest);
@@ -128,8 +134,12 @@
             this.Controls.Add(this.showButtonParameterTest);
             this.Controls.Add(this.ActiveItem);
             this.Controls.Add(this.menuStrip1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ShellView";
-            this.Text = "ShellView";
+            this.Text = "Shell View";
+            this.toolTip1.SetToolTip(this, null);
+            this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
