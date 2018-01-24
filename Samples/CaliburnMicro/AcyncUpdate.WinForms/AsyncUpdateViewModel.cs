@@ -32,7 +32,7 @@ namespace AcyncUpdate.UI
                 TryClose();
         }
 
-        private bool _customerNameReadOnly = false;
+        private bool _customerNameReadOnly;
 
         public bool IsCustomerNameReadOnly
         {
@@ -131,7 +131,7 @@ namespace AcyncUpdate.UI
         public void Exit(string customerId)
         {
             // not very MVVM friendly MessageBox. Don't do this at work.
-            MessageBox.Show("Closing Customer Id: " + customerId);
+            MessageBox.Show(@"Closing Customer Id: " + customerId);
             TryClose();
         }
 
@@ -143,11 +143,11 @@ namespace AcyncUpdate.UI
         public IEnumerable<IResult> GetId()
         {
             IsCustomerNameReadOnly = true;
-            CustomerIdResult result;
+
 #if WINFORMS
-            result = new CustomerIdResult();
+            CustomerIdResult result = new CustomerIdResult();
 #else
-            result = new CustomerIdResult((Form) GetView());
+            CustomerIdResult result = new CustomerIdResult((Form) GetView());
 #endif
 
             CanDataEntry = false;
@@ -163,7 +163,7 @@ namespace AcyncUpdate.UI
     public class CustomerIdResult : IResult
     {
 #if WISEJ
-        private Form _view;
+        private readonly Form _view;
 
         public CustomerIdResult(Form view)
         {
