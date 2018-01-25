@@ -3,15 +3,11 @@
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using System.Windows;
+    using System.Threading;
 #if WISEJ
     using Wisej.Web;
-    using System.Threading;
-#elif WINFORMS
-    using System.Windows.Forms;
-    using System.Threading;
 #else
-    using System.Windows.Threading;
+    using System.Windows.Forms;
 #endif
 
     /// <summary>
@@ -22,13 +18,6 @@
         private readonly bool useApplication;
         private bool isInitialized;
 
-#if !WINFORMS && !WISEJ
-    /// <summary>
-    /// The application.
-    /// </summary>
-        protected Application Application { get; set; }
-#endif
-
         /// <summary>
         /// Creates an instance of the bootstrapper.
         /// </summary>
@@ -36,9 +25,6 @@
         protected BootstrapperBase(bool useApplication = true)
         {
             this.useApplication = useApplication;
-#if WISEJ
-            ApplicationContext.SetEntryAssembly(this);
-#endif
         }
 
         /// <summary>
@@ -72,7 +58,6 @@
             }
         }
 
-#if WINFORMS || WISEJ
         /// <summary>
         /// Runs this instance.
         /// </summary>
@@ -80,7 +65,6 @@
         {
             OnStartup(null, new StartupEventArgs(Environment.GetCommandLineArgs()));
         }
-#endif
 
         /// <summary>
         /// Called by the bootstrapper's constructor at design time to start the framework.
@@ -121,24 +105,12 @@
                 }
             };
 
-#if WEBGUI
-            var selectedAssemblies = SelectAssemblies();
-            foreach (var selectedAssembly in selectedAssemblies)
-            {
-                if (!AssemblySource.Instance.Contains(selectedAssembly))
-                    AssemblySource.Instance.AddRange(new[] {selectedAssembly});
-            }
-#else
             AssemblySource.Instance.AddRange(SelectAssemblies());
-#endif
 
             if (useApplication)
             {
-#if WINFORMS || WISEJ
                 //Application = System.Windows.Forms.Application;
-#else
-                Application = Application.Current;
-#endif
+
                 PrepareApplication();
             }
 
@@ -148,7 +120,6 @@
             IoC.BuildUp = BuildUp;
         }
 
-#if WINFORMS || WISEJ
         /// <summary>
         /// Provides an opportunity to hook into the application object.
         /// </summary>
@@ -158,21 +129,6 @@
             Application.ThreadException += Application_ThreadException;
             Application.ApplicationExit += OnExit;
         }
-#else
-        /// <summary>
-        /// Provides an opportunity to hook into the application object.
-        /// </summary>
-        protected virtual void PrepareApplication()
-        {
-            Application.Startup += OnStartup;
-#if SILVERLIGHT
-            Application.UnhandledException += OnUnhandledException;
-#else
-            Application.DispatcherUnhandledException += OnUnhandledException;
-#endif
-            Application.Exit += OnExit;
-        }
-#endif
 
         /// <summary>
         /// Override to configure the framework and setup your IoC container.
@@ -198,10 +154,8 @@
         /// <returns>The located service.</returns>
         protected virtual object GetInstance(Type service, string key)
         {
-#if NET
-            if (service == typeof (IWindowManager))
-                service = typeof (WindowManager);
-#endif
+            if (service == typeof(IWindowManager))
+                service = typeof(WindowManager);
 
             return Activator.CreateInstance(service);
         }
@@ -242,7 +196,6 @@
         {
         }
 
-#if WINFORMS || WISEJ
         /// <summary>
         /// Handles the UnhandledException event of the AppDomain control.
         /// </summary>
@@ -260,57 +213,7 @@
         protected virtual void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
         }
-#endif
 
-#if SILVERLIGHT
-    /// <summary>
-    /// Override this to add custom behavior for unhandled exceptions.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The event args.</param>
-        protected virtual void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
-        {
-        }
-#elif !WINFORMS && !WISEJ
-    /// <summary>
-    /// Override this to add custom behavior for unhandled exceptions.
-    /// </summary>
-    /// <param name="sender">The sender.</param>
-    /// <param name="e">The event args.</param>
-        protected virtual void OnUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
-        {
-        }
-#endif
-
-#if SILVERLIGHT
-    /// <summary>
-    /// Locates the view model, locates the associate view, binds them and shows it as the root view.
-    /// </summary>
-    /// <param name="viewModelType">The view model type.</param>
-        protected void DisplayRootViewFor(Type viewModelType)
-        {
-            var viewModel = IoC.GetInstance(viewModelType, null);
-            var view = ViewLocator.LocateForModel(viewModel, null, null);
-
-            ViewModelBinder.Bind(viewModel, view, null);
-
-            var activator = viewModel as IActivate;
-            if (activator != null)
-                activator.Activate();
-
-            Mouse.Initialize(view);
-            Application.RootVisual = view;
-        }
-
-        /// <summary>
-        /// Locates the view model, locates the associate view, binds them and shows it as the root view.
-        /// </summary>
-        /// <typeparam name="TViewModel">The view model type.</typeparam>
-        protected void DisplayRootViewFor<TViewModel>()
-        {
-            DisplayRootViewFor(typeof (TViewModel));
-        }
-#elif NET
         /// <summary>
         /// Locates the view model, locates the associate view, binds them and shows it as the root view.
         /// </summary>
@@ -319,11 +222,7 @@
         protected void DisplayRootViewFor(Type viewModelType, IDictionary<string, object> settings = null)
         {
             var windowManager = IoC.Get<IWindowManager>();
-#if WINFORMS || WISEJ
-            windowManager.ShowMainWindow(IoC.GetInstance(viewModelType, null), null, settings);
-#else
             windowManager.ShowWindow(IoC.GetInstance(viewModelType, null), null, settings);
-#endif
         }
 
         /// <summary>
@@ -333,7 +232,29 @@
         /// <param name="settings">The optional window settings.</param>
         protected void DisplayRootViewFor<TViewModel>(IDictionary<string, object> settings = null)
         {
-            DisplayRootViewFor(typeof (TViewModel), settings);
+            DisplayRootViewFor(typeof(TViewModel), settings);
+        }
+
+#if WISEJ
+        /// <summary>
+        /// Locates the view model, locates the associate view, binds them and shows it as the root view.
+        /// </summary>
+        /// <param name="viewModelType">The view model type.</param>
+        /// <param name="settings">The optional window settings.</param>
+        protected void DisplayPageRootViewFor(Type viewModelType, IDictionary<string, object> settings = null)
+        {
+            var windowManager = IoC.Get<IWindowManager>();
+            windowManager.ShowPage(IoC.GetInstance(viewModelType, null), null, settings);
+        }
+
+        /// <summary>
+        /// Locates the view model, locates the associate view, binds them and shows it as the root view.
+        /// </summary>
+        /// <typeparam name="TViewModel">The view model type.</typeparam>
+        /// <param name="settings">The optional window settings.</param>
+        protected void DisplayPageRootViewFor<TViewModel>(IDictionary<string, object> settings = null)
+        {
+            DisplayPageRootViewFor(typeof(TViewModel), settings);
         }
 #endif
     }
@@ -362,4 +283,31 @@
             DisplayRootViewFor<TRootModel>();
         }
     }
+
+#if WISEJ
+    /// <summary>
+    /// A strongly-typed version of <see cref="BootstrapperBase"/> that specifies the type of root model to create for the application.
+    /// </summary>
+    /// <typeparam name="TRootModel">The type of root model for the application.</typeparam>
+    public class PageBootstrapper<TRootModel> : BootstrapperBase
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Bootstrapper&lt;TRootModel&gt;"/> class.
+        /// </summary>
+        public PageBootstrapper() : base(true)
+        {
+            Start();
+        }
+
+        /// <summary>
+        /// Override this to add custom behavior to execute after the application starts.
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The args.</param>
+        protected override void OnStartup(object sender, StartupEventArgs e)
+        {
+            DisplayPageRootViewFor<TRootModel>();
+        }
+    }
+#endif
 }
