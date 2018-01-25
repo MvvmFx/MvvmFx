@@ -35,7 +35,7 @@
             this.fileMenuSeparator = new Wisej.Web.MenuItem();
             this.exit = new Wisej.Web.MenuItem();
             this.familyMemberMenu = new Wisej.Web.MenuItem();
-            this.createNewFamilyMember = new Wisej.Web.MenuItem();
+            this.createFamilyMember = new Wisej.Web.MenuItem();
             this.saveFamilyMember = new Wisej.Web.MenuItem();
             this.deleteFamilyMember = new Wisej.Web.MenuItem();
             this.closeFamilyMember = new Wisej.Web.MenuItem();
@@ -95,18 +95,18 @@
             // 
             this.familyMemberMenu.Index = 1;
             this.familyMemberMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
-            this.createNewFamilyMember,
+            this.createFamilyMember,
             this.saveFamilyMember,
             this.deleteFamilyMember,
             this.closeFamilyMember});
             this.familyMemberMenu.Name = "familyMemberMenu";
             this.familyMemberMenu.Text = "Family member";
             // 
-            // createNewFamilyMember
+            // createFamilyMember
             // 
-            this.createNewFamilyMember.Index = 0;
-            this.createNewFamilyMember.Name = "createNewFamilyMember";
-            this.createNewFamilyMember.Text = "New family member";
+            this.createFamilyMember.Index = 0;
+            this.createFamilyMember.Name = "createFamilyMember";
+            this.createFamilyMember.Text = "New family member";
             // 
             // saveFamilyMember
             // 
@@ -169,7 +169,7 @@
         private Wisej.Web.MenuItem fileMenuSeparator;
         private Wisej.Web.MenuItem exit;
         private Wisej.Web.MenuItem familyMemberMenu;
-        private Wisej.Web.MenuItem createNewFamilyMember;
+        private Wisej.Web.MenuItem createFamilyMember;
         private Wisej.Web.MenuItem saveFamilyMember;
         private Wisej.Web.MenuItem deleteFamilyMember;
         private Wisej.Web.MenuItem closeFamilyMember;

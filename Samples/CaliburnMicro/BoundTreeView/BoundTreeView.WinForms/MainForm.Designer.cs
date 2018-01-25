@@ -35,7 +35,7 @@
             this.fileMenuSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.familyMemberMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.createNewFamilyMember = new System.Windows.Forms.ToolStripMenuItem();
+            this.createFamilyMember = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFamilyMember = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteFamilyMember = new System.Windows.Forms.ToolStripMenuItem();
             this.closeFamilyMember = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +92,7 @@
             // familyMemberMenu
             // 
             this.familyMemberMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNewFamilyMember,
+            this.createFamilyMember,
             this.saveFamilyMember,
             this.deleteFamilyMember,
             this.closeFamilyMember});
@@ -100,11 +100,11 @@
             this.familyMemberMenu.Size = new System.Drawing.Size(60, 20);
             this.familyMemberMenu.Text = "Family member";
             // 
-            // createNewFamilyMember
+            // createFamilyMember
             // 
-            this.createNewFamilyMember.Name = "createNewFamilyMember";
-            this.createNewFamilyMember.Size = new System.Drawing.Size(175, 22);
-            this.createNewFamilyMember.Text = "New family member";
+            this.createFamilyMember.Name = "createFamilyMember";
+            this.createFamilyMember.Size = new System.Drawing.Size(175, 22);
+            this.createFamilyMember.Text = "New family member";
             // 
             // saveFamilyMember
             // 
@@ -167,7 +167,7 @@
         private System.Windows.Forms.ToolStripSeparator fileMenuSeparator;
         private System.Windows.Forms.ToolStripMenuItem exit;
         private System.Windows.Forms.ToolStripMenuItem familyMemberMenu;
-        private System.Windows.Forms.ToolStripMenuItem createNewFamilyMember;
+        private System.Windows.Forms.ToolStripMenuItem createFamilyMember;
         private System.Windows.Forms.ToolStripMenuItem saveFamilyMember;
         private System.Windows.Forms.ToolStripMenuItem deleteFamilyMember;
         private System.Windows.Forms.ToolStripMenuItem closeFamilyMember;

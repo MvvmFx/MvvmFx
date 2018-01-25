@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BoundTreeView.ViewModels;
 using FamilyBusiness;
 using MvvmFx.CaliburnMicro;
@@ -78,7 +77,7 @@ namespace BoundTreeView
 
             if (ActiveItem != null)
             {
-                if (ActiveItem.GetType() != typeof (FamilyMemberTreeViewModel))
+                if (ActiveItem.GetType() != typeof(FamilyMemberTreeViewModel))
                     ActiveItem.TryClose();
             }
             ActivateItem(new FamilyMemberTreeViewModel());
@@ -129,11 +128,11 @@ namespace BoundTreeView
 
         #region FamilyMember menu action methods and guard properties
 
-        public void CreateNewFamilyMember()
+        public void CreateFamilyMember()
         {
-            if (_canCreateNewFamilyMember)
+            if (_canCreateFamilyMember)
             {
-                GetFamilyMemberEdit().CreateNew();
+                GetFamilyMemberEdit().Create();
                 ActivateIfSingleNode();
             }
         }
@@ -147,17 +146,17 @@ namespace BoundTreeView
                 treeView.TreeItemId = model[0].FamilyMemberId;
         }
 
-        private bool _canCreateNewFamilyMember;
+        private bool _canCreateFamilyMember;
 
-        public bool CanCreateNewFamilyMember
+        public bool CanCreateFamilyMember
         {
-            get { return _canCreateNewFamilyMember; }
+            get { return _canCreateFamilyMember; }
             set
             {
-                if (_canCreateNewFamilyMember != value)
+                if (_canCreateFamilyMember != value)
                 {
-                    _canCreateNewFamilyMember = value;
-                    NotifyOfPropertyChange("CanCreateNewFamilyMember");
+                    _canCreateFamilyMember = value;
+                    NotifyOfPropertyChange("CanCreateFamilyMember");
                 }
             }
         }
@@ -205,21 +204,6 @@ namespace BoundTreeView
         public void CloseFamilyMember()
         {
             GetFamilyMemberEdit().Close();
-        }
-
-        private bool _canCloseFamilyMember;
-
-        public bool CanCloseFamilyMember
-        {
-            get { return _canCloseFamilyMember; }
-            set
-            {
-                if (_canCloseFamilyMember != value)
-                {
-                    _canCloseFamilyMember = value;
-                    NotifyOfPropertyChange("CanCloseFamilyMember");
-                }
-            }
         }
 
         private FamilyMemberEditViewModel GetFamilyMemberEdit()

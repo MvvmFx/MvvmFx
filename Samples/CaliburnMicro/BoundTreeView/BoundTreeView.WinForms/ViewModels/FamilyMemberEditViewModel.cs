@@ -72,19 +72,17 @@ namespace BoundTreeView.ViewModels
 
             // bind to main form properties
             BindMenuItem("CanSaveFamilyMember", "CanSave");
-            BindMenuItem("CanCreateNewFamilyMember", "CanCreateNew");
+            BindMenuItem("CanCreateFamilyMember", "CanCreate");
             BindMenuItem("CanDeleteFamilyMember", "CanDelete");
-            BindMenuItem("CanCloseFamilyMember", "CanClose");
 
-            CanCreateNew = true;
+            CanCreate = true;
             CanSave = false;
             CanDelete = false;
-            CanClose = false;
 
             if (Model != null)
             {
                 // set new bindings for this object
-                BindingManager.Bindings.Add(new Binding(this, "CanCreateNew", Model as FamilyMember, "IsDirty")
+                BindingManager.Bindings.Add(new Binding(this, "CanCreate", Model as FamilyMember, "IsDirty")
                 {
                     Converter = new InverseBooleanConverter(),
                     Mode = BindingMode.OneWayToTarget
@@ -96,7 +94,6 @@ namespace BoundTreeView.ViewModels
                 });
 
                 CanDelete = true;
-                CanClose = true;
             }
         }
 
@@ -112,7 +109,7 @@ namespace BoundTreeView.ViewModels
 
         #region Actions methods and guard properties
 
-        public void CreateNew()
+        public void Create()
         {
             int? treeItemId = null;
             if (_treeView != null)
@@ -125,17 +122,17 @@ namespace BoundTreeView.ViewModels
             TryClose();
         }
 
-        private bool _canCreateNew;
+        private bool _canCreate;
 
-        public bool CanCreateNew
+        public bool CanCreate
         {
-            get { return _canCreateNew; }
+            get { return _canCreate; }
             set
             {
-                if (_canCreateNew != value)
+                if (_canCreate != value)
                 {
-                    _canCreateNew = value;
-                    NotifyOfPropertyChange("CanCreateNew");
+                    _canCreate = value;
+                    NotifyOfPropertyChange("CanCreate");
                 }
             }
         }
@@ -164,12 +161,9 @@ namespace BoundTreeView.ViewModels
         {
             _model.Delete();
 
-            var cnt = ((FamilyMemberInfoList) _treeView.Model).Count;
-
-            CanCreateNew = true;
+            CanCreate = true;
             CanSave = false;
             CanDelete = false;
-            CanClose = false;
 
             TryClose();
         }
@@ -194,21 +188,6 @@ namespace BoundTreeView.ViewModels
             TryClose();
             ((FamilyMemberTreeViewModel) Parent).TreeItemId = -1;
             BindingManager.Bindings.Clear();
-        }
-
-        private bool _canClose = true;
-
-        public new bool CanClose
-        {
-            get { return _canClose; }
-            set
-            {
-                if (_canClose != value)
-                {
-                    _canClose = value;
-                    NotifyOfPropertyChange("CanClose");
-                }
-            }
         }
 
         #endregion
