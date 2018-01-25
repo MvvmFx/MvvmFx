@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel;
-using Wisej.Web;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.ComponentModel;
+    using Wisej.Web;
+
     /// <summary>
     /// Proxy class for <see cref="StatusBarPanel"/> components.
     /// </summary>
