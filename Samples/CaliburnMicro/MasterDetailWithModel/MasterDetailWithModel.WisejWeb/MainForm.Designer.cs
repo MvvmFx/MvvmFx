@@ -170,6 +170,7 @@
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.WindowState = Wisej.Web.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
