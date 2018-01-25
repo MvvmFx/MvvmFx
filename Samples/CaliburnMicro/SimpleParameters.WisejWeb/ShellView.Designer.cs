@@ -123,6 +123,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(1008, 519);
             this.ClientSize = new System.Drawing.Size(1006, 487);
             this.CloseBox = false;
             this.ControlBox = false;

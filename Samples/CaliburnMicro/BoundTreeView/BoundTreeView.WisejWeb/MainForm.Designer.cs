@@ -149,12 +149,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(832, 500);
             this.ClientSize = new System.Drawing.Size(830, 468);
+            this.CloseBox = false;
+            this.ControlBox = false;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
