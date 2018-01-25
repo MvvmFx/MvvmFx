@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+﻿namespace MvvmFx.CaliburnMicro
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Text.RegularExpressions;
+    using MvvmFx.Windows.Data;
+    using Binding = MvvmFx.Windows.Data.Binding;
 #if WISEJ
-using Wisej.Web;
-using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-using System.Windows.Forms;
-using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
-namespace MvvmFx.CaliburnMicro
-{
     /// <summary>
     /// Parses text into a fully functional set of <see cref="MessageDetail"/> instances for use by <see cref="ActionMessage"/>.
     /// </summary>
@@ -22,8 +20,6 @@ namespace MvvmFx.CaliburnMicro
     {
         private static readonly Regex LongFormatRegularExpression =
             new Regex(@"^[\s]*\[[^\]]*\][\s]*=[\s]*\[[^\]]*\][\s]*$");
-
-        private static IEnumerable<Control> _namedElements;
 
         /// <summary>
         /// Parses the specified message text.
@@ -36,7 +32,6 @@ namespace MvvmFx.CaliburnMicro
         /// </returns>
         public static IEnumerable<MessageDetail> Parse(Control target, string text, IEnumerable<Control> namedElements)
         {
-            _namedElements = namedElements;
             var messageDetails = new List<MessageDetail>();
             var messageTexts = Split(text, ';');
 
@@ -49,7 +44,7 @@ namespace MvvmFx.CaliburnMicro
                 var messageDetail = CreateMessageDetail(target, triggerPlusMessage.Last()
                     .Replace("[", string.Empty)
                     .Replace("]", string.Empty)
-                    .Trim());
+                    .Trim(), namedElements);
 
                 messageDetail.EventName = GetTriggerEventName(target,
                     triggerPlusMessage.Length == 1 ? null : triggerPlusMessage[0]);
@@ -87,8 +82,10 @@ namespace MvvmFx.CaliburnMicro
         /// </summary>
         /// <param name="target">The target of the message.</param>
         /// <param name="messageText">The textual message dsl.</param>
+        /// <param name="namedElements">All the <see cref="Control"/> instances with names in the scope.</param>
         /// <returns>The created message detail.</returns>
-        public static MessageDetail CreateMessageDetail(Control target, string messageText)
+        public static MessageDetail CreateMessageDetail(Control target, string messageText,
+            IEnumerable<Control> namedElements)
         {
             var openingParenthesisIndex = messageText.IndexOf('(');
             if (openingParenthesisIndex < 0)
@@ -112,7 +109,7 @@ namespace MvvmFx.CaliburnMicro
                 var parameters = SplitParameters(paramString);
 
                 foreach (var parameter in parameters)
-                    message.Parameters.Add(CreateParameter(target, parameter.Trim()));
+                    message.Parameters.Add(CreateParameter(target, parameter.Trim(), namedElements));
             }
 
             return message;
@@ -134,7 +131,7 @@ namespace MvvmFx.CaliburnMicro
                 index == -1 ? nameAndBindingMode[0] : nameAndBindingMode[0].Substring(0, index),
                 index == -1 ? null : nameAndBindingMode[0].Substring(index + 1),
                 nameAndBindingMode.Length == 2
-                    ? (string) Enum.Parse(typeof (BindingMode), nameAndBindingMode[1], true)
+                    ? (string) Enum.Parse(typeof(BindingMode), nameAndBindingMode[1], true)
                     : "OneWayToTarget"
             };
 
@@ -144,52 +141,55 @@ namespace MvvmFx.CaliburnMicro
         /// <summary>
         /// Function used to parse a string identified as a message parameter.
         /// </summary>
-        public static Func<Control, string, Parameter> CreateParameter = (target, parameterText) =>
-        {
-            var actualParameter = new Parameter();
+        public static Func<Control, string, IEnumerable<Control>, Parameter> CreateParameter =
+            (target, parameterText, namedElements) =>
+            {
+                var actualParameter = new Parameter();
 
-            if (parameterText.StartsWith("'") && parameterText.EndsWith("'"))
-            {
-                actualParameter.Value = parameterText.Substring(1, parameterText.Length - 2);
-            }
-            else if (MessageBinder.SpecialValues.ContainsKey(parameterText.ToLower()) || char.IsNumber(parameterText[0]))
-            {
-                actualParameter.Value = parameterText;
-            }
-            else
-            {
-                var parameterMembers = SplitParameter(parameterText);
-                if (parameterMembers[0] == "$this")
+                if (parameterText.StartsWith("'") && parameterText.EndsWith("'"))
                 {
-                    actualParameter.Value = target;
-                    //View.ExecuteOnLoad(target, delegate
-                    //{
-                    BindParameter(
-                        target,
-                        actualParameter,
-                        target,
-                        parameterMembers[1],
-                        (BindingMode) Enum.Parse(typeof (BindingMode), parameterMembers[2])
-                        );
-                    //});
+                    actualParameter.Value = parameterText.Substring(1, parameterText.Length - 2);
+                }
+                else if (MessageBinder.SpecialValues.ContainsKey(parameterText.ToLower()) ||
+                         char.IsNumber(parameterText[0]))
+                {
+                    actualParameter.Value = parameterText;
                 }
                 else
                 {
-                    //View.ExecuteOnLoad(target, delegate
-                    //{
-                    BindParameter(
-                        target,
-                        actualParameter,
-                        parameterMembers[0],
-                        parameterMembers[1],
-                        (BindingMode) Enum.Parse(typeof (BindingMode), parameterMembers[2])
+                    var parameterMembers = SplitParameter(parameterText);
+                    if (parameterMembers[0] == "$this")
+                    {
+                        actualParameter.Value = target;
+                        //View.ExecuteOnLoad(target, delegate
+                        //{
+                        BindParameter(
+                            target,
+                            actualParameter,
+                            target,
+                            parameterMembers[1],
+                            (BindingMode) Enum.Parse(typeof(BindingMode), parameterMembers[2])
                         );
-                    //});
+                        //});
+                    }
+                    else
+                    {
+                        //View.ExecuteOnLoad(target, delegate
+                        //{
+                        BindParameters(
+                            target,
+                            actualParameter,
+                            parameterMembers[0],
+                            parameterMembers[1],
+                            (BindingMode) Enum.Parse(typeof(BindingMode), parameterMembers[2]),
+                            namedElements
+                        );
+                        //});
+                    }
                 }
-            }
 
-            return actualParameter;
-        };
+                return actualParameter;
+            };
 
         /// <summary>
         /// Creates a binding on a <see cref="Parameter" />.
@@ -199,10 +199,11 @@ namespace MvvmFx.CaliburnMicro
         /// <param name="controlName">The name of the control to bind to.</param>
         /// <param name="propertyName">The name of the property to bind to.</param>
         /// <param name="bindingMode">The binding mode to use.</param>
-        public static void BindParameter(FrameworkElement target, Parameter parameter, string controlName,
-            string propertyName, BindingMode bindingMode)
+        /// <param name="namedElements">All the <see cref="Control"/> instances with names in the scope.</param>
+        public static void BindParameters(Control target, Parameter parameter, string controlName,
+            string propertyName, BindingMode bindingMode, IEnumerable<Control> namedElements)
         {
-            var control = _namedElements.FindName(controlName);
+            var control = namedElements.FindName(controlName);
             if (control == null)
                 return;
 
@@ -217,7 +218,7 @@ namespace MvvmFx.CaliburnMicro
         /// <param name="control">The actual control to bind to.</param>
         /// <param name="propertyName">The name of the property to bind to.</param>
         /// <param name="bindingMode">The binding mode to use.</param>
-        public static void BindParameter(FrameworkElement target, Parameter parameter, FrameworkElement control,
+        public static void BindParameter(Control target, Parameter parameter, Control control,
             string propertyName, BindingMode bindingMode)
         {
             if (string.IsNullOrEmpty(propertyName))
@@ -344,6 +345,7 @@ namespace MvvmFx.CaliburnMicro
                                 builder.Length = 0;
                                 continue;
                             }
+
                             break;
                     }
                 }
