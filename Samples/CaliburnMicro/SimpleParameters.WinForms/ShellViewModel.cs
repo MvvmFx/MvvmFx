@@ -1,10 +1,5 @@
 ﻿using MvvmFx.CaliburnMicro;
 using SimpleParameters.UI.ViewModels;
-#if WISEJ
-using Wisej.Web;
-#else
-using System.Windows.Forms;
-#endif
 using Screen = MvvmFx.CaliburnMicro.Screen;
 
 namespace SimpleParameters.UI

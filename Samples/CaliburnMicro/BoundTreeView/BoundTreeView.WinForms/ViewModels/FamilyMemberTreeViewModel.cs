@@ -1,5 +1,4 @@
-﻿using System.ComponentModel;
-using FamilyBusiness;
+﻿using FamilyBusiness;
 using MvvmFx.CaliburnMicro;
 using Screen = MvvmFx.CaliburnMicro.Screen;
 

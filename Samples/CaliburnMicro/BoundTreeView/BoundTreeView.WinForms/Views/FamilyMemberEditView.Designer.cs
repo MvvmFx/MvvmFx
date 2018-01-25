@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.createNew = new System.Windows.Forms.ToolStripButton();
+            this.create = new System.Windows.Forms.ToolStripButton();
             this.save = new System.Windows.Forms.ToolStripButton();
             this.delete = new System.Windows.Forms.ToolStripButton();
             this.close = new System.Windows.Forms.ToolStripButton();
@@ -55,7 +55,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createNew,
+            this.create,
             this.save,
             this.delete,
             this.close,
@@ -68,13 +68,13 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // createNew
+            // create
             // 
-            this.createNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.createNew.Image = global::BoundTreeView.Properties.Resources.AddNew16;
-            this.createNew.Name = "createNew";
-            this.createNew.Size = new System.Drawing.Size(23, 22);
-            this.createNew.Text = "Create New";
+            this.create.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.create.Image = global::BoundTreeView.Properties.Resources.AddNew16;
+            this.create.Name = "create";
+            this.create.Size = new System.Drawing.Size(23, 22);
+            this.create.Text = "New Family Member";
             // 
             // save
             // 
@@ -245,7 +245,7 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton createNew;
+        private System.Windows.Forms.ToolStripButton create;
         private System.Windows.Forms.ToolStripButton save;
         private System.Windows.Forms.ToolStripButton delete;
         private System.Windows.Forms.ToolStripButton close;

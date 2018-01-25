@@ -21,6 +21,11 @@ namespace MasterDetailWithModel
             InitializeComponent();
         }
 
+        public new void Close()
+        {
+            Application.Exit();
+        }
+
         #region IHaveDataContext implementation
 
         public event EventHandler<DataContextChangedEventArgs> DataContextChanged = delegate { };

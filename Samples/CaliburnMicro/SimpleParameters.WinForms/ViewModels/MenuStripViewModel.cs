@@ -1,12 +1,10 @@
 ﻿using System;
 #if WISEJ
-using Wisej.Web;
 using ToolStripMenuItem = Wisej.Web.MenuItem;
 using ToolStripItemProxy = MvvmFx.CaliburnMicro.MenuItemProxy;
 #else
-using System.Windows.Forms;
+using ToolStripItemProxy = MvvmFx.CaliburnMicro.ToolStripItemProxy;
 #endif
-using MvvmFx.CaliburnMicro;
 
 namespace SimpleParameters.UI.ViewModels
 {
@@ -27,7 +25,7 @@ namespace SimpleParameters.UI.ViewModels
             else
             {
                 helper = "Proxy Type: " + proxy.GetType() + Environment.NewLine;
-                var btn = proxy.Item as ToolStripMenuItem;
+                var btn = proxy.Item;
                 if (btn == null)
                     helper = "$this is null";
                 else
