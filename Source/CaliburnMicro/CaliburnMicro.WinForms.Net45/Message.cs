@@ -1,12 +1,5 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
-    using System.Windows;
-#if !WINFORMS && !WISEJ
-    using System.Linq;
-    using System.Windows.Interactivity;
-    using TriggerBase = System.Windows.Interactivity.TriggerBase;
-#endif
-
     /// <summary>
     ///   Host's attached properties related to routed UI messaging.
     /// </summary>
@@ -15,20 +8,10 @@
         internal static readonly DependencyProperty HandlerProperty =
             DependencyProperty.RegisterAttached(
                 "Handler",
-                typeof (object),
-                typeof (Message),
-                null
-                );
-
-#if !WINFORMS && !WISEJ
-        private static readonly DependencyProperty MessageTriggersProperty =
-            DependencyProperty.RegisterAttached(
-                "MessageTriggers",
-                typeof(TriggerBase[]),
+                typeof(object),
                 typeof(Message),
                 null
-                );
-#endif
+            );
 
         /// <summary>
         ///   Places a message handler on this element.
@@ -50,7 +33,6 @@
             return d.GetValue(HandlerProperty);
         }
 
-#if WINFORMS || WISEJ
         /// <summary>
         ///   Gets the message handler for this element.
         /// </summary>
@@ -67,7 +49,6 @@
 
             return result;
         }
-#endif
 
         /// <summary>
         /// This defines the <see cref="P:MvvmFx.CaliburnMicro.Message.Attach"/> attached property.
@@ -80,10 +61,10 @@
         public static readonly DependencyProperty AttachProperty =
             DependencyProperty.RegisterAttached(
                 "Attach",
-                typeof (string),
-                typeof (Message),
+                typeof(string),
+                typeof(Message),
                 new PropertyMetadata(null, OnAttachChanged)
-                );
+            );
 
         /// <summary>
         ///   Sets the attached triggers and messages.
@@ -107,6 +88,7 @@
 
         private static void OnAttachChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            // TODO: investigate what this code should be for WinForms/Wisej
 #if !WINFORMS && !WISEJ
             if(e.NewValue == e.OldValue)
             {

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+
     /// <summary>
     /// Used to gather the results from multiple child elements which may or may not prevent closing.
     /// </summary>

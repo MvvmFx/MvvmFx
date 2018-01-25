@@ -1,28 +1,28 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Drawing;
+﻿namespace MvvmFx.CaliburnMicro
+{
+    using System;
+    using System.ComponentModel;
+    using System.ComponentModel.Design;
+    using System.Drawing;
 #if WISEJ
-using Wisej.Web;
-using System.Windows.Forms.Design;
+    using Wisej.Web;
+    using System.Windows.Forms.Design;
 #else
-using System.Drawing.Drawing2D;
-using System.Windows.Forms;
-using System.Windows.Forms.Design;
+    using System.Drawing.Drawing2D;
+    using System.Windows.Forms;
+    using System.Windows.Forms.Design;
 #endif
 
-namespace MvvmFx.CaliburnMicro
-{
     /// <summary>
     /// A content container panel.
     /// </summary>
-#if WINFORMS
-    [Docking(DockingBehavior.Ask)]
-#elif WISEJ
+#if WISEJ
     [System.Windows.Forms.Docking(System.Windows.Forms.DockingBehavior.Ask)]
+#else
+    [Docking(DockingBehavior.Ask)]
 #endif
-    [Designer(typeof (ContentControlDesigner), typeof (IDesigner))]
-    [ToolboxBitmap(typeof (Panel))]
+    [Designer(typeof(ContentControlDesigner), typeof(IDesigner))]
+    [ToolboxBitmap(typeof(Panel))]
     public class ContentContainer : Panel
     {
         private object _viewModel;

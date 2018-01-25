@@ -223,7 +223,8 @@
                 {
                     if (newItem == null)
                     {
-                        newItem = DetermineNextItemToActivate(items, ActiveItem != null ? items.IndexOf(ActiveItem) : 0);
+                        newItem = DetermineNextItemToActivate(items,
+                            ActiveItem != null ? items.IndexOf(ActiveItem) : 0);
                     }
                     else
                     {

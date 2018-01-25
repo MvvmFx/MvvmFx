@@ -7,9 +7,9 @@
     using System.Linq;
     using System.Reflection;
 #if WISEJ
-    using UIElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-    using UIElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     /// <summary>
@@ -22,7 +22,7 @@
         /// </summary>
         public static readonly IObservableCollection<Assembly> Instance = new BindableCollection<Assembly>();
 
-        private static readonly IDictionary<String, Type> TypeNameCache = new Dictionary<string, Type>();
+        private static readonly IDictionary<string, Type> TypeNameCache = new Dictionary<string, Type>();
 
         static AssemblySource()
         {
@@ -41,10 +41,16 @@
                         TypeNameCache.Clear();
                         Instance
                             .SelectMany(a => ExtractTypes(a))
-                            .Apply(t => TypeNameCache.Add(t.FullName, t));
+                            .Apply(AddToCache);
                         break;
                 }
             };
+        }
+
+        private static void AddToCache(Type t)
+        {
+            if (t.FullName != null && !TypeNameCache.ContainsKey(t.FullName))
+                TypeNameCache.Add(t.FullName, t);
         }
 
         /// <summary>
@@ -53,8 +59,8 @@
         public static Func<Assembly, IEnumerable<Type>> ExtractTypes = assembly =>
             assembly.GetExportedTypes()
                 .Where(t =>
-                    typeof (UIElement).IsAssignableFrom(t) ||
-                    typeof (INotifyPropertyChanged).IsAssignableFrom(t));
+                    typeof(Control).IsAssignableFrom(t) ||
+                    typeof(INotifyPropertyChanged).IsAssignableFrom(t));
 
         /// <summary>
         /// Finds a type which matches one of the elements in the sequence of names.

@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+
     /// <summary>
     /// Provides the startup arguments for the event that is raised when the application starts up.
     /// </summary>

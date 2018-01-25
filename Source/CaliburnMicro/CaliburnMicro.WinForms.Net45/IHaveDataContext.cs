@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+
     /// <summary>
     /// Contains details about the data context.
     /// </summary>

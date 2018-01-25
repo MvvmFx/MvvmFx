@@ -86,7 +86,7 @@
                     rule.ReplacementValues
                         .Select(getReplaceString)
                         .Select(repString => Regex.Replace(source, rule.ReplacePattern, repString))
-                    );
+                );
 
                 if (!useEagerRuleSelection)
                 {

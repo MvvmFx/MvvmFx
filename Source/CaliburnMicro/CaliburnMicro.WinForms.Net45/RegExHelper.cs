@@ -1,7 +1,5 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
-    using System;
-
     /// <summary>
     ///  Helper class for encoding strings to regular expression patterns
     /// </summary>
@@ -30,7 +28,7 @@
         /// <returns>Regular expression capture group with the specified group name</returns>
         public static string GetCaptureGroup(string groupName, string regEx)
         {
-            return String.Concat(@"(?<", groupName, ">", regEx, ")");
+            return string.Concat(@"(?<", groupName, ">", regEx, ")");
         }
 
         /// <summary>

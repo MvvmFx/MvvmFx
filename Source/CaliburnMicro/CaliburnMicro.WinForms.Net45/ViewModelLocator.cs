@@ -4,18 +4,15 @@
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Collections.Generic;
-#if WINFORMS || WISEJ
-    using FrameworkElement = MvvmFx.CaliburnMicro.IHaveDataContext;
-#else
-    using System.Windows;
-#endif
+    using Control = IHaveDataContext;
 
     /// <summary>
     ///   A strategy for determining which view model to use for a given view.
     /// </summary>
     public static class ViewModelLocator
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (ViewModelLocator));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(ViewModelLocator));
+
         //These fields are used for configuring the default type mappings. They can be changed using ConfigureTypeMappings().
         private static string defaultSubNsViews;
         private static string defaultSubNsViewModels;
@@ -48,17 +45,17 @@
         /// <param name="config">An instance of TypeMappingConfiguration that provides the settings for configuration</param>
         public static void ConfigureTypeMappings(TypeMappingConfiguration config)
         {
-            if (String.IsNullOrEmpty(config.DefaultSubNamespaceForViews))
+            if (string.IsNullOrEmpty(config.DefaultSubNamespaceForViews))
             {
                 throw new ArgumentException("DefaultSubNamespaceForViews field cannot be blank.");
             }
 
-            if (String.IsNullOrEmpty(config.DefaultSubNamespaceForViewModels))
+            if (string.IsNullOrEmpty(config.DefaultSubNamespaceForViewModels))
             {
                 throw new ArgumentException("DefaultSubNamespaceForViewModels field cannot be blank.");
             }
 
-            if (String.IsNullOrEmpty(config.NameFormat))
+            if (string.IsNullOrEmpty(config.NameFormat))
             {
                 throw new ArgumentException("NameFormat field cannot be blank.");
             }
@@ -102,7 +99,7 @@
             }
 
             //Check for <Namespace>.<BaseName><ViewSuffix> construct
-            AddNamespaceMapping(String.Empty, String.Empty, viewSuffix);
+            AddNamespaceMapping(string.Empty, string.Empty, viewSuffix);
 
             //Check for <Namespace>.Views.<NameSpace>.<BaseName><ViewSuffix> construct
             AddSubNamespaceMapping(defaultSubNsViews, defaultSubNsViewModels, viewSuffix);
@@ -128,7 +125,7 @@
             {
                 if (viewModelSuffix.Contains(viewSuffix) || !includeViewSuffixInVmNames)
                 {
-                    var nameregex = String.Format(nameFormat, basegrp, viewModelSuffix);
+                    var nameregex = string.Format(nameFormat, basegrp, viewModelSuffix);
                     func = t =>
                     {
                         replist.Add(t + "I" + nameregex + interfacegrp);
@@ -139,7 +136,7 @@
                 }
                 else
                 {
-                    var nameregex = String.Format(nameFormat, basegrp, "${suffix}" + viewModelSuffix);
+                    var nameregex = string.Format(nameFormat, basegrp, "${suffix}" + viewModelSuffix);
                     func = t =>
                     {
                         replist.Add(t + "I" + nameregex + interfacegrp);
@@ -158,21 +155,21 @@
 
             nsTargetsRegEx.ToList().Apply(t => func(t));
 
-            string suffix = useNameSuffixesInMappings ? viewSuffix : String.Empty;
+            string suffix = useNameSuffixesInMappings ? viewSuffix : string.Empty;
 
-            var srcfilterregx = String.IsNullOrEmpty(nsSourceFilterRegEx)
+            var srcfilterregx = string.IsNullOrEmpty(nsSourceFilterRegEx)
                 ? null
-                : String.Concat(nsSourceFilterRegEx, String.Format(nameFormat, RegExHelper.NameRegEx, suffix), "$");
+                : string.Concat(nsSourceFilterRegEx, string.Format(nameFormat, RegExHelper.NameRegEx, suffix), "$");
             var rxbase = RegExHelper.GetNameCaptureGroup("basename");
             var rxsuffix = RegExHelper.GetCaptureGroup("suffix", suffix);
 
             //Add a dummy capture group -- place after the "$" so it can never capture anything
-            var rxinterface = RegExHelper.GetCaptureGroup(InterfaceCaptureGroupName, String.Empty);
+            var rxinterface = RegExHelper.GetCaptureGroup(InterfaceCaptureGroupName, string.Empty);
             NameTransformer.AddRule(
-                String.Concat(nsSourceReplaceRegEx, String.Format(nameFormat, rxbase, rxsuffix), "$", rxinterface),
+                string.Concat(nsSourceReplaceRegEx, string.Format(nameFormat, rxbase, rxsuffix), "$", rxinterface),
                 replist.ToArray(),
                 srcfilterregx
-                );
+            );
         }
 
         /// <summary>
@@ -201,7 +198,7 @@
 
             //Start pattern search from beginning of string ("^")
             //unless original string was blank (i.e. special case to indicate "append target to source")
-            if (!String.IsNullOrEmpty(nsSource))
+            if (!string.IsNullOrEmpty(nsSource))
             {
                 nsencoded = "^" + nsencoded;
             }
@@ -236,9 +233,9 @@
             var nsencoded = RegExHelper.NamespaceToRegEx(nsSource + ".");
 
             string rxbeforetgt, rxaftersrc, rxaftertgt;
-            string rxbeforesrc = rxbeforetgt = rxaftersrc = rxaftertgt = String.Empty;
+            string rxbeforesrc = rxbeforetgt = rxaftersrc = rxaftertgt = string.Empty;
 
-            if (!String.IsNullOrEmpty(nsSource))
+            if (!string.IsNullOrEmpty(nsSource))
             {
                 if (!nsSource.StartsWith("*"))
                 {
@@ -254,9 +251,9 @@
             }
 
             var rxmid = RegExHelper.GetCaptureGroup("subns", nsencoded);
-            var nsreplace = String.Concat(rxbeforesrc, rxmid, rxaftersrc);
+            var nsreplace = string.Concat(rxbeforesrc, rxmid, rxaftersrc);
 
-            var nsTargetsRegEx = nsTargets.Select(t => String.Concat(rxbeforetgt, t, ".", rxaftertgt)).ToArray();
+            var nsTargetsRegEx = nsTargets.Select(t => string.Concat(rxbeforetgt, t, ".", rxaftertgt)).ToArray();
             AddTypeMapping(nsreplace, null, nsTargetsRegEx, viewSuffix);
         }
 
@@ -310,9 +307,10 @@
             else
             {
                 var interfacegrpregex = @"\${" + InterfaceCaptureGroupName + @"}$";
-                getReplaceString = r => Regex.IsMatch(r, interfacegrpregex) ? String.Empty : r;
+                getReplaceString = r => Regex.IsMatch(r, interfacegrpregex) ? string.Empty : r;
             }
-            return NameTransformer.Transform(typeName, getReplaceString).Where(n => n != String.Empty);
+
+            return NameTransformer.Transform(typeName, getReplaceString).Where(n => n != string.Empty);
         };
 
         /// <summary>
@@ -379,7 +377,7 @@
                 return null;
             }
 
-            var frameworkElement = view as FrameworkElement;
+            var frameworkElement = view as Control;
             if (frameworkElement != null && frameworkElement.DataContext != null)
             {
                 return frameworkElement.DataContext;

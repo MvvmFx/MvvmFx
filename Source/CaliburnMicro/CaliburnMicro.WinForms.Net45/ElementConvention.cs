@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System;
-using System.Reflection;
+﻿namespace MvvmFx.CaliburnMicro
+{
+    using System.Collections.Generic;
+    using System;
+    using System.Reflection;
 #if WISEJ
-using Wisej.Web;
+    using Wisej.Web;
 #else
-using System.Windows.Forms;
+    using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.CaliburnMicro
-{
     /// <summary>
     /// Represents the conventions for a particular element type.
     /// </summary>

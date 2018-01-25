@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+
     /// <summary>
     /// Provides a generic collection that supports data binding and is observable.
     /// </summary>
@@ -61,7 +61,8 @@ namespace MvvmFx.CaliburnMicro
         {
             if (IsNotifying)
             {
-                Execute.OnUIThread(() => RaisePropertyChangedEventImmediately(new PropertyChangedEventArgs(propertyName)));
+                Execute.OnUIThread(() =>
+                    RaisePropertyChangedEventImmediately(new PropertyChangedEventArgs(propertyName)));
             }
         }
 
@@ -116,6 +117,7 @@ namespace MvvmFx.CaliburnMicro
                     InsertItem(index, item);
                     index++;
                 }
+
                 IsNotifying = previousNotificationSetting;
 
                 OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, 0));
@@ -137,6 +139,7 @@ namespace MvvmFx.CaliburnMicro
                     var index = IndexOf(item);
                     RemoveItem(index);
                 }
+
                 IsNotifying = previousNotificationSetting;
                 OnListChanged(new ListChangedEventArgs(ListChangedType.Reset, 0));
             });

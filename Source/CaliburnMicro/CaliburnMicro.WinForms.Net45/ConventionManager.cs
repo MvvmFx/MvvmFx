@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using System.Windows;
 #if WISEJ
     using Wisej.Web;
 #else
@@ -15,9 +14,8 @@
     /// </summary>
     public static class ConventionManager
     {
-#if WISEJ
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (ConventionManager));
-#endif
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(ConventionManager));
+
         static ConventionManager()
         {
             AddElementConvention<ComboBox>("SelectedIndex", null, "SelectedIndexChanged");
@@ -31,13 +29,9 @@
             AddElementConvention<ListControl>("DataSource", null, null);
             AddElementConvention<TreeView>("DataSource", null, null);
             AddElementConvention<GroupBox>("Name", null, null);
-#if WINFORMS
-            AddElementConvention<ToolStripItemProxy>("Name", null, "Click")
-                .CreateAction = (element, methodName, parameters) =>
-                {
-                    return new ActionMessage(element, "Click", methodName, parameters);
-                };
-#else
+            AddElementConvention<TabControl>("SelectedTab", null, null)
+                .ApplyBinding = (viewModel, path, property, control, convention) => { return true; };
+#if WISEJ
             AddElementConvention<MenuItemProxy>("Name", null, "Click")
                 .CreateAction = (element, methodName, parameters) =>
             {
@@ -48,9 +42,19 @@
             {
                 return new ActionMessage(element, "Click", methodName, parameters);
             };
+            // StatusBarPanel in't clickable yet
+            /*AddElementConvention<StatusBarPanelProxy>("Name", null, "Click")
+                .CreateAction = (element, methodName, parameters) =>
+            {
+                return new ActionMessage(element, "Click", methodName, parameters);
+            };*/
+#else
+            AddElementConvention<ToolStripItemProxy>("Name", null, "Click")
+                .CreateAction = (element, methodName, parameters) =>
+            {
+                return new ActionMessage(element, "Click", methodName, parameters);
+            };
 #endif
-            AddElementConvention<TabControl>("SelectedTab", null, null)
-                .ApplyBinding = (viewModel, path, property, control, convention) => { return true; };
         }
 
         private static readonly Dictionary<Type, ElementConvention> ControlConventions =
@@ -59,7 +63,7 @@
         /// <summary>
         /// Gets an element convention for the provided element type.
         /// </summary>
-        /// <param name="controlType">The type of control to locate the convention for.</param>
+        /// <param name="controlType">The type of the control to locate the convention for.</param>
         /// <returns>The convention if found, null otherwise.</returns>
         /// <remarks>Searches the class hierarchy for conventions.</remarks>
         public static ElementConvention GetElementConvention(Type controlType)
@@ -85,11 +89,12 @@
         {
             return AddElementConvention(new ElementConvention
             {
-                ElementType = typeof (T),
+                ElementType = typeof(T),
                 BindingPropertyName = bindingPropertyName,
                 ParameterProperty = parameterProperty,
                 EventName = eventName,
-                CreateAction = (element, methodName, parameters) => new ActionMessage(element, eventName, methodName, parameters)
+                CreateAction = (element, methodName, parameters) =>
+                    new ActionMessage(element, eventName, methodName, parameters)
             });
         }
 
@@ -179,7 +184,7 @@
         /// <param name="viewModel">The view model (dataSource).</param>
         /// <param name="path">The dataMember.</param>
         /// <param name="property">The binding property.</param>
-        /// <param name="element">The control element.</param>
+        /// <param name="control">The control.</param>
         /// <param name="convention">The element convention.</param>
         /// <returns>
         /// 	<c>true</c> if the specified property already has a binding on the provided control; otherwise, <c>false</c>.
@@ -188,14 +193,14 @@
         /// Binding(convention.BindingPropertyName, viewModel, path)<br/>
         /// Binding(string propertyName, object dataSource, string dataMember)</remarks>
         public static bool SetBindingWithoutBindingOverwrite(object viewModel, string path, PropertyInfo property,
-            Control element, ElementConvention convention)
+            Control control, ElementConvention convention)
         {
-            if (HasBinding(element, path))
+            if (HasBinding(control, path))
             {
                 return false;
             }
 
-            SetBinding(viewModel, path, property, element, convention);
+            SetBinding(viewModel, path, property, control, convention);
             return true;
         }
     }

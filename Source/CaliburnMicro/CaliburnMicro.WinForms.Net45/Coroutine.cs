@@ -8,7 +8,7 @@
     /// </summary>
     public static class Coroutine
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (Coroutine));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(Coroutine));
 
         /// <summary>
         /// Creates the parent enumerator.

@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
+﻿namespace MvvmFx.CaliburnMicro
+{
+    using System.Collections.Generic;
 #if WISEJ
-using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-using FrameworkElement = System.Windows.Forms.Control;
-
+    using Control = System.Windows.Forms.Control;
 #endif
 
-namespace MvvmFx.CaliburnMicro
-{
     /// <summary>
     /// Defines a view model that caches a list of all control objects on the attached view.
     /// </summary>
@@ -19,6 +18,6 @@ namespace MvvmFx.CaliburnMicro
         /// <value>
         /// The control objects of the view.
         /// </value>
-        List<FrameworkElement> ViewNamedElements { get; set; }
+        List<Control> ViewNamedElements { get; set; }
     }
 }
