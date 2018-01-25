@@ -119,7 +119,7 @@
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 538);
+            this.statusBar.Location = new System.Drawing.Point(0, 765);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(1255, 22);
             this.statusBar.TabIndex = 1;
@@ -130,7 +130,7 @@
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 22);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1255, 516);
+            this.activeItem.Size = new System.Drawing.Size(1255, 743);
             this.activeItem.TabIndex = 2;
             this.activeItem.Text = "activeItem";
             // 
@@ -140,19 +140,12 @@
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(1255, 560);
-            this.ClientSize = new System.Drawing.Size(646, 393);
-            this.CloseBox = false;
-            this.ControlBox = false;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
-            this.FormBorderStyle = Wisej.Web.FormBorderStyle.Fixed;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Movable = false;
             this.Name = "MainForm";
+            this.Size = new System.Drawing.Size(917, 787);
             this.Text = "MainForm";
-            this.WindowState = Wisej.Web.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

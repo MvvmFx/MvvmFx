@@ -60,15 +60,15 @@ namespace BoundTreeView.Views
             if (_isBindingSet)
                 return;
 
-           /* if (modelDeleteMode.ComboBox != null)
-                SetDeleteModeComboBoxDataSource();
+            /*if (modelDeleteMode.ComboBox != null)
+                SetDeleteModeComboBoxDataSource();*/
 
             if (modelGender != null)
                 SetGenderComboBoxDataSource();
 
-            modelDateOfBirth.DataBindings.Add(new System.Windows.Forms.Binding("Text", _viewModel.Model, "DateOfBirth", false, DataSourceUpdateMode.OnValidation));
+            modelDateOfBirth.DataBindings.Add(new Wisej.Web.Binding("Text", _viewModel.Model, "DateOfBirth", false, DataSourceUpdateMode.OnValidation));
 
-            _bindingManager.Bindings.Add(new Binding(modelDeleteMode.ComboBox, "Text", _viewModel.Model as FamilyMember, "DeleteMode")
+            /*_bindingManager.Bindings.Add(new Binding(modelDeleteMode.ComboBox, "Text", _viewModel.Model as FamilyMember, "DeleteMode")
             {
                 Converter = new DeleteModeDescriptionConverter(),
                 Mode = BindingMode.TwoWay
@@ -107,7 +107,7 @@ namespace BoundTreeView.Views
         private void SetGenderComboBoxDataSource()
         {
             /*if (modelDeleteMode.ComboBox == null)
-                return;
+                return;*/
 
             var ds = new List<string>
             {
@@ -116,7 +116,7 @@ namespace BoundTreeView.Views
                 Resources.Gender_Female
             };
 
-            modelGender.DataSource = ds;*/
+            modelGender.DataSource = ds;
         }
 
         #endregion

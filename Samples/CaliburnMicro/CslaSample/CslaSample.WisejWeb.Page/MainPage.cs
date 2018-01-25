@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Wisej.Web;
 using MvvmFx.CaliburnMicro;
 using MvvmFx.Windows.Data;
-#if WISEJ
-using Wisej.Web;
-using LogManager = MvvmFx.WisejWeb.LogManager;
-#else
-using System.Windows.Forms;
-using LogManager = MvvmFx.Windows.Forms.LogManager;
-#endif
 
-namespace BoundTreeView
+namespace CslaSample
 {
     public partial class MainForm : Page, IHaveDataContext
     {
@@ -23,7 +17,6 @@ namespace BoundTreeView
         public MainForm()
         {
             InitializeComponent();
-            LogManager.GetLog = type => new MvvmFx.Logging.DebugLogger(type);
         }
 
         public void Close()

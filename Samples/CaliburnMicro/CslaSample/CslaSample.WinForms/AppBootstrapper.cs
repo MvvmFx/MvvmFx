@@ -11,7 +11,11 @@ using MvvmFx.Logging;
 
 namespace CslaSample
 {
+#if PAGE
+    internal class AppBootstrapper : PageBootstrapper<IMainFormViewModel>
+#else
     internal class AppBootstrapper : Bootstrapper<IMainFormViewModel>
+#endif
     {
         private static SimpleContainer _container;
 
