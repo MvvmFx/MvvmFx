@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Csla.Core;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using Csla.Core;
+
     /// <summary>
     /// A base class for various implementations of <see cref="IConductor" />
     /// and also implements <see cref="IHaveModel" />.

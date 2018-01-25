@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.Linq;
+
     public partial class ConductorWithModel<TC, TM>
     {
         /// <summary>
@@ -112,7 +112,7 @@ namespace MvvmFx.CaliburnMicro
                     if (openPublicItems)
                     {
                         GetType().GetProperties()
-                            .Where(x => x.Name != "Parent" && typeof (TC).IsAssignableFrom(x.PropertyType))
+                            .Where(x => x.Name != "Parent" && typeof(TC).IsAssignableFrom(x.PropertyType))
                             .Select(x => x.GetValue(this, null))
                             .Cast<TC>()
                             .Apply(ActivateItem);

@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using Csla;
-using Csla.Core;
-using Csla.Reflection;
-using Csla.Rules;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using Csla;
+    using Csla.Core;
+    using Csla.Reflection;
+    using Csla.Rules;
+
     /// <summary>
     /// Base class used to create ScreenWithModel objects that implement their own commands/verbs/actions.
     /// </summary>
@@ -62,6 +62,7 @@ namespace MvvmFx.CaliburnMicro
                 IsBusy = false;
                 Error = ex;
             }
+
             return this;
         }
 
@@ -104,6 +105,7 @@ namespace MvvmFx.CaliburnMicro
                         if (undoable != null)
                             undoable.BeginEdit();
                     }
+
                     OnModelChanged((T) oldValue, (T) ModelProperty);
                     NotifyOfPropertyChange("Model");
                 }
@@ -627,6 +629,7 @@ namespace MvvmFx.CaliburnMicro
                 {
                     Error = ex;
                 }
+
                 OnRefreshed();
             }
         }
@@ -649,6 +652,7 @@ namespace MvvmFx.CaliburnMicro
                 {
                     Error = ex;
                 }
+
                 OnRefreshed();
             }
         }
@@ -659,7 +663,7 @@ namespace MvvmFx.CaliburnMicro
         /// <param name="factoryMethod">Name of the static factory method.</param>
         protected virtual void DoRefresh(string factoryMethod)
         {
-            DoRefresh(factoryMethod, new object[] {});
+            DoRefresh(factoryMethod, new object[] { });
         }
 
         /// <summary>
@@ -717,7 +721,7 @@ namespace MvvmFx.CaliburnMicro
         /// <param name="factoryMethod">Name of the static factory method.</param>
         protected virtual void BeginRefresh(string factoryMethod)
         {
-            BeginRefresh(factoryMethod, new object[] {});
+            BeginRefresh(factoryMethod, new object[] { });
         }
 
         private Delegate CreateHandler(Type objectType)
@@ -742,6 +746,7 @@ namespace MvvmFx.CaliburnMicro
                 }
                 else
                     Error = eventArgs.Error;
+
                 OnRefreshed();
             }
             finally
@@ -807,6 +812,7 @@ namespace MvvmFx.CaliburnMicro
                 Error = ex;
                 OnSaved();
             }
+
             return result;
         }
 
@@ -849,6 +855,7 @@ namespace MvvmFx.CaliburnMicro
                 Error = ex;
                 OnSaved();
             }
+
             return Model;
         }
 
@@ -892,6 +899,7 @@ namespace MvvmFx.CaliburnMicro
                     {
                         Error = e.Error;
                     }
+
                     OnSaved();
                 };
                 Error = null;
@@ -982,6 +990,7 @@ namespace MvvmFx.CaliburnMicro
                 var iobl = ((IObservableBindingList) Model);
                 iobl.AddNew();
             }
+
             OnSetProperties();
         }
 
@@ -1003,6 +1012,7 @@ namespace MvvmFx.CaliburnMicro
                 var iobl = ((IObservableBindingList) Model);
                 result = iobl.AddNew();
             }
+
             OnSetProperties();
             return result;
         }
