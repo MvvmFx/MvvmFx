@@ -3,11 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using System.Windows;
 #if WISEJ
-    using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-    using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     /// <summary>
@@ -49,9 +48,9 @@
         /// <summary>
         /// The source from which the message originates.
         /// </summary>
-        public FrameworkElement Source
+        public Control Source
         {
-            get { return source == null ? null : source.Target as FrameworkElement; }
+            get { return source == null ? null : source.Target as Control; }
             set { source = new WeakReference(value); }
         }
 

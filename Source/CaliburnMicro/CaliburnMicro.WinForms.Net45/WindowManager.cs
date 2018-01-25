@@ -8,13 +8,11 @@
 #if WISEJ
     using Wisej.Web;
     using Window = Wisej.Web.Form;
-    using NavigationWindow = Wisej.Web.Form;
-    using Popup = Wisej.Web.Panel;
+    //using Popup = Wisej.Web.Panel;
 #else
     using System.Windows.Forms;
     using Window = System.Windows.Forms.Form;
-    using NavigationWindow = System.Windows.Forms.Form;
-    using Popup = System.Windows.Forms.Panel;
+    //using Popup = System.Windows.Forms.Panel;
 #endif
 
     /// <summary>
@@ -28,8 +26,10 @@
         /// <param name="rootModel">The root model.</param>
         /// <param name="context">The context.</param>
         /// <param name="settings">The optional dialog settings.</param>
+        /// <param name="rootForm">The root form.</param>
         /// <returns>The return value should denote whether the dialog result was afirmative.</returns>
-        bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null);
+        bool? ShowDialog(object rootModel, object context = null, IDictionary<string, object> settings = null,
+            Window rootForm = null);
 
         /// <summary>
         /// Shows a non-modal Form for the specified model.
@@ -37,7 +37,21 @@
         /// <param name="rootModel">The root model.</param>
         /// <param name="context">The context.</param>
         /// <param name="settings">The optional Form settings.</param>
-        void ShowWindow(object rootModel, object context = null, IDictionary<string, object> settings = null);
+        /// <param name="rootForm">The root form.</param>
+        void ShowWindow(object rootModel, object context = null, IDictionary<string, object> settings = null,
+            Window rootForm = null);
+
+#if WISEJ
+        /// <summary>
+        /// Shows a non-modal Form for the specified model.
+        /// </summary>
+        /// <param name="rootModel">The root model.</param>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The optional Form settings.</param>
+        /// <param name="rootForm">The root form.</param>
+        void ShowPage(object rootModel, object context = null, IDictionary<string, object> settings = null,
+            Page rootForm = null);
+#endif
 
         /*/// <summary>
         /// Shows a popup at the current mouse position.
@@ -45,15 +59,7 @@
         /// <param name="rootModel">The root model.</param>
         /// <param name="context">The view context.</param>
         /// <param name="settings">The optional popup settings.</param>
-        void ShowPopup(object rootModel, object context = null, IDictionary<string, object> settings = null);*/
-
-        /// <summary>
-        /// Shows a Form for the specified model, and that Form is supposed to be the main application form.
-        /// </summary>
-        /// <param name="rootModel">The root model.</param>
-        /// <param name="context">The context.</param>
-        /// <param name="settings">The optional Form settings.</param>
-        void ShowMainWindow(object rootModel, object context = null, IDictionary<string, object> settings = null);
+        void ShowPopup(object rootModel, object context = null, IDictionary<string, object> settings = null, Window rootForm = null);*/
     }
 
     /// <summary>
@@ -67,16 +73,20 @@
         /// <param name="rootModel">The root model.</param>
         /// <param name="context">The context.</param>
         /// <param name="settings">The optional dialog settings.</param>
+        /// <param name="rootForm">The root form.</param>
         /// <returns>The return value should denote whether the dialog result was afirmative.</returns>
         public virtual bool? ShowDialog(object rootModel, object context = null,
-            IDictionary<string, object> settings = null)
+            IDictionary<string, object> settings = null, Window rootForm = null)
         {
             DialogResult result = DialogResult.OK;
 
             Execute.OnUIThread(() =>
             {
-                using (var dlg = CreateWindow(rootModel, true, context, settings))
+                using (var dlg = CreateWindow(rootModel, true, context, settings, rootForm))
                 {
+                    if (dlg.Visible)
+                        dlg.Visible = false;
+
                     dlg.ShowDialog();
                     result = dlg.DialogResult;
                 }
@@ -85,7 +95,7 @@
             if (result == DialogResult.OK || result == DialogResult.Yes)
                 return true;
             if (result == DialogResult.Cancel || result == DialogResult.No)
-                return true;
+                return false;
             return null;
         }
 
@@ -95,37 +105,71 @@
         /// <param name="rootModel">The root model.</param>
         /// <param name="context">The context.</param>
         /// <param name="settings">The optional Form settings.</param>
+        /// <param name="rootForm">The root form.</param>
         public virtual void ShowWindow(object rootModel, object context = null,
-            IDictionary<string, object> settings = null)
+            IDictionary<string, object> settings = null, Window rootForm = null)
         {
-            NavigationWindow navWindow = null;
+#if WISEJ
+            if (ApplicationContext.MainWindow == null && ApplicationContext.MainPage == null)
+#else
+            if (ApplicationContext.MainWindow == null)
+#endif
+            {
+                var root = CreateWindow(rootModel, true, context, settings, rootForm);
 
-            if (ApplicationContext.MainWindow != null)
-            {
-                navWindow = ApplicationContext.MainWindow;
-            }
+                var applicationContext = new ApplicationContext(root);
 
-            if (navWindow != null)
-            {
-                //var window = CreatePage(rootModel, context, settings);
-                //navWindow.Navigate(window);
+                if (root.Visible)
+                    root.Visible = false;
+
+                root.ShowDialog();
             }
-            else
+            else // modeless
             {
-                var window = CreateWindow(rootModel, true, context, settings);
+                var window = CreateWindow(rootModel, false, context, settings, rootForm);
 
                 if (FormStartPosition.CenterParent == window.StartPosition && null != window.Owner)
                 {
                     window.StartPosition = FormStartPosition.Manual;
                     window.Location =
                         new Point(
-                            window.Owner.Location.X + (window.Owner.Width - window.Width)/2,
-                            window.Owner.Location.Y + (window.Owner.Height - window.Height)/2);
+                            window.Owner.Location.X + (window.Owner.Width - window.Width) / 2,
+                            window.Owner.Location.Y + (window.Owner.Height - window.Height) / 2);
                 }
 
+#if WISEJ
+                //window.TopMost = true;
+                window.Show();
+#else
                 Execute.OnUIThread(() => { window.Show(); });
+#endif
             }
         }
+
+#if WISEJ
+        /// <summary>
+        /// Shows a Form for the specified model.
+        /// </summary>
+        /// <param name="rootModel">The root model.</param>
+        /// <param name="context">The context.</param>
+        /// <param name="settings">The optional Form settings.</param>
+        /// <param name="rootForm">The root form.</param>
+        public virtual void ShowPage(object rootModel, object context = null,
+            IDictionary<string, object> settings = null, Page rootForm = null)
+        {
+            if (ApplicationContext.MainPage == null)
+            {
+                var root = CreatePage(rootModel, true, context, settings, rootForm);
+
+                var applicationContext = new ApplicationContext(root);
+
+                if (root.Visible)
+                    root.Visible = false;
+
+                root.Show();
+            }
+        }
+#endif
 
         /*/// <summary>
         /// Shows a popup at the current mouse position.
@@ -188,37 +232,6 @@
         }*/
 
         /// <summary>
-        /// For the specified model, shows a Form that is supposed to be the main application form.
-        /// </summary>
-        /// <param name="rootModel">The root model.</param>
-        /// <param name="context">The context.</param>
-        /// <param name="settings">The optional Form settings.</param>
-        public virtual void ShowMainWindow(object rootModel, object context = null,
-            IDictionary<string, object> settings = null)
-        {
-            Window root;
-            if (ApplicationContext.StartupForm != null)
-            {
-                root = CreateWindow(rootModel, true, context, settings, ApplicationContext.StartupForm);
-            }
-            else
-            {
-                root = CreateWindow(rootModel, true, context, settings);
-            }
-#if WISEJ
-            new ApplicationContext(root);
-            ApplicationContext.MainWindow.ShowDialog();
-#else
-            var applicationContext = new ApplicationContext(root);
-            Execute.OnUIThread(() =>
-            {
-                //applicationContext.MainForm.ShowDialog();
-                Application.Run(applicationContext);
-            });
-#endif
-        }
-
-        /// <summary>
         /// Creates a Form.
         /// </summary>
         /// <param name="rootModel">The root view model.</param>
@@ -256,6 +269,46 @@
             return view;
         }
 
+#if WISEJ
+        /// <summary>
+        /// Creates a Form.
+        /// </summary>
+        /// <param name="rootModel">The root view model.</param>
+        /// <param name="isDialog">if set to <c>true</c> the Form is a dialog.</param>
+        /// <param name="context">The view context.</param>
+        /// <param name="settings">The optional popup settings.</param>
+        /// <param name="rootForm">The root form.</param>
+        /// <returns>The created Form.</returns>
+        /// <remarks>
+        /// The calling method only passes the root form parameter in ShowMainWindow, when the main form already exists.
+        /// This is necessary for Visual WebGUI (or Windows if the Bootstrapper is invoked after the main form creation).
+        /// </remarks>
+        protected virtual Page CreatePage(object rootModel, bool isDialog, object context,
+            IDictionary<string, object> settings, Page rootForm = null)
+        {
+            Page view;
+            if (rootForm != null)
+                view = rootForm;
+            else
+                view = EnsurePage(rootModel, ViewLocator.LocateForModel(rootModel, null, null), isDialog);
+
+            ViewModelBinder.Bind(rootModel, view, null);
+
+            var haveDisplayName = rootModel as IHaveDisplayName;
+            if (haveDisplayName != null && !ConventionManager.HasBinding(view, "Text"))
+            {
+                view.DataBindings.Add(new Binding("Text", rootModel, "DisplayName", true,
+                    DataSourceUpdateMode.OnPropertyChanged));
+            }
+
+            ApplySettings(view, settings);
+
+            new WindowConductor(rootModel, view);
+
+            return view;
+        }
+#endif
+
         /// <summary>
         /// Makes sure the view is a Form or is wrapped by one.
         /// </summary>
@@ -283,20 +336,12 @@
                 //window.SetValue(View.IsGeneratedProperty, true);
                 window.Controls.Add(contentControl);
 
-#if WISEJ
-                var owner = ApplicationContext.MainWindow;
-                var owner2 = Window.ActiveForm;
-#else
                 var owner = Window.ActiveForm;
-#endif
+                window.StartPosition = FormStartPosition.CenterParent;
+
                 if (null != owner && window != owner)
                 {
-                    window.StartPosition = FormStartPosition.CenterParent;
                     window.Owner = owner;
-                }
-                else
-                {
-                    window.StartPosition = FormStartPosition.CenterScreen;
                 }
             }
             else
@@ -314,6 +359,39 @@
 
             return window;
         }
+
+#if WISEJ
+        /// <summary>
+        /// Makes sure the view is a Form or is wrapped by one.
+        /// </summary>
+        /// <param name="model">The view model.</param>
+        /// <param name="view">The view.</param>
+        /// <param name="isDialog">if set to <c>true</c>, the Form is being shown as a dialog.</param>
+        /// <returns>The original Form or a new Form embedding the "view" control.</returns>
+        protected virtual Page EnsurePage(object model, object view, bool isDialog)
+        {
+            var page = view as Page;
+
+            if (page == null)
+            {
+                page = new Page();
+
+                var contentControl = new ContentContainer()
+                {
+                    Dock = DockStyle.Fill,
+                    Location = new Point(0, 0),
+                    TabIndex = 0,
+                    Content = model
+                    // when setting the Content property, the setter will locate and load the view
+                };
+
+                //window.SetValue(View.IsGeneratedProperty, true);
+                page.Controls.Add(contentControl);
+            }
+
+            return page;
+        }
+#endif
 
         /// <summary>
         /// Infers the owner of the Form.
@@ -360,6 +438,9 @@
             private bool deactivateFromViewModel;
             private bool actuallyClosing;
             private readonly Window view;
+#if WISEJ
+            private readonly Page page;
+#endif
             private readonly object model;
 
             public WindowConductor(object model, Window view)
@@ -386,6 +467,27 @@
                     view.Closing += Closing;
                 }
             }
+
+#if WISEJ
+            public WindowConductor(object model, Page page)
+            {
+                this.model = model;
+                this.page = page;
+
+                var activatable = model as IActivate;
+                if (activatable != null)
+                {
+                    activatable.Activate();
+                }
+
+                var deactivatable = model as IDeactivate;
+                if (deactivatable != null)
+                {
+                    page.Disposed += Closed;
+                    deactivatable.Deactivated += Deactivated;
+                }
+            }
+#endif
 
             private void Closed(object sender, EventArgs e)
             {
