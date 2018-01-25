@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-
-// ReSharper disable CheckNamespace
-namespace System.Windows
-// ReSharper restore CheckNamespace
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+
     /// <summary>
-    /// Convenience methods to use with dependency objects.
+    /// Extension methods to use with dependency objects.
     /// </summary>
     public static class DependencyObjectExtensions
     {
@@ -77,7 +76,7 @@ namespace System.Windows
         /// <value>
         /// The associated object.
         /// </value>
-        public object Object { get; private set; }
+        public object Object { get; }
 
         /// <summary>
         /// Clears the value of a dependency property.
@@ -122,7 +121,7 @@ namespace System.Windows
                         property,
                         oldValue == null ? null : oldValue.Target,
                         _weakReferences[property].Target
-                        ));
+                    ));
             }
         }
 
@@ -140,7 +139,7 @@ namespace System.Windows
                         property,
                         oldValue == null ? null : oldValue,
                         value
-                        ));
+                    ));
             }
         }
 
@@ -233,8 +232,10 @@ namespace System.Windows
             Dictionary<string, DependencyProperty> typeDeclarations = PropertyDeclarations[type];
             if (!typeDeclarations.ContainsKey(dp.Name))
                 typeDeclarations[dp.Name] = dp;
+#if WINFORMS
             else
                 throw new ArgumentException("The specified property name already exists on the given object type.");
+#endif
         }
     }
 }

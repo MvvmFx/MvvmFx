@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using MvvmFx.Windows.Data;
-#if WISEJ
-using Wisej.Web;
-#else
-using System.Windows.Forms;
-#endif
-using Binding = MvvmFx.Windows.Data.Binding;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using MvvmFx.Windows.Data;
+#if WISEJ
+    using Wisej.Web;
+#else
+    using System.Windows.Forms;
+#endif
+    using Binding = MvvmFx.Windows.Data.Binding;
+
     /// <summary>
     /// Extension methods for Windows Forms and Wisej
     /// </summary>
@@ -155,9 +155,7 @@ namespace MvvmFx.CaliburnMicro
                 }
             }
         }
-
 #else
-
         /// <summary>
         /// Gets all the <see cref="Control" /> instances with names in the scope.
         /// </summary>
@@ -236,6 +234,7 @@ namespace MvvmFx.CaliburnMicro
                         yield return item;
                 }
             }
+
             /*else if (component is StatusBarPanel)
             {
                 foreach (StatusBarPanel t in ((StatusBarPanel)component).Panels)

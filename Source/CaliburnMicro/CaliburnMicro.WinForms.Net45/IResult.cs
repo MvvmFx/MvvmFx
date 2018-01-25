@@ -19,7 +19,6 @@
         event EventHandler<ResultCompletionEventArgs> Completed;
     }
 
-#if !SILVERLIGHT || SL5
     /// <summary>
     /// Allows custom code to execute after the return of a action.
     /// </summary>
@@ -31,5 +30,4 @@
         /// </summary>
         TResult Result { get; }
     }
-#endif
 }

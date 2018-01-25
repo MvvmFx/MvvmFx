@@ -111,7 +111,7 @@
                     if (openPublicItems)
                     {
                         GetType().GetProperties()
-                            .Where(x => x.Name != "Parent" && typeof (T).IsAssignableFrom(x.PropertyType))
+                            .Where(x => x.Name != "Parent" && typeof(T).IsAssignableFrom(x.PropertyType))
                             .Select(x => x.GetValue(this, null))
                             .Cast<T>()
                             .Apply(ActivateItem);

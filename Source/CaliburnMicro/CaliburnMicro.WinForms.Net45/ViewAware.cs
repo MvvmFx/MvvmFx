@@ -2,11 +2,10 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Windows;
 #if WISEJ
-    using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-    using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     ///<summary>
@@ -16,11 +15,12 @@
     {
         private bool cacheViews;
 
-        private static readonly DependencyProperty PreviouslyAttachedProperty = DependencyProperty.RegisterAttached(
-            "PreviouslyAttached",
-            typeof (bool),
-            typeof (ViewAware),
-            null
+        private static readonly DependencyProperty PreviouslyAttachedProperty =
+            DependencyProperty.RegisterAttached(
+                "PreviouslyAttached",
+                typeof(bool),
+                typeof(ViewAware),
+                null
             );
 
         /// <summary>
@@ -77,17 +77,11 @@
             }
 
             var nonGeneratedView = View.GetFirstNonGeneratedView(view);
+            var element = nonGeneratedView as Control;
 
-            var element = nonGeneratedView as FrameworkElement;
-#if !WINFORMS && !WISEJ
-            if (element != null && !(bool) element.GetValue(PreviouslyAttachedProperty))
-            {
-                element.SetValue(PreviouslyAttachedProperty, true);
-#else
-            if (element != null && !(bool)element.GetDependencyObject().GetValue(PreviouslyAttachedProperty))
+            if (element != null && !(bool) element.GetDependencyObject().GetValue(PreviouslyAttachedProperty))
             {
                 element.GetDependencyObject().SetValue(PreviouslyAttachedProperty, true);
-#endif
                 View.ExecuteOnLoad(element, (s, e) => OnViewLoaded(s));
             }
 
@@ -124,7 +118,6 @@
             return view;
         }
 
-#if WINFORMS || WISEJ
         /// <summary>
         /// Gets the view.
         /// </summary>
@@ -135,6 +128,5 @@
         {
             get { return ((IViewAware) this).GetView(); }
         }
-#endif
     }
 }

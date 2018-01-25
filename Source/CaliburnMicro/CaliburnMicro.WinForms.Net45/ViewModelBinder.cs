@@ -4,13 +4,10 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using System.Windows;
 #if WISEJ
-    using Wisej.Web;
-    using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-    using System.Windows.Forms;
-    using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     /// <summary>
@@ -38,7 +35,7 @@
     /// </summary>
     public static class ViewModelBinder
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (ViewModelBinder));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(ViewModelBinder));
 
         /// <summary>
         /// Gets or sets a value indicating whether to apply conventions by default.
@@ -59,17 +56,17 @@
         public static readonly DependencyProperty ConventionsAppliedProperty =
             DependencyProperty.RegisterAttached(
                 "ConventionsApplied",
-                typeof (bool),
-                typeof (ViewModelBinder),
+                typeof(bool),
+                typeof(ViewModelBinder),
                 null
-                );
+            );
 
         /// <summary>
         /// Determines whether a view should have conventions applied to it.
         /// </summary>
         /// <param name="view">The view to check.</param>
         /// <returns>Whether or not conventions should be applied to the view.</returns>
-        public static bool ShouldApplyConventions(FrameworkElement view)
+        public static bool ShouldApplyConventions(Control view)
         {
             var overriden = View.GetApplyConventions(view.GetDependencyObject());
             return overriden.GetValueOrDefault(ApplyConventionsByDefault);
@@ -105,10 +102,10 @@
         /// </summary>
         /// <remarks>Parameters include named Elements to search through and the view model object to find unbindable properties.
         /// Returns matched elements only, to simplify rebinding.</remarks>
-        public static Func<IEnumerable<FrameworkElement>, object, IEnumerable<FrameworkElement>> UnbindProperties =
+        public static Func<IEnumerable<Control>, object, IEnumerable<Control>> UnbindProperties =
             (namedElements, viewModel) =>
             {
-                var matchedElements = new List<FrameworkElement>();
+                var matchedElements = new List<Control>();
 
                 foreach (var element in namedElements)
                 {
@@ -149,15 +146,14 @@
                 return matchedElements;
             };
 
-
         /// <summary>
         /// Creates data bindings on the view's controls based on the provided properties.
         /// </summary>
-        /// <remarks>Parameters include named Elements to search through and the view model object to determine conventions for. Returns unmatched elements.</remarks>
-        public static Func<IEnumerable<FrameworkElement>, object, IEnumerable<FrameworkElement>> BindProperties =
+        /// <remarks>Parameters include named elements list to search through and the view model object to determine conventions for. Returns unmatched elements.</remarks>
+        public static Func<IEnumerable<Control>, object, IEnumerable<Control>> BindProperties =
             (namedElements, viewModel) =>
             {
-                var unmatchedElements = new List<FrameworkElement>();
+                var unmatchedElements = new List<Control>();
 
                 foreach (var element in namedElements)
                 {
@@ -188,7 +184,8 @@
                     if (convention == null)
                     {
                         unmatchedElements.Add(element);
-                        Log.Warn("Binding Convention Not Applied: No conventions configured for {0}.", element.GetType());
+                        Log.Warn("Binding Convention Not Applied: No conventions configured for {0}.",
+                            element.GetType());
                         continue;
                     }
 
@@ -198,7 +195,7 @@
                         property,
                         element,
                         convention
-                        );
+                    );
 
                     if (applied)
                     {
@@ -218,7 +215,7 @@
         /// Attaches instances of <see cref="ActionMessage"/> to the view's controls based on the provided methods.
         /// </summary>
         /// <remarks>Parameters include the named elements to search through and the type of view model to determine conventions for. Returns unmatched elements.</remarks>
-        public static Func<IEnumerable<FrameworkElement>, object, IEnumerable<FrameworkElement>> BindActions =
+        public static Func<IEnumerable<Control>, object, IEnumerable<Control>> BindActions =
             (namedElements, viewModel) =>
             {
                 var methods = viewModel.GetType().GetMethods(BindingFlags.Public | BindingFlags.Instance);
@@ -290,14 +287,14 @@
         /// <summary>
         /// Allows the developer to add custom handling of named elements which were not matched by any default conventions.
         /// </summary>
-        public static Action<IEnumerable<FrameworkElement>, object> HandleUnmatchedElements =
+        public static Action<IEnumerable<Control>, object> HandleUnmatchedElements =
             (elements, viewModel) => { };
 
         /// <summary>
         /// Binds the specified viewModel to the view.
         /// </summary>
         ///<remarks>Passes the the view model, view and creation context (or null for default) to use in applying binding.</remarks>
-        public static Action<object, FrameworkElement, object> Bind = (viewModel, view, context) =>
+        public static Action<object, Control, object> Bind = (viewModel, view, context) =>
         {
             Log.Info("Binding {0} and {1}.", view, viewModel);
 
@@ -324,7 +321,7 @@
                 return;
             }
 
-            IEnumerable<FrameworkElement> namedElements = BindingScope.GetNamedElements(view).ToList();
+            IEnumerable<Control> namedElements = BindingScope.GetNamedElements(view).ToList();
 
             var iHaveNamedElements = viewModel as IHaveViewNamedElements;
             if (iHaveNamedElements != null)

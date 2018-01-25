@@ -1,10 +1,7 @@
-﻿//using System.Collections.Generic;
-
-// ReSharper disable CheckNamespace
-namespace System.Windows
-// ReSharper restore CheckNamespace
+﻿namespace MvvmFx.CaliburnMicro
 {
-#pragma warning disable 1591
+    using System;
+
     public delegate bool ValidateValueCallback(object value);
 
     public delegate void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs args);
@@ -35,7 +32,7 @@ namespace System.Windows
             PropertyChangedCallback = propertyChangedCallback;
         }
 
-        public PropertyChangedCallback PropertyChangedCallback { get; private set; }
+        public PropertyChangedCallback PropertyChangedCallback { get; }
         public object DefaultValue { get; set; }
     }
 
@@ -48,19 +45,21 @@ namespace System.Windows
             OldValue = oldValue;
         }
 
-        public static bool operator !=(DependencyPropertyChangedEventArgs left, DependencyPropertyChangedEventArgs right)
+        public static bool operator !=(DependencyPropertyChangedEventArgs left,
+            DependencyPropertyChangedEventArgs right)
         {
             return left != null && !left.Equals(right);
         }
 
-        public static bool operator ==(DependencyPropertyChangedEventArgs left, DependencyPropertyChangedEventArgs right)
+        public static bool operator ==(DependencyPropertyChangedEventArgs left,
+            DependencyPropertyChangedEventArgs right)
         {
             return left != null && left.Equals(right);
         }
 
-        public object NewValue { get; private set; }
-        public object OldValue { get; private set; }
-        public DependencyProperty Property { get; private set; }
+        public object NewValue { get; }
+        public object OldValue { get; }
+        public DependencyProperty Property { get; }
 
         public bool Equals(DependencyPropertyChangedEventArgs args)
         {
@@ -103,10 +102,10 @@ namespace System.Windows
             //RegisteredProperties.Add(this);
         }
 
-        public string Name { get; private set; }
-        public Type PropertyType { get; private set; }
-        public Type OwnerType { get; private set; }
-        public PropertyMetadata DefaultMetadata { get; private set; }
+        public string Name { get; }
+        public Type PropertyType { get; }
+        public Type OwnerType { get; }
+        public PropertyMetadata DefaultMetadata { get; }
         public ValidateValueCallback ValidateValueCallback { get; private set; }
 
         public bool IsValidType(object value)
@@ -128,7 +127,8 @@ namespace System.Windows
             return RegisterAttached(name, propertyType, ownerType, null);
         }
 
-        public static DependencyProperty RegisterAttached(string name, Type propertyType, Type ownerType, PropertyMetadata metaData)
+        public static DependencyProperty RegisterAttached(string name, Type propertyType, Type ownerType,
+            PropertyMetadata metaData)
         {
             var dp = new DependencyProperty(name, propertyType, ownerType, metaData);
             DependencyObject.Register(ownerType, dp);
@@ -143,5 +143,4 @@ namespace System.Windows
             return null;
         }
     }
-#pragma warning restore 1591
 }

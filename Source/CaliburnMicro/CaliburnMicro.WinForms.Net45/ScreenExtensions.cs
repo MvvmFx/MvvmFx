@@ -3,14 +3,14 @@
     using System;
 
     /// <summary>
-    /// Hosts extension methods for <see cref="IScreen"/> classes.
+    /// Hosts extra methods for <see cref="IScreen"/> classes.
     /// </summary>
     public static class ScreenExtensions
     {
         /// <summary>
         /// Activates the item if it implements <see cref="IActivate"/>, otherwise does nothing.
         /// </summary>
-        /// <param name="potentialActivatable">The potential activatable.</param>
+        /// <param name="potentialActivatable">The potential activatable object.</param>
         public static void TryActivate(object potentialActivatable)
         {
             var activator = potentialActivatable as IActivate;

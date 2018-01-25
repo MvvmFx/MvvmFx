@@ -1,11 +1,11 @@
-﻿using System;
-using System.Reflection;
-using System.Linq;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Reflection;
+    using System.Linq;
+
     /// <summary>
-    /// Fluent methods for the simple IoC container.
+    /// Extension methods for the simple IoC container.
     /// </summary>
     public static class SimpleContainerExtensions
     {
@@ -17,7 +17,7 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The container.</returns>
         public static SimpleContainer Singleton<TImplementation>(this SimpleContainer container)
         {
-            container.RegisterSingleton(typeof (TImplementation), null, typeof (TImplementation));
+            container.RegisterSingleton(typeof(TImplementation), null, typeof(TImplementation));
             return container;
         }
 
@@ -29,7 +29,7 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The container.</returns>
         public static SimpleContainer SingletonWithDefaultCtor<TImplementation>(this SimpleContainer container)
         {
-            container.RegisteSingletonWithDefaultCtor(typeof (TImplementation), null, typeof (TImplementation));
+            container.RegisteSingletonWithDefaultCtor(typeof(TImplementation), null, typeof(TImplementation));
             return container;
         }
 
@@ -43,7 +43,7 @@ namespace MvvmFx.CaliburnMicro
         public static SimpleContainer Singleton<TService, TImplementation>(this SimpleContainer container)
             where TImplementation : TService
         {
-            container.RegisterSingleton(typeof (TService), null, typeof (TImplementation));
+            container.RegisterSingleton(typeof(TService), null, typeof(TImplementation));
             return container;
         }
 
@@ -54,10 +54,11 @@ namespace MvvmFx.CaliburnMicro
         /// <typeparam name="TImplementation">The type of the implementation.</typeparam>
         /// <param name="container">The container.</param>
         /// <returns>The container.</returns>
-        public static SimpleContainer SingletonWithDefaultCtor<TService, TImplementation>(this SimpleContainer container)
+        public static SimpleContainer SingletonWithDefaultCtor<TService, TImplementation>(
+            this SimpleContainer container)
             where TImplementation : TService
         {
-            container.RegisteSingletonWithDefaultCtor(typeof (TService), null, typeof (TImplementation));
+            container.RegisteSingletonWithDefaultCtor(typeof(TService), null, typeof(TImplementation));
             return container;
         }
 
@@ -71,7 +72,7 @@ namespace MvvmFx.CaliburnMicro
         public static SimpleContainer PerRequest<TService, TImplementation>(this SimpleContainer container)
             where TImplementation : TService
         {
-            container.RegisterPerRequest(typeof (TService), null, typeof (TImplementation));
+            container.RegisterPerRequest(typeof(TService), null, typeof(TImplementation));
             return container;
         }
 
@@ -82,10 +83,11 @@ namespace MvvmFx.CaliburnMicro
         /// <typeparam name="TImplementation">The type of the implementation.</typeparam>
         /// <param name="container">The container.</param>
         /// <returns>The container.</returns>
-        public static SimpleContainer PerRequestWithDefaultCtor<TService, TImplementation>(this SimpleContainer container)
+        public static SimpleContainer PerRequestWithDefaultCtor<TService, TImplementation>(
+            this SimpleContainer container)
             where TImplementation : TService
         {
-            container.RegisterPerRequestWithDefaultCtor(typeof (TService), null, typeof (TImplementation));
+            container.RegisterPerRequestWithDefaultCtor(typeof(TService), null, typeof(TImplementation));
             return container;
         }
 
@@ -97,7 +99,7 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The container.</returns>
         public static SimpleContainer PerRequest<TImplementation>(this SimpleContainer container)
         {
-            container.RegisterPerRequest(typeof (TImplementation), null, typeof (TImplementation));
+            container.RegisterPerRequest(typeof(TImplementation), null, typeof(TImplementation));
             return container;
         }
 
@@ -109,7 +111,7 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The container.</returns>
         public static SimpleContainer PerRequestWithDefaultCtor<TImplementation>(this SimpleContainer container)
         {
-            container.RegisterPerRequestWithDefaultCtor(typeof (TImplementation), null, typeof (TImplementation));
+            container.RegisterPerRequestWithDefaultCtor(typeof(TImplementation), null, typeof(TImplementation));
             return container;
         }
 
@@ -122,7 +124,7 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The container.</returns>
         public static SimpleContainer Instance<TService>(this SimpleContainer container, TService instance)
         {
-            container.RegisterInstance(typeof (TService), null, instance);
+            container.RegisterInstance(typeof(TService), null, instance);
             return container;
         }
 
@@ -136,7 +138,7 @@ namespace MvvmFx.CaliburnMicro
         public static SimpleContainer Handler<TService>(this SimpleContainer container,
             Func<SimpleContainer, object> handler)
         {
-            container.RegisterHandler(typeof (TService), null, handler);
+            container.RegisterHandler(typeof(TService), null, handler);
             return container;
         }
 
@@ -148,7 +150,7 @@ namespace MvvmFx.CaliburnMicro
         /// <returns>The service.</returns>
         public static TService GetInstance<TService>(this SimpleContainer container)
         {
-            return (TService) container.GetInstance(typeof (TService), null);
+            return (TService) container.GetInstance(typeof(TService), null);
         }
 
         /// <summary>
@@ -168,7 +170,7 @@ namespace MvvmFx.CaliburnMicro
             }
 
             var types = from type in assembly.GetTypes()
-                where typeof (TService).IsAssignableFrom(type)
+                where typeof(TService).IsAssignableFrom(type)
                       && !type.IsAbstract
                       && !type.IsInterface
                       && filter(type)
@@ -176,7 +178,7 @@ namespace MvvmFx.CaliburnMicro
 
             foreach (var type in types)
             {
-                container.RegisterPerRequest(typeof (TService), null, type);
+                container.RegisterPerRequest(typeof(TService), null, type);
             }
 
             return container;
@@ -193,7 +195,7 @@ namespace MvvmFx.CaliburnMicro
         public static SimpleContainer AllTypesOfAsSingleton<TService>(this SimpleContainer container, Assembly assembly,
             Func<Type, bool> filter = null)
         {
-            return AllTypesOfAsSingleton(container, typeof (TService), assembly, filter);
+            return AllTypesOfAsSingleton(container, typeof(TService), assembly, filter);
         }
 
         /// <summary>

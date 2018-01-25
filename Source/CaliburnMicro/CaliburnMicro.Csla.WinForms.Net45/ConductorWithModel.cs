@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Csla.Core;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+    using Csla.Core;
+
     /// <summary>
     /// An implementation of <see cref="IConductor" /> that holds on to and activates only one item at a time
     /// and also implements <see cref="IHaveModel" />.
@@ -27,6 +27,7 @@ namespace MvvmFx.CaliburnMicro
                     ScreenExtensions.TryActivate(item);
                     OnActivationProcessed(item, true);
                 }
+
                 return;
             }
 

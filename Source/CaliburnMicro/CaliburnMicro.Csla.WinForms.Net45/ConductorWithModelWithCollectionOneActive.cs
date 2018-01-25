@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.Specialized;
+    using System.Linq;
+
     public partial class ConductorWithModel<TC, TM>
     {
         /// <summary>
@@ -224,7 +224,8 @@ namespace MvvmFx.CaliburnMicro
                 {
                     if (newItem == null)
                     {
-                        newItem = DetermineNextItemToActivate(items, ActiveItem != null ? items.IndexOf(ActiveItem) : 0);
+                        newItem = DetermineNextItemToActivate(items,
+                            ActiveItem != null ? items.IndexOf(ActiveItem) : 0);
                     }
                     else
                     {

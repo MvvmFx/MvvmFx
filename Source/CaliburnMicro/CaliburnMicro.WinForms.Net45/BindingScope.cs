@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Windows;
 #if WISEJ
     using Wisej.Web;
 #else
@@ -11,7 +10,7 @@
 #endif
 
     /// <summary>
-    /// Provides methods for searching a given scope for named elements.
+    /// Extension methods for searching a given scope for named elements.
     /// </summary>
     public static class BindingScope
     {
@@ -24,8 +23,8 @@
         public static Control FindName(this IEnumerable<Control> elementsToSearch, string name)
         {
             return elementsToSearch.FirstOrDefault(
-                    x => (x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
-                          x.GetAttachedMessage().Equals(name, StringComparison.InvariantCultureIgnoreCase)));
+                x => (x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase) ||
+                      x.GetAttachedMessage().Equals(name, StringComparison.InvariantCultureIgnoreCase)));
         }
 
         /// <summary>

@@ -1,12 +1,7 @@
-﻿using System.Collections.Generic;
-#if WISEJ
-using FrameworkElement = Wisej.Web.Control;
-#else
-using FrameworkElement = System.Windows.Forms.Control;
-#endif
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Object used to collect data for an action message.
     /// </summary>

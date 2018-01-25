@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using System.Linq;
+
     /// <summary>
     /// A simple IoC container.
     /// </summary>
@@ -72,7 +72,8 @@ namespace MvvmFx.CaliburnMicro
         public void RegisterSingleton(Type service, string key, Type implementation)
         {
             object singleton = null;
-            RegisterHandler(service, key, container => singleton ?? (singleton = container.BuildInstance(implementation)));
+            RegisterHandler(service, key,
+                container => singleton ?? (singleton = container.BuildInstance(implementation)));
         }
 
         /// <summary>
@@ -85,7 +86,8 @@ namespace MvvmFx.CaliburnMicro
         public void RegisteSingletonWithDefaultCtor(Type service, string key, Type implementation)
         {
             object singleton = null;
-            RegisterHandler(service, key, container => singleton ?? (singleton = container.BuildInstanceWithDefaultCtor(implementation)));
+            RegisterHandler(service, key,
+                container => singleton ?? (singleton = container.BuildInstanceWithDefaultCtor(implementation)));
         }
 
         /// <summary>
@@ -114,16 +116,16 @@ namespace MvvmFx.CaliburnMicro
                 return entry.Single()(this);
             }
 
-            if (typeof (Delegate).IsAssignableFrom(service))
+            if (typeof(Delegate).IsAssignableFrom(service))
             {
                 var typeToCreate = service.GetGenericArguments()[0];
-                var factoryFactoryType = typeof (FactoryFactory<>).MakeGenericType(typeToCreate);
+                var factoryFactoryType = typeof(FactoryFactory<>).MakeGenericType(typeToCreate);
                 var factoryFactoryHost = Activator.CreateInstance(factoryFactoryType);
                 var factoryFactoryMethod = factoryFactoryType.GetMethod("Create");
                 return factoryFactoryMethod.Invoke(factoryFactoryHost, new object[] {this});
             }
 
-            if (typeof (IEnumerable).IsAssignableFrom(service))
+            if (typeof(IEnumerable).IsAssignableFrom(service))
             {
                 var listType = service.GetGenericArguments()[0];
                 var instances = GetAllInstances(listType).ToList();
@@ -243,7 +245,7 @@ namespace MvvmFx.CaliburnMicro
 
         private object BuildInstanceWithDefaultCtor(Type type)
         {
-            return ActivateInstance(type, new object[] {});
+            return ActivateInstance(type, new object[] { });
         }
 
         private static ConstructorInfo SelectEligibleConstructor(Type type)
@@ -263,7 +265,7 @@ namespace MvvmFx.CaliburnMicro
         {
             public Func<T> Create(SimpleContainer container)
             {
-                return () => (T) container.GetInstance(typeof (T), null);
+                return () => (T) container.GetInstance(typeof(T), null);
             }
         }
     }

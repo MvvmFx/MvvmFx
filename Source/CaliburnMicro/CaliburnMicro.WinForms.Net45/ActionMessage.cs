@@ -5,13 +5,12 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Reflection;
-    using System.Windows;
 #if WISEJ
     using Wisej.Web;
-    using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
     using System.Windows.Forms;
-    using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     /// <summary>
@@ -19,7 +18,7 @@
     /// </summary>
     public class ActionMessage : IHaveParameters
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (ActionMessage));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(ActionMessage));
         private ActionExecutionContext context;
         private List<Parameter> parameters = new List<Parameter>();
         private Control associatedObject;
@@ -27,11 +26,12 @@
         private EventHandler associatedEventHandler;
         private DataGridViewCellEventHandler associatedDataGridViewCellEventHandler;
 
-        internal static readonly DependencyProperty HandlerProperty = DependencyProperty.RegisterAttached(
-            "Handler",
-            typeof (object),
-            typeof (ActionMessage),
-            new PropertyMetadata(null, HandlerPropertyChanged)
+        internal static readonly DependencyProperty HandlerProperty =
+            DependencyProperty.RegisterAttached(
+                "Handler",
+                typeof(object),
+                typeof(ActionMessage),
+                new PropertyMetadata(null, HandlerPropertyChanged)
             );
 
         ///<summary>
@@ -97,6 +97,7 @@
                     Parameters.Add(parameter);
                 }
             }
+
             EventName = eventName;
             MethodName = methodName;
             AssociatedObject = associatedObject;
@@ -127,7 +128,8 @@
                             if (associatedEventHandler != null)
                                 associatedEvent.RemoveEventHandler(associatedObject, associatedEventHandler);
                             else if (associatedDataGridViewCellEventHandler != null)
-                                associatedEvent.RemoveEventHandler(associatedObject, associatedDataGridViewCellEventHandler);
+                                associatedEvent.RemoveEventHandler(associatedObject,
+                                    associatedDataGridViewCellEventHandler);
                         }
 
                         associatedObject.Disposed -= associatedObject_Disposed;
@@ -209,7 +211,8 @@
                 PrepareContext(context);
                 if (context.Target == null)
                 {
-                    var ex = new Exception(string.Format("No target found for method {0}.", context.Message.MethodName));
+                    var ex = new Exception(string.Format("No target found for method {0}.",
+                        context.Message.MethodName));
                     Log.Error(ex);
 
                     if (!ThrowsExceptions)
@@ -342,7 +345,7 @@
         /// </summary>
         public static Action<ActionExecutionContext> SetMethodBinding = context =>
         {
-            FrameworkElement currentElement = context.Source;
+            Control currentElement = context.Source;
 
             while (currentElement != null)
             {
@@ -424,6 +427,7 @@
                                 inpc.PropertyChanged -= handler;
                                 return;
                             }
+
                             message.UpdateAvailability();
                         });
                     }
@@ -437,7 +441,7 @@
             context.CanExecute = () => (bool) guard.Invoke(
                 context.Target,
                 MessageBinder.DetermineParameters(context, guard.GetParameters())
-                );
+            );
         };
 
         /// <summary>
@@ -457,7 +461,7 @@
 
             if (guard == null) return null;
             if (guard.ContainsGenericParameters) return null;
-            if (typeof (bool) != guard.ReturnType) return null;
+            if (typeof(bool) != guard.ReturnType) return null;
 
             var guardPars = guard.GetParameters();
             var actionPars = context.Method.GetParameters();
@@ -467,7 +471,7 @@
             var comparisons = guardPars.Zip(
                 context.Method.GetParameters(),
                 (x, y) => x.ParameterType == y.ParameterType
-                );
+            );
 
             if (comparisons.Any(x => !x))
             {

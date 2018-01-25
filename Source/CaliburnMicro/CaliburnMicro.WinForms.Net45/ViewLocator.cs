@@ -4,21 +4,11 @@
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Collections.Generic;
-    using System.Windows;
-#if !WINFORMS && !WISEJ
-    using System.Reflection;
-    using System.Windows.Controls;
-#if !SILVERLIGHT && !WinRT
-    using System.Windows.Interop;
-#endif
-#endif
 #if WISEJ
-    using Window = Wisej.Web.Form;
-    using UIElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
     using TextBlock = Wisej.Web.Label;
 #else
-    using Window = System.Windows.Forms.Form;
-    using UIElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
     using TextBlock = System.Windows.Forms.Label;
 #endif
 
@@ -27,7 +17,7 @@
     /// </summary>
     public static class ViewLocator
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (ViewLocator));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(ViewLocator));
 
         //These fields are used for configuring the default type mappings. They can be changed using ConfigureTypeMappings().
         private static string defaultSubNsViews;
@@ -61,17 +51,17 @@
         /// <param name="config">An instance of TypeMappingConfiguration that provides the settings for configuration</param>
         public static void ConfigureTypeMappings(TypeMappingConfiguration config)
         {
-            if (String.IsNullOrEmpty(config.DefaultSubNamespaceForViews))
+            if (string.IsNullOrEmpty(config.DefaultSubNamespaceForViews))
             {
                 throw new ArgumentException("DefaultSubNamespaceForViews field cannot be blank.");
             }
 
-            if (String.IsNullOrEmpty(config.DefaultSubNamespaceForViewModels))
+            if (string.IsNullOrEmpty(config.DefaultSubNamespaceForViewModels))
             {
                 throw new ArgumentException("DefaultSubNamespaceForViewModels field cannot be blank.");
             }
 
-            if (String.IsNullOrEmpty(config.NameFormat))
+            if (string.IsNullOrEmpty(config.NameFormat))
             {
                 throw new ArgumentException("NameFormat field cannot be blank.");
             }
@@ -115,7 +105,7 @@
             }
 
             //Check for <Namespace>.<BaseName><ViewSuffix> construct
-            AddNamespaceMapping(String.Empty, String.Empty, viewSuffix);
+            AddNamespaceMapping(string.Empty, string.Empty, viewSuffix);
 
             //Check for <Namespace>.ViewModels.<NameSpace>.<BaseName><ViewSuffix> construct
             AddSubNamespaceMapping(defaultSubNsViewModels, defaultSubNsViews, viewSuffix);
@@ -149,16 +139,16 @@
             RegisterViewSuffix(viewSuffix);
 
             var replist = new List<string>();
-            var repsuffix = useNameSuffixesInMappings ? viewSuffix : String.Empty;
+            var repsuffix = useNameSuffixesInMappings ? viewSuffix : string.Empty;
             const string basegrp = "${basename}";
 
             foreach (var t in nsTargetsRegEx)
             {
-                replist.Add(t + String.Format(nameFormat, basegrp, repsuffix));
+                replist.Add(t + string.Format(nameFormat, basegrp, repsuffix));
             }
 
             var rxbase = RegExHelper.GetNameCaptureGroup("basename");
-            var suffix = String.Empty;
+            var suffix = string.Empty;
             if (useNameSuffixesInMappings)
             {
                 suffix = viewModelSuffix;
@@ -167,16 +157,17 @@
                     suffix = viewSuffix + suffix;
                 }
             }
-            var rxsrcfilter = String.IsNullOrEmpty(nsSourceFilterRegEx)
+
+            var rxsrcfilter = string.IsNullOrEmpty(nsSourceFilterRegEx)
                 ? null
-                : String.Concat(nsSourceFilterRegEx, String.Format(nameFormat, RegExHelper.NameRegEx, suffix), "$");
+                : string.Concat(nsSourceFilterRegEx, string.Format(nameFormat, RegExHelper.NameRegEx, suffix), "$");
             var rxsuffix = RegExHelper.GetCaptureGroup("suffix", suffix);
 
             NameTransformer.AddRule(
-                String.Concat(nsSourceReplaceRegEx, String.Format(nameFormat, rxbase, rxsuffix), "$"),
+                string.Concat(nsSourceReplaceRegEx, string.Format(nameFormat, rxbase, rxsuffix), "$"),
                 replist.ToArray(),
                 rxsrcfilter
-                );
+            );
         }
 
         /// <summary>
@@ -205,7 +196,7 @@
 
             //Start pattern search from beginning of string ("^")
             //unless original string was blank (i.e. special case to indicate "append target to source")
-            if (!String.IsNullOrEmpty(nsSource))
+            if (!string.IsNullOrEmpty(nsSource))
             {
                 nsencoded = "^" + nsencoded;
             }
@@ -240,9 +231,9 @@
             var nsencoded = RegExHelper.NamespaceToRegEx(nsSource + ".");
 
             string rxbeforetgt, rxaftersrc, rxaftertgt;
-            var rxbeforesrc = rxbeforetgt = rxaftersrc = rxaftertgt = String.Empty;
+            var rxbeforesrc = rxbeforetgt = rxaftersrc = rxaftertgt = string.Empty;
 
-            if (!String.IsNullOrEmpty(nsSource))
+            if (!string.IsNullOrEmpty(nsSource))
             {
                 if (!nsSource.StartsWith("*"))
                 {
@@ -258,9 +249,9 @@
             }
 
             var rxmid = RegExHelper.GetCaptureGroup("subns", nsencoded);
-            var nsreplace = String.Concat(rxbeforesrc, rxmid, rxaftersrc);
+            var nsreplace = string.Concat(rxbeforesrc, rxmid, rxaftersrc);
 
-            var nsTargetsRegEx = nsTargets.Select(t => String.Concat(rxbeforetgt, t, ".", rxaftertgt)).ToArray();
+            var nsTargetsRegEx = nsTargets.Select(t => string.Concat(rxbeforetgt, t, ".", rxaftertgt)).ToArray();
             AddTypeMapping(nsreplace, null, nsTargetsRegEx, viewSuffix);
         }
 
@@ -281,35 +272,21 @@
         /// <remarks>
         ///   Pass the type of view as a parameter and recieve an instance of the view.
         /// </remarks>
-        public static Func<Type, UIElement> GetOrCreateViewType = viewType =>
+        public static Func<Type, Control> GetOrCreateViewType = viewType =>
         {
             // if you don't use IOC, this should return null
             var view = IoC.GetAllInstances(viewType)
-                .FirstOrDefault() as UIElement;
+                .FirstOrDefault() as Control;
 
             if (view != null)
             {
-#if !WINFORMS && !WISEJ
-                InitializeComponent(view);
-#endif
                 return view;
             }
 
-#if !WinRT
-            if (viewType.IsInterface || viewType.IsAbstract || !typeof (UIElement).IsAssignableFrom(viewType))
+            if (viewType.IsInterface || viewType.IsAbstract || !typeof(Control).IsAssignableFrom(viewType))
                 return new TextBlock {Text = string.Format("Cannot create {0}.", viewType.FullName)};
-#else
-            var viewTypeInfo = viewType.GetTypeInfo();
-            var uiElementInfo = typeof(UIElement).GetTypeInfo();
 
-            if (viewTypeInfo.IsInterface || viewTypeInfo.IsAbstract || !uiElementInfo.IsAssignableFrom(viewTypeInfo))
-                return new TextBlock { Text = string.Format("Cannot create {0}.", viewType.FullName) };
-#endif
-
-            view = (UIElement) Activator.CreateInstance(viewType);
-#if !WINFORMS && !WISEJ
-            InitializeComponent(view);
-#endif
+            view = (Control) Activator.CreateInstance(viewType);
             return view;
         };
 
@@ -348,16 +325,16 @@
             }
 
             var contextstr = ContextSeparator + context;
-            string grpsuffix = String.Empty;
+            string grpsuffix = string.Empty;
             if (useNameSuffixesInMappings)
             {
                 //Create RegEx for matching any of the synonyms registered
-                var synonymregex = "(" + String.Join("|", ViewSuffixList.ToArray()) + ")";
+                var synonymregex = "(" + string.Join("|", ViewSuffixList.ToArray()) + ")";
                 grpsuffix = RegExHelper.GetCaptureGroup("suffix", synonymregex);
             }
 
             const string grpbase = @"\${basename}";
-            var patternregex = String.Format(nameFormat, grpbase, grpsuffix) + "$";
+            var patternregex = string.Format(nameFormat, grpbase, grpsuffix) + "$";
 
             //Strip out any synonym by just using contents of base capture group with context string
             var replaceregex = "${basename}" + contextstr;
@@ -391,7 +368,7 @@
                     viewTypeName.IndexOf('`') < 0
                         ? viewTypeName.Length
                         : viewTypeName.IndexOf('`')
-                    );
+                );
 
                 var viewTypeList = TransformName(viewTypeName, context);
                 var viewType =
@@ -413,7 +390,7 @@
         /// <remarks>
         ///   Pass the model type, display location (or null) and the context instance (or null) as parameters and receive a view instance.
         /// </remarks>
-        public static Func<Type, DependencyObject, object, UIElement> LocateForModelType =
+        public static Func<Type, DependencyObject, object, Control> LocateForModelType =
             (modelType, displayLocation, context) =>
             {
                 var viewType = LocateTypeForModelType(modelType, displayLocation, context);
@@ -430,84 +407,21 @@
         /// <remarks>
         ///   Pass the model instance, display location (or null) and the context (or null) as parameters and receive a view instance.
         /// </remarks>
-        public static Func<object, DependencyObject, object, UIElement> LocateForModel =
+        public static Func<object, DependencyObject, object, Control> LocateForModel =
             (model, displayLocation, context) =>
             {
                 var viewAware = model as IViewAware;
                 if (viewAware != null)
                 {
-                    var view = viewAware.GetView(context) as UIElement;
+                    var view = viewAware.GetView(context) as Control;
                     if (view != null)
                     {
-#if !SILVERLIGHT && !WinRT && !WINFORMS && !WISEJ
-                        var windowCheck = view as Window;
-                        if (windowCheck == null ||
-                            (!windowCheck.IsLoaded && !(new WindowInteropHelper(windowCheck).Handle == IntPtr.Zero)))
-                        {
-                            Log.Info("Using cached view for {0}.", model);
-                            return view;
-                        }
-#else
                         Log.Info("Using cached view for {0}.", model);
-                    return view;
-#endif
+                        return view;
                     }
                 }
 
                 return LocateForModelType(model.GetType(), displayLocation, context);
             };
-
-#if !WINFORMS && !WISEJ
-        /// <summary>
-        /// Transforms a view type into a pack uri.
-        /// </summary>
-        public static Func<Type, Type, string> DeterminePackUriFromType = (viewModelType, viewType) =>
-        {
-#if !WinRT
-            var assemblyName = viewType.Assembly.GetAssemblyName();
-            var uri = viewType.FullName.Replace(assemblyName, string.Empty).Replace(".", "/") + ".xaml";
-
-            if (!Application.Current.GetType().Assembly.GetAssemblyName().Equals(assemblyName))
-            {
-                return "/" + assemblyName + ";component" + uri;
-            }
-
-            return uri;
-#else
-            var assemblyName = viewType.GetTypeInfo().Assembly.GetAssemblyName();
-            var uri = viewType.FullName.Replace(assemblyName, string.Empty).Replace(".", "/") + ".xaml";
-
-            if (!Application.Current.GetType().GetTypeInfo().Assembly.GetAssemblyName().Equals(assemblyName)) {
-                return "/" + assemblyName + ";component" + uri;
-            }
-
-            return uri;
-#endif
-        };
-
-        /// <summary>
-        ///   When a view does not contain a code-behind file, we need to automatically call InitializeCompoent.
-        /// </summary>
-        /// <param name = "element">The element to initialize</param>
-        public static void InitializeComponent(object element)
-        {
-#if !WinRT
-            // On WinForms, designer generated InitializeComponent() mthod is always private (i.e. NonPublic)
-            // TODO check the below is corret
-            // whereas on XAML type applications, InitializeComponent() is a public method,
-            // as specified by "public interface IComponentConnector"
-            var method = element.GetType()
-                .GetMethod("InitializeComponent", BindingFlags.Public | BindingFlags.Instance);
-#else
-            var method = element.GetType().GetTypeInfo()
-                .GetDeclaredMethod("InitializeComponent");
-#endif
-
-            if (method == null)
-                return;
-
-            method.Invoke(element, null);
-        }
-#endif
     }
 }

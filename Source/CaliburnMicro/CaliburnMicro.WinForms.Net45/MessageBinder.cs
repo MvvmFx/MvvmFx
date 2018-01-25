@@ -5,9 +5,7 @@
     using System.Linq;
     using System.Reflection;
     using System.Collections.Generic;
-#if !SILVERLIGHT
     using System.ComponentModel;
-#endif
 
     /// <summary>
     /// A service that is capable of properly binding values to a method's parameters and creating instances of <see cref="IResult"/>.
@@ -23,14 +21,13 @@
                 //The event’s EventArgs or input parameter to your Action.
                 //Note: This will be null for guard methods since the trigger hasn’t actually occurred.
                 {"$eventargs", c => c.EventArgs},
-#if WINFORMS || WISEJ
                 // The BindingContext of the Control that the ActionMessage is attached to.
                 {"$bindingcontext", c => c.Source.BindingContext},
                 // The DataContext of the Control that the ActionMessage is attached to.
-                {"$datacontext", c => (c.Source is IHaveDataContext) ? ((IHaveDataContext) c.Source).DataContext : null},
-#else
-                {"$datacontext", c => c.Source.DataContext },
-#endif
+                {
+                    "$datacontext",
+                    c => (c.Source is IHaveDataContext) ? ((IHaveDataContext) c.Source).DataContext : null
+                },
                 // The actual Control that triggered the ActionMessage to be sent.
                 {"$source", c => c.Source},
                 // The actions's execution context, which contains all the above information and more.
@@ -47,7 +44,7 @@
             new Dictionary<Type, Func<object, object, object>>
             {
                 {
-                    typeof (DateTime), (value, context) =>
+                    typeof(DateTime), (value, context) =>
                     {
                         DateTime result;
                         DateTime.TryParse(value.ToString(), out result);
@@ -145,7 +142,7 @@
                     return Enum.ToObject(destinationType, providedValue);
                 }
 
-                if (typeof (Guid).IsAssignableFrom(destinationType))
+                if (typeof(Guid).IsAssignableFrom(destinationType))
                 {
                     var stringValue = providedValue as string;
                     if (stringValue != null)

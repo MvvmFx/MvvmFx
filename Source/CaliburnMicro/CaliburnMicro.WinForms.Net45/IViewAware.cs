@@ -1,7 +1,7 @@
-using System;
-
 namespace MvvmFx.CaliburnMicro
 {
+    using System;
+
     /// <summary>
     /// Denotes a class which is aware of its view(s).
     /// </summary>

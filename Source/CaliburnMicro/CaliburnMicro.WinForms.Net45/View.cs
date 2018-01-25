@@ -1,13 +1,11 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     using System;
-    using System.Windows;
 #if WISEJ
-    using Wisej.Web;
-    using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
     using System.Windows.Forms;
-    using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     /// <summary>
@@ -15,7 +13,7 @@
     /// </summary>
     public static class View
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (View));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(View));
 
         /// <summary>
         /// The default view context.
@@ -31,10 +29,10 @@
         public static readonly DependencyProperty ApplyConventionsProperty =
             DependencyProperty.RegisterAttached(
                 "ApplyConventions",
-                typeof (bool?),
-                typeof (View),
+                typeof(bool?),
+                typeof(View),
                 null
-                );
+            );
 
         /// <summary>
         /// This defines the <see cref="P:MvvmFx.CaliburnMicro.View.Context"/> attached property.
@@ -45,10 +43,10 @@
         public static readonly DependencyProperty ContextProperty =
             DependencyProperty.RegisterAttached(
                 "Context",
-                typeof (object),
-                typeof (View),
+                typeof(object),
+                typeof(View),
                 new PropertyMetadata(null, OnContextChanged)
-                );
+            );
 
         /// <summary>
         /// This defines the <see cref="P:MvvmFx.CaliburnMicro.View.Model"/> attached property.
@@ -59,23 +57,22 @@
         public static DependencyProperty ModelProperty =
             DependencyProperty.RegisterAttached(
                 "Model",
-                typeof (object),
-                typeof (View),
+                typeof(object),
+                typeof(View),
                 new PropertyMetadata(null, OnModelChanged)
-                );
-
+            );
 
         /// <summary>
         /// Executes the handler immediately if the element is loaded, otherwise wires it to the Loaded event.
         /// </summary>
-        /// <param name="element">The element.</param>
+        /// <param name="control">The control.</param>
         /// <param name="handler">The handler.</param>
         /// <returns>true if the handler was executed immediately; false otherwise</returns>
-        public static bool ExecuteOnLoad(FrameworkElement element, EventHandler handler)
+        public static bool ExecuteOnLoad(Control control, EventHandler handler)
         {
-            if (element.IsHandleCreated)
+            if (control.IsHandleCreated)
             {
-                handler(element, new EventArgs());
+                handler(control, new EventArgs());
                 return true;
             }
 
@@ -83,10 +80,10 @@
             loaded = (s, e) =>
             {
                 handler(s, e);
-                element.HandleCreated -= loaded;
+                control.HandleCreated -= loaded;
             };
 
-            element.HandleCreated += loaded;
+            control.HandleCreated += loaded;
             return false;
         }
 
@@ -94,17 +91,17 @@
         /// <summary>
         /// Executes the handler the first time the elements's LayoutUpdated event fires.
         /// </summary>
-        /// <param name="element">The element.</param>
+        /// <param name="control">The control.</param>
         /// <param name="handler">The handler.</param>
-        public static void ExecuteOnLayoutUpdated(FrameworkElement element, LayoutEventHandler handler)
+        public static void ExecuteOnLayoutUpdated(Control control, LayoutEventHandler handler)
         {
             LayoutEventHandler onLayout = null;
             onLayout = (s, e) =>
             {
                 handler(s, e);
-                element.Layout -= onLayout;
+                control.Layout -= onLayout;
             };
-            element.Layout += onLayout;
+            control.Layout += onLayout;
         }
 #endif
 
@@ -119,7 +116,7 @@
         /// </remarks>
         public static Func<object, object> GetFirstNonGeneratedView = view =>
         {
-            var control = view as FrameworkElement;
+            var control = view as Control;
             if (control == null)
             {
                 return view;
@@ -235,7 +232,7 @@
 
         private static void SetContentProperty(object targetLocation, object view)
         {
-            var fe = view as FrameworkElement;
+            var fe = view as Control;
             if (fe != null && fe.Parent != null)
             {
                 SetContentPropertyCore(fe.Parent, null);

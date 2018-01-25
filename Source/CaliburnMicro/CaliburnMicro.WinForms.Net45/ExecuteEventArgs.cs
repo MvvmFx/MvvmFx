@@ -1,12 +1,12 @@
-﻿using System;
+﻿namespace MvvmFx.CaliburnMicro
+{
+    using System;
 #if WISEJ
-using Wisej.Web;
+    using Wisej.Web;
 #else
-using System.Windows.Forms;
+    using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.CaliburnMicro
-{
     /// <summary>
     /// Arguments passed to a method invoked
     /// by the Execute trigger action.

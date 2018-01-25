@@ -22,11 +22,7 @@
     /// Interface used to define a specialized parent.
     /// </summary>
     /// <typeparam name="T">The type of children.</typeparam>
-#if !SILVERLIGHT || SL5
     public interface IParent<out T> : IParent
-#else
-    public interface IParent<T> : IParent
-#endif
     {
         /// <summary>
         ///   Gets the children.

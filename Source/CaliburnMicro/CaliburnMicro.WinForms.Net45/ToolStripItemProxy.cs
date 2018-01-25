@@ -1,14 +1,14 @@
-﻿using System;
-using System.ComponentModel;
+﻿namespace MvvmFx.CaliburnMicro
+{
+    using System;
+    using System.ComponentModel;
 #if WISEJ
-using Wisej.Web;
-using ToolStripItem = Wisej.Web.MenuItem;
+    using Wisej.Web;
+    using ToolStripItem = Wisej.Web.MenuItem;
 #else
-using System.Windows.Forms;
+    using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.CaliburnMicro
-{
     /// <summary>
     /// Proxy class for <see cref="ToolStripItem"/> components.
     /// </summary>

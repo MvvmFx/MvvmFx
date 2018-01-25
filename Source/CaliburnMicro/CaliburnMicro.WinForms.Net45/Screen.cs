@@ -153,7 +153,6 @@
 
                 if (close)
                 {
-#if WINFORMS || WISEJ
                     // needed because the DependencyObject implementation uses objects and should use WeakReference.
                     foreach (var view in Views)
                     {
@@ -161,7 +160,7 @@
                         if (control != null)
                             control?.Dispose();
                     }
-#endif
+
                     Views.Clear();
                     Log.Info("Closed {0}.", this);
                 }
@@ -196,7 +195,8 @@
             foreach (var contextualView in Views.Values)
             {
                 var viewType = contextualView.GetType();
-                var closeMethod = viewType.GetMethod("Close");
+                //var closeMethodold = viewType.GetMethod("Close");
+                var closeMethod = viewType.GetMethod("Close", Type.EmptyTypes);
                 if (closeMethod != null)
                     return () =>
                     {
@@ -236,7 +236,6 @@
             GetViewCloseAction(null).OnUIThread();
         }
 
-#if !SILVERLIGHT
         /// <summary>
         /// Closes this instance by asking its Parent to initiate shutdown or by asking it's corresponding view to close.
         /// This overload also provides an opportunity to pass a dialog result to it's corresponding view.
@@ -246,6 +245,5 @@
         {
             GetViewCloseAction(dialogResult).OnUIThread();
         }
-#endif
     }
 }

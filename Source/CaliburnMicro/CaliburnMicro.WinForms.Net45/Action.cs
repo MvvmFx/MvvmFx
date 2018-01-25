@@ -1,18 +1,17 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
-    using System.Windows;
 #if WISEJ
-    using FrameworkElement = Wisej.Web.Control;
+    using Control = Wisej.Web.Control;
 #else
-    using FrameworkElement = System.Windows.Forms.Control;
+    using Control = System.Windows.Forms.Control;
 #endif
 
     /// <summary>
-    ///   A host for action related attached properties.
+    /// A host for action related attached properties.
     /// </summary>
     public static class Action
     {
-        private static readonly Logging.ILog Log = LogManager.GetLog(typeof (Action));
+        private static readonly Logging.ILog Log = LogManager.GetLog(typeof(Action));
 
         /// <summary>
         /// A property definition representing  the target of a<see cref="P:MvvmFx.CaliburnMicro.Action.Target"/> attached property.
@@ -26,10 +25,10 @@
         public static readonly DependencyProperty TargetProperty =
             DependencyProperty.RegisterAttached(
                 "Target",
-                typeof (object),
-                typeof (Action),
+                typeof(object),
+                typeof(Action),
                 new PropertyMetadata(null, OnTargetChanged)
-                );
+            );
 
         /// <summary>
         /// This defines the <see cref="P:MvvmFx.CaliburnMicro.Action.TargetWithoutContext"/> attached property.
@@ -43,10 +42,10 @@
         public static readonly DependencyProperty TargetWithoutContextProperty =
             DependencyProperty.RegisterAttached(
                 "TargetWithoutContext",
-                typeof (object),
-                typeof (Action),
+                typeof(object),
+                typeof(Action),
                 new PropertyMetadata(null, OnTargetWithoutContextChanged)
-                );
+            );
 
         /// <summary>
         ///   Sets the target of the <see cref="ActionMessage" /> .
@@ -91,7 +90,6 @@
             return d.GetValue(TargetWithoutContextProperty);
         }
 
-#if WINFORMS || WISEJ
         /// <summary>
         /// Checks if the <see cref="ActionMessage"/> Target was set.
         /// </summary>
@@ -126,7 +124,6 @@
                 dp = new DependencyObject(d);*/
             dp.SetValue(TargetWithoutContextProperty, target);
         }
-#endif
 
         ///<summary>
         ///  Checks if the <see cref="ActionMessage" /> -Target was set.
@@ -137,11 +134,8 @@
         {
             if (GetTarget(element) != null || GetTargetWithoutContext(element) != null)
                 return true;
-#if WINFORMS || WISEJ
-            var frameworkElement = element.Object as FrameworkElement;
-#else
-            var frameworkElement = element as FrameworkElement;
-#endif
+
+            var frameworkElement = element.Object as Control;
             if (frameworkElement == null)
                 return false;
 
@@ -159,19 +153,13 @@
         ///<param name="eventArgs"> The event args. </param>
         ///<param name="parameters"> The method parameters. </param>
         public static void Invoke(object target, string methodName, DependencyObject view = null,
-            FrameworkElement source = null, object eventArgs = null, object[] parameters = null)
+            Control source = null, object eventArgs = null, object[] parameters = null)
         {
             var context = new ActionExecutionContext
             {
                 Target = target,
                 Method = target.GetType().GetMethod(methodName),
-#if WINFORMS || WISEJ
                 Message = new ActionMessage(source, null, methodName),
-#else
-                Message = new ActionMessage {
-                    MethodName = methodName
-                },
-#endif
                 View = view,
                 Source = source,
                 EventArgs = eventArgs
@@ -203,25 +191,18 @@
             }
 
             var target = e.NewValue;
-            var containerKey = e.NewValue as string;//todo containerKey is null for classes
+            var containerKey = e.NewValue as string; //todo containerKey is null for classes
 
             if (containerKey != null)
             {
                 target = IoC.GetInstance(null, containerKey);
             }
-#if WINFORMS || WISEJ
+
             if (setContext && d.Object is IHaveDataContext)
             {
                 Log.Info("Setting DC of {0} to {1}.", d, target);
                 ((IHaveDataContext) d.Object).DataContext = target;
             }
-#else
-            if(setContext && d is FrameworkElement)
-            {
-                Log.Info("Setting DC of {0} to {1}.", d, target);
-                ((FrameworkElement)d).DataContext = target;
-            }
-#endif
 
             Log.Info("Attaching message handler {0} to {1}.", target, d);
             Message.SetHandler(d, target);

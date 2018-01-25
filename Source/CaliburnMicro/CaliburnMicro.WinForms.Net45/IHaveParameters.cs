@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using System.Collections.Generic;
+
     /// <summary>
     /// Defines a message with parameters.
     /// </summary>

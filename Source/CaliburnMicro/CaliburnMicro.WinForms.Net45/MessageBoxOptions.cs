@@ -1,17 +1,17 @@
-﻿using System;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
-  [Flags]
-  public enum MessageBoxOptions
-  {
-    OK = 2,
-    Cancel = 4,
-    Yes = 8,
-    No = 16,
+    using System;
 
-    OKCancel = OK | Cancel,
-    YesNo = Yes | No,
-    YesNoCancel = Yes | No | Cancel
-  }
+    [Flags]
+    public enum MessageBoxOptions
+    {
+        OK = 2,
+        Cancel = 4,
+        Yes = 8,
+        No = 16,
+
+        OKCancel = OK | Cancel,
+        YesNo = Yes | No,
+        YesNoCancel = Yes | No | Cancel
+    }
 }

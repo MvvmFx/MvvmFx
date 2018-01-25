@@ -1,7 +1,7 @@
-﻿using Csla.Core;
-
-namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro
 {
+    using Csla.Core;
+
     /// <summary>
     /// Base class used to create ScreenWithModel objects, with pre-existing verbs for use by InvokeMethod or Invoke.
     /// </summary>

@@ -22,6 +22,7 @@
                     ScreenExtensions.TryActivate(item);
                     OnActivationProcessed(item, true);
                 }
+
                 return;
             }
 

@@ -130,6 +130,7 @@
             {
                 throw new ArgumentNullException("subscriber");
             }
+
             lock (handlers)
             {
                 if (handlers.Any(x => x.Matches(subscriber)))
@@ -151,6 +152,7 @@
             {
                 throw new ArgumentNullException("subscriber");
             }
+
             lock (handlers)
             {
                 var found = handlers.FirstOrDefault(x => x.Matches(subscriber));
@@ -175,6 +177,7 @@
             {
                 throw new ArgumentNullException("message");
             }
+
             Publish(message, PublicationThreadMarshaller);
         }
 
@@ -189,6 +192,7 @@
             {
                 throw new ArgumentNullException("message");
             }
+
             if (marshal == null)
             {
                 throw new ArgumentNullException("marshal");
@@ -233,7 +237,7 @@
                 reference = new WeakReference(handler);
 
                 var interfaces = handler.GetType().GetInterfaces()
-                    .Where(x => typeof (IHandle).IsAssignableFrom(x) && x.IsGenericType);
+                    .Where(x => typeof(IHandle).IsAssignableFrom(x) && x.IsGenericType);
 
                 foreach (var @interface in interfaces)
                 {
