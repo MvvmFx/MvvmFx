@@ -8,11 +8,63 @@
 #endif
 
     /// <summary>
-    /// Specifies the contextual information about an application.
+    /// Specifies the contextual information about a session.
     /// </summary>
 #if WISEJ
     public class ApplicationContext
     {
+        /// <summary>
+        /// Gets or sets the session UI culture.
+        /// </summary>
+        /// <value>
+        /// The UI culture.
+        /// </value>
+        public static string UICulture
+        {
+            get { return Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroUICulture; }
+            set { Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroUICulture = value; }
+        }
+        
+        private static Form SessionMainWindow
+        {
+            get { return Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroMainWindow; }
+            set { Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroMainWindow = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the session main Form.
+        /// </summary>
+        /// <value>
+        /// The session main Form.
+        /// </value>
+        public static Form MainWindow
+        {
+            get { return SessionMainWindow; }
+            set
+            {
+                if (SessionMainWindow != value)
+                {
+                    if (SessionMainWindow != null)
+                    {
+                        SessionMainWindow.Dispose();
+                    }
+
+                    SessionMainWindow = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the session main Page.
+        /// </summary>
+        /// <value>
+        /// The session main Page.
+        /// </value>
+        public static Page MainPage
+        {
+            get { return Application.MainPage; }
+        }
+
         private ApplicationContext()
         {
             // disable parameterless constructor
@@ -39,51 +91,19 @@
 
             Wisej.Base.ApplicationBase.Session.MainWindow = mainWindow;
         }
-
-        private static Form SessionMainWindow
-        {
-            get { return Wisej.Base.ApplicationBase.Session.MainWindow; }
-            set { Wisej.Base.ApplicationBase.Session.MainWindow = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the application main Form.
-        /// </summary>
-        /// <value>
-        /// The application main Form.
-        /// </value>
-        public static Form MainWindow
-        {
-            get { return SessionMainWindow; }
-            set
-            {
-                if (SessionMainWindow != value)
-                {
-                    if (SessionMainWindow != null)
-                    {
-                        SessionMainWindow.Dispose();
-                    }
-
-                    SessionMainWindow = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets the application main Page.
-        /// </summary>
-        /// <value>
-        /// The application main Page.
-        /// </value>
-        public static Page MainPage
-        {
-            get { return Application.MainPage; }
-        }
     }
 
 #else
     public class ApplicationContext : System.Windows.Forms.ApplicationContext
     {
+        /// <summary>
+        /// Gets or sets the application UI culture.
+        /// </summary>
+        /// <value>
+        /// The UI culture.
+        /// </value>
+        public static string UICulture { get; set; }
+
         private static Form _mainWindow;
 
         /// <summary>
