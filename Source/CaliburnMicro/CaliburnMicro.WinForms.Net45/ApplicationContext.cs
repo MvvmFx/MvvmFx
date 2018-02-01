@@ -21,14 +21,14 @@
         /// </value>
         public static string UICulture
         {
-            get { return Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroUICulture; }
-            set { Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroUICulture = value; }
+            get { return Wisej.Base.ApplicationBase.Session.MvvmFx_CaliburnMicro_ApplicationContext_UICulture; }
+            set { Wisej.Base.ApplicationBase.Session.MvvmFx_CaliburnMicro_ApplicationContext_UICulture = value; }
         }
         
         private static Form SessionMainWindow
         {
-            get { return Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroMainWindow; }
-            set { Wisej.Base.ApplicationBase.Session.MvvmFxCaliburnMicroMainWindow = value; }
+            get { return Wisej.Base.ApplicationBase.Session.MvvmFx_CaliburnMicro_ApplicationContext_MainWindow; }
+            set { Wisej.Base.ApplicationBase.Session.MvvmFx_CaliburnMicro_ApplicationContext_MainWindow = value; }
         }
 
         /// <summary>
