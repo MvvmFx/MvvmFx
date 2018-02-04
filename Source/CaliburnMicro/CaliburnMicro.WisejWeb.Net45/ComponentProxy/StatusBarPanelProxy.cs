@@ -1,20 +1,20 @@
-﻿namespace MvvmFx.CaliburnMicro
+﻿namespace MvvmFx.CaliburnMicro.ComponentProxy
 {
     using System;
     using System.ComponentModel;
     using Wisej.Web;
 
     /// <summary>
-    /// Proxy class for <see cref="MenuItem"/> components.
+    /// Proxy class for <see cref="StatusBarPanel"/> components.
     /// </summary>
     [DefaultProperty("Name")]
-    public class MenuItemProxy : Control
+    public class StatusBarPanelProxy : Control
     {
         private bool _eventsWired;
-        private bool _isEnabledChanging;
-        private bool _isVisibleChanging;
+        //private bool _isEnabledChanging;
+        //private bool _isVisibleChanging;
 
-        private readonly MenuItem _item;
+        private readonly StatusBarPanel _item;
 
         /// <summary>
         /// Gets the proxy item.
@@ -22,7 +22,7 @@
         /// <value>
         /// The proxy item.
         /// </value>
-        public MenuItem Item
+        public StatusBarPanel Item
         {
             get { return _item; }
         }
@@ -35,7 +35,7 @@
             get { return _item.UserData; }
         }
 
-        private MenuItemProxy()
+        private StatusBarPanelProxy()
         {
             // force to use parametrized constructor
         }
@@ -43,28 +43,27 @@
         protected override void Dispose(bool disposing)
         {
             UnwireEvents();
-            for (var index = _item.MenuItems.Count - 1; index >= 0; index--)
+            /*for (var index = _item.Panels.Count - 1; index >= 0; index--)
             {
-                _item.MenuItems[index].Dispose();
-            }
-
+                _item.Panels[index].Dispose();
+            }*/
             _item.Dispose();
             base.Dispose(disposing);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MenuItemProxy" /> class, for the specified <see cref="MenuItem" />.
+        /// Initializes a new instance of the <see cref="StatusBarPanelProxy" /> class, for the specified <see cref="StatusBarPanel" />.
         /// </summary>
         /// <param name="item">The tool strip item.</param>
         /// <param name="parent">The parent Control.</param>
         /// <param name="wireEvents">if set to <c>true</c>, the constructor will wire the item events.</param>
-        public MenuItemProxy(MenuItem item, Control parent, bool wireEvents)
+        public StatusBarPanelProxy(StatusBarPanel item, Control parent, bool wireEvents)
         {
             Parent = parent;
             _item = item;
             Name = item.Name;
-            Enabled = item.Enabled;
-            Visible = item.Visible;
+            //Enabled = item.Enabled;
+            //Visible = item.Visible;
             Tag = item.Tag;
 
             if (wireEvents)
@@ -79,9 +78,9 @@
             if (_eventsWired)
                 return;
 
-            EnabledChanged += MenuItemProxy_EnabledChanged;
-            VisibleChanged += MenuItemProxy_VisibleChanged;
-            _item.Click += item_Click;
+            //EnabledChanged += StatusBarPanelProxy_EnabledChanged;
+            //VisibleChanged += StatusBarPanelProxy_VisibleChanged;
+            //_item.Click += item_Click;
             _item.Disposed += item_Disposed;
 
             _eventsWired = true;
@@ -96,9 +95,9 @@
                 return;
 
             _item.Disposed -= item_Disposed;
-            _item.Click -= item_Click;
-            VisibleChanged -= MenuItemProxy_VisibleChanged;
-            EnabledChanged -= MenuItemProxy_EnabledChanged;
+            //_item.Click -= item_Click;
+            //VisibleChanged -= StatusBarPanelProxy_VisibleChanged;
+            //EnabledChanged -= StatusBarPanelProxy_EnabledChanged;
 
             _eventsWired = false;
         }
@@ -109,12 +108,12 @@
             Dispose();
         }
 
-        private void item_Click(object sender, EventArgs e)
+        /*private void item_Click(object sender, EventArgs e)
         {
             OnClick(e);
-        }
+        }*/
 
-        private void MenuItemProxy_EnabledChanged(object sender, EventArgs e)
+        /*private void StatusBarPanelProxy_EnabledChanged(object sender, EventArgs e)
         {
             if (_isEnabledChanging)
                 return;
@@ -122,9 +121,9 @@
             _isEnabledChanging = true;
             _item.Enabled = Enabled;
             _isEnabledChanging = false;
-        }
+        }*/
 
-        private void MenuItemProxy_VisibleChanged(object sender, EventArgs e)
+        /*private void StatusBarPanelProxy_VisibleChanged(object sender, EventArgs e)
         {
             if (_isVisibleChanging)
                 return;
@@ -132,6 +131,6 @@
             _isVisibleChanging = true;
             _item.Visible = Visible;
             _isVisibleChanging = false;
-        }
+        }*/
     }
 }

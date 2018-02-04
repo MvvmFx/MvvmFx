@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Reflection;
     using MvvmFx.Windows.Data;
+    using MvvmFx.CaliburnMicro.ComponentProxy;
 #if WISEJ
     using Wisej.Web;
 #else

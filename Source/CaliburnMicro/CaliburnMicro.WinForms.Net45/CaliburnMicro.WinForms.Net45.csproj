@@ -55,6 +55,13 @@
     <Compile Include="BindableList.cs" />
     <Compile Include="BindingScope.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="ComponentProxy\ComponentProxyBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComponentProxy\IComponentProxy.cs" />
+    <Compile Include="ComponentProxy\ToolStripItemProxy.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Conductor.cs" />
     <Compile Include="ConductorBase.cs" />
     <Compile Include="ConductorBaseWithActiveItem.cs" />
@@ -104,9 +111,6 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="SimpleContainer.cs" />
     <Compile Include="StartupEventArgs.cs" />
-    <Compile Include="ToolStripItemProxy.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="TypeMappingConfiguration.cs" />
     <Compile Include="View.cs" />
     <Compile Include="ViewAware.cs" />
