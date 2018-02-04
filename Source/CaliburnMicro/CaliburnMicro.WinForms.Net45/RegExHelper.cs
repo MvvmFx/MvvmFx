@@ -1,7 +1,7 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     /// <summary>
-    ///  Helper class for encoding strings to regular expression patterns
+    /// Helper class for encoding strings to regular expression patterns
     /// </summary>
     public static class RegExHelper
     {

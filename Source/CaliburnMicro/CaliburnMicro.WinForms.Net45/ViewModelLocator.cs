@@ -7,7 +7,7 @@
     using Control = IHaveDataContext;
 
     /// <summary>
-    ///   A strategy for determining which view model to use for a given view.
+    /// A strategy for determining which view model to use for a given view.
     /// </summary>
     public static class ViewModelLocator
     {
@@ -269,7 +269,7 @@
         }
 
         /// <summary>
-        ///   Makes a type name into an interface name.
+        /// Makes a type name into an interface name.
         /// </summary>
         /// <param name = "typeName">The part.</param>
         /// <returns>The generated interface name.</returns>
@@ -314,11 +314,11 @@
         };
 
         /// <summary>
-        ///   Determines the view model type based on the specified view type.
+        /// Determines the view model type based on the specified view type.
         /// </summary>
         /// <returns>The view model type.</returns>
         /// <remarks>
-        ///   Pass the view type and receive a view model type. Pass true for the second parameter to search for interfaces.
+        /// Pass the view type and receive a view model type. Pass true for the second parameter to search for interfaces.
         /// </remarks>
         public static Func<Type, bool, Type> LocateTypeForViewType = (viewType, searchForInterface) =>
         {
@@ -337,11 +337,11 @@
         };
 
         /// <summary>
-        ///   Locates the view model for the specified view type.
+        /// Locates the view model for the specified view type.
         /// </summary>
         /// <returns>The view model.</returns>
         /// <remarks>
-        ///   Pass the view type as a parameter and receive a view model instance.
+        /// Pass the view type as a parameter and receive a view model instance.
         /// </remarks>
         public static Func<Type, object> LocateForViewType = viewType =>
         {
@@ -364,11 +364,11 @@
         };
 
         /// <summary>
-        ///   Locates the view model for the specified view instance.
+        /// Locates the view model for the specified view instance.
         /// </summary>
         /// <returns>The view model.</returns>
         /// <remarks>
-        ///   Pass the view instance as a parameters and receive a view model instance.
+        /// Pass the view instance as a parameters and receive a view model instance.
         /// </remarks>
         public static Func<object, object> LocateForView = view =>
         {

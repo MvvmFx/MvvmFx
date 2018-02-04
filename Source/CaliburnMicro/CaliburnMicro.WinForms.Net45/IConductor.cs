@@ -5,15 +5,15 @@
     using System.Collections.Generic;
 
     /// <summary>
-    ///   Interface used to define an object associated to a collection of children.
+    /// Interface used to define an object associated to a collection of children.
     /// </summary>
     public interface IParent
     {
         /// <summary>
-        ///   Gets the children.
+        /// Gets the children.
         /// </summary>
         /// <returns>
-        ///   The collection of children.
+        /// The collection of children.
         /// </returns>
         IEnumerable GetChildren();
     }
@@ -25,10 +25,10 @@
     public interface IParent<out T> : IParent
     {
         /// <summary>
-        ///   Gets the children.
+        /// Gets the children.
         /// </summary>
         /// <returns>
-        ///   The collection of children.
+        /// The collection of children.
         /// </returns>
         new IEnumerable<T> GetChildren();
     }

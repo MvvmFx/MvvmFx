@@ -13,7 +13,7 @@
 #endif
 
     /// <summary>
-    ///   A strategy for determining which view to use for a given model.
+    /// A strategy for determining which view to use for a given model.
     /// </summary>
     public static class ViewLocator
     {
@@ -34,7 +34,7 @@
         public static NameTransformer NameTransformer = new NameTransformer();
 
         /// <summary>
-        ///   Separator used when resolving View names for context instances.
+        /// Separator used when resolving View names for context instances.
         /// </summary>
         public static string ContextSeparator = ".";
 
@@ -267,10 +267,10 @@
         }
 
         /// <summary>
-        ///   Retrieves the view from the IoC container or tries to create it if not found.
+        /// Retrieves the view from the IoC container or tries to create it if not found.
         /// </summary>
         /// <remarks>
-        ///   Pass the type of view as a parameter and recieve an instance of the view.
+        /// Pass the type of view as a parameter and recieve an instance of the view.
         /// </remarks>
         public static Func<Type, Control> GetOrCreateViewType = viewType =>
         {
@@ -347,11 +347,11 @@
         };
 
         /// <summary>
-        ///   Locates the view type based on the specified model type.
+        /// Locates the view type based on the specified model type.
         /// </summary>
         /// <returns>The view.</returns>
         /// <remarks>
-        ///   Pass the model type, display location (or null) and the context instance (or null) as parameters and receive a view type.
+        /// Pass the model type, display location (or null) and the context instance (or null) as parameters and receive a view type.
         /// </remarks>
         public static Func<Type, DependencyObject, object, Type> LocateTypeForModelType =
             (modelType, displayLocation, context) =>
@@ -384,11 +384,11 @@
             };
 
         /// <summary>
-        ///   Locates the view for the specified model type.
+        /// Locates the view for the specified model type.
         /// </summary>
         /// <returns>The view.</returns>
         /// <remarks>
-        ///   Pass the model type, display location (or null) and the context instance (or null) as parameters and receive a view instance.
+        /// Pass the model type, display location (or null) and the context instance (or null) as parameters and receive a view instance.
         /// </remarks>
         public static Func<Type, DependencyObject, object, Control> LocateForModelType =
             (modelType, displayLocation, context) =>
@@ -401,11 +401,11 @@
             };
 
         /// <summary>
-        ///   Locates the view for the specified model instance.
+        /// Locates the view for the specified model instance.
         /// </summary>
         /// <returns>The view.</returns>
         /// <remarks>
-        ///   Pass the model instance, display location (or null) and the context (or null) as parameters and receive a view instance.
+        /// Pass the model instance, display location (or null) and the context (or null) as parameters and receive a view instance.
         /// </remarks>
         public static Func<object, DependencyObject, object, Control> LocateForModel =
             (model, displayLocation, context) =>

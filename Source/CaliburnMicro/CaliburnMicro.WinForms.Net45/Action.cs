@@ -48,7 +48,7 @@
             );
 
         /// <summary>
-        ///   Sets the target of the <see cref="ActionMessage" /> .
+        /// Sets the target of the <see cref="ActionMessage" /> .
         /// </summary>
         /// <param name="d"> The element to attach the target to. </param>
         /// <param name="target"> The target for instances of <see cref="ActionMessage" /> . </param>
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        ///   Gets the target for instances of <see cref="ActionMessage" /> .
+        /// Gets the target for instances of <see cref="ActionMessage" /> .
         /// </summary>
         /// <param name="d"> The element to which the target is attached. </param>
         /// <returns> The target for instances of <see cref="ActionMessage" /> </returns>
@@ -68,12 +68,12 @@
         }
 
         /// <summary>
-        ///   Sets the target of the <see cref="ActionMessage" /> .
+        /// Sets the target of the <see cref="ActionMessage" /> .
         /// </summary>
         /// <param name="d"> The element to attach the target to. </param>
         /// <param name="target"> The target for instances of <see cref="ActionMessage" /> . </param>
         /// <remarks>
-        ///   The DataContext will not be set.
+        /// The DataContext will not be set.
         /// </remarks>
         public static void SetTargetWithoutContext(DependencyObject d, object target)
         {
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        ///   Gets the target for instances of <see cref="ActionMessage" /> .
+        /// Gets the target for instances of <see cref="ActionMessage" /> .
         /// </summary>
         /// <param name="d"> The element to which the target is attached. </param>
         /// <returns> The target for instances of <see cref="ActionMessage" /> </returns>
@@ -126,7 +126,7 @@
         }
 
         ///<summary>
-        ///  Checks if the <see cref="ActionMessage" /> -Target was set.
+        /// Checks if the <see cref="ActionMessage" /> -Target was set.
         ///</summary>
         ///<param name="element"> DependencyObject to check </param>
         ///<returns> True if Target or TargetWithoutContext was set on <paramref name="element" /> </returns>
@@ -144,7 +144,7 @@
         }
 
         ///<summary>
-        ///  Uses the action pipeline to invoke the method.
+        /// Uses the action pipeline to invoke the method.
         ///</summary>
         ///<param name="target"> The object instance to invoke the method on. </param>
         ///<param name="methodName"> The name of the method to invoke. </param>

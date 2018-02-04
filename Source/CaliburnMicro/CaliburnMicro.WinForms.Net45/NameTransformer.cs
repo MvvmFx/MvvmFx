@@ -6,7 +6,7 @@
     using System.Text.RegularExpressions;
 
     /// <summary>
-    ///  Class for managing the list of rules for doing name transformation.
+    /// Class for managing the list of rules for doing name transformation.
     /// </summary>
     public class NameTransformer : BindableCollection<NameTransformer.Rule>
     {
@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        ///  Adds a transform using a single replacement value and a global filter pattern.
+        /// Adds a transform using a single replacement value and a global filter pattern.
         /// </summary>
         /// <param name = "replacePattern">Regular expression pattern for replacing text</param>
         /// <param name = "replaceValue">The replacement value.</param>
@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        ///  Adds a transform using a list of replacement values and a global filter pattern.
+        /// Adds a transform using a list of replacement values and a global filter pattern.
         /// </summary>
         /// <param name = "replacePattern">Regular expression pattern for replacing text</param>
         /// <param name = "replaceValueList">The list of replacement values</param>
