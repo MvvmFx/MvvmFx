@@ -11,8 +11,8 @@
     public class StatusBarPanelProxy : Control
     {
         private bool _eventsWired;
-        private bool _isEnabledChanging;
-        private bool _isVisibleChanging;
+        //private bool _isEnabledChanging;
+        //private bool _isVisibleChanging;
 
         private readonly StatusBarPanel _item;
 
@@ -25,6 +25,14 @@
         public StatusBarPanel Item
         {
             get { return _item; }
+        }
+
+        /// <summary>
+        /// Returns a dynamic object that can be used to store custom data in relation to this control.
+        /// </summary>
+        public new dynamic UserData
+        {
+            get { return _item.UserData; }
         }
 
         private StatusBarPanelProxy()
