@@ -1,7 +1,7 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     /// <summary>
-    ///   Host's attached properties related to routed UI messaging.
+    /// Host's attached properties related to routed UI messaging.
     /// </summary>
     public static class Message
     {
@@ -14,7 +14,7 @@
             );
 
         /// <summary>
-        ///   Places a message handler on this element.
+        /// Places a message handler on this element.
         /// </summary>
         /// <param name="d"> The element. </param>
         /// <param name="value"> The message handler. </param>
@@ -24,7 +24,7 @@
         }
 
         /// <summary>
-        ///   Gets the message handler for this element.
+        /// Gets the message handler for this element.
         /// </summary>
         /// <param name="d"> The element. </param>
         /// <returns> The message handler. </returns>
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        ///   Gets the message handler for this element.
+        /// Gets the message handler for this element.
         /// </summary>
         /// <param name="d"> The object. </param>
         /// <returns> The message handler. </returns>
@@ -67,7 +67,7 @@
             );
 
         /// <summary>
-        ///   Sets the attached triggers and messages.
+        /// Sets the attached triggers and messages.
         /// </summary>
         /// <param name="d"> The element to attach to. </param>
         /// <param name="attachText"> The parsable attachment text. </param>
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        ///   Gets the attached triggers and messages.
+        /// Gets the attached triggers and messages.
         /// </summary>
         /// <param name="d"> The element that was attached to. </param>
         /// <returns> The parsable attachment text. </returns>

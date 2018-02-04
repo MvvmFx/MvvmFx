@@ -4,7 +4,7 @@
     using System.Collections.Generic;
 
     /// <summary>
-    ///   An implementation of <see cref = "IResult" /> that enables sequential execution of multiple results.
+    /// An implementation of <see cref = "IResult" /> that enables sequential execution of multiple results.
     /// </summary>
     public class SequentialResult : IResult
     {
@@ -12,7 +12,7 @@
         private ActionExecutionContext context;
 
         /// <summary>
-        ///   Initializes a new instance of the <see cref = "SequentialResult" /> class.
+        /// Initializes a new instance of the <see cref = "SequentialResult" /> class.
         /// </summary>
         /// <param name = "enumerator">The enumerator.</param>
         public SequentialResult(IEnumerator<IResult> enumerator)
@@ -21,12 +21,12 @@
         }
 
         /// <summary>
-        ///   Occurs when execution has completed.
+        /// Occurs when execution has completed.
         /// </summary>
         public event EventHandler<ResultCompletionEventArgs> Completed = delegate { };
 
         /// <summary>
-        ///   Executes the result using the specified context.
+        /// Executes the result using the specified context.
         /// </summary>
         /// <param name = "context">The context.</param>
         public void Execute(ActionExecutionContext context)

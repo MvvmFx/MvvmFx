@@ -9,7 +9,7 @@
 #endif
 
     ///<summary>
-    ///  A base implementation of <see cref = "IViewAware" /> which is capable of caching views by context.
+    /// A base implementation of <see cref = "IViewAware" /> which is capable of caching views by context.
     ///</summary>
     public class ViewAware : PropertyChangedBase, IViewAware
     {
@@ -29,7 +29,7 @@
         public static bool CacheViewsByDefault = true;
 
         /// <summary>
-        ///   The view chache for this instance.
+        /// The view chache for this instance.
         /// </summary>
         protected readonly Dictionary<object, object> Views = new Dictionary<object, object>();
 
@@ -51,12 +51,12 @@
         }
 
         /// <summary>
-        ///   Raised when a view is attached.
+        /// Raised when a view is attached.
         /// </summary>
         public event EventHandler<ViewAttachedEventArgs> ViewAttached = delegate { };
 
         ///<summary>
-        ///  Indicates whether or not this instance maintains a view cache.
+        /// Indicates whether or not this instance maintains a view cache.
         ///</summary>
         protected bool CacheViews
         {
@@ -99,7 +99,7 @@
         }
 
         /// <summary>
-        ///   Called when an attached view's Loaded event fires.
+        /// Called when an attached view's Loaded event fires.
         /// </summary>
         /// <param name = "view"></param>
         protected virtual void OnViewLoaded(object view)
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        ///   Gets a view previously attached to this instance.
+        /// Gets a view previously attached to this instance.
         /// </summary>
         /// <param name = "context">The context denoting which view to retrieve.</param>
         /// <returns>The view.</returns>
