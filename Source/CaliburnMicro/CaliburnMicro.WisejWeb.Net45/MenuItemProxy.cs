@@ -27,6 +27,14 @@
             get { return _item; }
         }
 
+        /// <summary>
+        /// Returns a dynamic object that can be used to store custom data in relation to this control.
+        /// </summary>
+        public new dynamic UserData
+        {
+            get { return _item.UserData; }
+        }
+
         private MenuItemProxy()
         {
             // force to use parametrized constructor
