@@ -2,12 +2,7 @@
 {
     using System;
     using System.ComponentModel;
-#if WISEJ
-    using Wisej.Web;
-    using ToolStripItem = Wisej.Web.MenuItem;
-#else
     using System.Windows.Forms;
-#endif
 
     /// <summary>
     /// Proxy class for <see cref="ToolStripItem"/> components.
@@ -19,22 +14,36 @@
         private bool _isEnabledChanging;
         private bool _isVisibleChanging;
 
-        private readonly ToolStripItem _item;
-
         /// <summary>
-        /// Gets the proxy item.
+        /// Gets the <see cref="ToolStripItem"/> component item.
         /// </summary>
         /// <value>
-        /// The proxy item.
+        /// The component item.
         /// </value>
-        public ToolStripItem Item
-        {
-            get { return _item; }
-        }
+        public ToolStripItem Item { get; }
 
         private ToolStripItemProxy()
         {
             // force to use parametrized constructor
+        }
+
+        /// <summary>Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.</summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources. </param>
+        protected override void Dispose(bool disposing)
+        {
+            UnwireEvents();
+            if (Item is ToolStripDropDownItem)
+            {
+                var dropDownItem = Item as ToolStripDropDownItem;
+
+                for (var index = dropDownItem.DropDownItems.Count - 1; index >= 0; index--)
+                {
+                    dropDownItem.DropDownItems[index].Dispose();
+                }
+            }
+
+            Item.Dispose();
+            base.Dispose(disposing);
         }
 
         /// <summary>
@@ -46,7 +55,7 @@
         public ToolStripItemProxy(ToolStripItem item, Control parent, bool wireEvents)
         {
             Parent = parent;
-            _item = item;
+            Item = item;
             Name = item.Name;
             Enabled = item.Enabled;
             Visible = item.Visible;
@@ -57,7 +66,7 @@
         }
 
         /// <summary>
-        /// Wires the events.
+        /// Wires the proxy events.
         /// </summary>
         public void WireEvents()
         {
@@ -67,28 +76,28 @@
             EnabledChanged += ToolStripItemProxy_EnabledChanged;
             VisibleChanged += ToolStripItemProxy_VisibleChanged;
 
-            _item.EnabledChanged += Item_EnabledChanged;
-            _item.VisibleChanged += Item_VisibleChanged;
-            _item.DoubleClick += item_DoubleClick;
-            _item.Click += item_Click;
-            _item.Disposed += item_Disposed;
+            Item.EnabledChanged += Item_EnabledChanged;
+            Item.VisibleChanged += Item_VisibleChanged;
+            Item.DoubleClick += item_DoubleClick;
+            Item.Click += item_Click;
+            Item.Disposed += item_Disposed;
 
             _eventsWired = true;
         }
 
         /// <summary>
-        /// Unwires the events.
+        /// Unwires the proxy events.
         /// </summary>
         public void UnwireEvents()
         {
             if (!_eventsWired)
                 return;
 
-            _item.Disposed -= item_Disposed;
-            _item.Click -= item_Click;
-            _item.DoubleClick -= item_DoubleClick;
-            _item.VisibleChanged -= Item_VisibleChanged;
-            _item.EnabledChanged -= Item_EnabledChanged;
+            Item.Disposed -= item_Disposed;
+            Item.Click -= item_Click;
+            Item.DoubleClick -= item_DoubleClick;
+            Item.VisibleChanged -= Item_VisibleChanged;
+            Item.EnabledChanged -= Item_EnabledChanged;
 
             VisibleChanged -= ToolStripItemProxy_VisibleChanged;
             EnabledChanged -= ToolStripItemProxy_EnabledChanged;
@@ -118,7 +127,7 @@
                 return;
 
             _isEnabledChanging = true;
-            Enabled = _item.Enabled;
+            Enabled = Item.Enabled;
             _isEnabledChanging = false;
         }
 
@@ -128,7 +137,7 @@
                 return;
 
             _isVisibleChanging = true;
-            Visible = _item.Visible;
+            Visible = Item.Visible;
             _isVisibleChanging = false;
         }
 
@@ -138,7 +147,7 @@
                 return;
 
             _isEnabledChanging = true;
-            _item.Enabled = Enabled;
+            Item.Enabled = Enabled;
             _isEnabledChanging = false;
         }
 
@@ -148,7 +157,7 @@
                 return;
 
             _isVisibleChanging = true;
-            _item.Visible = Visible;
+            Item.Visible = Visible;
             _isVisibleChanging = false;
         }
     }
