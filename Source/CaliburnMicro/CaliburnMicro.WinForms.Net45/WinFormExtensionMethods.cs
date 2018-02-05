@@ -94,7 +94,7 @@
         /// <param name="namedElements">The list of elements in scope.</param>
         /// <param name="viewModel">The view model to bind to.</param>
         /// <param name="bindingManager">The binding manager to use.</param>
-        public static void BindToolStripItemProxyProperties(List<Control> namedElements, object viewModel,
+        public static void BindComponentProxyProperties(List<Control> namedElements, object viewModel,
             BindingManager bindingManager)
         {
             if (namedElements == null)
@@ -116,7 +116,7 @@
                             (bool) property.GetValue(viewModel,
                                 BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
                                 null);
-                        BindToolStripItemProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
+                        BindComponentProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
                     }
                     else
                     {
@@ -126,7 +126,7 @@
                             // no need for enforce the Enabled property
                             /*((ToolStripItemProxy) control).Item.Enabled =
                                 (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel,
+                            BindComponentProxyProperties(property.Name, control, "Enabled", viewModel,
                                 bindingManager);
                         }
                     }
@@ -167,7 +167,7 @@
         /// <param name="namedElements">The list of elements in scope.</param>
         /// <param name="viewModel">The view model to bind to.</param>
         /// <param name="bindingManager">The binding manager to use.</param>
-        public static void BindToolStripItemProxyProperties(List<Control> namedElements, object viewModel,
+        public static void BindComponentProxyProperties(List<Control> namedElements, object viewModel,
             BindingManager bindingManager)
         {
             if (namedElements == null)
@@ -189,7 +189,7 @@
                             (bool) property.GetValue(viewModel,
                                 BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
                                 null);
-                        BindToolStripItemProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
+                        BindComponentProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
                     }
                     else
                     {
@@ -199,7 +199,7 @@
                             // no need for enforce the Enabled property
                             /*((ToolStripItemProxy) control).Item.Enabled =
                                 (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel,
+                            BindComponentProxyProperties(property.Name, control, "Enabled", viewModel,
                                 bindingManager);
                         }
                     }
@@ -214,7 +214,7 @@
                             (bool) property.GetValue(viewModel,
                                 BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
                                 null);
-                        BindToolStripItemProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
+                        BindComponentProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
                     }
                     else
                     {
@@ -224,7 +224,7 @@
                             // no need for enforce the Enabled property
                             /*((ToolStripItemProxy) control).Item.Enabled =
                                 (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindToolStripItemProxyProperties(property.Name, control, "Enabled", viewModel,
+                            BindComponentProxyProperties(property.Name, control, "Enabled", viewModel,
                                 bindingManager);
                         }
                     }
@@ -234,7 +234,7 @@
 
 #endif
 
-        private static void BindToolStripItemProxyProperties(string sourcePath, Control target, string targetPath,
+        private static void BindComponentProxyProperties(string sourcePath, Control target, string targetPath,
             object viewModel, BindingManager bindingManager)
         {
             if (sourcePath == null)

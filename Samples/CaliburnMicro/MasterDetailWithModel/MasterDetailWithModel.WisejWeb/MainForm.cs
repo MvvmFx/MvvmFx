@@ -68,7 +68,7 @@ namespace MasterDetailWithModel
                 return;
 
             // Binds the control visible and enabled properties.
-            WinFormExtensionMethods.BindToolStripItemProxyProperties(_namedElements, _viewModel, _bindingManager);
+            WinFormExtensionMethods.BindComponentProxyProperties(_namedElements, _viewModel, _bindingManager);
 
             _isBindingSet = true;
         }
