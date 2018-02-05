@@ -14,25 +14,20 @@
         private bool _isEnabledChanging;
         private bool _isVisibleChanging;
 
-        private readonly ToolBarButton _item;
-
         /// <summary>
-        /// Gets the proxy item.
+        /// Gets the <see cref="ToolBarButton"/> component item.
         /// </summary>
         /// <value>
-        /// The proxy item.
+        /// The component item.
         /// </value>
-        public ToolBarButton Item
-        {
-            get { return _item; }
-        }
+        public ToolBarButton Item { get; }
 
         /// <summary>
         /// Returns a dynamic object that can be used to store custom data in relation to this control.
         /// </summary>
         public new dynamic UserData
         {
-            get { return _item.UserData; }
+            get { return Item.UserData; }
         }
 
         private ToolBarButtonProxy()
@@ -40,18 +35,20 @@
             // force to use parametrized constructor
         }
 
+        /// <summary>Dispose the control.</summary>
+        /// <param name="disposing">true when this method is called by the application rather than a finalizer.</param>
         protected override void Dispose(bool disposing)
         {
             UnwireEvents();
-            if (_item.DropDownMenu != null)
+            if (Item.DropDownMenu != null)
             {
-                for (var index = _item.DropDownMenu.MenuItems.Count - 1; index >= 0; index--)
+                for (var index = Item.DropDownMenu.MenuItems.Count - 1; index >= 0; index--)
                 {
-                    _item.DropDownMenu.MenuItems[index].Dispose();
+                    Item.DropDownMenu.MenuItems[index].Dispose();
                 }
             }
 
-            _item.Dispose();
+            Item.Dispose();
             base.Dispose(disposing);
         }
 
@@ -64,7 +61,7 @@
         public ToolBarButtonProxy(ToolBarButton item, Control parent, bool wireEvents)
         {
             Parent = parent;
-            _item = item;
+            Item = item;
             Name = item.Name;
             Enabled = item.Enabled;
             Visible = item.Visible;
@@ -75,7 +72,7 @@
         }
 
         /// <summary>
-        /// Wires the events.
+        /// Wires the proxy events.
         /// </summary>
         public void WireEvents()
         {
@@ -84,22 +81,22 @@
 
             EnabledChanged += MenuItemProxy_EnabledChanged;
             VisibleChanged += MenuItemProxy_VisibleChanged;
-            _item.Click += item_Click;
-            _item.Disposed += item_Disposed;
+            Item.Click += item_Click;
+            Item.Disposed += item_Disposed;
 
             _eventsWired = true;
         }
 
         /// <summary>
-        /// Unwires the events.
+        /// Unwires the proxy events.
         /// </summary>
         public void UnwireEvents()
         {
             if (!_eventsWired)
                 return;
 
-            _item.Disposed -= item_Disposed;
-            _item.Click -= item_Click;
+            Item.Disposed -= item_Disposed;
+            Item.Click -= item_Click;
             VisibleChanged -= MenuItemProxy_VisibleChanged;
             EnabledChanged -= MenuItemProxy_EnabledChanged;
 
@@ -123,7 +120,7 @@
                 return;
 
             _isEnabledChanging = true;
-            _item.Enabled = Enabled;
+            Item.Enabled = Enabled;
             _isEnabledChanging = false;
         }
 
@@ -133,7 +130,7 @@
                 return;
 
             _isVisibleChanging = true;
-            _item.Visible = Visible;
+            Item.Visible = Visible;
             _isVisibleChanging = false;
         }
     }
