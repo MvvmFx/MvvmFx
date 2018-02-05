@@ -69,6 +69,17 @@
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Bootstrapper.cs">
       <Link>Bootstrapper.cs</Link>
     </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ComponentProxyBase.cs">
+      <Link>ComponentProxy\ComponentProxyBase.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\IComponentProxy.cs">
+      <Link>ComponentProxy\IComponentProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ToolStripItemProxy.cs">
+      <Link>ComponentProxy\ToolStripItemProxy.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Conductor.cs">
       <Link>Conductor.cs</Link>
     </Compile>
@@ -198,10 +209,6 @@
     </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\StartupEventArgs.cs">
       <Link>StartupEventArgs.cs</Link>
-    </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ToolStripItemProxy.cs">
-      <Link>ToolStripItemProxy.cs</Link>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\TypeMappingConfiguration.cs">
       <Link>TypeMappingConfiguration.cs</Link>
