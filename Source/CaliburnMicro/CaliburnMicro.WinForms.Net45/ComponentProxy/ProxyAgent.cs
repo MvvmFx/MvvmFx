@@ -19,7 +19,6 @@
         /// </summary>
         public Func<Control, IEnumerable<Control>> GetNamedItems;
 
-
         /// <summary>
         /// Binds the visible and enabled properties of a list of <see cref="Control"/> to 
         /// ViewModel properties, using a <see cref="BindingManager"/>.

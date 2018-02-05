@@ -75,39 +75,16 @@
 
             foreach (var control in targetControl.Controls.Cast<Control>())
             {
-                if (control is ToolStrip)
+                var proxyAgent = ProxyManager.GetProxyAgent(control.GetType());
+                if (proxyAgent != null)
                 {
-                    foreach (ToolStripItem item in ((ToolStrip) control).Items)
-                    {
-                        yield return new ToolStripItemProxy(item, control.Parent, true);
-
-                        foreach (var toolStripItems in RecursiveGetToolStripItems(item, control))
-                            yield return toolStripItems;
-                    }
+                    foreach (var namedItem in proxyAgent.GetNamedItems(control))
+                        yield return namedItem;
                 }
 
                 yield return control;
                 foreach (var child in GetNamedElements(control))
                     yield return child;
-            }
-        }
-
-        private static IEnumerable<Control> RecursiveGetToolStripItems(ToolStripItem component, Control control)
-        {
-            if (component == null)
-                throw new ArgumentNullException(nameof(component));
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
-
-            if (component is ToolStripDropDownItem)
-            {
-                foreach (ToolStripItem item in ((ToolStripDropDownItem) component).DropDownItems)
-                {
-                    yield return new ToolStripItemProxy(item, control.Parent, true);
-
-                    foreach (var subItem in RecursiveGetToolStripItems(item, control))
-                        yield return subItem;
-                }
             }
         }
 
@@ -171,81 +148,17 @@
 
             foreach (var control in targetControl.Controls.Cast<Control>())
             {
-                if (control is MenuBar)
+                var proxyAgent = ProxyManager.GetProxyAgent(control.GetType());
+                if (proxyAgent != null)
                 {
-                    foreach (MenuItem menuItem in ((MenuBar) control).MenuItems)
-                    {
-                        yield return new MenuItemProxy(menuItem, control.Parent, true);
-
-                        foreach (var item in RecursiveGetItems(menuItem, control))
-                            yield return item;
-                    }
-                }
-                else if (control is ToolBar)
-                {
-                    foreach (ToolBarButton toolBarButton in ((ToolBar) control).Buttons)
-                    {
-                        yield return new ToolBarButtonProxy(toolBarButton, control.Parent, true);
-
-                        foreach (var item in RecursiveGetItems(toolBarButton, control))
-                            yield return item;
-                    }
-                }
-                else if (control is StatusBar)
-                {
-                    foreach (StatusBarPanel statusBarPanel in ((StatusBar) control).Panels)
-                    {
-                        yield return new StatusBarPanelProxy(statusBarPanel, control.Parent, true);
-
-                        foreach (var item in RecursiveGetItems(statusBarPanel, control))
-                            yield return item;
-                    }
+                    foreach (var namedItem in proxyAgent.GetNamedItems(control))
+                        yield return namedItem;
                 }
 
                 yield return control;
                 foreach (var child in GetNamedElements(control))
                     yield return child;
             }
-        }
-
-        private static IEnumerable<Control> RecursiveGetItems(Component component, Control control)
-        {
-            if (component == null)
-                throw new ArgumentNullException(nameof(component));
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
-
-            if (component is MenuItem)
-            {
-                foreach (MenuItem item in ((MenuItem) component).MenuItems)
-                {
-                    yield return new MenuItemProxy(item, control.Parent, true);
-
-                    foreach (var subItem in RecursiveGetItems(item, control))
-                        yield return subItem;
-                }
-            }
-            else if ((component as ToolBarButton)?.DropDownMenu != null)
-            {
-                foreach (MenuItem item in ((ToolBarButton) component).DropDownMenu.MenuItems)
-                {
-                    yield return new MenuItemProxy(item, control.Parent, true);
-
-                    foreach (var subItem in RecursiveGetItems(item, control))
-                        yield return subItem;
-                }
-            }
-
-            /*else if (component is StatusBarPanel)
-            {
-                foreach (StatusBarPanel item in ((StatusBarPanel)component).Panels)
-                {
-                    yield return new StatusBarPanelProxy(item, control.Parent, true);
-
-                    foreach (var subItem in RecursiveGetItems(item, control))
-                        yield return subItem;
-                }
-            }*/
         }
 
         /// <summary>
