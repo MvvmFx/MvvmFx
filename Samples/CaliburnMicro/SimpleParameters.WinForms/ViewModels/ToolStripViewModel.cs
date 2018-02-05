@@ -2,7 +2,7 @@
 #if WINFORMS
 using System.Windows.Forms;
 #endif
-using MvvmFx.CaliburnMicro;
+using MvvmFx.CaliburnMicro.ComponentProxy;
 
 namespace SimpleParameters.UI.ViewModels
 {

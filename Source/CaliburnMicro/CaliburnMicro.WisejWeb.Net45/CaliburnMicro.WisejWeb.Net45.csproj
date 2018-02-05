@@ -72,12 +72,11 @@
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Bootstrapper.cs">
       <Link>Bootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ComponentProxyBase.cs">
-      <Link>ComponentProxy\ComponentProxyBase.cs</Link>
-      <SubType>Component</SubType>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ProxyAgent.cs">
+      <Link>ComponentProxy\ProxyAgent.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\IComponentProxy.cs">
-      <Link>ComponentProxy\IComponentProxy.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ProxyManager.cs">
+      <Link>ComponentProxy\ProxyManager.cs</Link>
     </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Conductor.cs">
       <Link>Conductor.cs</Link>
@@ -245,6 +244,9 @@
     <Compile Include="ComponentProxy\ToolBarButtonProxy.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ComponentProxy\MenuBarAgent.cs" />
+    <Compile Include="ComponentProxy\StatusBarAgent.cs" />
+    <Compile Include="ComponentProxy\ToolBarAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

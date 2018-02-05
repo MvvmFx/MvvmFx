@@ -55,10 +55,9 @@
     <Compile Include="BindableList.cs" />
     <Compile Include="BindingScope.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="ComponentProxy\ComponentProxyBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ComponentProxy\IComponentProxy.cs" />
+    <Compile Include="ComponentProxy\ProxyAgent.cs" />
+    <Compile Include="ComponentProxy\ProxyManager.cs" />
+    <Compile Include="ComponentProxy\ToolStripAgent.cs" />
     <Compile Include="ComponentProxy\ToolStripItemProxy.cs">
       <SubType>Component</SubType>
     </Compile>
