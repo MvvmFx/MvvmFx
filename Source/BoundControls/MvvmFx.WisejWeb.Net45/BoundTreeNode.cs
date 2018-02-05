@@ -68,6 +68,8 @@ namespace MvvmFx.WisejWeb
         }
 
 #if WISEJ
+        /// <summary>Disposes the tree node.</summary>
+        /// <param name="disposing">true when this method is called by the application rather than a finalizer.</param>
         protected override void Dispose(bool disposing)
         {
             for (int node = 0; node < Nodes.Count; node++)

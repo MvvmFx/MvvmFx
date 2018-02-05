@@ -2,9 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
 #if WISEJ
-using Wisej.Web;
-#elif WEBGUI
-using Gizmox.WebGUI.Forms;
+using ToolStripItem = Wisej.Web.MenuItem;
 #else
 using System.Windows.Forms;
 #endif
