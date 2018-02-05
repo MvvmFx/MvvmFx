@@ -37,6 +37,25 @@
             // force to use parametrized constructor
         }
 
+        /// <summary>Releases the unmanaged resources used by the <see cref="T:System.Windows.Forms.Control" /> and its child controls and optionally releases the managed resources.</summary>
+        /// <param name="disposing">true to release both managed and unmanaged resources; false to release only unmanaged resources. </param>
+        protected override void Dispose(bool disposing)
+        {
+            UnwireEvents();
+            if (Item is ToolStripDropDownItem)
+            {
+                var dropDownItem = Item as ToolStripDropDownItem;
+
+                for (var index = dropDownItem.DropDownItems.Count - 1; index >= 0; index--)
+                {
+                    dropDownItem.DropDownItems[index].Dispose();
+                }
+            }
+
+            Item.Dispose();
+            base.Dispose(disposing);
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolStripItemProxy" /> class, for the specified <see cref="ToolStripItem" />.
         /// </summary>
