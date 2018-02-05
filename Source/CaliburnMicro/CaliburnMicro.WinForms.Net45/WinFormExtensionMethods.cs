@@ -64,49 +64,49 @@
         /// <summary>
         /// Gets all the <see cref="Control" /> instances with names in the scope.
         /// </summary>
-        /// <param name="control">The control.</param>
+        /// <param name="targetControl">The control.</param>
         /// <returns>
         /// Named <see cref="Control" /> instances in the provided scope.
         /// </returns>
-        public static IEnumerable<Control> GetNamedElements(this Control control)
+        public static IEnumerable<Control> GetNamedElements(this Control targetControl)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
+            if (targetControl == null)
+                throw new ArgumentNullException(nameof(targetControl));
 
-            foreach (var x in control.Controls.Cast<Control>())
+            foreach (var control in targetControl.Controls.Cast<Control>())
             {
-                if (x is ToolStrip)
+                if (control is ToolStrip)
                 {
-                    foreach (ToolStripItem item in ((ToolStrip) x).Items)
+                    foreach (ToolStripItem item in ((ToolStrip) control).Items)
                     {
-                        yield return new ToolStripItemProxy(item, x.Parent, true);
+                        yield return new ToolStripItemProxy(item, control.Parent, true);
 
-                        foreach (var toolStripItems in RecursiveGetToolStripItems(item, x))
+                        foreach (var toolStripItems in RecursiveGetToolStripItems(item, control))
                             yield return toolStripItems;
                     }
                 }
 
-                yield return x;
-                foreach (var child in GetNamedElements(x))
+                yield return control;
+                foreach (var child in GetNamedElements(control))
                     yield return child;
             }
         }
 
-        private static IEnumerable<Control> RecursiveGetToolStripItems(ToolStripItem item, Control x)
+        private static IEnumerable<Control> RecursiveGetToolStripItems(ToolStripItem component, Control control)
         {
-            if (item == null)
-                throw new ArgumentNullException(nameof(item));
-            if (x == null)
-                throw new ArgumentNullException(nameof(x));
+            if (component == null)
+                throw new ArgumentNullException(nameof(component));
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
 
-            if (item is ToolStripDropDownItem)
+            if (component is ToolStripDropDownItem)
             {
-                foreach (ToolStripItem t in ((ToolStripDropDownItem) item).DropDownItems)
+                foreach (ToolStripItem item in ((ToolStripDropDownItem) component).DropDownItems)
                 {
-                    yield return new ToolStripItemProxy(t, x.Parent, true);
+                    yield return new ToolStripItemProxy(item, control.Parent, true);
 
-                    foreach (var toolStripItems in RecursiveGetToolStripItems(t, x))
-                        yield return toolStripItems;
+                    foreach (var subItem in RecursiveGetToolStripItems(item, control))
+                        yield return subItem;
                 }
             }
         }
@@ -160,90 +160,90 @@
         /// <summary>
         /// Gets all the <see cref="Control" /> instances with names in the scope.
         /// </summary>
-        /// <param name="control">The control.</param>
+        /// <param name="targetControl">The target control.</param>
         /// <returns>
         /// Named <see cref="Control" /> instances in the provided scope.
         /// </returns>
-        public static IEnumerable<Control> GetNamedElements(this Control control)
+        public static IEnumerable<Control> GetNamedElements(this Control targetControl)
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
+            if (targetControl == null)
+                throw new ArgumentNullException(nameof(targetControl));
 
-            foreach (var x in control.Controls.Cast<Control>())
+            foreach (var control in targetControl.Controls.Cast<Control>())
             {
-                if (x is MenuBar)
+                if (control is MenuBar)
                 {
-                    foreach (MenuItem menuItem in ((MenuBar) x).MenuItems)
+                    foreach (MenuItem menuItem in ((MenuBar) control).MenuItems)
                     {
-                        yield return new MenuItemProxy(menuItem, x.Parent, true);
+                        yield return new MenuItemProxy(menuItem, control.Parent, true);
 
-                        foreach (var item in RecursiveGetItems(menuItem, x))
+                        foreach (var item in RecursiveGetItems(menuItem, control))
                             yield return item;
                     }
                 }
-                else if (x is ToolBar)
+                else if (control is ToolBar)
                 {
-                    foreach (ToolBarButton toolBarButton in ((ToolBar) x).Buttons)
+                    foreach (ToolBarButton toolBarButton in ((ToolBar) control).Buttons)
                     {
-                        yield return new ToolBarButtonProxy(toolBarButton, x.Parent, true);
+                        yield return new ToolBarButtonProxy(toolBarButton, control.Parent, true);
 
-                        foreach (var item in RecursiveGetItems(toolBarButton, x))
+                        foreach (var item in RecursiveGetItems(toolBarButton, control))
                             yield return item;
                     }
                 }
-                else if (x is StatusBar)
+                else if (control is StatusBar)
                 {
-                    foreach (StatusBarPanel statusBarPanel in ((StatusBar) x).Panels)
+                    foreach (StatusBarPanel statusBarPanel in ((StatusBar) control).Panels)
                     {
-                        yield return new StatusBarPanelProxy(statusBarPanel, x.Parent, true);
+                        yield return new StatusBarPanelProxy(statusBarPanel, control.Parent, true);
 
-                        foreach (var item in RecursiveGetItems(statusBarPanel, x))
+                        foreach (var item in RecursiveGetItems(statusBarPanel, control))
                             yield return item;
                     }
                 }
 
-                yield return x;
-                foreach (var child in GetNamedElements(x))
+                yield return control;
+                foreach (var child in GetNamedElements(control))
                     yield return child;
             }
         }
 
-        private static IEnumerable<Control> RecursiveGetItems(Component component, Control x)
+        private static IEnumerable<Control> RecursiveGetItems(Component component, Control control)
         {
             if (component == null)
                 throw new ArgumentNullException(nameof(component));
-            if (x == null)
-                throw new ArgumentNullException(nameof(x));
+            if (control == null)
+                throw new ArgumentNullException(nameof(control));
 
             if (component is MenuItem)
             {
-                foreach (MenuItem t in ((MenuItem) component).MenuItems)
+                foreach (MenuItem item in ((MenuItem) component).MenuItems)
                 {
-                    yield return new MenuItemProxy(t, x.Parent, true);
+                    yield return new MenuItemProxy(item, control.Parent, true);
 
-                    foreach (var item in RecursiveGetItems(t, x))
-                        yield return item;
+                    foreach (var subItem in RecursiveGetItems(item, control))
+                        yield return subItem;
                 }
             }
             else if ((component as ToolBarButton)?.DropDownMenu != null)
             {
-                foreach (MenuItem t in ((ToolBarButton) component).DropDownMenu.MenuItems)
+                foreach (MenuItem item in ((ToolBarButton) component).DropDownMenu.MenuItems)
                 {
-                    yield return new MenuItemProxy(t, x.Parent, true);
+                    yield return new MenuItemProxy(item, control.Parent, true);
 
-                    foreach (var item in RecursiveGetItems(t, x))
-                        yield return item;
+                    foreach (var subItem in RecursiveGetItems(item, control))
+                        yield return subItem;
                 }
             }
 
             /*else if (component is StatusBarPanel)
             {
-                foreach (StatusBarPanel t in ((StatusBarPanel)component).Panels)
+                foreach (StatusBarPanel item in ((StatusBarPanel)component).Panels)
                 {
-                    yield return new StatusBarPanelProxy(t, x.Parent, true);
+                    yield return new StatusBarPanelProxy(item, control.Parent, true);
 
-                    foreach (var item in RecursiveGetItems(t, x))
-                        yield return item;
+                    foreach (var subItem in RecursiveGetItems(item, control))
+                        yield return subItem;
                 }
             }*/
         }
