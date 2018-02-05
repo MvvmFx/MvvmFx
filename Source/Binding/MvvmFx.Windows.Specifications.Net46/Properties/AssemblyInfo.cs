@@ -7,4 +7,4 @@ using System.Security;
 [assembly: AssemblyDescription("Specifications for MvvmFx.Windows.NET46")]
 [assembly: AssemblyCopyright("Copyright © Kent Boogaart (parts), Tiago Freitas Leal.")]
 [assembly: AssemblyCompany("Kent Boogaart and MvvmFx Project")]
-[assembly: CLSCompliant(false)]
+[assembly: CLSCompliant(true)]
