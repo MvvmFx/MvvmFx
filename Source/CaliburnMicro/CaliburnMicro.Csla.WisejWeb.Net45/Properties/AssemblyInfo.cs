@@ -6,4 +6,4 @@ using System.Reflection;
 [assembly: AssemblyDescription("CSLA .NET ViewModel adapter for MvvmFx.CaliburnMicro.")]
 [assembly: AssemblyCopyright("Copyright © MvvmFx, 2015.")]
 [assembly: AssemblyCompany("MvvmFx Project")]
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]

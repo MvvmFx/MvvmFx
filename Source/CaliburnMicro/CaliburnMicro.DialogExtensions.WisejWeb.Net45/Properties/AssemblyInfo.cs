@@ -6,4 +6,4 @@ using System.Reflection;
 [assembly: AssemblyDescription("Dialog Extensions for MvvmFx.CaliburnMicro.")]
 [assembly: AssemblyCopyright("Copyright © Caliburn.Micro 2010, MvvmFx 2015.")]
 [assembly: AssemblyCompany("Caliburn.Micro project and MvvmFx Project")]
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]

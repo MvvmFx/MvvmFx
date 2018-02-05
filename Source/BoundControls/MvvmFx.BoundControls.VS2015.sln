@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net46"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.PanelEx.Net45", "MvvmFx.WisejWeb.PanelEx.Net45\MvvmFx.WisejWeb.PanelEx.Net45.csproj", "{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,18 @@ Global
 		{F9A6952E-C1BC-4185-8407-D1F59D62255D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F9A6952E-C1BC-4185-8407-D1F59D62255D}.Release|x86.ActiveCfg = Release|Any CPU
 		{F9A6952E-C1BC-4185-8407-D1F59D62255D}.Release|x86.Build.0 = Release|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Debug|x86.Build.0 = Debug|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Release|x86.ActiveCfg = Release|Any CPU
+		{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
