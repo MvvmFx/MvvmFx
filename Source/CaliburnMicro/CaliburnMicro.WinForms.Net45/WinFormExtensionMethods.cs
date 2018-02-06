@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Reflection;
     using MvvmFx.Windows.Data;
-    using MvvmFx.CaliburnMicro.ComponentProxy;
+    using MvvmFx.CaliburnMicro.ComponentHandlers;
 #if WISEJ
     using Wisej.Web;
 #else
@@ -60,11 +60,10 @@
             return string.Empty;
         }
 
-#if WINFORMS
         /// <summary>
         /// Gets all the <see cref="Control" /> instances with names in the scope.
         /// </summary>
-        /// <param name="targetControl">The control.</param>
+        /// <param name="targetControl">The targetControl control.</param>
         /// <returns>
         /// Named <see cref="Control" /> instances in the provided scope.
         /// </returns>
@@ -78,18 +77,19 @@
                 var proxyAgent = ProxyManager.GetProxyAgent(control.GetType());
                 if (proxyAgent != null)
                 {
-                    foreach (var namedItem in proxyAgent.GetNamedItems(control))
-                        yield return namedItem;
+                    foreach (var childItem in proxyAgent.GetChildItems(control))
+                        yield return childItem;
                 }
 
                 yield return control;
-                foreach (var child in GetNamedElements(control))
-                    yield return child;
+                foreach (var childControl in GetNamedElements(control))
+                    yield return childControl;
             }
         }
 
         /// <summary>
-        /// Binds the control visible and enabled properties.
+        /// Binds the visible and enabled properties of a <see cref="Control"/> to 
+        /// the ViewModel properties, using a <see cref="BindingManager"/>.
         /// </summary>
         /// <param name="namedElements">The list of elements in scope.</param>
         /// <param name="viewModel">The view model to bind to.</param>
@@ -106,149 +106,40 @@
 
             foreach (var control in namedElements)
             {
-                if (control is ToolStripItemProxy)
+                var binderAgent = BinderManager.GetBinderAgent(control.GetType());
+                if (binderAgent != null)
                 {
-                    var property = viewModel.GetPropertyCaseInsensitive(control.Name + "Visible");
-                    if (property != null)
-                    {
-                        // must enforce the Visible property
-                        ((ToolStripItemProxy) control).Item.Visible =
-                            (bool) property.GetValue(viewModel,
-                                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
-                                null);
-                        BindComponentProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
-                    }
-                    else
-                    {
-                        property = viewModel.GetPropertyCaseInsensitive(control.Name + "Enabled");
-                        if (property != null)
-                        {
-                            // no need for enforce the Enabled property
-                            /*((ToolStripItemProxy) control).Item.Enabled =
-                                (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindComponentProxyProperties(property.Name, control, "Enabled", viewModel,
-                                bindingManager);
-                        }
-                    }
+                    binderAgent.BindVisualProperties(control, viewModel, bindingManager);
                 }
             }
         }
-#else
+
         /// <summary>
-        /// Gets all the <see cref="Control" /> instances with names in the scope.
+        /// Binds the Control to the ViewModel, using the specified <see cref="BindingManager"/>.
         /// </summary>
         /// <param name="targetControl">The target control.</param>
-        /// <returns>
-        /// Named <see cref="Control" /> instances in the provided scope.
-        /// </returns>
-        public static IEnumerable<Control> GetNamedElements(this Control targetControl)
+        /// <param name="targetPath">The target control path.</param>
+        /// <param name="sourceViewModel">The source view model.</param>
+        /// <param name="sourcePath">The source path.</param>
+        /// <param name="bindingManager">The binding manager.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// targetControl or targetPath or sourceViewModel or sourcePath or bindingManager
+        /// </exception>
+        public static void DoBind(Control targetControl, string targetPath, object sourceViewModel, string sourcePath,
+            BindingManager bindingManager)
         {
             if (targetControl == null)
                 throw new ArgumentNullException(nameof(targetControl));
-
-            foreach (var control in targetControl.Controls.Cast<Control>())
-            {
-                var proxyAgent = ProxyManager.GetProxyAgent(control.GetType());
-                if (proxyAgent != null)
-                {
-                    foreach (var namedItem in proxyAgent.GetNamedItems(control))
-                        yield return namedItem;
-                }
-
-                yield return control;
-                foreach (var child in GetNamedElements(control))
-                    yield return child;
-            }
-        }
-
-        /// <summary>
-        /// Binds the control visible and enabled properties.
-        /// </summary>
-        /// <param name="namedElements">The list of elements in scope.</param>
-        /// <param name="viewModel">The view model to bind to.</param>
-        /// <param name="bindingManager">The binding manager to use.</param>
-        public static void BindComponentProxyProperties(List<Control> namedElements, object viewModel,
-            BindingManager bindingManager)
-        {
-            if (namedElements == null)
-                throw new ArgumentNullException(nameof(namedElements));
-            if (viewModel == null)
-                throw new ArgumentNullException(nameof(viewModel));
-            if (bindingManager == null)
-                throw new ArgumentNullException(nameof(bindingManager));
-
-            foreach (var control in namedElements)
-            {
-                if (control is MenuItemProxy)
-                {
-                    var property = viewModel.GetPropertyCaseInsensitive(control.Name + "Visible");
-                    if (property != null)
-                    {
-                        // must enforce the Visible property
-                        ((MenuItemProxy) control).Item.Visible =
-                            (bool) property.GetValue(viewModel,
-                                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
-                                null);
-                        BindComponentProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
-                    }
-                    else
-                    {
-                        property = viewModel.GetPropertyCaseInsensitive(control.Name + "Enabled");
-                        if (property != null)
-                        {
-                            // no need for enforce the Enabled property
-                            /*((ToolStripItemProxy) control).Item.Enabled =
-                                (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindComponentProxyProperties(property.Name, control, "Enabled", viewModel,
-                                bindingManager);
-                        }
-                    }
-                }
-                else if (control is ToolBarButtonProxy)
-                {
-                    var property = viewModel.GetPropertyCaseInsensitive(control.Name + "Visible");
-                    if (property != null)
-                    {
-                        // must enforce the Visible property
-                        ((ToolBarButtonProxy) control).Item.Visible =
-                            (bool) property.GetValue(viewModel,
-                                BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
-                                null);
-                        BindComponentProxyProperties(property.Name, control, "Visible", viewModel, bindingManager);
-                    }
-                    else
-                    {
-                        property = viewModel.GetPropertyCaseInsensitive(control.Name + "Enabled");
-                        if (property != null)
-                        {
-                            // no need for enforce the Enabled property
-                            /*((ToolStripItemProxy) control).Item.Enabled =
-                                (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
-                            BindComponentProxyProperties(property.Name, control, "Enabled", viewModel,
-                                bindingManager);
-                        }
-                    }
-                }
-            }
-        }
-
-#endif
-
-        private static void BindComponentProxyProperties(string sourcePath, Control target, string targetPath,
-            object viewModel, BindingManager bindingManager)
-        {
-            if (sourcePath == null)
-                throw new ArgumentNullException(nameof(sourcePath));
-            if (target == null)
-                throw new ArgumentNullException(nameof(target));
             if (targetPath == null)
                 throw new ArgumentNullException(nameof(targetPath));
-            if (viewModel == null)
-                throw new ArgumentNullException(nameof(viewModel));
+            if (sourceViewModel == null)
+                throw new ArgumentNullException(nameof(sourceViewModel));
+            if (sourcePath == null)
+                throw new ArgumentNullException(nameof(sourcePath));
             if (bindingManager == null)
                 throw new ArgumentNullException(nameof(bindingManager));
 
-            bindingManager.Bindings.Add(new Binding(target, targetPath, viewModel, sourcePath)
+            bindingManager.Bindings.Add(new Binding(targetControl, targetPath, sourceViewModel, sourcePath)
             {
                 Mode = BindingMode.OneWayToTarget
             });

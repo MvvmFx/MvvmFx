@@ -1,30 +1,26 @@
-﻿namespace MvvmFx.CaliburnMicro.ComponentProxy
+﻿namespace MvvmFx.CaliburnMicro.ComponentHandlers
 {
     using System;
     using System.Collections.Generic;
-    using MvvmFx.Windows.Data;
     using Wisej.Web;
 
     /// <summary>
     /// Proxy agent for <see cref="StatusBar"/> control.
     /// </summary>
     /// <seealso cref="StatusBarPanelProxy" />
-    public static class StatusBarAgent
+    public static class StatusBarHandler
     {
-        #region GetNamedItems
+        #region GetChildItems
 
         /// <summary>
-        /// Return the <see cref="StatusBar" /> named items.
+        /// Return the <see cref="StatusBar" /> child items as <see cref="StatusBarPanelProxy"/>.
         /// </summary>
-        public static Func<Control, IEnumerable<Control>> GetNamedItems = (control) =>
+        public static Func<Control, IEnumerable<Control>> GetChildItems = (control) =>
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
-
             if (!(control is StatusBar))
                 throw new ArgumentException(
                     string.Format("Expecting type {0}", typeof(StatusBar).FullName),
-                    nameof(control));
+                    @"control");
 
             return GetNamedElements((StatusBar) control);
         };
@@ -36,20 +32,6 @@
                 yield return new StatusBarPanelProxy(statusBarPanel, control.Parent, true);
             }
         }
-
-        #endregion
-
-        #region BindVisualProperties
-
-        /// <summary>
-        /// Binds the visible and enabled properties of a <see cref="Control"/> to 
-        /// the ViewModel properties, using a <see cref="BindingManager"/>.
-        /// </summary>
-        public static Action<Control, object, BindingManager> BindVisualProperties =
-            (namedElements, viewModel, bindingManager) =>
-            {
-
-            };
 
         #endregion
     }

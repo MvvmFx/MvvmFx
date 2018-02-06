@@ -1,30 +1,28 @@
-﻿namespace MvvmFx.CaliburnMicro.ComponentProxy
+﻿namespace MvvmFx.CaliburnMicro.ComponentHandlers
 {
     using System;
     using System.Collections.Generic;
+    using System.Reflection;
     using System.Windows.Forms;
     using MvvmFx.Windows.Data;
 
     /// <summary>
-    /// Proxy agent for <see cref="ToolStrip"/> control.
+    /// Proxy agent for <see cref="ToolStrip"/> and binder agent for <see cref="ToolStripItemProxy"/>.
     /// </summary>
     /// <seealso cref="ToolStripItemProxy" />
-    public static class ToolStripAgent
+    public static class ToolStripHandler
     {
-        #region GetNamedItems
+        #region GetChildItems
 
         /// <summary>
-        /// Return the <see cref="ToolStrip" /> named items.
+        /// Return the <see cref="ToolStrip" /> child items as <see cref="ToolStripItemProxy"/>.
         /// </summary>
-        public static Func<Control, IEnumerable<Control>> GetNamedItems = (control) =>
+        public static Func<Control, IEnumerable<Control>> GetChildItems = (control) =>
         {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
-
             if (!(control is ToolStrip))
                 throw new ArgumentException(
                     string.Format("Expecting type {0}", typeof(ToolStrip).FullName),
-                    nameof(control));
+                    @"control");
 
             return GetNamedElements((ToolStrip) control);
         };
@@ -42,11 +40,6 @@
 
         private static IEnumerable<Control> RecursiveGetItems(ToolStripItem component, Control control)
         {
-            if (component == null)
-                throw new ArgumentNullException(nameof(component));
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
-
             if (component is ToolStripDropDownItem)
             {
                 foreach (ToolStripItem item in ((ToolStripDropDownItem) component).DropDownItems)
@@ -64,14 +57,45 @@
         #region BindVisualProperties
 
         /// <summary>
-        /// Binds the visible and enabled properties of a <see cref="Control"/> to 
-        /// the ViewModel properties, using a <see cref="BindingManager"/>.
+        /// Binds the visible and enabled properties of a <see cref="ToolStripItemProxy"/> to 
+        /// ViewModel properties, using a <see cref="BindingManager"/>.
         /// </summary>
         public static Action<Control, object, BindingManager> BindVisualProperties =
-            (namedElements, viewModel, bindingManager) =>
+            (control, viewModel, bindingManager) =>
             {
+                if (!(control is ToolStripItemProxy))
+                    throw new ArgumentException(
+                        string.Format("Expecting type {0}", typeof(ToolStripItemProxy).FullName),
+                        @"control");
 
+                BindComponentProperties((ToolStripItemProxy) control, viewModel, bindingManager);
             };
+
+        private static void BindComponentProperties(ToolStripItemProxy control, object viewModel,
+            BindingManager bindingManager)
+        {
+            var property = viewModel.GetPropertyCaseInsensitive(control.Name + "Visible");
+            if (property != null)
+            {
+                // must enforce the Visible property
+                control.Item.Visible =
+                    (bool) property.GetValue(viewModel,
+                        BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null,
+                        null);
+                WinFormExtensionMethods.DoBind(control, "Visible", viewModel, property.Name, bindingManager);
+            }
+            else
+            {
+                property = viewModel.GetPropertyCaseInsensitive(control.Name + "Enabled");
+                if (property != null)
+                {
+                    // no need for enforce the Enabled property
+                    /*control.Item.Enabled =
+                        (bool) property.GetValue(viewModel, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance, null, null, null);*/
+                    WinFormExtensionMethods.DoBind(control, "Enabled", viewModel, property.Name, bindingManager);
+                }
+            }
+        }
 
         #endregion
     }

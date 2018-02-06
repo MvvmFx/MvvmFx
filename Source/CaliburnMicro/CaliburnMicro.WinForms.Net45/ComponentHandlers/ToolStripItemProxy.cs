@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.CaliburnMicro.ComponentProxy
+﻿namespace MvvmFx.CaliburnMicro.ComponentHandlers
 {
     using System;
     using System.ComponentModel;

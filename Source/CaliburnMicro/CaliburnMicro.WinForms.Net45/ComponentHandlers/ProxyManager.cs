@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.CaliburnMicro.ComponentProxy
+﻿namespace MvvmFx.CaliburnMicro.ComponentHandlers
 {
     using System;
     using System.Collections.Generic;
@@ -27,11 +27,11 @@
         static ProxyManager()
         {
 #if WINFORMS
-            AddProxyAgent<ToolStrip>(ToolStripAgent.GetNamedItems, ToolStripAgent.BindVisualProperties);
+            AddProxyAgent<ToolStrip>(ToolStripHandler.GetChildItems);
 #else
-            AddProxyAgent<MenuBar>(MenuBarAgent.GetNamedItems, MenuBarAgent.BindVisualProperties);
-            AddProxyAgent<ToolBar>(ToolBarAgent.GetNamedItems, ToolBarAgent.BindVisualProperties);
-            AddProxyAgent<StatusBar>(StatusBarAgent.GetNamedItems, StatusBarAgent.BindVisualProperties);
+            AddProxyAgent<MenuBar>(MenuBarHandler.GetChildItems);
+            AddProxyAgent<ToolBar>(ToolBarHandler.GetChildItems);
+            AddProxyAgent<StatusBar>(StatusBarHandler.GetChildItems);
 #endif
         }
 
@@ -55,18 +55,15 @@
         /// Adds a proxy agent.
         /// </summary>
         /// <typeparam name="T">Type of the control.</typeparam>
-        /// <param name="getNamedItems">Func to get the named items.</param>
-        /// <param name="bindVisualProperties">Action to bind visual properties.</param>
+        /// <param name="getChildItems">Func to get the child items.</param>
         /// <returns>
         /// The added proxy agent.
         /// </returns>
-        public static ProxyAgent AddProxyAgent<T>(Func<Control, IEnumerable<Control>> getNamedItems,
-            Action<Control, object, BindingManager> bindVisualProperties)
+        public static ProxyAgent AddProxyAgent<T>(Func<Control, IEnumerable<Control>> getChildItems)
         {
             return AddProxyAgent<T>(new ProxyAgent
             {
-                GetNamedItems = getNamedItems,
-                BindVisualProperties = bindVisualProperties
+                GetChildItems = getChildItems
             });
         }
 
@@ -74,18 +71,15 @@
         /// Adds a proxy agent.
         /// </summary>
         /// <param name="controlType">Type of the control.</param>
-        /// <param name="getNamedItems">Func to get the named items.</param>
-        /// <param name="bindVisualProperties">Action to bind visual properties.</param>
+        /// <param name="getChildItems">Func to get the child items.</param>
         /// <returns>
         /// The added proxy agent.
         /// </returns>
-        public static ProxyAgent AddProxyAgent(Type controlType, Func<Control, IEnumerable<Control>> getNamedItems,
-            Action<Control, object, BindingManager> bindVisualProperties)
+        public static ProxyAgent AddProxyAgent(Type controlType, Func<Control, IEnumerable<Control>> getChildItems)
         {
             return AddProxyAgent(controlType, new ProxyAgent
             {
-                GetNamedItems = getNamedItems,
-                BindVisualProperties = bindVisualProperties
+                GetChildItems = getChildItems
             });
         }
 

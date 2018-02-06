@@ -69,17 +69,23 @@
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Bootstrapper.cs">
       <Link>Bootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ProxyAgent.cs">
-      <Link>ComponentProxy\ProxyAgent.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\BinderAgent.cs">
+      <Link>ComponentHandlers\BinderAgent.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ProxyManager.cs">
-      <Link>ComponentProxy\ProxyManager.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\BinderManager.cs">
+      <Link>ComponentHandlers\BinderManager.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ToolStripAgent.cs">
-      <Link>ComponentProxy\ToolStripAgent.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\ProxyAgent.cs">
+      <Link>ComponentHandlers\ProxyAgent.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ToolStripItemProxy.cs">
-      <Link>ComponentProxy\ToolStripItemProxy.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\ProxyManager.cs">
+      <Link>ComponentHandlers\ProxyManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\ToolStripHandler.cs">
+      <Link>ComponentHandlers\ToolStripHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\ToolStripItemProxy.cs">
+      <Link>ComponentHandlers\ToolStripItemProxy.cs</Link>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Conductor.cs">

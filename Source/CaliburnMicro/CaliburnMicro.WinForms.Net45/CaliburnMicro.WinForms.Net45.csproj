@@ -55,10 +55,12 @@
     <Compile Include="BindableList.cs" />
     <Compile Include="BindingScope.cs" />
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="ComponentProxy\ProxyAgent.cs" />
-    <Compile Include="ComponentProxy\ProxyManager.cs" />
-    <Compile Include="ComponentProxy\ToolStripAgent.cs" />
-    <Compile Include="ComponentProxy\ToolStripItemProxy.cs">
+    <Compile Include="ComponentHandlers\BinderManager.cs" />
+    <Compile Include="ComponentHandlers\BinderAgent.cs" />
+    <Compile Include="ComponentHandlers\ProxyAgent.cs" />
+    <Compile Include="ComponentHandlers\ProxyManager.cs" />
+    <Compile Include="ComponentHandlers\ToolStripHandler.cs" />
+    <Compile Include="ComponentHandlers\ToolStripItemProxy.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Conductor.cs" />

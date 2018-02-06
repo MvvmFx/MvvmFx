@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.CaliburnMicro.ComponentProxy
+﻿namespace MvvmFx.CaliburnMicro.ComponentHandlers
 {
     using System;
     using System.Collections.Generic;
@@ -10,19 +10,13 @@
     using MvvmFx.Windows.Data;
 
     /// <summary>
-    /// Represents the binding methods and helpers for a particular control type.
+    /// Represents the helper method to handle component child items for a particular control type.
     /// </summary>
     public class ProxyAgent
     {
         /// <summary>
-        /// Return the <seealso cref="Control" /> named items.
+        /// Return the <see cref="Control" /> component child items wraped in proxy controls.
         /// </summary>
-        public Func<Control, IEnumerable<Control>> GetNamedItems;
-
-        /// <summary>
-        /// Binds the visible and enabled properties of a list of <see cref="Control"/> to 
-        /// ViewModel properties, using a <see cref="BindingManager"/>.
-        /// </summary>
-        public Action<Control, object, BindingManager> BindVisualProperties;
+        public Func<Control, IEnumerable<Control>> GetChildItems;
     }
 }

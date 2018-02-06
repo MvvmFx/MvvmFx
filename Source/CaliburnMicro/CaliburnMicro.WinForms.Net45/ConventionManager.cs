@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Reflection;
-    using MvvmFx.CaliburnMicro.ComponentProxy;
+    using MvvmFx.CaliburnMicro.ComponentHandlers;
 #if WISEJ
     using Wisej.Web;
 #else
