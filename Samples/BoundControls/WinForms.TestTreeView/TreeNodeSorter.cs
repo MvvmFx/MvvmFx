@@ -6,7 +6,7 @@ using Wisej.Web;
 using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WinForms
 {
     internal class TreeNodeSorter : IComparer
     {

@@ -7,7 +7,7 @@ using Wisej.Web;
 using LogManager = MvvmFx.WisejWeb.LogManager;
 #else
 using System.Windows.Forms;
-using LogManager = MvvmFx.Windows.Forms.LogManager;
+using LogManager = MvvmFx.WinForms.LogManager;
 #endif
 
 namespace BoundTreeView

@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StripWindow));
             this.statusBar1 = new System.Windows.Forms.StatusStrip();
-            this.statusLabel1 = new MvvmFx.Windows.Forms.ToolStripStatusLabel();
+            this.statusLabel1 = new MvvmFx.WinForms.ToolStripStatusLabel();
             this.toolBar1 = new System.Windows.Forms.ToolStrip();
-            this.toolBarButton1 = new MvvmFx.Windows.Forms.ToolStripLabel();
-            this.toolBarButton2 = new MvvmFx.Windows.Forms.ToolStripLabel();
-            this.toolBarButton3 = new MvvmFx.Windows.Forms.ToolStripSeparator();
-            this.toolBarButton4 = new MvvmFx.Windows.Forms.ToolStripDropDownButton();
+            this.toolBarButton1 = new MvvmFx.WinForms.ToolStripLabel();
+            this.toolBarButton2 = new MvvmFx.WinForms.ToolStripLabel();
+            this.toolBarButton3 = new MvvmFx.WinForms.ToolStripSeparator();
+            this.toolBarButton4 = new MvvmFx.WinForms.ToolStripDropDownButton();
             this.menuBar1 = new System.Windows.Forms.MenuStrip();
-            this.menuItem1 = new MvvmFx.Windows.Forms.ToolStripButton();
-            this.menuItem2 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
-            this.menuItem3 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
-            this.menuItem4 = new MvvmFx.Windows.Forms.ToolStripMenuItem();
+            this.menuItem1 = new MvvmFx.WinForms.ToolStripButton();
+            this.menuItem2 = new MvvmFx.WinForms.ToolStripMenuItem();
+            this.menuItem3 = new MvvmFx.WinForms.ToolStripMenuItem();
+            this.menuItem4 = new MvvmFx.WinForms.ToolStripMenuItem();
             this.bindMenu = new System.Windows.Forms.Button();
             this.bindToolBar = new System.Windows.Forms.Button();
             this.bindStatus = new System.Windows.Forms.Button();
@@ -209,16 +209,16 @@
         #endregion
 
         private System.Windows.Forms.StatusStrip statusBar1;
-        private MvvmFx.Windows.Forms.ToolStripStatusLabel statusLabel1;
+        private MvvmFx.WinForms.ToolStripStatusLabel statusLabel1;
         private System.Windows.Forms.ToolStrip toolBar1;
-        private MvvmFx.Windows.Forms.ToolStripLabel toolBarButton1;
-        private MvvmFx.Windows.Forms.ToolStripLabel toolBarButton2;
-        private MvvmFx.Windows.Forms.ToolStripSeparator toolBarButton3;
-        private MvvmFx.Windows.Forms.ToolStripDropDownButton toolBarButton4;
-        private MvvmFx.Windows.Forms.ToolStripButton menuItem1;
-        private MvvmFx.Windows.Forms.ToolStripMenuItem menuItem2;
-        private MvvmFx.Windows.Forms.ToolStripMenuItem menuItem3;
-        private MvvmFx.Windows.Forms.ToolStripMenuItem menuItem4;
+        private MvvmFx.WinForms.ToolStripLabel toolBarButton1;
+        private MvvmFx.WinForms.ToolStripLabel toolBarButton2;
+        private MvvmFx.WinForms.ToolStripSeparator toolBarButton3;
+        private MvvmFx.WinForms.ToolStripDropDownButton toolBarButton4;
+        private MvvmFx.WinForms.ToolStripButton menuItem1;
+        private MvvmFx.WinForms.ToolStripMenuItem menuItem2;
+        private MvvmFx.WinForms.ToolStripMenuItem menuItem3;
+        private MvvmFx.WinForms.ToolStripMenuItem menuItem4;
         private System.Windows.Forms.MenuStrip menuBar1;
         private System.Windows.Forms.Button bindMenu;
         private System.Windows.Forms.Button bindToolBar;

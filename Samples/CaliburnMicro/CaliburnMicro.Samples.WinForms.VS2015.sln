@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net45", "..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45", "..\..\Source\BoundControls\MvvmFx.Windows.Forms.Net45\MvvmFx.Windows.Forms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net45", "..\..\Source\BoundControls\MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcyncUpdate.WinForms", "AcyncUpdate.WinForms\AcyncUpdate.WinForms.csproj", "{CDB0E193-CF29-4D45-B09E-73E299894DF5}"
 EndProject

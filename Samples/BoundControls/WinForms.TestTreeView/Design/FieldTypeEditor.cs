@@ -32,7 +32,7 @@ THE SOFTWARE.
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace MvvmFx.Windows.Forms.Design
+namespace MvvmFx.WinForms.Design
 {
     /// <summary>
     /// Data members fields editor.

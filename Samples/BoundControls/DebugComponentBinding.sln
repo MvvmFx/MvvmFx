@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework projects", "Frame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "..\..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45", "..\..\Source\BoundControls\MvvmFx.Windows.Forms.Net45\MvvmFx.Windows.Forms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net45", "..\..\Source\BoundControls\MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net45", "..\..\Source\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
 EndProject

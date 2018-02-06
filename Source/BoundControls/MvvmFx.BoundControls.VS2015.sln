@@ -21,9 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net45", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net46", "..\Logging\MvvmFx.NLogLogger.Net46\MvvmFx.NLogLogger.Net46.csproj", "{D404AFA8-83C5-4B73-8A85-D3748804CAC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net45", "MvvmFx.Windows.Forms.Net45\MvvmFx.Windows.Forms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net45", "MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Forms.Net46", "MvvmFx.Windows.Forms.Net46\MvvmFx.Windows.Forms.Net46.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net46", "MvvmFx.WinForms.Net46\MvvmFx.WinForms.Net46.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject

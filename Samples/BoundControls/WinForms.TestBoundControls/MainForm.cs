@@ -1,7 +1,7 @@
 ﻿using System;
 #if WINFORMS
 using System.Windows.Forms;
-using LogManager = MvvmFx.Windows.Forms.LogManager;
+using LogManager = MvvmFx.WinForms.LogManager;
 #else
 using Wisej.Web;
 using LogManager = MvvmFx.WisejWeb.LogManager;

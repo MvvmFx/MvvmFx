@@ -15,7 +15,7 @@ using System.Windows.Forms;
 // http://msmvps.com/bill/archive/2005/10/05/69012.aspx
 // used with permission
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WinForms
 {
     /// <summary>
     /// BindingSourceRefresh contains functionality for refreshing the data bound to controls on Host as well as a mechiaism for catching data
