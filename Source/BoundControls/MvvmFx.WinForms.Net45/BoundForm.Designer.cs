@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Forms
+﻿namespace MvvmFx.WinForms
 {
     partial class BoundForm
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bindingSourceRefresh = new MvvmFx.Windows.Forms.BindingSourceRefresh(this.components);
+            this.bindingSourceRefresh = new MvvmFx.WinForms.BindingSourceRefresh(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRefresh)).BeginInit();
             this.SuspendLayout();
             //

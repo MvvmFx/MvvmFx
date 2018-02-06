@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WinForms
 {
     /// <summary>
     /// A <see cref="Form"/> that uses <see cref="BindingSourceRefresh"/>

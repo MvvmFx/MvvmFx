@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WinForms
 {
     /// <summary>
     /// Encapsulates the data source for a form.

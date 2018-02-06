@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.WinForms
 {
     /// <summary>
     /// Data binding enabled ToolStripStatusLabel.
