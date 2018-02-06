@@ -1,9 +1,9 @@
 ﻿using System;
 #if WISEJ
 using ToolStripMenuItem = Wisej.Web.MenuItem;
-using ToolStripItemProxy = MvvmFx.CaliburnMicro.ComponentProxy.MenuItemProxy;
+using ToolStripItemProxy = MvvmFx.CaliburnMicro.ComponentHandlers.MenuItemProxy;
 #else
-using ToolStripItemProxy = MvvmFx.CaliburnMicro.ComponentProxy.ToolStripItemProxy;
+using ToolStripItemProxy = MvvmFx.CaliburnMicro.ComponentHandlers.ToolStripItemProxy;
 #endif
 
 namespace SimpleParameters.UI.ViewModels

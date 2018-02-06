@@ -1,5 +1,5 @@
 ﻿using MvvmFx.CaliburnMicro;
-using MvvmFx.CaliburnMicro.ComponentProxy;
+using MvvmFx.CaliburnMicro.ComponentHandlers;
 
 namespace CaliburnMicro.WisejWeb.PanelEx
 {
@@ -19,6 +19,7 @@ namespace CaliburnMicro.WisejWeb.PanelEx
                 return;
 
             ConfigureProxyAgent();
+            ConfigureBinderAgent();
             ConfigureElementConvention();
 
             _setupDone = true;
@@ -26,7 +27,12 @@ namespace CaliburnMicro.WisejWeb.PanelEx
 
         private static void ConfigureProxyAgent()
         {
-            ProxyManager.AddProxyAgent<PanelEx>(PanelExAgent.GetNamedItems, PanelExAgent.BindVisualProperties);
+            ProxyManager.AddProxyAgent<PanelEx>(PanelExHandler.GetChildItems);
+        }
+
+        private static void ConfigureBinderAgent()
+        {
+            BinderManager.AddBinderAgent<PanelEx>(PanelExHandler.BindVisualProperties);
         }
 
         private static void ConfigureElementConvention()

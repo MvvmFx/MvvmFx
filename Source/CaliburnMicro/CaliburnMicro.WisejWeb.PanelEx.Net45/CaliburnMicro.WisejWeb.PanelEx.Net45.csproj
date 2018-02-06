@@ -57,7 +57,7 @@
     <Compile Include="PanelEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PanelExAgent.cs" />
+    <Compile Include="PanelExHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
   </ItemGroup>

@@ -53,7 +53,7 @@ namespace BoundTreeView
                 return;
 
             // Binds the control visible and enabled properties.
-            WinFormExtensionMethods.BindToolStripItemProxyProperties(namedElements, _viewModel, _bindingManager);
+            WinFormExtensionMethods.BindComponentProxyProperties(namedElements, _viewModel, _bindingManager);
 
             _isBindingSet = true;
         }

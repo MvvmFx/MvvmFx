@@ -72,11 +72,17 @@
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Bootstrapper.cs">
       <Link>Bootstrapper.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ProxyAgent.cs">
-      <Link>ComponentProxy\ProxyAgent.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\BinderAgent.cs">
+      <Link>ComponentHandlers\BinderAgent.cs</Link>
     </Compile>
-    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentProxy\ProxyManager.cs">
-      <Link>ComponentProxy\ProxyManager.cs</Link>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\BinderManager.cs">
+      <Link>ComponentHandlers\BinderManager.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\ProxyAgent.cs">
+      <Link>ComponentHandlers\ProxyAgent.cs</Link>
+    </Compile>
+    <Compile Include="..\CaliburnMicro.WinForms.Net45\ComponentHandlers\ProxyManager.cs">
+      <Link>ComponentHandlers\ProxyManager.cs</Link>
     </Compile>
     <Compile Include="..\CaliburnMicro.WinForms.Net45\Conductor.cs">
       <Link>Conductor.cs</Link>
@@ -235,18 +241,18 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ComponentProxy\MenuItemProxy.cs">
+    <Compile Include="ComponentHandlers\MenuItemProxy.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ComponentProxy\StatusBarPanelProxy.cs">
+    <Compile Include="ComponentHandlers\StatusBarPanelProxy.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ComponentProxy\ToolBarButtonProxy.cs">
+    <Compile Include="ComponentHandlers\ToolBarButtonProxy.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ComponentProxy\MenuBarAgent.cs" />
-    <Compile Include="ComponentProxy\StatusBarAgent.cs" />
-    <Compile Include="ComponentProxy\ToolBarAgent.cs" />
+    <Compile Include="ComponentHandlers\MenuBarHandler.cs" />
+    <Compile Include="ComponentHandlers\StatusBarHandler.cs" />
+    <Compile Include="ComponentHandlers\ToolBarHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
