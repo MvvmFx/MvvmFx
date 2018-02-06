@@ -2,7 +2,7 @@
 #if WISEJ
 using MvvmFx.WisejWeb;
 #else
-using MvvmFx.Windows.Forms;
+using MvvmFx.WinForms;
 #endif
 
 namespace BoundControls.Business

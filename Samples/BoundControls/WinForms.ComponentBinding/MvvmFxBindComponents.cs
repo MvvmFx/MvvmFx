@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using BoundControls.Business;
 using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Forms;
+using MvvmFx.WinForms;
 using Binding = MvvmFx.Windows.Data.Binding;
 
 namespace MvvmFx.CaliburnMicro

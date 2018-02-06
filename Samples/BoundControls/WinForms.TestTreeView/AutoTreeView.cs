@@ -3,7 +3,7 @@ using MvvmFx.Logging;
 using BoundControls.Business;
 #if WINFORMS
 using System.Windows.Forms;
-using MvvmFx.Windows.Forms;
+using MvvmFx.WinForms;
 #else
 using Wisej.Web;
 using MvvmFx.WisejWeb;
