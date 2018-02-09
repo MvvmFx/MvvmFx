@@ -83,7 +83,7 @@
             // 
             this.fileMenuSeparator.Index = 2;
             this.fileMenuSeparator.Name = "fileMenuSeparator";
-            this.fileMenuSeparator.Text = "";
+            this.fileMenuSeparator.Text = "-";
             // 
             // exit
             // 
