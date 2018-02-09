@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.displayName = new Wisej.Web.Label();
+            this.displayNamePanel = new Wisej.Web.Panel();
             this.mainMenu = new Wisej.Web.MenuBar();
             this.fileMenu = new Wisej.Web.MenuItem();
             this.openFamilyMemberTree = new Wisej.Web.MenuItem();
@@ -41,20 +43,41 @@
             this.closeFamilyMember = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
+            this.placeHolder = new Wisej.Web.StatusBarPanel();
+            this.displayNamePanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // displayName
+            // 
+            this.displayName.Location = new System.Drawing.Point(12, 8);
+            this.displayName.Name = "displayName";
+            this.displayName.Size = new System.Drawing.Size(100, 14);
+            this.displayName.TabIndex = 0;
+            this.displayName.Text = "Application Title";
+            // 
+            // displayNamePanel
+            // 
+            this.displayNamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.displayNamePanel.Controls.Add(this.displayName);
+            this.displayNamePanel.Dock = Wisej.Web.DockStyle.Top;
+            this.displayNamePanel.ForeColor = System.Drawing.Color.FromName("@activeCaption");
+            this.displayNamePanel.Location = new System.Drawing.Point(0, 0);
+            this.displayNamePanel.Name = "displayNamePanel";
+            this.displayNamePanel.ShowCloseButton = false;
+            this.displayNamePanel.Size = new System.Drawing.Size(944, 30);
+            this.displayNamePanel.TabIndex = 1;
             // 
             // mainMenu
             // 
             this.mainMenu.Dock = Wisej.Web.DockStyle.Top;
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Location = new System.Drawing.Point(0, 30);
             this.mainMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.fileMenu,
             this.familyMemberMenu});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(830, 22);
+            this.mainMenu.Size = new System.Drawing.Size(944, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
-            this.mainMenu.Text = "mainMenu";
             // 
             // fileMenu
             // 
@@ -83,7 +106,7 @@
             // 
             this.fileMenuSeparator.Index = 2;
             this.fileMenuSeparator.Name = "fileMenuSeparator";
-            this.fileMenuSeparator.Text = "";
+            this.fileMenuSeparator.Text = "-";
             // 
             // exit
             // 
@@ -128,22 +151,26 @@
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 446);
+            this.statusBar.Location = new System.Drawing.Point(0, 782);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(830, 22);
+            this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
+            this.placeHolder});
+            this.statusBar.Size = new System.Drawing.Size(944, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
             // 
             // activeItem
             // 
-            this.activeItem.Anchor = ((Wisej.Web.AnchorStyles)((((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Bottom) 
-            | Wisej.Web.AnchorStyles.Left) 
-            | Wisej.Web.AnchorStyles.Right)));
-            //this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
-            this.activeItem.Location = new System.Drawing.Point(0, 24);
+            this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
+            this.activeItem.Location = new System.Drawing.Point(0, 52);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(830, 422);
+            this.activeItem.Size = new System.Drawing.Size(944, 730);
             this.activeItem.TabIndex = 2;
+            // 
+            // placeHolder
+            // 
+            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
+            this.placeHolder.Name = "placeHolder";
             // 
             // MainForm
             // 
@@ -151,13 +178,15 @@
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(832, 500);
-            this.ClientSize = new System.Drawing.Size(830, 468);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.displayNamePanel);
             this.Name = "MainForm";
+            this.Size = new System.Drawing.Size(944, 804);
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.displayNamePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +194,8 @@
 
         #endregion
 
+        private Wisej.Web.Label displayName;
+        private Wisej.Web.Panel displayNamePanel;
         private Wisej.Web.MenuBar mainMenu;
         private Wisej.Web.MenuItem fileMenu;
         private Wisej.Web.MenuItem openFamilyMemberTree;
@@ -178,6 +209,7 @@
         private Wisej.Web.MenuItem closeFamilyMember;
         private Wisej.Web.StatusBar statusBar;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
+        private Wisej.Web.StatusBarPanel placeHolder;
     }
 }
 

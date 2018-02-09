@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.displayName = new Wisej.Web.Label();
+            this.displayNamePanel = new Wisej.Web.Panel();
             this.mainMenu = new Wisej.Web.MenuBar();
             this.documentsMenu = new Wisej.Web.MenuItem();
             this.createDocument = new Wisej.Web.MenuItem();
@@ -40,12 +42,34 @@
             this.exit = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
+            this.placeHolder = new Wisej.Web.StatusBarPanel();
+            this.displayNamePanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // displayName
+            // 
+            this.displayName.Location = new System.Drawing.Point(12, 8);
+            this.displayName.Name = "displayName";
+            this.displayName.Size = new System.Drawing.Size(100, 14);
+            this.displayName.TabIndex = 0;
+            this.displayName.Text = "Application Title";
+            // 
+            // displayNamePanel
+            // 
+            this.displayNamePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(185)))));
+            this.displayNamePanel.Controls.Add(this.displayName);
+            this.displayNamePanel.Dock = Wisej.Web.DockStyle.Top;
+            this.displayNamePanel.ForeColor = System.Drawing.Color.FromName("@activeCaption");
+            this.displayNamePanel.Location = new System.Drawing.Point(0, 0);
+            this.displayNamePanel.Name = "displayNamePanel";
+            this.displayNamePanel.ShowCloseButton = false;
+            this.displayNamePanel.Size = new System.Drawing.Size(1255, 30);
+            this.displayNamePanel.TabIndex = 1;
             // 
             // mainMenu
             // 
             this.mainMenu.Dock = Wisej.Web.DockStyle.Top;
-            this.mainMenu.Location = new System.Drawing.Point(0, 0);
+            this.mainMenu.Location = new System.Drawing.Point(0, 30);
             this.mainMenu.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.documentsMenu,
             this.folders,
@@ -121,6 +145,8 @@
             // 
             this.statusBar.Location = new System.Drawing.Point(0, 765);
             this.statusBar.Name = "statusBar";
+            this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
+            this.placeHolder});
             this.statusBar.Size = new System.Drawing.Size(1255, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
@@ -128,11 +154,16 @@
             // activeItem
             // 
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
-            this.activeItem.Location = new System.Drawing.Point(0, 22);
+            this.activeItem.Location = new System.Drawing.Point(0, 52);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1255, 743);
+            this.activeItem.Size = new System.Drawing.Size(1255, 713);
             this.activeItem.TabIndex = 2;
             this.activeItem.Text = "activeItem";
+            // 
+            // placeHolder
+            // 
+            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
+            this.placeHolder.Name = "placeHolder";
             // 
             // MainForm
             // 
@@ -143,10 +174,12 @@
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.displayNamePanel);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(917, 787);
+            this.Size = new System.Drawing.Size(944, 787);
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.displayNamePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +187,8 @@
 
         #endregion
 
+        private Wisej.Web.Label displayName;
+        private Wisej.Web.Panel displayNamePanel;
         private Wisej.Web.MenuBar mainMenu;
         private Wisej.Web.MenuItem documentsMenu;
         private Wisej.Web.MenuItem createDocument;
@@ -166,6 +201,7 @@
         private Wisej.Web.MenuItem exit;
         private Wisej.Web.StatusBar statusBar;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
+        private Wisej.Web.StatusBarPanel placeHolder;
     }
 }
 
