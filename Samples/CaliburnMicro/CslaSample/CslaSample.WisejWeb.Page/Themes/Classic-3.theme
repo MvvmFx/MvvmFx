@@ -1,5 +1,5 @@
 {
-	"name": "Classic-2",
+	"name": "Classic-3",
 	"fonts": {
 		"default": {
 			"size": 8,
@@ -470,6 +470,14 @@
 								"scale": true,
 								"width": 16,
 								"height": 16
+							},
+							"styles": {
+								"css": "{\"filter\":\"grayscale(0%)\"}"
+							}
+						},
+						"disabled": {
+							"styles": {
+								"css": "{\"filter\":\"grayscale(100%)\"}"
 							}
 						}
 					}
@@ -3984,7 +3992,7 @@
 				},
 				"borderDouble": {
 					"styles": {
-						"width": 3,
+						"width": [3, 3, 3, 3],
 						"style": ["double", "double", "double", "double"]
 					}
 				}
@@ -5185,6 +5193,16 @@
 								"pressed": {
 									"properties": {
 										"textColor": "tabSelectedText"
+									}
+								},
+								"default": {
+									"styles": {
+										"css": "{\"filter\":\"grayscale(0%)\"}"
+									}
+								},
+								"disabled": {
+									"styles": {
+										"css": "{\"filter\":\"grayscale(100%)\"}"
 									}
 								}
 							}
