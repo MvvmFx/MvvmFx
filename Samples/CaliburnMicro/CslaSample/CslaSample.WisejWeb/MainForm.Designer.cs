@@ -132,6 +132,7 @@
             // 
             this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
             this.placeHolder.Name = "placeHolder";
+            this.placeHolder.Text = "";
             // 
             // activeItem
             // 
