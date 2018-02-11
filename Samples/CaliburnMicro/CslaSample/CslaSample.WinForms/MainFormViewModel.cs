@@ -57,13 +57,10 @@ namespace CslaSample
         {
             if (_canEditFolderModal)
             {
-                using (var windowManager = new WindowManager())
+                new WindowManager().ShowDialog(FolderListEditViewModel.Instance());
+                foreach (var child in GetChildren())
                 {
-                    var dialog = windowManager.ShowDialog(FolderListEditViewModel.Instance());
-                    foreach (var child in GetChildren())
-                    {
-                        child.Refresh();
-                    }
+                    child.Refresh();
                 }
             }
         }
@@ -88,9 +85,7 @@ namespace CslaSample
             if (_canEditFolderModeless)
             {
                 ViewLocator.ContextSeparator = "";
-                var windowManager = new WindowManager();
-                windowManager.ShowWindow(FolderListEditViewModel.Instance(), "ViewModel");
-                var abc = windowManager.ToString();
+                new WindowManager().ShowWindow(FolderListEditViewModel.Instance(), "ViewModel");
                 //new WindowManager().ShowWindow(FolderListEditViewModel.Instance());
             }
         }
