@@ -51,6 +51,7 @@
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="Themes\Classic-2.theme" />
+    <Content Include="Themes\Classic-3.theme" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

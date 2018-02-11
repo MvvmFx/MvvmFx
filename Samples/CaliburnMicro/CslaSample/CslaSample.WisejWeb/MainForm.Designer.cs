@@ -39,8 +39,8 @@
             this.editFolderModeless = new Wisej.Web.MenuItem();
             this.exit = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
-            this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.placeHolder = new Wisej.Web.StatusBarPanel();
+            this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.SuspendLayout();
             // 
             // mainMenu
@@ -52,7 +52,7 @@
             this.folders,
             this.exit});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1255, 22);
+            this.mainMenu.Size = new System.Drawing.Size(1213, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
             // 
@@ -120,35 +120,35 @@
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 538);
+            this.statusBar.Location = new System.Drawing.Point(0, 685);
             this.statusBar.Name = "statusBar";
             this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
             this.placeHolder});
-            this.statusBar.Size = new System.Drawing.Size(1255, 22);
+            this.statusBar.Size = new System.Drawing.Size(1213, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
+            // 
+            // placeHolder
+            // 
+            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
+            this.placeHolder.Name = "placeHolder";
+            this.placeHolder.Text = "";
             // 
             // activeItem
             // 
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 22);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1255, 516);
+            this.activeItem.Size = new System.Drawing.Size(1213, 663);
             this.activeItem.TabIndex = 2;
             this.activeItem.Text = "activeItem";
-            // 
-            // placeHolder
-            // 
-            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
-            this.placeHolder.Name = "placeHolder";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(1255, 560);
-            this.ClientSize = new System.Drawing.Size(629, 376);
+            this.ClientSize = new System.Drawing.Size(1213, 707);
             this.CloseBox = false;
             this.ControlBox = false;
             this.Controls.Add(this.activeItem);

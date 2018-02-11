@@ -41,8 +41,8 @@
             this.editFolderModeless = new Wisej.Web.MenuItem();
             this.exit = new Wisej.Web.MenuItem();
             this.statusBar = new Wisej.Web.StatusBar();
-            this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.placeHolder = new Wisej.Web.StatusBarPanel();
+            this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.displayNamePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.displayNamePanel.Location = new System.Drawing.Point(0, 0);
             this.displayNamePanel.Name = "displayNamePanel";
             this.displayNamePanel.ShowCloseButton = false;
-            this.displayNamePanel.Size = new System.Drawing.Size(1255, 30);
+            this.displayNamePanel.Size = new System.Drawing.Size(969, 30);
             this.displayNamePanel.TabIndex = 1;
             // 
             // mainMenu
@@ -75,7 +75,7 @@
             this.folders,
             this.exit});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1255, 22);
+            this.mainMenu.Size = new System.Drawing.Size(969, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
             // 
@@ -143,40 +143,40 @@
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 765);
+            this.statusBar.Location = new System.Drawing.Point(0, 782);
             this.statusBar.Name = "statusBar";
             this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
             this.placeHolder});
-            this.statusBar.Size = new System.Drawing.Size(1255, 22);
+            this.statusBar.Size = new System.Drawing.Size(969, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
+            // 
+            // placeHolder
+            // 
+            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
+            this.placeHolder.Name = "placeHolder";
+            this.placeHolder.Text = null;
             // 
             // activeItem
             // 
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 52);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1255, 713);
+            this.activeItem.Size = new System.Drawing.Size(969, 730);
             this.activeItem.TabIndex = 2;
             this.activeItem.Text = "activeItem";
-            // 
-            // placeHolder
-            // 
-            this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
-            this.placeHolder.Name = "placeHolder";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(1255, 560);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.displayNamePanel);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(944, 787);
+            this.Size = new System.Drawing.Size(969, 804);
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.displayNamePanel.ResumeLayout(false);

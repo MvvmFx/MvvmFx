@@ -51,7 +51,7 @@
             this.exit});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1348, 24);
+            this.mainMenu.Size = new System.Drawing.Size(1213, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "mainMenu";
             // 
@@ -121,7 +121,7 @@
             // 
             this.statusBar.Location = new System.Drawing.Point(0, 678);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(1348, 22);
+            this.statusBar.Size = new System.Drawing.Size(1213, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
             // 
@@ -130,7 +130,7 @@
             this.activeItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 24);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(1348, 654);
+            this.activeItem.Size = new System.Drawing.Size(1213, 654);
             this.activeItem.TabIndex = 2;
             // 
             // MainForm
@@ -138,8 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(1255, 560);
-            this.ClientSize = new System.Drawing.Size(1348, 700);
+            this.ClientSize = new System.Drawing.Size(1213, 700);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
