@@ -252,25 +252,25 @@
             // 
             this.create.Image = global::CslaSample.Properties.Resources.AddNew16;
             this.create.Name = "create";
-            this.create.Text = "New Document";
+            this.create.ToolTipText = "New Document";
             // 
             // save
             // 
             this.save.Image = global::CslaSample.Properties.Resources.Save16;
             this.save.Name = "save";
-            this.save.Text = "Save";
+            this.save.ToolTipText = "Save";
             // 
             // delete
             // 
             this.delete.Image = global::CslaSample.Properties.Resources.Delete16;
             this.delete.Name = "delete";
-            this.delete.Text = "Delete";
+            this.delete.ToolTipText = "Delete";
             // 
             // close
             // 
             this.close.Image = global::CslaSample.Properties.Resources.Close16;
             this.close.Name = "close";
-            this.close.Text = "Close form";
+            this.close.ToolTipText = "Close form";
             // 
             // errorProvider
             // 
