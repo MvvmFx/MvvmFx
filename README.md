@@ -17,4 +17,4 @@ Due to Windows Forms binding shortcomings, a general purpose binding library is 
 
 Version 3.0 is approaching.
 
-New [Sample MvvmFx WinForms/Wisej application}(http://github.com/MvvmFx/InterwayDocs) is an important step to test and refine concepts.
+New [Sample MvvmFx WinForms/Wisej application](http://github.com/MvvmFx/InterwayDocs) is an important step to test and refine concepts.
