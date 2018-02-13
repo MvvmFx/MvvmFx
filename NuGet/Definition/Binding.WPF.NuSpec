@@ -6,8 +6,8 @@
     <tags>MVVMFX MVVM WPF Model-View-ViewModel Presentation UI ViewModel</tags>
     <version>3.0.0</version>
     <authors>Tiago Freitas Leal</authors>
-    <licenseUrl>http://mvvmfx.codeplex.com/license</licenseUrl>
-    <projectUrl>http://mvvmfx.codeplex.com/</projectUrl>
+    <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
 MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern. This is a subset of MVVM FX binding library that includes only Data binding.

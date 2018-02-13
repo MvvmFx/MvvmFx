@@ -4,10 +4,10 @@
 	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
 		<introduction>
 			<para>
-				MvvmFx is distributed under the Microsoft Public License (Ms-PL), the full details of which can be found
+				MvvmFx is distributed under the MIT License (MIT), the full details of which can be found
 				<externalLink>
 					<linkText>here</linkText>
-					<linkUri>http://www.opensource.org/licenses/ms-pl.html</linkUri>
+					<linkUri>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</linkUri>
 					<linkTarget>_blank</linkTarget>
 				</externalLink>.
 			</para>
