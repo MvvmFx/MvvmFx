@@ -6,8 +6,8 @@
     <tags>MVVMFX MVVM Windows-Forms WinForms Model-View-ViewModel ViewModel</tags>
     <version>3.0.0</version>
     <authors>Tiago Freitas Leal</authors>
-    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
-    <projectUrl>http://mvvmfx.codeplex.com/</projectUrl>
+    <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
 Log4net adapter for MvvmFx.Logging.ILog.
