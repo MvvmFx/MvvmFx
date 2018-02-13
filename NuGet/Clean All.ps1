@@ -24,7 +24,6 @@ try
     $packages += @("BoundControls.WinForms", "BoundControls.WebGUI")
     $packages += @("Binding.WPF", "Binding.WinForms", "Binding.WebGUI")
     ##$packages += @("Binding.Desktop")
-    #$packages += @("MvvmLight.WinForms", "MvvmLight.WebGUI")
 
     $host.UI.RawUI.BackgroundColor = [System.ConsoleColor]::Black
     $host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::White
