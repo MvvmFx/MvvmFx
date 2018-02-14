@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Wisej.Web;
 
-namespace CaliburnMicro.WisejWeb.PanelEx
+namespace MvvmFx.CaliburnMicro.WisejWeb.PanelEx
 {
     /// <summary>
     /// Extends the <see cref="Wisej.Web.ComponentTool"/> 

@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel;
-using System.Drawing;
 using Wisej.Web;
 
-namespace CaliburnMicro.WisejWeb.PanelEx
+namespace MvvmFx.CaliburnMicro.WisejWeb.PanelEx
 {
     /// <summary>
     /// Extends Panel so ComponentTool items raises their individual click event.

@@ -1,7 +1,6 @@
-﻿using MvvmFx.CaliburnMicro;
-using MvvmFx.CaliburnMicro.ComponentHandlers;
+﻿using MvvmFx.CaliburnMicro.ComponentHandlers;
 
-namespace CaliburnMicro.WisejWeb.PanelEx
+namespace MvvmFx.CaliburnMicro.WisejWeb.PanelEx
 {
     /// <summary>
     /// Setup this Wisej extension on CaliburnMicro.WisejWeb.
@@ -27,12 +26,12 @@ namespace CaliburnMicro.WisejWeb.PanelEx
 
         private static void ConfigureProxyAgent()
         {
-            ProxyManager.AddProxyAgent<PanelEx>(PanelExHandler.GetChildItems);
+            ProxyManager.AddProxyAgent<global::MvvmFx.CaliburnMicro.WisejWeb.PanelEx.PanelEx>(PanelExHandler.GetChildItems);
         }
 
         private static void ConfigureBinderAgent()
         {
-            BinderManager.AddBinderAgent<PanelEx>(PanelExHandler.BindVisualProperties);
+            BinderManager.AddBinderAgent<global::MvvmFx.CaliburnMicro.WisejWeb.PanelEx.PanelEx>(PanelExHandler.BindVisualProperties);
         }
 
         private static void ConfigureElementConvention()
