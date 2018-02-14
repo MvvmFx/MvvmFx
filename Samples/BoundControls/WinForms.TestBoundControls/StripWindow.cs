@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using BoundControls.Business;
-using MvvmFx.WinForms;
-using ToolStripMenuItem = MvvmFx.WinForms.ToolStripMenuItem;
+using MvvmFx.Controls.WinForms;
+using ToolStripMenuItem = MvvmFx.Controls.WinForms.ToolStripMenuItem;
 
 namespace WinForms.TestBoundControls
 {

@@ -2,10 +2,10 @@
 using BoundControls.Business;
 #if WINFORMS
 using System.Windows.Forms;
-using MvvmFx.WinForms;
+using MvvmFx.Controls.WinForms;
 #else
 using Wisej.Web;
-using MvvmFx.WisejWeb;
+using MvvmFx.Controls.WisejWeb;
 using BoundUserControl = Wisej.Web.UserControl;
 #endif
 
