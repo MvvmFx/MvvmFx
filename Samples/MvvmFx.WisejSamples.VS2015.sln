@@ -49,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WisejWeb", "WisejWeb", "{AA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WisejWeb", "WisejWeb", "{9FD68FD4-B6D1-41AE-8CBD-8DA7134E815B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WisejWeb.Net45", "..\Source\BoundControls\MvvmFx.Controls.WisejWeb.Net45\MvvmFx.Controls.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.Net45", "..\Source\Logging\MvvmFx.Log4netLogger.Net45\MvvmFx.Log4netLogger.Net45.csproj", "{627C1829-0234-4C87-9683-8495B95F610B}"
 EndProject

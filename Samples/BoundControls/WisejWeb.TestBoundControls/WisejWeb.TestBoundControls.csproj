@@ -106,9 +106,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj">
+    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.Controls.WisejWeb.Net45\MvvmFx.Controls.WisejWeb.Net45.csproj">
       <Project>{f9a6952e-c1bc-4185-8407-d1f59d62255d}</Project>
-      <Name>MvvmFx.WisejWeb.Net45</Name>
+      <Name>MvvmFx.Controls.WisejWeb.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>

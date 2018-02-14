@@ -91,9 +91,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WPF.Net45", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net45", "..\Source\Binding\WindowsBase.WinForms.Net45\WindowsBase.WinForms.Net45.csproj", "{33290B49-5D4B-47F3-8C03-D203595C9F12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net45", "..\Source\BoundControls\MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WinForms.Net45", "..\Source\BoundControls\MvvmFx.Controls.WinForms.Net45\MvvmFx.Controls.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WisejWeb.Net45", "..\Source\BoundControls\MvvmFx.Controls.WisejWeb.Net45\MvvmFx.Controls.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net45", "..\Source\CaliburnMicro\CaliburnMicro.Csla.WinForms.Net45\CaliburnMicro.Csla.WinForms.Net45.csproj", "{C33059D8-0DA0-4B21-81A4-62994D1DF0AB}"
 EndProject

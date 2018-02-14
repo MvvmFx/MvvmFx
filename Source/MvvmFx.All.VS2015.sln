@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solut
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BoundControls", "BoundControls", "{A6477ED5-57B4-44DF-83EF-74F68E6AB12A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net45", "BoundControls\MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WinForms.Net45", "BoundControls\MvvmFx.Controls.WinForms.Net45\MvvmFx.Controls.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WinForms.Net46", "BoundControls\MvvmFx.WinForms.Net46\MvvmFx.WinForms.Net46.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WinForms.Net46", "BoundControls\MvvmFx.Controls.WinForms.Net46\MvvmFx.Controls.WinForms.Net46.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WisejWeb.Net45", "BoundControls\MvvmFx.Controls.WisejWeb.Net45\MvvmFx.Controls.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro modules", "CaliburnMicro modules", "{8E13ED9D-5BB2-4839-80E4-FF32180DFBB3}"
 EndProject
@@ -94,9 +94,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.Net45", "CaliburnMicro\CaliburnMicro.WisejWeb.Net45\CaliburnMicro.WisejWeb.Net45.csproj", "{1CA317B0-D30D-494B-83A4-20FBBBE71E22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.PanelEx.Net45", "BoundControls\MvvmFx.WisejWeb.PanelEx.Net45\MvvmFx.WisejWeb.PanelEx.Net45.csproj", "{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WisejWeb.Toolable.Net45", "BoundControls\MvvmFx.Controls.WisejWeb.Toolable.Net45\MvvmFx.Controls.WisejWeb.Toolable.Net45.csproj", "{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.PanelEx.Net45", "CaliburnMicro\CaliburnMicro.WisejWeb.PanelEx.Net45\CaliburnMicro.WisejWeb.PanelEx.Net45.csproj", "{0F434091-C0B8-4389-A0E6-C05ABBD681EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.Toolable.Net45", "CaliburnMicro\CaliburnMicro.WisejWeb.Toolable.Net45\CaliburnMicro.WisejWeb.Toolable.Net45.csproj", "{0F434091-C0B8-4389-A0E6-C05ABBD681EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
