@@ -2,7 +2,7 @@
 using System.Drawing;
 using Wisej.Web;
 
-namespace MvvmFx.WisejWeb.PanelEx
+namespace MvvmFx.Controls.WisejWeb
 {
     /// <summary>
     /// Extends Panel so ComponentTool items raises their individual click event.

@@ -1,7 +1,7 @@
 ﻿using System;
 using MvvmFx.Logging;
 
-namespace MvvmFx.WinForms
+namespace MvvmFx.Controls.WinForms
 {
     /// <summary>
     /// Used to manage logging.

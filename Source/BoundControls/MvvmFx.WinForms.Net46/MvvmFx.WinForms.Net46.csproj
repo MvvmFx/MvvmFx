@@ -7,8 +7,8 @@
     <ProjectGuid>{ED342C71-5D03-42E2-A7C2-EFE6AB375627}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFx.WinForms</RootNamespace>
-    <AssemblyName>MvvmFx.WinForms</AssemblyName>
+    <RootNamespace>MvvmFx.Controls.WinForms</RootNamespace>
+    <AssemblyName>MvvmFx.Controls.WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE;WINFORMS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.Controls.WinForms.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

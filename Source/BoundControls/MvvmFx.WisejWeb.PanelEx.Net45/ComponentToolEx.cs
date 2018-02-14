@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Wisej.Web;
 
-namespace MvvmFx.WisejWeb.PanelEx
+namespace MvvmFx.Controls.WisejWeb
 {
     /// <summary>
     /// Extends the <see cref="Wisej.Web.ComponentTool"/> 
@@ -18,7 +18,7 @@ namespace MvvmFx.WisejWeb.PanelEx
         }*/
 
         /// <summary>
-        /// Gets or sets whether the <see cref="MvvmFx.WisejWeb.PanelEx.ComponentToolEx.Click"/> event bubbles up.  
+        /// Gets or sets whether the <see cref="MvvmFx.Controls.WisejWeb.ComponentToolEx.Click"/> event bubbles up.  
         /// <see cref="ComponentToolEx"/>.
         /// </summary>
         public bool ClickBubbling { get; set; } = false;
@@ -46,7 +46,7 @@ namespace MvvmFx.WisejWeb.PanelEx
         }
 
         /// <summary>
-        /// Generates the <see cref="MvvmFx.WisejWeb.PanelEx.ComponentToolEx.Click"/> event.
+        /// Generates the <see cref="MvvmFx.Controls.WisejWeb.ComponentToolEx.Click"/> event.
         /// </summary>
         public virtual void PerformClick()
         {

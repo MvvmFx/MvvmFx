@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Wisej.Web;
 
-namespace MvvmFx.WisejWeb
+namespace MvvmFx.Controls.WisejWeb
 {
     /// <summary>
     /// Data binding enabled LinkMenuItem.

@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Drawing.Design;
 #if WISEJ
 using Wisej.Web;
-using MvvmFx.WisejWeb.Properties;
+using MvvmFx.Controls.WisejWeb.Properties;
 #else
 using System.Windows.Forms;
-using MvvmFx.WinForms.Properties;
+using MvvmFx.Controls.WinForms.Properties;
 #endif
 
 // code from Sascha Knopf
@@ -16,7 +16,7 @@ using MvvmFx.WinForms.Properties;
 
 // Improvements by Tiago Freitas Leal (MvvmFx project).
 
-namespace MvvmFx.WinForms
+namespace MvvmFx.Controls.WinForms
 {
     /// <summary>
     /// Data binding enabled list view control.
@@ -44,7 +44,7 @@ namespace MvvmFx.WinForms
 
 #if WINFORMS
         /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.WinForms.BoundListView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.Controls.WinForms.BoundListView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -53,7 +53,7 @@ namespace MvvmFx.WinForms
         /// </returns>>
 #else
         /// <summary>
-        /// Gets or sets the data source for this <see cref="MvvmFx.WisejWeb.BoundListView"/>.
+        /// Gets or sets the data source for this <see cref="MvvmFx.Controls.WisejWeb.BoundListView"/>.
         /// </summary>
         /// <returns>
         /// An object that implements the <see cref="System.Collections.IList"/> or
@@ -85,11 +85,11 @@ namespace MvvmFx.WinForms
 #if WINFORMS
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="MvvmFx.WinForms.BoundListView"/> is displaying data.
+        /// the <see cref="MvvmFx.Controls.WinForms.BoundListView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.WinForms.BoundListView.DataSource"/> for which the
-        /// <see cref="MvvmFx.WinForms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.Controls.WinForms.BoundListView.DataSource"/> for which the
+        /// <see cref="MvvmFx.Controls.WinForms.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
         /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/>
@@ -99,11 +99,11 @@ namespace MvvmFx.WinForms
 #else
         /// <summary>
         /// Gets or sets the name of the list or table in the data source for which
-        /// the <see cref="MvvmFx.WisejWeb.BoundListView"/> is displaying data.
+        /// the <see cref="MvvmFx.Controls.WisejWeb.BoundListView"/> is displaying data.
         /// </summary>
         /// <returns>
-        /// The name of the table or list in the <see cref="MvvmFx.WisejWeb.BoundListView.DataSource"/> for which the
-        /// <see cref="MvvmFx.WisejWeb.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
+        /// The name of the table or list in the <see cref="MvvmFx.Controls.WisejWeb.BoundListView.DataSource"/> for which the
+        /// <see cref="MvvmFx.Controls.WisejWeb.BoundListView"/> is displaying data. The default is <see cref="System.String.Empty"/>.
         /// </returns>
         /// <exception cref="System.Exception">
         /// An error occurred in the data source and either there is no handler for the <see cref="Wisej.Web.DataGridView.DataError"/>

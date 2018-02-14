@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace MvvmFx.WinForms
+namespace MvvmFx.Controls.WinForms
 {
     /// <summary>
     /// Defines a bindable component with a Name property.

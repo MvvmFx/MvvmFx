@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace MvvmFx.WisejWeb
+namespace MvvmFx.Controls.WisejWeb
 {
     /// <summary>
     /// Encapsulates the data source for a form.

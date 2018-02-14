@@ -7,8 +7,8 @@
     <ProjectGuid>{6AF83139-1E69-4EEB-8A4C-C8D4730DB454}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFx.WisejWeb.PanelEx</RootNamespace>
-    <AssemblyName>MvvmFx.WisejWeb.PanelEx</AssemblyName>
+    <RootNamespace>MvvmFx.Controls.WisejWeb</RootNamespace>
+    <AssemblyName>MvvmFx.Controls.WisejWeb.Toolable</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WisejWeb\net45\MvvmFx.WisejWeb.PanelEx.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WisejWeb\net45\MvvmFx.Controls.WisejWeb.Toolable.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

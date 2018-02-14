@@ -1,6 +1,6 @@
 ﻿using Wisej.Web;
 
-namespace MvvmFx.WisejWeb
+namespace MvvmFx.Controls.WisejWeb
 {
     /// <summary>
     /// Defines a bindable component with a Name property.

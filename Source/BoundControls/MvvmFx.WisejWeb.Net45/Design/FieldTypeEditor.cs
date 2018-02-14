@@ -32,7 +32,7 @@ THE SOFTWARE.
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace MvvmFx.WisejWeb.Design
+namespace MvvmFx.Controls.WisejWeb.Design
 {
     /// <summary>
     /// Data members fields editor.
