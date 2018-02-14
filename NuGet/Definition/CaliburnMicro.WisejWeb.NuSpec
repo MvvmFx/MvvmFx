@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-CaliburnMicro-Wisej</id>
+    <title>MVVM FX - CaliburnMicro Wisej</title>
+    <tags>CaliburnMicro Caliburn.Micro MVVM MVVMFX Wisej Model-View-ViewModel Presentation UI ViewModel</tags>
+    <version>3.0.0</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+CaliburnMicro is a small, yet powerful framework, adapted for building MVVM Wisej applications.
+Its strong support for MV* patterns will enable you to build your solution quickly, without the need to sacrifice code quality or testability.
+    </description>
+    <summary>
+Caliburn.Micro derivative adapted to Wisej.
+    </summary>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="MvvmFx-Logging" version="[3.0.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.CaliburnMicro.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.CaliburnMicro.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.CaliburnMicro.WisejWeb.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.DataBinding.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.DataBinding.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.DataBinding.WisejWeb.xml*" target="lib\net45" />
+    <!-- .NET 4.6 -->
+    <!--
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.CaliburnMicro.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.CaliburnMicro.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.CaliburnMicro.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.DataBinding.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.DataBinding.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.DataBinding.WisejWeb.xml*" target="lib\net46" />
+    -->
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WinForms.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WisejWeb.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WisejWeb.PanelEx.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+  </files>
+</package>

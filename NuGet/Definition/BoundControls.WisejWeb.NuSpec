@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-BoundControls-Wisej</id>
+    <title>MVVM FX - Bound Controls for Wisej</title>
+    <tags>MVVMFX MVVM Wisej Databinding Model-View-ViewModel Presentation UI ViewModel</tags>
+    <version>3.0.0</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+Databound versions of TreeView, ListView, Panel and Components.
+    </description>
+    <summary>
+Databound versions of some standard controls.
+    </summary>
+    <language>en-US</language>
+    <dependencies>
+      <dependency id="MvvmFx-Logging" version="[3.0.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.xml*" target="lib\net45" />
+    <!-- .NET 4.6 -->
+    <!--
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.xml*" target="lib\net46" />
+    -->
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Source\BoundControls\**\MvvmFx.WisejWeb.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\BoundControls\**\MvvmFx.WisejWeb.PanelEx.Net45\**\*.cs" target="src" />
+  </files>
+</package>

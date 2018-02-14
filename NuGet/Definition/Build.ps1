@@ -45,7 +45,7 @@ function ChangeNuSpecVersion( $nuSpecFilePath, $version="0.0.0.0" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }
-            if ( $idAttribute.Value -eq "MvvmFx-WebGUI" )
+            if ( $idAttribute.Value -eq "MvvmFx-Wisej" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }
@@ -53,7 +53,7 @@ function ChangeNuSpecVersion( $nuSpecFilePath, $version="0.0.0.0" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }
-            if ( $idAttribute.Value -eq "MvvmFx-CaliburnMicro-WebGUI" )
+            if ( $idAttribute.Value -eq "MvvmFx-CaliburnMicro-Wisej" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }

@@ -38,12 +38,12 @@ try
     $originalForeground = $host.UI.RawUI.ForegroundColor
     $originalLocation = Get-Location
     $packages = @("Logging", "NLogLogger", "Log4netLogger")
-    $packages += @("CaliburnMicro.WinForms", "CaliburnMicro.WebGUI")
-    $packages += @("CaliburnMicro.DialogExtensions.WinForm", "CaliburnMicro.DialogExtensions.WebGUI")
-    $packages += @("CaliburnMicro.Csla.WinForms", "CaliburnMicro.Csla.WebGUI")
-    $packages += @("BoundControls.WinForms", "BoundControls.WebGUI")
-    $packages += @("Binding.WPF", "Binding.WinForms", "Binding.WebGUI")
-    ##$packages += @("Binding.Desktop")
+    $packages += @("CaliburnMicro.WinForms", "CaliburnMicro.WisejWeb")
+    ##$packages += @("CaliburnMicro.DialogExtensions.WinForm", "CaliburnMicro.DialogExtensions.WisejWeb")
+    $packages += @("CaliburnMicro.Csla.WinForms", "CaliburnMicro.Csla.WisejWeb")
+    $packages += @("BoundControls.WinForms", "BoundControls.WisejWeb")
+    $packages += @("Binding.WinForms", "Binding.WisejWeb")
+    ##$packages += @("Binding.WPF", "Binding.Desktop")
 
     $host.UI.RawUI.BackgroundColor = [System.ConsoleColor]::Black
     $host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::White

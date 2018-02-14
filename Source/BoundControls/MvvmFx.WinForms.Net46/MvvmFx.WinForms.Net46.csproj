@@ -165,6 +165,7 @@
     <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
       <Name>MvvmFx.Logging.Net46</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
