@@ -10,25 +10,16 @@
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern. WPF assemblies are a subset that include only Data binding, while the Windows Forms assemblies also include Command binding and DependencyObject/DependencyProperty.
+MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern.
+WinForms assemblies include Data binding, Command binding and DependencyObject/DependencyProperty.
+WPF assemblies are a subset that includes only Data binding.
     </description>
     <summary>
-Supports the creation of applications using the MVVM pattern for Windows Forms and WPF.
+Command and Data binding library to support the creation of applications using the MVVM pattern for WinForms and WPF.
     </summary>
     <language>en-US</language>
   </metadata>
   <files>
-    <!-- .NET 4.0 -->
-    <file src="..\..\bin\Release\Desktop\net40\**\MvvmFx.Windows.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\MvvmFx.Windows.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\MvvmFx.Windows.resources.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\MvvmFx.Windows.resources.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\MvvmFx.Windows.xml*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\WindowsBase.WinForms.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\WindowsBase.WinForms.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\WindowsBase.WinForms.resources.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\WindowsBase.WinForms.resources.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\Desktop\net40\**\WindowsBase.WinForms.xml*" target="lib\net40" />
     <!-- .NET 4.5 -->
     <file src="..\..\bin\Release\Desktop\net45\**\MvvmFx.Windows.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Desktop\net45\**\MvvmFx.Windows.pdb*" target="lib\net45" />
@@ -40,23 +31,19 @@ Supports the creation of applications using the MVVM pattern for Windows Forms a
     <file src="..\..\bin\Release\Desktop\net45\**\WindowsBase.WinForms.resources.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Desktop\net45\**\WindowsBase.WinForms.resources.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\Desktop\net45\**\WindowsBase.WinForms.xml*" target="lib\net45" />
-    <!-- .NET 4.5.1 -->
-    <file src="..\..\bin\Release\Desktop\net451\**\MvvmFx.Windows.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\MvvmFx.Windows.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\MvvmFx.Windows.resources.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\MvvmFx.Windows.resources.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\MvvmFx.Windows.xml*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\WindowsBase.WinForms.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\WindowsBase.WinForms.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\WindowsBase.WinForms.resources.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\WindowsBase.WinForms.resources.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\Desktop\net451\**\WindowsBase.WinForms.xml*" target="lib\net451" />
+    <!-- .NET 4.6-->
+    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Windows.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Windows.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Windows.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Windows.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Windows.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Src\Binding\**\MvvmFx.Windows\**\*.cs" target="src" />
-    <file src="..\..\Src\Binding\**\MvvmFx.Windows.45\**\*.cs" target="src" />
-    <file src="..\..\Src\Binding\**\MvvmFx.Windows.451\**\*.cs" target="src" />
-    <file src="..\..\Src\Binding\**\WindowsBase.WinForms\**\*.cs" target="src" />
-    <file src="..\..\Src\Binding\**\WindowsBase.WinForms.45\**\*.cs" target="src" />
-    <file src="..\..\Src\Binding\**\WindowsBase.WinForms.451\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\WindowsBase.WinForms.Net45\**\*.cs" target="src" />
   </files>
 </package>

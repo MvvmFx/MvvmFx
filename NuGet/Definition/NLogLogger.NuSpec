@@ -22,27 +22,19 @@ NLog adapter for MvvmFx.Logging.ILog.
     </dependencies>
   </metadata>
   <files>
-    <!-- .NET 4.0 -->
-    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.NLogLogger.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.NLogLogger.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\Common\net40\**\MvvmFx.NLogLogger.xml*" target="lib\net40" />
     <!-- .NET 4.5 -->
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.xml*" target="lib\net45" />
-    <!-- .NET 4.5.1 -->
-    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.NLogLogger.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.NLogLogger.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\Common\net451\**\MvvmFx.NLogLogger.xml*" target="lib\net451" />
+    <!-- .NET 4.6-->
+    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Src\**\MvvmFx.NLogLogger\**\*.cs" target="src" />
-    <file src="..\..\Src\**\MvvmFx.NLogLogger.45\**\*.cs" target="src" />
-    <file src="..\..\Src\**\MvvmFx.NLogLogger.451\**\*.cs" target="src" />
+    <file src="..\..\Source\**\Logging\MvvmFx.NLogLogger.Net45\**\*.cs" target="src" />
   </files>
 </package>

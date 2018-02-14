@@ -10,10 +10,11 @@
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern.
+CaliburnMicro is a small, yet powerful framework, adapted for building MVVM WinForms applications.
+Its strong support for MV* patterns will enable you to build your solution quickly, without the need to sacrifice code quality or testability.
     </description>
     <summary>
-Supports the creation of applications using the MVVM pattern for Windows Forms.
+Caliburn.Micro derivative adapted to WinForms.
     </summary>
     <language>en-US</language>
     <dependencies>
@@ -21,13 +22,6 @@ Supports the creation of applications using the MVVM pattern for Windows Forms.
     </dependencies>
   </metadata>
   <files>
-    <!-- .NET 4.0 -->
-    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.CaliburnMicro.WinForms.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.CaliburnMicro.WinForms.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.CaliburnMicro.WinForms.xml*" target="lib\net40" />
-    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.DataBinding.WinForms.dll*" target="lib\net40" />
-    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.DataBinding.WinForms.pdb*" target="lib\net40" />
-    <file src="..\..\bin\Release\WinForms\**\net40\MvvmFx.DataBinding.WinForms.xml*" target="lib\net40" />
     <!-- .NET 4.5 -->
     <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.WinForms.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.WinForms.pdb*" target="lib\net45" />
@@ -35,20 +29,15 @@ Supports the creation of applications using the MVVM pattern for Windows Forms.
     <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.DataBinding.WinForms.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.DataBinding.WinForms.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.DataBinding.WinForms.xml*" target="lib\net45" />
-    <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.CaliburnMicro.WinForms.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.CaliburnMicro.WinForms.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.CaliburnMicro.WinForms.xml*" target="lib\net451" />
-    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.DataBinding.WinForms.dll*" target="lib\net451" />
-    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.DataBinding.WinForms.pdb*" target="lib\net451" />
-    <file src="..\..\bin\Release\WinForms\**\net451\MvvmFx.DataBinding.WinForms.xml*" target="lib\net451" />
+    <!-- .NET 4.6 -->
+    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.WinForms.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.DataBinding.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.DataBinding.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.DataBinding.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Src\**\CaliburnMicro.WinForms\**\*.cs" target="src" />
-    <file src="..\..\Src\**\CaliburnMicro.WinForms.45\**\*.cs" target="src" />
-    <file src="..\..\Src\**\CaliburnMicro.WinForms.451\**\*.cs" target="src" />
-    <file src="..\..\Src\**\MvvmFx.Windows\**\*.cs" target="src" />
-    <file src="..\..\Src\**\MvvmFx.DataBinding.WinForms\**\*.cs" target="src" />
-    <file src="..\..\Src\**\MvvmFx.DataBinding.WinForms.45\**\*.cs" target="src" />
-    <file src="..\..\Src\**\MvvmFx.DataBinding.WinForms.451\**\*.cs" target="src" />
+    <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WinForms.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
   </files>
 </package>

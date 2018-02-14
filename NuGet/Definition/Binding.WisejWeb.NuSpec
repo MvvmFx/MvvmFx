@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>MvvmFx-Wisej</id>
+    <title>MVVM FX - Wisej</title>
+    <tags>MVVMFX MVVM Wisej Model-View-ViewModel Presentation UI ViewModel</tags>
+    <version>3.0.0</version>
+    <authors>Tiago Freitas Leal</authors>
+    <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern.
+Data binding, Command binding and DependencyObject/DependencyProperty for Wisej.
+    </description>
+    <summary>
+Command and Data binding library to support the creation of applications using the MVVM pattern for Wisej.
+    </summary>
+    <language>en-US</language>
+  </metadata>
+  <files>
+    <!-- .NET 4.5 -->
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.xml*" target="lib\net45" />
+    <!-- .NET 4.6 -->
+    <!--
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.xml*" target="lib\net46" />
+    -->
+    <!-- Source Files for Symbol -->
+    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\WindowsBase.WinForms.Net45\**\*.cs" target="src" />
+  </files>
+</package>
