@@ -7,8 +7,8 @@
     <ProjectGuid>{0F434091-C0B8-4389-A0E6-C05ABBD681EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CaliburnMicro.WisejWeb.PanelEx</RootNamespace>
-    <AssemblyName>CaliburnMicro.WisejWeb.PanelEx</AssemblyName>
+    <RootNamespace>MvvmFx.CaliburnMicro.WisejWeb.PanelEx</RootNamespace>
+    <AssemblyName>MvvmFx.CaliburnMicro.WisejWeb.PanelEx</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -30,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WisejWeb\net45\CaliburnMicro.WisejWeb.PanelEx.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WisejWeb\net45\MvvmFx.CaliburnMicro.WisejWeb.PanelEx.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

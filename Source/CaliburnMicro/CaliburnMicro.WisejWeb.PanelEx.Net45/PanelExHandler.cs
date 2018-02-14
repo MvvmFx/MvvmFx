@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using MvvmFx.CaliburnMicro;
 using MvvmFx.Windows.Data;
 using Wisej.Web;
 
-namespace CaliburnMicro.WisejWeb.PanelEx
+namespace MvvmFx.CaliburnMicro.WisejWeb.PanelEx
 {
     /// <summary>
     /// Proxy agent for <see cref="PanelEx"/> and binder agent for <see cref="ComponentToolExProxy"/>.
@@ -20,15 +19,15 @@ namespace CaliburnMicro.WisejWeb.PanelEx
         /// </summary>
         public static Func<Control, IEnumerable<Control>> GetChildItems = control =>
         {
-            if (!(control is PanelEx))
+            if (!(control is global::MvvmFx.CaliburnMicro.WisejWeb.PanelEx.PanelEx))
                 throw new ArgumentException(
-                    string.Format("Expecting type {0}", typeof(PanelEx).FullName),
+                    string.Format("Expecting type {0}", typeof(global::MvvmFx.CaliburnMicro.WisejWeb.PanelEx.PanelEx).FullName),
                     @"control");
 
-            return GetNamedElements((PanelEx) control);
+            return GetNamedElements((global::MvvmFx.CaliburnMicro.WisejWeb.PanelEx.PanelEx) control);
         };
 
-        private static IEnumerable<Control> GetNamedElements(PanelEx control)
+        private static IEnumerable<Control> GetNamedElements(global::MvvmFx.CaliburnMicro.WisejWeb.PanelEx.PanelEx control)
         {
             foreach (ComponentTool tool in control.Tools)
             {
