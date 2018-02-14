@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solution Items", "{1DAB7B71-E933-4B23-B25F-4E1951ADEF24}"
-	ProjectSection(SolutionItems) = preProject
-		License-MvvmFx.Windows.txt = License-MvvmFx.Windows.txt
-		License-WindowsBase.txt = License-WindowsBase.txt
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data and Command Binding", "Data and Command Binding", "{C347E80D-BAC0-42B7-B830-98AC8E662D8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Net45", "MvvmFx.Windows.Net45\MvvmFx.Windows.Net45.csproj", "{2728C8A9-7304-46F3-8A93-F0A53D91BF21}"
