@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 #if WISEJ
-using MvvmFx.WisejWeb;
+using MvvmFx.Controls.WisejWeb;
 #else
-using MvvmFx.WinForms;
+using MvvmFx.Controls.WinForms;
 #endif
 
 namespace BoundControls.Business

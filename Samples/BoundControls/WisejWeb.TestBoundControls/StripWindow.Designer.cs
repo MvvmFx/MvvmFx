@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.statusBar1 = new Wisej.Web.StatusBar();
-            this.statusLabel1 = new MvvmFx.WisejWeb.StatusBarPanel();
+            this.statusLabel1 = new MvvmFx.Controls.WisejWeb.StatusBarPanel();
             this.toolBar1 = new Wisej.Web.ToolBar();
-            this.toolBarButton1 = new MvvmFx.WisejWeb.ToolBarButton();
-            this.toolBarButton2 = new MvvmFx.WisejWeb.ToolBarButton();
-            this.toolBarButton3 = new MvvmFx.WisejWeb.ToolBarButton();
-            this.toolBarButton4 = new MvvmFx.WisejWeb.ToolBarButton();
+            this.toolBarButton1 = new MvvmFx.Controls.WisejWeb.ToolBarButton();
+            this.toolBarButton2 = new MvvmFx.Controls.WisejWeb.ToolBarButton();
+            this.toolBarButton3 = new MvvmFx.Controls.WisejWeb.ToolBarButton();
+            this.toolBarButton4 = new MvvmFx.Controls.WisejWeb.ToolBarButton();
             this.menuBar1 = new Wisej.Web.MenuBar();
-            this.menuItem1 = new MvvmFx.WisejWeb.MenuItem();
-            this.menuItem2 = new MvvmFx.WisejWeb.MenuItem();
-            this.menuItem3 = new MvvmFx.WisejWeb.MenuItem();
-            this.menuItem4 = new MvvmFx.WisejWeb.MenuItem();
+            this.menuItem1 = new MvvmFx.Controls.WisejWeb.MenuItem();
+            this.menuItem2 = new MvvmFx.Controls.WisejWeb.MenuItem();
+            this.menuItem3 = new MvvmFx.Controls.WisejWeb.MenuItem();
+            this.menuItem4 = new MvvmFx.Controls.WisejWeb.MenuItem();
             this.bindMenu = new Wisej.Web.Button();
             this.bindToolBar = new Wisej.Web.Button();
             this.bindStatus = new Wisej.Web.Button();
@@ -191,16 +191,16 @@
         #endregion
 
         private Wisej.Web.StatusBar statusBar1;
-        private MvvmFx.WisejWeb.StatusBarPanel statusLabel1;
+        private MvvmFx.Controls.WisejWeb.StatusBarPanel statusLabel1;
         private Wisej.Web.ToolBar toolBar1;
-        private MvvmFx.WisejWeb.ToolBarButton toolBarButton1;
-        private MvvmFx.WisejWeb.ToolBarButton toolBarButton2;
-        private MvvmFx.WisejWeb.ToolBarButton toolBarButton3;
-        private MvvmFx.WisejWeb.ToolBarButton toolBarButton4;
-        private MvvmFx.WisejWeb.MenuItem menuItem1;
-        private MvvmFx.WisejWeb.MenuItem menuItem2;
-        private MvvmFx.WisejWeb.MenuItem menuItem3;
-        private MvvmFx.WisejWeb.MenuItem menuItem4;
+        private MvvmFx.Controls.WisejWeb.ToolBarButton toolBarButton1;
+        private MvvmFx.Controls.WisejWeb.ToolBarButton toolBarButton2;
+        private MvvmFx.Controls.WisejWeb.ToolBarButton toolBarButton3;
+        private MvvmFx.Controls.WisejWeb.ToolBarButton toolBarButton4;
+        private MvvmFx.Controls.WisejWeb.MenuItem menuItem1;
+        private MvvmFx.Controls.WisejWeb.MenuItem menuItem2;
+        private MvvmFx.Controls.WisejWeb.MenuItem menuItem3;
+        private MvvmFx.Controls.WisejWeb.MenuItem menuItem4;
         private Wisej.Web.MenuBar menuBar1;
         private Wisej.Web.Button bindMenu;
         private Wisej.Web.Button bindToolBar;

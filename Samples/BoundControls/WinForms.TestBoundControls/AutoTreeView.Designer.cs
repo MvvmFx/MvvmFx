@@ -34,7 +34,7 @@
             this.textboxView = new System.Windows.Forms.TextBox();
             this.textboxModel = new System.Windows.Forms.TextBox();
             this.buttonModel = new System.Windows.Forms.Button();
-            this.boundTreeView1 = new MvvmFx.WinForms.BoundTreeView();
+            this.boundTreeView1 = new MvvmFx.Controls.WinForms.BoundTreeView();
             this.leafListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -365,7 +365,7 @@
         private System.Windows.Forms.TextBox textboxView;
         private System.Windows.Forms.TextBox textboxModel;
         private System.Windows.Forms.Button buttonModel;
-        private MvvmFx.WinForms.BoundTreeView boundTreeView1;
+        private MvvmFx.Controls.WinForms.BoundTreeView boundTreeView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label leafName;
         private System.Windows.Forms.Label dragDropStatusLabel;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.boundTreeView1 = new MvvmFx.WinForms.BoundTreeView();
+            this.boundTreeView1 = new MvvmFx.Controls.WinForms.BoundTreeView();
             this.displayName = new System.Windows.Forms.Label();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.SuspendLayout();
@@ -86,7 +86,7 @@
 
         #endregion
 
-        private MvvmFx.WinForms.BoundTreeView boundTreeView1;
+        private MvvmFx.Controls.WinForms.BoundTreeView boundTreeView1;
         private System.Windows.Forms.Label displayName;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
     }

@@ -150,9 +150,9 @@
       <Project>{41adbee4-19f6-40f8-a10a-6beb7db842cf}</Project>
       <Name>MvvmFx.DataBinding.WisejWeb.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj">
+    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.Controls.WisejWeb.Net45\MvvmFx.Controls.WisejWeb.Net45.csproj">
       <Project>{f9a6952e-c1bc-4185-8407-d1f59d62255d}</Project>
-      <Name>MvvmFx.WisejWeb.Net45</Name>
+      <Name>MvvmFx.Controls.WisejWeb.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WisejWeb.Net45\CaliburnMicro.WisejWeb.Net45.csproj">
       <Project>{1ca317b0-d30d-494b-83a4-20fbbbe71e22}</Project>

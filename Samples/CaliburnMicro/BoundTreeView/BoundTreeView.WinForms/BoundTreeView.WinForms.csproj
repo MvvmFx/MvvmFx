@@ -105,9 +105,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj">
+    <ProjectReference Include="..\..\..\..\Source\BoundControls\MvvmFx.Controls.WinForms.Net45\MvvmFx.Controls.WinForms.Net45.csproj">
       <Project>{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}</Project>
-      <Name>MvvmFx.WinForms.Net45</Name>
+      <Name>MvvmFx.Controls.WinForms.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\Source\CaliburnMicro\CaliburnMicro.WinForms.Net45\CaliburnMicro.WinForms.Net45.csproj">
       <Project>{8a70916c-7d79-4539-a4e4-178fbb66c703}</Project>

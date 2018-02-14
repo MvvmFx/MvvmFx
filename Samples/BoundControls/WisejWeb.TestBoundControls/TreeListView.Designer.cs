@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.boundListView1 = new MvvmFx.WisejWeb.BoundListView();
+            this.boundListView1 = new MvvmFx.Controls.WisejWeb.BoundListView();
             this.SuspendLayout();
             //
             // boundListView1
@@ -59,6 +59,6 @@
 
         #endregion
 
-        private MvvmFx.WisejWeb.BoundListView boundListView1;
+        private MvvmFx.Controls.WisejWeb.BoundListView boundListView1;
     }
 }

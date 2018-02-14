@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WisejWeb.Net45", "..\Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.PanelEx.Net45", "CaliburnMicro.WisejWeb.PanelEx.Net45\CaliburnMicro.WisejWeb.PanelEx.Net45.csproj", "{0F434091-C0B8-4389-A0E6-C05ABBD681EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.Toolable.Net45", "CaliburnMicro.WisejWeb.Toolable.Net45\CaliburnMicro.WisejWeb.Toolable.Net45.csproj", "{0F434091-C0B8-4389-A0E6-C05ABBD681EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

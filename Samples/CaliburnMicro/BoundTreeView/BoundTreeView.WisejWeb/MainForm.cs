@@ -4,10 +4,10 @@ using MvvmFx.CaliburnMicro;
 using MvvmFx.Windows.Data;
 #if WISEJ
 using Wisej.Web;
-using LogManager = MvvmFx.WisejWeb.LogManager;
+using LogManager = MvvmFx.Controls.WisejWeb.LogManager;
 #else
 using System.Windows.Forms;
-using LogManager = MvvmFx.WinForms.LogManager;
+using LogManager = MvvmFx.Controls.WinForms.LogManager;
 #endif
 
 namespace BoundTreeView

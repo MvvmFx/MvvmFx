@@ -128,9 +128,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.WinForms.Net45\MvvmFx.WinForms.Net45.csproj">
+    <ProjectReference Include="..\..\..\Source\BoundControls\MvvmFx.Controls.WinForms.Net45\MvvmFx.Controls.WinForms.Net45.csproj">
       <Project>{440ede1a-73c2-4a82-b2ce-9ddca8d99c36}</Project>
-      <Name>MvvmFx.WinForms.Net45</Name>
+      <Name>MvvmFx.Controls.WinForms.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Source\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj">
       <Project>{72623d05-b8db-404e-81b3-17ef258579e0}</Project>
