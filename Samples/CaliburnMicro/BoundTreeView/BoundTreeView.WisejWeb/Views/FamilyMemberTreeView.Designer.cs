@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.boundTreeView1 = new MvvmFx.WisejWeb.BoundTreeView();
+            this.boundTreeView1 = new MvvmFx.Controls.WisejWeb.BoundTreeView();
             this.displayName = new Wisej.Web.Label();
             this.activeItem = new MvvmFx.CaliburnMicro.ContentContainer();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
 
         #endregion
 
-        private MvvmFx.WisejWeb.BoundTreeView boundTreeView1;
+        private MvvmFx.Controls.WisejWeb.BoundTreeView boundTreeView1;
         private Wisej.Web.Label displayName;
         private MvvmFx.CaliburnMicro.ContentContainer activeItem;
     }
