@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Wisej.Web;
 
-namespace MvvmFx.CaliburnMicro.WisejWeb.PanelEx
+namespace MvvmFx.CaliburnMicro.WisejWeb.Toolable
 {
     /// <summary>
     /// Proxy class for <see cref="ComponentToolEx"/> components.
