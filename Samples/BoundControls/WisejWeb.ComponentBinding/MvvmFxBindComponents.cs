@@ -1,6 +1,6 @@
 ﻿using BoundControls.Business;
 using MvvmFx.Windows.Data;
-using MvvmFx.WisejWeb;
+using MvvmFx.Controls.WisejWeb;
 using Wisej.Web;
 using Binding = MvvmFx.Windows.Data.Binding;
 using Control = Wisej.Web.Control;

@@ -1,9 +1,9 @@
 ﻿using System;
 using BoundControls.Business;
-using MvvmFx.WisejWeb;
+using MvvmFx.Controls.WisejWeb;
 using Wisej.Web;
-using MenuItem = MvvmFx.WisejWeb.MenuItem;
-using ToolBarButton = MvvmFx.WisejWeb.ToolBarButton;
+using MenuItem = MvvmFx.Controls.WisejWeb.MenuItem;
+using ToolBarButton = MvvmFx.Controls.WisejWeb.ToolBarButton;
 
 namespace WisejWeb.TestBoundControls
 {

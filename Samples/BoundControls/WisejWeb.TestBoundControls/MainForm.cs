@@ -1,10 +1,10 @@
 ﻿using System;
 #if WINFORMS
 using System.Windows.Forms;
-using LogManager = MvvmFx.WinForms.LogManager;
+using LogManager = MvvmFx.Controls.WinForms.LogManager;
 #else
 using Wisej.Web;
-using LogManager = MvvmFx.WisejWeb.LogManager;
+using LogManager = MvvmFx.Controls.WisejWeb.LogManager;
 #endif
 
 namespace WisejWeb.TestBoundControls

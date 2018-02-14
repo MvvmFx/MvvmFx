@@ -1,5 +1,5 @@
 ﻿using BoundControls.Business;
-using MvvmFx.WisejWeb;
+using MvvmFx.Controls.WisejWeb;
 using Wisej.Web;
 using Control = Wisej.Web.Control;
 using IBindableComponent = Wisej.Web.IBindableComponent;
