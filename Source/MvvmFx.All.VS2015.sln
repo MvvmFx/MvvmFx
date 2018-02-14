@@ -5,10 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solution Items", "{2A25D653-49BE-4398-86D9-9A55534B52A8}"
 	ProjectSection(SolutionItems) = preProject
-		CaliburnMicro\License-MvvmFx.CaliburnMicro.txt = CaliburnMicro\License-MvvmFx.CaliburnMicro.txt
-		Logging\License-MvvmFx.Logging.txt = Logging\License-MvvmFx.Logging.txt
-		Binding\License-MvvmFx.Windows.txt = Binding\License-MvvmFx.Windows.txt
-		Binding\License-WindowsBase.txt = Binding\License-WindowsBase.txt
 		Migrated rules for MvvmFx.Windows.ruleset = Migrated rules for MvvmFx.Windows.ruleset
 	EndProjectSection
 EndProject
@@ -21,9 +17,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.WisejWeb.Net45", "BoundControls\MvvmFx.WisejWeb.Net45\MvvmFx.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro modules", "CaliburnMicro modules", "{8E13ED9D-5BB2-4839-80E4-FF32180DFBB3}"
-	ProjectSection(SolutionItems) = preProject
-		CaliburnMicro\Author.txt = CaliburnMicro\Author.txt
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro", "CaliburnMicro", "{B00B3DE6-78E3-4E7B-937B-6922DED2AB53}"
 EndProject
