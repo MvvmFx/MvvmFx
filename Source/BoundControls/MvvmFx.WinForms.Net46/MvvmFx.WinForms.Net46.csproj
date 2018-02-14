@@ -44,117 +44,117 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BindingSourceRefresh.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BindingSourceRefresh.cs">
       <Link>BindingSourceRefresh.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundForm.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundForm.cs">
       <Link>BoundForm.cs</Link>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundForm.Designer.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundForm.Designer.cs">
       <Link>BoundForm.Designer.cs</Link>
       <DependentUpon>BoundForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundListView.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundListView.cs">
       <Link>BoundListView.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundTreeNode.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundTreeNode.cs">
       <Link>BoundTreeNode.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundTreeView.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundTreeView.cs">
       <Link>BoundTreeView.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundUserControl.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundUserControl.cs">
       <Link>BoundUserControl.cs</Link>
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\BoundUserControl.Designer.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\BoundUserControl.Designer.cs">
       <Link>BoundUserControl.Designer.cs</Link>
       <DependentUpon>BoundUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\Design\DropDownTypeEditor.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\Design\DropDownTypeEditor.cs">
       <Link>Design\DropDownTypeEditor.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\Design\FieldTypeEditor.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\Design\FieldTypeEditor.cs">
       <Link>Design\FieldTypeEditor.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\INamedBindable.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\INamedBindable.cs">
       <Link>INamedBindable.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\LogManager.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\LogManager.cs">
       <Link>LogManager.cs</Link>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\MenuItem.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\MenuItem.cs">
       <Link>MenuItem.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\Properties\Resources.Designer.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\Properties\Resources.Designer.cs">
       <Link>Properties\Resources.Designer.cs</Link>
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\StatusBarPanel.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\StatusBarPanel.cs">
       <Link>StatusBarPanel.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolBarButton.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolBarButton.cs">
       <Link>ToolBarButton.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripButton.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripButton.cs">
       <Link>ToolStripButton.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripDropDownButton.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripDropDownButton.cs">
       <Link>ToolStripDropDownButton.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripLabel.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripLabel.cs">
       <Link>ToolStripLabel.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripMenuItem.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripMenuItem.cs">
       <Link>ToolStripMenuItem.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripProgressBar.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripProgressBar.cs">
       <Link>ToolStripProgressBar.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripSeparator.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripSeparator.cs">
       <Link>ToolStripSeparator.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripSplitButton.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripSplitButton.cs">
       <Link>ToolStripSplitButton.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripStatusLabel.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripStatusLabel.cs">
       <Link>ToolStripStatusLabel.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\ToolStripTextBox.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\ToolStripTextBox.cs">
       <Link>ToolStripTextBox.cs</Link>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="..\MvvmFx.WinForms.Net45\TreeNodeSorter.cs">
+    <Compile Include="..\MvvmFx.Controls.WinForms.Net45\TreeNodeSorter.cs">
       <Link>TreeNodeSorter.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\MvvmFx.WinForms.Net45\BoundForm.resx">
+    <EmbeddedResource Include="..\MvvmFx.Controls.WinForms.Net45\BoundForm.resx">
       <Link>BoundForm.resx</Link>
       <DependentUpon>BoundForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\MvvmFx.WinForms.Net45\BoundUserControl.resx">
+    <EmbeddedResource Include="..\MvvmFx.Controls.WinForms.Net45\BoundUserControl.resx">
       <Link>BoundUserControl.resx</Link>
       <DependentUpon>BoundUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\MvvmFx.WinForms.Net45\Properties\Resources.resx">
+    <EmbeddedResource Include="..\MvvmFx.Controls.WinForms.Net45\Properties\Resources.resx">
       <Link>Properties\Resources.resx</Link>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
