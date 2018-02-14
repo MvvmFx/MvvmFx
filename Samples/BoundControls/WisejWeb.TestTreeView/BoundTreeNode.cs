@@ -42,7 +42,7 @@ using Wisej.Web;
 using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.WisejWeb
+namespace MvvmFx.Controls.WisejWeb
 {
     /// <summary>
     /// Tree node with additional data related information.
