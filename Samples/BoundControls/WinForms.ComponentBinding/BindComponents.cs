@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 using BoundControls.Business;
-using MvvmFx.WinForms;
+using MvvmFx.Controls.WinForms;
 
 namespace MvvmFx.CaliburnMicro
 {
