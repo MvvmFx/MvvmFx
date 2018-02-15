@@ -36,7 +36,7 @@ function ChangeNuSpecVersion( $nuSpecFilePath, $version="0.0.0.0" )
 
     # Update the XML document dependencies with the new version
     $dependencies = $xDoc.Descendants( "dependency" )
-    foreach( $dependency in $dependencies )
+   foreach( $dependency in $dependencies )
     {
         $idAttribute = $dependency.Attributes( "id" ) | Select-Object -First 1
         if ( $idAttribute -ne $null )
@@ -73,7 +73,7 @@ function CopyMaintainingSubDirectories( $basePath, $includes, $targetBasePath )
     $basePathLength = [System.IO.Path]::GetFullPath( $basePath ).Length - 1
     $filesToCopy = Get-ChildItem "$basePath\*" -Include $includes -Recurse
     #$filesToCopy | Write-Host -ForegroundColor DarkGray # Debug.Print
-    foreach( $file in $filesToCopy )
+   foreach( $file in $filesToCopy )
     {
         $targetDirectory = Join-Path $targetBasePath $file.Directory.FullName.Substring( $basePathLength )
         if ( (Test-Path $targetDirectory) -ne $true)
@@ -134,7 +134,7 @@ try
     ## Before building NuGet package, extract MvvmFx Version number and update .NuSpec to automate versioning of .NuSpec document
     ## - JH: Not sure if I should get direct from source code file or from file version of compiled library instead.
     ## - JH: Going with product version in assembly for now
-    $referenceVersionFxAssembly = Get-ChildItem "$pathToBin\Desktop\net40\MvvmFx.Windows.dll" | Select-Object -First 1
+    $referenceVersionFxAssembly = Get-ChildItem "$pathToBin\Desktop\net45\MvvmFx.Windows.dll" | Select-Object -First 1
     ## - JH: If $preRelease is specified, then append it with a dash following the 3rd component of the quad-dotted-version number
     ##       Refer: http://docs.nuget.org/docs/Reference/Versioning
     if ( [System.String]::IsNullOrEmpty( $preRelease ) -ne $true )

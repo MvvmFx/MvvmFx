@@ -23,18 +23,18 @@ Databound versions of some standard controls.
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.WinForms.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.WinForms.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.WinForms.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.WinForms.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.WinForms.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Controls.WinForms.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Controls.WinForms.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Controls.WinForms.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Controls.WinForms.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Controls.WinForms.xml*" target="lib\net45" />
     <!-- .NET 4.6-->
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.WinForms.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.WinForms.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.WinForms.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.WinForms.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.WinForms.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Controls.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Controls.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Controls.WinForms.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Controls.WinForms.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Controls.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Source\BoundControls\**\MvvmFx.WinForms.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\BoundControls\**\MvvmFx.Controls.WinForms.Net45\**\*.cs" target="src" />
   </files>
 </package>

@@ -22,15 +22,14 @@ Supports the creation of applications using the MVVM pattern for WinForms.
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net45" />
     <!-- .NET 4.6 -->
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.DialogExtensions.WinForms\**\*.cs" target="src" />
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.DialogExtensions.WinForms.Net45\**\*.cs" target="src" />
   </files>
 </package>
