@@ -1,4 +1,6 @@
-﻿using MvvmFx.CaliburnMicro.ComponentHandlers;
+﻿using System;
+using System.Collections.Generic;
+using MvvmFx.CaliburnMicro.ComponentHandlers;
 
 namespace MvvmFx.CaliburnMicro.WisejWeb.Toolable
 {
@@ -7,34 +9,48 @@ namespace MvvmFx.CaliburnMicro.WisejWeb.Toolable
     /// </summary>
     public static class Setup
     {
-        private static bool _setupDone;
+        private static readonly List<Type> SetupDone = new List<Type>();
 
         /// <summary>
         /// Runs ProxyAgent and ElementConvention configurations.
         /// </summary>
-        public static void Run()
+        /// <param name="controlType">Type of the control.</param>
+        public static void Run(Type controlType)
         {
-            if (_setupDone)
+            if (SetupDone.Contains(controlType))
                 return;
 
-            ConfigureProxyAgent();
-            ConfigureBinderAgent();
-            ConfigureElementConvention();
-
-            _setupDone = true;
+            switch (controlType.Name)
+            {
+                case "PanelEx":
+                    RunPanelEx();
+                    break;
+                default: return;
+            }
         }
 
-        private static void ConfigureProxyAgent()
+        #region PanelEx
+
+        private static void RunPanelEx()
         {
-            ProxyManager.AddProxyAgent<global::MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx>(PanelExHandler.GetChildItems);
+            PanelExProxyAgent();
+            PanelExBinderAgent();
+            PanelExElementConvention();
+
+            SetupDone.Add(typeof(PanelEx));
         }
 
-        private static void ConfigureBinderAgent()
+        private static void PanelExProxyAgent()
         {
-            BinderManager.AddBinderAgent<global::MvvmFx.CaliburnMicro.WisejWeb.Toolable.PanelEx>(PanelExHandler.BindVisualProperties);
+            ProxyManager.AddProxyAgent<PanelEx>(PanelExHandler.GetChildItems);
         }
 
-        private static void ConfigureElementConvention()
+        private static void PanelExBinderAgent()
+        {
+            BinderManager.AddBinderAgent<PanelEx>(PanelExHandler.BindVisualProperties);
+        }
+
+        private static void PanelExElementConvention()
         {
             ConventionManager.AddElementConvention<ComponentToolExProxy>("Name", null, "Click")
                 .CreateAction = (element, methodName, parameters) =>
@@ -42,5 +58,7 @@ namespace MvvmFx.CaliburnMicro.WisejWeb.Toolable
                 return new ActionMessage(element, "Click", methodName, parameters);
             };
         }
+
+        #endregion
     }
 }
