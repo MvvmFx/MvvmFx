@@ -19,7 +19,7 @@ try
     $originalLocation = Get-Location
     $packages = @("Logging", "NLogLogger", "Log4netLogger")
     $packages += @("CaliburnMicro.WinForms", "CaliburnMicro.WisejWeb")
-    ##$packages += @("CaliburnMicro.DialogExtensions.WinForm", "CaliburnMicro.DialogExtensions.WisejWeb")
+    ##$packages += @("CaliburnMicro.DialogExtensions.WinForms", "CaliburnMicro.DialogExtensions.WisejWeb")
     $packages += @("CaliburnMicro.Csla.WinForms", "CaliburnMicro.Csla.WisejWeb")
     $packages += @("BoundControls.WinForms", "BoundControls.WisejWeb")
     $packages += @("Binding.WinForms", "Binding.WisejWeb")

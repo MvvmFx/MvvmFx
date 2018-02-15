@@ -22,31 +22,35 @@ Databound versions of some standard controls.
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.xml*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\**\net45\MvvmFx.WisejWeb.PanelEx.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.xml*" target="lib\net45" />
+    <!--
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.Toolable.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.Toolable.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.Toolable.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.Toolable.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Controls.WisejWeb.Toolable.xml*" target="lib\net45" />
+    -->
     <!-- .NET 4.6 -->
     <!--
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.xml*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\**\net46\MvvmFx.WisejWeb.PanelEx.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.Toolable.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.Toolable.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.Toolable.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.Toolable.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Controls.WisejWeb.Toolable.xml*" target="lib\net46" />
     -->
     <!-- Source Files for Symbol -->
-    <file src="..\..\Source\BoundControls\**\MvvmFx.WisejWeb.Net45\**\*.cs" target="src" />
-    <file src="..\..\Source\BoundControls\**\MvvmFx.WisejWeb.PanelEx.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\BoundControls\**\MvvmFx.Controls.WisejWeb.Net45\**\*.cs" target="src" />
+    <!--
+    <file src="..\..\Source\BoundControls\**\MvvmFx.Controls.WisejWeb.Toolable.Net45\**\*.cs" target="src" />
+    -->
   </files>
 </package>

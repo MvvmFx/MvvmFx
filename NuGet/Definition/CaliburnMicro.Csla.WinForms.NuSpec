@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MvvmFx-CaliburnMicro-Csla-WinForms</id>
-    <title>MVVM FX - CaliburnMicro Csla adapater for WinForms</title>
+    <title>MVVM FX - CaliburnMicro Csla adapter for WinForms</title>
     <tags>CaliburnMicro Caliburn.Micro MVVM MVVMFX WinForms Windows-Forms Model-View-ViewModel Presentation UI ViewModel</tags>
     <version>3.0.0</version>
     <authors>Tiago Freitas Leal</authors>
@@ -14,7 +14,7 @@ CaliburnMicro is a small, yet powerful framework, adapted for building MVVM WinF
 CSLA .NET enables developers to build an object-oriented business layer for their application that encapsulates all business, authorization and validation logic for the application.
     </description>
     <summary>
-CSLA .NET adapter to MVVM CaliburnMicro for WinForms.
+CSLA .NET adapter to MVVM FX CaliburnMicro for WinForms.
     </summary>
     <language>en-US</language>
     <dependencies>
@@ -24,13 +24,13 @@ CSLA .NET adapter to MVVM CaliburnMicro for WinForms.
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\**\net45\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net45" />
     <!-- .NET 4.6 -->
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\**\net46\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.Csla.WinForms.Net45\**\*.cs" target="src" />
   </files>
