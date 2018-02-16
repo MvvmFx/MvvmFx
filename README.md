@@ -21,7 +21,6 @@ New [Sample MvvmFx WinForms/Wisej application](http://github.com/MvvmFx/Interway
 
 ## What is Wisej?
 
-Wisej is a de facto replacement for Visual WebGUI.
 Take your WinForms project, port it to Wisej retaining all your BO/DAL code and most UI code.
 Now run it as a Web application.
 [Get Wisej](http://wisej.com)
