@@ -24,7 +24,7 @@ function ChangeNuSpecVersion( $nuSpecFilePath, $version="0.0.0.0" )
     $nuSpecFile = Get-Item $nuSpecFilePath | Select-Object -First 1
 
     # Bring the XML Linq namespace in
-    [Reflection.Assembly]::LoadWithPartialName( “System.Xml.Linq” ) | Out-Null
+    [Reflection.Assembly]::LoadWithPartialName( "System.Xml.Linq" ) | Out-Null
 
     # Update the XML document with the new version
     $xDoc = [System.Xml.Linq.XDocument]::Load( $nuSpecFile.FullName )
@@ -36,7 +36,7 @@ function ChangeNuSpecVersion( $nuSpecFilePath, $version="0.0.0.0" )
 
     # Update the XML document dependencies with the new version
     $dependencies = $xDoc.Descendants( "dependency" )
-   foreach( $dependency in $dependencies )
+    foreach( $dependency in $dependencies )
     {
         $idAttribute = $dependency.Attributes( "id" ) | Select-Object -First 1
         if ( $idAttribute -ne $null )
@@ -73,7 +73,7 @@ function CopyMaintainingSubDirectories( $basePath, $includes, $targetBasePath )
     $basePathLength = [System.IO.Path]::GetFullPath( $basePath ).Length - 1
     $filesToCopy = Get-ChildItem "$basePath\*" -Include $includes -Recurse
     #$filesToCopy | Write-Host -ForegroundColor DarkGray # Debug.Print
-   foreach( $file in $filesToCopy )
+    foreach( $file in $filesToCopy )
     {
         $targetDirectory = Join-Path $targetBasePath $file.Directory.FullName.Substring( $basePathLength )
         if ( (Test-Path $targetDirectory) -ne $true)

@@ -1,9 +1,14 @@
+##
+##  Create Modular MvvmFx NuGet
+##  ===========================
+##
+
 param( [System.String] $commandLineOptions )
 
 function OutputCommandLineUsageHelp()
 {
     Write-Host "Build all NuGet packages."
-    Write-Host "============================"
+    Write-Host "========================="
     Write-Host "Usage: Build All.ps1 [/PreRelease:<PreReleaseVersion>]"
     Write-Host ">E.g.: Build All.ps1"
     Write-Host ">E.g.: Build All.ps1 /PreRelease:RC1"
