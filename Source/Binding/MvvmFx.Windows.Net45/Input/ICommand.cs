@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Defines a command.

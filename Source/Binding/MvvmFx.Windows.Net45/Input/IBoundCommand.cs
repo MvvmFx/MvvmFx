@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
-    /// Defines a bound command that can be used by the <see cref="MvvmFx.Windows.Input.CommandBinding"/>.
+    /// Defines a bound command that can be used by the <see cref="MvvmFx.Bindings.Input.CommandBinding"/>.
     /// Bound commands may have or have not a parameter, but the parameter must be immutable
     /// as the binding system always pass <c>null</c> as parameter for <c>CanExecute()</c> and <c>Execute()</c>.
     /// </summary>

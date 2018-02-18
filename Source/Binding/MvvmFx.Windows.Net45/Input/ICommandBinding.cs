@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Input
+﻿namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Interface used to define a command binding.

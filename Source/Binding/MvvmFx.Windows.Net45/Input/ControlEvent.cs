@@ -9,7 +9,7 @@ using Gizmox.WebGUI.Forms;
 using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Defines the input events that can be raised by a <see cref="Control"/>.

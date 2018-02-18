@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Represents the error that occur when no binder is found for a given <see cref="System.ComponentModel.IComponent"/>.

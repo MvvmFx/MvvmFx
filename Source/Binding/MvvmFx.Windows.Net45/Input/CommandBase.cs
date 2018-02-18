@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// A base class for command types.

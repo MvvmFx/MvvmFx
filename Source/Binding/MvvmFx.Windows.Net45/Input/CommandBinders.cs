@@ -10,7 +10,7 @@ using Gizmox.WebGUI.Forms;
 using System.Windows.Forms;
 #endif
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     #region ICommandBinder interface
 
