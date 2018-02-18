@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>MvvmFx-Binding-Wisej</id>
+    <id>MvvmFx-Bindings-Wisej</id>
     <title>MVVM FX - Wisej</title>
     <tags>MVVMFX MVVM Wisej Model-View-ViewModel Presentation UI ViewModel Data-binding Command-binding</tags>
     <version>3.0.0</version>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern.
+MVVM FX is a framework for building applications using the Model-View-ViewModel pattern.
 Data binding, Command binding and DependencyObject/DependencyProperty for Wisej.
     </description>
     <summary>

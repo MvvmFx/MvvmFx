@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
-MVVM FX is a base framework for building applications using the Model-View-ViewModel pattern.
+MVVM FX is a framework for building applications using the Model-View-ViewModel pattern.
     </description>
     <summary>
 Supports the creation of applications using the MVVM pattern for WinForms.
