@@ -27,7 +27,7 @@
 	<system.diagnostics>
 		<trace autoflush="true"/>
 		<sources>
-			<source name="MvvmFx.Windows.WindowsBase" switchName="tracing">
+			<source name="MvvmFx.Bindings.WindowsBase" switchName="tracing">
 				<listeners>
 					<add name="textlistener" />
 				</listeners>

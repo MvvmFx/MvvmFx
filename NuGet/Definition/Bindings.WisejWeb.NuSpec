@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>MvvmFx-Wisej</id>
+    <id>MvvmFx-Binding-Wisej</id>
     <title>MVVM FX - Wisej</title>
-    <tags>MVVMFX MVVM Wisej Model-View-ViewModel Presentation UI ViewModel</tags>
+    <tags>MVVMFX MVVM Wisej Model-View-ViewModel Presentation UI ViewModel Data-binding Command-binding</tags>
     <version>3.0.0</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
@@ -20,11 +20,11 @@ Command and Data binding library to support the creation of applications using t
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Windows.WisejWeb.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.xml*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net45" />
@@ -32,11 +32,11 @@ Command and Data binding library to support the creation of applications using t
     <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.xml*" target="lib\net45" />
     <!-- .NET 4.6 -->
     <!--
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Windows.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Bindings.WisejWeb.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Bindings.WisejWeb.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Bindings.WisejWeb.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Bindings.WisejWeb.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.Bindings.WisejWeb.xml*" target="lib\net46" />
     <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.dll*" target="lib\net46" />
     <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.pdb*" target="lib\net46" />
     <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net46" />
@@ -44,7 +44,7 @@ Command and Data binding library to support the creation of applications using t
     <file src="..\..\bin\Release\WisejWeb\net46\**\WindowsBase.WisejWeb.xml*" target="lib\net46" />
     -->
     <!-- Source Files for Symbol -->
-    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
     <file src="..\..\Source\Binding\**\WindowsBase.WinForms.Net45\**\*.cs" target="src" />
   </files>
 </package>

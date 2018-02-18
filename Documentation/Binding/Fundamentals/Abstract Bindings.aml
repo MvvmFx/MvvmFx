@@ -29,7 +29,7 @@
 					active, properties on the <token>BindingBase</token> cannot be modified.
 				</para>
 				<para>
-					Every MvvmFx binding has a single target object that is exposed via the <codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingBase.TargetObject</codeEntityReference>
+					Every MvvmFx binding has a single target object that is exposed via the <codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.BindingBase.TargetObject</codeEntityReference>
 					property. The target object is the object that will be updated when changes in the source(s) are detected. Importantly,
 					the means by which the property on the target object is resolved is left unspecified by the <token>BindingBase</token>
 					class. Subclasses of <token>BindingBase</token> can provide any mechanism they want to specify and resolve the
@@ -38,7 +38,7 @@
 				<para>
 					When MvvmFx detects a change in a target or source property, it does not necessarily propagate that change to the opposite
 					side of the binding. It makes the decision whether to propagate changes based on the
-					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingBase.Mode</codeEntityReference> property of
+					<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.BindingBase.Mode</codeEntityReference> property of
 					<token>BindingBase</token>, which is of type <token>BindingMode</token>.
 				</para>
 				<para>
@@ -57,7 +57,7 @@
 					As discussed in the <link xlink:href="#BindingBase">previous section</link>, all MvvmFx bindings have a single target
 					object. The <token>SingleSourceBinding</token> class is a base class for all bindings that also have a single source
 					object, which is exposed via the
-					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.SingleSourceBinding.SourceObject</codeEntityReference> property.
+					<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.SingleSourceBinding.SourceObject</codeEntityReference> property.
 				</para>
 				<para>
 					Conceptually, the <token>SingleSourceBinding</token> looks as follows:
@@ -74,7 +74,7 @@
 				</para>
 				<para>
 					Optionally, changes can be marshalled via an instance of <token>IValueConverter</token>. If an instance of this interface
-					is set on the <codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.SingleSourceBinding.Converter</codeEntityReference>
+					is set on the <codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.SingleSourceBinding.Converter</codeEntityReference>
 					property, the appropriate method will be called as changes are marshalled in either direction. For more information
 					on conversions, see <link xlink:href="209aa290-8616-41aa-96f1-b47eb3cb7205" />.
 				</para>
@@ -90,7 +90,7 @@
 			<content>
 				<para>
 					The <token>MultiSourceBinding</token> class is a base class for all bindings that also have multiple sources, which are
-					exposed via the <codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.MultiSourceBinding.Sources</codeEntityReference>
+					exposed via the <codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.MultiSourceBinding.Sources</codeEntityReference>
 					collection.
 				</para>
 				<para>
@@ -110,7 +110,7 @@
 					Given that there is no reasonable, default way to convert a single object into multiple objects, all
 					<token>MultiSourceBinding</token>s require a converter. This converter is an instance of
 					<token>IMultiSourceConverter</token> and must be assigned to the
-					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.MultiSourceBinding.Converter</codeEntityReference> property prior
+					<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.MultiSourceBinding.Converter</codeEntityReference> property prior
 					to activating the <token>MultiSourceBinding</token>. The two methods on this interface will be invoked at the appropriate
 					times when marshalling changes between the target and sources.
 				</para>

@@ -22,7 +22,7 @@
 	</Target>
 
 	<Target Name="RunTests">
-		<xunit Assembly="$(OutputPath)\MvvmFx.Windows.Specifications.dll" Xml="$(GenDir)\Tests\MvvmFx.Windows.Specifications.xml" />
+		<xunit Assembly="$(OutputPath)\MvvmFx.Bindings.Specifications.dll" Xml="$(GenDir)\Tests\MvvmFx.Bindings.Specifications.xml" />
 	</Target>
 
 	<Target Name="GenerateDocumentation">
@@ -41,7 +41,7 @@
 	</Target>
 
 	<Target Name="CreateArchives">
-		<GetAssemblyIdentity AssemblyFiles="$(OutputPath)\MvvmFx.Windows.dll">
+		<GetAssemblyIdentity AssemblyFiles="$(OutputPath)\MvvmFx.Bindings.dll">
 			<Output TaskParameter="Assemblies" ItemName="AssemblyIdentity" />
 		</GetAssemblyIdentity>
 		<CreateProperty Value="@(AssemblyIdentity -> '%(Version)')">

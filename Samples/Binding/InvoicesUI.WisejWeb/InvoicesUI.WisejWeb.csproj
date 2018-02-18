@@ -138,9 +138,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Windows.WisejWeb.Net45\MvvmFx.Windows.WisejWeb.Net45.csproj">
+    <ProjectReference Include="..\..\..\Source\Binding\MvvmFx.Bindings.WisejWeb.Net45\MvvmFx.Bindings.WisejWeb.Net45.csproj">
       <Project>{0f9b7c37-4fea-4c6b-9caa-abca77ccf60f}</Project>
-      <Name>MvvmFx.Windows.WisejWeb.Net45</Name>
+      <Name>MvvmFx.Bindings.WisejWeb.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\InvoicesBusiness\InvoicesBusiness.csproj">
       <Project>{c2869ad6-b378-4404-b662-cba9cf67a12d}</Project>

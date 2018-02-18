@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>MvvmFx-WPF</id>
+    <id>MvvmFx-Binding-WPF</id>
     <title>MVVM FX - Core</title>
-    <tags>MVVMFX MVVM WPF Model-View-ViewModel Presentation UI ViewModel</tags>
+    <tags>MVVMFX MVVM WPF Model-View-ViewModel Presentation UI ViewModel Data-binding</tags>
     <version>3.0.0</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
@@ -20,18 +20,18 @@ Data binding library to support the creation of applications using the MVVM patt
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Windows.WPF.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Windows.WPF.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Windows.WPF.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Windows.WPF.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Windows.WPF.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.xml*" target="lib\net45" />
     <!-- .NET 4.6-->
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Windows.WPF.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Windows.WPF.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Windows.WPF.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Windows.WPF.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Windows.WPF.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
   </files>
 </package>

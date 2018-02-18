@@ -18,8 +18,8 @@ CSLA .NET adapter to MVVM FX CaliburnMicro for Wisej.
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="MvvmFx-CaliburnMicro-Wisej" version="[3.0.0]" />
-      <dependency id="CSLA-Core" version="[4.5.500]" />
+      <dependency id="MvvmFx-CaliburnMicro-Wisej" version="3.0.0" />
+      <dependency id="CSLA-Core" version="4.6.100" />
     </dependencies>
   </metadata>
   <files>

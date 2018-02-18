@@ -18,7 +18,7 @@ Caliburn.Micro derivative adapted to Wisej.
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="MvvmFx-Logging" version="[3.0.0]" />
+      <dependency id="MvvmFx-Logging" version="3.0.0" />
     </dependencies>
   </metadata>
   <files>
@@ -48,6 +48,6 @@ Caliburn.Micro derivative adapted to Wisej.
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WinForms.Net45\**\*.cs" target="src" />
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WisejWeb.Net45\**\*.cs" target="src" />
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WisejWeb.Toolable.Net45\**\*.cs" target="src" />
-    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
   </files>
 </package>
