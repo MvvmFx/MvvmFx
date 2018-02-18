@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using MvvmFx.Windows.Specifications.Support.Entities;
+using MvvmFx.Bindings.Specifications.Support.Entities;
 
-namespace MvvmFx.Windows.Specifications.Support
+namespace MvvmFx.Bindings.Specifications.Support
 {
     public static class TheoryHelper
     {
@@ -10,10 +10,10 @@ namespace MvvmFx.Windows.Specifications.Support
         {
             get
             {
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.INPC.Person();
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.XxxChanged.Person();
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.SystemDOs.Person();
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.MvvmFxDOs.Person();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.INPC.Person();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.XxxChanged.Person();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.SystemDOs.Person();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.MvvmFxDOs.Person();
             }
         }
 
@@ -21,10 +21,10 @@ namespace MvvmFx.Windows.Specifications.Support
         {
             get
             {
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.INPC.Address();
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.XxxChanged.Address();
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.SystemDOs.Address();
-                yield return () => new MvvmFx.Windows.Specifications.Support.Entities.MvvmFxDOs.Address();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.INPC.Address();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.XxxChanged.Address();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.SystemDOs.Address();
+                yield return () => new MvvmFx.Bindings.Specifications.Support.Entities.MvvmFxDOs.Address();
             }
         }
     }

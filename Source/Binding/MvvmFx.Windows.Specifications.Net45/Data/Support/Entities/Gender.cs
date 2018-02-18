@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Specifications.Support.Entities
+﻿namespace MvvmFx.Bindings.Specifications.Support.Entities
 {
     public class Gender : EntityBase
     {

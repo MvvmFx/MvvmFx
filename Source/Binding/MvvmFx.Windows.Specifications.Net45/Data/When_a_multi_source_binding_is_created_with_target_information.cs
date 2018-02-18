@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support;
-using MvvmFx.Windows.Specifications.Support.Converters;
-using MvvmFx.Windows.Specifications.Support.Entities;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support;
+using MvvmFx.Bindings.Specifications.Support.Converters;
+using MvvmFx.Bindings.Specifications.Support.Entities;
 using Xunit;
 using Xunit.Extensions;
 
-namespace MvvmFx.Windows.Specifications
+namespace MvvmFx.Bindings.Specifications
 {
 	public abstract class When_a_multi_source_binding_is_created_with_target_information
 	{

@@ -1,10 +1,10 @@
 ﻿using System;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support.Entities.INPC;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support.Entities.INPC;
 using Moq;
 using Xunit;
 
-namespace MvvmFx.Windows.Specifications.Fluent
+namespace MvvmFx.Bindings.Specifications.Fluent
 {
 	public class When_binding_to_a_single_source_with_path_using_the_fluent_interface
 	{

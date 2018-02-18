@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
-namespace MvvmFx.Windows.Specifications.Support.Converters
+namespace MvvmFx.Bindings.Specifications.Support.Converters
 {
     public sealed class NameAndAddressMultiValueConverter : IMultiValueConverter
     {

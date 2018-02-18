@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Specifications.Support.Entities.MvvmFxDOs
+﻿namespace MvvmFx.Bindings.Specifications.Support.Entities.MvvmFxDOs
 {
     public class Person : DependencyObject, IPerson
     {

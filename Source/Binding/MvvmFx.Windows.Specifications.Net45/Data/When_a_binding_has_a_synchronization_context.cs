@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support;
-using MvvmFx.Windows.Specifications.Support.Converters;
-using MvvmFx.Windows.Specifications.Support.Entities;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support;
+using MvvmFx.Bindings.Specifications.Support.Converters;
+using MvvmFx.Bindings.Specifications.Support.Entities;
 using Moq;
 using Xunit.Extensions;
 
-namespace MvvmFx.Windows.Specifications
+namespace MvvmFx.Bindings.Specifications
 {
 	public class When_a_binding_has_a_synchronization_context
 	{

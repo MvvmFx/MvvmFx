@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using Moq;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using Xunit;
 
-namespace MvvmFx.Windows.Specifications
+namespace MvvmFx.Bindings.Specifications
 {
 	public class When_a_binding_manager_is_created
 	{

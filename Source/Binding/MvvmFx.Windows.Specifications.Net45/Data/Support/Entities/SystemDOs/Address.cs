@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Specifications.Support.Entities.SystemDOs
+﻿namespace MvvmFx.Bindings.Specifications.Support.Entities.SystemDOs
 {
     public class Address : System.Windows.DependencyObject, IAddress
     {

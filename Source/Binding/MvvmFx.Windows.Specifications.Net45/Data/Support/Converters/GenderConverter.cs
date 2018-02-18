@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support.Entities;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support.Entities;
 
-namespace MvvmFx.Windows.Specifications.Support.Converters
+namespace MvvmFx.Bindings.Specifications.Support.Converters
 {
     public class GenderConverter : IValueConverter
     {
