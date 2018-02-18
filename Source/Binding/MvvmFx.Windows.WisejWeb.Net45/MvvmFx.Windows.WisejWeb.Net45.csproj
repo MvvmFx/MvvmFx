@@ -7,8 +7,8 @@
     <ProjectGuid>{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFx.Windows</RootNamespace>
-    <AssemblyName>MvvmFx.Windows.WisejWeb</AssemblyName>
+    <RootNamespace>MvvmFx.Bindings</RootNamespace>
+    <AssemblyName>MvvmFx.Bindings.WisejWeb</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -32,7 +32,7 @@
     <DefineConstants>TRACE;MVVMFX;WISEJ</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WisejWeb\net45\MvvmFx.Windows.WisejWeb.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WisejWeb\net45\MvvmFx.Bindings.WisejWeb.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>

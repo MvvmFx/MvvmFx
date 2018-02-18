@@ -7,8 +7,8 @@
     <ProjectGuid>{19C51D9F-FAFA-44CA-B36A-423E77E0EE60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFx.Windows.Specifications</RootNamespace>
-    <AssemblyName>MvvmFx.Windows.Specifications</AssemblyName>
+    <RootNamespace>MvvmFx.Bindings.Specifications</RootNamespace>
+    <AssemblyName>MvvmFx.Bindings.Specifications</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

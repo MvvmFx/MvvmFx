@@ -7,7 +7,7 @@
     <ProjectGuid>{1501BF1F-0406-411F-A47B-446B9989CD91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFx.Windows</RootNamespace>
+    <RootNamespace>MvvmFx.Bindings</RootNamespace>
     <AssemblyName>MvvmFx.DataBinding.WinForms</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
