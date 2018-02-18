@@ -10,6 +10,7 @@
     using Csla.Core;
     using Csla.Reflection;
     using Csla.Rules;
+    using ICloneable = System.ICloneable;
 
     /// <summary>
     /// Base class used to create ScreenWithModel objects that implement their own commands/verbs/actions.
