@@ -24,7 +24,7 @@
 //
 using System.ComponentModel;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// Expression

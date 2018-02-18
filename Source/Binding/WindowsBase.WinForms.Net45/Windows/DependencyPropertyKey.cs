@@ -27,7 +27,7 @@
 //
 using System;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// DependencyPropertyKey

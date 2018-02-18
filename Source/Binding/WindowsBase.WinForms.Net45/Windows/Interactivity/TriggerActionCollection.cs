@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MvvmFx.Windows.Interactivity
+namespace MvvmFx.Bindings.Interactivity
 {
     /// <summary>
     /// 

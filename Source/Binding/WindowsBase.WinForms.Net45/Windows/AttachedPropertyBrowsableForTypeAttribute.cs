@@ -25,7 +25,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// AttachedPropertyBrowsableForTypeAttribute

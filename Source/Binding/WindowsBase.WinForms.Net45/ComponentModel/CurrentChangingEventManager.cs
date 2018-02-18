@@ -24,7 +24,7 @@
 //
 using System;
 using System.Diagnostics.CodeAnalysis;
-using MvvmFx.Windows;
+using MvvmFx.Bindings;
 
 namespace MvvmFx.ComponentModel
 {

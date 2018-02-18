@@ -28,7 +28,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// DependencyObjectType

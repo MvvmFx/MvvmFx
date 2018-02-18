@@ -34,7 +34,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using MvvmFx.ComponentModel;
 
-namespace MvvmFx.Windows.Forms
+namespace MvvmFx.Bindings.Forms
 {
     /// <summary>
     /// Represents a UserControl that participates in the dependency property system.

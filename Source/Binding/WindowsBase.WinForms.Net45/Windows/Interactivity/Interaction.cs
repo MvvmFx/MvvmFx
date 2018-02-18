@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFx.Windows.Interactivity
+namespace MvvmFx.Bindings.Interactivity
 {
     /// <summary>
     /// /// Static class that owns the Triggers and Behaviors attached properties. Handles propagation of AssociatedObject change notifications.
