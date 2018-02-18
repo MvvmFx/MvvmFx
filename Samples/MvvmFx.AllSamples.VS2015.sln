@@ -83,11 +83,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WisejWeb", "WisejWeb", "{9F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net45", "..\Source\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Net45", "..\Source\Binding\MvvmFx.Windows.Net45\MvvmFx.Windows.Net45.csproj", "{2728C8A9-7304-46F3-8A93-F0A53D91BF21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Net45", "..\Source\Binding\MvvmFx.Bindings.Net45\MvvmFx.Bindings.Net45.csproj", "{2728C8A9-7304-46F3-8A93-F0A53D91BF21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.Net45", "..\Source\Binding\MvvmFx.Windows.WinForms.Net45\MvvmFx.Windows.WinForms.Net45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WinForms.Net45", "..\Source\Binding\MvvmFx.Bindings.WinForms.Net45\MvvmFx.Bindings.WinForms.Net45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WPF.Net45", "..\Source\Binding\MvvmFx.Windows.WPF.Net45\MvvmFx.Windows.WPF.Net45.csproj", "{6A8FF0B3-3B49-4FEE-8DE6-374F8EFE2A7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WPF.Net45", "..\Source\Binding\MvvmFx.Bindings.WPF.Net45\MvvmFx.Bindings.WPF.Net45.csproj", "{6A8FF0B3-3B49-4FEE-8DE6-374F8EFE2A7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net45", "..\Source\Binding\WindowsBase.WinForms.Net45\WindowsBase.WinForms.Net45.csproj", "{33290B49-5D4B-47F3-8C03-D203595C9F12}"
 EndProject
@@ -109,7 +109,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WisejWeb.Net45"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WisejWeb.Net45", "..\Source\Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WisejWeb.Net45", "..\Source\Binding\MvvmFx.Windows.WisejWeb.Net45\MvvmFx.Windows.WisejWeb.Net45.csproj", "{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WisejWeb.Net45", "..\Source\Binding\MvvmFx.Bindings.WisejWeb.Net45\MvvmFx.Bindings.WisejWeb.Net45.csproj", "{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WisejWeb.Net45", "..\Source\CaliburnMicro\CaliburnMicro.WisejWeb.Net45\CaliburnMicro.WisejWeb.Net45.csproj", "{1CA317B0-D30D-494B-83A4-20FBBBE71E22}"
 EndProject

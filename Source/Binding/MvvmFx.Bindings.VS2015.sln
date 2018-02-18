@@ -5,23 +5,23 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data and Command Binding", "Data and Command Binding", "{C347E80D-BAC0-42B7-B830-98AC8E662D8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Net45", "MvvmFx.Windows.Net45\MvvmFx.Windows.Net45.csproj", "{2728C8A9-7304-46F3-8A93-F0A53D91BF21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Net45", "MvvmFx.Bindings.Net45\MvvmFx.Bindings.Net45.csproj", "{2728C8A9-7304-46F3-8A93-F0A53D91BF21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Net46", "MvvmFx.Windows.Net46\MvvmFx.Windows.Net46.csproj", "{9BB1AB21-B9A3-4066-A591-4E364217143C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Net46", "MvvmFx.Bindings.Net46\MvvmFx.Bindings.Net46.csproj", "{9BB1AB21-B9A3-4066-A591-4E364217143C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Specifications.Net45", "MvvmFx.Windows.Specifications.Net45\MvvmFx.Windows.Specifications.Net45.csproj", "{19C51D9F-FAFA-44CA-B36A-423E77E0EE60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Specifications.Net45", "MvvmFx.Bindings.Specifications.Net45\MvvmFx.Bindings.Specifications.Net45.csproj", "{19C51D9F-FAFA-44CA-B36A-423E77E0EE60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.Specifications.Net46", "MvvmFx.Windows.Specifications.Net46\MvvmFx.Windows.Specifications.Net46.csproj", "{4F4FE888-7A90-405B-9805-7069F1B44E39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Specifications.Net46", "MvvmFx.Bindings.Specifications.Net46\MvvmFx.Bindings.Specifications.Net46.csproj", "{4F4FE888-7A90-405B-9805-7069F1B44E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.Net45", "MvvmFx.Windows.WinForms.Net45\MvvmFx.Windows.WinForms.Net45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WinForms.Net45", "MvvmFx.Bindings.WinForms.Net45\MvvmFx.Bindings.WinForms.Net45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WinForms.Net46", "MvvmFx.Windows.WinForms.Net46\MvvmFx.Windows.WinForms.Net46.csproj", "{1136F6D7-1EAC-4C0F-BE68-6EC6A9168F51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WinForms.Net46", "MvvmFx.Bindings.WinForms.Net46\MvvmFx.Bindings.WinForms.Net46.csproj", "{1136F6D7-1EAC-4C0F-BE68-6EC6A9168F51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WisejWeb.Net45", "MvvmFx.Windows.WisejWeb.Net45\MvvmFx.Windows.WisejWeb.Net45.csproj", "{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WisejWeb.Net45", "MvvmFx.Bindings.WisejWeb.Net45\MvvmFx.Bindings.WisejWeb.Net45.csproj", "{0F9B7C37-4FEA-4C6B-9CAA-ABCA77CCF60F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WPF.Net45", "MvvmFx.Windows.WPF.Net45\MvvmFx.Windows.WPF.Net45.csproj", "{6A8FF0B3-3B49-4FEE-8DE6-374F8EFE2A7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WPF.Net45", "MvvmFx.Bindings.WPF.Net45\MvvmFx.Bindings.WPF.Net45.csproj", "{6A8FF0B3-3B49-4FEE-8DE6-374F8EFE2A7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Windows.WPF.Net46", "MvvmFx.Windows.WPF.Net46\MvvmFx.Windows.WPF.Net46.csproj", "{8910D648-8194-474A-8EBA-F911E3DFECB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WPF.Net46", "MvvmFx.Bindings.WPF.Net46\MvvmFx.Bindings.WPF.Net46.csproj", "{8910D648-8194-474A-8EBA-F911E3DFECB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple DataBinding", "Simple DataBinding", "{06D3B667-C124-4CAE-A999-D37B37987566}"
 EndProject

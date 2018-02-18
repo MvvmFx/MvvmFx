@@ -10,7 +10,7 @@
 			<content>
 				<para>
 					MvvmFx bindings can operate in one of three modes, which can be set via the
-					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingBase.Mode</codeEntityReference> property. Changing this
+					<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.BindingBase.Mode</codeEntityReference> property. Changing this
 					property affects the direction in which changes propagate between the target and source objects of the binding. This
 					topic discusses each of the different <token>BindingMode</token>s in detail.
 				</para>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <metadata>
-    <id>MvvmFx-WinForms</id>
+    <id>MvvmFx-Binding-WinForms</id>
     <title>MVVM FX - WinForms</title>
-    <tags>MVVMFX MVVM Windows-Forms WinForms Model-View-ViewModel Presentation UI ViewModel</tags>
+    <tags>MVVMFX MVVM Windows-Forms WinForms Model-View-ViewModel Presentation UI ViewModel Data-binding Command-binding</tags>
     <version>3.0.0</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
@@ -20,29 +20,29 @@ Command and Data binding library to support the creation of applications using t
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Windows.WinForms.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Windows.WinForms.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Windows.WinForms.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Windows.WinForms.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Windows.WinForms.xml*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Bindings.WinForms.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Bindings.WinForms.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Bindings.WinForms.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Bindings.WinForms.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.Bindings.WinForms.xml*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\WindowsBase.WinForms.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\WindowsBase.WinForms.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\WindowsBase.WinForms.resources.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\WindowsBase.WinForms.resources.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\WindowsBase.WinForms.xml*" target="lib\net45" />
     <!-- .NET 4.6-->
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Windows.WinForms.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Windows.WinForms.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Windows.WinForms.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Windows.WinForms.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Windows.WinForms.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Bindings.WinForms.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Bindings.WinForms.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Bindings.WinForms.resources.dll*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Bindings.WinForms.resources.pdb*" target="lib\net46" />
+    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.Bindings.WinForms.xml*" target="lib\net46" />
     <file src="..\..\bin\Release\WinForms\net46\**\WindowsBase.WinForms.dll*" target="lib\net46" />
     <file src="..\..\bin\Release\WinForms\net46\**\WindowsBase.WinForms.pdb*" target="lib\net46" />
     <file src="..\..\bin\Release\WinForms\net46\**\WindowsBase.WinForms.resources.dll*" target="lib\net46" />
     <file src="..\..\bin\Release\WinForms\net46\**\WindowsBase.WinForms.resources.pdb*" target="lib\net46" />
     <file src="..\..\bin\Release\WinForms\net46\**\WindowsBase.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
-    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
     <file src="..\..\Source\Binding\**\WindowsBase.WinForms.Net45\**\*.cs" target="src" />
   </files>
 </package>

@@ -45,19 +45,11 @@ function ChangeNuSpecVersion( $nuSpecFilePath, $version="0.0.0.0" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }
-            if ( $idAttribute.Value -eq "MvvmFx-Wisej" )
-            {
-                $dependency.SetAttributeValue( "version", "[$version]" )
-            }
-            if ( $idAttribute.Value -eq "MvvmFx-WinForms" )
+            if ( $idAttribute.Value -eq "MvvmFx-CaliburnMicro-WinForms" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }
             if ( $idAttribute.Value -eq "MvvmFx-CaliburnMicro-Wisej" )
-            {
-                $dependency.SetAttributeValue( "version", "[$version]" )
-            }
-            if ( $idAttribute.Value -eq "MvvmFx-CaliburnMicro-WinForms" )
             {
                 $dependency.SetAttributeValue( "version", "[$version]" )
             }
@@ -134,7 +126,7 @@ try
     ## Before building NuGet package, extract MvvmFx Version number and update .NuSpec to automate versioning of .NuSpec document
     ## - JH: Not sure if I should get direct from source code file or from file version of compiled library instead.
     ## - JH: Going with product version in assembly for now
-    $referenceVersionFxAssembly = Get-ChildItem "$pathToBin\Desktop\net45\MvvmFx.Windows.dll" | Select-Object -First 1
+    $referenceVersionFxAssembly = Get-ChildItem "$pathToBin\Desktop\net45\MvvmFx.Bindings.dll" | Select-Object -First 1
     ## - JH: If $preRelease is specified, then append it with a dash following the 3rd component of the quad-dotted-version number
     ##       Refer: http://docs.nuget.org/docs/Reference/Versioning
     if ( [System.String]::IsNullOrEmpty( $preRelease ) -ne $true )

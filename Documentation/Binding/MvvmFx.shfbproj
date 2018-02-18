@@ -18,8 +18,8 @@
     <OutputPath>..\</OutputPath>
     <HtmlHelpName>MVVM Base Framework</HtmlHelpName>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\bin\Release\Client\MvvmFx.Windows.dll" />
-      <DocumentationSource sourceFile="..\bin\Release\Client\MvvmFx.Windows.xml" />
+      <DocumentationSource sourceFile="..\bin\Release\Client\MvvmFx.Bindings.dll" />
+      <DocumentationSource sourceFile="..\bin\Release\Client\MvvmFx.Bindings.xml" />
     </DocumentationSources>
     <FrameworkVersion>.NET 4.0.30319</FrameworkVersion>
     <HelpTitle>MVVM Base Framework</HelpTitle>
@@ -28,9 +28,9 @@
     <MissingTags>Summary, Parameter, Returns, Namespace, TypeParameter</MissingTags>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="(global)" isDocumented="False" />
-<NamespaceSummaryItem name="MvvmFx.Windows" isDocumented="True">Base library for building Windows Forms and Visual WebGUI applications using the MVVM design pattern.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="MvvmFx.Windows.Input" isDocumented="True">Contains types in the MvvmFx command and comand binding module.</NamespaceSummaryItem>
-<NamespaceSummaryItem name="MvvmFx.Windows.Data" isDocumented="True">Contains types in the MvvmFx data binding module.</NamespaceSummaryItem></NamespaceSummaries>
+<NamespaceSummaryItem name="MvvmFx.Bindings" isDocumented="True">Base library for building Windows Forms and Visual WebGUI applications using the MVVM design pattern.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="MvvmFx.Bindings.Input" isDocumented="True">Contains types in the MvvmFx command and comand binding module.</NamespaceSummaryItem>
+<NamespaceSummaryItem name="MvvmFx.Bindings.Data" isDocumented="True">Contains types in the MvvmFx data binding module.</NamespaceSummaryItem></NamespaceSummaries>
     <VisibleItems>Attributes, ExplicitInterfaceImplementations, InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
     <Preliminary>False</Preliminary>
     <HelpFileVersion>2.0.0.0</HelpFileVersion>

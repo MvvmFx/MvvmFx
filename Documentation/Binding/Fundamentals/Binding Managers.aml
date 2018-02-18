@@ -18,7 +18,7 @@
 					<para>
 						Although <token>BindingManager</token> implements the <token>IBindingContainer</token> interface, it is always a
 						root-level container. As such, its implementation of
-						<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.IBindingContainer.Container</codeEntityReference> will always
+						<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.IBindingContainer.Container</codeEntityReference> will always
 						yield <literal>null</literal>.
 					</para>
 				</alert>
@@ -29,7 +29,7 @@
 			<content>
 				<para>
 					The set of bindings being managed by a <token>BindingManager</token> are exposed through its
-					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingManager.Bindings</codeEntityReference> property. This collection can
+					<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.BindingManager.Bindings</codeEntityReference> property. This collection can
 					be added to and removed from at any time. When an instance of <token>BindingBase</token> is added to this collection, it
 					is immediately activated. Once activated, that binding cannot be modified. When an instance is removed, it is deactivated,
 					whereafter it can be modified and perhaps added back into a <token>BindingManager</token>.
@@ -37,7 +37,7 @@
 				<alert class="caution">
 					Since the collection of bindings exposed by a <token>BindingManager</token> is modifiable, it is recommended that you
 					limit the accessibility of your <token>BindingManager</token> instances, and do not pass around a reference to the
-					<codeEntityReference>P:MvvmFx.Windows.WindowsBase.Data.BindingManager.Bindings</codeEntityReference> collection.
+					<codeEntityReference>P:MvvmFx.Bindings.WindowsBase.Data.BindingManager.Bindings</codeEntityReference> collection.
 				</alert>
 			</content>
 		</section>

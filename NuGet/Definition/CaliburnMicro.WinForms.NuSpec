@@ -18,7 +18,7 @@ Caliburn.Micro derivative adapted to WinForms.
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="MvvmFx-Logging" version="[3.0.0]" />
+      <dependency id="MvvmFx-Logging" version="3.0.0" />
     </dependencies>
   </metadata>
   <files>
@@ -38,6 +38,6 @@ Caliburn.Micro derivative adapted to WinForms.
     <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.DataBinding.WinForms.xml*" target="lib\net46" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WinForms.Net45\**\*.cs" target="src" />
-    <file src="..\..\Source\Binding\**\MvvmFx.Windows.Net45\**\*.cs" target="src" />
+    <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
   </files>
 </package>

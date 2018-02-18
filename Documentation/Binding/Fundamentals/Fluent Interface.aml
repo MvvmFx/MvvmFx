@@ -18,9 +18,9 @@
 			<title>Using the Fluent Interface</title>
 			<content>
 				<para>
-					To use the MvvmFx fluent interface, import the <codeInline>MvvmFx.Windows.WindowsBase.Data</codeInline> namespace:
+					To use the MvvmFx fluent interface, import the <codeInline>MvvmFx.Bindings.WindowsBase.Data</codeInline> namespace:
 <code language="cs">
-using MvvmFx.Windows.WindowsBase.Data;
+using MvvmFx.Bindings.WindowsBase.Data;
 </code>
 				</para>
 				<para>
