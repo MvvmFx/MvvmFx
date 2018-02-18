@@ -28,9 +28,11 @@ CSLA .NET adapter to MVVM FX CaliburnMicro for Wisej.
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.xml*" target="lib\net45" />
     <!-- .NET 4.6 -->
-    <!-- <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.dll*" target="lib\net46" />
+    <!--
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.dll*" target="lib\net46" />
     <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.xml*" target="lib\net46" /> -->
+    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.Csla.WisejWeb.xml*" target="lib\net46" />
+    -->
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.Csla.WinForms.Net45\**\*.cs" target="src" />
   </files>
