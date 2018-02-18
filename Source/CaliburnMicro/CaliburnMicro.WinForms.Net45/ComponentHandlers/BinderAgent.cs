@@ -8,7 +8,7 @@
     using Wisej.Web;
     using Component = Wisej.Web.Component;
 #endif
-    using MvvmFx.Windows.Data;
+    using MvvmFx.Bindings.Data;
 
     /// <summary>
     /// Represents the binding method for a control type that wraps a <see cref="Component"/>.

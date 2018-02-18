@@ -7,7 +7,7 @@
 #else
     using Wisej.Web;
 #endif
-    using MvvmFx.Windows.Data;
+    using MvvmFx.Bindings.Data;
 
     /// <summary>
     /// Represents the helper method to handle component child items for a particular control type.
