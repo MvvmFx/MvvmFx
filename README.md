@@ -3,9 +3,10 @@
 The MVVM FX project targets Windows Forms and [Wisej](http://wisej.com).
 
 The project focus on providing a development framework based on these libraries:
-- Caliburn.Micro MVVM framework
-- bound controls library
-- general purpose data binding library
+- General purpose data bindind and command binding library
+- Bound controls anc components
+- Caliburn.Micro MVVM framework ported to WinForms/Wisej
+- Common logger for the framework
 
 The project's main goal is the MVVM framework. Caliburn.Micro is one of the best MVVM frameworks around (some would say it is the best). Based on a partial port from [Dan Durland](http://caliburnmicro.codeplex.com/SourceControl/network/forks/ddurland/CaliburnMicroWinForms), the missing features were added, bit by bit.
 
@@ -15,7 +16,20 @@ Due to Windows Forms binding shortcomings, a general purpose binding library is 
 
 ## Project Status
 
-Version 3.0 is approaching.
+Version 3.0.0 published on 18-02-2018.
+
+NuGet packages:
+- MvvmFx-Bindings-WinForms
+- MvvmFx-Bindings-Wisej
+- MvvmFx-BoundControls-WinForms
+- MvvmFx-BoundControls-Wisej
+- MvvmFx-CaliburnMicro-Csla-WinForms
+- MvvmFx-CaliburnMicro-Csla-Wisej
+- MvvmFx-CaliburnMicro-WinForms
+- MvvmFx-CaliburnMicro-Wisej
+- MvvmFx-Log4netLogger
+- MvvmFx-Logging
+- MvvmFx-NLogLogger
 
 New [Sample MvvmFx WinForms/Wisej application](http://github.com/MvvmFx/InterwayDocs) is an important step to test and refine concepts.
 
