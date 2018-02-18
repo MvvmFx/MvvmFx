@@ -32,9 +32,9 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using MvvmFx.Windows.Properties;
+using MvvmFx.Bindings.Properties;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Generic IBindingList implementation that can be instantiated with reference type T.

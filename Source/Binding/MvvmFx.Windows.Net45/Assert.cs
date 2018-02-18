@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     internal static class Assert
     {

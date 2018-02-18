@@ -3,9 +3,9 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
-using MvvmFx.Windows.Properties;
+using MvvmFx.Bindings.Properties;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// A base class for all binding types provided with MvvmFx.

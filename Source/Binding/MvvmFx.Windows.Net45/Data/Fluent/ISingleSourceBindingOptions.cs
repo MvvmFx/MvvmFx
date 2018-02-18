@@ -1,5 +1,5 @@
 ﻿
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Provides binding options for single-source binding fluent expressions.

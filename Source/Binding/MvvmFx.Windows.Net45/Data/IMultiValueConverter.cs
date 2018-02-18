@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Provides a way to convert values for a <see cref="MultiSourceBinding"/>.

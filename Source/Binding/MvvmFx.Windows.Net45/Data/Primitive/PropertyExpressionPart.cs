@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using MvvmFx.Windows.Diagnostics;
+using MvvmFx.Bindings.Diagnostics;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Represents a single part in the chain of parts held in a <see cref="PropertyExpression"/>.

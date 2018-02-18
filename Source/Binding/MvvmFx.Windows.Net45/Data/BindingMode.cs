@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Data
+﻿namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Defines the various modes a <see cref="BindingBase"/> can operate in.

@@ -1,5 +1,5 @@
 ﻿
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Allows selection of a converter for a binding.

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using MvvmFx.Windows.Diagnostics;
+using MvvmFx.Bindings.Diagnostics;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// A <see cref="PropertyExpression"/> that accepts a <see cref="String"/> in standard property accessor syntax.
