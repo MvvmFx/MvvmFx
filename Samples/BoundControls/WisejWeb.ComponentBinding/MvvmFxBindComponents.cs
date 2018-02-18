@@ -1,8 +1,8 @@
 ﻿using BoundControls.Business;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using MvvmFx.Controls.WisejWeb;
 using Wisej.Web;
-using Binding = MvvmFx.Windows.Data.Binding;
+using Binding = MvvmFx.Bindings.Data.Binding;
 using Control = Wisej.Web.Control;
 using IBindableComponent = Wisej.Web.IBindableComponent;
 using MenuItem = Wisej.Web.MenuItem;

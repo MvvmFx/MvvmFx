@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Globalization;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using PerformanceTests.Business;
 
 namespace PerformanceTests

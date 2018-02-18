@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 #if WISEJ
 using Wisej.Web;
 using LogManager = MvvmFx.Controls.WisejWeb.LogManager;

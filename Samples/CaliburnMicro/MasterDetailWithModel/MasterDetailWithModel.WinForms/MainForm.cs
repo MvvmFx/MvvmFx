@@ -6,7 +6,7 @@ using Wisej.Web;
 using System.Windows.Forms;
 #endif
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace MasterDetailWithModel
 {

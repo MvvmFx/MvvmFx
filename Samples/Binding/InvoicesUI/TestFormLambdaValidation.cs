@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Forms;
 using InvoicesBusiness;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace InvoicesUI
 {

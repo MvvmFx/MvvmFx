@@ -3,8 +3,8 @@ using System.ComponentModel;
 using CslaSample.Business;
 using CslaSample.Framework;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 #if WINFORMS
 using DialogResult = System.Windows.Forms.DialogResult;
 using MessageBox = System.Windows.Forms.MessageBox;

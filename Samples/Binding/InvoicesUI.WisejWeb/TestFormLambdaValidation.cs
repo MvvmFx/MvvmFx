@@ -2,7 +2,7 @@
 using System.Globalization;
 using Wisej.Web;
 using InvoicesBusiness;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace InvoicesUI.WisejWeb
 {

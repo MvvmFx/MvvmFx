@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmFx.Windows.Input;
+using MvvmFx.Bindings.Input;
 
 namespace ConsoleTests
 {

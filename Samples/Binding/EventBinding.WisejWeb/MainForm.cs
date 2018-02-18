@@ -1,9 +1,9 @@
 ﻿using System;
 using Wisej.Web;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Input;
-//using BoundCommand = MvvmFx.Windows.Input.BoundCommand;
-//using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Input;
+//using BoundCommand = MvvmFx.Bindings.Input.BoundCommand;
+//using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace EventBinding.WisejWeb
 {

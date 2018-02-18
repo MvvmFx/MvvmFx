@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 using DpTests.Entities.SystemDOs;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 // http://tomsundev.wordpress.com/category/articles/simplified-declaration-of-dependency-properties/
 

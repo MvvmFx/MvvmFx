@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using MvvmFx.Windows;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings;
+using MvvmFx.Bindings.Data;
 
 namespace InvoicesUI
 {

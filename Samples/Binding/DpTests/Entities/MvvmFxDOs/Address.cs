@@ -1,15 +1,15 @@
 ﻿namespace DpTests.Entities.MvvmFxDOs
 {
-    public class Address : MvvmFx.Windows.DependencyObject, IAddress
+    public class Address : MvvmFx.Bindings.DependencyObject, IAddress
     {
-        public static readonly MvvmFx.Windows.DependencyProperty Line1Property =
-            MvvmFx.Windows.DependencyProperty.Register("Line1", typeof(string), typeof(Address));
+        public static readonly MvvmFx.Bindings.DependencyProperty Line1Property =
+            MvvmFx.Bindings.DependencyProperty.Register("Line1", typeof(string), typeof(Address));
 
-        public static readonly MvvmFx.Windows.DependencyProperty Line2Property =
-            MvvmFx.Windows.DependencyProperty.Register("Line2", typeof(string), typeof(Address));
+        public static readonly MvvmFx.Bindings.DependencyProperty Line2Property =
+            MvvmFx.Bindings.DependencyProperty.Register("Line2", typeof(string), typeof(Address));
 
-        public static readonly MvvmFx.Windows.DependencyProperty Line3Property =
-            MvvmFx.Windows.DependencyProperty.Register("Line3", typeof(string), typeof(Address));
+        public static readonly MvvmFx.Bindings.DependencyProperty Line3Property =
+            MvvmFx.Bindings.DependencyProperty.Register("Line3", typeof(string), typeof(Address));
 
         public string Line1
         {

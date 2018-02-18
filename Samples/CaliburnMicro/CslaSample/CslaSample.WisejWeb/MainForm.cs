@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Wisej.Web;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace CslaSample
 {

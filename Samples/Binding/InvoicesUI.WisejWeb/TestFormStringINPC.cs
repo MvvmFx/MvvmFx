@@ -2,8 +2,8 @@
 using System.Globalization;
 using Wisej.Web;
 using InvoicesBusiness;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace InvoicesUI.WisejWeb
 {

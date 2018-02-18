@@ -1,4 +1,4 @@
-﻿using MvvmFx.Windows;
+﻿using MvvmFx.Bindings;
 
 namespace DpTests.Entities.MvvmFxDOs
 {
