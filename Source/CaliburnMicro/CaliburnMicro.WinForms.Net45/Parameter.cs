@@ -1,7 +1,7 @@
 ﻿namespace MvvmFx.CaliburnMicro
 {
     using System;
-    using MvvmFx.Windows.Data;
+    using MvvmFx.Bindings.Data;
 
     /// <summary>
     /// Represents a parameter of an <see cref="ActionMessage"/>.

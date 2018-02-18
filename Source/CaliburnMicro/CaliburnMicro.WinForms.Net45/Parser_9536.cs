@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 #if WEBGUI
 using Gizmox.WebGUI.Forms;
 using FrameworkElement = Gizmox.WebGUI.Forms.Control;

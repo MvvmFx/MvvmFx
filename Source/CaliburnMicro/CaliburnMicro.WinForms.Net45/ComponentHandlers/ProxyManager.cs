@@ -9,7 +9,7 @@
     using Wisej.Web;
     using Component = Wisej.Web.Component;
 #endif
-    using MvvmFx.Windows.Data;
+    using MvvmFx.Bindings.Data;
 
     /// <summary>
     /// Used to configure the proxy agents used to wrap <see cref="Component"/> and allow bindings and actions.
