@@ -1,5 +1,5 @@
 ﻿
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Allows a binding to be activated.

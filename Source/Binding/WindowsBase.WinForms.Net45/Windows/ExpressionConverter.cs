@@ -26,7 +26,7 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// ExpressionConverter

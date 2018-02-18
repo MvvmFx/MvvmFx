@@ -5,9 +5,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq.Expressions;
 using System.Reflection;
-using MvvmFx.Windows.Properties;
+using MvvmFx.Bindings.Properties;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// A <see cref="PropertyExpression"/> that uses a <see cref="LambdaExpression"/> to resolve its property.

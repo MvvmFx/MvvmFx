@@ -35,7 +35,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using MvvmFx.ComponentModel;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// Represents an object that participates in the dependency property system.

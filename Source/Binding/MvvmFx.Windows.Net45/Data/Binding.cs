@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Connects a target property to a single source property using simple path-formatted strings to resolve the bound properties on both

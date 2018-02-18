@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Specifications.Support.Entities.INPC
+﻿namespace MvvmFx.Bindings.Specifications.Support.Entities.INPC
 {
     public class Address : EntityBase, IAddress
     {

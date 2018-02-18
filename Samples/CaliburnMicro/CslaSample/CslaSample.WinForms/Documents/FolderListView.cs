@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace CslaSample.Documents
 {

@@ -1,5 +1,5 @@
 ﻿using System;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace CslaSample.Framework
 {

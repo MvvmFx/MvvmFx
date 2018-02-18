@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Allows subsequent sources to be specified in a multi-binding fluent expression.

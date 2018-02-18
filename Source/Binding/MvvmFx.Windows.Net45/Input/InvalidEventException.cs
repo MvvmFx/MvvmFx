@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Exception that is thrown when the event name isn't valid for a given source object type.

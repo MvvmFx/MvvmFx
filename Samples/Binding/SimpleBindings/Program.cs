@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using BusinessObjects;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace SimpleBindings
 {

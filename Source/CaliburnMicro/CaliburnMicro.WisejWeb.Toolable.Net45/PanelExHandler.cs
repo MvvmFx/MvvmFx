@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using Wisej.Web;
 
 namespace MvvmFx.CaliburnMicro.WisejWeb.Toolable

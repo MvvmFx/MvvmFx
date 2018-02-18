@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support.Converters;
-using MvvmFx.Windows.Specifications.Support.Entities;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support.Converters;
+using MvvmFx.Bindings.Specifications.Support.Entities;
 using Xunit;
 using Xunit.Extensions;
 
-namespace MvvmFx.Windows.Specifications
+namespace MvvmFx.Bindings.Specifications
 {
 	public class When_a_binding_is_active
 	{
@@ -32,8 +32,8 @@ namespace MvvmFx.Windows.Specifications
 		{
 			get
 			{
-				yield return new WeakReference(new MvvmFx.Windows.Specifications.Support.Entities.INPC.Person());
-				yield return new WeakReference(new MvvmFx.Windows.Specifications.Support.Entities.XxxChanged.Person());
+				yield return new WeakReference(new MvvmFx.Bindings.Specifications.Support.Entities.INPC.Person());
+				yield return new WeakReference(new MvvmFx.Bindings.Specifications.Support.Entities.XxxChanged.Person());
 			}
 		}
 
@@ -41,8 +41,8 @@ namespace MvvmFx.Windows.Specifications
 		{
 			get
 			{
-				yield return new WeakReference(new MvvmFx.Windows.Specifications.Support.Entities.INPC.Address());
-				yield return new WeakReference(new MvvmFx.Windows.Specifications.Support.Entities.XxxChanged.Address());
+				yield return new WeakReference(new MvvmFx.Bindings.Specifications.Support.Entities.INPC.Address());
+				yield return new WeakReference(new MvvmFx.Bindings.Specifications.Support.Entities.XxxChanged.Address());
 			}
 		}
 

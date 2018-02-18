@@ -2,7 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Connects a target property to multiple source properties using a lambda expression to resolve the target property.

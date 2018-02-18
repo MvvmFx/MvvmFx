@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using MvvmFx.Windows.Properties;
+using MvvmFx.Bindings.Properties;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Represents an expression that resolves to a property in an object.

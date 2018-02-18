@@ -7,9 +7,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
-using MvvmFx.Windows.Properties;
+using MvvmFx.Bindings.Properties;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Manages a collection of <see cref="CommandBinding"/> instances.

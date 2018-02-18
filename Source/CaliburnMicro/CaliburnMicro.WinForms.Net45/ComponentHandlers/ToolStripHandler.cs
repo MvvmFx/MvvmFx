@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Reflection;
     using System.Windows.Forms;
-    using MvvmFx.Windows.Data;
+    using MvvmFx.Bindings.Data;
 
     /// <summary>
     /// Proxy agent for <see cref="ToolStrip"/> and binder agent for <see cref="ToolStripItemProxy"/>.

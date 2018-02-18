@@ -1,4 +1,4 @@
-﻿namespace MvvmFx.Windows.Interactivity
+﻿namespace MvvmFx.Bindings.Interactivity
 {
     /// <summary>
     /// Represents an attachable object that encapsulates a unit of functionality.
@@ -7,7 +7,7 @@
     public abstract class TriggerAction<T> : TriggerAction where T : IDependencyObject
     {
         /// <summary>
-        /// Gets the object to which this <see cref="T:MvvmFx.Windows.Interactivity.TriggerAction`1"/> is attached.
+        /// Gets the object to which this <see cref="T:MvvmFx.Bindings.Interactivity.TriggerAction`1"/> is attached.
         /// </summary>
         /// <value>
         /// The associated object.

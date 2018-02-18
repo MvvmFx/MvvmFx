@@ -1,8 +1,8 @@
 ﻿using System;
 using DpTests.Entities.MvvmFxDOs;
 using MvvmFx.ComponentModel;
-using MvvmFx.Windows;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings;
+using MvvmFx.Bindings.Data;
 
 // http://tomsundev.wordpress.com/category/articles/simplified-declaration-of-dependency-properties/
 

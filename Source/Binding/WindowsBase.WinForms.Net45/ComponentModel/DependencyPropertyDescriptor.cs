@@ -27,7 +27,7 @@ using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using MvvmFx.Windows;
+using MvvmFx.Bindings;
 
 namespace MvvmFx.ComponentModel
 {

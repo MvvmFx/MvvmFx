@@ -2,8 +2,8 @@
 using BoundTreeView.Framework;
 using BoundTreeView.Properties;
 using FamilyBusiness;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 using Screen = MvvmFx.CaliburnMicro.Screen;
 
 namespace BoundTreeView.ViewModels

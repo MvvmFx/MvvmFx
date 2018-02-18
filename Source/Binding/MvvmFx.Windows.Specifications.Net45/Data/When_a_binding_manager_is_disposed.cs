@@ -1,9 +1,9 @@
 ﻿using System;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support.Entities.INPC;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support.Entities.INPC;
 using Xunit;
 
-namespace MvvmFx.Windows.Specifications
+namespace MvvmFx.Bindings.Specifications
 {
 	public class When_a_binding_manager_is_disposed
 	{

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace MvvmFx.Windows.Interactivity
+namespace MvvmFx.Bindings.Interactivity
 {
     /// <summary>
     /// 
@@ -199,9 +199,9 @@ namespace MvvmFx.Windows.Interactivity
         #region IAttachedObject
 
         /// <summary>
-        /// Attaches the specified <see cref="MvvmFx.Windows.IDependencyObject"/> to the collection
+        /// Attaches the specified <see cref="MvvmFx.Bindings.IDependencyObject"/> to the collection
         /// </summary>
-        /// <param name="dependencyObject">The <see cref="MvvmFx.Windows.IDependencyObject"/> to attach</param>
+        /// <param name="dependencyObject">The <see cref="MvvmFx.Bindings.IDependencyObject"/> to attach</param>
         public void Attach(IDependencyObject dependencyObject)
         {
             if (dependencyObject != AssociatedObject)
@@ -215,7 +215,7 @@ namespace MvvmFx.Windows.Interactivity
         }
 
         /// <summary>
-        /// Detaches the currently associated <see cref="MvvmFx.Windows.IDependencyObject"/>
+        /// Detaches the currently associated <see cref="MvvmFx.Bindings.IDependencyObject"/>
         /// </summary>
         public void Detach()
         {
@@ -226,7 +226,7 @@ namespace MvvmFx.Windows.Interactivity
         /// <summary>
         /// Gets the associated object.
         /// </summary>
-        /// <remarks>Represents the <see cref="MvvmFx.Windows.IDependencyObject"/> this instance is attached to.</remarks>
+        /// <remarks>Represents the <see cref="MvvmFx.Bindings.IDependencyObject"/> this instance is attached to.</remarks>
         public IDependencyObject AssociatedObject { get; private set; }
 
         #endregion
@@ -246,12 +246,12 @@ namespace MvvmFx.Windows.Interactivity
         internal abstract void ItemRemoved(T item);
 
         /// <summary>
-        /// Notifies that a <see cref="MvvmFx.Windows.IDependencyObject"/> has been attached
+        /// Notifies that a <see cref="MvvmFx.Bindings.IDependencyObject"/> has been attached
         /// </summary>
         protected abstract void OnAttached();
 
         /// <summary>
-        /// Notifies that a <see cref="MvvmFx.Windows.IDependencyObject"/> is detaching. This before
+        /// Notifies that a <see cref="MvvmFx.Bindings.IDependencyObject"/> is detaching. This before
         /// </summary>
         protected abstract void OnDetaching();
 

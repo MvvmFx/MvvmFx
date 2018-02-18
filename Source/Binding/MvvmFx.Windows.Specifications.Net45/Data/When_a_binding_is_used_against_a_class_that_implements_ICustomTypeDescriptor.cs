@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using MvvmFx.Windows.Data;
-using MvvmFx.Windows.Specifications.Support.Converters;
+using MvvmFx.Bindings.Data;
+using MvvmFx.Bindings.Specifications.Support.Converters;
 using Xunit;
 using Xunit.Extensions;
 
-namespace MvvmFx.Windows.Specifications
+namespace MvvmFx.Bindings.Specifications
 {
 	public class When_a_binding_is_used_against_a_class_that_implements_ICustomTypeDescriptor
 	{

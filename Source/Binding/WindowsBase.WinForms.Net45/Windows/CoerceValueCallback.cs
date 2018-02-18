@@ -23,7 +23,7 @@
 //	Chris Toshok (toshok@ximian.com)
 //
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// CoerceValueCallback

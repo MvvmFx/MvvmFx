@@ -1,7 +1,7 @@
 ﻿using System;
 using BoundTreeView.Properties;
 using FamilyBusiness;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 
 namespace BoundTreeView.Framework
 {

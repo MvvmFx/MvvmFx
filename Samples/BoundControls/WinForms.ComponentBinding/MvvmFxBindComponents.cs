@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 using BoundControls.Business;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using MvvmFx.Controls.WinForms;
-using Binding = MvvmFx.Windows.Data.Binding;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace MvvmFx.CaliburnMicro
 {

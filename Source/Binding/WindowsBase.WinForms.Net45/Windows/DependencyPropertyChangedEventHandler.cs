@@ -26,12 +26,12 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// DependencyPropertyChangedEventHandler
     /// </summary>
     /// <param name="sender">The sender.</param>
-    /// <param name="e">The <see cref="MvvmFx.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+    /// <param name="e">The <see cref="MvvmFx.Bindings.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
     public delegate void DependencyPropertyChangedEventHandler(object sender, DependencyPropertyChangedEventArgs e);
 }

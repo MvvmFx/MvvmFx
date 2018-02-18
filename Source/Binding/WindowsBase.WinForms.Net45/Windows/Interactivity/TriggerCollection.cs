@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvvmFx.Windows.Interactivity
+namespace MvvmFx.Bindings.Interactivity
 {
     /// <summary>
     /// Represents a collection of triggers with a shared AssociatedObject and provides change notifications to its contents when that AssociatedObject changes.

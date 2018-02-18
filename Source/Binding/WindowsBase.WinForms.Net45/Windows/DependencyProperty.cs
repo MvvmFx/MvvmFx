@@ -31,7 +31,7 @@ using System.Collections.Concurrent;
 using System.Globalization;
 using MvvmFx.Properties;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// Represents a WPF like dependency property that accepts specifications for a default value and callbacks for property changed, coerce value and validate.

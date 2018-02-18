@@ -23,12 +23,12 @@
 //	Chris Toshok (toshok@ximian.com)
 //
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
     /// PropertyChangedCallback
     /// </summary>
     /// <param name="d">The d.</param>
-    /// <param name="e">The <see cref="MvvmFx.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+    /// <param name="e">The <see cref="MvvmFx.Bindings.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
     public delegate void PropertyChangedCallback(IDependencyObject d, DependencyPropertyChangedEventArgs e);
 }

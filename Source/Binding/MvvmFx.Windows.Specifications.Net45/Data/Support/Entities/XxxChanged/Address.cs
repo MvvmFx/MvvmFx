@@ -1,7 +1,7 @@
 ﻿using System;
 using Kent.Boogaart.HelperTrinity.Extensions;
 
-namespace MvvmFx.Windows.Specifications.Support.Entities.XxxChanged
+namespace MvvmFx.Bindings.Specifications.Support.Entities.XxxChanged
 {
     public class Address : IAddress
     {

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using MasterDetailWithModel.Framework;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using StudentsBusiness;
-using Binding = MvvmFx.Windows.Data.Binding;
+using Binding = MvvmFx.Bindings.Data.Binding;
 using Screen = MvvmFx.CaliburnMicro.Screen;
 
 namespace MasterDetailWithModel.ViewModels

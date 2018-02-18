@@ -4,14 +4,14 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using MvvmFx.Windows.Data;
+    using MvvmFx.Bindings.Data;
     using MvvmFx.CaliburnMicro.ComponentHandlers;
 #if WISEJ
     using Wisej.Web;
 #else
     using System.Windows.Forms;
 #endif
-    using Binding = MvvmFx.Windows.Data.Binding;
+    using Binding = MvvmFx.Bindings.Data.Binding;
 
     /// <summary>
     /// Extension methods for Windows Forms and Wisej

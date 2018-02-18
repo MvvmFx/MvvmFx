@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Used to hide irrelevant members in the fluent API to make Intellisense cleaner. Note that this only works for people referencing this assembly. It doesn't

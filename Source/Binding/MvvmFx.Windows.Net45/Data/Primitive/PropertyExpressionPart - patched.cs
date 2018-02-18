@@ -7,9 +7,9 @@ using System.Globalization;
 using System.Reflection;
 using System.Windows;
 using Kent.Boogaart.HelperTrinity.Extensions;
-using MvvmFx.Windows.WindowsBase.Diagnostics;
+using MvvmFx.Bindings.WindowsBase.Diagnostics;
 
-namespace MvvmFx.Windows.WindowsBase.Primitive
+namespace MvvmFx.Bindings.WindowsBase.Primitive
 {
     /// <summary>
     /// Represents a single part in the chain of parts held in a <see cref="PropertyExpression"/>.

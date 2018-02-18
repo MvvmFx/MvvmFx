@@ -7,8 +7,8 @@
     <ProjectGuid>{9BB1AB21-B9A3-4066-A591-4E364217143C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MvvmFx.Windows</RootNamespace>
-    <AssemblyName>MvvmFx.Windows</AssemblyName>
+    <RootNamespace>MvvmFx.Bindings</RootNamespace>
+    <AssemblyName>MvvmFx.Bindings</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -33,7 +33,7 @@
     <DefineConstants>TRACE;WPF MVVMFX</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\Desktop\net46\MvvmFx.Windows.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\Desktop\net46\MvvmFx.Bindings.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Windows.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>

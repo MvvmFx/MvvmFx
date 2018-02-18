@@ -3,17 +3,17 @@ using System.Diagnostics;
 using System.Reflection;
 using MvvmFx.ComponentModel;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// Represents a single part in the chain of parts held in a <see cref="PropertyExpression"/>.
     /// </summary>
     public abstract partial class PropertyExpressionPart
     {
-        #region MvvmFx.Windows.DependencyProperty
+        #region MvvmFx.Bindings.DependencyProperty
 
         /// <summary>
-        /// A property observation strategy that looks for <see cref="MvvmFx.Windows.DependencyProperty"/> instances on the target object.
+        /// A property observation strategy that looks for <see cref="MvvmFx.Bindings.DependencyProperty"/> instances on the target object.
         /// </summary>
         private sealed class MvvmFxDependencyPropertyPropertyObservationStrategy : IPropertyObservationStrategy
         {

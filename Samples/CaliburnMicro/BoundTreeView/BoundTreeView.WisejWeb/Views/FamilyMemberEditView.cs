@@ -10,8 +10,8 @@ using BoundTreeView.Properties;
 using BoundTreeView.ViewModels;
 using FamilyBusiness;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
-using Binding = MvvmFx.Windows.Data.Binding;
+using MvvmFx.Bindings.Data;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace BoundTreeView.Views
 {

@@ -1,10 +1,10 @@
 ﻿
 namespace PerformanceTests.Business
 {
-    internal class MvvmFxDependencyObject : MvvmFx.Windows.DependencyObject, INumberName
+    internal class MvvmFxDependencyObject : MvvmFx.Bindings.DependencyObject, INumberName
     {
-        public static readonly MvvmFx.Windows.DependencyProperty NumberProperty =
-            MvvmFx.Windows.DependencyProperty.Register("Number", typeof (int), typeof (MvvmFxDependencyObject));
+        public static readonly MvvmFx.Bindings.DependencyProperty NumberProperty =
+            MvvmFx.Bindings.DependencyProperty.Register("Number", typeof (int), typeof (MvvmFxDependencyObject));
 
         public int Number
         {
@@ -12,8 +12,8 @@ namespace PerformanceTests.Business
             set { SetValue(NumberProperty, value); }
         }
 
-        public static readonly MvvmFx.Windows.DependencyProperty FullNameProperty =
-            MvvmFx.Windows.DependencyProperty.Register("FullName", typeof (string), typeof (MvvmFxDependencyObject));
+        public static readonly MvvmFx.Bindings.DependencyProperty FullNameProperty =
+            MvvmFx.Bindings.DependencyProperty.Register("FullName", typeof (string), typeof (MvvmFxDependencyObject));
 
         public string FullName
         {

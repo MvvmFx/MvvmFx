@@ -3,14 +3,14 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 
-namespace MvvmFx.Windows.Diagnostics
+namespace MvvmFx.Bindings.Diagnostics
 {
     /// <summary>
     ///Provides functionality for making log entries.
     /// </summary>
     internal static class Log
     {
-        private static readonly TraceSource TraceSource = new TraceSource("MvvmFx.Windows");
+        private static readonly TraceSource TraceSource = new TraceSource("MvvmFx.Bindings");
         private const TraceEventType PerformanceEventType = TraceEventType.Information;
 
         [SuppressMessage("Microsoft.Performance", "CA1811", Justification = "Method of infrastructure class. May be needed at developer's discretion.")]

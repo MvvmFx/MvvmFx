@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Kent.Boogaart.HelperTrinity.Extensions;
 
-namespace MvvmFx.Windows.Specifications.Support.Entities
+namespace MvvmFx.Bindings.Specifications.Support.Entities
 {
     public abstract class EntityBase : INotifyPropertyChanged
     {

@@ -27,10 +27,10 @@
 //
 using System.Diagnostics.CodeAnalysis;
 
-namespace MvvmFx.Windows
+namespace MvvmFx.Bindings
 {
     /// <summary>
-    /// Defines methods and properties that an object implements to use <see cref="MvvmFx.Windows.DependencyProperty"/>.
+    /// Defines methods and properties that an object implements to use <see cref="MvvmFx.Bindings.DependencyProperty"/>.
     /// </summary>
     public interface IDependencyObject
     {

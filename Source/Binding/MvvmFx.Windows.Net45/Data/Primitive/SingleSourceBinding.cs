@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace MvvmFx.Windows.Data
+namespace MvvmFx.Bindings.Data
 {
     /// <summary>
     /// A base class for all bindings that have a single source.

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// Provides functionality for command containers, which are objects that contain zero or more <see cref="CommandBinding"/> instances.

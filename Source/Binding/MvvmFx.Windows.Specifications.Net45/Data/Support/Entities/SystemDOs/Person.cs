@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MvvmFx.Windows.Specifications.Support.Entities.SystemDOs
+namespace MvvmFx.Bindings.Specifications.Support.Entities.SystemDOs
 {
     public class Person : System.Windows.DependencyObject, IPerson
     {

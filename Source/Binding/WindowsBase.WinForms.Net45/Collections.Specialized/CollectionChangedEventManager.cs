@@ -23,7 +23,7 @@
 //	Chris Toshok (toshok@ximian.com)
 //
 using System.Collections.Specialized;
-using MvvmFx.Windows;
+using MvvmFx.Bindings;
 
 namespace MvvmFx.Collections.Specialized
 {

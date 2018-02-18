@@ -6,9 +6,9 @@ using System.Windows.Forms;
 #endif
 using MasterDetailWithModel.ViewModels;
 using MvvmFx.CaliburnMicro;
-using MvvmFx.Windows.Data;
+using MvvmFx.Bindings.Data;
 using StudentsBusiness;
-using Binding = MvvmFx.Windows.Data.Binding;
+using Binding = MvvmFx.Bindings.Data.Binding;
 
 namespace MasterDetailWithModel.Views
 {

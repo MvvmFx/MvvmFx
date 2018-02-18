@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MvvmFx.Windows.Input
+namespace MvvmFx.Bindings.Input
 {
     /// <summary>
     /// A command implementation that uses Action&lt;object&gt; as the Execute method,
