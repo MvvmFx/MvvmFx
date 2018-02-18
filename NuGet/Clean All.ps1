@@ -22,8 +22,8 @@ try
     ##$packages += @("CaliburnMicro.DialogExtensions.WinForms", "CaliburnMicro.DialogExtensions.WisejWeb")
     $packages += @("CaliburnMicro.Csla.WinForms", "CaliburnMicro.Csla.WisejWeb")
     $packages += @("BoundControls.WinForms", "BoundControls.WisejWeb")
-    $packages += @("Binding.WinForms", "Binding.WisejWeb")
-    ##$packages += @("Binding.WPF", "Binding.Desktop")
+    $packages += @("Bindings.WinForms", "Bindings.WisejWeb")
+    ##$packages += @("Bindings.WPF", "Bindings.Desktop")
 
     $host.UI.RawUI.BackgroundColor = [System.ConsoleColor]::Black
     $host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::White
