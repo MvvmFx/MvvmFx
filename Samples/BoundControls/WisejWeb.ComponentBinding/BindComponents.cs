@@ -9,12 +9,15 @@ using StatusBarPanel = Wisej.Web.StatusBarPanel;
 using ToolBar = Wisej.Web.ToolBar;
 using ToolBarButton = Wisej.Web.ToolBarButton;
 
-namespace MvvmFx.CaliburnMicro
+namespace WisejWeb.ComponentBinding
 {
     public static class BindComponents
     {
         public static void SetBindings(this Control masterControl)
         {
+            if ((masterControl as Form)?.Menu != null)
+                ParseComponents((masterControl as Form).Menu);
+
             foreach (Control control in masterControl.Controls)
             {
                 if (control is MenuBar)
@@ -29,6 +32,17 @@ namespace MvvmFx.CaliburnMicro
                 {
                     ParseComponents(control as StatusBar);
                 }
+            }
+        }
+
+        private static void ParseComponents(MainMenu mainMenu)
+        {
+            TryBind(mainMenu);
+
+            foreach (MenuItem item in mainMenu.MenuItems)
+            {
+                TryBind(item);
+                RecurseItem(item);
             }
         }
 
@@ -77,6 +91,7 @@ namespace MvvmFx.CaliburnMicro
                     RecurseItem(item);
                 }
             }
+
             /*else if (component is StatusBarPanel)
             {
                 foreach (MenuItem item in ((StatusBarPanel) component).Panels)

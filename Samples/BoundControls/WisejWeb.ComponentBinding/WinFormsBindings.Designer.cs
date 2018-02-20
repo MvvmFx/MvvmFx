@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuBar1 = new Wisej.Web.MenuBar();
+            this.components = new System.ComponentModel.Container();
+            this.mainMenu1 = new Wisej.Web.MainMenu(this.components);
             this.menuItem1 = new MvvmFx.Controls.WisejWeb.MenuItem();
             this.menuItem2 = new MvvmFx.Controls.WisejWeb.MenuItem();
             this.menuItem3 = new MvvmFx.Controls.WisejWeb.MenuItem();
@@ -58,18 +59,13 @@
             this.changeStatusItem = new Wisej.Web.Button();
             this.SuspendLayout();
             // 
-            // menuBar1
+            // mainMenu1
             // 
-            this.menuBar1.Dock = Wisej.Web.DockStyle.Top;
-            this.menuBar1.Location = new System.Drawing.Point(0, 0);
-            this.menuBar1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
+            this.mainMenu1.MenuItems.AddRange(new Wisej.Web.MenuItem[] {
             this.menuItem1,
             this.menuItem2,
             this.menuItem6});
-            this.menuBar1.Name = "menuBar1";
-            this.menuBar1.Size = new System.Drawing.Size(612, 28);
-            this.menuBar1.TabIndex = 2;
-            this.menuBar1.TabStop = false;
+            this.mainMenu1.Name = "mainMenu1";
             // 
             // menuItem1
             // 
@@ -134,9 +130,9 @@
             this.toolItem2,
             this.toolItem3,
             this.toolItem7});
-            this.toolBar1.Location = new System.Drawing.Point(0, 28);
+            this.toolBar1.Location = new System.Drawing.Point(0, 0);
             this.toolBar1.Name = "toolBar1";
-            this.toolBar1.Size = new System.Drawing.Size(612, 0);
+            this.toolBar1.Size = new System.Drawing.Size(612, 32);
             this.toolBar1.TabIndex = 0;
             this.toolBar1.TabStop = false;
             // 
@@ -273,7 +269,7 @@
             this.changeStatusItem.Text = "Change Status Item";
             this.changeStatusItem.Click += new System.EventHandler(this.changeStatusItem_Click);
             // 
-            // MvvmFxBindings
+            // WinFormsBindings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
@@ -286,7 +282,7 @@
             this.Controls.Add(this.showMenuItem);
             this.Controls.Add(this.statusBar1);
             this.Controls.Add(this.toolBar1);
-            this.Controls.Add(this.menuBar1);
+            this.Menu = this.mainMenu1;
             this.Name = "WinFormsBindings";
             this.Text = "WinForms Bindings";
             this.Load += new System.EventHandler(this.WinFormsBindings_Load);
@@ -301,7 +297,7 @@
         private MvvmFx.Controls.WisejWeb.MenuItem menuItem2;
         private MvvmFx.Controls.WisejWeb.MenuItem menuItem3;
         private MvvmFx.Controls.WisejWeb.MenuItem menuItem4;
-        private Wisej.Web.MenuBar menuBar1;
+        private Wisej.Web.MainMenu mainMenu1;
         private MvvmFx.Controls.WisejWeb.MenuItem menuItem5;
         private MvvmFx.Controls.WisejWeb.MenuItem menuItem6;
         private MvvmFx.Controls.WisejWeb.MenuItem menuItem7;

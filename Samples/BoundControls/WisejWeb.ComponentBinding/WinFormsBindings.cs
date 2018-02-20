@@ -1,6 +1,5 @@
 ﻿using System;
 using BoundControls.Business;
-using MvvmFx.CaliburnMicro;
 using Wisej.Web;
 
 namespace WisejWeb.ComponentBinding
