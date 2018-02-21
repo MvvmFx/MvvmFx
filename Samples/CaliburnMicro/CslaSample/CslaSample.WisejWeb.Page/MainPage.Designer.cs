@@ -63,7 +63,7 @@
             this.displayNamePanel.Location = new System.Drawing.Point(0, 0);
             this.displayNamePanel.Name = "displayNamePanel";
             this.displayNamePanel.ShowCloseButton = false;
-            this.displayNamePanel.Size = new System.Drawing.Size(969, 30);
+            this.displayNamePanel.Size = new System.Drawing.Size(933, 30);
             this.displayNamePanel.TabIndex = 1;
             // 
             // mainMenu
@@ -75,7 +75,7 @@
             this.folders,
             this.exit});
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(969, 22);
+            this.mainMenu.Size = new System.Drawing.Size(933, 22);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.TabStop = false;
             // 
@@ -143,11 +143,11 @@
             // 
             // statusBar
             // 
-            this.statusBar.Location = new System.Drawing.Point(0, 782);
+            this.statusBar.Location = new System.Drawing.Point(0, 781);
             this.statusBar.Name = "statusBar";
             this.statusBar.Panels.AddRange(new Wisej.Web.StatusBarPanel[] {
             this.placeHolder});
-            this.statusBar.Size = new System.Drawing.Size(969, 22);
+            this.statusBar.Size = new System.Drawing.Size(933, 22);
             this.statusBar.TabIndex = 1;
             this.statusBar.Text = "statusBar";
             // 
@@ -162,7 +162,7 @@
             this.activeItem.Dock = Wisej.Web.DockStyle.Fill;
             this.activeItem.Location = new System.Drawing.Point(0, 52);
             this.activeItem.Name = "activeItem";
-            this.activeItem.Size = new System.Drawing.Size(969, 730);
+            this.activeItem.Size = new System.Drawing.Size(933, 729);
             this.activeItem.TabIndex = 2;
             this.activeItem.Text = "activeItem";
             // 
@@ -171,12 +171,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(850, 500);
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.displayNamePanel);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(969, 804);
+            this.Size = new System.Drawing.Size(933, 803);
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.displayNamePanel.ResumeLayout(false);
