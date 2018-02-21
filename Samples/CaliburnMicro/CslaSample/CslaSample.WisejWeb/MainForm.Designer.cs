@@ -132,7 +132,6 @@
             // 
             this.placeHolder.AutoSize = Wisej.Web.StatusBarPanelAutoSize.Spring;
             this.placeHolder.Name = "placeHolder";
-            this.placeHolder.Text = "";
             // 
             // activeItem
             // 
@@ -148,6 +147,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = Wisej.Web.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(850, 500);
             this.ClientSize = new System.Drawing.Size(1213, 707);
             this.CloseBox = false;
             this.ControlBox = false;
