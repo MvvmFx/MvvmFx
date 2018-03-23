@@ -149,8 +149,6 @@
             this.AutoScroll = true;
             this.AutoScrollMinSize = new System.Drawing.Size(850, 500);
             this.ClientSize = new System.Drawing.Size(1213, 707);
-            this.CloseBox = false;
-            this.ControlBox = false;
             this.Controls.Add(this.activeItem);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.mainMenu);

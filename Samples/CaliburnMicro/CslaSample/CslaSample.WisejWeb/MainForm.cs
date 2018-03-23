@@ -17,6 +17,13 @@ namespace CslaSample
         public MainForm()
         {
             InitializeComponent();
+
+            Closed += MainFormClosed;
+        }
+
+        private void MainFormClosed(object sender, EventArgs e)
+        {
+            Close();
         }
 
         public new void Close()
