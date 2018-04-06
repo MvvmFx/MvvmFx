@@ -150,16 +150,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.6.603.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.6.603\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.7.100.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.7.100\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib, Version=4.6.604.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib.4.6.604\lib\net45\CslaContrib.dll</HintPath>
+    <Reference Include="CslaContrib, Version=4.6.605.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib.4.6.605\lib\net45\CslaContrib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib.WisejWeb, Version=4.6.604.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib-Wisej.4.6.604\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
+    <Reference Include="CslaContrib.WisejWeb, Version=4.6.605.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib-Wisej.4.6.605\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -197,9 +197,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.6.603\analyzers\c#\Csla.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Source\Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj">
       <Project>{41adbee4-19f6-40f8-a10a-6beb7db842cf}</Project>
       <Name>MvvmFx.DataBinding.WisejWeb.Net45</Name>
@@ -220,6 +217,9 @@
       <Project>{c8e78e6e-506d-495e-ad16-1ba31dc58dbc}</Project>
       <Name>CslaSample.Business</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.7.100\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
