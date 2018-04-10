@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\Common\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\Common\net461\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,11 +27,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\Common\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\Common\net461\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\Common\net46\MvvmFx.Log4netLogger.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\Common\net461\MvvmFx.Log4netLogger.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
@@ -51,9 +51,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
+    <ProjectReference Include="..\MvvmFx.Logging.Net461\MvvmFx.Logging.Net461.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
-      <Name>MvvmFx.Logging.Net46</Name>
+      <Name>MvvmFx.Logging.Net461</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
