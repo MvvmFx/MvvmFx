@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net461\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,11 +27,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WinForms\net461\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net461\MvvmFx.CaliburnMicro.DialogExtensions.WinForms.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,14 +60,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj">
+    <ProjectReference Include="..\..\Logging\MvvmFx.Logging.Net461\MvvmFx.Logging.Net461.csproj">
       <Project>{4dc5f78f-8ec1-43ce-8a29-2a24fddb15f7}</Project>
-      <Name>MvvmFx.Logging.Net46</Name>
+      <Name>MvvmFx.Logging.Net461</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WinForms.Net461\CaliburnMicro.WinForms.Net461.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.Net46</Name>
+      <Name>CaliburnMicro.WinForms.Net461</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>

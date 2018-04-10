@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net461\</OutputPath>
     <DefineConstants>TRACE;DEBUG;WINFORMS;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,11 +29,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WinForms\net461\</OutputPath>
     <DefineConstants>TRACE;WINFORMS;NET</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.CaliburnMicro.Csla.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net461\MvvmFx.CaliburnMicro.Csla.WinForms.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Bindings.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
@@ -74,9 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj">
+    <ProjectReference Include="..\CaliburnMicro.WinForms.Net461\CaliburnMicro.WinForms.Net461.csproj">
       <Project>{a099fd9b-602b-4eb9-adcd-f91fa8b5f72c}</Project>
-      <Name>CaliburnMicro.WinForms.Net46</Name>
+      <Name>CaliburnMicro.WinForms.Net461</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
