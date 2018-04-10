@@ -17,6 +17,9 @@ Data binding, Command binding and DependencyObject/DependencyProperty for Wisej.
 Command and Data binding library to support the creation of applications using the MVVM pattern for Wisej.
     </summary>
     <language>en-US</language>
+    <dependencies>
+      <dependency id="Wisej" version="[1.4.79,)" />
+    </dependencies>
   </metadata>
   <files>
     <!-- .NET 4.5 -->
