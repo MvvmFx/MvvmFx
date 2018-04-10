@@ -28,12 +28,12 @@ NLog adapter for MvvmFx.Logging.ILog.
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.NLogLogger.xml*" target="lib\net45" />
-    <!-- .NET 4.6-->
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.NLogLogger.xml*" target="lib\net46" />
+    <!-- .NET 4.6.1 -->
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.NLogLogger.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.NLogLogger.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.NLogLogger.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.NLogLogger.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.NLogLogger.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\**\Logging\MvvmFx.NLogLogger.Net45\**\*.cs" target="src" />
   </files>

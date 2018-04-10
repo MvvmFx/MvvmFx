@@ -22,10 +22,10 @@ MvvmFx.Logging.ILog interface definition
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Logging.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Logging.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Logging.xml*" target="lib\net45" />
-    <!-- .NET 4.6 -->
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.Logging.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.Logging.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Common\net46\**\MvvmFx.Logging.xml*" target="lib\net46" />
+    <!-- .NET 4.6.1 -->
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Logging.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Logging.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Logging.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\**\Logging\MvvmFx.Logging.Net45\**\*.cs" target="src" />
   </files>

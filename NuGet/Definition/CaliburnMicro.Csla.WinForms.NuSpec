@@ -27,10 +27,10 @@ CSLA .NET adapter to MVVM FX CaliburnMicro for WinForms.
     <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WinForms\net45\**\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net45" />
-    <!-- .NET 4.6 -->
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WinForms\net46\**\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net46" />
+    <!-- .NET 4.6.1 -->
+    <file src="..\..\bin\Release\WinForms\net461\**\MvvmFx.CaliburnMicro.Csla.WinForms.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WinForms\net461\**\MvvmFx.CaliburnMicro.Csla.WinForms.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WinForms\net461\**\MvvmFx.CaliburnMicro.Csla.WinForms.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.Csla.WinForms.Net45\**\*.cs" target="src" />
   </files>

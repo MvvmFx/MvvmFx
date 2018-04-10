@@ -25,11 +25,11 @@ Supports the creation of applications using the MVVM pattern for WinForms.
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.xml*" target="lib\net45" />
-    <!-- .NET 4.6 -->
+    <!-- .NET 4.6.1 -->
     <!--
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.DialogExtensions.WisejWeb.xml*" target="lib\net461" />
     -->
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.DialogExtensions.WinForms.Net45\**\*.cs" target="src" />
