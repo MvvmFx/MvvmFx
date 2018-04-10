@@ -154,12 +154,12 @@
       <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.7.100\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib, Version=4.6.605.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib.4.6.605\lib\net45\CslaContrib.dll</HintPath>
+    <Reference Include="CslaContrib, Version=4.6.606.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib.4.6.606\lib\net45\CslaContrib.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CslaContrib.WisejWeb, Version=4.6.605.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib-Wisej.4.6.605\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
+    <Reference Include="CslaContrib.WisejWeb, Version=4.6.606.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CslaContrib-Wisej.4.6.606\lib\net45\CslaContrib.WisejWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -168,8 +168,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="Wisej.Core" />
-    <Reference Include="Wisej.Web" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\Wisej.1.4.79\lib\net45\Wisej.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\Wisej.1.4.79\lib\net45\Wisej.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\CslaSample.WisejWeb\Documents\DocumentEditView.resx">
