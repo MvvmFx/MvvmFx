@@ -18,6 +18,7 @@ Databound versions of some standard controls.
     <language>en-US</language>
     <dependencies>
       <dependency id="MvvmFx-Logging" version="3.0.0" />
+      <dependency id="Wisej" version="[1.4.79,)" />
     </dependencies>
   </metadata>
   <files>
