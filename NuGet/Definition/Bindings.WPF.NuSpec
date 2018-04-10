@@ -4,7 +4,7 @@
     <id>MvvmFx-Bindings-WPF</id>
     <title>MVVM FX - Core</title>
     <tags>MVVMFX MVVM WPF Model-View-ViewModel Presentation UI ViewModel Data-binding</tags>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>

@@ -4,7 +4,7 @@
     <id>MvvmFx-BoundControls-Wisej</id>
     <title>MVVM FX - Bound Controls for Wisej</title>
     <tags>MVVMFX MVVM Wisej Databinding Model-View-ViewModel Presentation UI ViewModel</tags>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
