@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BoundControls", "BoundContr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WinForms.Net45", "BoundControls\MvvmFx.Controls.WinForms.Net45\MvvmFx.Controls.WinForms.Net45.csproj", "{440EDE1A-73C2-4A82-B2CE-9DDCA8D99C36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WinForms.Net46", "BoundControls\MvvmFx.Controls.WinForms.Net46\MvvmFx.Controls.WinForms.Net46.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WinForms.Net461", "BoundControls\MvvmFx.Controls.WinForms.Net461\MvvmFx.Controls.WinForms.Net461.csproj", "{ED342C71-5D03-42E2-A7C2-EFE6AB375627}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Controls.WisejWeb.Net45", "BoundControls\MvvmFx.Controls.WisejWeb.Net45\MvvmFx.Controls.WisejWeb.Net45.csproj", "{F9A6952E-C1BC-4185-8407-D1F59D62255D}"
 EndProject
@@ -23,25 +23,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro", "CaliburnMi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net45", "CaliburnMicro\CaliburnMicro.WinForms.Net45\CaliburnMicro.WinForms.Net45.csproj", "{8A70916C-7D79-4539-A4E4-178FBB66C703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net46", "CaliburnMicro\CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net461", "CaliburnMicro\CaliburnMicro.WinForms.Net461\CaliburnMicro.WinForms.Net461.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro.Csla", "CaliburnMicro.Csla", "{5550A5C1-5DF0-4DBF-A535-CE373283D6AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net45", "CaliburnMicro\CaliburnMicro.Csla.WinForms.Net45\CaliburnMicro.Csla.WinForms.Net45.csproj", "{C33059D8-0DA0-4B21-81A4-62994D1DF0AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net46", "CaliburnMicro\CaliburnMicro.Csla.WinForms.Net46\CaliburnMicro.Csla.WinForms.Net46.csproj", "{228097E8-A63C-4932-98E5-7B245E4765D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net461", "CaliburnMicro\CaliburnMicro.Csla.WinForms.Net461\CaliburnMicro.Csla.WinForms.Net461.csproj", "{228097E8-A63C-4932-98E5-7B245E4765D4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro.DialogExtensions", "CaliburnMicro.DialogExtensions", "{EDD86422-E5E5-4C31-9A1C-9F8C1E04F667}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms.Net45", "CaliburnMicro\CaliburnMicro.DialogExtensions.WinForms.Net45\CaliburnMicro.DialogExtensions.WinForms.Net45.csproj", "{33535861-72AD-448D-96C8-549FA64AED93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms.Net46", "CaliburnMicro\CaliburnMicro.DialogExtensions.WinForms.Net46\CaliburnMicro.DialogExtensions.WinForms.Net46.csproj", "{41A970B6-96BC-40F1-B830-3C03F90BC353}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms.Net461", "CaliburnMicro\CaliburnMicro.DialogExtensions.WinForms.Net461\CaliburnMicro.DialogExtensions.WinForms.Net461.csproj", "{41A970B6-96BC-40F1-B830-3C03F90BC353}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple DataBinding", "Simple DataBinding", "{4C2A5093-BD15-4687-868A-BF1E738B308A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net45", "Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net46", "Binding\MvvmFx.DataBinding.WinForms.Net46\MvvmFx.DataBinding.WinForms.Net46.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net461", "Binding\MvvmFx.DataBinding.WinForms.Net461\MvvmFx.DataBinding.WinForms.Net461.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WisejWeb.Net45", "Binding\MvvmFx.DataBinding.WisejWeb.Net45\MvvmFx.DataBinding.WisejWeb.Net45.csproj", "{41ADBEE4-19F6-40F8-A10A-6BEB7DB842CF}"
 EndProject
@@ -49,15 +49,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{57E1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.Net45", "Logging\MvvmFx.Log4netLogger.Net45\MvvmFx.Log4netLogger.Net45.csproj", "{627C1829-0234-4C87-9683-8495B95F610B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.Net46", "Logging\MvvmFx.Log4netLogger.Net46\MvvmFx.Log4netLogger.Net46.csproj", "{66C0CCE3-ED7A-4DD9-9E8F-5C26A5C5DC75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Log4netLogger.Net461", "Logging\MvvmFx.Log4netLogger.Net461\MvvmFx.Log4netLogger.Net461.csproj", "{66C0CCE3-ED7A-4DD9-9E8F-5C26A5C5DC75}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net45", "Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net46", "Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net461", "Logging\MvvmFx.Logging.Net461\MvvmFx.Logging.Net461.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net45", "Logging\MvvmFx.NLogLogger.Net45\MvvmFx.NLogLogger.Net45.csproj", "{882D7D0B-5057-450D-9F23-FEA7773CBAE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net46", "Logging\MvvmFx.NLogLogger.Net46\MvvmFx.NLogLogger.Net46.csproj", "{D404AFA8-83C5-4B73-8A85-D3748804CAC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.NLogLogger.Net461", "Logging\MvvmFx.NLogLogger.Net461\MvvmFx.NLogLogger.Net461.csproj", "{D404AFA8-83C5-4B73-8A85-D3748804CAC4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binding", "Binding", "{E42CF99B-03F2-45B8-8484-85A27F03F6B1}"
 EndProject
@@ -65,25 +65,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binding Library", "Binding 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Net45", "Binding\MvvmFx.Bindings.Net45\MvvmFx.Bindings.Net45.csproj", "{2728C8A9-7304-46F3-8A93-F0A53D91BF21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Net46", "Binding\MvvmFx.Bindings.Net46\MvvmFx.Bindings.Net46.csproj", "{9BB1AB21-B9A3-4066-A591-4E364217143C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Net461", "Binding\MvvmFx.Bindings.Net461\MvvmFx.Bindings.Net461.csproj", "{9BB1AB21-B9A3-4066-A591-4E364217143C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Specifications.Net45", "Binding\MvvmFx.Bindings.Specifications.Net45\MvvmFx.Bindings.Specifications.Net45.csproj", "{19C51D9F-FAFA-44CA-B36A-423E77E0EE60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Specifications.Net46", "Binding\MvvmFx.Bindings.Specifications.Net46\MvvmFx.Bindings.Specifications.Net46.csproj", "{4F4FE888-7A90-405B-9805-7069F1B44E39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.Specifications.Net461", "Binding\MvvmFx.Bindings.Specifications.Net461\MvvmFx.Bindings.Specifications.Net461.csproj", "{4F4FE888-7A90-405B-9805-7069F1B44E39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WinForms.Net45", "Binding\MvvmFx.Bindings.WinForms.Net45\MvvmFx.Bindings.WinForms.Net45.csproj", "{033DD80D-AD51-4AA2-87F1-DCFD3131A08E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WinForms.Net46", "Binding\MvvmFx.Bindings.WinForms.Net46\MvvmFx.Bindings.WinForms.Net46.csproj", "{1136F6D7-1EAC-4C0F-BE68-6EC6A9168F51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WinForms.Net461", "Binding\MvvmFx.Bindings.WinForms.Net461\MvvmFx.Bindings.WinForms.Net461.csproj", "{1136F6D7-1EAC-4C0F-BE68-6EC6A9168F51}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WPF.Net45", "Binding\MvvmFx.Bindings.WPF.Net45\MvvmFx.Bindings.WPF.Net45.csproj", "{6A8FF0B3-3B49-4FEE-8DE6-374F8EFE2A7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WPF.Net46", "Binding\MvvmFx.Bindings.WPF.Net46\MvvmFx.Bindings.WPF.Net46.csproj", "{8910D648-8194-474A-8EBA-F911E3DFECB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Bindings.WPF.Net461", "Binding\MvvmFx.Bindings.WPF.Net461\MvvmFx.Bindings.WPF.Net461.csproj", "{8910D648-8194-474A-8EBA-F911E3DFECB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowBase", "WindowBase", "{A23B439B-8BA2-430A-ADAA-53ED6FA0B247}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net45", "Binding\WindowsBase.WinForms.Net45\WindowsBase.WinForms.Net45.csproj", "{33290B49-5D4B-47F3-8C03-D203595C9F12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net46", "Binding\WindowsBase.WinForms.Net46\WindowsBase.WinForms.Net46.csproj", "{860EADF8-894F-43C5-93CD-E75C5A8CBBE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WinForms.Net461", "Binding\WindowsBase.WinForms.Net461\WindowsBase.WinForms.Net461.csproj", "{860EADF8-894F-43C5-93CD-E75C5A8CBBE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsBase.WisejWeb.Net45", "Binding\WindowsBase.WisejWeb.Net45\WindowsBase.WisejWeb.Net45.csproj", "{AFD62700-9250-48F1-85C0-F80249FED399}"
 EndProject
