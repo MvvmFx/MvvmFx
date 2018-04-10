@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MvvmFx.CaliburnMicro</RootNamespace>
     <AssemblyName>MvvmFx.CaliburnMicro.DialogExtensions.WinForms</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mvvmfx.snk</AssemblyOriginatorKeyFile>
