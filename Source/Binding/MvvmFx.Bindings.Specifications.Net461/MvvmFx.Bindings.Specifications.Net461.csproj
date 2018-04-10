@@ -180,13 +180,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MvvmFx.Bindings.Net46\MvvmFx.Bindings.Net46.csproj">
+    <ProjectReference Include="..\MvvmFx.Bindings.Net461\MvvmFx.Bindings.Net461.csproj">
       <Project>{9bb1ab21-b9a3-4066-a591-4e364217143c}</Project>
-      <Name>MvvmFx.Bindings.Net46</Name>
+      <Name>MvvmFx.Bindings.Net461</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WindowsBase.WinForms.Net46\WindowsBase.WinForms.Net46.csproj">
+    <ProjectReference Include="..\WindowsBase.WinForms.Net461\WindowsBase.WinForms.Net461.csproj">
       <Project>{860eadf8-894f-43c5-93cd-e75c5a8cbbe4}</Project>
-      <Name>WindowsBase.WinForms.Net46</Name>
+      <Name>WindowsBase.WinForms.Net461</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

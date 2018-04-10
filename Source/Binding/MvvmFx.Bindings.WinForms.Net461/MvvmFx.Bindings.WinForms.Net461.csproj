@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\Debug\WinForms\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Debug\WinForms\net461\</OutputPath>
     <DefineConstants>TRACE;DEBUG;MVVMFX</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -29,11 +29,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\bin\Release\WinForms\net46\</OutputPath>
+    <OutputPath>..\..\..\bin\Release\WinForms\net461\</OutputPath>
     <DefineConstants>TRACE;MVVMFX</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\WinForms\net46\MvvmFx.Bindings.WinForms.xml</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\WinForms\net461\MvvmFx.Bindings.WinForms.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\Migrated rules for MvvmFx.Bindings.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
@@ -188,9 +188,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WindowsBase.WinForms.Net46\WindowsBase.WinForms.Net46.csproj">
+    <ProjectReference Include="..\WindowsBase.WinForms.Net461\WindowsBase.WinForms.Net461.csproj">
       <Project>{860eadf8-894f-43c5-93cd-e75c5a8cbbe4}</Project>
-      <Name>WindowsBase.WinForms.Net46</Name>
+      <Name>WindowsBase.WinForms.Net461</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
