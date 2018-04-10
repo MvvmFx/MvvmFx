@@ -31,17 +31,17 @@ Command and Data binding library to support the creation of applications using t
     <file src="..\..\bin\Release\Desktop\net45\**\WindowsBase.WinForms.resources.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\Desktop\net45\**\WindowsBase.WinForms.resources.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\Desktop\net45\**\WindowsBase.WinForms.xml*" target="lib\net45" />
-    <!-- .NET 4.6-->
-    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Bindings.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Bindings.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Bindings.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Bindings.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\MvvmFx.Bindings.xml*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\Desktop\net46\**\WindowsBase.WinForms.xml*" target="lib\net46" />
+    <!-- .NET 4.6.1 -->
+    <file src="..\..\bin\Release\Desktop\net461\**\MvvmFx.Bindings.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\MvvmFx.Bindings.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\MvvmFx.Bindings.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\MvvmFx.Bindings.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\MvvmFx.Bindings.xml*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\WindowsBase.WinForms.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\WindowsBase.WinForms.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\WindowsBase.WinForms.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\WindowsBase.WinForms.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\Desktop\net461\**\WindowsBase.WinForms.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
     <file src="..\..\Source\Binding\**\WindowsBase.WinForms.Net45\**\*.cs" target="src" />

@@ -33,17 +33,17 @@ Caliburn.Micro derivative adapted to Wisej.
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.DataBinding.WisejWeb.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.DataBinding.WisejWeb.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.DataBinding.WisejWeb.xml*" target="lib\net45" />
-    <!-- .NET 4.6 -->
+    <!-- .NET 4.6.1 -->
     <!--
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.WisejWeb.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.WisejWeb.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.WisejWeb.xml*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.WisejWeb.Toolable.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.WisejWeb.Toolable.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.CaliburnMicro.WisejWeb.Toolable.xml*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.DataBinding.WisejWeb.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.DataBinding.WisejWeb.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WisejWeb\net46\**\MvvmFx.DataBinding.WisejWeb.xml*" target="lib\net46" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.WisejWeb.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.WisejWeb.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.WisejWeb.xml*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.WisejWeb.Toolable.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.WisejWeb.Toolable.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.CaliburnMicro.WisejWeb.Toolable.xml*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.DataBinding.WisejWeb.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.DataBinding.WisejWeb.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.DataBinding.WisejWeb.xml*" target="lib\net461" />
     -->
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\CaliburnMicro\**\CaliburnMicro.WinForms.Net45\**\*.cs" target="src" />

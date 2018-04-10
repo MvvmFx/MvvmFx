@@ -25,12 +25,12 @@ Data binding library to support the creation of applications using the MVVM patt
     <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net45" />
     <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net45" />
     <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.xml*" target="lib\net45" />
-    <!-- .NET 4.6-->
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net46" />
-    <file src="..\..\bin\Release\WPF\net46\**\MvvmFx.Bindings.WPF.xml*" target="lib\net46" />
+    <!-- .NET 4.6.1 -->
+    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
   </files>
