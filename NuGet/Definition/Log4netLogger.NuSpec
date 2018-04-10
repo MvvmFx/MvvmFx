@@ -4,7 +4,7 @@
     <id>MvvmFx-Log4netLogger</id>
     <title>MVVM FX - Log4netLogger</title>
     <tags>MVVMFX MVVM Windows-Forms WinForms Model-View-ViewModel ViewModel</tags>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>

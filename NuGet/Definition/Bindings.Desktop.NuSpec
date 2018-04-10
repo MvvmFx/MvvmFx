@@ -4,7 +4,7 @@
     <id>MvvmFx-Bindings-Desktop</id>
     <title>MVVM FX - Desktop</title>
     <tags>MVVMFX MVVM Windows-Forms WinForms WPF Model-View-ViewModel Presentation UI ViewModel Data-binding Command-binding</tags>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <authors>Tiago Freitas Leal</authors>
     <licenseUrl>https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/MvvmFx/MvvmFx</projectUrl>
