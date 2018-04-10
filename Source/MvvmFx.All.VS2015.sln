@@ -5,6 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "- Solution Items", "- Solution Items", "{2A25D653-49BE-4398-86D9-9A55534B52A8}"
 	ProjectSection(SolutionItems) = preProject
+		GlobalAssemblyInfo.cs = GlobalAssemblyInfo.cs
 		Migrated rules for MvvmFx.Bindings.ruleset = Migrated rules for MvvmFx.Bindings.ruleset
 	EndProjectSection
 EndProject
