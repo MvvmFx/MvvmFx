@@ -45,6 +45,7 @@
     <Content Include="Default.html" />
     <Content Include="Default.json" />
     <Content Include="favicon.ico" />
+    <Content Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,8 +128,14 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="Wisej.Core" />
-    <Reference Include="Wisej.Web" />
+    <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\Wisej.1.4.79\lib\net45\Wisej.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\Wisej.1.4.79\lib\net45\Wisej.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
