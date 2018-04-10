@@ -7,31 +7,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro", "CaliburnMi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net45", "CaliburnMicro.WinForms.Net45\CaliburnMicro.WinForms.Net45.csproj", "{8A70916C-7D79-4539-A4E4-178FBB66C703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net46", "CaliburnMicro.WinForms.Net46\CaliburnMicro.WinForms.Net46.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.WinForms.Net461", "CaliburnMicro.WinForms.Net461\CaliburnMicro.WinForms.Net461.csproj", "{A099FD9B-602B-4EB9-ADCD-F91FA8B5F72C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro.Csla", "CaliburnMicro.Csla", "{5550A5C1-5DF0-4DBF-A535-CE373283D6AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net45", "CaliburnMicro.Csla.WinForms.Net45\CaliburnMicro.Csla.WinForms.Net45.csproj", "{C33059D8-0DA0-4B21-81A4-62994D1DF0AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net46", "CaliburnMicro.Csla.WinForms.Net46\CaliburnMicro.Csla.WinForms.Net46.csproj", "{228097E8-A63C-4932-98E5-7B245E4765D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WinForms.Net461", "CaliburnMicro.Csla.WinForms.Net461\CaliburnMicro.Csla.WinForms.Net461.csproj", "{228097E8-A63C-4932-98E5-7B245E4765D4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CaliburnMicro.DialogExtensions", "CaliburnMicro.DialogExtensions", "{EDD86422-E5E5-4C31-9A1C-9F8C1E04F667}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms.Net45", "CaliburnMicro.DialogExtensions.WinForms.Net45\CaliburnMicro.DialogExtensions.WinForms.Net45.csproj", "{33535861-72AD-448D-96C8-549FA64AED93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms.Net46", "CaliburnMicro.DialogExtensions.WinForms.Net46\CaliburnMicro.DialogExtensions.WinForms.Net46.csproj", "{41A970B6-96BC-40F1-B830-3C03F90BC353}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.DialogExtensions.WinForms.Net461", "CaliburnMicro.DialogExtensions.WinForms.Net461\CaliburnMicro.DialogExtensions.WinForms.Net461.csproj", "{41A970B6-96BC-40F1-B830-3C03F90BC353}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{1F97C682-A06C-4443-9284-04C9C3D6391C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net45", "..\Logging\MvvmFx.Logging.Net45\MvvmFx.Logging.Net45.csproj", "{72623D05-B8DB-404E-81B3-17EF258579E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net46", "..\Logging\MvvmFx.Logging.Net46\MvvmFx.Logging.Net46.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.Logging.Net461", "..\Logging\MvvmFx.Logging.Net461\MvvmFx.Logging.Net461.csproj", "{4DC5F78F-8EC1-43CE-8A29-2A24FDDB15F7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Simple DataBinding", "Simple DataBinding", "{4C2A5093-BD15-4687-868A-BF1E738B308A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net45", "..\Binding\MvvmFx.DataBinding.WinForms.Net45\MvvmFx.DataBinding.WinForms.Net45.csproj", "{ADF8E550-012C-467D-99D8-E44F3F352A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net46", "..\Binding\MvvmFx.DataBinding.WinForms.Net46\MvvmFx.DataBinding.WinForms.Net46.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmFx.DataBinding.WinForms.Net461", "..\Binding\MvvmFx.DataBinding.WinForms.Net461\MvvmFx.DataBinding.WinForms.Net461.csproj", "{1501BF1F-0406-411F-A47B-446B9989CD91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaliburnMicro.Csla.WisejWeb.Net45", "CaliburnMicro.Csla.WisejWeb.Net45\CaliburnMicro.Csla.WisejWeb.Net45.csproj", "{2B41E1CD-7D7B-4B56-9A54-3D46BD9C1330}"
 EndProject
