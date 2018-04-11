@@ -16,7 +16,15 @@ Due to Wisej/WinForms binding shortcomings, a general purpose binding library is
 
 ## Project Status
 
-Version 3.0.0 published on 18-02-2018.
+### [Release 3.0.1](https://github.com/MvvmFx/MvvmFx/releases/tag/v3.0.1) published on 11-04-2018.
+
+Maintenance release:
+1. Promote .NET 4.6 projects to .NET 4.6.1
+2. Fetch Wisej dependency from NuGet
+
+__N.B. - To run Wisej Web samples you don't need to install Wisej.__
+
+### [Release 3.0.0](https://github.com/MvvmFx/MvvmFx/releases/tag/v3.0.0) published on 18-02-2018.
 
 NuGet packages:
 - MvvmFx-Bindings-WinForms
