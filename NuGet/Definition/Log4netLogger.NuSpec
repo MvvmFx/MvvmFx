@@ -17,7 +17,7 @@ Log4net adapter for MvvmFx.Logging.ILog.
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="MvvmFx-Logging" version="3.0.0" />
+      <dependency id="MvvmFx-Logging" version="3.0.1" />
       <dependency id="log4net" version="1.2.10" />
     </dependencies>
   </metadata>
