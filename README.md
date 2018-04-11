@@ -43,7 +43,7 @@ NuGet packages:
 - MvvmFx Wisej/WinForms application that is an important step to test and refine concepts.
 - Application delivered in 3 forms:
   - WinForms
-  - Wisej Web (for IIS)
+  - Wisej Web (IIS ready)
   - Wisej Standalone (desktop .exe file).
 
 ## What is Wisej?
