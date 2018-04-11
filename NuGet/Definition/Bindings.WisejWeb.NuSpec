@@ -18,7 +18,7 @@ Command and Data binding library to support the creation of applications using t
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="Wisej" version="[1.4.79,)" />
+      <dependency id="Wisej" version="1.4.79" />
     </dependencies>
   </metadata>
   <files>
