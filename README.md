@@ -42,7 +42,7 @@ NuGet packages:
 ## Explore and run [InterwayDocs](http://github.com/MvvmFx/InterwayDocs)
 - MvvmFx Wisej/WinForms application that is an important step to test and refine concepts.
 - Application delivered in 3 forms:
-  - WinForms
+  - Windows Forms
   - Wisej Web (IIS ready)
   - Wisej Standalone (desktop .exe file).
 
