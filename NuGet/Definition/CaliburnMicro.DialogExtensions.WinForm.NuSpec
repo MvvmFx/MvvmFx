@@ -17,7 +17,7 @@ Supports the creation of applications using the MVVM pattern for WinForms.
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="MvvmFx-CaliburnMicro-WinForms" version="3.0.0" />
+      <dependency id="MvvmFx-CaliburnMicro-WinForms" version="3.0.1" />
     </dependencies>
   </metadata>
   <files>

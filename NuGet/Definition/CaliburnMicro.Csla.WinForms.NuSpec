@@ -18,7 +18,7 @@ CSLA .NET adapter to MVVM FX CaliburnMicro for WinForms.
     </summary>
     <language>en-US</language>
     <dependencies>
-      <dependency id="MvvmFx-CaliburnMicro-WinForms" version="3.0.0" />
+      <dependency id="MvvmFx-CaliburnMicro-WinForms" version="3.0.1" />
       <dependency id="CSLA-Core" version="4.6.100" />
     </dependencies>
   </metadata>
