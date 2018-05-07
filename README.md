@@ -1,4 +1,6 @@
-# MVVM for Wisej and Windows Forms
+MVVM for Wisej and Windows Forms
+====
+[![NuGet](https://img.shields.io/nuget/v/MvvmFx-Logging.svg)](https://www.nuget.org/packages/MvvmFx-Logging)
 
 The MVVM FX project targets [Wisej](http://wisej.com) and WinForms.
 
