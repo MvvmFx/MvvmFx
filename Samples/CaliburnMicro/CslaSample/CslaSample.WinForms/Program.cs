@@ -12,7 +12,9 @@ namespace CslaSample
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+#if WINFORMS
         [STAThread]
+#endif
         private static void Main()
         {
 #if WINFORMS
