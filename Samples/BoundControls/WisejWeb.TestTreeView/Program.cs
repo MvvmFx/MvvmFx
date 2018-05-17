@@ -12,7 +12,9 @@ namespace WisejWeb.TestTreeView
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+#if WINFORMS
         [STAThread]
+#endif
         static void Main()
         {
 #if WINFORMS
