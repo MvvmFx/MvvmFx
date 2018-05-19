@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Csla, Version=4.7.100.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.7.100\lib\net45\Csla.dll</HintPath>
+    <Reference Include="Csla, Version=4.7.101.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Dependencies\packages\CSLA-Core.4.7.101\lib\net45\Csla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CslaContrib, Version=4.6.606.0, Culture=neutral, PublicKeyToken=eafe756dec3874e6, processorArchitecture=MSIL">
@@ -92,7 +92,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.7.100\analyzers\c#\Csla.Analyzers.dll" />
+    <Analyzer Include="..\..\..\..\Dependencies\packages\CSLA-Core.4.7.101\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
