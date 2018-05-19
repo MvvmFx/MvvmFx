@@ -48,7 +48,7 @@
     <Content Include="Properties\DataSources\BoundControls.Business.LeafList.datasource" />
     <Content Include="packages.config" />
     <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -115,7 +115,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\NLog.4.5.2\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\packages\NLog.4.5.4\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -130,11 +130,11 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Wisej.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\Wisej.1.4.80\lib\net45\Wisej.Core.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\packages\Wisej.1.4.95\lib\net45\Wisej.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Wisej.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=17bef35e11b84171, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Dependencies\packages\Wisej.1.4.80\lib\net45\Wisej.Web.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\packages\Wisej.1.4.95\lib\net45\Wisej.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
