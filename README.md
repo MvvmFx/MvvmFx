@@ -48,9 +48,9 @@ NuGet packages:
   - change language without reloading page
   - alert when closing browser may loose unsaved information
 - Application delivered in 3 forms:
-  - Windows Forms
-  - Wisej Web (IIS ready)
-  - Wisej Standalone (desktop .exe file).
+  - WebSite - Wisej web site IIS ready
+  - WebStandalone - Wisej web site packed into a desktop .exe file
+  - WinForms - Windows Forms desktop application
 
 ## What is Wisej?
 
