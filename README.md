@@ -18,15 +18,15 @@ Due to Wisej/WinForms binding shortcomings, a general purpose binding library is
 
 ## Project Status
 
-### [Release 3.0.1](https://github.com/MvvmFx/MvvmFx/releases/tag/v3.0.1) published on 11-04-2018.
+### [Release 3.0.1](https://github.com/MvvmFx/MvvmFx/releases/tag/v3.0.1) (11 Apr 2018)
 
 Maintenance release:
 1. Promote .NET 4.6 projects to .NET 4.6.1
 2. Fetch Wisej dependency from NuGet
 
-__N.B. - To run Wisej Web samples you don't need to install Wisej.__
+__N.B. - Run Wisej samples from [NuGet](https://www.nuget.org/packages/Wisej/) - you don't need to install Wisej.__
 
-### [Release 3.0.0](https://github.com/MvvmFx/MvvmFx/releases/tag/v3.0.0) published on 18-02-2018.
+### [Release 3.0.0](https://github.com/MvvmFx/MvvmFx/releases/tag/v3.0.0) (18 Feb 2018)
 
 NuGet packages:
 - MvvmFx-Bindings-WinForms
@@ -43,6 +43,10 @@ NuGet packages:
 
 ## Explore and run [InterwayDocs](http://github.com/MvvmFx/InterwayDocs)
 - MvvmFx Wisej/WinForms application that is an important step to test and refine concepts.
+- Latest release is [1.3.8](https://github.com/MvvmFx/InterwayDocs/releases/tag/v1.3.8) (21 May 2018)
+- Wisej version features:
+  - change language without reloading page
+  - alert when closing browser may loose unsaved information
 - Application delivered in 3 forms:
   - Windows Forms
   - Wisej Web (IIS ready)
