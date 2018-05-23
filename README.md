@@ -57,3 +57,9 @@ NuGet packages:
 Take your WinForms project, port it to Wisej retaining all your BO/DAL code and most UI code.
 Now run it as a Web application.
 [Get Wisej](http://wisej.com)
+
+
+License
+-------
+MvvmFx is copyright MvvmFx project.
+Its use is governed by the [MIT license](https://github.com/MvvmFx/MvvmFx/blob/master/LICENSE.md).
