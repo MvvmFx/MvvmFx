@@ -58,7 +58,6 @@ Take your WinForms project, port it to Wisej retaining all your BO/DAL code and 
 Now run it as a Web application.
 [Get Wisej](http://wisej.com)
 
-
 License
 -------
 MvvmFx is copyright MvvmFx project.
