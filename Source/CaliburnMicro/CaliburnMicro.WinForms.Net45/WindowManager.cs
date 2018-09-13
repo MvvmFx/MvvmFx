@@ -138,7 +138,6 @@
                 }
 
 #if WISEJ
-                //window.TopMost = true;
                 window.Show();
 #else
                 Execute.OnUIThread(() => { window.Show(); });
