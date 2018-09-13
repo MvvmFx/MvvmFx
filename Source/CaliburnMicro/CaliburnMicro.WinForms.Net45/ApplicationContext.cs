@@ -89,7 +89,7 @@
             if (mainWindow == null)
                 throw new ArgumentNullException(nameof(mainWindow));
 
-            SessionMainWindow = mainWindow;
+            Wisej.Base.ApplicationBase.Session.MainWindow = mainWindow;
         }
     }
 
