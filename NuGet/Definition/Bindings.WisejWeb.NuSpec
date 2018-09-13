@@ -23,28 +23,28 @@ Command and Data binding library to support the creation of applications using t
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.xml*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WisejWeb\net45\**\WindowsBase.WisejWeb.xml*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\MvvmFx.Bindings.WisejWeb.xml*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\WindowsBase.WisejWeb.dll*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\WindowsBase.WisejWeb.pdb*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\WindowsBase.WisejWeb.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\WisejWeb\net45\**\WindowsBase.WisejWeb.xml*" target="lib\net45" />
     <!-- .NET 4.6.1 -->
     <!--
-    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.resources.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.resources.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.xml*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\WindowsBase.WisejWeb.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\WindowsBase.WisejWeb.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\WindowsBase.WisejWeb.resources.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\WisejWeb\net461\**\WindowsBase.WisejWeb.xml*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.dll*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.pdb*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\MvvmFx.Bindings.WisejWeb.xml*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\WindowsBase.WisejWeb.dll*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\WindowsBase.WisejWeb.pdb*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\WindowsBase.WisejWeb.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\WindowsBase.WisejWeb.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\WisejWeb\net461\**\WindowsBase.WisejWeb.xml*" target="lib\net461" />
     -->
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />

@@ -19,13 +19,13 @@ MvvmFx.Logging.ILog interface definition
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Logging.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Logging.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Logging.xml*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Logging.dll*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Logging.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Logging.xml*" target="lib\net45" />
     <!-- .NET 4.6.1 -->
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Logging.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Logging.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Logging.xml*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Logging.dll*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Logging.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Logging.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\**\Logging\MvvmFx.Logging.Net45\**\*.cs" target="src" />
   </files>
