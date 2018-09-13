@@ -104,7 +104,8 @@ try
     ## ----------
     $configuration = "Release"
     $basePath = Get-Location
-    $pathToBin = [System.IO.Path]::GetFullPath( "$basePath\..\..\Bin\$configuration" )
+    #$pathToBin = [System.IO.Path]::GetFullPath( "$basePath\..\..\Bin\$configuration" )
+    $pathToBin = [System.IO.Path]::GetFullPath( "$basePath\..\..\bin" )
     $pathToNuGetPackager = [System.IO.Path]::GetFullPath( "$basePath\..\Tools\NuGet.exe" )
     $pathToNuGetPackageOutput = [System.IO.Path]::GetFullPath( "$basePath\..\Packages" )
     $originalBackground = $host.UI.RawUI.BackgroundColor

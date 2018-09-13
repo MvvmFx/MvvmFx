@@ -20,17 +20,17 @@ Data binding library to support the creation of applications using the MVVM patt
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\WPF\net45\**\MvvmFx.Bindings.WPF.xml*" target="lib\net45" />
+    <file src="..\..\bin\WPF\net45\**\MvvmFx.Bindings.WPF.dll*" target="lib\net45" />
+    <file src="..\..\bin\WPF\net45\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net45" />
+    <file src="..\..\bin\WPF\net45\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\WPF\net45\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\WPF\net45\**\MvvmFx.Bindings.WPF.xml*" target="lib\net45" />
     <!-- .NET 4.6.1 -->
-    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\WPF\net461\**\MvvmFx.Bindings.WPF.xml*" target="lib\net461" />
+    <file src="..\..\bin\WPF\net461\**\MvvmFx.Bindings.WPF.dll*" target="lib\net461" />
+    <file src="..\..\bin\WPF\net461\**\MvvmFx.Bindings.WPF.pdb*" target="lib\net461" />
+    <file src="..\..\bin\WPF\net461\**\MvvmFx.Bindings.WPF.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\WPF\net461\**\MvvmFx.Bindings.WPF.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\WPF\net461\**\MvvmFx.Bindings.WPF.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\Binding\**\MvvmFx.Bindings.Net45\**\*.cs" target="src" />
   </files>

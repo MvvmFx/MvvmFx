@@ -23,17 +23,17 @@ Log4net adapter for MvvmFx.Logging.ILog.
   </metadata>
   <files>
     <!-- .NET 4.5 -->
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net45" />
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net45" />
-    <file src="..\..\bin\Release\Common\net45\**\MvvmFx.Log4netLogger.xml*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Log4netLogger.dll*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Log4netLogger.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net45" />
+    <file src="..\..\bin\Common\net45\**\MvvmFx.Log4netLogger.xml*" target="lib\net45" />
     <!-- .NET 4.6.1 -->
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Log4netLogger.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Log4netLogger.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net461" />
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net461" />
-    <file src="..\..\bin\Release\Common\net461\**\MvvmFx.Log4netLogger.xml*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Log4netLogger.dll*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Log4netLogger.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Log4netLogger.resources.dll*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Log4netLogger.resources.pdb*" target="lib\net461" />
+    <file src="..\..\bin\Common\net461\**\MvvmFx.Log4netLogger.xml*" target="lib\net461" />
     <!-- Source Files for Symbol -->
     <file src="..\..\Source\**\Logging\MvvmFx.Log4netLogger.Net45\**\*.cs" target="src" />
   </files>
