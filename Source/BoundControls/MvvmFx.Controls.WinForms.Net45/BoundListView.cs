@@ -9,6 +9,7 @@ using MvvmFx.Controls.WisejWeb.Properties;
 #else
 using System.Windows.Forms;
 using MvvmFx.Controls.WinForms.Properties;
+using System.Linq;
 #endif
 
 // code from Sascha Knopf
@@ -38,6 +39,9 @@ namespace MvvmFx.Controls.WinForms
 
         private object _dataSource;
         private string _dataMember;
+#if WINFORMS
+        private string _groupMember;
+#endif
         #endregion
 
         #region Properties
@@ -129,6 +133,52 @@ namespace MvvmFx.Controls.WinForms
                 }
             }
         }
+
+#if WINFORMS
+        /// <summary>
+        /// <para>
+        /// Gets or sets the name of the member in the <see cref="MvvmFx.Controls.WinForms.BoundListView.DataSource"/> that contains the group
+        /// information of the items for which the <see cref="MvvmFx.Controls.WinForms.BoundListView"/> is displaying data.
+        /// </para>
+        /// <para>
+        /// The member may be a <see langword="string"/>, in which case its value will be used as both the key and header text of the groups.
+        /// It is not possible for multiple groups to have the same header text.
+        /// </para>
+        /// <para>
+        /// Otherwise, this member should be a <see langword="class"/> or <see langword="struct"/> with <see langword="string"/> properties
+        /// named <c>Key</c> and <c>HeaderText</c>, in which case those values will be used for the groups. Using a key allows multiple groups
+        /// to have the same header text.
+        /// </para>
+        /// </summary>
+        /// <value>
+        /// The name of the member in the <see cref="MvvmFx.Controls.WinForms.BoundListView.DataSource"/> that contains the group
+        /// information of the items for which the <see cref="MvvmFx.Controls.WinForms.BoundListView"/> is displaying data. The default is
+        /// <see cref="System.String.Empty"/>.
+        /// </value>
+        /// <exception cref="System.Exception">
+        /// An error occurred in the data source and either there is no handler for the <see cref="System.Windows.Forms.DataGridView.DataError"/>
+        /// event or the handler has set the <see cref="System.Windows.Forms.DataGridViewDataErrorEventArgs.ThrowException"/> property to true.
+        /// The exception object can typically be cast to type <see cref="System.FormatException"/>.
+        /// </exception>
+        /*[Bindable(true, BindingDirection.TwoWay)] do not uncomment*/
+        [DefaultValue(null)]
+        [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design", typeof(UITypeEditor))]
+        [RefreshProperties(RefreshProperties.Repaint)]
+        [Category("Data")]
+        [Description("Indicates a member of the DataSource to use for grouping items in the BoundListView control.")]
+        public string GroupMember
+        {
+            get { return _groupMember; }
+            set
+            {
+                if (_groupMember != value)
+                {
+                    _groupMember = value;
+                    TryDataBinding();
+                }
+            }
+        }
+#endif
 
         /// <summary>
         /// Gets the selected item.
@@ -236,6 +286,9 @@ namespace MvvmFx.Controls.WinForms
         private void UpdateAllData()
         {
             Items.Clear();
+#if WINFORMS
+            Groups.Clear();
+#endif
             for (var index = 0; index < _listManager.Count; index++)
             {
                 AddItem(index);
@@ -294,6 +347,9 @@ namespace MvvmFx.Controls.WinForms
             // Fill value for each column
             foreach (ColumnHeader column in Columns)
             {
+#if WINFORMS
+                if (column.Name == GroupMember) continue;
+#endif
                 var prop = propColl.Find(column.Name, false);
                 if (prop != null)
                 {
@@ -304,10 +360,49 @@ namespace MvvmFx.Controls.WinForms
                         items.Add(string.Empty);
                 }
             }
+#if WINFORMS
+            var item = new ListViewItem((string[]) items.ToArray(typeof (string)), GetListViewGroup(index));
+#else
             var item = new ListViewItem((string[]) items.ToArray(typeof (string)));
+#endif
             item.Tag = row;
             return item;
         }
+
+#if WINFORMS
+        /// <summary>
+        /// Gets the <see cref="ListViewGroup"/> for the row-data at the given index. If the group doesn't already exist, one will be created.
+        /// </summary>
+        /// <param name="index">The index of the row.</param>
+        /// <returns>A <see cref="ListViewGroup"/> for the row-data at the given index.</returns>
+        private ListViewGroup GetListViewGroup(int index)
+        {
+            var row = _listManager.List[index];
+            var propColl = _listManager.GetItemProperties();
+
+            var member = propColl.Find(GroupMember, false)?.GetValue(row);
+            if (member == null) return null;
+
+            var keyProperty = member.GetType().GetProperties().FirstOrDefault(i => i.Name == "Key"); // use FirstOrDefault() to avoid possibility of AmbiguousMatchException with GetProperty()
+            var key = keyProperty?.GetValue(member)?.ToString();
+
+            var headerProperty = member.GetType().GetProperties().FirstOrDefault(i => i.Name == "HeaderText"); // use FirstOrDefault() to avoid possibility of AmbiguousMatchException with GetProperty()
+            var headerText = headerProperty?.GetValue(member)?.ToString();
+
+            if (key == null || headerText == null)
+            {
+                // if either key or headerText are null, lets assume member isn't a struct or class with Key and HeaderText properties and just use it as-is
+                key = member.ToString();
+                headerText = key;
+            }
+
+            ListViewGroup group = null;
+            group = Groups[key];
+            if (group == null) group = Groups.Add(key, headerText);
+
+            return group;
+        }
+#endif
 
         /// <summary>
         /// Delete the item at the given index.
@@ -317,7 +412,16 @@ namespace MvvmFx.Controls.WinForms
         {
             if (index >= 0 &&
                 index < Items.Count)
+            {
+#if WINFORMS
+                var item = (ListViewItem)Items[index];
+                var itemGroup = item.Group;
                 Items.RemoveAt(index);
+                if (itemGroup?.Items.Count == 0) Groups.Remove(itemGroup);
+#else
+                Items.RemoveAt(index);
+#endif
+            }
         }
 
         /// <summary>
@@ -333,6 +437,9 @@ namespace MvvmFx.Controls.WinForms
                 foreach (PropertyDescriptor prop in _listManager.GetItemProperties())
                 {
                     var column = new ColumnHeader {Text = prop.Name, Name = prop.Name};
+#if WINFORMS
+                    if (column.Name == GroupMember) continue;
+#endif
                     Columns.Add(column);
                 }
             }
